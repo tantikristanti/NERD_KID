@@ -75,7 +75,7 @@ public class smileUsage {
                 count_error++;
         }
         System.out.println("Number of error: "+ count_error);
-        System.out.format("Error rate : %.2f%%\n "+ 100.0 * count_error / leng );
+        System.out.println("Error rate : "+ 100.0 * count_error / leng );
     }
 
     // validation model using training and testing data
@@ -94,6 +94,6 @@ public class smileUsage {
             }
         }
         System.out.println("Number of error: "+ count_error);
-        System.out.format("Error rate : %.2f%%\n "+ 100.0 * count_error / testx.length );
+        System.out.println("Error rate : " + 100.0 * count_error / testx.length );
     }
 }

@@ -14,6 +14,7 @@ public class mainSmile {
         System.out.println("Name of training data file : ");
         File file_name = new File(br.readLine());
         sm.loadData(file_name);
+        sm.validationModelLOOCV();
     }
 
 
