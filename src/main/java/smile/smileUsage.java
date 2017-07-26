@@ -42,7 +42,7 @@ public class smileUsage {
         testing = arffParser.parse(new FileInputStream(file2));
 
         System.out.println("Loaded training data : " + file1.getPath());
-        System.out.println("Loaded testing data : " + file1.getPath());
+        System.out.println("Loaded testing data : " + file2.getPath());
     }
 
     // training the model with Random Forest
