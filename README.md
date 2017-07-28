@@ -4,7 +4,7 @@ This project will focus on the machine learning of classifying items found in Wi
 
 
 # Goal
-According to [Wikidata's statistics](https://www.wikidata.org/wiki/Special:Statistics), more than 29 million items can be found in Wikidata. With its rich and open knowledge base, it's interesting to learn how those items can be classified into 27 classes. The 27 classes are based on X project results. The 27 classes are based on [Grobid-NER](http://grobid-ner.readthedocs.io/en/latest/class-and-senses/) 's project results.
+According to [Wikidata's statistics](https://www.wikidata.org/wiki/Special:Statistics), more than 29 million items can be found in Wikidata. With its rich and open knowledge base, it's interesting to learn how those items can be classified into 27 classes. The 27 classes are based on [Grobid-NER](http://grobid-ner.readthedocs.io/en/latest/class-and-senses/) 's project results.
 
 The idea of this project is to make computers understand how to group millions of items in Wikidata into specific classes based on their data characteristics.
 
