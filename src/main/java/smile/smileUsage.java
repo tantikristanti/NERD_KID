@@ -67,8 +67,8 @@ public class smileUsage {
         int[] y = attributeDataset.toArray(new int[attributeDataset.size()]);
 
         // maximum number of trees: 200
-        forest = new RandomForest(attributeDataset.attributes(),x,y,200);
-
+        forest = new RandomForest(x,y,200);
+        System.out.println(forest.size());
     }
 
     /* validation model using LOOCV (leave-one-out cross validation);
@@ -86,7 +86,7 @@ public class smileUsage {
             double[][] trainx = Math.slice(x, loocv.train[i]);
             int[] trainy = Math.slice(y, loocv.train[i]);
 
-            forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 200,4);
+            //forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 200,4);
 
             if (y[loocv.test[i]] != forest.predict(x[loocv.test[i]]))
                 count_error++;
@@ -102,7 +102,7 @@ public class smileUsage {
         double[][] testx = testing.toArray(new double[testing.size()][]);
         int[] testy = testing.toArray(new int[testing.size()]);
 
-        forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 200);
+        //forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 200);
 
         int count_error = 0;
         for (int i = 0; i < testx.length; i++) {
