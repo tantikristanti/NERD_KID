@@ -86,7 +86,7 @@ public class smileUsage {
             double[][] trainx = Math.slice(x, loocv.train[i]);
             int[] trainy = Math.slice(y, loocv.train[i]);
 
-            //forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 200,4);
+            forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 200);
 
             if (y[loocv.test[i]] != forest.predict(x[loocv.test[i]]))
                 count_error++;
