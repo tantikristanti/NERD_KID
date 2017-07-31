@@ -17,7 +17,7 @@ public class mainSmile {
         File file_name = new File(br.readLine());
         sm.loadData(file_name);
         sm.trainModel();
-        //sm.validationModelLOOCV();
+        sm.validationModelLOOCV();
     }
 
 
