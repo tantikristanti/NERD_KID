@@ -9,16 +9,18 @@ public class mainSmile {
     public static void main(String[] args) throws Exception {
 
         BufferedReader br = null;
+        File file_name_input = null, file_name_result = null;
 
         smileUsage sm = new smileUsage();
-        br = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("Name of training data file : ");
-        File file_name = new File(br.readLine());
-        sm.loadData(file_name);
+        br = new BufferedReader(new InputStreamReader(System.in));
+        file_name_input = new File(br.readLine());
+
+        sm.loadData(file_name_input);
         sm.trainModel();
+
         sm.validationModelLOOCV();
+
     }
-
-
 }

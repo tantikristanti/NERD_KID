@@ -9,6 +9,8 @@ import smile.math.Math;
 import smile.validation.*;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /* this class contains the use of Smile Java API for predictive modeling */
@@ -22,7 +24,7 @@ public class smileUsage {
     //classification model
     private RandomForest forest = null;
 
-    //for logger, needed for for Random Forest
+    //logger
     private static final Logger logger =  LoggerFactory.getLogger(smileUsage.class);
 
 
@@ -75,24 +77,43 @@ public class smileUsage {
         if it has only a single dataset for building models
      */
     public void validationModelLOOCV() throws Exception {
+
+        // for getting output stream of the file for writing the result
+        File fl = new File("result/result.txt");
+
+
+        BufferedWriter result = new BufferedWriter(new FileWriter(fl));
+
         double[][] x = attributeDataset.toArray(new double[attributeDataset.size()][]);
         int[] y = attributeDataset.toArray(new int[attributeDataset.size()]);
 
         int leng = x.length;
         LOOCV loocv = new LOOCV(leng);
 
-        int count_error = 0;
+        int count_error = 0, count_classified =0;
+
         for (int i = 0; i < leng; i++) {
             double[][] trainx = Math.slice(x, loocv.train[i]);
             int[] trainy = Math.slice(y, loocv.train[i]);
 
-            forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 200);
-
+            forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 100);
+            result.write(String.valueOf(forest));
+            result.newLine();
             if (y[loocv.test[i]] != forest.predict(x[loocv.test[i]]))
                 count_error++;
+            else
+                count_classified++;
         }
-        System.out.println("Number of error: " + count_error);
-        System.out.println("Error rate : " + 100.0 * count_error / leng);
+        double total_instances = count_error+count_classified;
+        result.write("Number of trees: " + forest.size());
+        result.newLine();
+        result.write("Correctly classified instances: " + count_classified + "(" + count_classified/total_instances*100.00 + " %)");
+        result.newLine();
+        result.write("Incorrectly classified instances: " + count_error + "(" + count_error/total_instances*100.00 + " %)");
+        System.out.println("Number of trees: " + forest.size());
+        System.out.format("Correctly classified instances: %d (%.3f %%) \n", count_classified, count_classified/total_instances*100.00);
+        System.out.format("Incorrectly classified instances: %d (%.3f %%) \n", count_error, count_error/total_instances*100.00);
+        result.close();
     }
 
     // validation model using training and testing data
@@ -102,16 +123,23 @@ public class smileUsage {
         double[][] testx = testing.toArray(new double[testing.size()][]);
         int[] testy = testing.toArray(new int[testing.size()]);
 
-        //forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 200);
+        forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 200);
 
-        int count_error = 0;
+        int count_error = 0, count_classified =0;
         for (int i = 0; i < testx.length; i++) {
             if (forest.predict(testx[i]) != testy[i]) {
                 count_error++;
             }
         }
-        System.out.println("Number of error: " + count_error);
-        System.out.println("Error rate : " + 100.0 * count_error / testx.length);
+        double total_instances = count_error+count_classified;
+        System.out.format("Correctly classified instances: %d (%.3f %%) \n", count_classified, count_classified/total_instances*100.00);
+        System.out.format("Incorrectly classified instances: %d (%.3f %%) \n", count_error, count_error/total_instances*100.00);
+    }
+
+
+
+    public void selectionFeature(){
+
     }
 
 }
