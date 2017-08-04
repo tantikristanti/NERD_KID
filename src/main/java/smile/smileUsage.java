@@ -76,11 +76,12 @@ public class smileUsage {
     /* validation model using LOOCV (leave-one-out cross validation);
         if it has only a single dataset for building models
      */
-    public void validationModelLOOCV() throws Exception {
+    public void validationModelLOOCV(File file) throws Exception {
+        // to change the extention of the file
+        StringBuilder sb = new StringBuilder();
 
         // for getting output stream of the file for writing the result
-        File fl = new File("result/result.txt");
-
+        File fl = new File("result/Result_"+file.getName()+".txt");
 
         BufferedWriter result = new BufferedWriter(new FileWriter(fl));
 

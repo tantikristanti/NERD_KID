@@ -18,9 +18,12 @@ public class mainSmile {
         file_name_input = new File(br.readLine());
 
         sm.loadData(file_name_input);
-        sm.trainModel();
+        //sm.trainModel();
 
-        sm.validationModelLOOCV();
+        System.out.println("Name of the result file : ");
+        br = new BufferedReader(new InputStreamReader(System.in));
+        file_name_result = new File(br.readLine());
+        sm.validationModelLOOCV(file_name_result);
 
     }
 }
