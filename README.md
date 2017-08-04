@@ -1,6 +1,6 @@
 # Intern Project
 
-This project will focus on machine learning for classifying items found in Wikidata into 27 classes in Nerd.
+This project will focus on machine learning for classifying items found in Wikidata into 27 classes in Nerd, for instance, Institution, Location, Person.
 
 
 # Goal
@@ -10,10 +10,12 @@ The idea of this project is to make computers understand how grouping millions o
 
 Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki/Q937) in Wikidata which has an identifier 'Q937'. This item actually has a number of properties (e.g. 'instance of-P31', 'sex or gender-P21', etc.) as well as a number of values for each property (e.g. 'human-Q5' as a value of property 'P31', 'male-Q6581097' as a value of property 'P-21'). Based on a trained given model, computers will understand how making some predictions and classifying the Albert Einstein's item into a certain class, Person class, for instance. This project will also consider disambiguity of items. For instance, computers will not classify [Marshall Plan](https://www.wikidata.org/wiki/Q4576) into a Person class, because it's not a name of a person, rather it's an American initiative to aid Western Europe. 
 
-[Albert Einstein](pic/AlbertEinstein.jpg)
+![Albert Einstein](pic/AlbertEinstein.jpg)
 
 # Method
 
 # Tools
+
+# Installation
 
 
