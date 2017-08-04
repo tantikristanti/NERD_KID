@@ -25,7 +25,7 @@ public class smileUsage {
     private RandomForest forest = null;
 
     //logger
-    private static final Logger logger =  LoggerFactory.getLogger(smileUsage.class);
+    private static final Logger logger = LoggerFactory.getLogger(smileUsage.class);
 
 
     /* --------------- methods ---------------
@@ -55,11 +55,11 @@ public class smileUsage {
         System.out.println("Loaded training data : " + file1.getPath());
         System.out.println("Loaded testing data : " + file2.getPath());
 
-        }
+    }
 
     // training the model with Random Forest
     public void trainModel() throws Exception {
-        if (attributeDataset == null){
+        if (attributeDataset == null) {
             logger.debug("Training data doesn't exist");
         }
 
@@ -69,7 +69,7 @@ public class smileUsage {
         int[] y = attributeDataset.toArray(new int[attributeDataset.size()]);
 
         // maximum number of trees: 200
-        forest = new RandomForest(x,y,200);
+        forest = new RandomForest(x, y, 200);
         System.out.println(forest.size());
     }
 
@@ -77,11 +77,9 @@ public class smileUsage {
         if it has only a single dataset for building models
      */
     public void validationModelLOOCV(File file) throws Exception {
-        // to change the extention of the file
-        StringBuilder sb = new StringBuilder();
 
         // for getting output stream of the file for writing the result
-        File fl = new File("result/Result_"+file.getName()+".txt");
+        File fl = new File("result/Result_" + file.getName() + ".txt");
 
         BufferedWriter result = new BufferedWriter(new FileWriter(fl));
 
@@ -91,7 +89,7 @@ public class smileUsage {
         int leng = x.length;
         LOOCV loocv = new LOOCV(leng);
 
-        int count_error = 0, count_classified =0;
+        int count_error = 0, count_classified = 0;
 
         for (int i = 0; i < leng; i++) {
             double[][] trainx = Math.slice(x, loocv.train[i]);
@@ -105,15 +103,15 @@ public class smileUsage {
             else
                 count_classified++;
         }
-        double total_instances = count_error+count_classified;
+        double total_instances = count_error + count_classified;
         result.write("Number of trees: " + forest.size());
         result.newLine();
-        result.write("Correctly classified instances: " + count_classified + "(" + count_classified/total_instances*100.00 + " %)");
+        result.write("Correctly classified instances: " + count_classified + " (" + count_classified / total_instances * 100.00 + " %)");
         result.newLine();
-        result.write("Incorrectly classified instances: " + count_error + "(" + count_error/total_instances*100.00 + " %)");
+        result.write("Incorrectly classified instances: " + count_error + " (" + count_error / total_instances * 100.00 + " %)");
         System.out.println("Number of trees: " + forest.size());
-        System.out.format("Correctly classified instances: %d (%.3f %%) \n", count_classified, count_classified/total_instances*100.00);
-        System.out.format("Incorrectly classified instances: %d (%.3f %%) \n", count_error, count_error/total_instances*100.00);
+        System.out.format("Correctly classified instances: %d (%.3f %%) \n", count_classified, count_classified / total_instances * 100.00);
+        System.out.format("Incorrectly classified instances: %d (%.3f %%) \n", count_error, count_error / total_instances * 100.00);
         result.close();
     }
 
@@ -126,20 +124,19 @@ public class smileUsage {
 
         forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 200);
 
-        int count_error = 0, count_classified =0;
+        int count_error = 0, count_classified = 0;
         for (int i = 0; i < testx.length; i++) {
             if (forest.predict(testx[i]) != testy[i]) {
                 count_error++;
             }
         }
-        double total_instances = count_error+count_classified;
-        System.out.format("Correctly classified instances: %d (%.3f %%) \n", count_classified, count_classified/total_instances*100.00);
-        System.out.format("Incorrectly classified instances: %d (%.3f %%) \n", count_error, count_error/total_instances*100.00);
+        double total_instances = count_error + count_classified;
+        System.out.format("Correctly classified instances: %d (%.3f %%) \n", count_classified, count_classified / total_instances * 100.00);
+        System.out.format("Incorrectly classified instances: %d (%.3f %%) \n", count_error, count_error / total_instances * 100.00);
     }
 
 
-
-    public void selectionFeature(){
+    public void selectionFeature() {
 
     }
 
