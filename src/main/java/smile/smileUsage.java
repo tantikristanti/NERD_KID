@@ -2,16 +2,16 @@ package smile;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import smile.data.AttributeDataset;
 import smile.data.parser.ArffParser;
 import smile.classification.RandomForest;
 import smile.math.Math;
+import smile.math.Random;
 import smile.validation.*;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-
+import java.lang.*;
 
 /* this class contains the use of Smile Java API for predictive modeling */
 public class smileUsage {
@@ -21,7 +21,8 @@ public class smileUsage {
     private AttributeDataset attributeDataset = null;
     private AttributeDataset training = null;
     private AttributeDataset testing = null;
-    //classification model
+
+    //classification model of Random Forest
     private RandomForest forest = null;
 
     //logger
@@ -35,11 +36,12 @@ public class smileUsage {
         // setResponseIndex is response variable; for classification, it is the class label; for regression, it is of real value
         arffParser = new ArffParser();
         arffParser.setResponseIndex(4);
+
         // dataset of a number of attributes
         attributeDataset = arffParser.parse(new FileInputStream(file));
 
+        // information about the file
         System.out.println("Loaded training data: " + file.getPath());
-
     }
 
 
@@ -57,20 +59,81 @@ public class smileUsage {
 
     }
 
+    // splitting the model into training and data set
+    public void splitModel(int split) throws Exception {
+
+        // datax is for the examples, datay is for the class
+        double[][] datax = attributeDataset.toArray(new double[attributeDataset.size()][]);
+        int[] datay = attributeDataset.toArray(new int[attributeDataset.size()]);
+
+        // size of examples
+        int n = datax.length;
+
+        // size of examples after split in certain percentage
+        int m = n * split / 100;
+        int[] index = Math.permutate(n);
+
+        // training data after splitting in certain percentage
+        double[][] trainx = new double[m][];
+        int[] trainy = new int[m];
+        for (int i = 0; i < m; i++) {
+            trainx[i] = datax[index[i]];
+            trainy[i] = datay[index[i]];
+        }
+
+        // testing data after splitting in certain percentage
+        double[][] testx = new double[n - m][];
+        int[] testy = new int[n - m];
+        for (int i = m; i < n; i++) {
+            testx[i - m] = datax[index[i]];
+            testy[i - m] = datay[index[i]];
+        }
+
+        // training with Random Forest classification
+        forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 100);
+
+        // doing prediction
+        int[] yPredict = new int[testy.length];
+
+        for (int i = 0; i < testx.length; i++) {
+            yPredict[i] = forest.predict(testx[i]);
+        }
+
+        // getting the result of confusion matrix, precision and recall
+        System.out.println("Confusion matrix: " + new ConfusionMatrix(testy, yPredict).toString());
+        System.out.println("Precision: " + new Precision().measure(testy, yPredict));
+        System.out.println("Recall: " + new Recall().measure(testy, yPredict));
+    }
+
+
     // training the model with Random Forest
     public void trainModel() throws Exception {
+
+        // if there isn't any training data
         if (attributeDataset == null) {
             logger.debug("Training data doesn't exist");
         }
 
+        // training the data
         logger.info("Training the model.");
 
         double[][] x = attributeDataset.toArray(new double[attributeDataset.size()][]);
         int[] y = attributeDataset.toArray(new int[attributeDataset.size()]);
 
-        // maximum number of trees: 200
-        forest = new RandomForest(x, y, 200);
-        System.out.println(forest.size());
+        // maximum number of trees: 100
+        forest = new RandomForest(attributeDataset.attributes(), x, y, 100);
+
+        int[] yPredict = new int[y.length];
+
+        for (int i = 0; i < x.length; i++) {
+            yPredict[i] = forest.predict(x[i]);
+        }
+
+        System.out.println("Confusion matrix: " + new ConfusionMatrix(y, yPredict).toString());
+        System.out.println("Precission: " + new Precision().measure(y, yPredict));
+        System.out.println("Recall: " + new Recall().measure(y, yPredict));
+
+
     }
 
     /* validation model using LOOCV (leave-one-out cross validation);
