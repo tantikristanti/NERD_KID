@@ -76,7 +76,7 @@ public class smileUsage {
 
         // size of examples after split in certain percentage
         int m = n * split / 100;
-        int[] index = Math.permutate(n);
+        int[] index = Math.permutate(n); // to get the index of the row randomly
 
         // training data after splitting in certain percentage
         double[][] trainx = new double[m][];
@@ -103,7 +103,7 @@ public class smileUsage {
 
         for (int i = 0; i < testx.length; i++) {
             yPredict[i] = forest.predict(testx[i]);
-            if (testy[i] != forest.predict(testx[i]))
+            if (testy[i] != yPredict[i])
                 count_error++;
             else
                 count_classified++;

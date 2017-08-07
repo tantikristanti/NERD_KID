@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-
 public class mainSmile {
     public static void main(String[] args) throws Exception {
 
@@ -21,6 +20,7 @@ public class mainSmile {
         file_name_input = new File(br.readLine());
         System.out.println("Name of training data file : "+ file_name_input);
 
+        // accepting the value of response index
         System.out.println("Response index (model6_P31.arff: 52, model6_P31_P21.arff: 54, model6_P31_P21_P279: 59, model6_P31_PersonLocation: 52)");
         Scanner in = new Scanner(System.in);
         response = in.nextInt();
