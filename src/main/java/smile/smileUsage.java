@@ -60,7 +60,12 @@ public class smileUsage {
     }
 
     // splitting the model into training and data set
-    public void splitModel(int split) throws Exception {
+    public void splitModel(File file, int split) throws Exception {
+
+        // for getting output stream of the file for writing the result
+        File fl = new File("result/Result_" + file.getName() + ".txt");
+
+        BufferedWriter result = new BufferedWriter(new FileWriter(fl));
 
         // datax is for the examples, datay is for the class
         double[][] datax = attributeDataset.toArray(new double[attributeDataset.size()][]);
@@ -94,15 +99,37 @@ public class smileUsage {
 
         // doing prediction
         int[] yPredict = new int[testy.length];
+        int count_error = 0, count_classified = 0;
 
         for (int i = 0; i < testx.length; i++) {
             yPredict[i] = forest.predict(testx[i]);
+            if (testy[i] != forest.predict(testx[i]))
+                count_error++;
+            else
+                count_classified++;
         }
+
+        // classified instances
+        double total_instances = count_error + count_classified;
+        System.out.format("Correctly classified instances: %d (%.3f %%) \n", count_classified, count_classified / total_instances * 100.00);
+        System.out.format("Incorrectly classified instances: %d (%.3f %%) \n", count_error, count_error / total_instances * 100.00);
+        result.write("Correctly classified instances: " + count_classified + " (" + count_classified / total_instances * 100.00 + " %)");
+        result.newLine();
+        result.write("Incorrectly classified instances: " + count_error + " (" + count_error / total_instances * 100.00 + " %)");
+        result.newLine();
 
         // getting the result of confusion matrix, precision and recall
         System.out.println("Confusion matrix: " + new ConfusionMatrix(testy, yPredict).toString());
         System.out.println("Precision: " + new Precision().measure(testy, yPredict));
         System.out.println("Recall: " + new Recall().measure(testy, yPredict));
+        result.write("Confusion matrix: " + new ConfusionMatrix(testy, yPredict).toString());
+        result.newLine();
+        result.write("Precision: " + new Precision().measure(testy, yPredict));
+        result.newLine();
+        result.write("Recall: " + new Recall().measure(testy, yPredict));
+
+        result.close();
+
     }
 
 
@@ -127,13 +154,12 @@ public class smileUsage {
 
         for (int i = 0; i < x.length; i++) {
             yPredict[i] = forest.predict(x[i]);
+
         }
 
         System.out.println("Confusion matrix: " + new ConfusionMatrix(y, yPredict).toString());
         System.out.println("Precission: " + new Precision().measure(y, yPredict));
         System.out.println("Recall: " + new Recall().measure(y, yPredict));
-
-
     }
 
     /* validation model using LOOCV (leave-one-out cross validation);

@@ -26,14 +26,14 @@ public class mainSmile {
         System.out.println("Percentage of training data (in %) : ");
         Scanner in = new Scanner(System.in);
         split = in.nextInt();
-        sm.splitModel(split);
+        //sm.splitModel(split);
 
         //sm.trainModel();
 
-        /*System.out.println("Name of the result file : ");
+        System.out.println("Name of the result file : ");
         br = new BufferedReader(new InputStreamReader(System.in));
         file_name_result = new File(br.readLine());
-        sm.validationModelLOOCV(file_name_result);*/
+        sm.splitModel(file_name_result, split);
 
     }
 }
