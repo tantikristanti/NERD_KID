@@ -7,7 +7,6 @@ import smile.data.AttributeDataset;
 import smile.data.parser.ArffParser;
 import smile.classification.RandomForest;
 import smile.math.Math;
-import smile.math.Random;
 import smile.sort.QuickSort;
 import smile.validation.*;
 
@@ -33,10 +32,10 @@ public class smileUsage {
     /* --------------- methods ---------------
 
      loading only training data */
-    public void loadData(File file) throws Exception {
+    public void loadData(File file, int index) throws Exception {
         // setResponseIndex is response variable; for classification, it is the class label; for regression, it is of real value
         arffParser = new ArffParser();
-        arffParser.setResponseIndex(4);
+        arffParser.setResponseIndex(index);
 
         // dataset of a number of attributes
         attributeDataset = arffParser.parse(new FileInputStream(file));
@@ -98,7 +97,7 @@ public class smileUsage {
         // training with Random Forest classification
         forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 100);
 
-        // doing prediction
+        // prediction and calculating the classes classified
         int[] yPredict = new int[testy.length];
         int count_error = 0, count_classified = 0;
 
@@ -112,12 +111,27 @@ public class smileUsage {
 
         // classified instances
         double total_instances = count_error + count_classified;
+
+        // header in text file
+        result.write("Classification with Random Forest of " + forest.size()+ " trees");
+        result.newLine();
+        result.write("Test mode is " + split + "% train, remainder is test data.");
+        result.newLine();
+
+        // out of bag error
+        System.out.format("Out of Bag (OOB) error rate : %.4f%n", forest.error());
+        result.write("Out of Bag (OOB) error rate : "+forest.error());
+        result.newLine();
+
+        // classfied instances
         System.out.format("Correctly classified instances: %d (%.3f %%) \n", count_classified, count_classified / total_instances * 100.00);
         System.out.format("Incorrectly classified instances: %d (%.3f %%) \n", count_error, count_error / total_instances * 100.00);
         result.write("Correctly classified instances: " + count_classified + " (" + count_classified / total_instances * 100.00 + " %)");
         result.newLine();
         result.write("Incorrectly classified instances: " + count_error + " (" + count_error / total_instances * 100.00 + " %)");
         result.newLine();
+
+
 
         // searching the importance of variables
         double[] importance = forest.importance();
