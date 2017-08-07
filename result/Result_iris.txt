@@ -1,16 +1,16 @@
 Classification with Random Forest of 100 trees
 Test mode is 80% train, remainder is test data.
-Out of Bag (OOB) error rate : 0.075
-Correctly classified instances: 30 (100.0 %)
-Incorrectly classified instances: 0 (0.0 %)
-NUMERIC[petalwidth] importance is : 37.70726008624656
-NUMERIC[petallength] importance is : 35.67948617855736
-NUMERIC[sepallength] importance is : 10.37150422059073
-NUMERIC[sepalwidth] importance is : 2.89783296992303
+Out of Bag (OOB) error rate : 0.01680672268907563
+Correctly classified instances: 29 (96.66666666666667 %)
+Incorrectly classified instances: 1 (3.3333333333333335 %)
+NUMERIC[petallength] importance is : 38.48343145650534
+NUMERIC[petalwidth] importance is : 36.96689629960625
+NUMERIC[sepallength] importance is : 14.260443258610902
+NUMERIC[sepalwidth] importance is : 3.9061319185350736
 Confusion matrix: ROW=truth and COL=predicted
 
 class 0	: 8	| 0	| 0	| 
-class 1	: 0	| 13	| 0	| 
-class 2	: 0	| 0	| 9	|
+class 1	: 0	| 11	| 1	| 
+class 2	: 0	| 0	| 10	|
 Precision: 1.0
-Recall: 1.0
+Recall: 0.9166666666666666

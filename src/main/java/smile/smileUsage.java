@@ -118,7 +118,7 @@ public class smileUsage {
         result.write("Test mode is " + split + "% train, remainder is test data.");
         result.newLine();
 
-        // out of bag error
+        // out of bag error, method of measuring the prediction error
         System.out.format("Out of Bag (OOB) error rate : %.4f%n", forest.error());
         result.write("Out of Bag (OOB) error rate : "+forest.error());
         result.newLine();
@@ -146,9 +146,12 @@ public class smileUsage {
 
         // getting the result of confusion matrix, precision and recall
         System.out.println("Confusion matrix: " + new ConfusionMatrix(testy, yPredict).toString());
+        System.out.println("FMeasure: " + new FMeasure().measure(testy, yPredict));
         System.out.println("Precision: " + new Precision().measure(testy, yPredict));
         System.out.println("Recall: " + new Recall().measure(testy, yPredict));
         result.write("Confusion matrix: " + new ConfusionMatrix(testy, yPredict).toString());
+        result.newLine();
+        result.write("FMeasure: " + new FMeasure().measure(testy, yPredict));
         result.newLine();
         result.write("Precision: " + new Precision().measure(testy, yPredict));
         result.newLine();
