@@ -8,6 +8,7 @@ import smile.data.parser.ArffParser;
 import smile.classification.RandomForest;
 import smile.math.Math;
 import smile.math.Random;
+import smile.sort.QuickSort;
 import smile.validation.*;
 
 import java.io.*;
@@ -117,6 +118,17 @@ public class smileUsage {
         result.newLine();
         result.write("Incorrectly classified instances: " + count_error + " (" + count_error / total_instances * 100.00 + " %)");
         result.newLine();
+
+        // searching the importance of variables
+        double[] importance = forest.importance();
+        index = QuickSort.sort(importance);
+        int importance_length = importance.length;
+        // i-- > 0 means comparing i > 0 and decrement i--
+        for (int i = importance_length; i-- > 0; ) {
+            System.out.format("%s importance is %.4f%n", attributeDataset.attributes()[index[i]], importance[i]);
+            result.write(attributeDataset.attributes()[index[i]] + " importance is : " + importance[i]);
+            result.newLine();
+        }
 
         // getting the result of confusion matrix, precision and recall
         System.out.println("Confusion matrix: " + new ConfusionMatrix(testy, yPredict).toString());
