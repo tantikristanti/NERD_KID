@@ -15,26 +15,25 @@ public class mainSmile {
         smileUsage sm = new smileUsage();
 
         // loading the model
-        System.out.println("Name of training data file : ");
+        System.out.print("Name of training data file (/[path]/[fileName].arff) : ");
         br = new BufferedReader(new InputStreamReader(System.in));
         file_name_input = new File(br.readLine());
-        System.out.println("Name of training data file : "+ file_name_input);
 
         // accepting the value of response index
-        System.out.println("Response index (model6_P31.arff: 52, model6_P31_P21.arff: 54, model6_P31_P21_P279: 59, model6_P31_PersonLocation: 52)");
+        System.out.print("\nResponse index (number of features) : ");
         Scanner in = new Scanner(System.in);
         response = in.nextInt();
         sm.loadData(file_name_input, response);
 
         // splitting the model into training and testing data
-        System.out.println("Percentage of training data (in %) : ");
+        System.out.print("Percentage of training data (in %) : ");
         Scanner input = new Scanner(System.in);
         split = input.nextInt();
         //sm.splitModel(split);
 
         //sm.trainModel();
 
-        System.out.println("Name of the result file : ");
+        System.out.print("Name of the result file (automatically in /result/Result_[fileName].txt): ");
         br = new BufferedReader(new InputStreamReader(System.in));
         file_name_result = new File(br.readLine());
         sm.splitModel(file_name_result, split);

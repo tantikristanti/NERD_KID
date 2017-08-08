@@ -41,7 +41,7 @@ public class smileUsage {
         attributeDataset = arffParser.parse(new FileInputStream(file));
 
         // information about the file
-        System.out.println("Loaded training data: " + file.getPath());
+        System.out.println("Loading training data " + file.getPath()+ " is finished succesfully.");
     }
 
 
@@ -61,6 +61,10 @@ public class smileUsage {
 
     // splitting the model into training and data set
     public void splitModel(File file, int split) throws Exception {
+        // Fmeasure, precission, recall
+        FMeasure fmeasure = new FMeasure();
+        Precision precision = new Precision();
+        Recall recall = new Recall();
 
         // for getting output stream of the file for writing the result
         File fl = new File("result/Result_" + file.getName() + ".txt");
@@ -113,14 +117,14 @@ public class smileUsage {
         double total_instances = count_error + count_classified;
 
         // header in text file
-        result.write("Classification with Random Forest of " + forest.size()+ " trees");
+        result.write("Classification with Random Forest of " + forest.size() + " trees");
         result.newLine();
         result.write("Test mode is " + split + "% train, remainder is test data.");
         result.newLine();
 
         // out of bag error, method of measuring the prediction error
         System.out.format("Out of Bag (OOB) error rate : %.4f%n", forest.error());
-        result.write("Out of Bag (OOB) error rate : "+forest.error());
+        result.write("Out of Bag (OOB) error rate : " + forest.error());
         result.newLine();
 
         // classfied instances
@@ -130,7 +134,6 @@ public class smileUsage {
         result.newLine();
         result.write("Incorrectly classified instances: " + count_error + " (" + count_error / total_instances * 100.00 + " %)");
         result.newLine();
-
 
 
         // searching the importance of variables
@@ -145,17 +148,22 @@ public class smileUsage {
         }
 
         // getting the result of confusion matrix, precision and recall
+
+        Double result_fmeasure = Double.isNaN(fmeasure.measure(testy,yPredict))  ? 0.0 : fmeasure.measure(testy,yPredict),
+                result_precision = Double.isNaN(precision.measure(testy,yPredict))  ? 0.0 : precision.measure(testy,yPredict),
+                result_recall = Double.isNaN(recall.measure(testy,yPredict))  ? 0.0 : recall.measure(testy,yPredict);
+
         System.out.println("Confusion matrix: " + new ConfusionMatrix(testy, yPredict).toString());
-        System.out.println("FMeasure: " + new FMeasure().measure(testy, yPredict));
-        System.out.println("Precision: " + new Precision().measure(testy, yPredict));
-        System.out.println("Recall: " + new Recall().measure(testy, yPredict));
+        System.out.println("FMeasure: " + result_fmeasure);
+        System.out.println("Precision: " + result_precision);
+        System.out.println("Recall: " + result_recall);
         result.write("Confusion matrix: " + new ConfusionMatrix(testy, yPredict).toString());
         result.newLine();
-        result.write("FMeasure: " + new FMeasure().measure(testy, yPredict));
+        result.write("FMeasure: " + result_fmeasure);
         result.newLine();
-        result.write("Precision: " + new Precision().measure(testy, yPredict));
+        result.write("Precision: " + result_precision);
         result.newLine();
-        result.write("Recall: " + new Recall().measure(testy, yPredict));
+        result.write("Recall: " + result_recall);
 
         result.close();
 
@@ -251,11 +259,6 @@ public class smileUsage {
         double total_instances = count_error + count_classified;
         System.out.format("Correctly classified instances: %d (%.3f %%) \n", count_classified, count_classified / total_instances * 100.00);
         System.out.format("Incorrectly classified instances: %d (%.3f %%) \n", count_error, count_error / total_instances * 100.00);
-    }
-
-
-    public void selectionFeature() {
-
     }
 
 }
