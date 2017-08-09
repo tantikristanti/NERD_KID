@@ -24,7 +24,31 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.0.2</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.7</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <configuration>
+                    <mainClass>smile.mainSmile</mainClass>
+                </configuration>
+            </plugin>
+
         </plugins>
+
+
+
     </build>
 
 
@@ -54,5 +78,8 @@
         </dependency>
 
     </dependencies>
+
+
+
 
 </project>
