@@ -15,9 +15,10 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 ![Tools](pic/Tools.jpg)
 
 # Installation-Build-Run
-** 1. Installation **
+**1. Installation**
 
-* a. Clone this source* 
+*a. Clone this source* 
+
 ```$ git clone https://github.com/tantikristanti/NERD_KID.git```
 
 * b. Download the zip file *
