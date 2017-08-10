@@ -16,30 +16,31 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 ![Tools](pic/Tools.jpg)
 
 # Installation-Build-Run
-1. Installation 
-a. Clone this source
+## 1. Installation
 
+### a. Clone this source
 $ git clone https://github.com/tantikristanti/NERD_KID.git
 
-b. Download the zip file 
+### b. Download the zip file 
 
-2. Preparing the data or models
+## 2. Preparing the data or models
 
-Use models exist or put new models (*.arff) in /data/ folder
+--> Use models exist or put new models (*.arff) in /data/ folder
 
-3. Build the project
+## 3. Build the project
 
 $ mvn clean install
 
-4. Execute the application 
-a. Model training using Random Forest classification [SMILE](https://github.com/haifengl/smile/)
+## 4. Execute the application 
+### a. Model training using Random Forest classification [SMILE](https://github.com/haifengl/smile/)
 
 $ mvn exec:java -Dexec.mainClass="smile.mainSmile"
 
-b. Access NERD Rest API   
+### b. Access NERD Rest API   
 
-5. Getting the result
-a. The result of machine learning : /result/[name of file].txt
+## 5. Getting the result
+
+The result of machine learning : /result/[name of file].txt
 
  
 
