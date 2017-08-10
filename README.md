@@ -38,7 +38,9 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 ```$ mvn exec:java -Dexec.mainClass="smile.mainSmile"```
 
 *b. Access NERD Rest API*
+
 (still working on it)
 
 **5. Getting the result**
+
 *The result of machine learning : /result/[name of file].txt* 
