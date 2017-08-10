@@ -1,4 +1,4 @@
-# NERD_KID :shipit:
+# NERD_KID  :neckbeard:
 
 This project will focus on machine learning for classifying items found in Wikidata into 27 classes in Nerd, for instance, Institution, Location, Person.
 
@@ -21,22 +21,24 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 ```$ git clone https://github.com/tantikristanti/NERD_KID.git```
 
-* b. Download the zip file *
+*b. Download the zip file*
 
-** 2. Preparing the data or models **
-* Use models exist or put new models (*.arff) in /data/ folder *
+**2. Preparing the data or models**
 
-** 3. Build the project **
+*Use models exist or put new models (*.arff) in /data/ folder*
+
+**3. Build the project**
 
 ```$ mvn clean install```
 
-** 4. Execute the application **
-* a. Model training using Random Forest classification [SMILE](https://github.com/haifengl/smile/) *
+**4. Execute the application**
+
+*a. Model training using Random Forest classification [SMILE](https://github.com/haifengl/smile/)*
 
 ```$ mvn exec:java -Dexec.mainClass="smile.mainSmile"```
 
-* b. Access NERD Rest API *
+*b. Access NERD Rest API*
 (still working on it)
 
-## 5. Getting the result
-* The result of machine learning : /result/[name of file].txt* 
+**5. Getting the result**
+*The result of machine learning : /result/[name of file].txt* 
