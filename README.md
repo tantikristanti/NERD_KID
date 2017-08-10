@@ -27,7 +27,7 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 **2. Preparing the data or models**
 
-*Use models exist or put new models in * `/data/[file].arff`
+*Use models exist or put new models in* `/data/[file].arff`
 
 **3. Build the project**
 
