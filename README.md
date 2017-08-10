@@ -46,3 +46,8 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 **5. Getting the result**
 
 *The result of machine learning :* `/result/[name of file].txt` 
+
+**6. Example**
+
+![Machine Learning](pic/Machine.jpg)
+
