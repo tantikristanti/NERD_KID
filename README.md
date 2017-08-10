@@ -23,6 +23,8 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 *b. Download the zip file*
 
+[NERD_KID](https://github.com/tantikristanti/NERD_KID/archive/master.zip)
+
 **2. Preparing the data or models**
 
 *Use models exist or put new models (*.arff) in /data/ folder*
