@@ -1,4 +1,7 @@
-# NERD_KID :sleuth_or_spy:
+# NERD_KID 
+:sleuth_or_spy:
+:ahah:
+:shipit:
 
 This project will focus on machine learning for classifying items found in Wikidata into 27 classes in Nerd, for instance, Institution, Location, Person.
 
