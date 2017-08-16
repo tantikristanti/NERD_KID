@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.*;
 
+
 public class callRestAPI {
     public void callRestService(String link, String query) throws Exception{
         URL url = new URL(link);

@@ -13,6 +13,7 @@ import smile.validation.*;
 import java.io.*;
 import java.lang.*;
 
+
 /* this class contains the use of Smile Java API for predictive modeling */
 public class smileUsage {
 
@@ -28,11 +29,11 @@ public class smileUsage {
     //logger
     private static final Logger logger = LoggerFactory.getLogger(smileUsage.class);
 
+    // --------------- methods ---------------
 
-    /* --------------- methods ---------------
-
-     loading only training data */
+    // loading the model, if there is only the training data
     public void loadData(File file, int index) throws Exception {
+
         // setResponseIndex is response variable; for classification, it is the class label; for regression, it is of real value
         arffParser = new ArffParser();
         arffParser.setResponseIndex(index);
@@ -41,26 +42,161 @@ public class smileUsage {
         attributeDataset = arffParser.parse(new FileInputStream(file));
 
         // information about the file
-        System.out.println("Loading training data " + file.getPath()+ " is finished succesfully.");
+        System.out.println("Loading training data " + file.getPath() + " is finished succesfully.");
     }
 
 
-    // loading training and testing data
-    public void loadDataTrainTest(File file1, File file2) throws Exception {
+    // loading the model, if there are training and testing data
+    public void loadDataTrainTest(File file1, File file2, int index) throws Exception {
 
         // setResponseIndex is response variable; for classification, it is the class label; for regression, it is of real value
-        arffParser = new ArffParser().setResponseIndex(4);
+        arffParser = new ArffParser();
+        arffParser.setResponseIndex(index);
+
         // dataset of a number of attributes
         training = arffParser.parse(new FileInputStream(file1));
         testing = arffParser.parse(new FileInputStream(file2));
 
-        System.out.println("Loaded training data : " + file1.getPath());
-        System.out.println("Loaded testing data : " + file2.getPath());
+        System.out.println("Loading training data : " + file1.getPath() + " is finished succesfully.");
+        System.out.println("Loading testing data : " + file2.getPath() + " is finished succesfully.");
 
+    }
+
+    // training the model with Random Forest
+    public void trainModel() throws Exception {
+
+        // if there isn't any training data
+        if (attributeDataset == null) {
+            logger.debug("Training data doesn't exist");
+        }
+
+        // training the data
+        logger.info("Training the model.");
+
+        double[][] x = attributeDataset.toArray(new double[attributeDataset.size()][]);
+        int[] y = attributeDataset.toArray(new int[attributeDataset.size()]);
+
+        // maximum number of trees: 100
+        forest = new RandomForest(attributeDataset.attributes(), x, y, 100);
+
+        int[] yPredict = new int[y.length];
+
+        for (int i = 0; i < x.length; i++) {
+            yPredict[i] = forest.predict(x[i]);
+
+        }
+
+        System.out.println("Confusion matrix: " + new ConfusionMatrix(y, yPredict).toString());
+        System.out.println("Precission: " + new Precision().measure(y, yPredict));
+        System.out.println("Recall: " + new Recall().measure(y, yPredict));
+    }
+
+    // validation model using training and testing data
+    public void trainTestModel(File file, int split) throws Exception {
+
+        // if there isn't any training data
+        if (attributeDataset == null) {
+            logger.debug("Training data doesn't exist");
+        }
+
+        // training the data
+        logger.info("Training the model.");
+
+        // Fmeasure, precission, recall
+        FMeasure fmeasure = new FMeasure();
+        Precision precision = new Precision();
+        Recall recall = new Recall();
+
+        // for getting output stream of the file for writing the result
+        File fl = new File("result/Result_" + file.getName() + ".txt");
+
+        BufferedWriter result = new BufferedWriter(new FileWriter(fl));
+
+        double[][] trainx = training.toArray(new double[training.size()][]);
+        int[] trainy = training.toArray(new int[training.size()]);
+        double[][] testx = testing.toArray(new double[testing.size()][]);
+        int[] testy = testing.toArray(new int[testing.size()]);
+
+        // training with Random Forest classification
+        forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 100);
+
+        // prediction and calculating the classes classified
+        int[] yPredict = new int[testy.length];
+        int count_error = 0, count_classified = 0;
+        for (int i = 0; i < testx.length; i++) {
+            yPredict[i] = forest.predict(testx[i]);
+            if (testy[i] != yPredict[i])
+                count_error++;
+            else
+                count_classified++;
+        }
+
+        // classified instances
+        double total_instances = count_error + count_classified;
+
+        // header in text file
+        result.write("Classification with Random Forest of " + forest.size() + " trees");
+        result.newLine();
+        result.write("Test mode is " + split + "% train, remainder is test data.");
+        result.newLine();
+
+        // out of bag error, method of measuring the prediction error
+        System.out.format("Out of Bag (OOB) error rate : %.4f%n", forest.error());
+        result.write("Out of Bag (OOB) error rate : " + forest.error());
+        result.newLine();
+
+        // classfied instances
+        System.out.format("Correctly classified instances: %d (%.3f %%) \n", count_classified, count_classified / total_instances * 100.00);
+        System.out.format("Incorrectly classified instances: %d (%.3f %%) \n", count_error, count_error / total_instances * 100.00);
+        result.write("Correctly classified instances: " + count_classified + " (" + count_classified / total_instances * 100.00 + " %)");
+        result.newLine();
+        result.write("Incorrectly classified instances: " + count_error + " (" + count_error / total_instances * 100.00 + " %)");
+        result.newLine();
+
+
+        // searching the importance of variables
+        double[] importance = forest.importance();
+        int[] idx = QuickSort.sort(importance);
+        int importance_length = importance.length;
+        // i-- > 0 means comparing i > 0 and decrement i--
+        for (int i = importance_length; i-- > 0; ) {
+            System.out.format("%s importance is %.4f%n", attributeDataset.attributes()[idx[i]], importance[i]);
+            result.write(attributeDataset.attributes()[idx[i]] + " importance is : " + importance[i]);
+            result.newLine();
+        }
+
+        // getting the result of confusion matrix, precision and recall
+
+        Double result_fmeasure = Double.isNaN(fmeasure.measure(testy, yPredict)) ? 0.0 : fmeasure.measure(testy, yPredict),
+                result_precision = Double.isNaN(precision.measure(testy, yPredict)) ? 0.0 : precision.measure(testy, yPredict),
+                result_recall = Double.isNaN(recall.measure(testy, yPredict)) ? 0.0 : recall.measure(testy, yPredict);
+
+        System.out.println("Confusion matrix: " + new ConfusionMatrix(testy, yPredict).toString());
+        System.out.println("FMeasure: " + result_fmeasure);
+        System.out.println("Precision: " + result_precision);
+        System.out.println("Recall: " + result_recall);
+        result.write("Confusion matrix: " + new ConfusionMatrix(testy, yPredict).toString());
+        result.newLine();
+        result.write("FMeasure: " + result_fmeasure);
+        result.newLine();
+        result.write("Precision: " + result_precision);
+        result.newLine();
+        result.write("Recall: " + result_recall);
+
+        result.close();
     }
 
     // splitting the model into training and data set
     public void splitModel(File file, int split) throws Exception {
+
+        // if there isn't any training data
+        if (attributeDataset == null) {
+            logger.debug("Training data doesn't exist");
+        }
+
+        // training the data
+        logger.info("Training the model.");
+
         // Fmeasure, precission, recall
         FMeasure fmeasure = new FMeasure();
         Precision precision = new Precision();
@@ -138,20 +274,20 @@ public class smileUsage {
 
         // searching the importance of variables
         double[] importance = forest.importance();
-        index = QuickSort.sort(importance);
+        int[] idx = QuickSort.sort(importance);
         int importance_length = importance.length;
         // i-- > 0 means comparing i > 0 and decrement i--
         for (int i = importance_length; i-- > 0; ) {
-            System.out.format("%s importance is %.4f%n", attributeDataset.attributes()[index[i]], importance[i]);
-            result.write(attributeDataset.attributes()[index[i]] + " importance is : " + importance[i]);
+            System.out.format("%s importance is %.4f%n", attributeDataset.attributes()[idx[i]], importance[i]);
+            result.write(attributeDataset.attributes()[idx[i]] + " importance is : " + importance[i]);
             result.newLine();
         }
 
         // getting the result of confusion matrix, precision and recall
 
-        Double result_fmeasure = Double.isNaN(fmeasure.measure(testy,yPredict))  ? 0.0 : fmeasure.measure(testy,yPredict),
-                result_precision = Double.isNaN(precision.measure(testy,yPredict))  ? 0.0 : precision.measure(testy,yPredict),
-                result_recall = Double.isNaN(recall.measure(testy,yPredict))  ? 0.0 : recall.measure(testy,yPredict);
+        Double result_fmeasure = Double.isNaN(fmeasure.measure(testy, yPredict)) ? 0.0 : fmeasure.measure(testy, yPredict),
+                result_precision = Double.isNaN(precision.measure(testy, yPredict)) ? 0.0 : precision.measure(testy, yPredict),
+                result_recall = Double.isNaN(recall.measure(testy, yPredict)) ? 0.0 : recall.measure(testy, yPredict);
 
         System.out.println("Confusion matrix: " + new ConfusionMatrix(testy, yPredict).toString());
         System.out.println("FMeasure: " + result_fmeasure);
@@ -169,35 +305,6 @@ public class smileUsage {
 
     }
 
-
-    // training the model with Random Forest
-    public void trainModel() throws Exception {
-
-        // if there isn't any training data
-        if (attributeDataset == null) {
-            logger.debug("Training data doesn't exist");
-        }
-
-        // training the data
-        logger.info("Training the model.");
-
-        double[][] x = attributeDataset.toArray(new double[attributeDataset.size()][]);
-        int[] y = attributeDataset.toArray(new int[attributeDataset.size()]);
-
-        // maximum number of trees: 100
-        forest = new RandomForest(attributeDataset.attributes(), x, y, 100);
-
-        int[] yPredict = new int[y.length];
-
-        for (int i = 0; i < x.length; i++) {
-            yPredict[i] = forest.predict(x[i]);
-
-        }
-
-        System.out.println("Confusion matrix: " + new ConfusionMatrix(y, yPredict).toString());
-        System.out.println("Precission: " + new Precision().measure(y, yPredict));
-        System.out.println("Recall: " + new Recall().measure(y, yPredict));
-    }
 
     /* validation model using LOOCV (leave-one-out cross validation);
         if it has only a single dataset for building models
@@ -240,25 +347,4 @@ public class smileUsage {
         System.out.format("Incorrectly classified instances: %d (%.3f %%) \n", count_error, count_error / total_instances * 100.00);
         result.close();
     }
-
-    // validation model using training and testing data
-    public void validationModel() throws Exception {
-        double[][] trainx = training.toArray(new double[training.size()][]);
-        int[] trainy = training.toArray(new int[training.size()]);
-        double[][] testx = testing.toArray(new double[testing.size()][]);
-        int[] testy = testing.toArray(new int[testing.size()]);
-
-        forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 200);
-
-        int count_error = 0, count_classified = 0;
-        for (int i = 0; i < testx.length; i++) {
-            if (forest.predict(testx[i]) != testy[i]) {
-                count_error++;
-            }
-        }
-        double total_instances = count_error + count_classified;
-        System.out.format("Correctly classified instances: %d (%.3f %%) \n", count_classified, count_classified / total_instances * 100.00);
-        System.out.format("Incorrectly classified instances: %d (%.3f %%) \n", count_error, count_error / total_instances * 100.00);
-    }
-
 }
