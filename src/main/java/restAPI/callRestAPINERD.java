@@ -5,11 +5,11 @@ import java.io.*;
 import java.util.ArrayList;
 
 
-public class callRestAPI {
+public class callRestAPINERD {
 
     public void useCurl(String url, String query) throws Exception{
 
-        System.out.println("Accessing REST API Nerd");
+        System.out.println("** Accessing REST API Nerd **");
 
         // adding new elements of command in array list of string
         ArrayList<String> element = new ArrayList<String>();

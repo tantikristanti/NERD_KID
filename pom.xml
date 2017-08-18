@@ -8,7 +8,7 @@
     <artifactId>nerd-kid-project</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>InternProject</name>
+    <name>NerdKidProject</name>
     <description>Project of machine learning of Nerd (entity-fishing) and Wikidata</description>
 
 
@@ -35,9 +35,9 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.6.0</version>
-                <configuration>
+                <!--configuration>
                     <mainClass>smile.mainSmile</mainClass>
-                </configuration>
+                </configuration-->
             </plugin>
 
         </plugins>
@@ -45,8 +45,8 @@
     </build>
 
 
-    <!--smile library-->
     <dependencies>
+        <!--smile library-->
         <!-- https://mvnrepository.com/artifact/com.github.haifengl/smile-core -->
         <dependency>
             <groupId>com.github.haifengl</groupId>
@@ -54,6 +54,7 @@
             <version>1.3.1</version>
         </dependency>
 
+        <!-- for logging-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
@@ -64,6 +65,8 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+
+        <!--for testing-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -77,21 +80,18 @@
             <artifactId>lmdbjni</artifactId>
             <version>0.4.6</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.deephacks.lmdbjni/lmdbjni-linux64 -->
         <dependency>
             <groupId>org.deephacks.lmdbjni</groupId>
             <artifactId>lmdbjni-linux64</artifactId>
             <version>0.4.6</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.deephacks.lmdbjni/lmdbjni-osx64 -->
         <dependency>
             <groupId>org.deephacks.lmdbjni</groupId>
             <artifactId>lmdbjni-osx64</artifactId>
             <version>0.4.6</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.deephacks.lmdbjni/lmdbjni-win64 -->
         <dependency>
             <groupId>org.deephacks.lmdbjni</groupId>
@@ -99,12 +99,12 @@
             <version>0.4.6</version>
         </dependency>
 
-        <!--nerd-->
+        <!--nerd>
         <dependency>
             <groupId>com.scienceminer.nerd</groupId>
             <artifactId>nerd-service</artifactId>
             <version>0.0.2</version>
-        </dependency>
+        </dependency-->
 
         <!--for mapping JSON object-->
         <!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
@@ -112,6 +112,20 @@
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
             <version>1.9.13</version>
+        </dependency>
+
+        <!--Wikidata Toolkit-->
+        <!-- https://mvnrepository.com/artifact/org.wikidata.wdtk/wdtk-datamodel -->
+        <dependency>
+            <groupId>org.wikidata.wdtk</groupId>
+            <artifactId>wdtk-datamodel</artifactId>
+            <version>0.7.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.wikidata.wdtk/wdtk-wikibaseapi -->
+        <dependency>
+            <groupId>org.wikidata.wdtk</groupId>
+            <artifactId>wdtk-wikibaseapi</artifactId>
+            <version>0.7.0</version>
         </dependency>
 
 
