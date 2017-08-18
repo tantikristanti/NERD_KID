@@ -17,9 +17,8 @@ public class mainRestService {
         System.out.println("Accessing REST API of NERD, Example in /data/example/exampleCurl.txt");
         System.out.print("URL : ");
         url = scanner.nextLine();
-        System.out.println("Query : ");
+        System.out.print("Query : ");
         query = scanner.nextLine();
-        System.out.println(url +"  "+ query);
         call.useCurl(url, query);
     }
 }

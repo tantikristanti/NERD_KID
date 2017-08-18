@@ -44,12 +44,22 @@ public class callRestAPI {
             while ((readLine = processOutputReader.readLine()) != null)
             {
                 processOutput.append(readLine + System.lineSeparator());
-            }            process.waitFor();
+            }   process.waitFor();
         }
-        processOutput.toString().trim();
+        //processOutput.toString().trim();
 
         System.out.println(processOutput);
 
+        // writing the result into JSON file
+        // for getting output stream of the file for writing the result
+        File fl = new File("result/Result_CurlNERD.json");
+
+        BufferedWriter result = new BufferedWriter(new FileWriter(fl));
+
+        result.newLine();
+        result.write(processOutput.toString());
+
+        result.close();
     }
 
 }
