@@ -3,35 +3,40 @@ package restAPI;
 import org.wikidata.wdtk.datamodel.interfaces.*;
 import org.wikidata.wdtk.wikibaseapi.WikibaseDataFetcher;
 
-import java.util.Map;
+import java.util.List;
 
 public class callAPIWikidata {
+    public void accessAPI() throws Exception {
 
-    public static void main(String[] args) throws Exception{
-        //public void accessAPI() throws Exception {
+        System.out.println("** Access API of Wikidata **");
 
-
-        System.out.println("** Aceess API of Wikidata **");
+        // object of callRestAPI
+        callRestAPINERD callAPIINERD = new callRestAPINERD();
 
         // object of Wikidata's data fetcher
         WikibaseDataFetcher wikibaseDataFetcher = WikibaseDataFetcher.getWikidataDataFetcher();
 
-        // for fetching data for entities
-        EntityDocument entities = wikibaseDataFetcher.getEntityDocument("Q76");
+        List<String> entityNERD = callAPIINERD.readJSON();
 
-        ItemDocument itemDocument = (ItemDocument) entities;
+        System.out.println(entityNERD.size());
 
-        if (itemDocument == null){
-            System.out.println(((ItemDocument) entities).getItemId() + "couldn't be fetched");
-            return;
+        for (int i=0; i < entityNERD.size(); i++){
+            System.out.println(entityNERD.get(i));
+            // for fetching data for entities
+            EntityDocument entities = wikibaseDataFetcher.getEntityDocument(entityNERD.get(i));
+
+            ItemDocument itemDocument = (ItemDocument) entities;
+
+            if (itemDocument == null){
+                System.out.println(((ItemDocument) entities).getItemId() + "couldn't be fetched");
+                return;
+            }
+
+            for (StatementGroup statementGroup : itemDocument.getStatementGroups()){
+                System.out.printf(statementGroup.getProperty().getId()+"\t");
+            }
+
+            System.out.printf("\n");
         }
-
-        for (StatementGroup statementGroup : itemDocument.getStatementGroups()){
-            System.out.println(statementGroup.getProperty().getId());
-        }
-
-        /**for (StatementGroup statementGroup : entities.)){
-            System.out.println("");
-        }**/
     }
 }

@@ -1,12 +1,22 @@
 package restAPI;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import java.io.*;
 import java.util.ArrayList;
-
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class callRestAPINERD {
 
+
+    // using Curl for accessing API REST Nerd / entity-fishing
     public void useCurl(String url, String query) throws Exception{
 
         System.out.println("** Accessing REST API Nerd **");
@@ -46,9 +56,16 @@ public class callRestAPINERD {
                 processOutput.append(readLine + System.lineSeparator());
             }   process.waitFor();
         }
-        //processOutput.toString().trim();
 
         System.out.println(processOutput);
+
+        // formatting the result
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        JSONParser jsonParser = new JSONParser();
+
+        // formatting the result into human readable format
+        Object object = jsonParser.parse(processOutput.toString());
+        String prettyJsonString = gson.toJson(object);
 
         // writing the result into JSON file
         // for getting output stream of the file for writing the result
@@ -57,9 +74,34 @@ public class callRestAPINERD {
         BufferedWriter result = new BufferedWriter(new FileWriter(fl));
 
         result.newLine();
-        result.write(processOutput.toString());
-
+        result.write(prettyJsonString);
         result.close();
     }
 
+    // accessing JSON file containing NERD's result of annotation and ambiguation
+    public List<String> readJSON() throws Exception{
+
+        List<String> dataJSON = new ArrayList<String>();
+
+        JSONParser parser = new JSONParser();
+        Object object = parser.parse(new FileReader("result/Result_CurlNERD.json"));
+        JSONObject jsonObject = (JSONObject) object;
+
+        JSONArray entities = (JSONArray) jsonObject.get("entities");
+
+        // reading all data contained in "entities"
+        for (int i = 0; i<entities.size(); i++){
+            JSONObject jsonObjectRow = (JSONObject) entities.get(i);
+            if (jsonObjectRow.get("wikidataId") != null) {
+                dataJSON.add(jsonObjectRow.get("wikidataId").toString());
+            }
+        }
+        System.out.println("Wikidata ID from JSON File : " + dataJSON);
+
+        // getting unique data of Wikidata ID from the entities in NERD application
+        List<String> uniqueDataJSON = dataJSON.stream().distinct().collect(Collectors.toList());
+        System.out.println("Unique Wikidata ID from JSON File : " + uniqueDataJSON);
+
+        return uniqueDataJSON;
+    }
 }
