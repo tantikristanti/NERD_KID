@@ -1,5 +1,6 @@
 package smile;
 
+import com.sun.org.apache.bcel.internal.generic.FMUL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,8 +11,11 @@ import smile.math.Math;
 import smile.sort.QuickSort;
 import smile.validation.*;
 
+import java.awt.*;
 import java.io.*;
 import java.lang.*;
+import java.util.*;
+import java.util.List;
 
 
 /* this class contains the use of Smile Java API for predictive modeling */
@@ -35,8 +39,7 @@ public class smileUsage {
     public void loadData(File file, int index) throws Exception {
 
         // setResponseIndex is response variable; for classification, it is the class label; for regression, it is of real value
-        arffParser = new ArffParser();
-        arffParser.setResponseIndex(index);
+        arffParser = new ArffParser().setResponseIndex(index);
 
         // dataset of a number of attributes
         attributeDataset = arffParser.parse(new FileInputStream(file));
@@ -197,10 +200,6 @@ public class smileUsage {
         // training the data
         logger.info("Training the model.");
 
-        // Fmeasure, precission, recall
-        FMeasure fmeasure = new FMeasure();
-        Precision precision = new Precision();
-        Recall recall = new Recall();
 
         // for getting output stream of the file for writing the result
         File fl = new File("result/Result_" + file.getName() + ".txt");
@@ -210,6 +209,14 @@ public class smileUsage {
         // datax is for the examples, datay is for the class
         double[][] datax = attributeDataset.toArray(new double[attributeDataset.size()][]);
         int[] datay = attributeDataset.toArray(new int[attributeDataset.size()]);
+
+        // finding the biggest index in datay
+        int max = datay[0];
+        for (int i = 1; i < datay.length; i++) {
+            if (datay[i] > max) {
+                max = datay[i];
+            }
+        }
 
         // size of examples
         int n = datax.length;
@@ -240,12 +247,15 @@ public class smileUsage {
         // prediction and calculating the classes classified
         int[] yPredict = new int[testy.length];
         int count_error = 0, count_classified = 0;
+        double[] fmeasurePerson = null;
 
+
+        // counting class classified or not
         for (int i = 0; i < testx.length; i++) {
             yPredict[i] = forest.predict(testx[i]);
-            if (testy[i] != yPredict[i])
+            if (testy[i] != yPredict[i]) {
                 count_error++;
-            else
+            } else
                 count_classified++;
         }
 
@@ -253,55 +263,135 @@ public class smileUsage {
         double total_instances = count_error + count_classified;
 
         // header in text file
-        result.write("Classification with Random Forest of " + forest.size() + " trees");
-        result.newLine();
-        result.write("Test mode is " + split + "% train, remainder is test data.");
-        result.newLine();
+        /**result.write("Classification with Random Forest of " + forest.size() + " trees");
+         result.newLine();
+         result.write("Test mode is " + split + "% train, remainder is test data.");
+         result.newLine();**/
+
+        // classfied instances
+        System.out.println("** Result of machine learning with Random Forest**");
+        System.out.println("\n");
+        System.out.format("Correctly classified instances: %d (%.3f %%) \n", count_classified, count_classified / total_instances * 100.00);
+        System.out.format("Incorrectly classified instances: %d (%.3f %%) \n", count_error, count_error / total_instances * 100.00);
+        /**result.write("Correctly classified instances: " + count_classified + " (" + count_classified / total_instances * 100.00 + " %)");
+         result.newLine();
+         result.write("Incorrectly classified instances: " + count_error + " (" + count_error / total_instances * 100.00 + " %)");
+         result.newLine();**/
 
         // out of bag error, method of measuring the prediction error
         System.out.format("Out of Bag (OOB) error rate : %.4f%n", forest.error());
-        result.write("Out of Bag (OOB) error rate : " + forest.error());
-        result.newLine();
+        /**result.write("Out of Bag (OOB) error rate : " + forest.error());
+         result.newLine();**/
 
-        // classfied instances
-        System.out.format("Correctly classified instances: %d (%.3f %%) \n", count_classified, count_classified / total_instances * 100.00);
-        System.out.format("Incorrectly classified instances: %d (%.3f %%) \n", count_error, count_error / total_instances * 100.00);
-        result.write("Correctly classified instances: " + count_classified + " (" + count_classified / total_instances * 100.00 + " %)");
-        result.newLine();
-        result.write("Incorrectly classified instances: " + count_error + " (" + count_error / total_instances * 100.00 + " %)");
-        result.newLine();
+        // getting the result of confusion matrix, precision and recall
 
+        // Fmeasure, precission, recall
+        FMeasure fmeasure = new FMeasure();
+        Precision precision = new Precision();
+        Recall recall = new Recall();
+        Accuracy accuracy = new Accuracy();
 
+        Double result_fmeasure = Double.isNaN(fmeasure.measure(testy, yPredict)) ? 0.0 : fmeasure.measure(testy, yPredict),
+                result_precision = Double.isNaN(precision.measure(testy, yPredict)) ? 0.0 : precision.measure(testy, yPredict),
+                result_recall = Double.isNaN(recall.measure(testy, yPredict)) ? 0.0 : recall.measure(testy, yPredict),
+                result_accuracy = Double.isNaN(accuracy.measure(testy, yPredict)) ? 0.0 : accuracy.measure(testy, yPredict);
+
+        //System.out.println("Confusion matrix: " + new ConfusionMatrix(testy, yPredict).toString());
+        System.out.println("** Validation for all classes **");
+        System.out.println("\nFMeasure: " + result_fmeasure);
+        System.out.println("Precision: " + result_precision);
+        System.out.println("Recall: " + result_recall);
+        System.out.println("Accuracy: " + result_accuracy+"\n\n");
+
+        /**result.write("Confusion matrix: " + new ConfusionMatrix(testy, yPredict).toString());
+         result.newLine();
+         result.write("FMeasure: " + result_fmeasure);
+         result.newLine();
+         result.write("Precision: " + result_precision);
+         result.newLine();
+         result.write("Recall: " + result_recall);
+         **/
+
+        // for grouping the data
+        HashMap<Integer, List<Integer>> testYPerClass = new HashMap<Integer, List<Integer>>();
+
+        // grouping data by its classes
+        for (int j = 0; j < testy.length; j++) {
+            List<Integer> listData = new ArrayList<Integer>();
+
+            int dataSearch = testy[j];
+            // putting the data into HashMap
+            if (!testYPerClass.containsKey(dataSearch)) {
+                for (int k = 0; k < testy.length; k++) {
+                    if (testy[k] == dataSearch)
+                        listData.add(yPredict[k]);
+                }
+                testYPerClass.put(dataSearch, listData);
+            }
+        }
+
+        // accessing HashMap
+        List<Double> FMeasureClass = new ArrayList<Double>();
+        List<Double> PrecisionClass = new ArrayList<Double>();
+        List<Double> RecallClass = new ArrayList<Double>();
+
+        for (int i = 0; i <= max; i++){
+            int size = 0;
+            if (testYPerClass.get(i) == null){
+                size = 0;
+                FMeasureClass.add(0.0);
+                PrecisionClass.add(0.0);
+                RecallClass.add(0.0);
+            }else{
+                size = testYPerClass.get(i).size();
+                int[] testYClass = new int[size];
+                for(int j = 0; j< size;j++){
+                    testYClass[j] = i;
+                }
+
+                // converting List into Array
+                int[] testYPredictClass = testYPerClass.get(i).stream().mapToInt(Integer::intValue).toArray();
+
+                // filling the List with the result of validation
+                FMeasureClass.add(Double.isNaN(fmeasure.measure(testYClass, testYPredictClass)) ? 0.0 : fmeasure.measure(testYClass, testYPredictClass));
+                PrecisionClass.add(Double.isNaN(precision.measure(testYClass, testYPredictClass)) ? 0.0 : precision.measure(testYClass, testYPredictClass));
+                RecallClass.add(Double.isNaN(recall.measure(testYClass, testYPredictClass)) ? 0.0 : recall.measure(testYClass, testYPredictClass));
+            }
+        }
+        // display result of validation per class
+        System.out.println("** Validation for each class **");
+        System.out.printf("\nClass: \t\t");
+        for (int i = 0; i<=max;i++){
+            System.out.printf("\t\t"+i);
+        }
+        System.out.printf("\nFMeasure\t");
+        for (int i = 0; i<=max;i++){
+            System.out.printf("\t\t"+FMeasureClass.get(i).toString());
+        }
+        System.out.printf("\nPrecision\t");
+        for (int i = 0; i<=max;i++){
+            System.out.printf("\t\t"+PrecisionClass.get(i).toString());
+        }
+        System.out.printf("\nRecall  \t");
+        for (int i = 0; i<=max;i++){
+            System.out.printf("\t\t"+RecallClass.get(i).toString());
+        }
+        System.out.println("\n");
         // searching the importance of variables
         double[] importance = forest.importance();
         int[] idx = QuickSort.sort(importance);
         int importance_length = importance.length;
+        System.out.println("** The importance for each property **");
         // i-- > 0 means comparing i > 0 and decrement i--
         for (int i = importance_length; i-- > 0; ) {
             System.out.format("%s importance is %.4f%n", attributeDataset.attributes()[idx[i]], importance[i]);
-            result.write(attributeDataset.attributes()[idx[i]] + " importance is : " + importance[i]);
-            result.newLine();
+            /**result.write(attributeDataset.attributes()[idx[i]] + " importance is : " + importance[i]);
+             result.newLine();**/
         }
 
-        // getting the result of confusion matrix, precision and recall
 
-        Double result_fmeasure = Double.isNaN(fmeasure.measure(testy, yPredict)) ? 0.0 : fmeasure.measure(testy, yPredict),
-                result_precision = Double.isNaN(precision.measure(testy, yPredict)) ? 0.0 : precision.measure(testy, yPredict),
-                result_recall = Double.isNaN(recall.measure(testy, yPredict)) ? 0.0 : recall.measure(testy, yPredict);
+         //result.close();
 
-        System.out.println("Confusion matrix: " + new ConfusionMatrix(testy, yPredict).toString());
-        System.out.println("FMeasure: " + result_fmeasure);
-        System.out.println("Precision: " + result_precision);
-        System.out.println("Recall: " + result_recall);
-        result.write("Confusion matrix: " + new ConfusionMatrix(testy, yPredict).toString());
-        result.newLine();
-        result.write("FMeasure: " + result_fmeasure);
-        result.newLine();
-        result.write("Precision: " + result_precision);
-        result.newLine();
-        result.write("Recall: " + result_recall);
-
-        result.close();
 
     }
 

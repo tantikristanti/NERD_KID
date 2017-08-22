@@ -3,6 +3,8 @@ package smile;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class mainSmile {
@@ -15,7 +17,7 @@ public class mainSmile {
         smileUsage sm = new smileUsage();
 
         // loading the training data
-        System.out.print("Name of training data file (/[path]/[fileName].arff) : ");
+        System.out.print("Name of training data file ([path]/[fileName].arff) : ");
         br = new BufferedReader(new InputStreamReader(System.in));
         file_name_train = new File(br.readLine());
 
@@ -25,7 +27,7 @@ public class mainSmile {
         response = in.nextInt();
 
 
-        System.out.println("Do you have testing data file (y/n)? ");
+        System.out.print("Do you have testing data file (y/n)? ");
         while (true) {
 
             String respond = in.nextLine().trim().toLowerCase();
@@ -59,5 +61,6 @@ public class mainSmile {
             }
 
         }
+
     }
 }

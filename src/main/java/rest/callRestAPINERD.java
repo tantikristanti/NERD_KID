@@ -1,4 +1,4 @@
-package restAPI;
+package rest;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -8,9 +8,7 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 public class callRestAPINERD {
@@ -19,7 +17,7 @@ public class callRestAPINERD {
     // using Curl for accessing API REST Nerd / entity-fishing
     public void useCurl(String url, String query) throws Exception{
 
-        System.out.println("** Accessing REST API Nerd **");
+        System.out.println("** Accessing REST API Nerd, Example in /data/example/exampleCurlNERD.txt **");
 
         // adding new elements of command in array list of string
         ArrayList<String> element = new ArrayList<String>();

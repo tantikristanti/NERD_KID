@@ -1,4 +1,4 @@
-package restAPI;
+package rest;
 
 import org.wikidata.wdtk.datamodel.interfaces.*;
 import org.wikidata.wdtk.wikibaseapi.WikibaseDataFetcher;
