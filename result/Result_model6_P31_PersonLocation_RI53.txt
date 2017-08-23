@@ -1,0 +1,69 @@
+** Classification with Random Forest of 100 trees **
+Test mode is 80% train, remainder is test data.
+
+Correctly classified instances: 	78 (91.765 %)
+Incorrectly classified instances: 	7 (8.235 %)
+Out of Bag (OOB) error rate : 		0.086
+** Validation for all classes **
+FMeasure: 	0.873
+Precision: 	1.000
+Recall: 	0.774
+Accuracy: 	0.918
+** Validation for each class **
+Class:			0		1
+FMeasure: 		0.00	0.87
+Precision: 		0.00	1.00
+Recall: 		0.00	0.77
+NOMINAL[P31_Q5] importance is : 19.45005204370562
+NOMINAL[P31_Q4167410] importance is : 3.0908949902462672
+NOMINAL[P31_Q101352] importance is : 2.88290284697354
+NOMINAL[P31_Q160016] importance is : 1.1235903171804975
+NOMINAL[P31_Q3624078] importance is : 0.969295998055302
+NOMINAL[P31_Q515] importance is : 0.9148742026799015
+NOMINAL[P31_Q6256] importance is : 0.9059701455721334
+NOMINAL[P31_Q253019] importance is : 0.6626269391500395
+NOMINAL[P31_Q1549591] importance is : 0.4953756394764094
+NOMINAL[P31_Q5119] importance is : 0.3580716926569145
+NOMINAL[P31_Q185441] importance is : 0.3299541200477705
+NOMINAL[P31_Q3024240] importance is : 0.2879834055738666
+NOMINAL[P31_Q1637706] importance is : 0.2526358490508859
+NOMINAL[P31_Q6505795] importance is : 0.18616135213278745
+NOMINAL[P31_Q15060255] importance is : 0.15338844161659118
+NOMINAL[P31_Q179164] importance is : 0.07331921144081556
+NOMINAL[P31_Q6688521] importance is : 0.05321061531593907
+NOMINAL[P31_Q2264924] importance is : 0.051193350019989925
+NOMINAL[P31_Q152018] importance is : 0.03714970708343771
+NOMINAL[P31_Q262166] importance is : 0.033453726041451706
+NOMINAL[P31_Q2583015] importance is : 0.013870601096831858
+NOMINAL[P31_Q202435] importance is : 0.01363270480046197
+NOMINAL[P31_Q5003624] importance is : 0.012570681227544178
+NOMINAL[P31_Q82794] importance is : 0.01058863869310922
+NOMINAL[P31_Q925381] importance is : 0.005095701489458815
+NOMINAL[P31_Q1221156] importance is : 4.6911776641503367E-4
+NOMINAL[P31_Q11424] importance is : 0.0
+NOMINAL[P31_Q23718] importance is : 0.0
+NOMINAL[P31_Q31855] importance is : 0.0
+NOMINAL[P31_Q14795564] importance is : 0.0
+NOMINAL[P31_Q205892] importance is : 0.0
+NOMINAL[P31_Q34770] importance is : 0.0
+NOMINAL[P31_Q41710] importance is : 0.0
+NOMINAL[P31_Q4677783] importance is : 0.0
+NOMINAL[P31_Q7275] importance is : 0.0
+NOMINAL[P31_Q748720] importance is : 0.0
+NOMINAL[P31_Q21199] importance is : 0.0
+NOMINAL[P31_Q7278] importance is : 0.0
+NOMINAL[P31_Q131569] importance is : 0.0
+NOMINAL[P31_Q43229] importance is : 0.0
+NOMINAL[P31_Q126] importance is : 0.0
+NOMINAL[P31_Q200250] importance is : 0.0
+NOMINAL[P31_Q7270] importance is : 0.0
+NOMINAL[P31_Q3336843] importance is : 0.0
+NOMINAL[P31_Q49008] importance is : 0.0
+NOMINAL[P31_Q152081] importance is : 0.0
+NOMINAL[P31_Q4663903] importance is : 0.0
+NOMINAL[P31_Q328468] importance is : 0.0
+NOMINAL[P31_Q123480] importance is : 0.0
+NOMINAL[P31_Q4830453] importance is : 0.0
+NOMINAL[P31_Q125] importance is : 0.0
+NOMINAL[P31_Q37726] importance is : 0.0
+NOMINAL[P31_Q112099] importance is : 0.0
