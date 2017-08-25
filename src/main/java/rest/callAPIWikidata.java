@@ -6,7 +6,7 @@ import org.wikidata.wdtk.wikibaseapi.WikibaseDataFetcher;
 import java.util.List;
 
 public class callAPIWikidata {
-    public void accessAPI() throws Exception {
+    public void getPropertyFromId() throws Exception {
 
         System.out.println("** Access API of Wikidata **");
 
@@ -39,4 +39,9 @@ public class callAPIWikidata {
             System.out.printf("\n");
         }
     }
+
+    public void getValueFromProperty() throws Exception{
+
+    }
+
 }

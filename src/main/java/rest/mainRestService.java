@@ -12,6 +12,7 @@ public class mainRestService {
 
         // object of callRestAPI
         callRestAPINERD callAPIINERD = new callRestAPINERD();
+        callAPIWikidata callWiki = new callAPIWikidata();
 
         Scanner scanner = new Scanner(System.in);
 
@@ -19,8 +20,9 @@ public class mainRestService {
         url = scanner.nextLine();
         System.out.print("Query : ");
         query = scanner.nextLine();
-        callAPIINERD.useCurl(url, query);
-        callAPIINERD.readJSON();**/
+        callAPIINERD.useCurl(url, query);**/
+        callAPIINERD.readJSON();
+        callWiki.getPropertyFromId();
 
 
     }
