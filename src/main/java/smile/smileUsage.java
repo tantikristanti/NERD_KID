@@ -14,6 +14,7 @@ import java.io.*;
 import java.lang.*;
 import java.util.*;
 import java.util.List;
+import java.util.stream.Stream;
 
 
 /* this class contains the use of Smile Java API for predictive modeling */
@@ -118,7 +119,8 @@ public class smileUsage {
 
         // classfied instances
         System.out.println("** Classification with Random Forest of " + forest.size() + " trees **");
-        System.out.println("\n");
+        System.out.print("\n");
+        System.out.println("Number of instance:  \t" + total_instances);
         System.out.format("Correctly classified instances: \t %d (%.3f %%) %n", count_classified, count_classified / total_instances * 100.00);
         System.out.format("Incorrectly classified instances: \t %d (%.3f %%) %n", count_error, count_error / total_instances * 100.00);
         System.out.format("Out of Bag (OOB) error rate : \t\t %.3f%n", forest.error());
@@ -135,7 +137,7 @@ public class smileUsage {
                 result_accuracy = Double.isNaN(accuracy.measure(testy, yPredict)) ? 0.0 : accuracy.measure(testy, yPredict);
 
         //System.out.println("Confusion matrix: " + new ConfusionMatrix(testy, yPredict).toString());
-        System.out.println("** Validation for all classes **");
+        System.out.println("\n** Validation for all classes **");
         System.out.format("\nFMeasure: \t%.3f%n", result_fmeasure);
         System.out.format("Precision: \t%.3f%n", result_precision);
         System.out.format("Recall: \t%.3f%n", result_recall);
@@ -143,13 +145,15 @@ public class smileUsage {
 
         // writing the result into file text
         result.newLine();
+        result.write("Number of instance:  \t" + total_instances);
+        result.newLine();
         result.write("Correctly classified instances: \t" + String.format("%d", count_classified) + " (" + String.format("%.3f %%", count_classified / total_instances * 100.00) + ")");
         result.newLine();
         result.write("Incorrectly classified instances: \t" + String.format("%d", count_error) + " (" + String.format("%.3f %%", count_error / total_instances * 100.00) + ")");
         result.newLine();
         result.write("Out of Bag (OOB) error rate : \t\t" + String.format("%.3f", forest.error()));
         result.newLine();
-        result.write("** Validation for all classes **");
+        result.write("\n** Validation for all classes **");
         result.newLine();
         result.write("FMeasure: \t" + String.format("%.3f", result_fmeasure));
         result.newLine();
@@ -346,12 +350,15 @@ public class smileUsage {
 
         // classfied instances
         System.out.println("** Classification with Random Forest of " + forest.size() + " trees **");
-        System.out.println("\n");
+        System.out.print("\n");
+        System.out.format("Number of instance: \t\t\t\t %.0f \n", total_instances);
         System.out.format("Correctly classified instances: \t %d (%.3f %%) %n", count_classified, count_classified / total_instances * 100.00);
         System.out.format("Incorrectly classified instances: \t %d (%.3f %%) %n", count_error, count_error / total_instances * 100.00);
         System.out.format("Out of Bag (OOB) error rate : \t\t %.3f%n", forest.error());
 
         // writing the result into file text
+        result.newLine();
+        result.write("Number of instance: \t\t\t\t" + String.format("%.0f", total_instances));
         result.newLine();
         result.write("Correctly classified instances: \t" + String.format("%d", count_classified) + " (" + String.format("%.3f %%", count_classified / total_instances * 100.00) + ")");
         result.newLine();
@@ -364,7 +371,23 @@ public class smileUsage {
         int[][] confusMatrix = confusionMatrix(testy, yPredict, max);
         System.out.println("** Confusion Matrix **");
         result.write("** Confusion Matrix **\n");
+
+        System.out.println("Row: Actual; Column: Predicted");
+        result.write("Row: Actual; Column: Predicted \n");
+
+        System.out.print("Class \t");
+        result.write("Class \t");
+        for (int i=0; i<=max;i++){
+            System.out.print(i+"\t");
+            result.write(i+"\t");
+        }
+
+        System.out.print("\n");
+        result.newLine();
+
         for (int i = 0; i <= max; i++) {
+            System.out.print("\t" +i + "|\t");
+            result.write("\t" +i + "|\t");
             for (int j = 0; j <= max; j++) {
                 System.out.print(confusMatrix[i][j]+"\t");
                 result.write(confusMatrix[i][j] + "\t");
@@ -372,6 +395,9 @@ public class smileUsage {
             System.out.print("\n");
             result.newLine();
         }
+
+        // calling the method for TP, FN, TN, FP
+        calculationTrueFalsePositiveNegatif(confusMatrix, max);
 
         // Fmeasure, precission, recall for all classes
         FMeasure fmeasure = new FMeasure();
@@ -385,13 +411,13 @@ public class smileUsage {
                 result_accuracy = Double.isNaN(accuracy.measure(testy, yPredict)) ? 0.0 : accuracy.measure(testy, yPredict);
 
         //System.out.println("Confusion matrix: " + new ConfusionMatrix(testy, yPredict).toString());
-        System.out.println("** Validation for all classes **");
+        System.out.println("\n** Validation for all classes **");
         System.out.format("\nFMeasure: \t%.3f%n", result_fmeasure);
         System.out.format("Precision: \t%.3f%n", result_precision);
         System.out.format("Recall: \t%.3f%n", result_recall);
         System.out.format("Accuracy: \t%.3f %n%n", result_accuracy);
 
-        result.write("** Validation for all classes **");
+        result.write("\n** Validation for all classes **");
         result.newLine();
         result.write("FMeasure: \t" + String.format("%.3f", result_fmeasure));
         result.newLine();
@@ -406,7 +432,9 @@ public class smileUsage {
         // for grouping the data
         HashMap<Integer, List<Integer>> testYPerClass = new HashMap<Integer, List<Integer>>();
 
-        // grouping data by its classes
+        // new added
+        HashMap<Integer, List<Integer>> testYPredictPerClass = new HashMap<Integer, List<Integer>>();
+
         for (int j = 0; j < testy.length; j++) {
             List<Integer> listData = new ArrayList<Integer>();
 
@@ -421,8 +449,41 @@ public class smileUsage {
             }
         }
 
+        for (int j = 0; j < testYPerClass.size(); j++) {
+            //System.out.print(testYPerClass.get(j));
+        }
+
+        for (int j = 0; j < yPredict.length; j++) {
+            List<Integer> listData = new ArrayList<Integer>();
+
+            int dataSearch = yPredict[j];
+            // putting the data into HashMap
+            if (!testYPredictPerClass.containsKey(dataSearch)) {
+                for (int k = 0; k < yPredict.length; k++) {
+                    if (yPredict[k] == dataSearch)
+                        listData.add(testy[k]);
+                }
+                testYPredictPerClass.put(dataSearch, listData);
+            }
+        }
+
+        // grouping data by its classes
+        /**for (int j = 0; j < testy.length; j++) {
+            List<Integer> listData = new ArrayList<Integer>();
+
+            int dataSearch = testy[j];
+            // putting the data into HashMap
+            if (!testYPerClass.containsKey(dataSearch)) {
+                for (int k = 0; k < testy.length; k++) {
+                    if (testy[k] == dataSearch)
+                        listData.add(yPredict[k]);
+                }
+                testYPerClass.put(dataSearch, listData);
+            }
+        }**/
+
         // accessing HashMap
-        List<Double> FMeasureClass = new ArrayList<Double>();
+        /**List<Double> FMeasureClass = new ArrayList<Double>();
         List<Double> PrecisionClass = new ArrayList<Double>();
         List<Double> RecallClass = new ArrayList<Double>();
 
@@ -434,11 +495,24 @@ public class smileUsage {
                 PrecisionClass.add(0.0);
                 RecallClass.add(0.0);
             } else {
-                size = testYPerClass.get(i).size();
+                size = testYPerClass.get(i).size() + testYPredictPerClass.get(i).size();
                 int[] testYClass = new int[size];
                 for (int j = 0; j < size; j++) {
                     testYClass[j] = i;
                 }
+
+                int[] testYPredictPerClassNew = testYPredictPerClass.get(i).stream().mapToInt(Integer::intValue).toArray();
+                System.out.println("testYClass");
+                for (int j =0; j< testYClass.length; j++){
+                    System.out.print(testYClass[j] + "\t");
+                }
+                System.out.println("testYPredictPerClassNew");
+                for (int j =0; j< testYPredictPerClassNew.length; j++){
+                    System.out.print(testYPredictPerClassNew[j] + "\t");
+                }
+
+                //Integer[] both = Stream.concat(Arrays.stream(testYClass), Arrays.stream(testYPredictPerClassNew))
+                //        .toArray(Integer[]::new);
 
                 // converting List into Array
                 int[] testYPredictClass = testYPerClass.get(i).stream().mapToInt(Integer::intValue).toArray();
@@ -462,15 +536,15 @@ public class smileUsage {
                     }
                 }
 
-                System.out.println("\nF Measure :" + fmeasure.measure(testYClass, testYPredictClass));
-                System.out.println("Precision :" + precision.measure(testYClass, testYPredictClass));
-                System.out.println("Recall :" + recall.measure(testYClass, testYPredictClass));
+//                System.out.println("\nF Measure :" + fmeasure.measure(testYClass, testYPredictClass));
+//                System.out.println("Precision :" + precision.measure(testYClass, testYPredictClass));
+//                System.out.println("Recall :" + recall.measure(testYClass, testYPredictClass));
                 // end of testing
 
                 // filling the List with the result of validation
-                FMeasureClass.add(Double.isNaN(fmeasure.measure(testYClass, testYPredictClass)) ? 0.0 : fmeasure.measure(testYClass, testYPredictClass));
-                PrecisionClass.add(Double.isNaN(precision.measure(testYClass, testYPredictClass)) ? 0.0 : precision.measure(testYClass, testYPredictClass));
-                RecallClass.add(Double.isNaN(recall.measure(testYClass, testYPredictClass)) ? 0.0 : recall.measure(testYClass, testYPredictClass));
+//                FMeasureClass.add(Double.isNaN(fmeasure.measure(testYClass, testYPredictClass)) ? 0.0 : fmeasure.measure(testYClass, testYPredictClass));
+//                PrecisionClass.add(Double.isNaN(precision.measure(testYClass, testYPredictClass)) ? 0.0 : precision.measure(testYClass, testYPredictClass));
+//                RecallClass.add(Double.isNaN(recall.measure(testYClass, testYPredictClass)) ? 0.0 : recall.measure(testYClass, testYPredictClass));
             }
         }
 
@@ -525,7 +599,7 @@ public class smileUsage {
             result.newLine();
         }
 
-        result.close();
+        result.close();**/
     }
 
 
@@ -581,6 +655,74 @@ public class smileUsage {
         }
 
         return matrix;
+    }
+
+    public void calculationTrueFalsePositiveNegatif(int[][] matrix, int Idx){
+        int[] TP = new int[Idx+1];
+        int[] TNMinus = new int[Idx+1];
+        int[] TN = new int[Idx+1];
+        int[] FP = new int[Idx+1];
+        int[] FN = new int[Idx+1];
+        int[] totalEachClass = new int[Idx+1];
+        int[] totalEachColumn = new int[Idx+1];
+
+        // calculating TP, TN, FP, FN, total for each class
+        int totalAll = 0;
+        for (int i = 0; i <= Idx; i++) {
+            totalEachClass[i] = 0;
+            totalEachColumn[i] = 0;
+            FN[i] = 0;
+            FP[i] = 0;
+            TNMinus[i] = 0;
+            for (int j = 0; j <= Idx; j++) {
+                if (i==j) {
+                    TP[i] += matrix[i][j];
+                }
+                totalEachClass[i] += matrix[i][j];
+                totalEachColumn[i] += matrix[j][i];
+                totalAll += matrix[i][j];
+            }
+            FN[i] = totalEachClass[i] - TP[i];
+            FP[i] = totalEachColumn[i] - TP[i];
+            TNMinus[i] = (totalEachClass[i] + totalEachColumn[i] - TP[i]);
+        }
+
+        for (int i=0; i<=Idx; i++){
+            TN[i] = totalAll - TNMinus[i];
+        }
+
+        System.out.println("Total all data " + totalAll);
+        System.out.println("\nTotal each class");
+        for (int j=0;j<totalEachClass.length;j++){
+            System.out.print(totalEachClass[j] + "\t");
+        }
+
+        System.out.println("\nTotal each column");
+        for (int j=0;j<totalEachColumn.length;j++){
+            System.out.print(totalEachColumn[j] + "\t");
+        }
+
+        System.out.println("\nTrue positives");
+        for (int j=0;j<TP.length;j++){
+            System.out.print(TP[j] + "\t");
+        }
+
+        System.out.println("\nFalse negatives");
+        for (int j=0;j<FN.length;j++){
+            System.out.print(FN[j] + "\t");
+        }
+
+        System.out.println("\nFalse positives");
+        for (int j=0;j<FP.length;j++){
+            System.out.print(FP[j] + "\t");
+        }
+
+        System.out.println("\nTrue negatives");
+        for (int j=0;j<TN.length;j++){
+            System.out.print(TN[j] + "\t");
+        }
+
+
     }
 
     public void Fmeasure(){
