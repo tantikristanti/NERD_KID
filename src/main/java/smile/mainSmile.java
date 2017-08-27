@@ -3,8 +3,6 @@ package smile;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class mainSmile {
@@ -12,7 +10,7 @@ public class mainSmile {
 
         BufferedReader br = null;
         File file_name_train = null, file_name_test = null, file_name_result = null;
-        int split = 0, response = 0;
+        int split = 0;
 
         smileUsage sm = new smileUsage();
 
@@ -21,11 +19,8 @@ public class mainSmile {
         br = new BufferedReader(new InputStreamReader(System.in));
         file_name_train = new File(br.readLine());
 
-        // accepting the value of response index
-        System.out.print("\nResponse index (number of features) : ");
+        // accepting input
         Scanner in = new Scanner(System.in);
-        response = in.nextInt();
-
 
         System.out.print("Do you have testing data file (y/n)? ");
         while (true) {
@@ -33,7 +28,7 @@ public class mainSmile {
             String respond = in.nextLine().trim().toLowerCase();
             if (respond.equals("n")) {
                 // loading the train model
-                sm.loadData(file_name_train, response);
+                sm.loadData(file_name_train);
 
                 // splitting the model into training and testing data
                 System.out.print("Percentage of training data (in %), rest for testing : ");
@@ -51,7 +46,7 @@ public class mainSmile {
                 file_name_test = new File(br.readLine());
 
                 // loading the train and test model
-                sm.loadDataTrainTest(file_name_train, file_name_test, response);
+                sm.loadDataTrainTest(file_name_train, file_name_test);
 
                 System.out.print("Name of the result file (automatically in /result/Result_[fileName].txt): ");
                 br = new BufferedReader(new InputStreamReader(System.in));

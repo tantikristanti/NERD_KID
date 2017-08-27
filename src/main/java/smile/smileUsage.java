@@ -16,7 +16,7 @@ import java.lang.*;
 public class smileUsage {
 
     // --------------- attributes ---------------
-    private ArffParser arffParser = null;
+    private ArffParser arffParser = new ArffParser();
     private AttributeDataset attributeDataset = null;
     private AttributeDataset training = null;
     private AttributeDataset testing = null;
@@ -33,12 +33,17 @@ public class smileUsage {
     // --------------- methods ---------------
 
     // loading the model, if there is only the training data
-    public void loadData(File file, int index) throws Exception {
+    public void loadData(File file) throws Exception {
+        // parsing the inital file to get the response index
+        attributeDataset = arffParser.parse(new FileInputStream(file));
+
+        // getting the response index
+        int responseIndex = attributeDataset.attributes().length - 1;
 
         // setResponseIndex is response variable; for classification, it is the class label; for regression, it is of real value
-        arffParser = new ArffParser().setResponseIndex(index);
+        arffParser = new ArffParser().setResponseIndex(responseIndex);
 
-        // dataset of a number of attributes
+        // parsing the file to get the dataset
         attributeDataset = arffParser.parse(new FileInputStream(file));
 
         // information about the file
@@ -46,19 +51,22 @@ public class smileUsage {
     }
 
     // loading the model, if there are training and testing data
-    public void loadDataTrainTest(File file1, File file2, int index) throws Exception {
+    public void loadDataTrainTest(File file1, File file2) throws Exception {
+        // parsing the inital file to get the response index
+        attributeDataset = arffParser.parse(new FileInputStream(file1));
+
+        // getting the response index
+        int responseIndex = attributeDataset.attributes().length - 1;
 
         // setResponseIndex is response variable; for classification, it is the class label; for regression, it is of real value
-        arffParser = new ArffParser();
-        arffParser.setResponseIndex(index);
+        arffParser = new ArffParser().setResponseIndex(responseIndex);
 
-        // dataset of a number of attributes
+        // parsing the file to get the dataset
         training = arffParser.parse(new FileInputStream(file1));
         testing = arffParser.parse(new FileInputStream(file2));
 
         System.out.println("Loading training data : " + file1.getPath() + " is finished succesfully.");
         System.out.println("Loading testing data : " + file2.getPath() + " is finished succesfully.");
-
     }
 
     // validation using training and testing data
@@ -138,7 +146,7 @@ public class smileUsage {
         }
 
         // size of examples
-        int n = datax.length;
+        int n = attributeDataset.size();
 
         // size of examples after split in certain percentage
         int m = n * split / 100;
@@ -471,6 +479,11 @@ public class smileUsage {
         // total instances
         double total_instances = count_error + count_classified;
 
+        // size of data
+        int sizeDataAll = attributeDataset.size();
+        int sizeDataTrained = sizeDataAll - (int) total_instances;
+        int sizeDataPredicted = (int) total_instances;
+
         // calling the method of confusion matrix
         int[][] confusMatrix = confusionMatrix(Testy, yPredict, max);
         int[] TP = calculTruePositive(confusMatrix, max);
@@ -486,7 +499,9 @@ public class smileUsage {
         // classfied instances
         System.out.println("** Classification with Random Forest of " + forest.size() + " trees **");
         System.out.print("\n");
-        System.out.format("Number of instance\t\t\t\t\t:\t %.0f \n", total_instances);
+        System.out.format("Total of instances\t\t\t\t\t:\t %d \n", sizeDataAll);
+        System.out.format("Number of instance trained\t\t\t:\t %d \n", sizeDataTrained);
+        System.out.format("Number of instance predicted\t\t:\t %d \n", sizeDataPredicted);
         System.out.format("Correctly classified instances\t\t:\t %d (%.3f %%) %n", count_classified, count_classified / total_instances * 100.00);
         System.out.format("Incorrectly classified instances\t:\t %d (%.3f %%) %n", count_error, count_error / total_instances * 100.00);
         System.out.format("Out of Bag (OOB) error rate\t\t\t:\t %.3f%n", forest.error());
@@ -513,7 +528,7 @@ public class smileUsage {
         System.out.format("Macro Average Recall\t:\t%.3f%n", allRecallMacro(resultRecall));
         System.out.format("Micro Average Recall\t:\t%.3f%n", allRecallMicro(TP, FN));
         System.out.format("Macro Average FMeasure\t:\t%.3f%n", allFmeasure(allPrecisionMacro(resultPrecision),allRecallMacro(resultRecall)));
-        System.out.format("Micro AverageFMeasure\t:\t%.3f%n", allFmeasure(allPrecisionMicro(TP, FP),allRecallMicro(TP, FN)));
+        System.out.format("Micro Average FMeasure\t:\t%.3f%n", allFmeasure(allPrecisionMicro(TP, FP),allRecallMicro(TP, FN)));
         System.out.format("Specificity\t\t\t\t:\t%.3f %n%n", allSpecificity(resultSpecificity));
 
         // FMeasure, Precision, Recall, Accuracy for every class
@@ -544,16 +559,6 @@ public class smileUsage {
         }
 
         System.out.println("\n");
-
-        // searching the importance of variables
-        double[] importance = forest.importance();
-        int[] idx = QuickSort.sort(importance);
-        int importance_length = importance.length;
-        System.out.println("** The importance for each property (%) **");
-        // i-- > 0 means comparing i > 0 and decrement i--
-        for (int i = importance_length; i-- > 0; ) {
-            System.out.format("%s : %.4f%n", attributeDataset.attributes()[idx[i]], importance[i]);
-        }
     }
 
     public void writeToFileResult(File file, double[][] Testx, int[] Testy) throws Exception {
@@ -566,6 +571,11 @@ public class smileUsage {
 
         // total instances
         double total_instances = count_error + count_classified;
+
+        // size of data
+        int sizeDataAll = attributeDataset.size();
+        int sizeDataTrained = sizeDataAll - (int) total_instances;
+        int sizeDataPredicted = (int) total_instances;
 
         // calling the method of confusion matrix
         int[][] confusMatrix = confusionMatrix(Testy, yPredict, max);
@@ -590,7 +600,11 @@ public class smileUsage {
 
         // writing the result into file text
         result.newLine();
-        result.write("Number of instance\t\t\t\t\t:\t" + String.format("%.0f", total_instances));
+        result.write("Total of instances\t\t\t\t\t:\t" + String.format("%d", sizeDataAll));
+        result.newLine();
+        result.write("Number of instance trained\t\t\t:\t" + String.format("%d", sizeDataTrained));
+        result.newLine();
+        result.write("Number of instance predicted\t\t:\t" + String.format("%d", sizeDataPredicted));
         result.newLine();
         result.write("Correctly classified instances\t\t:\t" + String.format("%d", count_classified) + " (" + String.format("%.3f %%", count_classified / total_instances * 100.00) + ")");
         result.newLine();
@@ -664,12 +678,14 @@ public class smileUsage {
 
         // searching the importance of variables
         double[] importance = forest.importance();
-        int[] idx = QuickSort.sort(importance);
+        int[] indexImportance = QuickSort.sort(importance);
         int importance_length = importance.length;
+        System.out.println("** The importance for each property (%) **");
         result.write("\n** The importance for each property (%) **\n");
         // i-- > 0 means comparing i > 0 and decrement i--
         for (int i = importance_length; i-- > 0; ) {
-            result.write(attributeDataset.attributes()[idx[i]] + " : " + importance[i]);
+            System.out.format("%s : %.4f%n", attributeDataset.attributes()[indexImportance[i]], importance[i]);
+            result.write(String.format("%s",attributeDataset.attributes()[indexImportance[i]]) + " : " + String.format("%.4f",importance[i]));
             result.newLine();
         }
 
