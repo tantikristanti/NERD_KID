@@ -8,12 +8,9 @@ import smile.data.parser.ArffParser;
 import smile.classification.RandomForest;
 import smile.math.Math;
 import smile.sort.QuickSort;
-import smile.validation.*;
 
 import java.io.*;
 import java.lang.*;
-import java.util.*;
-import java.util.List;
 
 /* this class contains the use of Smile Java API for predictive modeling */
 public class smileUsage {
@@ -115,10 +112,12 @@ public class smileUsage {
         // printing the result
         printScreenResult(testx, testy);
 
+        // creating text file from the result
+        writeToFileResult(file, testx, testy);
     }
 
     // splitting the model into training and data set
-    public void splitModel(int split) throws Exception {
+    public void splitModel(File file, int split) throws Exception {
         // if there isn't any training data
         if (attributeDataset == null) {
             logger.debug("Training data doesn't exist");
@@ -166,6 +165,9 @@ public class smileUsage {
 
         // printing the result
         printScreenResult(testx, testy);
+
+        // creating text file from the result
+        writeToFileResult(file, testx, testy);
     }
 
     // confusion matrix
@@ -322,9 +324,10 @@ public class smileUsage {
         return ((float) (totalTP / calculTotal));
     }
 
-    public void Fmeasure(double[] Precision, double[] Recall) {
-
-    }
+    /**
+     Precision: Given all the predicted labels (for a given class X), how many instances were correctly predicted?
+     Recall: For all instances that should have a label X, how many of these were correctly captured?
+     **/
 
     // precision = TP / (TP + FP)
     public double[] Precision(int[] TP, int[] FP) {
@@ -353,21 +356,24 @@ public class smileUsage {
         return resultSpecificity;
     }
 
-    // the average of FMeasure
-    public double allFmeasure(double[] Fmeasure) {
-        double resultAllFmeasure = 0.0;
-        double subTotal = 0.0;
-        for (int i = 0; i < Fmeasure.length; i++) {
-            subTotal += Fmeasure[i];
+    public double[] Fmeasure(double[] Precision, double[] Recall) {
+        // Fmeasure = 2 * (precision * recall) / (precision + recall)
+        double[] resultFmeasure = new double[Precision.length];
+        for (int i = 0; i < Precision.length; i++) {
+            resultFmeasure[i] = Double.isNaN((float) 2 * (Precision[i] * Recall[i]) / (Precision[i] + Recall[i])) ? 0.0 : (float) (float) 2 * (Precision[i] * Recall[i]) / (Precision[i] + Recall[i]);
         }
-        resultAllFmeasure = Double.isNaN((float) subTotal / Fmeasure.length) ? 0.0 : (float) subTotal / Fmeasure.length;
+        return resultFmeasure;
+    }
+
+    // the average of FMeasure
+    public double allFmeasure(double Precision, double Recall) {
+        double resultAllFmeasure = Double.isNaN((float) 2 * (Precision * Recall) / (Precision + Recall)) ? 0.0 : (float) 2 * (Precision * Recall) / (Precision + Recall);
         return resultAllFmeasure;
     }
 
-    // the average of Precision
-    public double allPrecision(double[] Precision) {
-        double resultAllPrecision = 0.0;
-        double subTotal = 0.0;
+    // the average of Precision macro
+    public double allPrecisionMacro(double[] Precision) {
+        double resultAllPrecision = 0.0, subTotal = 0.0;
         for (int i = 0; i < Precision.length; i++) {
             subTotal += Precision[i];
         }
@@ -375,14 +381,36 @@ public class smileUsage {
         return resultAllPrecision;
     }
 
-    // the average of Recall
-    public double allRecall(double[] Recall) {
+    // the average of Precision micro
+    public double allPrecisionMicro(int[] TP, int[] FP) {
+        double resultAllPrecision = 0.0, subTotalTP = 0.0, subTotalFP = 0.0;
+        for (int i = 0; i < TP.length; i++) {
+            subTotalTP += TP[i];
+            subTotalFP += FP[i];
+        }
+        resultAllPrecision = Double.isNaN((float) subTotalTP / (subTotalTP + subTotalFP)) ? 0.0 : (float) (float) subTotalTP / (subTotalTP + subTotalFP);
+        return resultAllPrecision;
+    }
+
+    // the average of Recall macro
+    public double allRecallMacro(double[] Recall) {
         double resultAllRecall = 0.0;
         double subTotal = 0.0;
         for (int i = 0; i < Recall.length; i++) {
             subTotal += Recall[i];
         }
         resultAllRecall = Double.isNaN((float) subTotal / Recall.length) ? 0.0 : (float) subTotal / Recall.length;
+        return resultAllRecall;
+    }
+
+    // the average of Recall micro
+    public double allRecallMicro(int[] TP, int[] FN) {
+        double resultAllRecall = 0.0, subTotalTP = 0.0, subTotalFN = 0.0;
+        for (int i = 0; i < TP.length; i++) {
+            subTotalTP += TP[i];
+            subTotalFN += FN[i];
+        }
+        resultAllRecall = Double.isNaN((float) subTotalTP / (subTotalTP + subTotalFN)) ? 0.0 : (float) (float) subTotalTP / (subTotalTP + subTotalFN);
         return resultAllRecall;
     }
 
@@ -450,10 +478,10 @@ public class smileUsage {
         int[] FP = calculFalsePositive(confusMatrix, max);
         int[] FN = calculFalseNegative(confusMatrix, max);
         int totalAll = calculTotalClass(confusMatrix, max);
-        //double[] resultFmeasure = Fmeasure(Precision(), Recall());
         double[] resultPrecision = Precision(TP, FP);
         double[] resultRecall = Recall(TP, FN);
         double[] resultSpecificity = Specificity(TN, FP);
+        double[] resultFmeasure = Fmeasure(resultPrecision, resultRecall);
 
         // classfied instances
         System.out.println("** Classification with Random Forest of " + forest.size() + " trees **");
@@ -479,11 +507,14 @@ public class smileUsage {
 
         // FMeasure, Precision, Recall, Accuracy for all classes
         System.out.println("\n** Validation for all classes **");
-        System.out.format("Accuracy\t:\t%.3f %n%n", Accuracy(TP, totalAll));
-        //System.out.format("\nFMeasure\t:\t%.3f%n" + allFmeasure());
-        System.out.format("Precision\t:\t%.3f%n", allPrecision(resultPrecision));
-        System.out.format("Recall\t\t:\t%.3f%n", allRecall(resultRecall));
-        System.out.format("Specificity\t:\t%.3f %n%n", allSpecificity(resultSpecificity));
+        System.out.format("Accuracy\t\t\t\t:\t%.3f%n", Accuracy(TP, totalAll));
+        System.out.format("Macro Average Precision\t:\t%.3f%n", allPrecisionMacro(resultPrecision));
+        System.out.format("Micro Average Precision\t:\t%.3f%n", allPrecisionMicro(TP, FP));
+        System.out.format("Macro Average Recall\t:\t%.3f%n", allRecallMacro(resultRecall));
+        System.out.format("Micro Average Recall\t:\t%.3f%n", allRecallMicro(TP, FN));
+        System.out.format("Macro Average FMeasure\t:\t%.3f%n", allFmeasure(allPrecisionMacro(resultPrecision),allRecallMacro(resultRecall)));
+        System.out.format("Micro AverageFMeasure\t:\t%.3f%n", allFmeasure(allPrecisionMicro(TP, FP),allRecallMicro(TP, FN)));
+        System.out.format("Specificity\t\t\t\t:\t%.3f %n%n", allSpecificity(resultSpecificity));
 
         // FMeasure, Precision, Recall, Accuracy for every class
         System.out.println("** Validation for each class **");
@@ -494,7 +525,7 @@ public class smileUsage {
 
         System.out.printf("\nFMeasure\t:\t");
         for (int i = 0; i <= max; i++) {
-            //System.out.format("\t%.2f", Fmeasure());
+            System.out.format("\t%.2f", resultFmeasure[i]);
         }
 
         System.out.printf("\nPrecision\t:\t");
@@ -543,10 +574,10 @@ public class smileUsage {
         int[] FP = calculFalsePositive(confusMatrix, max);
         int[] FN = calculFalseNegative(confusMatrix, max);
         int totalAll = calculTotalClass(confusMatrix, max);
-        //double[] resultFmeasure = Fmeasure(Precision(), Recall());
         double[] resultPrecision = Precision(TP, FP);
         double[] resultRecall = Recall(TP, FN);
         double[] resultSpecificity = Specificity(TN, FP);
+        double[] resultFmeasure = Fmeasure(resultPrecision, resultRecall);
 
         // for getting output stream of the file for writing the result
         File fl = new File("result/Result_" + file.getName() + ".txt");
@@ -585,15 +616,21 @@ public class smileUsage {
         }
         result.write("\n** Validation for all classes **");
         result.newLine();
-        result.write("Accuracy\t:\t" + String.format("%.3f", Accuracy(TP, totalAll)));
+        result.write("Accuracy\t\t\t\t:\t" + String.format("%.3f", Accuracy(TP, totalAll)));
         result.newLine();
-        //result.write("FMeasure\t:\t" + String.format("%.3f", result_fmeasure));
+        result.write("Macro Average Precision\t:\t" + String.format("%.3f", allPrecisionMacro(resultPrecision)));
         result.newLine();
-        result.write("Precision\t:\t" + String.format("%.3f", allPrecision(resultPrecision)));
+        result.write("Micro Average Precision\t:\t" + String.format("%.3f", allPrecisionMicro(TP, FP)));
         result.newLine();
-        result.write("Recall\t\t:\t" + String.format("%.3f", allRecall(resultRecall)));
+        result.write("Macro Average Recall\t:\t" + String.format("%.3f", allRecallMacro(resultRecall)));
         result.newLine();
-        result.write("Specificity\t:\t" + String.format("%.3f", allSpecificity(resultSpecificity)));
+        result.write("Micro Average Recall\t:\t" + String.format("%.3f", allRecallMicro(TP, FN)));
+        result.newLine();
+        result.write("Macro Average FMeasure\t:\t" + String.format("%.3f", allFmeasure(allPrecisionMacro(resultPrecision),allRecallMacro(resultRecall))));
+        result.newLine();
+        result.write("Micro Average FMeasure\t:\t" + String.format("%.3f", allFmeasure(allPrecisionMicro(TP, FP),allRecallMicro(TP, FN))));
+        result.newLine();
+        result.write("Specificity\t\t\t\t:\t" + String.format("%.3f%n", allSpecificity(resultSpecificity)));
         result.newLine();
 
         // FMeasure, Precision, Recall, Accuracy for every class
@@ -606,7 +643,7 @@ public class smileUsage {
         result.newLine();
         result.write("FMeasure\t:\t");
         for (int i = 0; i <= max; i++) {
-            //result.write("\t" + String.format("%.2f", FMeasureClass.get(i)));
+            result.write("\t" + String.format("%.2f", resultFmeasure[i]));
         }
         result.newLine();
         result.write("Precision\t:\t");
@@ -629,7 +666,7 @@ public class smileUsage {
         double[] importance = forest.importance();
         int[] idx = QuickSort.sort(importance);
         int importance_length = importance.length;
-        result.write("** The importance for each property (%) **\n");
+        result.write("\n** The importance for each property (%) **\n");
         // i-- > 0 means comparing i > 0 and decrement i--
         for (int i = importance_length; i-- > 0; ) {
             result.write(attributeDataset.attributes()[idx[i]] + " : " + importance[i]);

@@ -42,7 +42,7 @@ public class mainSmile {
                 System.out.print("Name of the result file (automatically in /result/Result_[fileName].txt): ");
                 br = new BufferedReader(new InputStreamReader(System.in));
                 file_name_result = new File(br.readLine());
-                sm.splitModel(split);
+                sm.splitModel(file_name_result, split);
                 break;
             } else if (respond.equals("y")) {
                 // loading the testing data
