@@ -403,22 +403,22 @@ public class SmileUsage {
             result.write("\t" + i);
         }
         result.newLine();
-        result.write("FMeasure\t:\t");
+        result.write("FMeasure\t:");
         for (int i = 0; i <= max; i++) {
             result.write("\t" + String.format("%.2f", resultFmeasure[i]));
         }
         result.newLine();
-        result.write("Precision\t:\t");
+        result.write("Precision\t:");
         for (int i = 0; i <= max; i++) {
             result.write("\t" + String.format("%.2f", resultPrecision[i]));
         }
         result.newLine();
-        result.write("Recall\t\t:\t");
+        result.write("Recall\t\t:");
         for (int i = 0; i <= max; i++) {
             result.write("\t" + String.format("%.2f", resultRecall[i]));
         }
         result.newLine();
-        result.write("Specificity\t:\t");
+        result.write("Specificity\t:");
         for (int i = 0; i <= max; i++) {
             result.write("\t" + String.format("%.2f", resultSpecificity[i]));
         }
