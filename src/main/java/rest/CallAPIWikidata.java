@@ -28,7 +28,7 @@ public class CallAPIWikidata {
             ItemDocument itemDocument = (ItemDocument) entities;
 
             if (itemDocument == null){
-                System.out.println(((ItemDocument) entities).getItemId() + "couldn't be fetched");
+                System.out.println(((ItemDocument) entities).getItemId() + " couldn't be fetched");
                 return;
             }
 

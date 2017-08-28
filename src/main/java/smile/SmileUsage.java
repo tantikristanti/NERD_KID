@@ -1,5 +1,6 @@
 package smile;
 
+import arff.AccessArff;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,8 +15,10 @@ import java.lang.*;
 
 /* this class contains the use of Smile Java API for parsing the model */
 public class SmileUsage {
-
+    // creating objects
     ModelEvaluation evaluation = new ModelEvaluation();
+    AccessArff accessArff = new AccessArff();
+
     // --------------- attributes ---------------
     private ArffParser arffParser = new ArffParser();
     private AttributeDataset attributeDataset = null;
@@ -71,7 +74,7 @@ public class SmileUsage {
     }
 
     // validation using training and testing data
-    public void trainTestModel(File file, int split) throws Exception {
+    public void trainTestModel(File fileInput, File fileOutput, int split) throws Exception {
 
         // if there isn't any training data
         if (training == null) {
@@ -87,7 +90,7 @@ public class SmileUsage {
         logger.info("Training the model.");
 
         // for getting output stream of the file for writing the result
-        File fl = new File("result/Result_" + file.getName() + ".txt");
+        File fl = new File("result/Result_" + fileOutput.getName() + ".txt");
 
         BufferedWriter result = new BufferedWriter(new FileWriter(fl));
 
@@ -119,14 +122,14 @@ public class SmileUsage {
         forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 100);
 
         // printing the result
-        printScreenResult(testx, testy);
+        printScreenResult(fileInput, fileOutput, testx, testy);
 
         // creating text file from the result
-        writeToFileResult(file, testx, testy);
+        writeToFileResult(fileInput, fileOutput, testx, testy);
     }
 
     // splitting the model into training and data set
-    public void splitModel(File file, int split) throws Exception {
+    public void splitModel(File fileInput, File fileOutput, int split) throws Exception {
         // if there isn't any training data
         if (attributeDataset == null) {
             logger.debug("Training data doesn't exist");
@@ -173,10 +176,10 @@ public class SmileUsage {
         forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 100);
 
         // printing the result
-        printScreenResult(testx, testy);
+        printScreenResult(fileInput, fileOutput, testx, testy);
 
         // creating text file from the result
-        writeToFileResult(file, testx, testy);
+        writeToFileResult(fileInput, fileOutput, testx, testy);
     }
 
     public int[] predictTestData(double[][] Testx){
@@ -188,7 +191,7 @@ public class SmileUsage {
         return yPredict;
     }
 
-    public void printScreenResult(double[][] Testx, int[] Testy) throws Exception {
+    public void printScreenResult(File fileInput, File fileOutput, double[][] Testx, int[] Testy) throws Exception {
         // prediction and calculating the classes classified
         int[] yPredict = predictTestData(Testx);
 
@@ -203,6 +206,9 @@ public class SmileUsage {
         int sizeDataAll = attributeDataset.size();
         int sizeDataTrained = sizeDataAll - (int) total_instances;
         int sizeDataPredicted = (int) total_instances;
+
+        // element of class in arff file
+        String[] dataClass = accessArff.readClassArff(fileInput);
 
         // calling the method of confusion matrix
         int[][] confusMatrix = evaluation.confusionMatrix(Testy, yPredict, max);
@@ -225,8 +231,18 @@ public class SmileUsage {
         System.out.format("Correctly classified instances\t\t:\t %d (%.3f %%) %n", count_classified, count_classified / total_instances * 100.00);
         System.out.format("Incorrectly classified instances\t:\t %d (%.3f %%) %n", count_error, count_error / total_instances * 100.00);
         System.out.format("Out of Bag (OOB) error rate\t\t\t:\t %.3f%n", forest.error());
+
         System.out.println("\n** Confusion Matrix **");
         System.out.println("Row: Actual; Column: Predicted");
+        System.out.println("Label of class:");
+        System.out.print("{");
+        for (int i = 0; i <= max; i++) {
+            System.out.print(i + ":" + dataClass[i]);
+            if (i!=max)
+                System.out.print("; ");
+        }
+        System.out.print("}\n\n");
+
         System.out.print("Class:\t");
         for (int i = 0; i <= max; i++) {
             System.out.print(i + "\t");
@@ -281,7 +297,7 @@ public class SmileUsage {
         System.out.println("\n");
     }
 
-    public void writeToFileResult(File file, double[][] Testx, int[] Testy) throws Exception {
+    public void writeToFileResult(File fileInput, File fileOutput, double[][] Testx, int[] Testy) throws Exception {
         // prediction and calculating the classes classified
         int[] yPredict = predictTestData(Testx);
 
@@ -297,6 +313,9 @@ public class SmileUsage {
         int sizeDataTrained = sizeDataAll - (int) total_instances;
         int sizeDataPredicted = (int) total_instances;
 
+        // element of class in arff file
+        String[] dataClass = accessArff.readClassArff(fileInput);
+
         // calling the method of confusion matrix
         int[][] confusMatrix = evaluation.confusionMatrix(Testy, yPredict, max);
         int[] TP = evaluation.calculTruePositive(confusMatrix, max);
@@ -310,7 +329,7 @@ public class SmileUsage {
         double[] resultFmeasure = evaluation.Fmeasure(resultPrecision, resultRecall);
 
         // for getting output stream of the file for writing the result
-        File fl = new File("result/Result_" + file.getName() + ".txt");
+        File fl = new File("result/Result_" + fileOutput.getName() + ".txt");
 
         BufferedWriter result = new BufferedWriter(new FileWriter(fl));
 
@@ -335,8 +354,17 @@ public class SmileUsage {
 
         // calling the method of confusion matrix
         result.write("\n** Confusion Matrix **\n");
-        result.write("Row: Actual; Column: Predicted \n");
-        result.write("Class:\t");
+        result.write("Row: Actual; Column: Predicted\n");
+        result.write("Label of class:\n");
+        result.write("{");
+        for (int i = 0; i <= max; i++) {
+            result.write(i + ":" + dataClass[i]);
+            if (i!=max)
+                result.write("; ");
+        }
+        result.write("}\n\n");
+
+        result.write("Class:\t\t");
         for (int i = 0; i <= max; i++) {
             result.write(i + "\t");
         }
@@ -350,7 +378,7 @@ public class SmileUsage {
         }
         result.write("\n** Validation for all classes **");
         result.newLine();
-        result.write("Accuracy\t\t\t:\t" + String.format("%.3f", evaluation.Accuracy(TP, totalAll)));
+        result.write("Accuracy\t\t:\t" + String.format("%.3f", evaluation.Accuracy(TP, totalAll)));
         result.newLine();
         result.write("Macro Average Precision\t:\t" + String.format("%.3f", evaluation.allPrecisionMacro(resultPrecision)));
         result.newLine();
@@ -364,7 +392,7 @@ public class SmileUsage {
         result.newLine();
         result.write("Micro Average FMeasure\t:\t" + String.format("%.3f", evaluation.allFmeasure(evaluation.allPrecisionMicro(TP, FP),evaluation.allRecallMicro(TP, FN))));
         result.newLine();
-        result.write("Specificity\t\t\t\t:\t" + String.format("%.3f%n", evaluation.allSpecificity(resultSpecificity)));
+        result.write("Specificity\t\t:\t" + String.format("%.3f%n", evaluation.allSpecificity(resultSpecificity)));
         result.newLine();
 
         // FMeasure, Precision, Recall, Accuracy for every class
@@ -372,7 +400,7 @@ public class SmileUsage {
         result.newLine();
         result.write("Class\t\t:");
         for (int i = 0; i <= max; i++) {
-            result.write("\t\t" + i);
+            result.write("\t" + i);
         }
         result.newLine();
         result.write("FMeasure\t:\t");

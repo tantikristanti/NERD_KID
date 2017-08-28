@@ -189,8 +189,8 @@ public class ModelEvaluation {
         return resultSpecificity;
     }
 
+    // Fmeasure = 2 * (precision * recall) / (precision + recall)
     public double[] Fmeasure(double[] Precision, double[] Recall) {
-        // Fmeasure = 2 * (precision * recall) / (precision + recall)
         double[] resultFmeasure = new double[Precision.length];
         for (int i = 0; i < Precision.length; i++) {
             resultFmeasure[i] = Double.isNaN((float) 2 * (Precision[i] * Recall[i]) / (Precision[i] + Recall[i])) ? 0.0 : (float) (float) 2 * (Precision[i] * Recall[i]) / (Precision[i] + Recall[i]);
