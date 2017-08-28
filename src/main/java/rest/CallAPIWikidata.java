@@ -5,13 +5,13 @@ import org.wikidata.wdtk.wikibaseapi.WikibaseDataFetcher;
 
 import java.util.List;
 
-public class callAPIWikidata {
+public class CallAPIWikidata {
     public void getPropertyFromId() throws Exception {
 
         System.out.println("** Access API of Wikidata **");
 
         // object of callRestAPI
-        callRestAPINERD callAPIINERD = new callRestAPINERD();
+        CallRestAPINERD callAPIINERD = new CallRestAPINERD();
 
         // object of Wikidata's data fetcher
         WikibaseDataFetcher wikibaseDataFetcher = WikibaseDataFetcher.getWikidataDataFetcher();

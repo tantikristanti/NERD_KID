@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class callRestAPINERD {
+public class CallRestAPINERD {
 
 
     // using Curl for accessing API REST Nerd / entity-fishing

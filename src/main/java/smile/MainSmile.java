@@ -5,14 +5,14 @@ import java.io.File;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class mainSmile {
+public class MainSmile {
     public static void main(String[] args) throws Exception {
 
         BufferedReader br = null;
         File file_name_train = null, file_name_test = null, file_name_result = null;
         int split = 0;
 
-        smileUsage sm = new smileUsage();
+        SmileUsage sm = new SmileUsage();
 
         // loading the training data
         System.out.print("Name of training data file ([path]/[fileName].arff) : ");

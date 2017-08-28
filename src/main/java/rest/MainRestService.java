@@ -4,15 +4,15 @@ package rest;
 
 import java.util.Scanner;
 
-public class mainRestService {
+public class MainRestService {
     public static void main(String[] args) throws Exception {
 
         // variables
         String url, query;
 
         // object of callRestAPI
-        callRestAPINERD callAPIINERD = new callRestAPINERD();
-        callAPIWikidata callWiki = new callAPIWikidata();
+        CallRestAPINERD callAPIINERD = new CallRestAPINERD();
+        CallAPIWikidata callWiki = new CallAPIWikidata();
 
         Scanner scanner = new Scanner(System.in);
 
