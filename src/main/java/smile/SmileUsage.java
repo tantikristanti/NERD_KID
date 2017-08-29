@@ -200,22 +200,22 @@ public class SmileUsage {
             output.printf("\t" + i);
         }
 
-        output.printf("\nFMeasure\t:\t");
+        output.printf("\nFMeasure\t:");
         for (int i = 0; i <= max; i++) {
             output.format("\t%.2f", resultFmeasure[i]);
         }
 
-        output.printf("\nPrecision\t:\t");
+        output.printf("\nPrecision\t:");
         for (int i = 0; i <= max; i++) {
             output.format("\t%.2f", resultPrecision[i]);
         }
 
-        output.printf("\nRecall\t\t:\t");
+        output.printf("\nRecall\t\t:");
         for (int i = 0; i <= max; i++) {
             output.format("\t%.2f", resultRecall[i]);
         }
 
-        output.printf("\nSpesificity\t:\t");
+        output.printf("\nSpesificity\t:");
         for (int i = 0; i <= max; i++) {
             output.format("\t%.2f", resultSpecificity[i]);
         }
