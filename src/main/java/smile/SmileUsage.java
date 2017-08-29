@@ -124,8 +124,8 @@ public class SmileUsage {
         int[] yPredict = predictTestData(Testx);
 
         // counting class classified or not
-        int count_error = evaluation.calculInstanceNotClassified(Testy, yPredict);
-        int count_classified = evaluation.calculInstanceClassified(Testy, yPredict);
+        int count_error = evaluation.countingInstanceNotClassified(Testy, yPredict);
+        int count_classified = evaluation.countingInstanceClassified(Testy, yPredict);
 
         // total instances
         double total_instances = count_error + count_classified;
@@ -140,11 +140,11 @@ public class SmileUsage {
 
         // calling the method of confusion matrix
         int[][] confusMatrix = evaluation.confusionMatrix(Testy, yPredict, max);
-        int[] TP = evaluation.calculTruePositive(confusMatrix, max);
-        int[] TN = evaluation.calculTrueNegative(confusMatrix, max);
-        int[] FP = evaluation.calculFalsePositive(confusMatrix, max);
-        int[] FN = evaluation.calculFalseNegative(confusMatrix, max);
-        int totalAll = evaluation.calculTotalClass(confusMatrix, max);
+        int[] TP = evaluation.countingTruePositive(confusMatrix, max);
+        int[] TN = evaluation.countingTrueNegative(confusMatrix, max);
+        int[] FP = evaluation.countingFalsePositive(confusMatrix, max);
+        int[] FN = evaluation.countingFalseNegative(confusMatrix, max);
+        int totalAll = evaluation.countingTotalClass(confusMatrix, max);
         double[] resultPrecision = evaluation.Precision(TP, FP);
         double[] resultRecall = evaluation.Recall(TP, FN);
         double[] resultSpecificity = evaluation.Specificity(TN, FP);
@@ -159,6 +159,16 @@ public class SmileUsage {
         output.format("Correctly classified instances\t\t:\t %d (%.3f %%) %n", count_classified, count_classified / total_instances * 100.00);
         output.format("Incorrectly classified instances\t:\t %d (%.3f %%) %n", count_error, count_error / total_instances * 100.00);
         output.format("Out of Bag (OOB) error rate\t\t\t:\t %.3f%n", forest.error());
+        output.format("Specificity\t\t\t\t:\t%.3f %n%n", evaluation.averageSpecificity(resultSpecificity));
+        output.format("Accuracy\t\t\t\t:\t%.3f%n", evaluation.Accuracy(TP, totalAll));
+        // FMeasure, Precision, Recall for all classes
+        output.println("\n** Validation for all classes **");
+        output.format("Macro Average Precision\t:\t%.3f%n", evaluation.averagePrecisionMacro(resultPrecision));
+        output.format("Micro Average Precision\t:\t%.3f%n", evaluation.averagePrecisionMicro(TP, FP));
+        output.format("Macro Average Recall\t:\t%.3f%n", evaluation.averageRecallMacro(resultRecall));
+        output.format("Micro Average Recall\t:\t%.3f%n", evaluation.averageRecallMicro(TP, FN));
+        output.format("Macro Average FMeasure\t:\t%.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMacro(resultPrecision), evaluation.averageRecallMacro(resultRecall)));
+        output.format("Micro Average FMeasure\t:\t%.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMicro(TP, FP), evaluation.averageRecallMicro(TP, FN)));
 
         output.println("\n** Confusion Matrix **");
         output.println("Row: Actual; Column: Predicted");
@@ -183,17 +193,6 @@ public class SmileUsage {
             }
             output.print("\n");
         }
-
-        // FMeasure, Precision, Recall, Accuracy for all classes
-        output.println("\n** Validation for all classes **");
-        output.format("Accuracy\t\t\t\t:\t%.3f%n", evaluation.Accuracy(TP, totalAll));
-        output.format("Macro Average Precision\t:\t%.3f%n", evaluation.allPrecisionMacro(resultPrecision));
-        output.format("Micro Average Precision\t:\t%.3f%n", evaluation.allPrecisionMicro(TP, FP));
-        output.format("Macro Average Recall\t:\t%.3f%n", evaluation.allRecallMacro(resultRecall));
-        output.format("Micro Average Recall\t:\t%.3f%n", evaluation.allRecallMicro(TP, FN));
-        output.format("Macro Average FMeasure\t:\t%.3f%n", evaluation.allFmeasure(evaluation.allPrecisionMacro(resultPrecision), evaluation.allRecallMacro(resultRecall)));
-        output.format("Micro Average FMeasure\t:\t%.3f%n", evaluation.allFmeasure(evaluation.allPrecisionMicro(TP, FP), evaluation.allRecallMicro(TP, FN)));
-        output.format("Specificity\t\t\t\t:\t%.3f %n%n", evaluation.allSpecificity(resultSpecificity));
 
         // FMeasure, Precision, Recall, Accuracy for every class
         output.println("** Validation for each class **");

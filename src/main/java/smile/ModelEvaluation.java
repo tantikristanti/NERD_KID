@@ -15,49 +15,7 @@ public class ModelEvaluation {
         return matrix;
     }
 
-    // printing the result of TP, TN, FP, FN
-    public void printTrueFalsePositiveNegatif(int[][] matrix, int Idx) {
-        int[] TP = calculTruePositive(matrix, Idx);
-        int[] TN = calculTrueNegative(matrix, Idx);
-        int[] FP = calculFalsePositive(matrix, Idx);
-        int[] FN = calculFalseNegative(matrix, Idx);
-        int[] totalEachClass = calculRowClass(matrix, Idx);
-        int[] totalEachColumn = calculColumnClass(matrix, Idx);
-        int totalAll = calculTotalClass(matrix, Idx);
-
-        System.out.println("Total all data " + totalAll);
-        System.out.println("\nTotal each class");
-        for (int j = 0; j < totalEachClass.length; j++) {
-            System.out.print(totalEachClass[j] + "\t");
-        }
-
-        System.out.println("\nTotal each column");
-        for (int j = 0; j < totalEachColumn.length; j++) {
-            System.out.print(totalEachColumn[j] + "\t");
-        }
-
-        System.out.println("\nTrue positives");
-        for (int j = 0; j < TP.length; j++) {
-            System.out.print(TP[j] + "\t");
-        }
-
-        System.out.println("\nFalse negatives");
-        for (int j = 0; j < FN.length; j++) {
-            System.out.print(FN[j] + "\t");
-        }
-
-        System.out.println("\nFalse positives");
-        for (int j = 0; j < FP.length; j++) {
-            System.out.print(FP[j] + "\t");
-        }
-
-        System.out.println("\nTrue negatives");
-        for (int j = 0; j < TN.length; j++) {
-            System.out.print(TN[j] + "\t");
-        }
-    }
-
-    public int calculTotalClass(int[][] matrix, int Idx) {
+    public int countingTotalClass(int[][] matrix, int Idx) {
         int totalAll = 0;
 
         // calculating total instance of all class
@@ -69,7 +27,7 @@ public class ModelEvaluation {
         return totalAll;
     }
 
-    public int[] calculRowClass(int[][] matrix, int Idx) {
+    public int[] countingRowClass(int[][] matrix, int Idx) {
         int[] totalEachClass = new int[Idx + 1];
 
         // calculating each row of class
@@ -82,7 +40,7 @@ public class ModelEvaluation {
         return totalEachClass;
     }
 
-    public int[] calculColumnClass(int[][] matrix, int Idx) {
+    public int[] countingColumnClass(int[][] matrix, int Idx) {
         int[] totalEachColumn = new int[Idx + 1];
 
         // calculating total for each column
@@ -95,7 +53,7 @@ public class ModelEvaluation {
         return totalEachColumn;
     }
 
-    public int[] calculTruePositive(int[][] matrix, int Idx) {
+    public int[] countingTruePositive(int[][] matrix, int Idx) {
         int[] TP = new int[Idx + 1];
 
         // calculating TP for each class
@@ -109,10 +67,10 @@ public class ModelEvaluation {
         return TP;
     }
 
-    public int[] calculFalseNegative(int[][] matrix, int Idx) {
-        int[] TP = calculTruePositive(matrix, Idx);
+    public int[] countingFalseNegative(int[][] matrix, int Idx) {
+        int[] TP = countingTruePositive(matrix, Idx);
         int[] FN = new int[Idx + 1];
-        int[] totalEachClass = calculRowClass(matrix, Idx);
+        int[] totalEachClass = countingRowClass(matrix, Idx);
 
         // calculating FN for each class
         for (int i = 0; i <= Idx; i++) {
@@ -121,10 +79,10 @@ public class ModelEvaluation {
         return FN;
     }
 
-    public int[] calculFalsePositive(int[][] matrix, int Idx) {
-        int[] TP = calculTruePositive(matrix, Idx);
+    public int[] countingFalsePositive(int[][] matrix, int Idx) {
+        int[] TP = countingTruePositive(matrix, Idx);
         int[] FP = new int[Idx + 1];
-        int[] totalEachColumn = calculColumnClass(matrix, Idx);
+        int[] totalEachColumn = countingColumnClass(matrix, Idx);
 
         // calculating FP for each class
         for (int i = 0; i <= Idx; i++) {
@@ -133,12 +91,12 @@ public class ModelEvaluation {
         return FP;
     }
 
-    public int[] calculTrueNegative(int[][] matrix, int Idx) {
-        int[] TP = calculTruePositive(matrix, Idx);
+    public int[] countingTrueNegative(int[][] matrix, int Idx) {
+        int[] TP = countingTruePositive(matrix, Idx);
         int[] TN = new int[Idx + 1];
-        int[] totalEachClass = calculRowClass(matrix, Idx);
-        int[] totalEachColumn = calculColumnClass(matrix, Idx);
-        int totalAll = calculTotalClass(matrix, Idx);
+        int[] totalEachClass = countingRowClass(matrix, Idx);
+        int[] totalEachColumn = countingColumnClass(matrix, Idx);
+        int totalAll = countingTotalClass(matrix, Idx);
 
         // calculating TN for each class
         for (int i = 0; i <= Idx; i++) {
@@ -199,13 +157,13 @@ public class ModelEvaluation {
     }
 
     // the average of FMeasure
-    public double allFmeasure(double Precision, double Recall) {
+    public double averageFmeasure(double Precision, double Recall) {
         double resultAllFmeasure = Double.isNaN((float) 2 * (Precision * Recall) / (Precision + Recall)) ? 0.0 : (float) 2 * (Precision * Recall) / (Precision + Recall);
         return resultAllFmeasure;
     }
 
     // the average of Precision macro
-    public double allPrecisionMacro(double[] Precision) {
+    public double averagePrecisionMacro(double[] Precision) {
         double resultAllPrecision = 0.0, subTotal = 0.0;
         for (int i = 0; i < Precision.length; i++) {
             subTotal += Precision[i];
@@ -215,7 +173,7 @@ public class ModelEvaluation {
     }
 
     // the average of Precision micro
-    public double allPrecisionMicro(int[] TP, int[] FP) {
+    public double averagePrecisionMicro(int[] TP, int[] FP) {
         double resultAllPrecision = 0.0, subTotalTP = 0.0, subTotalFP = 0.0;
         for (int i = 0; i < TP.length; i++) {
             subTotalTP += TP[i];
@@ -226,7 +184,7 @@ public class ModelEvaluation {
     }
 
     // the average of Recall macro
-    public double allRecallMacro(double[] Recall) {
+    public double averageRecallMacro(double[] Recall) {
         double resultAllRecall = 0.0;
         double subTotal = 0.0;
         for (int i = 0; i < Recall.length; i++) {
@@ -237,7 +195,7 @@ public class ModelEvaluation {
     }
 
     // the average of Recall micro
-    public double allRecallMicro(int[] TP, int[] FN) {
+    public double averageRecallMicro(int[] TP, int[] FN) {
         double resultAllRecall = 0.0, subTotalTP = 0.0, subTotalFN = 0.0;
         for (int i = 0; i < TP.length; i++) {
             subTotalTP += TP[i];
@@ -248,7 +206,7 @@ public class ModelEvaluation {
     }
 
     // the average of Specificity
-    public double allSpecificity(double[] Specificity) {
+    public double averageSpecificity(double[] Specificity) {
         double resultAllSpecificity = 0.0;
         double subTotal = 0.0;
         for (int i = 0; i < Specificity.length; i++) {
@@ -258,7 +216,7 @@ public class ModelEvaluation {
         return resultAllSpecificity;
     }
 
-    public int calculInstanceClassified(int[] Testy, int[] yPredict) {
+    public int countingInstanceClassified(int[] Testy, int[] yPredict) {
         // calculating the classes classified
         int count_classified = 0;
 
@@ -271,7 +229,7 @@ public class ModelEvaluation {
         return count_classified;
     }
 
-    public int calculInstanceNotClassified(int[] Testy, int[] yPredict) {
+    public int countingInstanceNotClassified(int[] Testy, int[] yPredict) {
         // calculating the classes classified
         int count_error = 0;
 
