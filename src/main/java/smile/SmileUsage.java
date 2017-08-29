@@ -180,7 +180,7 @@ public class SmileUsage {
         }
         output.print("}\n\n");
 
-        output.print("Class:\t");
+        output.print("Class:\t\t");
         for (int i = 0; i <= max; i++) {
             output.print(i + "\t");
         }
