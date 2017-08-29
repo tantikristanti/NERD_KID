@@ -34,22 +34,27 @@ public class SmileUsage {
 
     // --------------- methods ---------------
 
-    // loading the model, if there is only the training data
     public void loadData(File file) throws Exception {
-        // parsing the inital file to get the response index
+        // parsing the initial file to get the response index
         attributeDataset = arffParser.parse(new FileInputStream(file));
 
         // getting the response index
         int responseIndex = attributeDataset.attributes().length - 1;
 
+        loadData(new FileInputStream(file), responseIndex);
+
+        // information about the file
+        System.out.println("Loading training data " + file.getPath() + " is finished successfully.");
+    }
+
+    // loading the model, if there is only the training data
+    public void loadData(InputStream file, int responseIndex) throws Exception {
+
         // setResponseIndex is response variable; for classification, it is the class label; for regression, it is of real value
         arffParser = new ArffParser().setResponseIndex(responseIndex);
 
         // parsing the file to get the dataset
-        attributeDataset = arffParser.parse(new FileInputStream(file));
-
-        // information about the file
-        System.out.println("Loading training data " + file.getPath() + " is finished succesfully.");
+        attributeDataset = arffParser.parse(file);
     }
 
     // loading the model, if there are training and testing data

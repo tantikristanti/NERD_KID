@@ -51,7 +51,7 @@ public class MainSmile {
                 System.out.print("Name of the result file (automatically in /result/Result_[fileName].txt): ");
                 br = new BufferedReader(new InputStreamReader(System.in));
                 file_name_result = new File(br.readLine());
-                sm.trainTestModel(file_name_train, file_name_result, split);
+                //sm.trainTestModel(file_name_train, file_name_result, split);
                 break;
             }
 
