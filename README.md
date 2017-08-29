@@ -27,7 +27,7 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 **2. Preparing the data or models**
 
-*Use models exist or put new models in* `/data/[file].arff`
+*All data or models can be put in* `/data/`
 
 **3. Build the project**
 
@@ -35,19 +35,39 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 **4. Execute the application**
 
-*a. Model training using Random Forest classification [SMILE](https://github.com/haifengl/smile/)*
+*a. Getting instances and classes correspond to each class from [Grobid-Ner](https://github.com/kermitt2/grobid-ner/tree/master/grobid-ner/resources/dataset/ner/corpus/xml/final)*
 
-```$ mvn exec:java -Dexec.mainClass="smile.mainSmile"```
+```$ mvn exec:java -Dexec.mainClass="preprocessing.OpenXMLFileGrobidNer"```
 
-*b. Access NERD Rest API*
+- New data is in XML format which can be easily copied directly to the file `/data/xml/annotatedCorpus.xml`
+- The result can be seen in `/result/resultCSVAnnotatedCorpus.csv`
+
+*b. Model training using Random Forest classification [SMILE](https://github.com/haifengl/smile/)*
+
+```$ mvn exec:java -Dexec.mainClass="smile.MainSmile"```
+
+- New data can be put in `/data/[file].arff`
+- Input needed are 1) training data file (and testing data file if exist) ; 2) percentage of training data ; 3) the name of result file
+- The result can be seen in `/result/[file].txt` 
+
+*c. Access NERD's Rest API*
+
+```$ mvn exec:java -Dexec.mainClass="rest.MainCallRestAPINerd"```
+
+- The example of how to enter the correct URL and Query can be seen in `data/example/exampleCurlNERD.txt` 
+- The result can be seen in `/result/Result_CurlNERD.json` 
+
+*c. Access Wikidata's API*
 
 (still working on it)
 
-**5. Getting the result**
+*d. Building new model to be predicted by models exist that trained by Random Forest (classification)*
 
-*The result of machine learning :* `/result/[name of file].txt` 
+(still working on it)
 
-**6. Example**
+*c. Getting the new predicted result*
 
-![Machine Learning](pic/Machine.jpg)
+(still working on it)
+
+
 
