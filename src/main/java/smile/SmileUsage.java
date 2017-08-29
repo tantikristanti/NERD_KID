@@ -153,21 +153,21 @@ public class SmileUsage {
         // classfied instances
         output.println("** Classification with Random Forest of " + forest.size() + " trees **");
         output.print("\n");
-        output.format("Total of instances\t\t\t\t\t:\t %d \n", sizeDataAll);
-        output.format("Number of instance trained\t\t\t:\t %d \n", sizeDataTrained);
+        output.format("Total of instances\t\t\t:\t %d \n", sizeDataAll);
+        output.format("Number of instance trained\t\t:\t %d \n", sizeDataTrained);
         output.format("Number of instance predicted\t\t:\t %d \n", sizeDataPredicted);
         output.format("Correctly classified instances\t\t:\t %d (%.3f %%) %n", count_classified, count_classified / total_instances * 100.00);
         output.format("Incorrectly classified instances\t:\t %d (%.3f %%) %n", count_error, count_error / total_instances * 100.00);
-        output.format("Out of Bag (OOB) error rate\t\t\t:\t %.3f%n", forest.error());
-        output.format("Specificity\t\t\t\t\t\t\t:\t %.3f %n", evaluation.averageSpecificity(resultSpecificity));
-        output.format("Accuracy\t\t\t\t\t\t\t:\t %.3f%n", evaluation.Accuracy(TP, totalAll));
+        output.format("Out of Bag (OOB) error rate\t\t:\t %.3f%n", forest.error());
+        output.format("Specificity\t\t\t\t:\t %.3f %n", evaluation.averageSpecificity(resultSpecificity));
+        output.format("Accuracy\t\t\t\t:\t %.3f%n", evaluation.Accuracy(TP, totalAll));
         // FMeasure, Precision, Recall for all classes
-        output.format("Macro Average Precision\t\t\t\t:\t %.3f%n", evaluation.averagePrecisionMacro(resultPrecision));
-        output.format("Micro Average Precision\t\t\t\t:\t %.3f%n", evaluation.averagePrecisionMicro(TP, FP));
-        output.format("Macro Average Recall\t\t\t\t:\t %.3f%n", evaluation.averageRecallMacro(resultRecall));
-        output.format("Micro Average Recall\t\t\t\t:\t %.3f%n", evaluation.averageRecallMicro(TP, FN));
-        output.format("Macro Average FMeasure\t\t\t\t:\t %.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMacro(resultPrecision), evaluation.averageRecallMacro(resultRecall)));
-        output.format("Micro Average FMeasure\t\t\t\t:\t %.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMicro(TP, FP), evaluation.averageRecallMicro(TP, FN)));
+        output.format("Macro Average Precision\t\t\t:\t %.3f%n", evaluation.averagePrecisionMacro(resultPrecision));
+        output.format("Micro Average Precision\t\t\t:\t %.3f%n", evaluation.averagePrecisionMicro(TP, FP));
+        output.format("Macro Average Recall\t\t\t:\t %.3f%n", evaluation.averageRecallMacro(resultRecall));
+        output.format("Micro Average Recall\t\t\t:\t %.3f%n", evaluation.averageRecallMicro(TP, FN));
+        output.format("Macro Average FMeasure\t\t\t:\t %.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMacro(resultPrecision), evaluation.averageRecallMacro(resultRecall)));
+        output.format("Micro Average FMeasure\t\t\t:\t %.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMicro(TP, FP), evaluation.averageRecallMicro(TP, FN)));
 
         output.println("\n** Confusion Matrix **");
         output.println("Row: Actual; Column: Predicted");
