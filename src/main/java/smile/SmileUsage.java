@@ -197,7 +197,7 @@ public class SmileUsage {
         output.println("\n** Validation for each class **");
         output.printf("\nClass\t\t:");
         for (int i = 0; i <= max; i++) {
-            output.printf("\t\t" + i);
+            output.printf("\t" + i);
         }
 
         output.printf("\nFMeasure\t:\t");
