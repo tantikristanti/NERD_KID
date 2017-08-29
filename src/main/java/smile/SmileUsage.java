@@ -8,7 +8,6 @@ import smile.data.AttributeDataset;
 import smile.data.parser.ArffParser;
 import smile.classification.RandomForest;
 import smile.math.Math;
-import smile.sort.QuickSort;
 
 import java.io.*;
 import java.lang.*;
@@ -32,7 +31,6 @@ public class SmileUsage {
     private static final Logger logger = LoggerFactory.getLogger(SmileUsage.class);
 
     // --------------- variables ---------------
-    int max = 0;
 
     // --------------- methods ---------------
 
@@ -74,7 +72,7 @@ public class SmileUsage {
     }
 
     // validation using training and testing data
-    public void trainTestModel(File fileInput, File fileOutput, int split) throws Exception {
+    /*public void trainTestModel(File fileInput, File fileOutput, int split) throws Exception {
 
         // if there isn't any training data
         if (training == null) {
@@ -122,12 +120,12 @@ public class SmileUsage {
         forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 100);
 
         // printing the result
-        printScreenResult(fileInput, fileOutput, testx, testy);
+        outputResults(fileInput, fileOutput, testx, testy);
 
         // creating text file from the result
         writeToFileResult(fileInput, fileOutput, testx, testy);
     }
-
+*/
     // splitting the model into training and data set
     public void splitModel(File fileInput, File fileOutput, int split) throws Exception {
         // if there isn't any training data
@@ -142,6 +140,7 @@ public class SmileUsage {
         double[][] datax = attributeDataset.toArray(new double[attributeDataset.size()][]);
         int[] datay = attributeDataset.toArray(new int[attributeDataset.size()]);
 
+        int max = 0;
         // finding the biggest index in datay
         for (int i = 1; i < datay.length; i++) {
             if (datay[i] > max) {
@@ -176,10 +175,10 @@ public class SmileUsage {
         forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 100);
 
         // printing the result
-        printScreenResult(fileInput, fileOutput, testx, testy);
+        outputResults(fileInput, System.out, testx, testy, max);
 
         // creating text file from the result
-        writeToFileResult(fileInput, fileOutput, testx, testy);
+        outputResults(fileInput, new PrintStream(new FileOutputStream(fileOutput)), testx, testy, max);
     }
 
     public int[] predictTestData(double[][] Testx){
@@ -191,7 +190,7 @@ public class SmileUsage {
         return yPredict;
     }
 
-    public void printScreenResult(File fileInput, File fileOutput, double[][] Testx, int[] Testy) throws Exception {
+    public void outputResults(File fileInput, PrintStream output, double[][] Testx, int[] Testy, int max) throws Exception {
         // prediction and calculating the classes classified
         int[] yPredict = predictTestData(Testx);
 
@@ -223,81 +222,81 @@ public class SmileUsage {
         double[] resultFmeasure = evaluation.Fmeasure(resultPrecision, resultRecall);
 
         // classfied instances
-        System.out.println("** Classification with Random Forest of " + forest.size() + " trees **");
-        System.out.print("\n");
-        System.out.format("Total of instances\t\t\t\t\t:\t %d \n", sizeDataAll);
-        System.out.format("Number of instance trained\t\t\t:\t %d \n", sizeDataTrained);
-        System.out.format("Number of instance predicted\t\t:\t %d \n", sizeDataPredicted);
-        System.out.format("Correctly classified instances\t\t:\t %d (%.3f %%) %n", count_classified, count_classified / total_instances * 100.00);
-        System.out.format("Incorrectly classified instances\t:\t %d (%.3f %%) %n", count_error, count_error / total_instances * 100.00);
-        System.out.format("Out of Bag (OOB) error rate\t\t\t:\t %.3f%n", forest.error());
+        output.println("** Classification with Random Forest of " + forest.size() + " trees **");
+        output.print("\n");
+        output.format("Total of instances\t\t\t\t\t:\t %d \n", sizeDataAll);
+        output.format("Number of instance trained\t\t\t:\t %d \n", sizeDataTrained);
+        output.format("Number of instance predicted\t\t:\t %d \n", sizeDataPredicted);
+        output.format("Correctly classified instances\t\t:\t %d (%.3f %%) %n", count_classified, count_classified / total_instances * 100.00);
+        output.format("Incorrectly classified instances\t:\t %d (%.3f %%) %n", count_error, count_error / total_instances * 100.00);
+        output.format("Out of Bag (OOB) error rate\t\t\t:\t %.3f%n", forest.error());
 
-        System.out.println("\n** Confusion Matrix **");
-        System.out.println("Row: Actual; Column: Predicted");
-        System.out.println("Label of class:");
-        System.out.print("{");
+        output.println("\n** Confusion Matrix **");
+        output.println("Row: Actual; Column: Predicted");
+        output.println("Label of class:");
+        output.print("{");
         for (int i = 0; i <= max; i++) {
-            System.out.print(i + ":" + dataClass[i]);
+            output.print(i + ":" + dataClass[i]);
             if (i!=max)
-                System.out.print("; ");
+                output.print("; ");
         }
-        System.out.print("}\n\n");
+        output.print("}\n\n");
 
-        System.out.print("Class:\t");
+        output.print("Class:\t");
         for (int i = 0; i <= max; i++) {
-            System.out.print(i + "\t");
+            output.print(i + "\t");
         }
-        System.out.print("\n");
+        output.print("\n");
         for (int i = 0; i <= max; i++) {
-            System.out.print("\t" + i + "|\t");
+            output.print("\t" + i + "|\t");
             for (int j = 0; j <= max; j++) {
-                System.out.print(confusMatrix[i][j] + "\t");
+                output.print(confusMatrix[i][j] + "\t");
             }
-            System.out.print("\n");
+            output.print("\n");
         }
 
         // FMeasure, Precision, Recall, Accuracy for all classes
-        System.out.println("\n** Validation for all classes **");
-        System.out.format("Accuracy\t\t\t\t:\t%.3f%n", evaluation.Accuracy(TP, totalAll));
-        System.out.format("Macro Average Precision\t:\t%.3f%n", evaluation.allPrecisionMacro(resultPrecision));
-        System.out.format("Micro Average Precision\t:\t%.3f%n", evaluation.allPrecisionMicro(TP, FP));
-        System.out.format("Macro Average Recall\t:\t%.3f%n", evaluation.allRecallMacro(resultRecall));
-        System.out.format("Micro Average Recall\t:\t%.3f%n", evaluation.allRecallMicro(TP, FN));
-        System.out.format("Macro Average FMeasure\t:\t%.3f%n", evaluation.allFmeasure(evaluation.allPrecisionMacro(resultPrecision),evaluation.allRecallMacro(resultRecall)));
-        System.out.format("Micro Average FMeasure\t:\t%.3f%n", evaluation.allFmeasure(evaluation.allPrecisionMicro(TP, FP),evaluation.allRecallMicro(TP, FN)));
-        System.out.format("Specificity\t\t\t\t:\t%.3f %n%n", evaluation.allSpecificity(resultSpecificity));
+        output.println("\n** Validation for all classes **");
+        output.format("Accuracy\t\t\t\t:\t%.3f%n", evaluation.Accuracy(TP, totalAll));
+        output.format("Macro Average Precision\t:\t%.3f%n", evaluation.allPrecisionMacro(resultPrecision));
+        output.format("Micro Average Precision\t:\t%.3f%n", evaluation.allPrecisionMicro(TP, FP));
+        output.format("Macro Average Recall\t:\t%.3f%n", evaluation.allRecallMacro(resultRecall));
+        output.format("Micro Average Recall\t:\t%.3f%n", evaluation.allRecallMicro(TP, FN));
+        output.format("Macro Average FMeasure\t:\t%.3f%n", evaluation.allFmeasure(evaluation.allPrecisionMacro(resultPrecision),evaluation.allRecallMacro(resultRecall)));
+        output.format("Micro Average FMeasure\t:\t%.3f%n", evaluation.allFmeasure(evaluation.allPrecisionMicro(TP, FP),evaluation.allRecallMicro(TP, FN)));
+        output.format("Specificity\t\t\t\t:\t%.3f %n%n", evaluation.allSpecificity(resultSpecificity));
 
         // FMeasure, Precision, Recall, Accuracy for every class
-        System.out.println("** Validation for each class **");
-        System.out.printf("\nClass\t\t:");
+        output.println("** Validation for each class **");
+        output.printf("\nClass\t\t:");
         for (int i = 0; i <= max; i++) {
-            System.out.printf("\t\t" + i);
+            output.printf("\t\t" + i);
         }
 
-        System.out.printf("\nFMeasure\t:\t");
+        output.printf("\nFMeasure\t:\t");
         for (int i = 0; i <= max; i++) {
-            System.out.format("\t%.2f", resultFmeasure[i]);
+            output.format("\t%.2f", resultFmeasure[i]);
         }
 
-        System.out.printf("\nPrecision\t:\t");
+        output.printf("\nPrecision\t:\t");
         for (int i = 0; i <= max; i++) {
-            System.out.format("\t%.2f", resultPrecision[i]);
+            output.format("\t%.2f", resultPrecision[i]);
         }
 
-        System.out.printf("\nRecall\t\t:\t");
+        output.printf("\nRecall\t\t:\t");
         for (int i = 0; i <= max; i++) {
-            System.out.format("\t%.2f", resultRecall[i]);
+            output.format("\t%.2f", resultRecall[i]);
         }
 
-        System.out.printf("\nSpesificity\t:\t");
+        output.printf("\nSpesificity\t:\t");
         for (int i = 0; i <= max; i++) {
-            System.out.format("\t%.2f", resultSpecificity[i]);
+            output.format("\t%.2f", resultSpecificity[i]);
         }
 
-        System.out.println("\n");
+        output.println("\n");
     }
 
-    public void writeToFileResult(File fileInput, File fileOutput, double[][] Testx, int[] Testy) throws Exception {
+    /*public void writeToFileResult(File fileInput, File fileOutput, double[][] Testx, int[] Testy) throws Exception {
         // prediction and calculating the classes classified
         int[] yPredict = predictTestData(Testx);
 
@@ -439,5 +438,5 @@ public class SmileUsage {
 
         // ending the buffer
         result.close();
-    }
+    }*/
 }

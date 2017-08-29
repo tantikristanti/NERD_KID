@@ -4,8 +4,8 @@ package smile;
 public class ModelEvaluation {
 
     // confusion matrix
-    public int[][] confusionMatrix(int[] testYClass, int[] testYPredictClass, int Idx) throws Exception {
-        int[][] matrix = new int[Idx + 1][Idx + 1];
+    public int[][] confusionMatrix(int[] testYClass, int[] testYPredictClass, int maxIndexClass) throws Exception {
+        int[][] matrix = new int[maxIndexClass + 1][maxIndexClass + 1];
 
         for (int k = 0; k < testYClass.length; k++) {
             int datax = testYClass[k];
