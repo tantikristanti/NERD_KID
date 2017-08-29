@@ -3,21 +3,21 @@
   "global_categories": [
     {
       "page_id": 36538921,
-      "weight": 0.0017393005743677904,
+      "weight": 0.001641197413566591,
       "source": "wikipedia-en",
       "category": "1916 in Austria-Hungary"
     },
     {
-      "page_id": 39385183,
-      "weight": 0.001746985204939079,
+      "page_id": 21687619,
+      "weight": 0.0015708666921702553,
       "source": "wikipedia-en",
-      "category": "Recipients of the Military Merit Cross (Mecklenburg-Schwerin), 1st class"
+      "category": "Ministers of Military Affairs of Greece"
     },
     {
-      "page_id": 36203567,
-      "weight": 0.0016898941175109026,
+      "page_id": 30687710,
+      "weight": 0.0015817759588551753,
       "source": "wikipedia-en",
-      "category": "Bodies of water of the Netherlands"
+      "category": "Monarchs who abdicated"
     }
   ],
   "entities": [
@@ -30,16 +30,23 @@
       "nerd_score": 0.8
     },
     {
-      "nerd_selection_score": 0,
+      "wikipediaExternalRef": 59512,
+      "nerd_selection_score": 0.4121,
+      "wikidataId": "Q127885",
       "offsetStart": 31,
       "offsetEnd": 38,
+      "domains": [
+        "Biology",
+        "Geology",
+        "Sociology"
+      ],
       "type": "NATIONAL",
       "rawName": "Serbian",
-      "nerd_score": 0.8
+      "nerd_score": 0.2953
     },
     {
       "wikipediaExternalRef": 1614762,
-      "nerd_selection_score": 0.9304,
+      "nerd_selection_score": 0.9291,
       "wikidataId": "Q697748",
       "offsetStart": 51,
       "offsetEnd": 64,
@@ -47,11 +54,11 @@
         "Military"
       ],
       "rawName": "Battle of Cer",
-      "nerd_score": 0.754
+      "nerd_score": 0.7581
     },
     {
       "wikipediaExternalRef": 2167279,
-      "nerd_selection_score": 0.926,
+      "nerd_selection_score": 0.9269,
       "wikidataId": "Q682699",
       "offsetStart": 69,
       "offsetEnd": 87,
@@ -59,7 +66,7 @@
         "Military"
       ],
       "rawName": "Battle of Kolubara",
-      "nerd_score": 0.7655
+      "nerd_score": 0.7614
     },
     {
       "wikipediaExternalRef": 1491,
@@ -74,11 +81,11 @@
       ],
       "type": "PERIOD",
       "rawName": "12 August",
-      "nerd_score": 0.7446
+      "nerd_score": 0.7416
     },
     {
       "wikipediaExternalRef": 40548,
-      "nerd_selection_score": 0.9538,
+      "nerd_selection_score": 0.9549,
       "wikidataId": "Q2667",
       "offsetStart": 139,
       "offsetEnd": 158,
@@ -89,7 +96,7 @@
       ],
       "type": "PERSON",
       "rawName": "Paul von Hindenburg",
-      "nerd_score": 0.7654
+      "nerd_score": 0.7612
     },
     {
       "nerd_selection_score": 0,
@@ -101,7 +108,7 @@
     },
     {
       "wikipediaExternalRef": 60142,
-      "nerd_selection_score": 0.8566,
+      "nerd_selection_score": 0.859,
       "wikidataId": "Q153858",
       "offsetStart": 230,
       "offsetEnd": 250,
@@ -111,7 +118,7 @@
       ],
       "type": "ORGANISATION",
       "rawName": "Battle of Tannenberg",
-      "nerd_score": 0.7654
+      "nerd_score": 0.7626
     },
     {
       "nerd_selection_score": 0,
@@ -131,7 +138,7 @@
     },
     {
       "wikipediaExternalRef": 12354993,
-      "nerd_selection_score": 0.4898,
+      "nerd_selection_score": 0.5062,
       "wikidataId": "Q313422",
       "offsetStart": 329,
       "offsetEnd": 342,
@@ -140,11 +147,11 @@
         "Administration"
       ],
       "rawName": "German troops",
-      "nerd_score": 0.7659
+      "nerd_score": 0.7612
     },
     {
       "wikipediaExternalRef": 2198871,
-      "nerd_selection_score": 0.6767,
+      "nerd_selection_score": 0.6742,
       "wikidataId": "Q215669",
       "offsetStart": 385,
       "offsetEnd": 391,
@@ -153,7 +160,7 @@
         "Military"
       ],
       "rawName": "Allied",
-      "nerd_score": 0.7658
+      "nerd_score": 0.7582
     },
     {
       "wikipediaExternalRef": 171325,
@@ -166,11 +173,11 @@
       ],
       "type": "EVENT",
       "rawName": "First Battle of the Marne",
-      "nerd_score": 0.7596
+      "nerd_score": 0.7617
     },
     {
       "wikipediaExternalRef": 2198871,
-      "nerd_selection_score": 0.7084,
+      "nerd_selection_score": 0.7064,
       "wikidataId": "Q215669",
       "offsetStart": 458,
       "offsetEnd": 464,
@@ -179,11 +186,11 @@
         "Military"
       ],
       "rawName": "Allies",
-      "nerd_score": 0.7658
+      "nerd_score": 0.7582
     },
     {
       "wikipediaExternalRef": 11867,
-      "nerd_selection_score": 0.4247,
+      "nerd_selection_score": 0.4275,
       "wikidataId": "Q183",
       "offsetStart": 474,
       "offsetEnd": 480,
@@ -192,11 +199,11 @@
       ],
       "type": "NATIONAL",
       "rawName": "German",
-      "nerd_score": 0.3631
+      "nerd_score": 0.3408
     },
     {
       "wikipediaExternalRef": 160204,
-      "nerd_selection_score": 0.7032,
+      "nerd_selection_score": 0.6995,
       "wikidataId": "Q152099",
       "offsetStart": 481,
       "offsetEnd": 497,
@@ -208,11 +215,11 @@
       ],
       "type": "PERSON",
       "rawName": "King Constantine",
-      "nerd_score": 0.7473
+      "nerd_score": 0.7353
     },
     {
       "wikipediaExternalRef": 2198871,
-      "nerd_selection_score": 0.6902,
+      "nerd_selection_score": 0.7053,
       "wikidataId": "Q215669",
       "offsetStart": 518,
       "offsetEnd": 535,
@@ -221,11 +228,11 @@
         "Military"
       ],
       "rawName": "Allied government",
-      "nerd_score": 0.7968
+      "nerd_score": 0.7652
     },
     {
       "wikipediaExternalRef": 305256,
-      "nerd_selection_score": 0.4072,
+      "nerd_selection_score": 0.41,
       "wikidataId": "Q205545",
       "offsetStart": 542,
       "offsetEnd": 551,
@@ -234,11 +241,11 @@
         "Military"
       ],
       "rawName": "Venizelos",
-      "nerd_score": 0.6854
+      "nerd_score": 0.7302
     },
     {
       "wikipediaExternalRef": 2198871,
-      "nerd_selection_score": 0.6767,
+      "nerd_selection_score": 0.6742,
       "wikidataId": "Q215669",
       "offsetStart": 563,
       "offsetEnd": 569,
@@ -247,11 +254,11 @@
         "Military"
       ],
       "rawName": "Allied",
-      "nerd_score": 0.7658
+      "nerd_score": 0.7582
     },
     {
       "wikipediaExternalRef": 10637578,
-      "nerd_selection_score": 0.5743,
+      "nerd_selection_score": 0.5656,
       "wikidataId": "Q11682252",
       "offsetStart": 570,
       "offsetEnd": 589,
@@ -260,15 +267,21 @@
         "Military"
       ],
       "rawName": "expeditionary force",
-      "nerd_score": 0.7473
+      "nerd_score": 0.7316
     },
     {
-      "nerd_selection_score": 0,
+      "wikipediaExternalRef": 34689,
+      "nerd_selection_score": 0.4162,
+      "wikidataId": "Q2084",
       "offsetStart": 617,
       "offsetEnd": 621,
+      "domains": [
+        "Biology",
+        "Physics"
+      ],
       "type": "PERIOD",
       "rawName": "1915",
-      "nerd_score": 0.8
+      "nerd_score": 0.717
     },
     {
       "nerd_selection_score": 0,
@@ -280,7 +293,7 @@
     },
     {
       "wikipediaExternalRef": 3010720,
-      "nerd_selection_score": 0.6993,
+      "nerd_selection_score": 0.7029,
       "wikidataId": "Q333809",
       "offsetStart": 642,
       "offsetEnd": 649,
@@ -290,38 +303,36 @@
       ],
       "type": "PERSON",
       "rawName": "Cadorna",
-      "nerd_score": 0.7408
+      "nerd_score": 0.7581
     },
     {
-      "wikipediaExternalRef": 63627,
-      "nerd_selection_score": 0.6214,
-      "wikidataId": "Q202760",
+      "wikipediaExternalRef": 30862328,
+      "nerd_selection_score": 0.7473,
+      "wikidataId": "Q681517",
       "offsetStart": 683,
       "offsetEnd": 689,
       "domains": [
-        "Nautical",
-        "Transport"
+        "Military"
       ],
       "rawName": "Isonzo",
-      "nerd_score": 0.6004
+      "nerd_score": 0.7337
     },
     {
-      "wikipediaExternalRef": 63627,
-      "nerd_selection_score": 0.893,
-      "wikidataId": "Q202760",
+      "wikipediaExternalRef": 30862328,
+      "nerd_selection_score": 0.9164,
+      "wikidataId": "Q681517",
       "offsetStart": 706,
       "offsetEnd": 718,
       "domains": [
-        "Nautical",
-        "Transport"
+        "Military"
       ],
       "type": "LOCATION",
       "rawName": "Isonzo River",
-      "nerd_score": 0.6004
+      "nerd_score": 0.7337
     },
     {
       "wikipediaExternalRef": 56092,
-      "nerd_selection_score": 0.8435,
+      "nerd_selection_score": 0.8541,
       "wikidataId": "Q546",
       "offsetStart": 733,
       "offsetEnd": 740,
@@ -330,11 +341,11 @@
       ],
       "type": "LOCATION",
       "rawName": "Trieste",
-      "nerd_score": 0.6065
+      "nerd_score": 0.7229
     },
     {
       "wikipediaExternalRef": 2654397,
-      "nerd_selection_score": 0.9305,
+      "nerd_selection_score": 0.9332,
       "wikidataId": "Q815179",
       "offsetStart": 751,
       "offsetEnd": 768,
@@ -342,7 +353,7 @@
         "Military"
       ],
       "rawName": "Siege of Maubeuge",
-      "nerd_score": 0.7655
+      "nerd_score": 0.7575
     },
     {
       "nerd_selection_score": 0,
@@ -354,7 +365,7 @@
     },
     {
       "wikipediaExternalRef": 5843419,
-      "nerd_selection_score": 0.4115,
+      "nerd_selection_score": 0.4117,
       "wikidataId": "Q142",
       "offsetStart": 781,
       "offsetEnd": 787,
@@ -363,11 +374,11 @@
       ],
       "type": "NATIONAL",
       "rawName": "French",
-      "nerd_score": 0.3631
+      "nerd_score": 0.3408
     },
     {
       "wikipediaExternalRef": 1671552,
-      "nerd_selection_score": 0.7618,
+      "nerd_selection_score": 0.7782,
       "wikidataId": "Q659246",
       "offsetStart": 817,
       "offsetEnd": 834,
@@ -376,7 +387,7 @@
         "Administration"
       ],
       "rawName": "battle of Galicia",
-      "nerd_score": 0.7624
+      "nerd_score": 0.7484
     },
     {
       "nerd_selection_score": 0,
@@ -395,12 +406,21 @@
       "nerd_score": 0.8
     },
     {
-      "nerd_selection_score": 0,
+      "wikipediaExternalRef": 266894,
+      "nerd_selection_score": 0.4915,
+      "wikidataId": "Q131964",
       "offsetStart": 866,
       "offsetEnd": 874,
+      "domains": [
+        "Geography",
+        "Astronomy",
+        "Administration",
+        "Military",
+        "Geology"
+      ],
       "type": "NATIONAL",
       "rawName": "Austrian",
-      "nerd_score": 0.8
+      "nerd_score": 0.7334
     },
     {
       "wikipediaExternalRef": 342327,
@@ -414,7 +434,7 @@
       ],
       "type": "BUSINESS",
       "rawName": "Brusilov Offensive",
-      "nerd_score": 0.762
+      "nerd_score": 0.7629
     },
     {
       "nerd_selection_score": 0,
@@ -442,7 +462,7 @@
     },
     {
       "wikipediaExternalRef": 266894,
-      "nerd_selection_score": 0.4912,
+      "nerd_selection_score": 0.6527,
       "wikidataId": "Q131964",
       "offsetStart": 948,
       "offsetEnd": 957,
@@ -455,7 +475,7 @@
       ],
       "type": "PERSON_TYPE",
       "rawName": "Austrians",
-      "nerd_score": 0.5992
+      "nerd_score": 0.7334
     },
     {
       "nerd_selection_score": 0,
@@ -467,7 +487,7 @@
     },
     {
       "wikipediaExternalRef": 60142,
-      "nerd_selection_score": 0.8566,
+      "nerd_selection_score": 0.859,
       "wikidataId": "Q153858",
       "offsetStart": 990,
       "offsetEnd": 1010,
@@ -477,7 +497,7 @@
       ],
       "type": "EVENT",
       "rawName": "Battle of Tannenberg",
-      "nerd_score": 0.7654
+      "nerd_score": 0.7626
     },
     {
       "nerd_selection_score": 0,
@@ -497,7 +517,7 @@
     },
     {
       "wikipediaExternalRef": 3343,
-      "nerd_selection_score": 0.6411,
+      "nerd_selection_score": 0.6212,
       "wikidataId": "Q31",
       "offsetStart": 1065,
       "offsetEnd": 1072,
@@ -506,11 +526,11 @@
       ],
       "type": "LOCATION",
       "rawName": "Belgium",
-      "nerd_score": 0.3631
+      "nerd_score": 0.3408
     },
     {
       "wikipediaExternalRef": 17515,
-      "nerd_selection_score": 0.6834,
+      "nerd_selection_score": 0.6752,
       "wikidataId": "Q32",
       "offsetStart": 1074,
       "offsetEnd": 1084,
@@ -522,11 +542,11 @@
       ],
       "type": "LOCATION",
       "rawName": "Luxembourg",
-      "nerd_score": 0.3631
+      "nerd_score": 0.3408
     },
     {
       "wikipediaExternalRef": 143706,
-      "nerd_selection_score": 0.8062,
+      "nerd_selection_score": 0.8138,
       "wikidataId": "Q151985",
       "offsetStart": 1093,
       "offsetEnd": 1101,
@@ -536,11 +556,11 @@
       ],
       "type": "LOCATION",
       "rawName": "Ardennes",
-      "nerd_score": 0.7544
+      "nerd_score": 0.761
     },
     {
       "wikipediaExternalRef": 12354993,
-      "nerd_selection_score": 0.8344,
+      "nerd_selection_score": 0.843,
       "wikidataId": "Q313422",
       "offsetStart": 1107,
       "offsetEnd": 1118,
@@ -550,7 +570,7 @@
       ],
       "type": "ORGANISATION",
       "rawName": "German Army",
-      "nerd_score": 0.7659
+      "nerd_score": 0.7612
     },
     {
       "nerd_selection_score": 0,
@@ -570,7 +590,7 @@
     },
     {
       "wikipediaExternalRef": 611740,
-      "nerd_selection_score": 0.6389,
+      "nerd_selection_score": 0.4561,
       "wikidataId": "Q1076619",
       "offsetStart": 1204,
       "offsetEnd": 1215,
@@ -578,11 +598,11 @@
         "Military"
       ],
       "rawName": "French army",
-      "nerd_score": 0.7565
+      "nerd_score": 0.757
     },
     {
       "wikipediaExternalRef": 181061,
-      "nerd_selection_score": 0.9571,
+      "nerd_selection_score": 0.9568,
       "wikidataId": "Q207958",
       "offsetStart": 1223,
       "offsetEnd": 1236,
@@ -593,12 +613,12 @@
       ],
       "type": "PERSON",
       "rawName": "Joseph Joffre",
-      "nerd_score": 0.7587
+      "nerd_score": 0.7617
     },
     {
-      "wikipediaExternalRef": 207150,
-      "nerd_selection_score": 0.9514,
-      "wikidataId": "Q919272",
+      "wikipediaExternalRef": 19942628,
+      "nerd_selection_score": 0.9523,
+      "wikidataId": "Q3277777",
       "offsetStart": 1275,
       "offsetEnd": 1302,
       "domains": [
@@ -606,11 +626,11 @@
       ],
       "type": "ORGANISATION",
       "rawName": "British Expeditionary Force",
-      "nerd_score": 0.7658
+      "nerd_score": 0.7613
     },
     {
       "wikipediaExternalRef": 248715,
-      "nerd_selection_score": 0.9168,
+      "nerd_selection_score": 0.7544,
       "wikidataId": "Q335059",
       "offsetStart": 1310,
       "offsetEnd": 1325,
@@ -619,11 +639,11 @@
         "Medicine"
       ],
       "rawName": "Sir John French",
-      "nerd_score": 0.7559
+      "nerd_score": 0.7629
     },
     {
       "wikipediaExternalRef": 1654229,
-      "nerd_selection_score": 0.8703,
+      "nerd_selection_score": 0.9587,
       "wikidataId": "Q687572",
       "offsetStart": 1364,
       "offsetEnd": 1387,
@@ -632,11 +652,11 @@
       ],
       "type": "ORGANISATION",
       "rawName": "Battle of the Frontiers",
-      "nerd_score": 0.7631
+      "nerd_score": 0.7617
     },
     {
       "wikipediaExternalRef": 3432431,
-      "nerd_selection_score": 0.8308,
+      "nerd_selection_score": 0.9288,
       "wikidataId": "Q860150",
       "offsetStart": 1421,
       "offsetEnd": 1440,
@@ -644,11 +664,11 @@
         "Military"
       ],
       "rawName": "Battle of Charleroi",
-      "nerd_score": 0.7681
+      "nerd_score": 0.7584
     },
     {
       "wikipediaExternalRef": 630014,
-      "nerd_selection_score": 0.8078,
+      "nerd_selection_score": 0.8154,
       "wikidataId": "Q1417205",
       "offsetStart": 1449,
       "offsetEnd": 1463,
@@ -660,11 +680,11 @@
       ],
       "type": "ORGANISATION",
       "rawName": "Battle of Mons",
-      "nerd_score": 0.759
+      "nerd_score": 0.7582
     },
     {
       "wikipediaExternalRef": 4562039,
-      "nerd_selection_score": 0.8191,
+      "nerd_selection_score": 0.8204,
       "wikidataId": "Q2817826",
       "offsetStart": 1490,
       "offsetEnd": 1505,
@@ -672,11 +692,11 @@
         "Military"
       ],
       "rawName": "French 5th Army",
-      "nerd_score": 0.7658
+      "nerd_score": 0.758
     },
     {
       "wikipediaExternalRef": 877860,
-      "nerd_selection_score": 0.7824,
+      "nerd_selection_score": 0.7946,
       "wikidataId": "Q223130",
       "offsetStart": 1549,
       "offsetEnd": 1559,
@@ -684,11 +704,11 @@
         "Military"
       ],
       "rawName": "3rd Armies",
-      "nerd_score": 0.707
+      "nerd_score": 0.7612
     },
     {
       "wikipediaExternalRef": 11867,
-      "nerd_selection_score": 0.4247,
+      "nerd_selection_score": 0.4275,
       "wikidataId": "Q183",
       "offsetStart": 1587,
       "offsetEnd": 1593,
@@ -697,11 +717,11 @@
       ],
       "type": "NATIONAL",
       "rawName": "German",
-      "nerd_score": 0.3631
+      "nerd_score": 0.3408
     },
     {
       "wikipediaExternalRef": 2198871,
-      "nerd_selection_score": 0.6859,
+      "nerd_selection_score": 0.6833,
       "wikidataId": "Q215669",
       "offsetStart": 1622,
       "offsetEnd": 1628,
@@ -711,11 +731,11 @@
       ],
       "type": "BUSINESS",
       "rawName": "Allied",
-      "nerd_score": 0.7658
+      "nerd_score": 0.7582
     },
     {
       "wikipediaExternalRef": 2410017,
-      "nerd_selection_score": 0.8708,
+      "nerd_selection_score": 0.8748,
       "wikidataId": "Q2003949",
       "offsetStart": 1685,
       "offsetEnd": 1704,
@@ -723,11 +743,11 @@
         "Military"
       ],
       "rawName": "Battle of Le Cateau",
-      "nerd_score": 0.7617
+      "nerd_score": 0.758
     },
     {
       "wikipediaExternalRef": 2654397,
-      "nerd_selection_score": 0.9305,
+      "nerd_selection_score": 0.9332,
       "wikidataId": "Q815179",
       "offsetStart": 1710,
       "offsetEnd": 1727,
@@ -735,12 +755,12 @@
         "Military"
       ],
       "rawName": "Siege of Maubeuge",
-      "nerd_score": 0.7655
+      "nerd_score": 0.7575
     },
     {
-      "wikipediaExternalRef": 2426598,
-      "nerd_selection_score": 0.8758,
-      "wikidataId": "Q1539453",
+      "wikipediaExternalRef": 30860300,
+      "nerd_selection_score": 0.8783,
+      "wikidataId": "Q152008",
       "offsetStart": 1736,
       "offsetEnd": 1757,
       "domains": [
@@ -748,11 +768,11 @@
       ],
       "type": "EVENT",
       "rawName": "Battle of St. Quentin",
-      "nerd_score": 0.7654
+      "nerd_score": 0.7629
     },
     {
       "wikipediaExternalRef": 1110884,
-      "nerd_selection_score": 0.5142,
+      "nerd_selection_score": 0.5951,
       "wikidataId": "Q271093",
       "offsetStart": 1759,
       "offsetEnd": 1764,
@@ -760,11 +780,11 @@
         "Geography"
       ],
       "rawName": "Guise",
-      "nerd_score": 0.692
+      "nerd_score": 0.7296
     },
     {
       "wikipediaExternalRef": 12354993,
-      "nerd_selection_score": 0.5966,
+      "nerd_selection_score": 0.6498,
       "wikidataId": "Q313422",
       "offsetStart": 1773,
       "offsetEnd": 1784,
@@ -773,7 +793,7 @@
         "Administration"
       ],
       "rawName": "German army",
-      "nerd_score": 0.7659
+      "nerd_score": 0.7612
     },
     {
       "nerd_selection_score": 0,
@@ -793,7 +813,7 @@
     },
     {
       "wikipediaExternalRef": 22989,
-      "nerd_selection_score": 0.5298,
+      "nerd_selection_score": 0.4946,
       "wikidataId": "Q90",
       "offsetStart": 1814,
       "offsetEnd": 1819,
@@ -803,7 +823,7 @@
       ],
       "type": "LOCATION",
       "rawName": "Paris",
-      "nerd_score": 0.3631
+      "nerd_score": 0.3408
     },
     {
       "wikipediaExternalRef": 171325,
@@ -816,7 +836,7 @@
       ],
       "type": "EVENT",
       "rawName": "First Battle of the Marne",
-      "nerd_score": 0.7596
+      "nerd_score": 0.7617
     },
     {
       "nerd_selection_score": 0,
@@ -828,7 +848,7 @@
     },
     {
       "wikipediaExternalRef": 5843419,
-      "nerd_selection_score": 0.4115,
+      "nerd_selection_score": 0.4117,
       "wikidataId": "Q142",
       "offsetStart": 1876,
       "offsetEnd": 1882,
@@ -837,7 +857,7 @@
       ],
       "type": "NATIONAL",
       "rawName": "French",
-      "nerd_score": 0.3631
+      "nerd_score": 0.3408
     },
     {
       "nerd_selection_score": 0,
@@ -849,7 +869,7 @@
     },
     {
       "wikipediaExternalRef": 11867,
-      "nerd_selection_score": 0.4247,
+      "nerd_selection_score": 0.4275,
       "wikidataId": "Q183",
       "offsetStart": 1923,
       "offsetEnd": 1929,
@@ -858,7 +878,7 @@
       ],
       "type": "NATIONAL",
       "rawName": "German",
-      "nerd_score": 0.3631
+      "nerd_score": 0.3408
     },
     {
       "nerd_selection_score": 0,
@@ -870,7 +890,7 @@
     },
     {
       "wikipediaExternalRef": 34367926,
-      "nerd_selection_score": 0.6886,
+      "nerd_selection_score": 0.5116,
       "wikidataId": "Q569495",
       "offsetStart": 1993,
       "offsetEnd": 2003,
@@ -879,11 +899,11 @@
       ],
       "type": "ARTIFACT",
       "rawName": "2nd Armies",
-      "nerd_score": 0.764
+      "nerd_score": 0.7614
     },
     {
       "wikipediaExternalRef": 11867,
-      "nerd_selection_score": 0.4247,
+      "nerd_selection_score": 0.4275,
       "wikidataId": "Q183",
       "offsetStart": 2016,
       "offsetEnd": 2022,
@@ -892,7 +912,7 @@
       ],
       "type": "NATIONAL",
       "rawName": "German",
-      "nerd_score": 0.3631
+      "nerd_score": 0.3408
     },
     {
       "nerd_selection_score": 0,
@@ -904,7 +924,7 @@
     },
     {
       "wikipediaExternalRef": 12354993,
-      "nerd_selection_score": 0.5966,
+      "nerd_selection_score": 0.6498,
       "wikidataId": "Q313422",
       "offsetStart": 2048,
       "offsetEnd": 2059,
@@ -913,11 +933,11 @@
         "Administration"
       ],
       "rawName": "German army",
-      "nerd_score": 0.7659
+      "nerd_score": 0.7612
     },
     {
       "wikipediaExternalRef": 1284745,
-      "nerd_selection_score": 0.9551,
+      "nerd_selection_score": 0.9539,
       "wikidataId": "Q41962",
       "offsetStart": 2083,
       "offsetEnd": 2094,
@@ -927,11 +947,11 @@
       ],
       "type": "LOCATION",
       "rawName": "Aisne River",
-      "nerd_score": 0.7393
+      "nerd_score": 0.7603
     },
     {
       "wikipediaExternalRef": 11867,
-      "nerd_selection_score": 0.4247,
+      "nerd_selection_score": 0.4275,
       "wikidataId": "Q183",
       "offsetStart": 2225,
       "offsetEnd": 2231,
@@ -940,11 +960,11 @@
       ],
       "type": "NATIONAL",
       "rawName": "German",
-      "nerd_score": 0.3631
+      "nerd_score": 0.3408
     },
     {
       "wikipediaExternalRef": 7898212,
-      "nerd_selection_score": 0.4168,
+      "nerd_selection_score": 0.4174,
       "wikidataId": "Q1427134",
       "offsetStart": 2270,
       "offsetEnd": 2278,
@@ -952,7 +972,7 @@
         "Military"
       ],
       "rawName": "outflank",
-      "nerd_score": 0.7556
+      "nerd_score": 0.7609
     },
     {
       "wikipediaExternalRef": 839722,
@@ -964,11 +984,11 @@
         "Military"
       ],
       "rawName": "Race for the Sea",
-      "nerd_score": 0.7624
+      "nerd_score": 0.7612
     },
     {
       "wikipediaExternalRef": 182259,
-      "nerd_selection_score": 0.4848,
+      "nerd_selection_score": 0.5034,
       "wikidataId": "Q241059",
       "offsetStart": 2342,
       "offsetEnd": 2356,
@@ -976,11 +996,11 @@
         "Military"
       ],
       "rawName": "trench systems",
-      "nerd_score": 0.7667
+      "nerd_score": 0.7612
     },
     {
       "wikipediaExternalRef": 21179,
-      "nerd_selection_score": 0.9127,
+      "nerd_selection_score": 0.8244,
       "wikidataId": "Q1693",
       "offsetStart": 2366,
       "offsetEnd": 2375,
@@ -990,11 +1010,11 @@
       ],
       "type": "LOCATION",
       "rawName": "North Sea",
-      "nerd_score": 0.7404
+      "nerd_score": 0.7581
     },
     {
       "wikipediaExternalRef": 26748,
-      "nerd_selection_score": 0.5653,
+      "nerd_selection_score": 0.562,
       "wikidataId": "Q39",
       "offsetStart": 2383,
       "offsetEnd": 2388,
@@ -1006,11 +1026,11 @@
       ],
       "type": "NATIONAL",
       "rawName": "Swiss",
-      "nerd_score": 0.3631
+      "nerd_score": 0.3408
     },
     {
       "wikipediaExternalRef": 4900822,
-      "nerd_selection_score": 0.6235,
+      "nerd_selection_score": 0.624,
       "wikidataId": "Q553157",
       "offsetStart": 2413,
       "offsetEnd": 2438,
@@ -1018,7 +1038,7 @@
         "Military"
       ],
       "rawName": "German-occupied territory",
-      "nerd_score": 0.7556
+      "nerd_score": 0.7581
     },
     {
       "nerd_selection_score": 0,
@@ -1030,7 +1050,7 @@
     },
     {
       "wikipediaExternalRef": 53694,
-      "nerd_selection_score": 0.7629,
+      "nerd_selection_score": 0.7197,
       "wikidataId": "Q901785",
       "offsetStart": 2460,
       "offsetEnd": 2479,
@@ -1038,7 +1058,7 @@
         "Engineering"
       ],
       "rawName": "pig-iron production",
-      "nerd_score": 0.4867
+      "nerd_score": 0.5437
     },
     {
       "nerd_selection_score": 0,
@@ -1049,8 +1069,22 @@
       "nerd_score": 0.8
     },
     {
+      "wikipediaExternalRef": 189284,
+      "nerd_selection_score": 0.6196,
+      "wikidataId": "Q482090",
+      "offsetStart": 2492,
+      "offsetEnd": 2511,
+      "domains": [
+        "Engineering",
+        "Geology",
+        "Enterprise"
+      ],
+      "rawName": "steel manufacturing",
+      "nerd_score": 0.7236
+    },
+    {
       "wikipediaExternalRef": 5843419,
-      "nerd_selection_score": 0.4115,
+      "nerd_selection_score": 0.4117,
       "wikidataId": "Q142",
       "offsetStart": 2561,
       "offsetEnd": 2567,
@@ -1059,10 +1093,10 @@
       ],
       "type": "NATIONAL",
       "rawName": "French",
-      "nerd_score": 0.3631
+      "nerd_score": 0.3408
     }
   ],
-  "runtime": 1843,
+  "runtime": 1945,
   "language": {
     "conf": 0.0,
     "lang": "en"
