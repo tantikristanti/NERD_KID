@@ -1,15 +1,21 @@
 package smile;
 
+import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.*;
+
 public class smileUsageTest {
+    SmileUsage target;
 
-    @Test
-    public void loadData() throws Exception {
-        SmileUsage sm = new SmileUsage();
-        sm.loadData(this.getClass().getResourceAsStream("/sample.arff"), 337);
-
-        //TODO: add asserts
+    @Before
+    public void setSm() throws Exception {
+        target = new SmileUsage();
     }
 
+    @Test
+    public void testLoadData() throws Exception {
+        target.loadData(this.getClass().getResourceAsStream("/sample.arff"), 337);
+    }
 }

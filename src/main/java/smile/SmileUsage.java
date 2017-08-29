@@ -107,7 +107,7 @@ public class SmileUsage {
         outputResults(fileInput, System.out, testx, testy, max);
 
         // creating text file from the result
-        outputResults(fileInput, new PrintStream(new FileOutputStream(fileOutput)), testx, testy, max);
+        outputResults(fileInput, new PrintStream(new FileOutputStream("result/Result_"+fileOutput+".txt")), testx, testy, max);
     }
 
     public int[] predictTestData(double[][] Testx) {
@@ -159,16 +159,15 @@ public class SmileUsage {
         output.format("Correctly classified instances\t\t:\t %d (%.3f %%) %n", count_classified, count_classified / total_instances * 100.00);
         output.format("Incorrectly classified instances\t:\t %d (%.3f %%) %n", count_error, count_error / total_instances * 100.00);
         output.format("Out of Bag (OOB) error rate\t\t\t:\t %.3f%n", forest.error());
-        output.format("Specificity\t\t\t\t:\t%.3f %n%n", evaluation.averageSpecificity(resultSpecificity));
-        output.format("Accuracy\t\t\t\t:\t%.3f%n", evaluation.Accuracy(TP, totalAll));
+        output.format("Specificity\t\t\t\t\t\t\t:\t %.3f %n", evaluation.averageSpecificity(resultSpecificity));
+        output.format("Accuracy\t\t\t\t\t\t\t:\t %.3f%n", evaluation.Accuracy(TP, totalAll));
         // FMeasure, Precision, Recall for all classes
-        output.println("\n** Validation for all classes **");
-        output.format("Macro Average Precision\t:\t%.3f%n", evaluation.averagePrecisionMacro(resultPrecision));
-        output.format("Micro Average Precision\t:\t%.3f%n", evaluation.averagePrecisionMicro(TP, FP));
-        output.format("Macro Average Recall\t:\t%.3f%n", evaluation.averageRecallMacro(resultRecall));
-        output.format("Micro Average Recall\t:\t%.3f%n", evaluation.averageRecallMicro(TP, FN));
-        output.format("Macro Average FMeasure\t:\t%.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMacro(resultPrecision), evaluation.averageRecallMacro(resultRecall)));
-        output.format("Micro Average FMeasure\t:\t%.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMicro(TP, FP), evaluation.averageRecallMicro(TP, FN)));
+        output.format("Macro Average Precision\t\t\t\t:\t %.3f%n", evaluation.averagePrecisionMacro(resultPrecision));
+        output.format("Micro Average Precision\t\t\t\t:\t %.3f%n", evaluation.averagePrecisionMicro(TP, FP));
+        output.format("Macro Average Recall\t\t\t\t:\t %.3f%n", evaluation.averageRecallMacro(resultRecall));
+        output.format("Micro Average Recall\t\t\t\t:\t %.3f%n", evaluation.averageRecallMicro(TP, FN));
+        output.format("Macro Average FMeasure\t\t\t\t:\t %.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMacro(resultPrecision), evaluation.averageRecallMacro(resultRecall)));
+        output.format("Micro Average FMeasure\t\t\t\t:\t %.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMicro(TP, FP), evaluation.averageRecallMicro(TP, FN)));
 
         output.println("\n** Confusion Matrix **");
         output.println("Row: Actual; Column: Predicted");
@@ -195,7 +194,7 @@ public class SmileUsage {
         }
 
         // FMeasure, Precision, Recall, Accuracy for every class
-        output.println("** Validation for each class **");
+        output.println("\n** Validation for each class **");
         output.printf("\nClass\t\t:");
         for (int i = 0; i <= max; i++) {
             output.printf("\t\t" + i);
