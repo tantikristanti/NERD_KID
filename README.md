@@ -47,7 +47,8 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 ```$ mvn exec:java -Dexec.mainClass="smile.MainSmile"```
 
-- Input needed are 1) training data file (and testing data file if exist) ; 2) percentage of training data 
+- Input needed are 1) training data file (and testing data file if exist) ; 2) percentage of training data ; 3) name of output file
+- Output can be seen in `/result/`
 
 *c. Access NERD's Rest API*
 
@@ -57,7 +58,7 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 *d. Access Wikidata's API*
 
-(still working on it)
+```$ mvn exec:java -Dexec.mainClass="rest.MainCallAPIWikidata"```
 
 *e. Building new model to be predicted by models exist that trained by Random Forest (classification)*
 

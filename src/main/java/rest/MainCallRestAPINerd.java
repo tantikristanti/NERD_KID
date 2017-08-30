@@ -18,8 +18,6 @@ public class MainCallRestAPINerd {
         System.out.print("Query : ");
         query = scanner.nextLine();
         callAPIINERD.useCurl(url, query);
-        Map<String, ArrayList<String>> result = callAPIINERD.readJSON();
-        callAPIINERD.printJSON(result);
     }
 }
 
