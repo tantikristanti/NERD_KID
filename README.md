@@ -40,8 +40,8 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 ```$ mvn exec:java -Dexec.mainClass="preprocessing.OpenXMLFileGrobidNer"```
 
-- New data is in XML format which can be easily copied directly to the file "/data/xml/annotatedCorpus.xml"
-- The result can be seen in "/result/resultCSVAnnotatedCorpus.csv"
+- New data is in XML format which can be easily copied directly to the file `/data/xml/annotatedCorpus.xml`
+- The result can be seen in `/result/resultCSVAnnotatedCorpus.csv`
 
 *b. Model training using Random Forest classification [SMILE](https://github.com/haifengl/smile/)*
 
