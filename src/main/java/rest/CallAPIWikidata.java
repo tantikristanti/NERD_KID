@@ -16,7 +16,7 @@ public class CallAPIWikidata {
         // object of Wikidata's data fetcher
         WikibaseDataFetcher wikibaseDataFetcher = WikibaseDataFetcher.getWikidataDataFetcher();
 
-        List<String> entityNERD = callAPIINERD.readJSON();
+        /**List<String> entityNERD = callAPIINERD.readJSON();
 
         System.out.println(entityNERD.size());
 
@@ -37,7 +37,7 @@ public class CallAPIWikidata {
             }
 
             System.out.printf("\n");
-        }
+        }**/
     }
 
     public void getValueFromProperty() throws Exception{

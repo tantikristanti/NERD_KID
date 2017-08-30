@@ -8,12 +8,12 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CallRestAPINERD {
     // using Curl for accessing API REST Nerd / entity-fishing
-    public void useCurl(String url, String query) throws Exception{
+    public void useCurl(String url, String query) throws Exception {
 
         System.out.println("** Accessing REST API Nerd, Example in /data/example/exampleCurlNERD.txt **");
 
@@ -30,7 +30,7 @@ public class CallRestAPINERD {
         if (query.startsWith("query="))
             element.add(query);
         else
-            element.add("query="+query);
+            element.add("query=" + query);
 
         //element.add("query={ \"termVector\": [ { \"term\" : \"computer science\", \"score\" : 0.3 }, { \"term\" : \"engine\", \"score\" : 0.1 } ], \"language\": { \"lang\": \"en\" }, \"resultLanguages\": [\"de\"], \"nbest\": 0, \"customisation\": \"generic\" }");
         System.out.println(element);
@@ -44,13 +44,12 @@ public class CallRestAPINERD {
         // getting the result of execution
         StringBuilder processOutput = new StringBuilder();
         try (BufferedReader processOutputReader = new BufferedReader(
-                new InputStreamReader(process.getInputStream()));)
-        {
+                new InputStreamReader(process.getInputStream()));) {
             String readLine;
-            while ((readLine = processOutputReader.readLine()) != null)
-            {
+            while ((readLine = processOutputReader.readLine()) != null) {
                 processOutput.append(readLine + System.lineSeparator());
-            }   process.waitFor();
+            }
+            process.waitFor();
         }
 
         System.out.println(processOutput);
@@ -75,29 +74,50 @@ public class CallRestAPINERD {
     }
 
     // accessing JSON file containing NERD's result of annotation and ambiguation
-    public List<String> readJSON() throws Exception{
+    public Map<String, ArrayList<String>> readJSON() throws Exception {
+        Map<String, ArrayList<String>> listDataJSON = new HashMap<String, ArrayList<String>>();
+        ArrayList<String> dataJSONWikiId = new ArrayList<String>();
+        ArrayList<String> dataJSONType = new ArrayList<String>();
 
-        List<String> dataJSON = new ArrayList<String>();
-
-        JSONParser parser = new JSONParser();
-        Object object = parser.parse(new FileReader("result/Result_CurlNERD.json"));
+        JSONParser jsonParser = new JSONParser();
+        Object object = jsonParser.parse(new FileReader("result/Result_CurlNERD.json"));
         JSONObject jsonObject = (JSONObject) object;
 
         JSONArray entities = (JSONArray) jsonObject.get("entities");
 
-        // reading all data contained in "entities"
-        for (int i = 0; i<entities.size(); i++){
+        for (int i = 0; i < entities.size(); i++) {
             JSONObject jsonObjectRow = (JSONObject) entities.get(i);
             if (jsonObjectRow.get("wikidataId") != null) {
-                dataJSON.add(jsonObjectRow.get("wikidataId").toString());
+                dataJSONWikiId.add(jsonObjectRow.get("wikidataId").toString());
+                if (jsonObjectRow.get("type") != null) {
+                    dataJSONType.add(jsonObjectRow.get("type").toString());
+                } else
+                    dataJSONType.add("");
             }
         }
-        System.out.println("Wikidata ID from JSON File : " + dataJSON);
 
-        // getting unique data of Wikidata ID from the entities in NERD application
-        List<String> uniqueDataJSON = dataJSON.stream().distinct().collect(Collectors.toList());
-        System.out.println("Unique Wikidata ID from JSON File : " + uniqueDataJSON);
+        //putting the result into HashMap
+        listDataJSON.put("WikidataId", dataJSONWikiId);
+        listDataJSON.put("ClassNerd", dataJSONType);
 
-        return uniqueDataJSON;
+        return listDataJSON;
+    }
+
+    public void printJSON(Map<String, ArrayList<String>> resultJSON) throws Exception {
+        Map<String, ArrayList<String>> result = resultJSON;
+        ArrayList<String> dataJSONWikiId = new ArrayList<String>();
+        ArrayList<String> dataJSONType = new ArrayList<String>();
+
+        for (Map.Entry<String, ArrayList<String>> entry : result.entrySet()) {
+            if (entry.getKey() == "WikidataId") {
+                dataJSONWikiId = entry.getValue();
+            } else if (entry.getKey() == "ClassNerd") {
+                dataJSONType = entry.getValue();
+            }
+        }
+        System.out.println("Wikidata Id - Class in Nerd:");
+        for (int i = 0; i < dataJSONWikiId.size(); i++) {
+            System.out.println(dataJSONWikiId.get(i) + " - " + dataJSONType.get(i));
+        }
     }
 }

@@ -1,9 +1,10 @@
 package rest;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class MainCallRestAPINerd {
     public static void main(String[] args) throws Exception {
+
         // variables
         String url, query;
 
@@ -17,6 +18,8 @@ public class MainCallRestAPINerd {
         System.out.print("Query : ");
         query = scanner.nextLine();
         callAPIINERD.useCurl(url, query);
-        callAPIINERD.readJSON();
+        Map<String, ArrayList<String>> result = callAPIINERD.readJSON();
+        callAPIINERD.printJSON(result);
     }
 }
+

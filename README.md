@@ -35,39 +35,35 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 **4. Execute the application**
 
+
 *a. Getting instances and classes correspond to each class from [Grobid-Ner](https://github.com/kermitt2/grobid-ner/tree/master/grobid-ner/resources/dataset/ner/corpus/xml/final)*
 
 ```$ mvn exec:java -Dexec.mainClass="preprocessing.OpenXMLFileGrobidNer"```
 
-- New data is in XML format which can be easily copied directly to the file `/data/xml/annotatedCorpus.xml`
-- The result can be seen in `/result/resultCSVAnnotatedCorpus.csv`
+- New data is in XML format which can be easily copied directly to the file "/data/xml/annotatedCorpus.xml"
+- The result can be seen in "/result/resultCSVAnnotatedCorpus.csv"
 
 *b. Model training using Random Forest classification [SMILE](https://github.com/haifengl/smile/)*
 
 ```$ mvn exec:java -Dexec.mainClass="smile.MainSmile"```
 
-- New data can be put in `/data/[file].arff`
-- Input needed are 1) training data file (and testing data file if exist) ; 2) percentage of training data ; 3) the name of result file
-- The result can be seen in `/result/[file].txt` 
+- Input needed are 1) training data file (and testing data file if exist) ; 2) percentage of training data 
 
 *c. Access NERD's Rest API*
 
 ```$ mvn exec:java -Dexec.mainClass="rest.MainCallRestAPINerd"```
 
-- The example of how to enter the correct URL and Query can be seen in `data/example/exampleCurlNERD.txt` 
-- The result can be seen in `/result/Result_CurlNERD.json` 
+- The example of how to enter the correct URL and Query can be seen in "data/example/exampleCurlNERD.txt"
 
-*c. Access Wikidata's API*
-
-(still working on it)
-
-*d. Building new model to be predicted by models exist that trained by Random Forest (classification)*
+*d. Access Wikidata's API*
 
 (still working on it)
 
-*c. Getting the new predicted result*
+*e. Building new model to be predicted by models exist that trained by Random Forest (classification)*
 
 (still working on it)
 
+*f. Getting the new predicted result*
 
+(still working on it)
 
