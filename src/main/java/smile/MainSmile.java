@@ -9,7 +9,7 @@ public class MainSmile {
     public static void main(String[] args) throws Exception {
 
         BufferedReader br = null;
-        File file_name_train = null, file_name_test = null, file_name_result = null;
+        File file_name_train = null, file_name_result = null;
         int split = 0;
 
         SmileUsage sm = new SmileUsage();
@@ -27,7 +27,6 @@ public class MainSmile {
         Scanner input = new Scanner(System.in);
         split = input.nextInt();
         System.out.print("Name of the result file in \"/result/Result_[fileName].txt\": ");
-        //br = new BufferedReader(new InputStreamReader(System.in));
         file_name_result = new File(br.readLine());
         sm.splitModel(file_name_train, file_name_result, split);
     }

@@ -8,6 +8,7 @@ import smile.data.AttributeDataset;
 import smile.data.parser.ArffParser;
 import smile.classification.RandomForest;
 import smile.math.Math;
+import smile.sort.QuickSort;
 
 import java.io.*;
 import java.lang.*;
@@ -107,7 +108,7 @@ public class SmileUsage {
         outputResults(fileInput, System.out, testx, testy, max);
 
         // creating text file from the result
-        outputResults(fileInput, new PrintStream(new FileOutputStream("result/Result_"+fileOutput+".txt")), testx, testy, max);
+        outputResults(fileInput, new PrintStream(new FileOutputStream("result/Result_" + fileOutput + ".txt")), testx, testy, max);
     }
 
     public int[] predictTestData(double[][] Testx) {
@@ -221,5 +222,14 @@ public class SmileUsage {
         }
 
         output.println("\n");
+        // searching the importance of variables
+        double[] importance = forest.importance();
+        int[] indexImportance = QuickSort.sort(importance);
+        int importance_length = importance.length;
+        output.println("** The importance for each property (%) **");
+        // i-- > 0 means comparing i > 0 and decrement i--
+        for (int i = importance_length; i-- > 0; ) {
+            output.format("%s : %.4f%n", attributeDataset.attributes()[indexImportance[i]], importance[i]);
+        }
     }
 }

@@ -3,17 +3,17 @@
 Total of instances			:	 602 
 Number of instance trained		:	 481 
 Number of instance predicted		:	 121 
-Correctly classified instances		:	 103 (85.124 %) 
-Incorrectly classified instances	:	 18 (14.876 %) 
-Out of Bag (OOB) error rate		:	 0.156
-Specificity				:	 0.982 
-Accuracy				:	 0.851
-Macro Average Precision			:	 0.550
-Micro Average Precision			:	 0.851
-Macro Average Recall			:	 0.444
-Micro Average Recall			:	 0.851
-Macro Average FMeasure			:	 0.491
-Micro Average FMeasure			:	 0.851
+Correctly classified instances		:	 96 (79.339 %) 
+Incorrectly classified instances	:	 25 (20.661 %) 
+Out of Bag (OOB) error rate		:	 0.114
+Specificity				:	 0.977 
+Accuracy				:	 0.793
+Macro Average Precision			:	 0.446
+Micro Average Precision			:	 0.793
+Macro Average Recall			:	 0.326
+Micro Average Recall			:	 0.793
+Macro Average FMeasure			:	 0.377
+Micro Average FMeasure			:	 0.793
 
 ** Confusion Matrix **
 Row: Actual; Column: Predicted
@@ -21,26 +21,80 @@ Label of class:
 {0:LOCATION; 1:PERSON_TYPE; 2:PERSON; 3:INSTITUTION; 4:MEASURE; 5:INSTALLATION; 6:CREATION; 7:CONCEPT; 8:ORGANISATION; 9:BUSINESS; 10:NATIONAL; 11:LEGAL; 12:PERIOD; 13:MEDIA}
 
 Class:		0	1	2	3	4	5	6	7	8	9	10	11	12	13	
-	0|	53	0	0	0	0	0	0	0	0	0	0	0	0	0	
-	1|	2	3	2	0	0	0	0	0	0	0	0	0	0	0	
-	2|	3	0	28	0	0	0	0	0	0	0	0	0	0	0	
-	3|	1	0	0	2	0	0	0	0	0	0	0	0	0	0	
-	4|	3	0	0	0	6	0	0	0	0	0	0	0	0	0	
-	5|	2	0	0	0	0	0	0	0	0	0	0	0	0	0	
-	6|	1	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	0|	47	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	1|	1	3	2	0	0	0	0	0	0	0	0	0	0	0	
+	2|	1	0	30	0	0	0	0	0	0	0	0	0	0	0	
+	3|	2	0	0	1	0	0	0	0	2	0	0	0	0	0	
+	4|	2	0	0	0	9	0	0	0	0	0	0	0	0	0	
+	5|	3	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	6|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
 	7|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
-	8|	1	0	0	0	0	0	0	0	5	0	0	0	0	0	
-	9|	0	0	0	0	0	0	0	0	0	1	0	0	0	0	
-	10|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
-	11|	1	0	0	0	0	0	0	0	0	0	0	0	0	0	
-	12|	2	0	0	0	0	0	0	0	0	0	0	0	5	0	
+	8|	0	0	0	0	0	0	0	0	3	1	0	0	0	0	
+	9|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	10|	1	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	11|	4	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	12|	6	0	0	0	0	0	0	0	0	0	0	0	3	0	
 	13|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
 
 ** Validation for each class **
 
 Class		:	0	1	2	3	4	5	6	7	8	9	10	11	12	13
-FMeasure	:	0.87	0.60	0.92	0.80	0.80	0.00	0.00	0.00	0.91	1.00	0.00	0.00	0.83	0.00
-Precision	:	0.77	1.00	0.93	1.00	1.00	0.00	0.00	0.00	1.00	1.00	0.00	0.00	1.00	0.00
-Recall		:	1.00	0.43	0.90	0.67	0.67	0.00	0.00	0.00	0.83	1.00	0.00	0.00	0.71	0.00
-Spesificity	:	0.76	1.00	0.98	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00
+FMeasure	:	0.82	0.67	0.95	0.33	0.90	0.00	0.00	0.00	0.67	0.00	0.00	0.00	0.50	0.00
+Precision	:	0.70	1.00	0.94	1.00	1.00	0.00	0.00	0.00	0.60	0.00	0.00	0.00	1.00	0.00
+Recall		:	1.00	0.50	0.97	0.20	0.82	0.00	0.00	0.00	0.75	0.00	0.00	0.00	0.33	0.00
+Spesificity	:	0.73	1.00	0.98	1.00	1.00	1.00	1.00	1.00	0.98	0.99	1.00	1.00	1.00	1.00
 
+** The importance for each property (%) **
+NOMINAL[P31_Q925381] : 14.7795
+NOMINAL[P31_Q748720] : 6.5285
+NOMINAL[P31_Q7275] : 5.2856
+NOMINAL[P31_Q5003624] : 4.4568
+NOMINAL[P31_Q4677783] : 4.4223
+NOMINAL[P31_Q34770] : 4.0417
+NOMINAL[P31_Q31855] : 2.9463
+NOMINAL[P31_Q2583015] : 2.7647
+NOMINAL[P31_Q23718] : 1.7449
+NOMINAL[P31_Q205892] : 1.5689
+NOMINAL[P31_Q202435] : 1.3784
+NOMINAL[P31_Q152081] : 1.3377
+NOMINAL[P31_Q15060255] : 1.1325
+NOMINAL[P31_Q126] : 0.7796
+NOMINAL[P31_Q125] : 0.7177
+NOMINAL[P31_Q1221156] : 0.4008
+NOMINAL[P31_Q82794] : 0.3484
+NOMINAL[P31_Q37726] : 0.2925
+NOMINAL[P31_Q3336843] : 0.2508
+NOMINAL[P31_Q262166] : 0.2505
+NOMINAL[P31_Q253019] : 0.2101
+NOMINAL[P31_Q2264924] : 0.2019
+NOMINAL[P31_Q200250] : 0.1765
+NOMINAL[P31_Q152018] : 0.1749
+NOMINAL[P31_Q131569] : 0.1416
+NOMINAL[P31_Q11424] : 0.1317
+NOMINAL[P31_Q112099] : 0.1224
+NOMINAL[P31_Q7270] : 0.1207
+NOMINAL[P31_Q6688521] : 0.1008
+NOMINAL[P31_Q49008] : 0.0878
+NOMINAL[P31_Q4663903] : 0.0862
+NOMINAL[P31_Q3024240] : 0.0802
+NOMINAL[P31_Q328468] : 0.0746
+NOMINAL[P31_Q123480] : 0.0648
+NOMINAL[P31_Q179164] : 0.0571
+NOMINAL[P31_Q4830453] : 0.0507
+NOMINAL[P31_Q1549591] : 0.0427
+NOMINAL[P31_Q6505795] : 0.0379
+NOMINAL[P31_Q1637706] : 0.0327
+NOMINAL[P31_Q43229] : 0.0308
+NOMINAL[P31_Q5119] : 0.0286
+NOMINAL[P31_Q101352] : 0.0270
+NOMINAL[P31_Q185441] : 0.0187
+NOMINAL[P31_Q14795564] : 0.0143
+NOMINAL[P31_Q41710] : 0.0065
+NOMINAL[P31_Q4167410] : 0.0045
+NOMINAL[P31_Q7278] : 0.0043
+NOMINAL[P31_Q160016] : 0.0030
+NOMINAL[P31_Q6256] : 0.0000
+NOMINAL[P31_Q515] : 0.0000
+NOMINAL[P31_Q21199] : 0.0000
+NOMINAL[P31_Q3624078] : 0.0000
+NOMINAL[P31_Q5] : 0.0000
