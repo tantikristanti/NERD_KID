@@ -3,17 +3,17 @@
 Total of instances			:	 602 
 Number of instance trained		:	 481 
 Number of instance predicted		:	 121 
-Correctly classified instances		:	 98 (80.992 %) 
-Incorrectly classified instances	:	 23 (19.008 %) 
-Out of Bag (OOB) error rate		:	 0.106
-Specificity				:	 0.979 
-Accuracy				:	 0.810
-Macro Average Precision			:	 0.419
-Micro Average Precision			:	 0.810
-Macro Average Recall			:	 0.325
-Micro Average Recall			:	 0.810
-Macro Average FMeasure			:	 0.366
-Micro Average FMeasure			:	 0.810
+Correctly classified instances		:	 103 (85.124 %) 
+Incorrectly classified instances	:	 18 (14.876 %) 
+Out of Bag (OOB) error rate		:	 0.156
+Specificity				:	 0.982 
+Accuracy				:	 0.851
+Macro Average Precision			:	 0.550
+Micro Average Precision			:	 0.851
+Macro Average Recall			:	 0.444
+Micro Average Recall			:	 0.851
+Macro Average FMeasure			:	 0.491
+Micro Average FMeasure			:	 0.851
 
 ** Confusion Matrix **
 Row: Actual; Column: Predicted
@@ -21,26 +21,26 @@ Label of class:
 {0:LOCATION; 1:PERSON_TYPE; 2:PERSON; 3:INSTITUTION; 4:MEASURE; 5:INSTALLATION; 6:CREATION; 7:CONCEPT; 8:ORGANISATION; 9:BUSINESS; 10:NATIONAL; 11:LEGAL; 12:PERIOD; 13:MEDIA}
 
 Class:		0	1	2	3	4	5	6	7	8	9	10	11	12	13	
-	0|	51	0	0	0	0	0	0	0	0	0	0	0	0	0	
-	1|	2	2	0	0	0	0	0	0	1	0	0	0	0	0	
-	2|	1	0	31	0	0	0	0	0	0	0	0	0	0	0	
-	3|	3	0	0	3	0	0	0	0	0	0	0	0	0	0	
-	4|	1	0	0	0	4	0	0	0	0	0	0	0	0	0	
+	0|	53	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	1|	2	3	2	0	0	0	0	0	0	0	0	0	0	0	
+	2|	3	0	28	0	0	0	0	0	0	0	0	0	0	0	
+	3|	1	0	0	2	0	0	0	0	0	0	0	0	0	0	
+	4|	3	0	0	0	6	0	0	0	0	0	0	0	0	0	
 	5|	2	0	0	0	0	0	0	0	0	0	0	0	0	0	
-	6|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	6|	1	0	0	0	0	0	0	0	0	0	0	0	0	0	
 	7|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
-	8|	1	0	0	1	0	0	0	0	5	1	0	0	0	0	
-	9|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
-	10|	1	1	0	0	0	0	0	0	0	0	0	0	0	0	
-	11|	1	0	0	0	0	0	0	0	1	0	0	0	0	0	
-	12|	6	0	0	0	0	0	0	0	0	0	0	0	2	0	
+	8|	1	0	0	0	0	0	0	0	5	0	0	0	0	0	
+	9|	0	0	0	0	0	0	0	0	0	1	0	0	0	0	
+	10|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	11|	1	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	12|	2	0	0	0	0	0	0	0	0	0	0	0	5	0	
 	13|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
 
 ** Validation for each class **
 
 Class		:	0	1	2	3	4	5	6	7	8	9	10	11	12	13
-FMeasure	:	0.85	0.50	0.98	0.60	0.89	0.00	0.00	0.00	0.67	0.00	0.00	0.00	0.40	0.00
-Precision	:	0.74	0.67	1.00	0.75	1.00	0.00	0.00	0.00	0.71	0.00	0.00	0.00	1.00	0.00
-Recall		:	1.00	0.40	0.97	0.50	0.80	0.00	0.00	0.00	0.63	0.00	0.00	0.00	0.25	0.00
-Spesificity	:	0.74	0.99	1.00	0.99	1.00	1.00	1.00	1.00	0.98	0.99	1.00	1.00	1.00	1.00
+FMeasure	:	0.87	0.60	0.92	0.80	0.80	0.00	0.00	0.00	0.91	1.00	0.00	0.00	0.83	0.00
+Precision	:	0.77	1.00	0.93	1.00	1.00	0.00	0.00	0.00	1.00	1.00	0.00	0.00	1.00	0.00
+Recall		:	1.00	0.43	0.90	0.67	0.67	0.00	0.00	0.00	0.83	1.00	0.00	0.00	0.71	0.00
+Spesificity	:	0.76	1.00	0.98	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00
 

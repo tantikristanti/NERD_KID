@@ -1,11 +1,19 @@
 ** Classification with Random Forest of 100 trees **
 
-Total of instances			:	421
-Number of instance trained		:	336
-Number of instance predicted		:	85
-Correctly classified instances		:	78 (91.765 %)
-Incorrectly classified instances	:	7 (8.235 %)
-Out of Bag (OOB) error rate		:	0.086
+Total of instances			:	 421 
+Number of instance trained		:	 336 
+Number of instance predicted		:	 85 
+Correctly classified instances		:	 78 (91.765 %) 
+Incorrectly classified instances	:	 7 (8.235 %) 
+Out of Bag (OOB) error rate		:	 0.089
+Specificity				:	 0.894 
+Accuracy				:	 0.918
+Macro Average Precision			:	 0.941
+Micro Average Precision			:	 0.918
+Macro Average Recall			:	 0.894
+Micro Average Recall			:	 0.918
+Macro Average FMeasure			:	 0.917
+Micro Average FMeasure			:	 0.918
 
 ** Confusion Matrix **
 Row: Actual; Column: Predicted
@@ -13,77 +21,14 @@ Label of class:
 {0:LOCATION; 1:PERSON}
 
 Class:		0	1	
-	0|	53	0	
-	1|	7	25	
-
-** Validation for all classes **
-Accuracy		:	0.918
-Macro Average Precision	:	0.942
-Micro Average Precision	:	0.918
-Macro Average Recall	:	0.891
-Micro Average Recall	:	0.918
-Macro Average FMeasure	:	0.915
-Micro Average FMeasure	:	0.918
-Specificity		:	0.891
+	0|	52	0	
+	1|	7	26	
 
 ** Validation for each class **
+
 Class		:	0	1
 FMeasure	:	0.94	0.88
 Precision	:	0.88	1.00
-Recall		:	1.00	0.78
-Specificity	:	0.78	1.00
+Recall		:	1.00	0.79
+Spesificity	:	0.79	1.00
 
-** The importance for each property (%) **
-NOMINAL[P31_Q5] : 17.6122
-NOMINAL[P31_Q4167410] : 2.7726
-NOMINAL[P31_Q101352] : 1.9617
-NOMINAL[P31_Q6256] : 1.0341
-NOMINAL[P31_Q3624078] : 1.0262
-NOMINAL[P31_Q160016] : 0.9568
-NOMINAL[P31_Q515] : 0.5300
-NOMINAL[P31_Q5119] : 0.2229
-NOMINAL[P31_Q185441] : 0.1844
-NOMINAL[P31_Q6505795] : 0.1094
-NOMINAL[P31_Q3024240] : 0.1007
-NOMINAL[P31_Q1549591] : 0.0941
-NOMINAL[P31_Q179164] : 0.0667
-NOMINAL[P31_Q1221156] : 0.0567
-NOMINAL[P31_Q1637706] : 0.0434
-NOMINAL[P31_Q112099] : 0.0421
-NOMINAL[P31_Q7270] : 0.0380
-NOMINAL[P31_Q3336843] : 0.0273
-NOMINAL[P31_Q82794] : 0.0256
-NOMINAL[P31_Q7275] : 0.0221
-NOMINAL[P31_Q23718] : 0.0189
-NOMINAL[P31_Q123480] : 0.0187
-NOMINAL[P31_Q200250] : 0.0175
-NOMINAL[P31_Q6688521] : 0.0164
-NOMINAL[P31_Q925381] : 0.0117
-NOMINAL[P31_Q262166] : 0.0068
-NOMINAL[P31_Q202435] : 0.0048
-NOMINAL[P31_Q2583015] : 0.0038
-NOMINAL[P31_Q2264924] : 0.0008
-NOMINAL[P31_Q152018] : 0.0000
-NOMINAL[P31_Q34770] : 0.0000
-NOMINAL[P31_Q14795564] : 0.0000
-NOMINAL[P31_Q41710] : 0.0000
-NOMINAL[P31_Q31855] : 0.0000
-NOMINAL[P31_Q4677783] : 0.0000
-NOMINAL[P31_Q5003624] : 0.0000
-NOMINAL[P31_Q37726] : 0.0000
-NOMINAL[P31_Q748720] : 0.0000
-NOMINAL[P31_Q21199] : 0.0000
-NOMINAL[P31_Q7278] : 0.0000
-NOMINAL[P31_Q11424] : 0.0000
-NOMINAL[P31_Q43229] : 0.0000
-NOMINAL[P31_Q205892] : 0.0000
-NOMINAL[P31_Q126] : 0.0000
-NOMINAL[P31_Q49008] : 0.0000
-NOMINAL[P31_Q4663903] : 0.0000
-NOMINAL[P31_Q131569] : 0.0000
-NOMINAL[P31_Q15060255] : 0.0000
-NOMINAL[P31_Q253019] : 0.0000
-NOMINAL[P31_Q125] : 0.0000
-NOMINAL[P31_Q4830453] : 0.0000
-NOMINAL[P31_Q328468] : 0.0000
-NOMINAL[P31_Q152081] : 0.0000
