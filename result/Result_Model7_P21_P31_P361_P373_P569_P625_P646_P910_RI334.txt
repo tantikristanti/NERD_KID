@@ -1,0 +1,52 @@
+** Classification with Random Forest of 100 trees **
+
+Total of instances			:	 993 
+Number of instance trained		:	 794 
+Number of instance predicted		:	 199 
+Correctly classified instances		:	 97 (48.744 %) 
+Incorrectly classified instances	:	 102 (51.256 %) 
+Out of Bag (OOB) error rate		:	 0.461
+Specificity				:	 0.960 
+Accuracy				:	 0.487
+Macro Average Precision			:	 0.058
+Micro Average Precision			:	 0.487
+Macro Average Recall			:	 0.083
+Micro Average Recall			:	 0.487
+Macro Average FMeasure			:	 0.068
+Micro Average FMeasure			:	 0.487
+
+** Confusion Matrix **
+Row: Actual; Column: Predicted
+Label of class:
+{0:LOCATION; 1:PERSON_TYPE; 2:INSTITUTION; 3:ORGANISATION; 4:EVENT; 5:PERSON; 6:INSTALLATION; 7:CREATION; 8:MEASURE; 9:NATIONAL; 10:BUSINESS; 11:LEGAL; 12:CONCEPT; 13:SUBSTANCE; 14:ARTIFACT; 15:MEDIA; 16:TITLE; 17:CONCEPTUAL; 18:PERIOD; 19:ACRONYM}
+
+Class:		0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19	
+	0|	74	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	1|	9	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	2|	14	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	3|	10	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	4|	5	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	5|	12	0	0	0	0	23	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	6|	11	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	7|	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	8|	4	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	9|	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	10|	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	11|	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	12|	3	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	13|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	14|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	15|	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	16|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	17|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	18|	15	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	19|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+
+** Validation for each class **
+
+Class		:	0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19
+FMeasure	:	0.61	0.00	0.00	0.00	0.00	0.69	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+Precision	:	0.44	0.00	0.00	0.00	0.00	0.72	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+Recall		:	1.00	0.00	0.00	0.00	0.00	0.66	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00
+Spesificity	:	0.26	1.00	1.00	1.00	1.00	0.95	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00
+
