@@ -3,4 +3,4 @@ sudo: false
 dist: trusty
 
 after_success:
-- mvn clean cobertura:cobertura org.eluder.coveralls:coveralls-maven-plugin:report
+  - mvn clean cobertura:cobertura org.eluder.coveralls:coveralls-maven-plugin:report
