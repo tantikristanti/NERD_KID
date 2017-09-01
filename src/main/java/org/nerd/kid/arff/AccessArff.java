@@ -31,12 +31,4 @@ public class AccessArff {
 
         return classData;
     }
-
-    public void readAttributeArff() throws Exception{
-
-    }
-
-    public void createArff() throws Exception{
-
-    }
 }

@@ -4,7 +4,6 @@ import java.util.*;
 
 public class MainCallRestAPINerd {
     public static void main(String[] args) throws Exception {
-
         // variables
         String url, query;
 
