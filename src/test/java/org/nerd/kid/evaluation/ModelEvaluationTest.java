@@ -1,7 +1,8 @@
-package smile;
+package org.nerd.kid.evaluation;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.nerd.kid.evaluation.ModelEvaluation;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;

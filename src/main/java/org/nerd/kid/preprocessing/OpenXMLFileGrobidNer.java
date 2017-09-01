@@ -1,4 +1,4 @@
-package preprocessing;
+package org.nerd.kid.preprocessing;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

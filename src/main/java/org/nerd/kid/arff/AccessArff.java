@@ -1,4 +1,4 @@
-package arff;
+package org.nerd.kid.arff;
 
 import java.io.BufferedReader;
 import java.io.File;

@@ -1,4 +1,4 @@
-package rest;
+package org.nerd.kid.rest;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;

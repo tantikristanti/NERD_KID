@@ -1,4 +1,4 @@
-package smile;
+package org.nerd.kid.evaluation;
 
 /* this class contains the calculation for evaluate the model */
 public class ModelEvaluation {

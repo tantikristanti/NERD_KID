@@ -1,17 +1,17 @@
-package smile;
+package org.nerd.kid.main;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.nerd.kid.main.KidService;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 
-public class smileUsageTest {
-    SmileUsage target;
+public class KidServiceTest {
+    KidService target;
 
     @Before
     public void setSm() throws Exception {
-        target = new SmileUsage();
+        target = new KidService();
     }
 
     @Test

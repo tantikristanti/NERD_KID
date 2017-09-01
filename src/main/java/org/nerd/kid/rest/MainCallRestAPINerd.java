@@ -1,4 +1,4 @@
-package rest;
+package org.nerd.kid.rest;
 
 import java.util.*;
 

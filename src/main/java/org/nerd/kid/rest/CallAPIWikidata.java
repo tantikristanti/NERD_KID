@@ -1,4 +1,4 @@
-package rest;
+package org.nerd.kid.rest;
 
 import org.wikidata.wdtk.datamodel.interfaces.*;
 import org.wikidata.wdtk.wikibaseapi.WikibaseDataFetcher;
@@ -82,10 +82,10 @@ public class CallAPIWikidata {
         String nextLine;
 
         //read a file
-        BufferedReader reader = new BufferedReader(new FileReader("data/Training.arff"));
+        BufferedReader reader = new BufferedReader(new FileReader("data/Training.org.nerd.kid.arff"));
 
         // put to a new file
-        PrintStream writer = new PrintStream(new FileOutputStream("data/Testing.arff"));
+        PrintStream writer = new PrintStream(new FileOutputStream("data/Testing.org.nerd.kid.arff"));
         writer.println("@RELATION Testing\n");
         // getting the data of class
         while ((nextLine = reader.readLine()) != null) {
@@ -103,11 +103,11 @@ public class CallAPIWikidata {
         String nextLineHeader, nextLineProperties;
 
         //read a file
-        BufferedReader readerHeader = new BufferedReader(new FileReader("data/Training.arff"));
-        BufferedReader readerProperties = new BufferedReader(new FileReader("data/Training.arff"));
+        BufferedReader readerHeader = new BufferedReader(new FileReader("data/Training.org.nerd.kid.arff"));
+        BufferedReader readerProperties = new BufferedReader(new FileReader("data/Training.org.nerd.kid.arff"));
 
         // put to a new file
-        PrintStream writerArff = new PrintStream(new FileOutputStream("data/Testing.arff"));
+        PrintStream writerArff = new PrintStream(new FileOutputStream("data/Testing.org.nerd.kid.arff"));
         PrintStream writerCsv = new PrintStream(new FileOutputStream("data/TestingTemp.csv"));
 
         writerArff.println("@RELATION Testing\n");

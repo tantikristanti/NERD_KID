@@ -1,4 +1,4 @@
-package preprocessing;
+package org.nerd.kid.preprocessing;
 
 import java.io.IOException;
 import java.io.Writer;

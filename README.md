@@ -38,7 +38,7 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 *a. Getting instances and classes correspond to each class from [Grobid-Ner](https://github.com/kermitt2/grobid-ner/tree/master/grobid-ner/resources/dataset/ner/corpus/xml/final)*
 
-```$ mvn exec:java -Dexec.mainClass="preprocessing.OpenXMLFileGrobidNer"```
+```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preprocessing.OpenXMLFileGrobidNer"```
 
 - New data is in XML format which can be easily copied directly to the file `/data/xml/annotatedCorpus.xml`
 - The result can be seen in `/result/resultCSVAnnotatedCorpus.csv`
@@ -52,13 +52,13 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 *c. Access NERD's Rest API*
 
-```$ mvn exec:java -Dexec.mainClass="rest.MainCallRestAPINerd"```
+```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.rest.MainCallRestAPINerd"```
 
 - The example of how to enter the correct URL and Query can be seen in "data/example/exampleCurlNERD.txt"
 
 *d. Access Wikidata's API*
 
-```$ mvn exec:java -Dexec.mainClass="rest.MainCallAPIWikidata"```
+```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.rest.MainCallAPIWikidata"```
 
 *e. Building new model to be predicted by models exist that trained by Random Forest (classification)*
 

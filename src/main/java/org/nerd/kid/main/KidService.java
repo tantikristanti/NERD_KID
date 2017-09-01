@@ -1,6 +1,7 @@
-package smile;
+package org.nerd.kid.main;
 
-import arff.AccessArff;
+import org.nerd.kid.arff.AccessArff;
+import org.nerd.kid.evaluation.ModelEvaluation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,7 +14,7 @@ import java.io.*;
 import java.lang.*;
 
 /* this class contains the use of Smile Java API for parsing the model */
-public class SmileUsage {
+public class KidService {
     // creating objects
     ModelEvaluation evaluation = new ModelEvaluation();
     AccessArff accessArff = new AccessArff();
@@ -28,7 +29,7 @@ public class SmileUsage {
     private RandomForest forest = null;
 
     //logger
-    private static final Logger logger = LoggerFactory.getLogger(SmileUsage.class);
+    private static final Logger logger = LoggerFactory.getLogger(KidService.class);
 
     //variables
     double[] importance = null;
@@ -139,7 +140,7 @@ public class SmileUsage {
         int sizeDataTrained = sizeDataAll - (int) total_instances;
         int sizeDataPredicted = (int) total_instances;
 
-        // element of class in arff file
+        // element of class in org.nerd.kid.arff file
         String[] dataClass = accessArff.readClassArff(fileInput);
 
         // calling the method of confusion matrix
