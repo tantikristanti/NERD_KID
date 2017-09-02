@@ -68,3 +68,7 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 (still working on it)
 
+## Contact
+
+Contact: Tanti Kristanti (<tantikristanti@gmail.com>)
+
