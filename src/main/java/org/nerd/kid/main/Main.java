@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         BufferedReader br = null;
-        File file_name_train = null, file_name_result = null;
+        File file_name_train = null, file_name_test = null, file_name_result = null;
         int split = 0;
 
         KidService sm = new KidService();

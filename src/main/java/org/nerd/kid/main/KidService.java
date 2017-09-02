@@ -31,10 +31,6 @@ public class KidService {
     //logger
     private static final Logger logger = LoggerFactory.getLogger(KidService.class);
 
-    //variables
-    double[] importance = null;
-    int[] indexImportance = null;
-
     // --------------- methods ---------------
 
     public void loadData(File file) throws Exception {
@@ -52,12 +48,66 @@ public class KidService {
 
     // loading the model, if there is only the training data
     public void loadData(InputStream file, int responseIndex) throws Exception {
-
         // setResponseIndex is response variable; for classification, it is the class label; for regression, it is of real value
         arffParser = new ArffParser().setResponseIndex(responseIndex);
 
         // parsing the file to get the dataset
         attributeDataset = arffParser.parse(file);
+    }
+
+    // validation using training and testing data
+    public void trainTestModel(File fileInput, File fileOutput) throws Exception {
+        // if there isn't any training data
+        if (training == null) {
+            logger.debug("Training data doesn't exist");
+        }
+
+        // if there isn't any training data
+        if (testing == null) {
+            logger.debug("Testing data doesn't exist");
+        }
+
+        // training the data
+        logger.info("Training the model.");
+
+        // for getting output stream of the file for writing the result
+        File fl = new File("result/Result_" + fileOutput.getName() + ".txt");
+
+        BufferedWriter result = new BufferedWriter(new FileWriter(fl));
+
+        // datax is for the examples, datay is for the class
+        double[][] trainx = training.toArray(new double[training.size()][]);
+        int[] trainy = training.toArray(new int[training.size()]);
+        double[][] testx = testing.toArray(new double[testing.size()][]);
+        int[] testy = testing.toArray(new int[testing.size()]);
+
+        int maxTemp = trainy[0];
+        // finding the biggest index in trainy
+        for (int i = 1; i < trainy.length; i++) {
+            if (trainy[i] >= maxTemp) {
+                maxTemp = trainy[i];
+            }
+        }
+        int max = maxTemp;
+        // finding the biggest index in testy
+        for (int i = 0; i < testy.length; i++) {
+            if (testy[i] >= max) {
+                max = testy[i];
+            }
+        }
+
+        // finding the biggest index between trainy and testy
+        if (maxTemp >= max)
+            max = maxTemp;
+
+        // training with Random Forest classification
+        forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 100);
+
+        // printing the result
+        outputResults(fileInput, System.out, testx, testy, max);
+
+        // creating text file from the result
+        outputResults(fileInput, new PrintStream(new FileOutputStream("result/Result_" + fileOutput + ".txt")), testx, testy, max);
     }
 
     // splitting the model into training and data set
