@@ -1,5 +1,6 @@
 package org.nerd.kid.rest;
 
+import org.nerd.kid.evaluation.ModelEvaluation;
 import org.wikidata.wdtk.datamodel.interfaces.*;
 import org.wikidata.wdtk.wikibaseapi.WikibaseDataFetcher;
 
