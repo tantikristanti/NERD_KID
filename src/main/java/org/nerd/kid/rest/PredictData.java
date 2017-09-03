@@ -14,7 +14,16 @@ public class PredictData {
     private AttributeDataset attributeDataset = null;
     AccessArff accessArff = new AccessArff();
 
-    public String predictNewTestData(double[] testX) throws Exception{
+    public int[] predictTestData(double[][] Testx) {
+        int[] yPredict = new int[Testx.length];
+        // predicting the test
+        for (int i = 0; i < Testx.length; i++) {
+            yPredict[i] = forest.predict(Testx[i]);
+        }
+        return yPredict;
+    }
+
+    public String[] predictNewTestData(double[][] testX) throws Exception{
         String file = "data/Training.arff";
         // parsing the initial file to get the response index
         attributeDataset = arffParser.parse(new FileInputStream(file));
@@ -33,12 +42,18 @@ public class PredictData {
 
         // training with Random Forest classification
         forest = new RandomForest(attributeDataset.attributes(), datax, datay, 100);
-        int resultPrediction = forest.predict(testX);
+        int[] resultPrediction = new int[testX.length];
 
         // getting the index label of the class
         String[] nameClass = accessArff.readClassArff(new File(file));
-
-        String result = nameClass[resultPrediction];
+        for (int i = 0; i < testX.length; i++) {
+            resultPrediction[i] = forest.predict(testX[i]);
+        }
+        String[] result = new String[testX.length];
+        for (int i = 0; i < resultPrediction.length; i++) {
+            int idx = resultPrediction[i];
+            result[i] = nameClass[idx];
+        }
 
         return result;
     }

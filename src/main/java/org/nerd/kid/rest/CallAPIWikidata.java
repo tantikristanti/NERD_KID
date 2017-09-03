@@ -14,15 +14,12 @@ public class CallAPIWikidata {
     private WikibaseDataFetcher wikibaseDataFetcher = WikibaseDataFetcher.getWikidataDataFetcher();
     PredictData predictData = new PredictData();
 
-    public String[][] appendNewTestData() throws Exception {
+    public void appendNewTestData() throws Exception {
         //read a file
         BufferedReader reader = new BufferedReader(new FileReader("data/Training.arff"));
         String nextLine;
         List<String> listProperties = new ArrayList<String>();
         String splitBy = " ";
-
-        // put to a new file
-        //PrintStream writerCsv = new PrintStream(new FileOutputStream("data/Testing.csv"));
 
         // getting the data of class
         while ((nextLine = reader.readLine()) != null) {
@@ -56,13 +53,14 @@ public class CallAPIWikidata {
         int colNumberTestX = listProperties.size();
         int colNumberNewData = listProperties.size() + 4;
 
-        double[] testX = new double[listProperties.size()];
+        double[][] testX = new double[rowNumber][colNumberTestX];
         String[][] matrixNewData = new String[rowNumber][colNumberNewData];
 
         List<String> labelWiki = new ArrayList<String>();
 
         // rows are for examples, columns are for properties and its class
         for (int i = 0; i < rowNumber; i++) {
+            System.out.println("Processing data row " + i);
             // getting every element of Wikidata Id from JSON file
             String elementWikiId = dataJSONWikiId.get(i);
 
@@ -116,103 +114,97 @@ public class CallAPIWikidata {
             }
 
             // for each column of testing x data
-            for (int j=0;j<colNumberTestX;j++){
+            for (int j = 0; j < colNumberTestX; j++) {
                 //print out the properties list
                 String propertySearched = listProperties.get(j);
-                Boolean found = false;
 
                 // put the data for each cell of each row
                 for (int k = 0; k < dataPropertyWiki.size(); k++) {
-                    if (propertySearched.equals(dataPropertyWiki.get(k)))
-                        found = true;
+                    if (propertySearched.equals(dataPropertyWiki.get(k))) {
+                        testX[i][j] = 1.0;
+                        break;
+                    }
                 }
 
                 for (int k = 0; k < dataValuePropertyWiki.size(); k++) {
-                    if (propertySearched.equals(dataValuePropertyWiki.get(k)))
-                        found = true;
+                    if (propertySearched.equals(dataValuePropertyWiki.get(k))) {
+                        testX[i][j] = 1.0;
+                        break;
+                    }
                 }
-                // if property searched is found
-                if (found)
-                    testX[j] = 1.0;
-                else
-                    testX[j] = 0.0;
             }
 
-            // predict testX
-            String resultPredict = predictData.predictNewTestData(testX);
-
             // for each column of matrix new data
-            for (int j = 0; j < colNumberNewData; j++) {
-                //print out the properties list
-                //if (j < colNumberNewData - 1) { // for checking wheather is it in the end of the class or not
-                    if (j == 0){ // first column : Wikidata Id
-                        matrixNewData[i][j] = elementWikiId;
-                    }
-                    else if(j== 1){ //second column : label of Wikidata Id
-                        matrixNewData[i][j] = labelWiki.get(i);
-                    }
-                    else if(j == 2){ // third column : Nerd's class
-                        matrixNewData[i][j] = (dataJSONType.get(i) == "" ? "Null" : dataJSONType.get(i));
-                    }
-                    else if(j == 3){ // fourth column : predicted data
-                        matrixNewData[i][j] = resultPredict;
-                    }
-                    else{
-                        for(int k=0;k<listProperties.size();k++) {
-                            String propertySearched = listProperties.get(k);
-                            Boolean found = false;
-
-                            // put the data for each cell of each row
-                            for (int l = 0; l < dataPropertyWiki.size(); l++) {
-                                if (propertySearched.equals(dataPropertyWiki.get(l)))
-                                    found = true;
-                            }
-
-                            for (int l = 0; l < dataValuePropertyWiki.size(); l++) {
-                                if (propertySearched.equals(dataValuePropertyWiki.get(l)))
-                                    found = true;
-                            }
-                            // if property searched is found
-                            if (found)
-                                matrixNewData[i][j] = "1";
-                            else
-                                matrixNewData[i][j] = "0";
-                        }
-
+            for (int j = 0; j < 4; j++) {
+                if (j == 0) { // first column : Wikidata Id
+                    matrixNewData[i][j] = elementWikiId;
+                } else if (j == 1) { //second column : label of Wikidata Id
+                    matrixNewData[i][j] = labelWiki.get(i);
+                } else if (j == 2) { // third column : Nerd's class
+                    matrixNewData[i][j] = (dataJSONType.get(i) == "" ? "Null" : dataJSONType.get(i));
+                } else if (j == 3) { // fourth column : predicted data
+                    matrixNewData[i][j] = "Null";
                 }
             } // end of column of matrix
         } // end of row of matrix
 
-        // header
-        System.out.println("WikidataID" + ";" + "labelWikidata" + ";" + "ClassNerd" + ";" + "PredictedClass");
-        //writerCsv.println("WikidataID" + ";" + "labelWikidata" + ";" + "ClassNerd" + ";" + "PredictedClass");
-        for (int i = 0;i<listProperties.size();i++){
-            System.out.print(listProperties.get(i));
-            //writerCsv.print(listProperties.get(i));
-            if (i == listProperties.size()-1){
-            System.out.print(listProperties.get(i)+";");
-            //writerCsv.print(listProperties.get(i)+";");
+        // putting the result of prediction in matrix new data
+        String[] resultPredict = predictData.predictNewTestData(testX);
+        for (int i = 0; i < rowNumber; i++) {
+            matrixNewData[i][3] = resultPredict[i];
+        }
+
+        // print the result of testX into matrix of new data
+        for (int i = 0; i < rowNumber; i++) {
+            int col = 4;
+            for (int j = 0; j < colNumberTestX; j++) {
+                matrixNewData[i][col] = String.valueOf(testX[i][j]);
+                col++;
             }
         }
 
-        // print the result of matrixNewData into Arff or Csv file
+        // header
+        System.out.print("WikidataID" + ";" + "labelWikidata" + ";" + "ClassNerd" + ";" + "PredictedClass;");
+        for (int i = 0; i < listProperties.size(); i++) {
+            System.out.print(listProperties.get(i));
+            if (i != listProperties.size() - 1) {
+                System.out.print(";");
+            }
+        }
+        System.out.print("\n");
+        // print the result of matrixNewData
         for (int i = 0; i < rowNumber; i++) {
             for (int j = 0; j < colNumberNewData; j++) {
-                //writerCsv.print(matrixNewData[i][j]);
-                if (j != colNumberNewData - 1) { // if it is not the last element
-                    //writerCsv.print(";");
-                }
-
                 System.out.print(matrixNewData[i][j] + "\t");
             }
-            //writerCsv.print("\n");
             System.out.print("\n");
         }
-        //writerCsv.flush();
-        //writerCsv.close();
 
-        return matrixNewData;
+        CreateCsvResult(listProperties, matrixNewData);
     }
 
+    public void CreateCsvResult(List<String> property, String[][] matrix) throws Exception {
+        PrintStream writerCsv = new PrintStream(new FileOutputStream("result/Predicted_Testing.csv"));
+        writerCsv.print("WikidataID" + ";" + "labelWikidata" + ";" + "ClassNerd" + ";" + "PredictedClass;");
+        for (int i = 0; i < property.size(); i++) {
+            writerCsv.print(property.get(i));
+            if (i != property.size() - 1) {
+                writerCsv.print(";");
+            }
+        }
 
+        writerCsv.print("\n");
+        // print the result
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                writerCsv.print(matrix[i][j]);
+                if (j != matrix[i].length - 1) {
+                    writerCsv.print(";");
+                }
+            }
+            writerCsv.print("\n");
+        }
+        writerCsv.flush();
+        writerCsv.close();
+    }
 }

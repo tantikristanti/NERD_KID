@@ -20,6 +20,9 @@ public class CreateCSVPredictedResult {
                 if (!nextLine.contains("class")) {
                     String[] result = nextLine.split(splitBy);
                     writerCsv.print(result[1]);
+                    if (reader.readLine() != null){
+                        writerCsv.print(";");
+                    }
                 }
             }
         }
