@@ -56,18 +56,12 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 - The example of how to enter the correct URL and Query can be seen in "data/example/exampleCurlNERD.txt"
 
-*d. Access Wikidata's API*
+*d. Building new data by accessing Wikidata's API and getting the new predicted result*
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.rest.MainCallAPIWikidata"```
 
-*e. Building new model to be predicted by models exist that trained by Random Forest (classification)*
-
-(still working on it)
-
-*f. Getting the new predicted result*
-
-(still working on it)
-
+- The result of predicted class can be seen in `/result/Predicted_Testing.csv`
+ 
 ## Contact
 
 Contact: Tanti Kristanti (<tantikristanti@gmail.com>)
