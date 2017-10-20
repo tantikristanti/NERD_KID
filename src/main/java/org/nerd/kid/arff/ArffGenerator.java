@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CreateArff {
+public class ArffGenerator {
     public void CreateNewArffFile() throws Exception{
         BufferedReader reader = new BufferedReader(new FileReader("data/Training.arff"));
         PrintStream writer = new PrintStream(new FileOutputStream("data/Testing.arff"));

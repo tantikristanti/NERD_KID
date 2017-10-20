@@ -19,11 +19,11 @@ public class OpenXMLFileGrobidNer {
         // object of "DocumentBuilderFactory"
         DocumentBuilder dbBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 
-        // création d'un parseur et création d'un document
+        // parser of documents
         File file = new File("data/xml/annotatedCorpus.xml");
         Document doc = dbBuilder.parse(file);
 
-        // normalizer le structure de XML
+        // normalizer the XML's structure
         doc.getDocumentElement().normalize();
 
         NodeList nList = doc.getElementsByTagName("ENAMEX");
@@ -37,7 +37,7 @@ public class OpenXMLFileGrobidNer {
                 Element element = (Element) node;
                 System.out.println(element.getAttribute("type") + ";" + element.getTextContent());
 
-                // création de fichier CSV
+                // cxreation of CSV file
                 createCSVFIle.writeLine(writer, Arrays.asList(element.getAttribute("type") + ";" + element.getTextContent()));
             }
         }

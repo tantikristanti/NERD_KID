@@ -7,7 +7,7 @@ import org.json.simple.parser.JSONParser;
 import java.io.*;
 import java.util.ArrayList;
 
-public class CallRestAPINERD {
+public class RestAPINERDCaller {
     // using Curl for accessing API REST Nerd / entity-fishing
     public void useCurl(String url, String query) throws Exception {
 

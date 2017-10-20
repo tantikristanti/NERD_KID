@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class CallAPIWikidata {
+public class APIWikidataCaller {
 
     // object of Wikidata's data fetcher
     private WikibaseDataFetcher wikibaseDataFetcher = WikibaseDataFetcher.getWikidataDataFetcher();
-    PredictData predictData = new PredictData();
+    DataPredictor predictData = new DataPredictor();
 
     public void appendNewTestData() throws Exception {
         //read a file
@@ -110,7 +110,6 @@ public class CallAPIWikidata {
                         }
                     }
                 }
-
             }
 
             // for each column of testing x data

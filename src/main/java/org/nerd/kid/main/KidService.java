@@ -1,12 +1,11 @@
 package org.nerd.kid.main;
 
-import org.nerd.kid.arff.AccessArff;
+import org.nerd.kid.arff.ArffParser;
 import org.nerd.kid.evaluation.ModelEvaluation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import smile.data.AttributeDataset;
-import smile.data.parser.ArffParser;
 import smile.classification.RandomForest;
 import smile.math.Math;
 
@@ -17,10 +16,10 @@ import java.lang.*;
 public class KidService {
     // creating objects
     ModelEvaluation evaluation = new ModelEvaluation();
-    AccessArff accessArff = new AccessArff();
+    ArffParser accessArff = new ArffParser();
 
     // --------------- attributes ---------------
-    private ArffParser arffParser = new ArffParser();
+    private smile.data.parser.ArffParser arffParser = new smile.data.parser.ArffParser();
     private AttributeDataset attributeDataset = null;
     private AttributeDataset training = null;
     private AttributeDataset testing = null;
@@ -49,7 +48,7 @@ public class KidService {
     // loading the model, if there is only the training data
     public void loadData(InputStream file, int responseIndex) throws Exception {
         // setResponseIndex is response variable; for classification, it is the class label; for regression, it is of real value
-        arffParser = new ArffParser().setResponseIndex(responseIndex);
+        arffParser = new smile.data.parser.ArffParser().setResponseIndex(responseIndex);
 
         // parsing the file to get the dataset
         attributeDataset = arffParser.parse(file);

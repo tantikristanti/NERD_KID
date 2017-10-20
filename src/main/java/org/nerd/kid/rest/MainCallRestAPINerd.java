@@ -8,7 +8,7 @@ public class MainCallRestAPINerd {
         String url, query;
 
         // object of callRestAPI
-        CallRestAPINERD callAPIINERD = new CallRestAPINERD();
+        RestAPINERDCaller callAPIINERD = new RestAPINERDCaller();
 
         Scanner scanner = new Scanner(System.in);
 

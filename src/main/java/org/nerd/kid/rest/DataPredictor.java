@@ -1,18 +1,17 @@
 package org.nerd.kid.rest;
 
-import org.nerd.kid.arff.AccessArff;
+import org.nerd.kid.arff.ArffParser;
 import smile.classification.RandomForest;
 import smile.data.AttributeDataset;
-import smile.data.parser.ArffParser;
 
 import java.io.*;
 
-public class PredictData {
+public class DataPredictor {
     //classification model of Random Forest
     private RandomForest forest = null;
-    private ArffParser arffParser = new ArffParser();
+    private smile.data.parser.ArffParser arffParser = new smile.data.parser.ArffParser();
     private AttributeDataset attributeDataset = null;
-    AccessArff accessArff = new AccessArff();
+    ArffParser accessArff = new ArffParser();
 
     public int[] predictTestData(double[][] Testx) {
         int[] yPredict = new int[Testx.length];
@@ -32,7 +31,7 @@ public class PredictData {
         int responseIndex = attributeDataset.attributes().length - 1;
 
         // setResponseIndex is response variable; for classification, it is the class label; for regression, it is of real value
-        arffParser = new ArffParser().setResponseIndex(responseIndex);
+        arffParser = new smile.data.parser.ArffParser().setResponseIndex(responseIndex);
 
         // parsing the file to get the dataset
         attributeDataset = arffParser.parse(file);
