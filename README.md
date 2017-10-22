@@ -35,7 +35,6 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 **4. Execute the application**
 
-
 *a. Getting instances and classes correspond to each class from [Grobid-Ner](https://github.com/kermitt2/grobid-ner/tree/master/grobid-ner/resources/dataset/ner/corpus/xml/final)*
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preprocessing.OpenXMLFileGrobidNer"```
@@ -61,7 +60,19 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.rest.MainCallAPIWikidata"```
 
 - The result of predicted class can be seen in `/result/Predicted_Testing.csv`
- 
+
+**5. Example of Prediction of Class**
+
+*To predict Wikidata Id:*
+- Copy the list of Wikidata Id to be predicted into `data/preannotation/dataPreannotation.csv`
+- It is possible also to change the training data located in `data/Training.arff`
+- Run the service of prediction :
+
+```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preannotation.MainPreAnnotation"```
+
+*The example of result can be seen in the picture*
+![ResultPrediction](pic/ResultPrediction.jpg)
+
 ## Contact
 
 Contact: Tanti Kristanti (<tantikristanti@gmail.com>)

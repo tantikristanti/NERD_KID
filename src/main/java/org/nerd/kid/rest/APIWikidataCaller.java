@@ -153,7 +153,7 @@ public class APIWikidataCaller {
             matrixNewData[i][3] = resultPredict[i];
         }
 
-        // print the result of testX into matrix of new data
+        // print the values of testX into matrix of new data
         for (int i = 0; i < rowNumber; i++) {
             int col = 4;
             for (int j = 0; j < colNumberTestX; j++) {

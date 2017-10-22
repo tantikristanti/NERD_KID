@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.Map;
 
 /**
- * get the Wikidata Id from input files
+ * extract Wikidata Id from input files
  */
 public class WikidataIdExtractor {
     public void addElementFromFileJson() throws Exception{
@@ -39,12 +39,11 @@ public class WikidataIdExtractor {
         writer.close();
     }
 
-    public void getWikidataFeatureFromFileCsv() throws Exception{
+    public void getWikidataIdFromFileCsv() throws Exception{
         ReadCSVFile readCSVFile = new ReadCSVFile();
         ArrayList<String> resultElement = readCSVFile.readCsv("data/preannotation/dataPreannotation.csv");
         for (int i = 0; i< resultElement.size();i++){
-            String elementWikiId = resultElement.get(i);
-
+            System.out.println(resultElement.get(i));
         }
 
     }
