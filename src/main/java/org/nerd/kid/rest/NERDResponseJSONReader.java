@@ -25,15 +25,19 @@ public class NERDResponseJSONReader {
         for (int i = 0; i < entities.size(); i++) {
             JSONObject jsonObjectRow = (JSONObject) entities.get(i);
             if (jsonObjectRow.get("wikidataId") != null) {
-                dataJSONWikiId.add(jsonObjectRow.get("wikidataId").toString());
-                if (jsonObjectRow.get("type") != null) {
-                    dataJSONType.add(jsonObjectRow.get("type").toString());
-                } else
-                    dataJSONType.add("");
+                String dataWikiId = jsonObjectRow.get("wikidataId").toString();
+                // to add just a new unique Wikidata ID
+                if (!dataJSONWikiId.contains(dataWikiId)) {
+                    dataJSONWikiId.add(dataWikiId);
+                    if (jsonObjectRow.get("type") != null) {
+                        dataJSONType.add(jsonObjectRow.get("type").toString());
+                    } else
+                        dataJSONType.add("");
+                }
             }
         }
 
-        //putting the result into HashMap
+        //put the result into HashMap
         listDataJSON.put("WikidataId", dataJSONWikiId);
         listDataJSON.put("ClassNerd", dataJSONType);
 

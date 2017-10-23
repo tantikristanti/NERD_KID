@@ -183,27 +183,31 @@ public class APIWikidataCaller {
     }
 
     public void CreateCsvResult(List<String> property, String[][] matrix) throws Exception {
-        PrintStream writerCsv = new PrintStream(new FileOutputStream("result/Predicted_Testing.csv"));
-        writerCsv.print("WikidataID" + ";" + "labelWikidata" + ";" + "ClassNerd" + ";" + "PredictedClass;");
-        for (int i = 0; i < property.size(); i++) {
-            writerCsv.print(property.get(i));
-            if (i != property.size() - 1) {
-                writerCsv.print(";");
-            }
-        }
 
-        writerCsv.print("\n");
-        // print the result
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                writerCsv.print(matrix[i][j]);
-                if (j != matrix[i].length - 1) {
+        PrintStream writerCsv = new PrintStream(new FileOutputStream("result/Predicted_Testing.csv"));
+        try {
+            writerCsv.print("WikidataID" + ";" + "labelWikidata" + ";" + "ClassNerd" + ";" + "PredictedClass;");
+            for (int i = 0; i < property.size(); i++) {
+                writerCsv.print(property.get(i));
+                if (i != property.size() - 1) {
                     writerCsv.print(";");
                 }
             }
+
             writerCsv.print("\n");
+            // print the result
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    writerCsv.print(matrix[i][j]);
+                    if (j != matrix[i].length - 1) {
+                        writerCsv.print(";");
+                    }
+                }
+                writerCsv.print("\n");
+            }
+        } finally {
+            writerCsv.flush();
+            writerCsv.close();
         }
-        writerCsv.flush();
-        writerCsv.close();
     }
 }

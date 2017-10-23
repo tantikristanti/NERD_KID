@@ -201,8 +201,8 @@ public class KidService {
         int totalAll = evaluation.countingTotalClass(confusMatrix, max);
         double[] resultPrecision = evaluation.precision(TP, FP);
         double[] resultRecall = evaluation.recall(TP, FN);
-        double[] resultSpecificity = evaluation.Specificity(TN, FP);
-        double[] resultFmeasure = evaluation.Fmeasure(resultPrecision, resultRecall);
+        double[] resultSpecificity = evaluation.specificity(TN, FP);
+        double[] resultFmeasure = evaluation.fmeasure(resultPrecision, resultRecall);
 
         // classfied instances
         output.println("** Classification with Random Forest of " + forest.size() + " trees **");

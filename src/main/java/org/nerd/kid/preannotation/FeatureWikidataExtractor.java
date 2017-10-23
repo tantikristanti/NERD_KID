@@ -21,7 +21,7 @@ public class FeatureWikidataExtractor {
     private WikibaseDataFetcher wikibaseDataFetcher = WikibaseDataFetcher.getWikidataDataFetcher();
     DataPredictor predictData = new DataPredictor();
 
-    public void getFeatureWikidata(File fileTraining, File fileTesting) throws Exception{
+    public void getFeatureWikidata(File fileTraining, File fileTesting) throws Exception {
         //read properties needed from training file
         ArffParser arffParser = new ArffParser();
         List<String> listProperties = arffParser.readPropertiesTrainingFile(new File("data/Training.arff")); // fileTraining
@@ -150,21 +150,24 @@ public class FeatureWikidataExtractor {
 
     } // end of method getFeatureWikidata
 
-    public void printResultWikidataExtraction(String[][] matrix) throws Exception{
+    public void printResultWikidataExtraction(String[][] matrix) throws Exception {
         PrintStream printStream = new PrintStream(new FileOutputStream("result/Predicted_Result.csv"));
-        printStream.print("WikidataID" + ";" + "labelWikidata" + ";" + "PredictedClass\n");
-        // print the result
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                printStream.print(matrix[i][j]);
-                if (j != matrix[i].length - 1) {
-                    printStream.print(";");
+        try {
+            printStream.print("WikidataID" + ";" + "labelWikidata" + ";" + "PredictedClass\n");
+            // print the result
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    printStream.print(matrix[i][j]);
+                    if (j != matrix[i].length - 1) {
+                        printStream.print(";");
+                    }
                 }
+                printStream.print("\n");
             }
-            printStream.print("\n");
+        } finally {
+            printStream.flush();
+            printStream.close();
         }
-        printStream.flush();
-        printStream.close();
     }
 
 } // end of class FeatureWikidataExtractor

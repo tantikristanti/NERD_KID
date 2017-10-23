@@ -15,7 +15,7 @@ public class Main {
         KidService sm = new KidService();
 
         // loading the training data
-        System.out.print("Name of training data file ([path]/[fileName].org.nerd.kid.arff) : ");
+        System.out.print("Name of training data file ([path]/[fileName].arff) : ");
         br = new BufferedReader(new InputStreamReader(System.in));
         file_name_train = new File(br.readLine());
 
@@ -23,7 +23,7 @@ public class Main {
         sm.loadData(file_name_train);
 
         // splitting the model into training and testing data
-        System.out.print("Percentage of training data (in %), org.nerd.kid.rest for testing : ");
+        System.out.print("Percentage of training data (in %), the rest for testing : ");
         Scanner input = new Scanner(System.in);
         split = input.nextInt();
         System.out.print("Name of the result file in \"/result/Result_[fileName].txt\": ");

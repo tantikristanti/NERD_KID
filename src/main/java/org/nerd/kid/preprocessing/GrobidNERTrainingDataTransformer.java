@@ -13,8 +13,8 @@ import java.util.Arrays;
 
 /**
  * Transform the grobid ner training data in a csv file with
- *    CLASS, mention
- *
+ * CLASS, mention
+ * <p>
  * mention is the raw information from the text e.g. 'LEGAL, Washington Act'.
  */
 public class GrobidNERTrainingDataTransformer {
@@ -32,10 +32,11 @@ public class GrobidNERTrainingDataTransformer {
         NodeList nList = doc.getElementsByTagName("ENAMEX");
         int total = nList.getLength();
         String csvFile = "result/resultCSVAnnotatedCorpus.csv";
-        FileWriter writer = new FileWriter(csvFile);
-        csvFileWriter.writeLine(writer, Arrays.asList("Class;Entity"));
 
+        FileWriter writer = new FileWriter(csvFile);
         try {
+            csvFileWriter.writeLine(writer, Arrays.asList("Class;Entity"));
+
             for (int i = 0; i < total; i++) {
                 Node node = nList.item(i);
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
@@ -46,6 +47,7 @@ public class GrobidNERTrainingDataTransformer {
                     csvFileWriter.writeLine(writer, Arrays.asList(element.getAttribute("type") + ";" + element.getTextContent()));
                 }
             }
+
         } finally {
             writer.flush();
             writer.close();

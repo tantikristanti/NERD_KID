@@ -1,0 +1,46 @@
+** Classification with Random Forest of 100 trees **
+
+Total of instances			:	 428 
+Number of instance trained		:	 342 
+Number of instance predicted		:	 86 
+Correctly classified instances		:	 71 (82.558 %) 
+Incorrectly classified instances	:	 15 (17.442 %) 
+Out of Bag (OOB) error rate		:	 0.389
+Specificity				:	 0.984 
+accuracy				:	 0.826
+Macro Average Precision			:	 0.396
+Micro Average Precision			:	 0.826
+Macro Average Recall			:	 0.379
+Micro Average Recall			:	 0.826
+Macro Average FMeasure			:	 0.387
+Micro Average FMeasure			:	 0.826
+
+** Confusion Matrix **
+Row: Actual; Column: Predicted
+Label of class:
+{0:BUSINESS; 1:CONCEPT; 2:CREATION; 3:INSTALLATION; 4:INSTITUTION; 5:LEGAL; 6:LOCATION; 7:MEASURE; 8:MEDIA; 9:NATIONAL; 10:ORGANISATION; 11:PERIOD; 12:PERSON; 13:PERSON_TYPE}
+
+Class:		0	1	2	3	4	5	6	7	8	9	10	11	12	13	
+	0|	0	0	0	0	0	0	1	0	0	0	0	0	0	0	
+	1|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	2|	0	0	0	0	0	0	1	0	0	0	0	0	0	0	
+	3|	0	0	0	0	0	0	1	0	0	0	0	0	0	0	
+	4|	0	0	0	0	0	0	4	0	0	0	0	0	0	0	
+	5|	0	0	0	0	0	0	1	0	0	0	0	0	0	0	
+	6|	0	0	0	0	0	0	18	0	0	0	0	0	0	0	
+	7|	0	0	0	0	0	0	1	10	0	0	0	0	0	0	
+	8|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	9|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	10|	0	0	0	0	0	0	0	0	0	0	3	0	0	0	
+	11|	0	0	0	0	0	0	2	0	0	0	0	2	0	0	
+	12|	0	0	0	0	0	0	4	0	0	0	0	0	35	0	
+	13|	0	0	0	0	0	0	0	0	0	0	0	0	0	3	
+
+** Validation for each class **
+
+Class		:	0	1	2	3	4	5	6	7	8	9	10	11	12	13
+FMeasure	:	0.00	0.00	0.00	0.00	0.00	0.00	0.71	0.95	0.00	0.00	1.00	0.67	0.95	1.00
+Precision	:	0.00	0.00	0.00	0.00	0.00	0.00	0.55	1.00	0.00	0.00	1.00	1.00	1.00	1.00
+Recall		:	0.00	0.00	0.00	0.00	0.00	0.00	1.00	0.91	0.00	0.00	1.00	0.50	0.90	1.00
+Spesificity	:	1.00	1.00	1.00	1.00	1.00	1.00	0.78	1.00	1.00	1.00	1.00	1.00	1.00	1.00
+

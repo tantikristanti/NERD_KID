@@ -138,8 +138,8 @@ public class ModelEvaluation {
         return resultRecall;
     }
 
-    // Specificity = true negative rate = TN / (TN + FP)
-    public double[] Specificity(int[] TN, int[] FP) {
+    // specificity = true negative rate = TN / (TN + FP)
+    public double[] specificity(int[] TN, int[] FP) {
         double[] resultSpecificity = new double[TN.length];
         for (int i = 0; i < TN.length; i++) {
             resultSpecificity[i] = Double.isNaN((float) TN[i] / (TN[i] + FP[i])) ? 0.0 : (float) TN[i] / (TN[i] + FP[i]);
@@ -147,8 +147,8 @@ public class ModelEvaluation {
         return resultSpecificity;
     }
 
-    // Fmeasure = 2 * (precision * recall) / (precision + recall)
-    public double[] Fmeasure(double[] Precision, double[] Recall) {
+    // fmeasure = 2 * (precision * recall) / (precision + recall)
+    public double[] fmeasure(double[] Precision, double[] Recall) {
         double[] resultFmeasure = new double[Precision.length];
         for (int i = 0; i < Precision.length; i++) {
             resultFmeasure[i] = Double.isNaN((float) 2 * (Precision[i] * Recall[i]) / (Precision[i] + Recall[i])) ? 0.0 : (float) (float) 2 * (Precision[i] * Recall[i]) / (Precision[i] + Recall[i]);
@@ -205,7 +205,7 @@ public class ModelEvaluation {
         return resultAllRecall;
     }
 
-    // the average of Specificity
+    // the average of specificity
     public double averageSpecificity(double[] Specificity) {
         double resultAllSpecificity = 0.0;
         double subTotal = 0.0;

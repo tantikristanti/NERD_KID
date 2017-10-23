@@ -8,17 +8,13 @@ Q1414593;Patient Protection and Affordable Care Act;LEGAL
 Q47740;Muslim;PERSON_TYPE
 Q21707860;Paris Agreement;LEGAL
 Q25395;Newark;LOCATION
-Q2521385;Richmond Football Club;SPORT_TEAM
+Q2521385;Richmond Football Club;PORT_TEAM
 Q1370;Virginia;LOCATION
 Q23505;George H. W. Bush;PERSON
 Q159535;conspiracy theory;CONCEPT
 Q7174;democracy;CONCEPT
 Q6235;nationalism;LOCATION
-Q1969722;nativism;LOCATION      # check
+Q1969722;nativism;LOCATION
 Q12948581;copyright;LEGAL
-Q22686;Donald Trump;PERSON
-Q23505;George H. W. Bush;PERSON
 Q29468;Republican Party;ORGANISATION
-Q2521385;Richmond Football Club;LOCATION
 Q43437;procuring;LOCATION
-Q29468;Republican Party;ORGANISATION
