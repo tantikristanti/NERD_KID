@@ -200,7 +200,7 @@ public class KidService {
         int[] FN = evaluation.countingFalseNegative(confusMatrix, max);
         int totalAll = evaluation.countingTotalClass(confusMatrix, max);
         double[] resultPrecision = evaluation.Precision(TP, FP);
-        double[] resultRecall = evaluation.Recall(TP, FN);
+        double[] resultRecall = evaluation.recall(TP, FN);
         double[] resultSpecificity = evaluation.Specificity(TN, FP);
         double[] resultFmeasure = evaluation.Fmeasure(resultPrecision, resultRecall);
 
@@ -214,7 +214,7 @@ public class KidService {
         output.format("Incorrectly classified instances\t:\t %d (%.3f %%) %n", count_error, count_error / total_instances * 100.00);
         output.format("Out of Bag (OOB) error rate\t\t:\t %.3f%n", forest.error());
         output.format("Specificity\t\t\t\t:\t %.3f %n", evaluation.averageSpecificity(resultSpecificity));
-        output.format("Accuracy\t\t\t\t:\t %.3f%n", evaluation.Accuracy(TP, totalAll));
+        output.format("accuracy\t\t\t\t:\t %.3f%n", evaluation.accuracy(TP, totalAll));
         // FMeasure, Precision, Recall for all classes
         output.format("Macro Average Precision\t\t\t:\t %.3f%n", evaluation.averagePrecisionMacro(resultPrecision));
         output.format("Micro Average Precision\t\t\t:\t %.3f%n", evaluation.averagePrecisionMicro(TP, FP));
@@ -247,7 +247,7 @@ public class KidService {
             output.print("\n");
         }
 
-        // FMeasure, Precision, Recall, Accuracy for every class
+        // FMeasure, Precision, Recall, accuracy for every class
         output.println("\n** Validation for each class **");
         output.printf("\nClass\t\t:");
         for (int i = 0; i <= max; i++) {

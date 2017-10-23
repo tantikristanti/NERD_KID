@@ -1,8 +1,8 @@
 package org.nerd.kid.preannotation;
 
-import org.nerd.kid.preprocessing.CreateCSVFIle;
-import org.nerd.kid.preprocessing.ReadCSVFile;
-import org.nerd.kid.rest.AccessJSON;
+import org.nerd.kid.preprocessing.CSVFIleWriter;
+import org.nerd.kid.preprocessing.CSVFileReader;
+import org.nerd.kid.rest.NERDResponseJSONReader;
 
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import java.util.Map;
 public class WikidataIdExtractor {
     public void addElementFromFileJson() throws Exception{
         // access elements from JSON file
-        AccessJSON accessJSON = new AccessJSON();
+        NERDResponseJSONReader accessJSON = new NERDResponseJSONReader();
         Map<String, ArrayList<String>> result = accessJSON.readJSON();
         ArrayList<String> dataWikiId = new ArrayList<String>();
         for(Map.Entry<String, ArrayList<String>> entry : result.entrySet()){
@@ -25,7 +25,7 @@ public class WikidataIdExtractor {
         }
 
         // put the result in CSV file
-        CreateCSVFIle createCSVFIle = new CreateCSVFIle();
+        CSVFIleWriter createCSVFIle = new CSVFIleWriter();
         String csvfile = "data/preannotation/dataPreannotation.csv";
         FileWriter writer = new FileWriter(csvfile);
 
@@ -40,7 +40,7 @@ public class WikidataIdExtractor {
     }
 
     public void getWikidataIdFromFileCsv() throws Exception{
-        ReadCSVFile readCSVFile = new ReadCSVFile();
+        CSVFileReader readCSVFile = new CSVFileReader();
         ArrayList<String> resultElement = readCSVFile.readCsv("data/preannotation/dataPreannotation.csv");
         for (int i = 0; i< resultElement.size();i++){
             System.out.println(resultElement.get(i));

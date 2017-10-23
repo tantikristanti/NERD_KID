@@ -35,7 +35,7 @@ public class APIWikidataCaller {
         reader.close();
 
         // object of callRestAPI
-        AccessJSON accessJSON = new AccessJSON();
+        NERDResponseJSONReader accessJSON = new NERDResponseJSONReader();
         Map<String, ArrayList<String>> result = accessJSON.readJSON();
         ArrayList<String> dataJSONWikiId = new ArrayList<String>();
         ArrayList<String> dataJSONType = new ArrayList<String>();

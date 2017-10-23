@@ -1,7 +1,7 @@
 package org.nerd.kid.preannotation;
 
 import org.nerd.kid.arff.ArffParser;
-import org.nerd.kid.preprocessing.ReadCSVFile;
+import org.nerd.kid.preprocessing.CSVFileReader;
 import org.nerd.kid.rest.DataPredictor;
 import org.wikidata.wdtk.datamodel.interfaces.*;
 import org.wikidata.wdtk.wikibaseapi.WikibaseDataFetcher;
@@ -27,7 +27,7 @@ public class FeatureWikidataExtractor {
         List<String> listProperties = arffParser.readPropertiesTrainingFile(new File("data/Training.arff")); // fileTraining
 
         // wikidataId to be extracted
-        ReadCSVFile readCSVFile = new ReadCSVFile();
+        CSVFileReader readCSVFile = new CSVFileReader();
         ArrayList<String> dataWikiId = readCSVFile.readCsv("data/preannotation/dataPreannotation.csv"); // fileTesting
 
         // number of row and column needed

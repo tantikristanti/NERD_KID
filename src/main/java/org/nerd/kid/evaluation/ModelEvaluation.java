@@ -107,7 +107,7 @@ public class ModelEvaluation {
     }
 
     // accuracy of all class = TP of all class / number of all instances
-    public double Accuracy(int[] TP, int calculTotal) {
+    public double accuracy(int[] TP, int calculTotal) {
         double totalTP = 0.0;
         for (int i = 0; i < TP.length; i++) {
             totalTP += TP[i];
@@ -121,7 +121,7 @@ public class ModelEvaluation {
      **/
 
     // precision = TP / (TP + FP)
-    public double[] Precision(int[] TP, int[] FP) {
+    public double[] precision(int[] TP, int[] FP) {
         double[] resultPrecision = new double[TP.length];
         for (int i = 0; i < TP.length; i++) {
             resultPrecision[i] = Double.isNaN((float) TP[i] / (TP[i] + FP[i])) ? 0.0 : (float) TP[i] / (TP[i] + FP[i]);
@@ -130,7 +130,7 @@ public class ModelEvaluation {
     }
 
     // Recall = sensitivity = TP / (TP + FN)
-    public double[] Recall(int[] TP, int[] FN) {
+    public double[] recall(int[] TP, int[] FN) {
         double[] resultRecall = new double[TP.length];
         for (int i = 0; i < TP.length; i++) {
             resultRecall[i] = Double.isNaN((float) TP[i] / (TP[i] + FN[i])) ? 0.0 : (float) TP[i] / (TP[i] + FN[i]);

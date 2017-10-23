@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AccessJSON {
+public class NERDResponseJSONReader {
     // accessing JSON file containing NERD's result of annotation and ambiguation
     public Map<String, ArrayList<String>> readJSON() throws Exception {
         Map<String, ArrayList<String>> listDataJSON = new HashMap<String, ArrayList<String>>();

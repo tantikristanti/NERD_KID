@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArffGenerator {
-    public void CreateNewArffFile() throws Exception{
+    public void createNewArffFile() throws Exception{
         BufferedReader reader = new BufferedReader(new FileReader("data/Training.arff"));
         PrintStream writer = new PrintStream(new FileOutputStream("data/Testing.arff"));
-        CreateNewArffFile(reader, writer);
+        createNewArffFile(reader, writer);
     }
 
-    public void CreateNewArffFile(BufferedReader reader, PrintStream writerArff) throws Exception{
+    public void createNewArffFile(BufferedReader reader, PrintStream writerArff) throws Exception{
         // read a file
         String nextLine;
         List<String> listProperties = new ArrayList<String>();

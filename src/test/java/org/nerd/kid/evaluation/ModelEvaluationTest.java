@@ -2,7 +2,6 @@ package org.nerd.kid.evaluation;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.nerd.kid.evaluation.ModelEvaluation;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
@@ -125,7 +124,7 @@ public class ModelEvaluationTest {
         int[] TP = target.countingTruePositive(matrix, Idx);
         int calculTotal = target.countingTotalClass(matrix, Idx);
 
-        final double accuracy = target.Accuracy(TP, calculTotal);
+        final double accuracy = target.accuracy(TP, calculTotal);
 
         assertThat(accuracy, is(0.6153846383094788));
     }
@@ -151,7 +150,7 @@ public class ModelEvaluationTest {
         int[] TP = target.countingTruePositive(matrix, Idx);
         int[] FN = target.countingFalseNegative(matrix, Idx);
 
-        final double[] recall = target.Recall(TP, FN);
+        final double[] recall = target.recall(TP, FN);
 
         assertThat(recall[0], is(0.6000000238418579));
         assertThat(recall[1], is(0.75));
@@ -180,7 +179,7 @@ public class ModelEvaluationTest {
         int[] FP = target.countingFalsePositive(matrix, Idx);
         int[] FN = target.countingFalseNegative(matrix, Idx);
         double[] precision = target.Precision(TP, FP);
-        double[] recall = target.Recall(TP, FN);
+        double[] recall = target.recall(TP, FN);
 
         final double[] fmeasure = target.Fmeasure(precision, recall);
 

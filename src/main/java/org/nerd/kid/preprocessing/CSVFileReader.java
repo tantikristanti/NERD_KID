@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ReadCSVFile {
+public class CSVFileReader {
     public ArrayList<String> readCsv(String file) throws Exception{
         BufferedReader bufferedReader = null;
         String line = "";

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.List;
 
-public class CreateCSVFIle {
+public class CSVFIleWriter {
     private static char separator_default = ';';
 
     public static void writeLine(Writer w, List<String> values) throws IOException {
