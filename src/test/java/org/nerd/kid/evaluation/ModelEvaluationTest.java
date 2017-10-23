@@ -136,7 +136,7 @@ public class ModelEvaluationTest {
         int[] TP = target.countingTruePositive(matrix, Idx);
         int[] FP = target.countingFalsePositive(matrix, Idx);
 
-        final double[] precision = target.Precision(TP, FP);
+        final double[] precision = target.precision(TP, FP);
 
         assertThat(precision[0], is(1.0));
         assertThat(precision[1], is(0.5));
@@ -178,7 +178,7 @@ public class ModelEvaluationTest {
         int[] TP = target.countingTruePositive(matrix, Idx);
         int[] FP = target.countingFalsePositive(matrix, Idx);
         int[] FN = target.countingFalseNegative(matrix, Idx);
-        double[] precision = target.Precision(TP, FP);
+        double[] precision = target.precision(TP, FP);
         double[] recall = target.recall(TP, FN);
 
         final double[] fmeasure = target.Fmeasure(precision, recall);

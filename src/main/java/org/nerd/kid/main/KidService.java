@@ -199,7 +199,7 @@ public class KidService {
         int[] FP = evaluation.countingFalsePositive(confusMatrix, max);
         int[] FN = evaluation.countingFalseNegative(confusMatrix, max);
         int totalAll = evaluation.countingTotalClass(confusMatrix, max);
-        double[] resultPrecision = evaluation.Precision(TP, FP);
+        double[] resultPrecision = evaluation.precision(TP, FP);
         double[] resultRecall = evaluation.recall(TP, FN);
         double[] resultSpecificity = evaluation.Specificity(TN, FP);
         double[] resultFmeasure = evaluation.Fmeasure(resultPrecision, resultRecall);
