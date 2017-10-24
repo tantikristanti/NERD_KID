@@ -44,7 +44,7 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 *b. Model training using Random Forest classification [SMILE](https://github.com/haifengl/smile/)*
 
-```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.main.Main"```
+```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.model.MainModelBuilder"```
 
 - Input needed are 1) training data file (and testing data file if exist) ; 2) percentage of training data ; 3) name of output file
 - Output can be seen in `/result/`

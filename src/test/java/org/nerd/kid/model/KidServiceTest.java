@@ -1,17 +1,16 @@
-package org.nerd.kid.main;
+package org.nerd.kid.model;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.nerd.kid.main.KidService;
 
 import static org.hamcrest.core.Is.is;
 
 public class KidServiceTest {
-    KidService target;
+    ModelBuilder target;
 
     @Before
     public void setSm() throws Exception {
-        target = new KidService();
+        target = new ModelBuilder();
     }
 
     @Test

@@ -1,8 +1,9 @@
-package org.nerd.kid.preannotation;
+package org.nerd.kid.extractor;
 
 import org.nerd.kid.arff.ArffParser;
 import org.nerd.kid.preprocessing.CSVFileReader;
 import org.nerd.kid.rest.DataPredictor;
+import org.nerd.kid.rest.NERDResponseJSONReader;
 import org.wikidata.wdtk.datamodel.interfaces.*;
 import org.wikidata.wdtk.wikibaseapi.WikibaseDataFetcher;
 
@@ -11,6 +12,7 @@ import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /*
 * extract the features (properties and values) of WikidataId directly from Wikidata knowledge base
@@ -21,19 +23,29 @@ public class FeatureWikidataExtractor {
     private WikibaseDataFetcher wikibaseDataFetcher = WikibaseDataFetcher.getWikidataDataFetcher();
     DataPredictor predictData = new DataPredictor();
 
-    public void getFeatureWikidata(File fileTraining, File fileTesting) throws Exception {
+    public String[][] getFeatureWikidata(File fileTraining, File fileTesting) throws Exception {
         //read properties needed from training file
         ArffParser arffParser = new ArffParser();
-        List<String> listProperties = arffParser.readPropertiesTrainingFile(new File("data/Training.arff")); // fileTraining
+        List<String> listProperties = arffParser.readPropertiesTrainingFile(fileTraining); // fileTraining
 
-        // wikidataId to be extracted
-        CSVFileReader readCSVFile = new CSVFileReader();
-        ArrayList<String> dataWikiId = readCSVFile.readCsv("data/preannotation/dataPreannotation.csv"); // fileTesting
+        // read data from csv files
+        CSVFileReader csvFileReader = new CSVFileReader();
+        Map<String, ArrayList<String>> result = csvFileReader.readWikiIdClassCsv(fileTesting.toString());
+        ArrayList<String> dataCSVWikiId = new ArrayList<String>();
+        ArrayList<String> dataCSVClass = new ArrayList<String>();
+
+        for (Map.Entry<String, ArrayList<String>> entry : result.entrySet()) {
+            if (entry.getKey() == "WikidataId") {
+                dataCSVWikiId = entry.getValue();
+            } else if (entry.getKey() == "ClassNerd") {
+                dataCSVClass = entry.getValue();
+            }
+        }
 
         // number of row and column needed
-        int rowNumber = dataWikiId.size();
+        int rowNumber = dataCSVWikiId.size();
         int colNumberTestX = listProperties.size();
-        int colNumberNewData = 3;
+        int colNumberNewData = listProperties.size() + 4;
 
         double[][] testX = new double[rowNumber][colNumberTestX];
         String[][] matrixNewData = new String[rowNumber][colNumberNewData];
@@ -45,7 +57,7 @@ public class FeatureWikidataExtractor {
         for (int i = 0; i < rowNumber; i++) {
             System.out.println("Processing data row " + i);
             // getting every element of Wikidata Id
-            String elementWikiId = dataWikiId.get(i);
+            String elementWikiId = dataCSVWikiId.get(i);
 
             // getting entity document
             EntityDocument QElementWikiId = wikibaseDataFetcher.getEntityDocument(elementWikiId);
@@ -117,15 +129,21 @@ public class FeatureWikidataExtractor {
                 }
             }
 
+            // find last data in new matrix
+            int lastColumn = colNumberNewData - 1;
+
             // add another data column needed for testing file
-            for (int j = 0; j < 3; j++) {
+            for (int j = 0; j < colNumberNewData; j++) {
                 if (j == 0) { // first column : Wikidata Id
                     matrixNewData[i][j] = elementWikiId;
                 } else if (j == 1) { //second column : label of Wikidata Id
                     matrixNewData[i][j] = labelWiki.get(i);
                 } else if (j == 2) { // third column : predicted data
                     matrixNewData[i][j] = "Null";
+                } else if (j == lastColumn) { // last column : Nerd's class
+                    matrixNewData[i][j] = (dataCSVClass.get(i) == "" ? "Null" : dataCSVClass.get(i));
                 }
+
             } // end of column of matrix
         } // end of row of matrix
 
@@ -135,28 +153,30 @@ public class FeatureWikidataExtractor {
             matrixNewData[i][2] = resultPredict[i];
         }
 
-        // print the header for the result
-        System.out.print("WikidataID" + ";" + "labelWikidata" + ";" + "PredictedClass\n");
-        // print the result of matrixNewData
+
+        // add properties of WikidataId in matrix of new data
         for (int i = 0; i < rowNumber; i++) {
-            for (int j = 0; j < colNumberNewData; j++) {
-                System.out.print(matrixNewData[i][j] + "\t");
+            int col = 4;
+
+            // as the size of properties for each Wikidata Id
+            for (int j = 0; j < colNumberTestX; j++) {
+                matrixNewData[i][col] = String.valueOf(testX[i][j]);
+                col++;
             }
-            System.out.print("\n");
         }
 
-        // print the result into file
-        printResultWikidataExtraction(matrixNewData);
+
+        return matrixNewData;
 
     } // end of method getFeatureWikidata
 
-    public void printResultWikidataExtraction(String[][] matrix) throws Exception {
+    public void printResultWikidataExtractionWithoutProperties(String[][] matrix) throws Exception {
         PrintStream printStream = new PrintStream(new FileOutputStream("result/Predicted_Result.csv"));
         try {
             printStream.print("WikidataID" + ";" + "labelWikidata" + ";" + "PredictedClass\n");
             // print the result
             for (int i = 0; i < matrix.length; i++) {
-                for (int j = 0; j < matrix[i].length; j++) {
+                for (int j = 0; j < 3; j++) {
                     printStream.print(matrix[i][j]);
                     if (j != matrix[i].length - 1) {
                         printStream.print(";");

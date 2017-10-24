@@ -1,4 +1,4 @@
-package org.nerd.kid.main;
+package org.nerd.kid.model;
 
 import org.nerd.kid.arff.ArffParser;
 import org.nerd.kid.evaluation.ModelEvaluation;
@@ -13,7 +13,7 @@ import java.io.*;
 import java.lang.*;
 
 /* this class contains the use of Smile Java API for parsing the model */
-public class KidService {
+public class ModelBuilder {
     // creating objects
     ModelEvaluation evaluation = new ModelEvaluation();
     ArffParser accessArff = new ArffParser();
@@ -28,7 +28,7 @@ public class KidService {
     private RandomForest forest = null;
 
     //logger
-    private static final Logger logger = LoggerFactory.getLogger(KidService.class);
+    private static final Logger logger = LoggerFactory.getLogger(ModelBuilder.class);
 
     // --------------- methods ---------------
 

@@ -1,18 +1,18 @@
-package org.nerd.kid.main;
+package org.nerd.kid.model;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class Main {
+public class MainModelBuilder {
     public static void main(String[] args) throws Exception {
 
         BufferedReader br = null;
         File file_name_train = null, file_name_test = null, file_name_result = null;
         int split = 0;
 
-        KidService sm = new KidService();
+        ModelBuilder sm = new ModelBuilder();
 
         // loading the training data
         System.out.print("Name of training data file ([path]/[fileName].arff) : ");
