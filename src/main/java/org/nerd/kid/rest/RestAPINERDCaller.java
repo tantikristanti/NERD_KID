@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class RestAPINERDCaller {
     // using Curl for accessing API REST Nerd / entity-fishing
-    public void useCurl(String url, String query) throws Exception {
+    public void useCurl(String url, String query, String outputFile) throws Exception {
 
         System.out.println("** Accessing REST API Nerd, Example in /data/example/exampleCurlNERD.txt **");
 
@@ -60,7 +60,7 @@ public class RestAPINERDCaller {
 
         // writing the result into JSON file
         // for getting output stream of the file for writing the result
-        File fl = new File("result/Result_CurlNERD.json");
+        File fl = new File("result/json/"+outputFile+".json");
 
         BufferedWriter result = new BufferedWriter(new FileWriter(fl));
 

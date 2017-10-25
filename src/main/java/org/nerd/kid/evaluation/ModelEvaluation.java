@@ -1,6 +1,9 @@
 package org.nerd.kid.evaluation;
 
-/* this class contains some methods for evaluating the model */
+/*
+class to evaluate machine learning models
+* */
+
 public class ModelEvaluation {
 
     // confusion matrix

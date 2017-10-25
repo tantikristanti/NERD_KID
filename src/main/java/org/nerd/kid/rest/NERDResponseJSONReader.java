@@ -17,7 +17,7 @@ public class NERDResponseJSONReader {
         ArrayList<String> dataJSONType = new ArrayList<String>();
 
         JSONParser jsonParser = new JSONParser();
-        Object object = jsonParser.parse(new FileReader("result/Result_CurlNERD.json"));
+        Object object = jsonParser.parse(new FileReader("result/json/Result_CurlNERD.json"));
         JSONObject jsonObject = (JSONObject) object;
 
         JSONArray entities = (JSONArray) jsonObject.get("entities");

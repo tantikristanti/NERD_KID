@@ -10,20 +10,28 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * Transform the grobid ner training data in a csv file with
  * CLASS, mention
- * <p>
+ *
  * mention is the raw information from the text e.g. 'LEGAL, Washington Act'.
  */
 public class GrobidNERTrainingDataTransformer {
     public static void main(String[] args) throws Exception {
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Name of input file (in XML, ex. 'data/xml/annotatedCorpus.xml') : ");
+        String inputFile= input.nextLine();
+        System.out.print("Name of output file : ");
+        String outputFile= input.nextLine();
+
         CSVFIleWriter csvFileWriter = new CSVFIleWriter();
 
         DocumentBuilder dbBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 
-        File file = new File("data/xml/annotatedCorpus.xml");
+        File file = new File(inputFile);
         Document doc = dbBuilder.parse(file);
 
         // normalizer the XML's structure
@@ -31,7 +39,7 @@ public class GrobidNERTrainingDataTransformer {
 
         NodeList nList = doc.getElementsByTagName("ENAMEX");
         int total = nList.getLength();
-        String csvFile = "result/resultCSVAnnotatedCorpus.csv";
+        String csvFile = "result/csv/"+outputFile+".csv";
 
         FileWriter writer = new FileWriter(csvFile);
         try {
@@ -52,6 +60,7 @@ public class GrobidNERTrainingDataTransformer {
             writer.flush();
             writer.close();
         }
+        System.out.print("Result in 'result/csv/"+outputFile+".csv");
     }
 
 }

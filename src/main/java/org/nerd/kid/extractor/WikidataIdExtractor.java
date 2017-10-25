@@ -14,8 +14,9 @@ import java.util.stream.Collectors;
 /**
  * extract Wikidata Id from input files
  */
+
 public class WikidataIdExtractor {
-    public void addElementFromFileJson() throws Exception {
+    public void addElementFromFileJson(String fileOutput) throws Exception {
         // access elements from JSON file
         NERDResponseJSONReader accessJSON = new NERDResponseJSONReader();
         Map<String, ArrayList<String>> result = accessJSON.readJSON();
@@ -28,7 +29,7 @@ public class WikidataIdExtractor {
 
         // put the result in CSV file
         CSVFIleWriter createCSVFIle = new CSVFIleWriter();
-        String csvfile = "data/preannotation/dataPreannotation.csv";
+        String csvfile = "data/preannotation/"+fileOutput+".csv";
         FileWriter writer = new FileWriter(csvfile);
         try {
 
@@ -44,7 +45,7 @@ public class WikidataIdExtractor {
     }
 
     // collect and combine data from several files csv
-    public void getWikidataIdFromFilesCsv(String fileInput1, String fileInput2) throws Exception{
+    public void getWikidataIdFromFilesCsv(String fileInput1, String fileInput2, String outputFile) throws Exception{
         CSVFileReader readCSVFile = new CSVFileReader();
         ArrayList<String> resultElementInput1 = readCSVFile.readWikiIdCsv(fileInput1);
         ArrayList<String> resultElementInput2 = readCSVFile.readWikiIdCsv(fileInput2);
@@ -56,7 +57,7 @@ public class WikidataIdExtractor {
 
         // put the result in CSV file
         CSVFIleWriter createCSVFIle = new CSVFIleWriter();
-        String csvfiles = "data/preannotation/dataPreannotationCombination.csv";
+        String csvfiles = "data/preannotation/"+outputFile+".csv";
         FileWriter writer = new FileWriter(csvfiles);
         try {
 

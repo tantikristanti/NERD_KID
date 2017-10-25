@@ -5,7 +5,7 @@ import org.nerd.kid.extractor.WikidataIdExtractor;
 import java.util.Scanner;
 
 /*
-model class for collecting Wikidata Ids from two input files different
+main class for collecting Wikidata Ids from two input files different
 ex.
 
 Input File 1 : data/preannotation/dataPreannotation.csv
@@ -23,10 +23,13 @@ public class MainWikidataIdExtractorCombination {
         System.out.print("Input File 2 : ");
         String input2= input.nextLine();
 
-        WikidataIdExtractor wikidataIdExtractor = new WikidataIdExtractor();
-        wikidataIdExtractor.getWikidataIdFromFilesCsv(input1, input2);
+        System.out.print("Name of output file : ");
+        String outputFile= input.nextLine();
 
-        System.out.println("The result of Wikidata Ids in data/preannotation/dataPreannotationCombination.csv");
+        WikidataIdExtractor wikidataIdExtractor = new WikidataIdExtractor();
+        wikidataIdExtractor.getWikidataIdFromFilesCsv(input1, input2, outputFile);
+
+        System.out.println("The result in 'data/preannotation/"+outputFile+".csv'");
 
     }
 }

@@ -1,5 +1,6 @@
 package org.nerd.kid.rest;
 
+import org.nerd.kid.arff.ArffParser;
 import org.wikidata.wdtk.datamodel.interfaces.*;
 import org.wikidata.wdtk.wikibaseapi.WikibaseDataFetcher;
 
@@ -8,31 +9,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/*
+* class to add new test data in order to be predicted
+* */
+
 public class APIWikidataCaller {
 
     // object of Wikidata's data fetcher
     private WikibaseDataFetcher wikibaseDataFetcher = WikibaseDataFetcher.getWikidataDataFetcher();
     DataPredictor predictData = new DataPredictor();
 
-    public void appendNewTestData() throws Exception {
-        //read a file
-        BufferedReader reader = new BufferedReader(new FileReader("data/Training.arff"));
-        String nextLine;
-        List<String> listProperties = new ArrayList<String>();
-        String splitBy = " ";
+    public void appendNewTestData(String inputFile) throws Exception {
 
-        // getting the data of class
-        while ((nextLine = reader.readLine()) != null) {
-            if (nextLine.startsWith("@ATTRIBUTE")) {
-                if (!nextLine.contains("class")) {
-                    String[] result = nextLine.split(splitBy);
-                    listProperties.add(result[1]);
-                }
-            }
-        }
-
-        // stop the reader buffer
-        reader.close();
+        // get the list of properties
+        ArffParser arffParser = new ArffParser();
+        List<String> listProperties = arffParser.readPropertiesTrainingFile(new File(inputFile));
 
         // object of callRestAPI
         NERDResponseJSONReader accessJSON = new NERDResponseJSONReader();
@@ -184,7 +175,7 @@ public class APIWikidataCaller {
 
     public void CreateCsvResult(List<String> property, String[][] matrix) throws Exception {
 
-        PrintStream writerCsv = new PrintStream(new FileOutputStream("result/Predicted_Testing.csv"));
+        PrintStream writerCsv = new PrintStream(new FileOutputStream("result/csv/Predicted_Testing.csv"));
         try {
             writerCsv.print("WikidataID" + ";" + "labelWikidata" + ";" + "ClassNerd" + ";" + "PredictedClass;");
             for (int i = 0; i < property.size(); i++) {

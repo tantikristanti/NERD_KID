@@ -16,7 +16,13 @@ public class MainCallRestAPINerd {
         url = scanner.nextLine();
         System.out.print("Query : ");
         query = scanner.nextLine();
-        callAPIINERD.useCurl(url, query);
+
+        System.out.print("Output File : ");
+        String outputFile = scanner.nextLine();
+
+        callAPIINERD.useCurl(url, query, outputFile);
+
+        System.out.print("Result in 'result/json/"+outputFile+".json");
     }
 }
 

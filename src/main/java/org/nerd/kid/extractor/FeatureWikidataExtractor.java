@@ -169,8 +169,8 @@ public class FeatureWikidataExtractor {
 
     } // end of method getFeatureWikidata
 
-    public void printResultWikidataExtractionWithoutProperties(String[][] matrix) throws Exception {
-        PrintStream printStream = new PrintStream(new FileOutputStream("result/Predicted_Result.csv"));
+    public void printResultWikidataExtractionWithoutProperties(String[][] matrix, String outputFile) throws Exception {
+        PrintStream printStream = new PrintStream(new FileOutputStream("result/csv/+"+outputFile+".csv"));
         try {
             printStream.print("WikidataID" + ";" + "labelWikidata" + ";" + "PredictedClass\n");
             // print the result

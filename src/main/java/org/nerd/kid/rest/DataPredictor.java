@@ -6,6 +6,10 @@ import smile.data.AttributeDataset;
 
 import java.io.*;
 
+/*
+* clas to predict test data
+* */
+
 public class DataPredictor {
     //classification model of Random Forest
     private RandomForest forest = null;
@@ -13,17 +17,9 @@ public class DataPredictor {
     private AttributeDataset attributeDataset = null;
     ArffParser accessArff = new ArffParser();
 
-    public int[] predictTestData(double[][] Testx) {
-        int[] yPredict = new int[Testx.length];
-        // predicting the test
-        for (int i = 0; i < Testx.length; i++) {
-            yPredict[i] = forest.predict(Testx[i]);
-        }
-        return yPredict;
-    }
-
     public String[] predictNewTestData(double[][] testX) throws Exception{
-        String file = "data/Training.arff";
+        System.out.println("Predicting data based on the training data in 'data/arff/Training.arff'. This file can be changed or updated.");
+        String file = "data/arff/Training.arff";
         // parsing the initial file to get the response index
         attributeDataset = arffParser.parse(new FileInputStream(file));
 

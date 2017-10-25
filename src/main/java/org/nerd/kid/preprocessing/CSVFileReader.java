@@ -8,6 +8,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+class to parse CSV files in order to get Wikidata Ids and their classes
+* */
+
 public class CSVFileReader {
     public ArrayList<String> readCsv(String file) throws Exception {
         BufferedReader bufferedReader = null;

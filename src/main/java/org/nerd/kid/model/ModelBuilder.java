@@ -12,7 +12,11 @@ import smile.math.Math;
 import java.io.*;
 import java.lang.*;
 
-/* this class contains the use of Smile Java API for parsing the model */
+/*
+class to build machine learning models from datasets using Random Forests
+
+* */
+
 public class ModelBuilder {
     // creating objects
     ModelEvaluation evaluation = new ModelEvaluation();
@@ -45,7 +49,7 @@ public class ModelBuilder {
         System.out.println("Loading training data " + file.getPath() + " is finished successfully.");
     }
 
-    // loading the model, if there is only the training data
+    // load the model, if there is only training data
     public void loadData(InputStream file, int responseIndex) throws Exception {
         // setResponseIndex is response variable; for classification, it is the class label; for regression, it is of real value
         arffParser = new smile.data.parser.ArffParser().setResponseIndex(responseIndex);
@@ -70,7 +74,7 @@ public class ModelBuilder {
         logger.info("Training the model.");
 
         // for getting output stream of the file for writing the result
-        File fl = new File("result/Result_" + fileOutput.getName() + ".txt");
+        File fl = new File("result/txt/Result_" + fileOutput.getName() + ".txt");
 
         BufferedWriter result = new BufferedWriter(new FileWriter(fl));
 
@@ -102,11 +106,13 @@ public class ModelBuilder {
         // training with Random Forest classification
         forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 100);
 
+        //save the model
+        
         // printing the result
         outputResults(fileInput, System.out, testx, testy, max);
 
         // creating text file from the result
-        outputResults(fileInput, new PrintStream(new FileOutputStream("result/Result_" + fileOutput + ".txt")), testx, testy, max);
+        outputResults(fileInput, new PrintStream(new FileOutputStream("result/txt/Result_" + fileOutput + ".txt")), testx, testy, max);
     }
 
     // splitting the model into training and data set
@@ -161,7 +167,7 @@ public class ModelBuilder {
         outputResults(fileInput, System.out, testx, testy, max);
 
         // creating text file from the result
-        outputResults(fileInput, new PrintStream(new FileOutputStream("result/Result_" + fileOutput + ".txt")), testx, testy, max);
+        outputResults(fileInput, new PrintStream(new FileOutputStream("result/txt/Result_" + fileOutput + ".txt")), testx, testy, max);
     }
 
     public int[] predictTestData(double[][] Testx) {
@@ -275,5 +281,15 @@ public class ModelBuilder {
         }
 
         output.println("\n");
+    }
+
+    // method to save the model built
+    public void saveModel(File file) throws Exception {
+
+    }
+
+    // method to load the model built
+    public void loadModel(File file) throws Exception {
+
     }
 }

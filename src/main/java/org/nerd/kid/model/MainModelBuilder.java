@@ -8,9 +8,9 @@ import java.util.Scanner;
 /*
 main class to build a model from training file
 ex.
-Name of training data file ([path]/[fileName].arff) : data/TrainingNew.arff
+Name of training data file ([path]/[fileName].arff) : data/arff/TrainingNew.arff
 Percentage of training data (in %), the rest for testing : 80
-Name of the result file in "/result/Result_[fileName].txt": TrainingNew
+Name of the result file in "/result/txt/Result_[fileName].txt": TrainingNew
 
 * */
 public class MainModelBuilder {
@@ -34,7 +34,7 @@ public class MainModelBuilder {
         System.out.print("Percentage of training data (in %), the rest for testing : ");
         Scanner input = new Scanner(System.in);
         split = input.nextInt();
-        System.out.print("Name of the result file in \"/result/Result_[fileName].txt\": ");
+        System.out.print("Name of the result file in \"/result/txt/Result_[fileName].txt\": ");
         file_name_result = new File(br.readLine());
         sm.splitModel(file_name_train, file_name_result, split);
     }

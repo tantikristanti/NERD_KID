@@ -25,7 +25,7 @@ public class MainArffGenerator {
         ArffGenerator arffGenerator = new ArffGenerator();
         arffGenerator.createNewArffFile(input1, input2);
 
-        System.out.print("Result can be seen in 'data/TrainingNew.arff' ");
+        System.out.print("Result can be seen in 'data/arff/TrainingNew.arff' ");
 
     }
 }

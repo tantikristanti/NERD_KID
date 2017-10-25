@@ -22,7 +22,7 @@ public class ArffGenerator {
         try {
             // file to be read
             inputStream = new FileInputStream(new File(fileTraining));
-            outputStream = new FileOutputStream("data/TrainingNew.arff");
+            outputStream = new FileOutputStream("data/arff/TrainingNew.arff");
 
             byte[] buffer = new byte[1024];
             int length;
@@ -39,7 +39,7 @@ public class ArffGenerator {
         FeatureWikidataExtractor featureWikidataExtractor = new FeatureWikidataExtractor();
         String[][] matrixData = featureWikidataExtractor.getFeatureWikidata(new File(fileTraining), new File(fileToBeAdded));
 
-        FileWriter fileWriter = new FileWriter("data/TrainingNew.arff", true);
+        FileWriter fileWriter = new FileWriter("data/arff/TrainingNew.arff", true);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
         try {

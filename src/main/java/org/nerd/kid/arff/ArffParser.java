@@ -5,7 +5,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
-
+/*
+class to parse Arff file
+* */
 public class ArffParser {
     public String[] readClassArff(File file) throws Exception{
         // variables
