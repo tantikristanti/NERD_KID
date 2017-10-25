@@ -5,6 +5,14 @@ import java.io.File;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
+/*
+main class to build a model from training file
+ex.
+Name of training data file ([path]/[fileName].arff) : data/TrainingNew.arff
+Percentage of training data (in %), the rest for testing : 80
+Name of the result file in "/result/Result_[fileName].txt": TrainingNew
+
+* */
 public class MainModelBuilder {
     public static void main(String[] args) throws Exception {
 

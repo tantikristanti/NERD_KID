@@ -1,7 +1,5 @@
 package org.nerd.kid.arff;
 
-import org.nerd.kid.extractor.WikidataIdExtractor;
-
 import java.util.Scanner;
 
 /*
@@ -28,5 +26,6 @@ public class MainArffGenerator {
         arffGenerator.createNewArffFile(input1, input2);
 
         System.out.print("Result can be seen in 'data/TrainingNew.arff' ");
+
     }
 }

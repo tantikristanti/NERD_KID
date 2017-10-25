@@ -153,14 +153,13 @@ public class FeatureWikidataExtractor {
             matrixNewData[i][2] = resultPredict[i];
         }
 
-
         // add properties of WikidataId in matrix of new data
         for (int i = 0; i < rowNumber; i++) {
-            int col = 4;
+            int col = 3; // properties start from column 3 until the size of properties
 
             // as the size of properties for each Wikidata Id
             for (int j = 0; j < colNumberTestX; j++) {
-                matrixNewData[i][col] = String.valueOf(testX[i][j]);
+                matrixNewData[i][col] = String.valueOf((int) testX[i][j]);
                 col++;
             }
         }

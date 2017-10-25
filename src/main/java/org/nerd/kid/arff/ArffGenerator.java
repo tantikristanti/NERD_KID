@@ -39,17 +39,20 @@ public class ArffGenerator {
         FeatureWikidataExtractor featureWikidataExtractor = new FeatureWikidataExtractor();
         String[][] matrixData = featureWikidataExtractor.getFeatureWikidata(new File(fileTraining), new File(fileToBeAdded));
 
-        FileWriter fileWriter = new FileWriter("data/TrainingNew.arff");
+        FileWriter fileWriter = new FileWriter("data/TrainingNew.arff", true);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
         try {
+            bufferedWriter.write("\n");
             // print the result
             for (int i = 0; i < matrixData.length; i++) {
-                // firstly, put properties for each Wikidata Id
-                for (int j = 4; j < matrixData[i].length; j++) {
+                /* firstly, put properties for each Wikidata Id
+                properties start from column 3 until the size of properties*/
+                for (int j = 3; j < matrixData[i].length; j++) {
                     bufferedWriter.write(matrixData[i][j]);
 
                     if (j != matrixData[i].length - 1) {
-                        bufferedWriter.write(";");
+                        bufferedWriter.write(",");
                     }
                 }
                 bufferedWriter.write("\n");
