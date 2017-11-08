@@ -100,43 +100,6 @@ public class FeatureWikidataExtractor {
         return featureMatrix;
     } // end of method getFeatureWikidata
 
-//
-//            // add another data column needed for testing file
-//            for (int j = 0; j < colNumberNewData; j++) {
-//                if (j == 0) { // first column : Wikidata Id
-//                    matrixNewData[i][j] = elementWikiId;
-//                } else if (j == 1) { //second column : label of Wikidata Id
-//                    matrixNewData[i][j] = labelWiki.get(i);
-//                } else if (j == 2) { // third column : predicted data
-//                    matrixNewData[i][j] = "Null";
-//                } else if (j == lastColumn) { // last column : Nerd's class
-//                    matrixNewData[i][j] = (dataCSVClass.get(i) == "" ? "Null" : dataCSVClass.get(i));
-//                }
-//
-//            } // end of column of matrix
-//        } // end of row of matrix
-//
-//        // get the result of prediction and put it in matrix new data
-//        String[] resultPredict = predictData.predictNewTestData(testX);
-//        for (int i = 0; i < rowNumber; i++) {
-//            matrixNewData[i][2] = resultPredict[i];
-//        }
-//
-//        // add properties of WikidataId in matrix of new data
-//        for (int i = 0; i < rowNumber; i++) {
-//            int col = 3; // properties start from column 3 until the size of properties
-//
-//            // as the size of properties for each Wikidata Id
-//            for (int j = 0; j < colNumberTestX; j++) {
-//                matrixNewData[i][col] = String.valueOf((int) testX[i][j]);
-//                col++;
-//            }
-//        }
-//
-//
-//        return matrixNewData;
-//
-//    } // end of method getFeatureWikidata
 
     public Map<String, List<String>> loadFeatures() throws Exception {
         return loadFeatures(new FileInputStream("data/resource/feature_mapper.csv"));

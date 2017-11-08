@@ -1,6 +1,7 @@
 package org.nerd.kid.arff;
 
 
+import org.nerd.kid.data.WikidataElementInfos;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,11 +13,12 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Map;
 
 
 /*
 This class contains methods to generate Arff file.
-Methods are adapted from a class ArffFileBuilder.java built by Luca Foppiano @21/09/16.
+Methods are adapted and modified from a class ArffFileBuilder.java built by Luca Foppiano @21/09/16.
 * */
 
 public class ArffFileGenerator {
@@ -52,16 +54,24 @@ public class ArffFileGenerator {
         return this;
     }
 
-    public ArffFileGenerator addAttribute(String attributeName) {
+    public ArffFileGenerator addAttribute(Map<String, List<String>> attributeList) {
         if (hasBody) {
             throw new RuntimeException("Cannot add attribute definition. ");
         }
         try {
-            writer.append("@ATTRIBUTE")
-                    .append(" ")
-                    .append(attributeName)
-                    .append(" {0,1}")
-                    .append("\n");
+
+            for (Map.Entry<String, List<String>> property : attributeList.entrySet()) {
+                List<String> values = property.getValue();
+                for (String item : values) {
+                    String propertyValue = property.getKey() + "_" + item;
+                    writer.append("@ATTRIBUTE")
+                            .append(" ")
+                            .append(propertyValue)
+                            .append(" {0,1}")
+                            .append("\n");
+                }
+            }
+
         } catch (IOException e) {
             throw new RuntimeException("Cannot write arff file.", e);
         }
@@ -69,13 +79,14 @@ public class ArffFileGenerator {
         return this;
     }
 
-    public void addClassHeader(String[] classValues) {
+
+    public ArffFileGenerator addClassHeader(List<String> classValues) {
         try {
-            int lastPosition = classValues.length;
+            int lastPosition = classValues.size() - 1;
             writer.append("@ATTRIBUTE class")
                     .append(" {");
-            for (int i = 0; i < classValues.length; i++) {
-                writer.append(classValues[i]);
+            for (int i = 0; i < classValues.size(); i++) {
+                writer.append(classValues.get(i));
                 if (i != lastPosition) {
                     writer.append(",");
                 } else {
@@ -85,27 +96,28 @@ public class ArffFileGenerator {
 
 
             if (!hasBody) {
-                writer.append("\n")
-                        .append("@data").append("\n");
+                writer.append("\n\n")
+                        .append("@DATA").append("\n");
                 hasBody = true;
             }
         } catch (IOException e) {
             throw new RuntimeException("Cannot write arff file", e);
 
         }
+        return this;
     }
 
 
-    public ArffFileGenerator addData(List<String> data, String claz) {
+    public ArffFileGenerator addData(List<WikidataElementInfos> matrixWikidataElement) {
         if (!hasHeader) {
             throw new RuntimeException("Cannot add values, the header is not present or closed. ");
         }
         StringBuilder line = new StringBuilder();
 
-        for (int i = 0; i < data.size(); i++) {
-            line.append(data.get(i).toString()).append(",");
-        }
-        line.append(claz).append("\n");
+//        for (int i = 0; i < data.size(); i++) {
+//            line.append(data.get(i).toString()).append(",");
+//        }
+//        line.append(claz).append("\n");
         try {
             writer.append(line.toString());
 
