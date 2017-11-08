@@ -1,5 +1,6 @@
 package org.nerd.kid.preprocessing;
 
+import au.com.bytecode.opencsv.CSVWriter;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -9,58 +10,47 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.io.FileWriter;
-import java.util.Arrays;
-import java.util.Scanner;
 
 /**
- * Transform the grobid ner training data in a csv file with
- * CLASS, mention
- *
- * mention is the raw information from the text e.g. 'LEGAL, Washington Act'.
+ * Extract Mentions and Classes from Grobid-Ner's data in XML format
+ * Mention is the raw information from the text e.g. 'LEGAL, Washington Act'.
  */
 public class GrobidNERTrainingDataTransformer {
     public static void main(String[] args) throws Exception {
 
-        Scanner input = new Scanner(System.in);
-        System.out.print("Name of input file (in XML, ex. 'data/xml/annotatedCorpus.xml') : ");
-        String inputFile= input.nextLine();
-        System.out.print("Name of output file : ");
-        String outputFile= input.nextLine();
+        CSVWriter csvWriter = null;
 
-        CSVFIleWriter csvFileWriter = new CSVFIleWriter();
+        String xmlDataPath = "data/xml/annotatedCorpus.xml";
+        String csvDataPath = "data/csv/annotatedCorpusResult.csv";
 
         DocumentBuilder dbBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 
-        File file = new File(inputFile);
-        Document doc = dbBuilder.parse(file);
-
-        // normalizer the XML's structure
+        File fileXML = new File(xmlDataPath);
+        Document doc = dbBuilder.parse(fileXML);
         doc.getDocumentElement().normalize();
 
         NodeList nList = doc.getElementsByTagName("ENAMEX");
         int total = nList.getLength();
-        String csvFile = "result/csv/"+outputFile+".csv";
 
-        FileWriter writer = new FileWriter(csvFile);
         try {
-            csvFileWriter.writeLine(writer, Arrays.asList("Class;Entity"));
+            csvWriter = new CSVWriter(new FileWriter(csvDataPath), ',', CSVWriter.NO_QUOTE_CHARACTER);
+            // header's file
+            String[] header = {"Mention,Class"};
+            csvWriter.writeNext(header);
 
             for (int i = 0; i < total; i++) {
                 Node node = nList.item(i);
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element element = (Element) node;
-                    System.out.println(element.getAttribute("type") + ";" + element.getTextContent());
-
-                    // cxreation of CSV file
-                    csvFileWriter.writeLine(writer, Arrays.asList(element.getAttribute("type") + ";" + element.getTextContent()));
+                    String[] data = {element.getTextContent(),element.getAttribute("type")};
+                    csvWriter.writeNext(data);
                 }
             }
 
         } finally {
-            writer.flush();
-            writer.close();
+            csvWriter.flush();
+            csvWriter.close();
         }
-        System.out.print("Result in 'result/csv/"+outputFile+".csv");
+        System.out.print("Result in 'data/csv/annotatedCorpusResult.csv'");
     }
-
 }

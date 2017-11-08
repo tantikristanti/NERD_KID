@@ -60,7 +60,7 @@ public class RestAPINERDCaller {
 
         // writing the result into JSON file
         // for getting output stream of the file for writing the result
-        File fl = new File("result/json/"+outputFile+".json");
+        File fl = new File(outputFile);
 
         BufferedWriter result = new BufferedWriter(new FileWriter(fl));
 

@@ -18,7 +18,6 @@ public class DataPredictor {
     ArffParser accessArff = new ArffParser();
 
     public String[] predictNewTestData(double[][] testX) throws Exception{
-        System.out.println("Predicting data based on the training data in 'data/arff/Training.arff'. This file can be changed or updated.");
         String file = "data/arff/Training.arff";
         // parsing the initial file to get the response index
         attributeDataset = arffParser.parse(new FileInputStream(file));

@@ -1,0 +1,722 @@
+
+{
+  "global_categories": [
+    {
+      "page_id": 46219968,
+      "weight": 9.78215559904802E-4,
+      "source": "wikipedia-en",
+      "category": "2010 in American law"
+    },
+    {
+      "page_id": 31555043,
+      "weight": 0.0026452285750994658,
+      "source": "wikipedia-en",
+      "category": "Republican Party state governors of the United States"
+    },
+    {
+      "page_id": 24204659,
+      "weight": 0.001078429404778856,
+      "source": "wikipedia-en",
+      "category": "Treaties of Armenia"
+    }
+  ],
+  "entities": [
+    {
+      "wikipediaExternalRef": 534366,
+      "nerd_selection_score": 0.8464,
+      "wikidataId": "Q76",
+      "offsetStart": 18,
+      "offsetEnd": 30,
+      "domains": [
+        "Biology"
+      ],
+      "type": "PERSON",
+      "rawName": "Barack Obama",
+      "nerd_score": 0.3764
+    },
+    {
+      "wikipediaExternalRef": 3414021,
+      "nerd_selection_score": 0.6019,
+      "wikidataId": "Q207",
+      "offsetStart": 35,
+      "offsetEnd": 48,
+      "domains": [
+        "Biology",
+        "Sociology"
+      ],
+      "type": "PERSON",
+      "rawName": "George W Bush",
+      "nerd_score": 0.3764
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 112,
+      "offsetEnd": 114,
+      "type": "LOCATION",
+      "rawName": "US",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 155,
+      "offsetEnd": 161,
+      "type": "PERSON",
+      "rawName": "Donald",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 181,
+      "offsetEnd": 184,
+      "type": "TITLE",
+      "rawName": "Mr",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 185,
+      "offsetEnd": 190,
+      "type": "LOCATION",
+      "rawName": "Obama",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 197,
+      "offsetEnd": 206,
+      "type": "PERSON_TYPE",
+      "rawName": "Americans",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 258,
+      "offsetEnd": 265,
+      "type": "TITLE",
+      "rawName": "Mr Bush",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 4848272,
+      "nerd_selection_score": 0.5824,
+      "wikidataId": "Q22686",
+      "offsetStart": 366,
+      "offsetEnd": 381,
+      "domains": [
+        "Commerce",
+        "Enterprise",
+        "Biology",
+        "Meteorology"
+      ],
+      "rawName": "President Trump",
+      "nerd_score": 0.6283
+    },
+    {
+      "wikipediaExternalRef": 4848272,
+      "nerd_selection_score": 0.4267,
+      "wikidataId": "Q22686",
+      "offsetStart": 391,
+      "offsetEnd": 400,
+      "domains": [
+        "Commerce",
+        "Enterprise",
+        "Biology",
+        "Meteorology"
+      ],
+      "type": "TITLE",
+      "rawName": "Mr Trump",
+      "nerd_score": 0.6283
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 556,
+      "offsetEnd": 558,
+      "type": "TITLE",
+      "rawName": "Mr",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 559,
+      "offsetEnd": 564,
+      "type": "PERSON",
+      "rawName": "Obama",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 4848272,
+      "nerd_selection_score": 0.4267,
+      "wikidataId": "Q22686",
+      "offsetStart": 632,
+      "offsetEnd": 640,
+      "domains": [
+        "Commerce",
+        "Enterprise",
+        "Biology",
+        "Meteorology"
+      ],
+      "type": "TITLE",
+      "rawName": "Mr Trump",
+      "nerd_score": 0.6283
+    },
+    {
+      "wikipediaExternalRef": 3414021,
+      "nerd_selection_score": 0.6019,
+      "wikidataId": "Q207",
+      "offsetStart": 645,
+      "offsetEnd": 658,
+      "domains": [
+        "Biology",
+        "Sociology"
+      ],
+      "type": "PERSON",
+      "rawName": "George W Bush",
+      "nerd_score": 0.3764
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 727,
+      "offsetEnd": 729,
+      "type": "TITLE",
+      "rawName": "Mr",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 25226624,
+      "nerd_selection_score": 0.5956,
+      "wikidataId": "Q1414593",
+      "offsetStart": 758,
+      "offsetEnd": 767,
+      "domains": [
+        "Applied_Science",
+        "Engineering",
+        "Biology"
+      ],
+      "type": "PERSON",
+      "rawName": "Obamacare",
+      "nerd_score": 0.4176
+    },
+    {
+      "wikipediaExternalRef": 19541,
+      "nerd_selection_score": 0.5868,
+      "wikidataId": "Q47740",
+      "offsetStart": 798,
+      "offsetEnd": 804,
+      "domains": [
+        "Biology",
+        "Administration"
+      ],
+      "type": "PERSON",
+      "rawName": "Muslim",
+      "nerd_score": 0.3764
+    },
+    {
+      "wikipediaExternalRef": 30242372,
+      "nerd_selection_score": 0.6958,
+      "wikidataId": "Q21707860",
+      "offsetStart": 837,
+      "offsetEnd": 857,
+      "domains": [
+        "Administration",
+        "Meteorology"
+      ],
+      "rawName": "Paris climate accord",
+      "nerd_score": 0.4603
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 874,
+      "offsetEnd": 884,
+      "type": "CONCEPTUAL",
+      "rawName": "Democratic",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 67234,
+      "nerd_selection_score": 0.4223,
+      "wikidataId": "Q25395",
+      "offsetStart": 903,
+      "offsetEnd": 909,
+      "domains": [
+        "Applied_Science"
+      ],
+      "type": "LOCATION",
+      "rawName": "Newark",
+      "nerd_score": 0.306
+    },
+    {
+      "wikipediaExternalRef": 21648,
+      "nerd_selection_score": 0.6241,
+      "wikidataId": "Q1408",
+      "offsetStart": 911,
+      "offsetEnd": 921,
+      "domains": [
+        "Administration",
+        "Oceanography"
+      ],
+      "type": "LOCATION",
+      "rawName": "New Jersey",
+      "nerd_score": 0.3764
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 923,
+      "offsetEnd": 925,
+      "type": "TITLE",
+      "rawName": "Mr",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 926,
+      "offsetEnd": 931,
+      "type": "PERSON",
+      "rawName": "Obama",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 937,
+      "offsetEnd": 946,
+      "type": "PERSON_TYPE",
+      "rawName": "Americans",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 1282,
+      "offsetEnd": 1284,
+      "type": "MEASURE",
+      "rawName": "50",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 1305,
+      "offsetEnd": 1317,
+      "type": "ORGANISATION",
+      "rawName": "21st Century",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 1327,
+      "offsetEnd": 1339,
+      "type": "MEASURE",
+      "rawName": "19th Century",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 100040,
+      "nerd_selection_score": 0.5654,
+      "wikidataId": "Q2521385",
+      "offsetStart": 1536,
+      "offsetEnd": 1544,
+      "domains": [
+        "Administration",
+        "Architecture"
+      ],
+      "type": "LOCATION",
+      "rawName": "Richmond",
+      "nerd_score": 0.3764
+    },
+    {
+      "wikipediaExternalRef": 32432,
+      "nerd_selection_score": 0.4384,
+      "wikidataId": "Q1370",
+      "offsetStart": 1546,
+      "offsetEnd": 1554,
+      "domains": [
+        "Administration",
+        "Oceanography",
+        "Sociology"
+      ],
+      "type": "LOCATION",
+      "rawName": "Virginia",
+      "nerd_score": 0.3764
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 1564,
+      "offsetEnd": 1568,
+      "type": "PERSON",
+      "rawName": "Weve",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 1787,
+      "offsetEnd": 1795,
+      "type": "LOCATION",
+      "rawName": "New York",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 1797,
+      "offsetEnd": 1799,
+      "type": "TITLE",
+      "rawName": "Mr",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 1800,
+      "offsetEnd": 1804,
+      "type": "PERSON",
+      "rawName": "Bush",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 5530,
+      "nerd_selection_score": 0.4386,
+      "wikidataId": "Q159535",
+      "offsetStart": 1875,
+      "offsetEnd": 1894,
+      "domains": [
+        "Biology",
+        "Psychiatry",
+        "Health"
+      ],
+      "rawName": "conspiracy theories",
+      "nerd_score": 0.2648
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2034,
+      "offsetEnd": 2044,
+      "type": "PERSON_TYPE",
+      "rawName": "Americans",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2212,
+      "offsetEnd": 2217,
+      "type": "PERSON",
+      "rawName": "Weve",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 21748,
+      "nerd_selection_score": 0.5324,
+      "wikidataId": "Q6235",
+      "offsetStart": 2223,
+      "offsetEnd": 2234,
+      "domains": [
+        "Sociology"
+      ],
+      "rawName": "nationalism",
+      "nerd_score": 0.5317
+    },
+    {
+      "wikipediaExternalRef": 21304605,
+      "nerd_selection_score": 0.8175,
+      "wikidataId": "Q1969722",
+      "offsetStart": 2250,
+      "offsetEnd": 2258,
+      "domains": [
+        "Administration",
+        "Biology",
+        "Psychiatry",
+        "Health",
+        "Sociology"
+      ],
+      "rawName": "nativism",
+      "nerd_score": 0.5424
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2322,
+      "offsetEnd": 2329,
+      "type": "LOCATION",
+      "rawName": "America",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 5278,
+      "nerd_selection_score": 0.7392,
+      "wikidataId": "Q12948581",
+      "offsetStart": 2331,
+      "offsetEnd": 2346,
+      "domains": [
+        "Administration",
+        "Computer_Science",
+        "Finance"
+      ],
+      "rawName": "Image copyright",
+      "nerd_score": 0.523
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2347,
+      "offsetEnd": 2352,
+      "type": "BUSINESS",
+      "rawName": "Getty",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 4848272,
+      "nerd_selection_score": 0.6134,
+      "wikidataId": "Q22686",
+      "offsetStart": 2374,
+      "offsetEnd": 2389,
+      "domains": [
+        "Commerce",
+        "Enterprise",
+        "Biology",
+        "Meteorology"
+      ],
+      "type": "PERSON",
+      "rawName": "President Trump",
+      "nerd_score": 0.6283
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2422,
+      "offsetEnd": 2424,
+      "type": "TITLE",
+      "rawName": "Mr",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2425,
+      "offsetEnd": 2430,
+      "type": "LOCATION",
+      "rawName": "Obama",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2435,
+      "offsetEnd": 2442,
+      "type": "TITLE",
+      "rawName": "Mr Bush",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2521,
+      "offsetEnd": 2523,
+      "type": "TITLE",
+      "rawName": "Mr",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 4848272,
+      "nerd_selection_score": 0.4267,
+      "wikidataId": "Q22686",
+      "offsetStart": 2573,
+      "offsetEnd": 2581,
+      "domains": [
+        "Commerce",
+        "Enterprise",
+        "Biology",
+        "Meteorology"
+      ],
+      "type": "TITLE",
+      "rawName": "Mr Trump",
+      "nerd_score": 0.6283
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2610,
+      "offsetEnd": 2612,
+      "type": "TITLE",
+      "rawName": "Mr",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2613,
+      "offsetEnd": 2618,
+      "type": "LOCATION",
+      "rawName": "Obama",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2623,
+      "offsetEnd": 2625,
+      "type": "TITLE",
+      "rawName": "Mr",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2626,
+      "offsetEnd": 2630,
+      "type": "PERSON",
+      "rawName": "Bush",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2732,
+      "offsetEnd": 2734,
+      "type": "LOCATION",
+      "rawName": "US",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2763,
+      "offsetEnd": 2770,
+      "type": "PERIOD",
+      "rawName": "January",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2772,
+      "offsetEnd": 2781,
+      "type": "TITLE",
+      "rawName": "Mr Trumps",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2886,
+      "offsetEnd": 2895,
+      "type": "PERSON",
+      "rawName": "Democrats",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 32070,
+      "nerd_selection_score": 0.4848,
+      "wikidataId": "Q29468",
+      "offsetStart": 2900,
+      "offsetEnd": 2911,
+      "domains": [
+        "Administration",
+        "Sociology"
+      ],
+      "type": "PERSON",
+      "rawName": "Republicans",
+      "nerd_score": 0.3764
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 3094,
+      "offsetEnd": 3108,
+      "type": "PERSON",
+      "rawName": "Gary ODonoghue",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 100040,
+      "nerd_selection_score": 0.5654,
+      "wikidataId": "Q2521385",
+      "offsetStart": 3112,
+      "offsetEnd": 3120,
+      "domains": [
+        "Administration",
+        "Architecture"
+      ],
+      "type": "LOCATION",
+      "rawName": "Richmond",
+      "nerd_score": 0.3764
+    },
+    {
+      "wikipediaExternalRef": 32432,
+      "nerd_selection_score": 0.4384,
+      "wikidataId": "Q1370",
+      "offsetStart": 3122,
+      "offsetEnd": 3130,
+      "domains": [
+        "Administration",
+        "Oceanography",
+        "Sociology"
+      ],
+      "type": "LOCATION",
+      "rawName": "Virginia",
+      "nerd_score": 0.3764
+    },
+    {
+      "wikipediaExternalRef": 534366,
+      "nerd_selection_score": 0.7221,
+      "wikidataId": "Q76",
+      "offsetStart": 3142,
+      "offsetEnd": 3154,
+      "domains": [
+        "Biology"
+      ],
+      "rawName": "Barack Obama",
+      "nerd_score": 0.3764
+    },
+    {
+      "wikipediaExternalRef": 4848272,
+      "nerd_selection_score": 0.9136,
+      "wikidataId": "Q22686",
+      "offsetStart": 3293,
+      "offsetEnd": 3305,
+      "domains": [
+        "Commerce",
+        "Enterprise",
+        "Biology",
+        "Meteorology"
+      ],
+      "type": "BUSINESS",
+      "rawName": "Donald Trump",
+      "nerd_score": 0.6283
+    },
+    {
+      "wikipediaExternalRef": 32070,
+      "nerd_selection_score": 0.4669,
+      "wikidataId": "Q29468",
+      "offsetStart": 3562,
+      "offsetEnd": 3572,
+      "domains": [
+        "Administration",
+        "Sociology"
+      ],
+      "rawName": "Republican",
+      "nerd_score": 0.3764
+    },
+    {
+      "wikipediaExternalRef": 3414021,
+      "nerd_selection_score": 0.5217,
+      "wikidataId": "Q207",
+      "offsetStart": 3583,
+      "offsetEnd": 3596,
+      "domains": [
+        "Biology",
+        "Sociology"
+      ],
+      "rawName": "George W Bush",
+      "nerd_score": 0.3764
+    },
+    {
+      "wikipediaExternalRef": 77182,
+      "nerd_selection_score": 0.5067,
+      "wikidataId": "Q179742",
+      "offsetStart": 3615,
+      "offsetEnd": 3622,
+      "domains": [
+        "Biology",
+        "Psychiatry",
+        "Health"
+      ],
+      "rawName": "bigotry",
+      "nerd_score": 0.4907
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 3649,
+      "offsetEnd": 3657,
+      "type": "NATIONAL",
+      "rawName": "American",
+      "nerd_score": 0.8
+    }
+  ],
+  "runtime": 1589,
+  "language": {
+    "conf": 0.0,
+    "lang": "en"
+  },
+  "text": "Former Presidents Barack Obama and George W Bush have voiced concern about the current political climate in the US, in comments seen as a veiled rebuke of Donald Trumps leadership.  Mr Obama urged Americans to reject the politics of division and fear, while Mr Bush criticised bullying and prejudice in public life.  They were speaking separately. Neither mentioned President Trump by name.  Mr Trump, who has been critical of his two predecessors, is yet to comment.  Ex-presidents traditionally shy away from commenting publicly on their successors, and Mr Obama said on leaving office he would extend that courtesy for a time to Mr Trump, as George W Bush had to him.  He has broken his silence since to issue statements on Mr Trumps efforts to dismantle Obamacare, as well as his controversial Muslim ban and decision to abandon the Paris climate accord.  Speaking at a Democratic campaign event in Newark, New Jersey, Mr Obama said Americans should send a message to the world that we are rejecting a politics of division, we are rejecting a politics of fear.  He added: What we cant have is the same old politics of division that we have seen so many times before that dates back centuries.  Some of the politics we see now, we thought we put that to bed. Thats folks looking 50 years back. Its the 21st Century, not the 19th Century. Come on!Decoding Bushs thinly veiled Trump speech     Five reasons Trumps widow story stings     Top aide defends Trump over widow remarks  He touched on similar themes at another event later in Richmond, Virginia, saying: Weve got folks who are deliberately trying to make folks angry, to demonise people who have different ideas, to get the base all riled up because it provides a short-term tactical advantage.  Speaking just hours earlier in New York, Mr Bush said: Bigotry seems emboldened. Our politics seems more vulnerable to conspiracy theories and outright fabrication.  There are some signs that the intensity of support for democracy itself has waned - especially among the young.  Americans, he said, have seen our discourse degraded by casual cruelty.  At times it can seem like the forces pulling us apart are stronger than the forces binding us together.  Weve seen nationalism distorted into nativism, forgotten the dynamism that immigration has always brought to America. Image copyright Getty Images Image caption President Trump has in the past criticised both Mr Obama and Mr Bush  Both former presidents have until now largely avoided commenting publicly on Mr Trumps policies.  Before his election last year, Mr Trump was highly critical of both Mr Obama and Mr Bush, describing each of them at one time or another as perhaps the worst president in the history of the US.  Since his inauguration in January, Mr Trumps combative style and direct public comments on a number of key issues have caused controversy both among Democrats and Republicans.  He has regularly blamed the media, which he says do not focus on his achievements and instead choose to concentrate on what he describes as fake news. Shared concerns  Analysis by Gary ODonoghue in Richmond, Virginia  President Barack Obama still knows how to draw a crowd - and they queued round the block for hours to see him speak.  If they were hoping for head-on attacks on Donald Trump, they were to be disappointed.  However, the criticisms when they came were scarcely veiled - with talk of pandering to the extremes and sowing divisiveness.  The speech followed a much more full-frontal attack on the current political situation by former Republican President George W Bush.  He talked about bigotry and falsehood threatening American democracy - while celebrating immigration and arguing for a more open trade policy.  These attacks certainly arent co-ordinated - but they do demonstrate just how widely concerns about the current president are shared.",
+  "onlyNER": false,
+  "nbest": false
+}

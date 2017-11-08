@@ -11,6 +11,6 @@ public class MainCallAPIWikidata {
         String inputFile = scanner.nextLine();
 
         APIWikidataCaller callWiki = new APIWikidataCaller();
-        callWiki.appendNewTestData(inputFile);
+        //callWiki.appendNewTestData(inputFile);
     }
 }

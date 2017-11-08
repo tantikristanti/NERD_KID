@@ -1,191 +1,175 @@
 package org.nerd.kid.extractor;
 
-import org.nerd.kid.arff.ArffParser;
-import org.nerd.kid.preprocessing.CSVFileReader;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVRecord;
+import org.nerd.kid.data.WikidataElement;
+import org.nerd.kid.data.WikidataElementInfos;
 import org.nerd.kid.rest.DataPredictor;
-import org.nerd.kid.rest.NERDResponseJSONReader;
-import org.wikidata.wdtk.datamodel.interfaces.*;
-import org.wikidata.wdtk.wikibaseapi.WikibaseDataFetcher;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /*
-* extract the features (properties and values) of WikidataId directly from Wikidata knowledge base
+* extract features (properties and values) of WikidataId directly from Wikidata knowledge base
 * */
 
 public class FeatureWikidataExtractor {
-    // object of Wikidata's data fetcher
-    private WikibaseDataFetcher wikibaseDataFetcher = WikibaseDataFetcher.getWikidataDataFetcher();
+
+    private WikidataFetcherWrapper wikidataFetcherWrapper;
+
     DataPredictor predictData = new DataPredictor();
 
-    public String[][] getFeatureWikidata(File fileTraining, File fileTesting) throws Exception {
-        //read properties needed from training file
-        ArffParser arffParser = new ArffParser();
-        List<String> listProperties = arffParser.readPropertiesTrainingFile(fileTraining); // fileTraining
+    public WikidataFetcherWrapper getWikidataFetcherWrapper() {
+        return wikidataFetcherWrapper;
+    }
 
-        // read data from csv files
-        CSVFileReader csvFileReader = new CSVFileReader();
-        Map<String, ArrayList<String>> result = csvFileReader.readWikiIdClassCsv(fileTesting.toString());
-        ArrayList<String> dataCSVWikiId = new ArrayList<String>();
-        ArrayList<String> dataCSVClass = new ArrayList<String>();
+    public void setWikidataFetcherWrapper(WikidataFetcherWrapper wikidataFetcherWrapper) throws Exception {
+        this.wikidataFetcherWrapper = wikidataFetcherWrapper;
+    }
 
-        for (Map.Entry<String, ArrayList<String>> entry : result.entrySet()) {
-            if (entry.getKey() == "WikidataId") {
-                dataCSVWikiId = entry.getValue();
-            } else if (entry.getKey() == "ClassNerd") {
-                dataCSVClass = entry.getValue();
-            }
+    public List<WikidataElementInfos> getFeatureWikidata() throws Exception {
+        return getFeatureWikidata(new File("data/csv/BaseElements.csv"));
+    }
+
+    public List<WikidataElementInfos> getFeatureWikidata(File inputFile) throws Exception {
+        List<WikidataElementInfos> featureMatrix = new ArrayList<>();
+
+        // count the number of features
+        int nbOfFeatures = 0;
+        Map<String, List<String>> featuresMap = loadFeatures();
+        for (String key : featuresMap.keySet()) {
+            nbOfFeatures += featuresMap.get(key).size();
         }
 
-        // number of row and column needed
-        int rowNumber = dataCSVWikiId.size();
-        int colNumberTestX = listProperties.size();
-        int colNumberNewData = listProperties.size() + 4;
+        // get the feature of Wikidata for each wikidataId and class found in input file csv
+        Reader reader = new FileReader(inputFile);
+        Iterable<CSVRecord> records = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(reader);
+        for (CSVRecord record : records) {
+            String wikidataId = record.get("WikidataID");
+            String realClass = record.get("Class");
 
-        double[][] testX = new double[rowNumber][colNumberTestX];
-        String[][] matrixNewData = new String[rowNumber][colNumberNewData];
+            // get information of id, label, features from Wikidata
+            WikidataElement wikidataElement = wikidataFetcherWrapper.getElement(wikidataId);
 
-        List<String> labelWiki = new ArrayList<String>();
+            // set information of id, label, predicted class, features, real class
+            WikidataElementInfos wikidataElementInfos = new WikidataElementInfos();
+            wikidataElementInfos.setWikidataId(wikidataId);
+            wikidataElementInfos.setLabel(wikidataElement.getLabel());
+            wikidataElementInfos.setRealClass(realClass);
 
-        // rows are for examples, columns are for properties and its class
-        System.out.println("Total row to be processed : " + rowNumber);
-        for (int i = 0; i < rowNumber; i++) {
-            System.out.println("Processing data row " + i);
-            // getting every element of Wikidata Id
-            String elementWikiId = dataCSVWikiId.get(i);
+            Integer[] featureVector = new Integer[nbOfFeatures];
 
-            // getting entity document
-            EntityDocument QElementWikiId = wikibaseDataFetcher.getEntityDocument(elementWikiId);
-            // getting the label of wikidata element
-            if (QElementWikiId instanceof ItemDocument) {
-                String labelItem = ((ItemDocument) QElementWikiId).getLabels().get("en").getText();
-                labelWiki.add(labelItem);
-            }
+            int idx = 0;
+            // properties based on the list of mapper_feature.csv
+            for (String allowedProperty : featuresMap.keySet()) {
 
-            // fetching data
-            ItemDocument itemDocument = (ItemDocument) wikibaseDataFetcher.getEntityDocument(elementWikiId);
+                // properties gathered directly from Wikidata
+                Map<String, List<String>> propertiesWiki = wikidataElement.getProperties();
 
-            // checking if item document is null
-            if (itemDocument == null) {
-                System.out.println("Data couldn't be fetched.");
-                break;
-            }
-
-            // list for storing properties data and its values
-            List<String> dataPropertyWiki = new ArrayList<String>();
-            List<String> dataValuePropertyWiki = new ArrayList<String>();
-
-            // only get the value of P31 (instance of) and P21 (sex or gender)
-            List keySearch = new ArrayList();
-            keySearch.add("P31");
-            keySearch.add("P21");
-
-            // getting the properties from Wikidata
-            for (StatementGroup statementGroup : itemDocument.getStatementGroups()) {
-                String property = statementGroup.getProperty().getId().toString().trim();
-                dataPropertyWiki.add(property);
-
-                // getting the value of property P31 and P21
-                for (int k = 0; k < keySearch.size(); k++) {
-                    if (!keySearch.get(k).equals(property))
-                        continue;
-                    for (Statement statement : statementGroup) {
-                        if (statement.getClaim().getMainSnak() instanceof ValueSnak) {
-                            Value value = ((ValueSnak) statement.getClaim().getMainSnak()).getValue();
-                            if (value instanceof ItemIdValue) {
-                                String valueOfProperty = ((ItemIdValue) value).getId().toString().trim();
-                                String combinationValueProperty = property + "_" + valueOfProperty;
-                                dataValuePropertyWiki.add(combinationValueProperty);
-                            }
+                /* if property is not null, get the value from the feature_mapper and also directly from API's Wikidata
+                 then put it in the list
+                 if both of this list contain the same property-values, give the value 1
+                 */
+                if (propertiesWiki.get(allowedProperty) != null) {
+                    List<String> propertyValuesInWikidataFetchedObject = propertiesWiki.get(allowedProperty);
+                    List<String> allowedValues = featuresMap.get(allowedProperty);
+                    for (String allowedValue : allowedValues) {
+                        if (propertyValuesInWikidataFetchedObject.contains(allowedValue)) {
+                            featureVector[idx] = 1;
+                        } else {
+                            featureVector[idx] = 0;
                         }
+                        idx++;
                     }
                 }
             }
 
-            // fill the testing file with the input matrix x (for testing arff file)
-            for (int j = 0; j < colNumberTestX; j++) {
-                // search based on the list of properties in training file
-                String propertySearched = listProperties.get(j);
+            // set information of feature vector
+            wikidataElementInfos.setFeatureVector(featureVector);
 
-                // if properties of a certain Wikidata Id match with the list of properties in training file, give it a binary value 1
-                for (int k = 0; k < dataPropertyWiki.size(); k++) {
-                    if (propertySearched.equals(dataPropertyWiki.get(k))) {
-                        testX[i][j] = 1.0;
-                        break;
-                    }
-                }
+            // set null for predicted class
+            wikidataElementInfos.setPredictedClass("Null");
 
-                // if the combination of properties-values of a certain Wikidata Id match with the list of properties-values combination in training file, give it a binary value 1
-                for (int k = 0; k < dataValuePropertyWiki.size(); k++) {
-                    if (propertySearched.equals(dataValuePropertyWiki.get(k))) {
-                        testX[i][j] = 1.0;
-                        break;
-                    }
-                }
-            }
+            featureMatrix.add(wikidataElementInfos);
 
-            // find last data in new matrix
-            int lastColumn = colNumberNewData - 1;
+        } // end of looping to read file that contains Wikidata Id and class
 
-            // add another data column needed for testing file
-            for (int j = 0; j < colNumberNewData; j++) {
-                if (j == 0) { // first column : Wikidata Id
-                    matrixNewData[i][j] = elementWikiId;
-                } else if (j == 1) { //second column : label of Wikidata Id
-                    matrixNewData[i][j] = labelWiki.get(i);
-                } else if (j == 2) { // third column : predicted data
-                    matrixNewData[i][j] = "Null";
-                } else if (j == lastColumn) { // last column : Nerd's class
-                    matrixNewData[i][j] = (dataCSVClass.get(i) == "" ? "Null" : dataCSVClass.get(i));
-                }
-
-            } // end of column of matrix
-        } // end of row of matrix
-
-        // get the result of prediction and put it in matrix new data
-        String[] resultPredict = predictData.predictNewTestData(testX);
-        for (int i = 0; i < rowNumber; i++) {
-            matrixNewData[i][2] = resultPredict[i];
-        }
-
-        // add properties of WikidataId in matrix of new data
-        for (int i = 0; i < rowNumber; i++) {
-            int col = 3; // properties start from column 3 until the size of properties
-
-            // as the size of properties for each Wikidata Id
-            for (int j = 0; j < colNumberTestX; j++) {
-                matrixNewData[i][col] = String.valueOf((int) testX[i][j]);
-                col++;
-            }
-        }
-
-
-        return matrixNewData;
-
+        return featureMatrix;
     } // end of method getFeatureWikidata
 
-    public void printResultWikidataExtractionWithoutProperties(String[][] matrix, String outputFile) throws Exception {
-        PrintStream printStream = new PrintStream(new FileOutputStream("result/csv/+"+outputFile+".csv"));
-        try {
-            printStream.print("WikidataID" + ";" + "labelWikidata" + ";" + "PredictedClass\n");
-            // print the result
-            for (int i = 0; i < matrix.length; i++) {
-                for (int j = 0; j < 3; j++) {
-                    printStream.print(matrix[i][j]);
-                    if (j != matrix[i].length - 1) {
-                        printStream.print(";");
-                    }
-                }
-                printStream.print("\n");
+//
+//            // add another data column needed for testing file
+//            for (int j = 0; j < colNumberNewData; j++) {
+//                if (j == 0) { // first column : Wikidata Id
+//                    matrixNewData[i][j] = elementWikiId;
+//                } else if (j == 1) { //second column : label of Wikidata Id
+//                    matrixNewData[i][j] = labelWiki.get(i);
+//                } else if (j == 2) { // third column : predicted data
+//                    matrixNewData[i][j] = "Null";
+//                } else if (j == lastColumn) { // last column : Nerd's class
+//                    matrixNewData[i][j] = (dataCSVClass.get(i) == "" ? "Null" : dataCSVClass.get(i));
+//                }
+//
+//            } // end of column of matrix
+//        } // end of row of matrix
+//
+//        // get the result of prediction and put it in matrix new data
+//        String[] resultPredict = predictData.predictNewTestData(testX);
+//        for (int i = 0; i < rowNumber; i++) {
+//            matrixNewData[i][2] = resultPredict[i];
+//        }
+//
+//        // add properties of WikidataId in matrix of new data
+//        for (int i = 0; i < rowNumber; i++) {
+//            int col = 3; // properties start from column 3 until the size of properties
+//
+//            // as the size of properties for each Wikidata Id
+//            for (int j = 0; j < colNumberTestX; j++) {
+//                matrixNewData[i][col] = String.valueOf((int) testX[i][j]);
+//                col++;
+//            }
+//        }
+//
+//
+//        return matrixNewData;
+//
+//    } // end of method getFeatureWikidata
+
+    public Map<String, List<String>> loadFeatures() throws Exception {
+        return loadFeatures(new FileInputStream("data/resource/feature_mapper.csv"));
+    }
+
+    public Map<String, List<String>> loadFeatures(InputStream inputStreamFeatureFile) throws IOException {
+        Map<String, List<String>> featureMap = new HashMap<>();
+        Reader featureMapperIn = new InputStreamReader(inputStreamFeatureFile);
+        Iterable<CSVRecord> recordsFeatures = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(featureMapperIn);
+
+        for (CSVRecord recordFeature : recordsFeatures) {
+            String property = recordFeature.get("Property");
+            String value = recordFeature.get("Value");
+
+            // in order to get unique of property-value combination
+            if (featureMap.keySet().contains(property)) {
+                featureMap.get(property).add(value); // if a property-value exists, get it
+            } else {
+                List<String> values = new ArrayList<>();
+                values.add(value);
+                featureMap.put(property, values); // if there aren't exist yet, add a new one
             }
-        } finally {
-            printStream.flush();
-            printStream.close();
+        }
+        return featureMap;
+    }
+
+    public void printWikidataFeatures(Map<String, List<String>> result) {
+        for (Map.Entry<String, List<String>> entry : result.entrySet()) {
+            System.out.println(entry.getKey() + ": ");
+            List<String> values = entry.getValue();
+            for (String item : values) {
+                System.out.println("\t" + item);
+            }
         }
     }
 

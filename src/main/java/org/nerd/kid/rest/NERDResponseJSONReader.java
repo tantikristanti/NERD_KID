@@ -11,13 +11,13 @@ import java.util.Map;
 
 public class NERDResponseJSONReader {
     // accessing JSON file containing NERD's result of annotation and ambiguation
-    public Map<String, ArrayList<String>> readJSON() throws Exception {
+    public Map<String, ArrayList<String>> readJSON(String inputFile) throws Exception {
         Map<String, ArrayList<String>> listDataJSON = new HashMap<String, ArrayList<String>>();
         ArrayList<String> dataJSONWikiId = new ArrayList<String>();
         ArrayList<String> dataJSONType = new ArrayList<String>();
 
         JSONParser jsonParser = new JSONParser();
-        Object object = jsonParser.parse(new FileReader("result/json/Result_CurlNERD.json"));
+        Object object = jsonParser.parse(new FileReader(inputFile));
         JSONObject jsonObject = (JSONObject) object;
 
         JSONArray entities = (JSONArray) jsonObject.get("entities");

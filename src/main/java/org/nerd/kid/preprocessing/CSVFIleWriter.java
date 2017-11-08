@@ -5,7 +5,7 @@ import java.io.Writer;
 import java.util.List;
 
 public class CSVFIleWriter {
-    private static char separator_default = ';';
+    private static char separator_default = ',';
 
     public static void writeLine(Writer w, List<String> values) throws IOException {
         writeLine(w, values, separator_default, ' ');
@@ -45,5 +45,8 @@ public class CSVFIleWriter {
         }
         sb.append("\n");
         w.append(sb.toString());
+    }
+
+    public void writeLine(String s) {
     }
 }

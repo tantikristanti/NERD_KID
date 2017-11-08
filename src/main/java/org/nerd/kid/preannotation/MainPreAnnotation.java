@@ -1,5 +1,6 @@
 package org.nerd.kid.preannotation;
 
+import joptsimple.OptionParser;
 import org.nerd.kid.extractor.FeatureWikidataExtractor;
 
 import java.io.File;
@@ -14,24 +15,18 @@ Input Testing File (to be predicted) : data/preannotation/dataPreannotation.csv
 
 public class MainPreAnnotation {
     public static void main(String[] args) throws Exception{
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("Input Training File ('[path]/[name of file].arff'; ex. 'data/arff/Training.arff') : ");
-        String trainFile= input.nextLine();
-
-        System.out.print("Input Testing File (to be predicted ex. 'data/preannotation/dataPreannotation.csv') : ");
-        String testFile= input.nextLine();
-
-        System.out.print("Name of output file : ");
-        String outputFile = input.nextLine();
+        String trainFile = "data/arff/Training.arff";
+        String newDataFile = "data/preannotation/dataPreannotation.csv";
+        String outputFile = "Predicted_Result.csv";
 
         System.out.println("Processing the pre-annotation ...");
 
-        FeatureWikidataExtractor featureWikidataExtractor = new FeatureWikidataExtractor();
-        String[][] matrixNewData = featureWikidataExtractor.getFeatureWikidata(new File(trainFile), new File(testFile));
-        // print the result into file
-        featureWikidataExtractor.printResultWikidataExtractionWithoutProperties(matrixNewData, outputFile);
+//        FeatureWikidataExtractor featureWikidataExtractor = new FeatureWikidataExtractor();
+//        String[][] matrixNewData = featureWikidataExtractor.getFeatureWikidata(new File(trainFile), new File(newDataFile));
+//
+//        //print the result into file
+//        featureWikidataExtractor.printResultWikidataExtractionWithoutProperties(matrixNewData, outputFile);
 
-        System.out.println("Result in 'result/csv/"+outputFile+".csv'");
+        System.out.println("Result in 'result/csv/Predicted_Result.csv'");
     }
 }

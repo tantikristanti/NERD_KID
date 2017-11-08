@@ -36,26 +36,4 @@ public class ArffParser {
         return classData;
     }
 
-    public List<String> readPropertiesTrainingFile(File file) throws Exception{
-        // read training file
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        String nextLine;
-        List<String> listProperties = new ArrayList<String>();
-        String splitBy = " ";
-        // getting the data of class
-        while ((nextLine = reader.readLine()) != null) {
-            if (nextLine.startsWith("@ATTRIBUTE")) {
-                if (!nextLine.contains("class")) {
-                    String[] result = nextLine.split(splitBy);
-                    listProperties.add(result[1]);
-                }
-            }
-        }
-
-        // stop the reader buffer
-        reader.close();
-
-        //return the list of properties from the training file
-        return listProperties;
-    }
 }

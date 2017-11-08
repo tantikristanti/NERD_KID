@@ -14,6 +14,19 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 # Tools
 ![Tools](pic/Tools.jpg)
 
+# Data from Grobid-Ner's Project
+
+*As base model (model0), this project use data from Grobid-Ner's project by collecting their mentions and classes*
+
+These files can be extracted from [Grobid-Ner](https://github.com/kermitt2/grobid-ner/tree/master/grobid-ner/resources/dataset/ner/corpus/xml/final)
+and can be copied into `data/xml/annotatedCorpus.xml`
+
+After copy the file, the mentions and classes can be extracted by this service
+
+```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preprocessing.GrobidNERTrainingDataTransformer"```
+
+The result can be seen in `data/csv/annotatedCorpusResult.csv`
+
 # Installation-Build-Run
 **1. Installation**
 
@@ -25,35 +38,42 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 [NERD_KID](https://github.com/tantikristanti/NERD_KID/archive/master.zip)
 
-**2. Preparing the data or models**
-
-*All data or models can be put in* `/data/`
-
-**3. Build the project**
+**2. Build the project**
 
 ```$ mvn clean install```
 
-**4. Execute the application**
+**3. Prepare new data**
 
-*a. Getting instances and classes correspond to each class from [Grobid-Ner](https://github.com/kermitt2/grobid-ner/tree/master/grobid-ner/resources/dataset/ner/corpus/xml/final)*
+New data can be extracted by accessing the API of Nerd or Entity-Fishing.*
 
-```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preprocessing.OpenXMLFileGrobidNer"```
+```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.extractor.MainRestAPINerdCaller"```
 
-- New data is in XML format which can be easily copied directly to the file `/data/xml/annotatedCorpus.xml`
-- The result can be seen in `/result/resultCSVAnnotatedCorpus.csv`
+- It is possible to change the whole part of query or just the part of text. 
+(read further explanation about Nerd's REST API in [Entity-Fishing](http://nerd.readthedocs.io/en/latest/restAPI.html))
 
-*b. Model training using Random Forest classification [SMILE](https://github.com/haifengl/smile/)*
+- The example of how to enter the correct URL and Query can be seen in "data/example/exampleCurlNERD.txt"
+
+*( The raw result extracted from API in JSON format can be seen in `/data/json/Result_NERDDataExtractor.json`)*
+
+- The result of list of Wikidata Ids and Classes can be seen in `/data/csv/NewElements.csv`. 
+It is a very simple csv file that contain Wikidata Id and their classes. For example:
+
+```
+WikidataID,Class
+Q76,PERSON
+Q1408,LOCATION
+```
+**4. Build the training data**
+- In order to build new training data, this service can be used ``
+
+**5. Train the model**
+
+*a. Model training using Random Forest classification [SMILE](https://github.com/haifengl/smile/)*
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.model.MainModelBuilder"```
 
-- Input needed are 1) training data file (and testing data file if exist) ; 2) percentage of training data ; 3) name of output file
+- Input needed are 1) training data file ; 2) percentage of training data ; 3) name of output file
 - Output can be seen in `/result/`
-
-*c. Access NERD's Rest API*
-
-```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.rest.MainCallRestAPINerd"```
-
-- The example of how to enter the correct URL and Query can be seen in "data/example/exampleCurlNERD.txt"
 
 *d. Building new data by accessing Wikidata's API and getting the new predicted result*
 
@@ -61,10 +81,20 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 - The result of predicted class can be seen in `/result/Predicted_Testing.csv`
 
-**5. Example of Prediction of Class**
+**6. Example of the use**
+
+*Prepare the list of Wikidata Id*
+
+Firstly, prepare the list of new Wikidata Id that need to be predicted (in this case, Nerd_kid will predict the class for each Wikidata Id prepared)
+The list then can be copied into `data/preannotation/dataPreannotation.csv`.
+It is a very simple csv file that contain Wikidata Id for each line without name of label and Null for the class. For example:
+```
+WikidataID,Class
+Q76,PERSON
+Q1408,LOCATION
+```
 
 *To predict Wikidata Id:*
-- Copy the list of Wikidata Id to be predicted into `data/preannotation/dataPreannotation.csv`
 - It is possible also to change the training data located in `data/Training.arff`
 - Run the service of prediction :
 
@@ -72,6 +102,19 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 *The example of result can be seen in the picture*
 ![ResultPrediction](pic/ResultPrediction.jpg)
+
+*Build new datasets by integrating with new data*
+```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.rest.MainTrainer"```
+
+- Input is in csv format, default in /data/corpus/csv
+
+Format the csv file. The label can be empty and the class can be `Null`, for example:
+
+```
+WikidataID;labelWikidata;PredictedClass
+Q1016;Libya;Null
+Q11322507;;Null
+```
 
 ## Contact
 

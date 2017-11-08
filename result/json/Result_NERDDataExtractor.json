@@ -1,0 +1,46 @@
+
+{
+  "global_categories": [
+    {
+      "page_id": 5257424,
+      "weight": 0.019607843137254884,
+      "source": "wikipedia-en",
+      "category": "American feminists"
+    },
+    {
+      "page_id": 22103121,
+      "weight": 0.019607843137254884,
+      "source": "wikipedia-en",
+      "category": "Politicians from Chicago"
+    },
+    {
+      "page_id": 29634756,
+      "weight": 0.019607843137254884,
+      "source": "wikipedia-en",
+      "category": "Democratic Party Presidents of the United States"
+    }
+  ],
+  "entities": [
+    {
+      "wikipediaExternalRef": 534366,
+      "nerd_selection_score": 0.8256,
+      "wikidataId": "Q76",
+      "offsetStart": 1,
+      "offsetEnd": 13,
+      "domains": [
+        "Biology"
+      ],
+      "type": "UNKNOWN",
+      "rawName": "Barack Obama",
+      "nerd_score": 0.2914
+    }
+  ],
+  "runtime": 4,
+  "language": {
+    "conf": 0.0,
+    "lang": "en"
+  },
+  "text": "[Barack Obama]",
+  "onlyNER": false,
+  "nbest": false
+}
