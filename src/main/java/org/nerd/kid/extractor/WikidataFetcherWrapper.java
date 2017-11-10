@@ -5,6 +5,7 @@ import org.wikidata.wdtk.datamodel.interfaces.*;
 import org.wikidata.wdtk.wikibaseapi.WikibaseDataFetcher;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -12,9 +13,10 @@ public class WikidataFetcherWrapper {
 
     private WikibaseDataFetcher wikibaseDataFetcher = WikibaseDataFetcher.getWikidataDataFetcher();
 
-    FeatureWikidataExtractor featureWikidataExtractor = new FeatureWikidataExtractor();
+    FeatureFileExtractor featureFileExtractor = new FeatureFileExtractor();
 
     public WikidataElement getElement(String wikiId) throws Exception {
+
         WikidataElement wikidataElement = new WikidataElement();
 
         wikibaseDataFetcher.getEntityDocument(wikiId);
@@ -29,17 +31,8 @@ public class WikidataFetcherWrapper {
         String labelItem = document.getLabels().get("en").getText();
 
         // list for storing properties and its values
-        Map<String, List<String>> dataPropertyValue = featureWikidataExtractor.loadFeatures();
-
-        // get the properties and values from Wikidata
-        for (Map.Entry<String, List<String>> property : dataPropertyValue.entrySet()) {
-            // property : entry.getKey(); value :
-            List<String> values = property.getValue();
-            for (String value : values) {
-                System.out.println("\t" + value);
-            }
-        }
-
+        //Map<String, List<String>> dataPropertyValue = featureFileExtractor.loadFeatures();
+        Map<String, List<String>> dataPropertyValue = new HashMap<>();
         for (StatementGroup statementGroup : document.getStatementGroups()) {
 
             // get the properties

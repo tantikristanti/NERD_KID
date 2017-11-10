@@ -64,7 +64,12 @@ Q76,PERSON
 Q1408,LOCATION
 ```
 **4. Build the training data**
-- In order to build new training data, this service can be used ``
+- In order to build new training data, this service can be used 
+
+```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.arff.MainTrainerGenerator"```
+
+The result can be seen in `/result/arff/Training.arff`
+
 
 **5. Train the model**
 

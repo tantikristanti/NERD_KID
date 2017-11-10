@@ -114,10 +114,15 @@ public class ArffFileGenerator {
         }
         StringBuilder line = new StringBuilder();
 
-//        for (int i = 0; i < data.size(); i++) {
-//            line.append(data.get(i).toString()).append(",");
-//        }
-//        line.append(claz).append("\n");
+        for (WikidataElementInfos result : matrixWikidataElement) {
+            Integer[] features = result.getFeatureVector();
+            int sizeData = features.length - 1;
+            for (Integer feature : features) {
+                line.append(feature.toString()).append(",");
+            }
+            line.append(result.getRealClass()).append("\n");
+        }
+
         try {
             writer.append(line.toString());
 

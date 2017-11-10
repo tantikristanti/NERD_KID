@@ -4,11 +4,11 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.data.WikidataElementInfos;
-import org.nerd.kid.rest.DataPredictor;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.Reader;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,10 +17,8 @@ import java.util.Map;
 * */
 
 public class FeatureWikidataExtractor {
-
-    private WikidataFetcherWrapper wikidataFetcherWrapper;
-
-    DataPredictor predictData = new DataPredictor();
+    private WikidataFetcherWrapper wikidataFetcherWrapper = new WikidataFetcherWrapper();
+    private FeatureFileExtractor featureFileExtractor = new FeatureFileExtractor();
 
     public WikidataFetcherWrapper getWikidataFetcherWrapper() {
         return wikidataFetcherWrapper;
@@ -37,15 +35,14 @@ public class FeatureWikidataExtractor {
     public List<WikidataElementInfos> getFeatureWikidata(File inputFile) throws Exception {
         List<WikidataElementInfos> featureMatrix = new ArrayList<>();
 
-        // count the number of features
+        // count the number of features based on 'data/resource/feature_mapper.csv'
         int nbOfFeatures = 0;
-        Map<String, List<String>> featuresMap = loadFeatures();
+        Map<String, List<String>> featuresMap = featureFileExtractor.loadFeatures();
         for (String key : featuresMap.keySet()) {
             nbOfFeatures += featuresMap.get(key).size();
         }
 
-        // get the feature of Wikidata for each wikidataId and class found in input file csv
-        Reader reader = new FileReader(inputFile);
+        Reader reader = new FileReader("data/csv/BaseElements.csv");
         Iterable<CSVRecord> records = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(reader);
         for (CSVRecord record : records) {
             String wikidataId = record.get("WikidataID");
@@ -60,31 +57,47 @@ public class FeatureWikidataExtractor {
             wikidataElementInfos.setLabel(wikidataElement.getLabel());
             wikidataElementInfos.setRealClass(realClass);
 
+            // properties and values got directly from Wikidata
+            Map<String, List<String>> propertiesWiki = wikidataElement.getProperties();
+
+            // get the list of properties-values based on the result of 'data/resource/feature_mapper.csv'
+            List<String> propertyValueFeatureMapper = new ArrayList<>();
+            for (Map.Entry<String, List<String>> propertyGot : featuresMap.entrySet()) {
+                String property = propertyGot.getKey();
+                List<String> values = propertyGot.getValue();
+                for (String value : values) {
+                    String propertyValue = property + "_" + value;
+                    propertyValueFeatureMapper.add(propertyValue);
+                }
+            }
+
+            // get the list of properties-values based on the result directly from Wikidata
+            List<String> propertyValueWikidata = new ArrayList<>();
+            for (Map.Entry<String, List<String>> propertyGot : propertiesWiki.entrySet()) {
+                String property = propertyGot.getKey();
+                List<String> values = propertyGot.getValue();
+                for (String value : values) {
+                    String propertyValue = property + "_" + value;
+                    propertyValueWikidata.add(propertyValue);
+                }
+            }
+
+
+            /* compare two list of properties-values got from feature mapper and directly from Wikidata
+                create new array list for the result of the comparison
+                put 1 if certain property-value combination exists in both of lists and 0 if it's not found
+             */
             Integer[] featureVector = new Integer[nbOfFeatures];
 
             int idx = 0;
-            // properties based on the list of mapper_feature.csv
-            for (String allowedProperty : featuresMap.keySet()) {
-
-                // properties gathered directly from Wikidata
-                Map<String, List<String>> propertiesWiki = wikidataElement.getProperties();
-
-                /* if property is not null, get the value from the feature_mapper and also directly from API's Wikidata
-                 then put it in the list
-                 if both of this list contain the same property-values, give the value 1
-                 */
-                if (propertiesWiki.get(allowedProperty) != null) {
-                    List<String> propertyValuesInWikidataFetchedObject = propertiesWiki.get(allowedProperty);
-                    List<String> allowedValues = featuresMap.get(allowedProperty);
-                    for (String allowedValue : allowedValues) {
-                        if (propertyValuesInWikidataFetchedObject.contains(allowedValue)) {
-                            featureVector[idx] = 1;
-                        } else {
-                            featureVector[idx] = 0;
-                        }
-                        idx++;
-                    }
+            for (String propertyValue : propertyValueFeatureMapper) {
+                if (propertyValueWikidata.contains(propertyValue)) {
+                    featureVector[idx] = 1;
                 }
+                if (!propertyValueWikidata.contains(propertyValue)) {
+                    featureVector[idx] = 0;
+                }
+                idx++;
             }
 
             // set information of feature vector
@@ -99,41 +112,5 @@ public class FeatureWikidataExtractor {
 
         return featureMatrix;
     } // end of method getFeatureWikidata
-
-
-    public Map<String, List<String>> loadFeatures() throws Exception {
-        return loadFeatures(new FileInputStream("data/resource/feature_mapper.csv"));
-    }
-
-    public Map<String, List<String>> loadFeatures(InputStream inputStreamFeatureFile) throws IOException {
-        Map<String, List<String>> featureMap = new HashMap<>();
-        Reader featureMapperIn = new InputStreamReader(inputStreamFeatureFile);
-        Iterable<CSVRecord> recordsFeatures = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(featureMapperIn);
-
-        for (CSVRecord recordFeature : recordsFeatures) {
-            String property = recordFeature.get("Property");
-            String value = recordFeature.get("Value");
-
-            // in order to get unique of property-value combination
-            if (featureMap.keySet().contains(property)) {
-                featureMap.get(property).add(value); // if a property-value exists, get it
-            } else {
-                List<String> values = new ArrayList<>();
-                values.add(value);
-                featureMap.put(property, values); // if there aren't exist yet, add a new one
-            }
-        }
-        return featureMap;
-    }
-
-    public void printWikidataFeatures(Map<String, List<String>> result) {
-        for (Map.Entry<String, List<String>> entry : result.entrySet()) {
-            System.out.println(entry.getKey() + ": ");
-            List<String> values = entry.getValue();
-            for (String item : values) {
-                System.out.println("\t" + item);
-            }
-        }
-    }
 
 } // end of class FeatureWikidataExtractor
