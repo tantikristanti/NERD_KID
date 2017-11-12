@@ -1,13 +1,15 @@
 package org.nerd.kid.extractor;
 
+import au.com.bytecode.opencsv.CSVReader;
+import au.com.bytecode.opencsv.CSVWriter;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
+import org.apache.commons.lang3.ArrayUtils;
 import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.data.WikidataElementInfos;
+import org.nerd.kid.exception.NerdKidException;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.Reader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +21,9 @@ import java.util.Map;
 public class FeatureWikidataExtractor {
     private WikidataFetcherWrapper wikidataFetcherWrapper = new WikidataFetcherWrapper();
     private FeatureFileExtractor featureFileExtractor = new FeatureFileExtractor();
+    private WikidataIdClassExtractor wikidataIdClassExtractor = new WikidataIdClassExtractor();
+
+    private String path = "data/csv/MatrixFeatureWikidata.csv";
 
     public WikidataFetcherWrapper getWikidataFetcherWrapper() {
         return wikidataFetcherWrapper;
@@ -33,6 +38,7 @@ public class FeatureWikidataExtractor {
     }
 
     public List<WikidataElementInfos> getFeatureWikidata(File inputFile) throws Exception {
+
         List<WikidataElementInfos> featureMatrix = new ArrayList<>();
 
         // count the number of features based on 'data/resource/feature_mapper.csv'
@@ -42,7 +48,7 @@ public class FeatureWikidataExtractor {
             nbOfFeatures += featuresMap.get(key).size();
         }
 
-        Reader reader = new FileReader("data/csv/BaseElements.csv");
+        Reader reader = new FileReader(inputFile);
         Iterable<CSVRecord> records = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(reader);
         for (CSVRecord record : records) {
             String wikidataId = record.get("WikidataID");
@@ -56,6 +62,9 @@ public class FeatureWikidataExtractor {
             wikidataElementInfos.setWikidataId(wikidataId);
             wikidataElementInfos.setLabel(wikidataElement.getLabel());
             wikidataElementInfos.setRealClass(realClass);
+
+            // set null for predicted class
+            wikidataElementInfos.setPredictedClass("Null");
 
             // properties and values got directly from Wikidata
             Map<String, List<String>> propertiesWiki = wikidataElement.getProperties();
@@ -82,7 +91,6 @@ public class FeatureWikidataExtractor {
                 }
             }
 
-
             /* compare two list of properties-values got from feature mapper and directly from Wikidata
                 create new array list for the result of the comparison
                 put 1 if certain property-value combination exists in both of lists and 0 if it's not found
@@ -93,8 +101,7 @@ public class FeatureWikidataExtractor {
             for (String propertyValue : propertyValueFeatureMapper) {
                 if (propertyValueWikidata.contains(propertyValue)) {
                     featureVector[idx] = 1;
-                }
-                if (!propertyValueWikidata.contains(propertyValue)) {
+                } else {
                     featureVector[idx] = 0;
                 }
                 idx++;
@@ -103,14 +110,67 @@ public class FeatureWikidataExtractor {
             // set information of feature vector
             wikidataElementInfos.setFeatureVector(featureVector);
 
-            // set null for predicted class
-            wikidataElementInfos.setPredictedClass("Null");
-
             featureMatrix.add(wikidataElementInfos);
 
         } // end of looping to read file that contains Wikidata Id and class
+        // save data
+        saveFeatureWikidata(featureMatrix);
 
         return featureMatrix;
     } // end of method getFeatureWikidata
+
+    public void saveFeatureWikidata(List<WikidataElementInfos> matrix) throws Exception {
+
+        CSVWriter csvWriter = new CSVWriter(new FileWriter(path, true), ',', CSVWriter.NO_QUOTE_CHARACTER);
+        CSVReader csvReader = new CSVReader(new FileReader(path));
+
+        try {
+
+            // if header doesn't exist yet, add one
+            if (csvReader.readNext() == null) {
+
+                Map<String, List<String>> featuresMap = featureFileExtractor.loadFeatures();
+
+                String[] headerMain = {"WikidataID,LabelWikidata,RealClass,PredictedClass"};
+                List<String> headerProperties = new ArrayList<>();
+                for (Map.Entry<String, List<String>> propertyGot : featuresMap.entrySet()) {
+                    String property = propertyGot.getKey();
+                    List<String> values = propertyGot.getValue();
+                    for (String value : values) {
+                        String propertyValue = property + "_" + value;
+                        headerProperties.add(propertyValue);
+                    }
+                }
+                String[] header = (String[]) ArrayUtils.addAll(headerMain, headerProperties.toArray());
+                csvWriter.writeNext(header);
+            }
+
+            Map<String, String> matrixIdClassWiki = wikidataIdClassExtractor.loadIdClass(new FileInputStream(path));
+            List<String> idWikis = new ArrayList<>();
+            for (Map.Entry<String, String> entry : matrixIdClassWiki.entrySet()) {
+                idWikis.add(entry.getKey());
+            }
+            for (WikidataElementInfos item : matrix) {
+                // just add wikidata IDs that don't exist yet
+                if (!idWikis.contains(item.getWikidataId())) {
+                    String[] dataWikidata = {item.getWikidataId(), item.getLabel(), item.getRealClass(), item.getPredictedClass()};
+                    Integer[] properties = item.getFeatureVector();
+                    List<String> dataProperties = new ArrayList<>();
+                    for (Integer property : properties) {
+                        dataProperties.add(property.toString());
+                    }
+                    String[] data = (String[]) ArrayUtils.addAll(dataWikidata, dataProperties.toArray());
+                    csvWriter.writeNext(data);
+                } else {
+                    System.out.println("Data exists already.");
+                }
+            }
+            csvReader.close();
+            csvWriter.flush();
+            csvWriter.close();
+        } catch (Exception e) {
+            throw new NerdKidException("An exception occured while saving or accessing data.", e);
+        }
+    }
 
 } // end of class FeatureWikidataExtractor
