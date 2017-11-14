@@ -2,7 +2,6 @@ package org.nerd.kid.arff;
 
 
 import org.nerd.kid.data.WikidataElementInfos;
-import org.nerd.kid.exception.NerdKidException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -63,26 +63,50 @@ WikidataID,Class
 Q76,PERSON
 Q1408,LOCATION
 ```
-**4. Build the training data**
-- In order to build new training data, this service can be used 
+**4. Build a training file**
+- In order to build a new training data, this service can be used:
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.arff.MainTrainerGenerator"```
 
-- It is possible also to add new data into training file that already exists. 
+*(Basically, a training file built based on the datasets prepared in `data/csv/BaseElements.csv`
+ This step is done if there isn't any training file or there is a need to build a new one.)*
+
+- It is also possible to add new data into training file that already exist. 
   This new data can be put in `data/csv/NewElements.csv`, then run the service:
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.arff.AddDataTrainerGenerator"```
 
 - The result can be seen in `result/arff/Training.arff`
 
+*Note :* 
+- CSV files must have at least the header `WikidataID` and `Class`. So:
 
+```
+WikidataID,labelWikidata,Class
+Q3318231,Joko Widodo,PERSON
+...
+```
+
+or
+
+```
+WikidataID,Class
+Q76,PERSON
+...
+```
+
+are in correct format.
+
+- Error in this step can appear if certain element's Id is no longer available in Wikidata. 
+ Just delete the Id that want to be processed from the CSV files.
+  
 **5. Train the model**
 
 *Model training using Random Forest classification [SMILE](https://github.com/haifengl/smile/)*
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.model.MainModelBuilder"```
 
-- Input needed is the percentage of splitting training-testing data 
+- Input needed is the percentage of training-testing splitting data, e.g. `80` (%)
 - Result can be seen in `result/txt/Result_Trained_Model.txt`
 
 **6. Get new predicted classes**
@@ -91,7 +115,7 @@ Q1408,LOCATION
 
 - The result of predicted class can be seen in `result/Predicted_Testing.csv`
 
-**6. Example of the use**
+**7. Example of the use**
 
 *Prepare the list of Wikidata Id*
 

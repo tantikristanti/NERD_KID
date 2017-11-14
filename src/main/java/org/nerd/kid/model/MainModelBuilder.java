@@ -1,8 +1,5 @@
 package org.nerd.kid.model;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /*
@@ -10,7 +7,7 @@ main class to build a model from training file
 ex.
 Input from : data/arff/TrainingNew.arff
 Percentage of training data (in %), the rest for testing : 80
-
+s
 * */
 public class MainModelBuilder {
     public static void main(String[] args) throws Exception {

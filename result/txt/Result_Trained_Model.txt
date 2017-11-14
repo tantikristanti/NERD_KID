@@ -1,38 +1,46 @@
 ** Classification with Random Forest of 100 trees **
 
-Total of instances			:	 29 
-Number of instance trained		:	 23 
-Number of instance predicted		:	 6 
-Correctly classified instances		:	 2 (33.333 %) 
-Incorrectly classified instances	:	 4 (66.667 %) 
-Out of Bag (OOB) error rate		:	 0.696
-Specificity				:	 0.833 
-accuracy				:	 0.333
-Macro Average Precision			:	 0.056
-Micro Average Precision			:	 0.333
-Macro Average Recall			:	 0.167
-Micro Average Recall			:	 0.333
-Macro Average FMeasure			:	 0.083
-Micro Average FMeasure			:	 0.333
+Total of instances			:	 427 
+Number of instance trained		:	 341 
+Number of instance predicted		:	 86 
+Correctly classified instances		:	 64 (74.419 %) 
+Incorrectly classified instances	:	 22 (25.581 %) 
+Out of Bag (OOB) error rate		:	 0.220
+Specificity				:	 0.971 
+accuracy				:	 0.744
+Macro Average Precision			:	 0.420
+Micro Average Precision			:	 0.744
+Macro Average Recall			:	 0.343
+Micro Average Recall			:	 0.744
+Macro Average FMeasure			:	 0.378
+Micro Average FMeasure			:	 0.744
 
 ** Confusion Matrix **
 Row: Actual; Column: Predicted
 Label of class:
-{0:BUSINESS; 1:CONCEPT; 2:CREATION; 3:INSTALLATION; 4:INSTITUTION; 5:LEGAL}
+{0:BUSINESS; 1:CONCEPT; 2:CREATION; 3:INSTALLATION; 4:INSTITUTION; 5:LEGAL; 6:LOCATION; 7:MEASURE; 8:MEDIA; 9:NATIONAL; 10:ORGANISATION; 11:PERIOD; 12:PERSON; 13:PERSON_TYPE}
 
-Class:		0	1	2	3	4	5	
-	0|	0	0	0	0	0	0	
-	1|	0	0	0	0	0	0	
-	2|	0	0	2	0	0	0	
-	3|	0	0	4	0	0	0	
-	4|	0	0	0	0	0	0	
-	5|	0	0	0	0	0	0	
+Class:		0	1	2	3	4	5	6	7	8	9	10	11	12	13	
+	0|	0	0	0	0	0	0	0	0	0	0	0	0	4	0	
+	1|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	2|	0	0	0	0	0	0	0	0	0	0	0	0	1	0	
+	3|	0	0	0	1	0	0	0	0	0	0	0	0	1	0	
+	4|	0	0	0	0	2	0	1	0	0	0	1	0	2	0	
+	5|	0	0	0	0	0	0	0	0	0	0	0	0	1	0	
+	6|	0	0	0	0	0	0	16	0	0	0	0	0	4	0	
+	7|	0	0	0	0	0	0	0	6	0	0	0	0	0	0	
+	8|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	9|	0	0	0	0	0	0	1	0	0	0	0	0	0	0	
+	10|	0	0	0	0	1	0	0	0	0	0	2	0	0	0	
+	11|	0	0	0	0	0	0	0	0	0	0	0	0	3	0	
+	12|	0	0	0	0	0	0	0	0	0	0	0	0	35	0	
+	13|	0	0	0	0	0	0	0	0	0	0	0	0	2	2	
 
 ** Validation for each class **
 
-Class		:	0	1	2	3	4	5
-FMeasure	:	0.00	0.00	0.50	0.00	0.00	0.00
-Precision	:	0.00	0.00	0.33	0.00	0.00	0.00
-Recall		:	0.00	0.00	1.00	0.00	0.00	0.00
-Spesificity	:	1.00	1.00	0.00	1.00	1.00	1.00
+Class		:	0	1	2	3	4	5	6	7	8	9	10	11	12	13
+FMeasure	:	0.00	0.00	0.00	0.67	0.44	0.00	0.84	1.00	0.00	0.00	0.67	0.00	0.80	0.67
+Precision	:	0.00	0.00	0.00	1.00	0.67	0.00	0.89	1.00	0.00	0.00	0.67	0.00	0.66	1.00
+Recall		:	0.00	0.00	0.00	0.50	0.33	0.00	0.80	1.00	0.00	0.00	0.67	0.00	1.00	0.50
+Spesificity	:	1.00	1.00	1.00	1.00	0.99	1.00	0.97	1.00	1.00	1.00	0.99	1.00	0.65	1.00
 
