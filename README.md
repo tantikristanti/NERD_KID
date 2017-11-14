@@ -68,23 +68,28 @@ Q1408,LOCATION
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.arff.MainTrainerGenerator"```
 
-The result can be seen in `/result/arff/Training.arff`
+- It is possible also to add new data into training file that already exists. 
+  This new data can be put in `data/csv/NewElements.csv`, then run the service:
+
+```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.arff.AddDataTrainerGenerator"```
+
+- The result can be seen in `result/arff/Training.arff`
 
 
 **5. Train the model**
 
-*a. Model training using Random Forest classification [SMILE](https://github.com/haifengl/smile/)*
+*Model training using Random Forest classification [SMILE](https://github.com/haifengl/smile/)*
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.model.MainModelBuilder"```
 
-- Input needed are 1) training data file ; 2) percentage of training data ; 3) name of output file
-- Output can be seen in `/result/`
+- Input needed is the percentage of splitting training-testing data 
+- Result can be seen in `result/txt/Result_Trained_Model.txt`
 
-*d. Building new data by accessing Wikidata's API and getting the new predicted result*
+**6. Get new predicted classes**
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.rest.MainCallAPIWikidata"```
 
-- The result of predicted class can be seen in `/result/Predicted_Testing.csv`
+- The result of predicted class can be seen in `result/Predicted_Testing.csv`
 
 **6. Example of the use**
 

@@ -2,6 +2,7 @@ package org.nerd.kid.model;
 
 import org.nerd.kid.arff.ArffParser;
 import org.nerd.kid.evaluation.ModelEvaluation;
+import org.nerd.kid.exception.NerdKidException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,23 +19,21 @@ class to build machine learning models from datasets using Random Forests
 * */
 
 public class ModelBuilder {
-    // creating objects
     ModelEvaluation evaluation = new ModelEvaluation();
     ArffParser accessArff = new ArffParser();
 
-    // --------------- attributes ---------------
     private smile.data.parser.ArffParser arffParser = new smile.data.parser.ArffParser();
     private AttributeDataset attributeDataset = null;
     private AttributeDataset training = null;
     private AttributeDataset testing = null;
 
-    //classification model of Random Forest
     private RandomForest forest = null;
 
-    //logger
     private static final Logger logger = LoggerFactory.getLogger(ModelBuilder.class);
 
-    // --------------- methods ---------------
+    public void loadData() throws Exception{
+        loadData(new File("result/arff/Training.arff"));
+    }
 
     public void loadData(File file) throws Exception {
         // parsing the initial file to get the response index
@@ -109,14 +108,14 @@ public class ModelBuilder {
         //save the model
         
         // printing the result
-        outputResults(fileInput, System.out, testx, testy, max);
+        outputResults(System.out, testx, testy, max);
 
         // creating text file from the result
-        outputResults(fileInput, new PrintStream(new FileOutputStream("result/txt/Result_" + fileOutput + ".txt")), testx, testy, max);
+        outputResults(new PrintStream(new FileOutputStream("result/txt/Result_Trained_Model.txt")), testx, testy, max);
     }
 
     // splitting the model into training and data set
-    public void splitModel(File fileInput, File fileOutput, int split) throws Exception {
+    public void splitModel(int split) throws Exception {
         // if there isn't any training data
         if (attributeDataset == null) {
             logger.debug("Training data doesn't exist");
@@ -164,10 +163,10 @@ public class ModelBuilder {
         forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 100);
 
         // printing the result
-        outputResults(fileInput, System.out, testx, testy, max);
+        outputResults(System.out, testx, testy, max);
 
         // creating text file from the result
-        outputResults(fileInput, new PrintStream(new FileOutputStream("result/txt/Result_" + fileOutput + ".txt")), testx, testy, max);
+        outputResults(new PrintStream(new FileOutputStream("result/txt/Result_Trained_Model.txt")), testx, testy, max);
     }
 
     public int[] predictTestData(double[][] Testx) {
@@ -179,7 +178,8 @@ public class ModelBuilder {
         return yPredict;
     }
 
-    public void outputResults(File fileInput, PrintStream output, double[][] Testx, int[] Testy, int max) throws Exception {
+    public void outputResults(PrintStream output, double[][] Testx, int[] Testy, int max) throws Exception {
+        File fileInput = new File("result/arff/Training.arff");
         // prediction and calculating the classes classified
         int[] yPredict = predictTestData(Testx);
 
@@ -195,7 +195,7 @@ public class ModelBuilder {
         int sizeDataTrained = sizeDataAll - (int) total_instances;
         int sizeDataPredicted = (int) total_instances;
 
-        // element of class in org.nerd.kid.arff file
+        // element of class i
         String[] dataClass = accessArff.readClassArff(fileInput);
 
         // calling the method of confusion matrix

@@ -23,6 +23,7 @@ public class FeatureWikidataExtractor {
     private FeatureFileExtractor featureFileExtractor = new FeatureFileExtractor();
     private WikidataIdClassExtractor wikidataIdClassExtractor = new WikidataIdClassExtractor();
 
+    private List<WikidataElementInfos> featureMatrix = new ArrayList<>();
     private String path = "data/csv/MatrixFeatureWikidata.csv";
 
     public WikidataFetcherWrapper getWikidataFetcherWrapper() {
@@ -38,8 +39,6 @@ public class FeatureWikidataExtractor {
     }
 
     public List<WikidataElementInfos> getFeatureWikidata(File inputFile) throws Exception {
-
-        List<WikidataElementInfos> featureMatrix = new ArrayList<>();
 
         // count the number of features based on 'data/resource/feature_mapper.csv'
         int nbOfFeatures = 0;
@@ -113,8 +112,6 @@ public class FeatureWikidataExtractor {
             featureMatrix.add(wikidataElementInfos);
 
         } // end of looping to read file that contains Wikidata Id and class
-        // save data
-        saveFeatureWikidata(featureMatrix);
 
         return featureMatrix;
     } // end of method getFeatureWikidata

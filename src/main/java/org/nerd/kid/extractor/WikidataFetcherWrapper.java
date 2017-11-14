@@ -29,6 +29,9 @@ public class WikidataFetcherWrapper {
 
         // get the label of wikidata Id
         String labelItem = document.getLabels().get("en").getText();
+        if (labelItem.equals(null)){
+            labelItem = "Null";
+        }
 
         // list for storing properties and its values
         //Map<String, List<String>> dataPropertyValue = featureFileExtractor.loadFeatures();
