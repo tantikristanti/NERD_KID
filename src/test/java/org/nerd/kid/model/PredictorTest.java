@@ -1,6 +1,7 @@
 package org.nerd.kid.model;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class PredictorTest {
@@ -12,6 +13,7 @@ public class PredictorTest {
     }
 
     @Test
+    @Ignore("Not a unit test")
     public void predict() throws Exception {
         System.out.println(target.predict("Q490"));
 
