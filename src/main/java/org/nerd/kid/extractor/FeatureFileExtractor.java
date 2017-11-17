@@ -10,14 +10,25 @@ import java.util.List;
 import java.util.Map;
 
 public class FeatureFileExtractor {
-    public Map<String, List<String>> loadFeatures() throws Exception {
-        return loadFeatures(new FileInputStream("data/resource/feature_mapper.csv"));
+    public Map<String, List<String>> loadFeatures() {
+        try {
+            return loadFeatures(new FileInputStream("data/resource/feature_mapper.csv"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return new HashMap<>();
+        }
     }
 
-    public Map<String, List<String>> loadFeatures(InputStream inputStreamFeatureFile) throws IOException {
+    public Map<String, List<String>> loadFeatures(InputStream inputStreamFeatureFile) {
         Map<String, List<String>> featureMap = new HashMap<>();
         Reader featureMapperIn = new InputStreamReader(inputStreamFeatureFile);
-        Iterable<CSVRecord> recordsFeatures = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(featureMapperIn);
+        Iterable<CSVRecord> recordsFeatures = null;
+        try {
+            recordsFeatures = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(featureMapperIn);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new HashMap<>();
+        }
 
         for (CSVRecord recordFeature : recordsFeatures) {
             String property = recordFeature.get("Property");

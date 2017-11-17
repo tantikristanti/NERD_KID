@@ -1,5 +1,7 @@
 package org.nerd.kid.model;
 
+import com.thoughtworks.xstream.XStream;
+import org.apache.commons.io.FileUtils;
 import org.nerd.kid.arff.ArffParser;
 import org.nerd.kid.evaluation.ModelEvaluation;
 import org.nerd.kid.exception.NerdKidException;
@@ -12,6 +14,7 @@ import smile.math.Math;
 
 import java.io.*;
 import java.lang.*;
+import java.math.BigDecimal;
 
 /*
 class to build machine learning models from datasets using Random Forests
@@ -21,6 +24,7 @@ class to build machine learning models from datasets using Random Forests
 public class ModelBuilder {
     ModelEvaluation evaluation = new ModelEvaluation();
     ArffParser accessArff = new ArffParser();
+    private XStream streamer = new XStream();
 
     private smile.data.parser.ArffParser arffParser = new smile.data.parser.ArffParser();
     private AttributeDataset attributeDataset = null;
@@ -31,7 +35,7 @@ public class ModelBuilder {
 
     private static final Logger logger = LoggerFactory.getLogger(ModelBuilder.class);
 
-    public void loadData() throws Exception{
+    public void loadData() throws Exception {
         loadData(new File("result/arff/Training.arff"));
     }
 
@@ -106,7 +110,7 @@ public class ModelBuilder {
         forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 100);
 
         //save the model
-        
+
         // printing the result
         outputResults(System.out, testx, testy, max);
 
@@ -284,8 +288,17 @@ public class ModelBuilder {
     }
 
     // method to save the model built
-    public void saveModel(File file) throws Exception {
+    public void saveModel(File modelFile) throws Exception {
+        if (forest == null) {
+            throw new RuntimeException("No model");
+        }
 
+        if (modelFile.exists()) {
+            String renameTo = modelFile.getAbsoluteFile() + ".old";
+            modelFile.renameTo(new File(renameTo));
+            FileUtils.deleteQuietly(modelFile);
+        }
+        streamer.toXML(this.forest, new FileOutputStream(modelFile));
     }
 
     // method to load the model built

@@ -17,6 +17,8 @@ public class WikidataFetcherWrapper {
 
     public WikidataElement getElement(String wikiId) throws Exception {
 
+        System.out.println("Fetch data from wikidata " + wikiId);
+
         WikidataElement wikidataElement = new WikidataElement();
 
         wikibaseDataFetcher.getEntityDocument(wikiId);

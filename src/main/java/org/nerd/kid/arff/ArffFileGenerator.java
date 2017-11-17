@@ -43,11 +43,11 @@ public class ArffFileGenerator {
     }
 
     // check the existance of file
-    public boolean fileExist(){
-        return(fileExist(new File(path)));
+    public boolean fileExist() {
+        return (fileExist(new File(path)));
     }
 
-    public boolean fileExist(File file){
+    public boolean fileExist(File file) {
         return file.exists();
     }
 
@@ -118,15 +118,21 @@ public class ArffFileGenerator {
     }
 
     public ArffFileGenerator addData(List<WikidataElementInfos> matrixWikidataElement) {
+        for (WikidataElementInfos element : matrixWikidataElement) {
+            addSingle(element);
+        }
+
+        return this;
+    }
+
+    public ArffFileGenerator addSingle(WikidataElementInfos result) {
         StringBuilder line = new StringBuilder();
 
-        for (WikidataElementInfos result : matrixWikidataElement) {
-            Integer[] features = result.getFeatureVector();
-            for (Integer feature : features) {
-                line.append(feature.toString()).append(",");
-            }
-            line.append(result.getRealClass()).append("\n");
+        Integer[] features = result.getFeatureVector();
+        for (Integer feature : features) {
+            line.append(feature.toString()).append(",");
         }
+        line.append(result.getRealClass()).append("\n");
 
         try {
             writer.append(line.toString());

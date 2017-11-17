@@ -8,7 +8,7 @@ import java.util.List;
 
 public class AddDataTrainerGenerator {
     public static void main(String[] args) throws Exception {
-        ArffFileGenerator arffFileGenerator = new ArffFileGenerator();
+        /*ArffFileGenerator arffFileGenerator = new ArffFileGenerator();
         FeatureWikidataExtractor featureWikidataExtractor = new FeatureWikidataExtractor();
 
         if (arffFileGenerator.fileExist()) {
@@ -18,6 +18,6 @@ public class AddDataTrainerGenerator {
             arffFileGenerator.addData(resultFeatureWikidataExtractor);
         }
         arffFileGenerator.close();
-        System.out.print("Result can be seen in 'result/arff/Training.arff' ");
+        System.out.print("Result can be seen in 'result/arff/Training.arff' ");*/
     }
 }

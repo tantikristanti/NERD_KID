@@ -10,7 +10,7 @@ import smile.classification.RandomForest;
 import java.io.InputStream;
 import java.util.List;
 
-public class Predictor {
+public class WikidataNERPredictor {
     private XStream streamer = new XStream();
     private RandomForest forest = null;
 
@@ -19,7 +19,7 @@ public class Predictor {
         forest = (RandomForest) streamer.fromXML(model);
     }
 
-    public Predictor() {
+    public WikidataNERPredictor() {
         loadModel();
     }
 
