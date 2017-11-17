@@ -1,6 +1,8 @@
 package org.nerd.kid.model;
 
 import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.security.AnyTypePermission;
+import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.data.WikidataElementInfos;
 import org.nerd.kid.extractor.ClassExtractor;
 import org.nerd.kid.extractor.FeatureWikidataExtractor;
@@ -20,24 +22,27 @@ public class WikidataNERPredictor {
     }
 
     public WikidataNERPredictor() {
+        XStream.setupDefaultSecurity(streamer);
+        streamer.addPermission(AnyTypePermission.ANY);
         loadModel();
     }
 
-    public String predict(String wikidataId) {
+    public WikidataElementInfos predict(String wikidataId) {
         WikidataFetcherWrapper wrapper = new WikidataFetcherWrapper();
         FeatureWikidataExtractor extractor = new FeatureWikidataExtractor();
         extractor.setWikidataFetcherWrapper(wrapper);
 
-        final WikidataElementInfos featureWikidata = extractor.getFeatureWikidata(wikidataId);
-        final int length = featureWikidata.getFeatureVector().length;
+        final WikidataElementInfos wikidataElement = extractor.getFeatureWikidata(wikidataId);
+        final int length = wikidataElement.getFeatureVector().length;
         double[] rawFeatures = new double[length];
-        for(int i = 0; i < length; i++) {
-            rawFeatures[i] = ((double) featureWikidata.getFeatureVector()[i]);
+        for (int i = 0; i < length; i++) {
+            rawFeatures[i] = ((double) wikidataElement.getFeatureVector()[i]);
         }
         int prediction = forest.predict(rawFeatures);
 
         List<String> classMapper = new ClassExtractor().loadClasses();
+        wikidataElement.setPredictedClass(classMapper.get(prediction));
 
-        return classMapper.get(prediction);
+        return wikidataElement;
     }
 }

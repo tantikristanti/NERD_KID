@@ -16,13 +16,13 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 public final class NerdKidServiceApplication extends Application<NerdKidConfiguration> {
-    private static final String RESOURCES = "/api";
+    private static final String RESOURCES = "/service";
 
 
     // ========== Application ==========
     @Override
     public String getName() {
-        return "grobid-service";
+        return "nerd-kid-service";
     }
 
     @Override
@@ -42,7 +42,6 @@ public final class NerdKidServiceApplication extends Application<NerdKidConfigur
                 .build();
         bootstrap.addBundle(guiceBundle);
         bootstrap.addBundle(new MultiPartBundle());
-//        bootstrap.addBundle(new AssetsBundle("/web", "/", "index.html", "grobidAssets"));
     }
 
     // ========== static ==========

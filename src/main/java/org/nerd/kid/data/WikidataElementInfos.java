@@ -42,6 +42,7 @@ public class WikidataElementInfos {
     }
 
     private String wikidataId, label, realClass, predictedClass;
+    
     private Integer[] featureVector;
 
 }

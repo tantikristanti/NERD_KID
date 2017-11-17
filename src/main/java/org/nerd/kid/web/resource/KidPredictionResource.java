@@ -1,6 +1,7 @@
 package org.nerd.kid.web.resource;
 
 import com.google.inject.Inject;
+import org.nerd.kid.data.WikidataElementInfos;
 import org.nerd.kid.model.WikidataNERPredictor;
 
 import javax.ws.rs.GET;
@@ -20,8 +21,8 @@ public class KidPredictionResource {
     }
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String sayHello(@QueryParam("id") Optional<String> name) {
+    @Produces(MediaType.APPLICATION_JSON)
+    public WikidataElementInfos predictNERClass(@QueryParam("id") Optional<String> name) {
         return predictor.predict(name.orElseThrow(RuntimeException::new));
     }
 }
