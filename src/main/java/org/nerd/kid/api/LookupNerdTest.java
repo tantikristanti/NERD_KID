@@ -1,7 +1,7 @@
 package org.nerd.kid.api;
 
 
-import com.scienceminer.nerd.kb.Concept;
+/*import com.scienceminer.nerd.kb.Concept;
 import com.scienceminer.nerd.kb.UpperKnowledgeBase;
 
 public class LookupNerdTest {
@@ -12,4 +12,4 @@ public class LookupNerdTest {
             System.out.println("en pageId:" + concept.getPageIdByLang("en"));
         }
     }
-}
+}*/

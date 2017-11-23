@@ -92,14 +92,14 @@
 
     </build>
 
-    <repositories>
+    <!--repositories>
         <repository>
             <id>3rd-party-local-repo</id>
             <name>This is a local repository included in the project, to access 3rd party libs.</name>
             <url>file:///${basedir}/lib/</url>
             <layout>default</layout>
         </repository>
-    </repositories>
+    </repositories-->
     <dependencies>
         <!--smile library-->
         <!-- https://mvnrepository.com/artifact/com.github.haifengl/smile-core -->
@@ -156,14 +156,14 @@
             <version>0.0.2</version>
         </dependency-->
 
-        <dependency>
+        <!--dependency>
             <groupId>com.scienceminer.nerd</groupId>
             <artifactId>nerd</artifactId>
             <version>0.0.3</version>
-        </dependency>
+        </dependency-->
 
         <!-- for GROBID NER -->
-        <dependency>
+        <!--dependency>
             <groupId>org.grobid</groupId>
             <artifactId>grobid-core</artifactId>
             <version>0.5.1-SNAPSHOT</version>
@@ -177,7 +177,7 @@
             <groupId>org.grobid.trainer</groupId>
             <artifactId>grobid-trainer</artifactId>
             <version>0.5.1-SNAPSHOT</version>
-        </dependency>
+        </dependency-->
 
         <!--for mapping JSON object-->
         <!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
