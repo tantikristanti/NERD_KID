@@ -16,7 +16,7 @@ public class WikidataIdClassExtractor {
 
     public Map<String, String> loadIdClass() {
         try {
-            return loadIdClass(new FileInputStream("data/csv/NewElements.csv"));
+            return loadIdClass(new FileInputStream("data/csv/toBeCorrected/NewElements.csv"));
         } catch (FileNotFoundException e) {
             throw new NerdKidException("An exception occured while NerdKid is running.", e);
         }

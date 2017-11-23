@@ -14,7 +14,7 @@ public class AddDataTrainerGenerator {
         if (arffFileGenerator.fileExist()) {
             arffFileGenerator.appendToFile();
             // add data
-            List<WikidataElementInfos> resultFeatureWikidataExtractor = featureWikidataExtractor.getFeatureWikidata(new File("data/csv/NewElements.csv"));
+            List<WikidataElementInfos> resultFeatureWikidataExtractor = featureWikidataExtractor.getFeatureWikidata(new File("data/csv/toBeCorrected/NewElements.csv"));
             arffFileGenerator.addData(resultFeatureWikidataExtractor);
         }
         arffFileGenerator.close();
