@@ -29,7 +29,7 @@ public class NerdKBFetcherWrapperTest {
 
         assertThat(element.getLabel(), is("Seaborgium"));
         assertThat(element.getProperties().keySet(), hasSize(9));
-        assertThat(element.getProperties().get("P31"), is("Q11344"));
+        assertThat(element.getProperties().get("P31").get(0), is("Q11344"));
     }
 
 }
