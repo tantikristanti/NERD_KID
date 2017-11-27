@@ -2,12 +2,11 @@ package org.nerd.kid.extractor;
 
 import au.com.bytecode.opencsv.CSVReader;
 import au.com.bytecode.opencsv.CSVWriter;
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.lang3.ArrayUtils;
 import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.data.WikidataElementInfos;
 import org.nerd.kid.exception.NerdKidException;
+import org.nerd.kid.extractor.wikidata.WikidataFetcherWrapper;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -16,11 +15,10 @@ import java.util.List;
 import java.util.Map;
 
 /*
-* extract features (properties and values) of WikidataId directly from Wikidata knowledge base
-* */
-
+ * extract features (properties and values) of WikidataId directly from Wikidata knowledge base
+ **/
 public class FeatureWikidataExtractor {
-    private WikidataFetcherWrapper wikidataFetcherWrapper = new WikidataFetcherWrapper();
+    private WikidataFetcherWrapper wikidataFetcherWrapper = null;
     private FeatureFileExtractor featureFileExtractor = new FeatureFileExtractor();
     private WikidataIdClassExtractor wikidataIdClassExtractor = new WikidataIdClassExtractor();
 
@@ -29,6 +27,10 @@ public class FeatureWikidataExtractor {
 
     public WikidataFetcherWrapper getWikidataFetcherWrapper() {
         return wikidataFetcherWrapper;
+    }
+
+    public FeatureWikidataExtractor(WikidataFetcherWrapper wikidataFetcherWrapper){
+        this.wikidataFetcherWrapper = wikidataFetcherWrapper;
     }
 
     public void setWikidataFetcherWrapper(WikidataFetcherWrapper wikidataFetcherWrapper) {

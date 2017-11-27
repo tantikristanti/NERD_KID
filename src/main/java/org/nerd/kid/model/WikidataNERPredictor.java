@@ -2,11 +2,12 @@ package org.nerd.kid.model;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.security.AnyTypePermission;
-import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.data.WikidataElementInfos;
 import org.nerd.kid.extractor.ClassExtractor;
 import org.nerd.kid.extractor.FeatureWikidataExtractor;
-import org.nerd.kid.extractor.WikidataFetcherWrapper;
+import org.nerd.kid.extractor.wikidata.NerdKBFetcherWrapper;
+import org.nerd.kid.extractor.wikidata.WikibaseWrapper;
+import org.nerd.kid.extractor.wikidata.WikidataFetcherWrapper;
 import smile.classification.RandomForest;
 
 import java.io.InputStream;
@@ -28,9 +29,8 @@ public class WikidataNERPredictor {
     }
 
     public WikidataElementInfos predict(String wikidataId) {
-        WikidataFetcherWrapper wrapper = new WikidataFetcherWrapper();
-        FeatureWikidataExtractor extractor = new FeatureWikidataExtractor();
-        extractor.setWikidataFetcherWrapper(wrapper);
+        WikidataFetcherWrapper wrapper = new NerdKBFetcherWrapper();
+        FeatureWikidataExtractor extractor = new FeatureWikidataExtractor(wrapper);
 
         final WikidataElementInfos wikidataElement = extractor.getFeatureWikidata(wikidataId);
         final int length = wikidataElement.getFeatureVector().length;

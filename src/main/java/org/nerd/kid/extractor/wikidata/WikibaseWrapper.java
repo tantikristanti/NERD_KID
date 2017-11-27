@@ -1,6 +1,7 @@
-package org.nerd.kid.extractor;
+package org.nerd.kid.extractor.wikidata;
 
 import org.nerd.kid.data.WikidataElement;
+import org.nerd.kid.extractor.FeatureFileExtractor;
 import org.wikidata.wdtk.datamodel.interfaces.*;
 import org.wikidata.wdtk.wikibaseapi.WikibaseDataFetcher;
 
@@ -9,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class WikidataFetcherWrapper {
+public class WikibaseWrapper implements WikidataFetcherWrapper {
 
     private WikibaseDataFetcher wikibaseDataFetcher = WikibaseDataFetcher.getWikidataDataFetcher();
 

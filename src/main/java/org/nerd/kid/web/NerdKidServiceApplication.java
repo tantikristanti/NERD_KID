@@ -9,7 +9,9 @@ import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.forms.MultiPartBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import org.nerd.kid.web.healthcheck.KidHealthCheck;
 import org.nerd.kid.web.module.NerdKidServiceModule;
+import org.nerd.kid.web.resource.KidPredictionResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,6 +30,10 @@ public final class NerdKidServiceApplication extends Application<NerdKidConfigur
     @Override
     public void run(NerdKidConfiguration nerdKidConfiguration, Environment environment) throws Exception {
         environment.jersey().setUrlPattern(RESOURCES + "/*");
+
+        final KidHealthCheck healthCheck = new KidHealthCheck();
+        environment.healthChecks().register("kidHealth", healthCheck);
+        environment.jersey().register(new KidPredictionResource());
     }
 
     private List<? extends Module> getGuiceModules() {
