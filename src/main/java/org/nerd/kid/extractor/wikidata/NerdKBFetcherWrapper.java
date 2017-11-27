@@ -60,7 +60,7 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
 
                 String propertyId = (String) o.get("propertyId");
                 String valueType = (String) o.get("valueType");
-                if (!"string".equals(valueType)) {
+                if (!"wikibase-item".equals(valueType) && !"string".equals(valueType)) {
                     continue;
                 }
                 String value = (String) o.get("value");
