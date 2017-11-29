@@ -25,7 +25,7 @@ After copy the file, the mentions and classes can be extracted by this service
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preprocessing.GrobidNERTrainingDataTransformer"```
 
-The result can be seen in `data/csv/annotatedCorpusResult.csv`
+The result can be seen in `data/csv/GrobidNer/annotatedCorpusResult.csv`
 
 # Installation-Build-Run
 **1. Installation**

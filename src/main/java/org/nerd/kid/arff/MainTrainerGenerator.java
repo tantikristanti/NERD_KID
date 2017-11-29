@@ -7,6 +7,7 @@ import org.nerd.kid.data.WikidataElementInfos;
 import org.nerd.kid.extractor.ClassExtractor;
 import org.nerd.kid.extractor.FeatureFileExtractor;
 import org.nerd.kid.extractor.FeatureWikidataExtractor;
+import org.nerd.kid.extractor.wikidata.NerdKBFetcherWrapper;
 
 import javax.xml.bind.SchemaOutputResolver;
 import java.io.File;
@@ -36,7 +37,8 @@ public class MainTrainerGenerator {
 
     public void run() throws Exception {
         ArffFileGenerator arffFileGenerator = new ArffFileGenerator();
-//        FeatureWikidataExtractor featureWikidataExtractor = new FeatureWikidataExtractor();
+        NerdKBFetcherWrapper nerdKBFetcherWrapper = new NerdKBFetcherWrapper();
+        FeatureWikidataExtractor featureWikidataExtractor = new FeatureWikidataExtractor(nerdKBFetcherWrapper);
         FeatureFileExtractor featureFileExtractor = new FeatureFileExtractor();
         ClassExtractor classExtractor = new ClassExtractor();
 
@@ -64,15 +66,15 @@ public class MainTrainerGenerator {
             training.addAll(elements);
         }
 
-//        for(WikidataElementInfos element : training) {
-//            try {
-//                WikidataElementInfos wikidataFeatures = featureWikidataExtractor.getFeatureWikidata(element.getWikidataId());
-//                wikidataFeatures.setRealClass(element.getRealClass());
-//                arffFileGenerator.addSingle(wikidataFeatures);
-//            } catch (Exception e) {
-//                System.out.println("Some error encountered, skipping entity: " + element.getWikidataId());
-//            }
-//        }
+        for(WikidataElementInfos element : training) {
+            try {
+                WikidataElementInfos wikidataFeatures = featureWikidataExtractor.getFeatureWikidata(element.getWikidataId());
+                wikidataFeatures.setRealClass(element.getRealClass());
+                arffFileGenerator.addSingle(wikidataFeatures);
+            } catch (Exception e) {
+                System.out.println("Some error encountered, skipping entity: " + element.getWikidataId());
+            }
+        }
 
         arffFileGenerator.close();
 
