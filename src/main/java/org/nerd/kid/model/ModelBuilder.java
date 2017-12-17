@@ -4,17 +4,13 @@ import com.thoughtworks.xstream.XStream;
 import org.apache.commons.io.FileUtils;
 import org.nerd.kid.arff.ArffParser;
 import org.nerd.kid.evaluation.ModelEvaluation;
-import org.nerd.kid.exception.NerdKidException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import smile.data.AttributeDataset;
 import smile.classification.RandomForest;
+import smile.data.AttributeDataset;
 import smile.math.Math;
 
 import java.io.*;
-import java.lang.*;
-import java.math.BigDecimal;
 
 /*
 class to build machine learning models from datasets using Random Forests
@@ -290,7 +286,7 @@ public class ModelBuilder {
     // method to save the model built
     public void saveModel(File modelFile) throws Exception {
         if (forest == null) {
-            throw new RuntimeException("No model");
+            throw new RuntimeException("No model exists.");
         }
 
         if (modelFile.exists()) {
@@ -301,8 +297,4 @@ public class ModelBuilder {
         streamer.toXML(this.forest, new FileOutputStream(modelFile));
     }
 
-    // method to load the model built
-    public void loadModel(File file) throws Exception {
-
-    }
 }

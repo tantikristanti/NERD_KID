@@ -108,6 +108,8 @@ are in correct format.
 
 - Input needed is the percentage of training-testing splitting data, e.g. `80` (%)
 - Result can be seen in `result/txt/Result_Trained_Model.txt`
+- The machine learning model itself (the result of Random Forest algorithm) can be found in the temporary file `tmp/model.xml`
+    It can be copied 
 
 **6. Get new predicted classes**
 

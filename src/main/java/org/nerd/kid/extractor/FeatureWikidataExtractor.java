@@ -89,6 +89,7 @@ public class FeatureWikidataExtractor {
 
         Integer[] featureVector = new Integer[nbOfFeatures];
 
+        // put 1 if property-value for entities in Wikidata match with the list of 'data/resource/feature_mapper.csv', 0 if they aren't found
         int idx = 0;
         for (String propertyValue : propertyValueFeatureMapper) {
             if (propertyValueWikidata.contains(propertyValue)) {

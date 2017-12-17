@@ -5,15 +5,12 @@ import com.google.common.collect.Lists;
 import com.google.inject.Module;
 import com.hubspot.dropwizard.guicier.GuiceBundle;
 import io.dropwizard.Application;
-import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.forms.MultiPartBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.nerd.kid.web.healthcheck.KidHealthCheck;
 import org.nerd.kid.web.module.NerdKidServiceModule;
 import org.nerd.kid.web.resource.KidPredictionResource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
