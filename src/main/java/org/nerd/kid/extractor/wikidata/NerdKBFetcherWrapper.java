@@ -82,4 +82,5 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
         return element;
 
     }
+
 }

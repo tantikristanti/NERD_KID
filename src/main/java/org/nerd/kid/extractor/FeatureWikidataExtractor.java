@@ -37,6 +37,7 @@ public class FeatureWikidataExtractor {
         this.wikidataFetcherWrapper = wikidataFetcherWrapper;
     }
 
+    // method to get wikidataId, label, real-predicted class, and properties in binary form (0-1) based on the feature_mapper and Nerd KB
     public WikidataElementInfos getFeatureWikidata(String wikidataId) {
         // count the number of features based on 'data/resource/feature_mapper.csv'
         Map<String, List<String>> featuresMap = new HashMap<>();
@@ -50,6 +51,7 @@ public class FeatureWikidataExtractor {
             e.printStackTrace();
         }
 
+        // get the element based on the wrapper whether from Wikidata or Nerd KB
         WikidataElement wikidataElement = null;
         try {
             wikidataElement = wikidataFetcherWrapper.getElement(wikidataId);
@@ -104,8 +106,43 @@ public class FeatureWikidataExtractor {
         wikidataElementInfos.setFeatureVector(featureVector);
 
         return wikidataElementInfos;
-    }
+    } // end of method 'getFeatureWikidata'
 
+
+    // method to get the wikdiataId, label, real-predicted class, and raw properties for each wikidataId directly from Wikidata KB
+    public WikidataElementInfos getRawFeatureWikidata(String wikidataId) {
+        // get the element based on the wrapper whether from Wikidata or Nerd KB
+        WikidataElement wikidataElement = null;
+        try {
+            wikidataElement = wikidataFetcherWrapper.getElement(wikidataId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // set information of id, label, predicted class, features, real class
+        WikidataElementInfos wikidataElementInfos = new WikidataElementInfos();
+        wikidataElementInfos.setWikidataId(wikidataId);
+        wikidataElementInfos.setLabel(wikidataElement.getLabel());
+
+        // properties and values got directly from Wikidata
+        Map<String, List<String>> propertiesWiki = wikidataElement.getProperties();
+
+        // get the list of properties-values based on the result directly from Wikidata
+        List<String> propertyValueWikidata = new ArrayList<>();
+        for (Map.Entry<String, List<String>> propertyGot : propertiesWiki.entrySet()) {
+            String property = propertyGot.getKey();
+            List<String> values = propertyGot.getValue();
+            for (String value : values) {
+                String propertyValue = property + "_" + value;
+                propertyValueWikidata.add(propertyValue);
+            }
+        }
+
+        // set information of raw feature vector
+        wikidataElementInfos.setRawFeatureVector(propertyValueWikidata);
+
+        return wikidataElementInfos;
+    }
 
     public void saveFeatureWikidata(List<WikidataElementInfos> matrix) throws Exception {
 
@@ -159,6 +196,7 @@ public class FeatureWikidataExtractor {
         } catch (Exception e) {
             throw new NerdKidException("An exception occured while saving or accessing data.", e);
         }
-    }
+    } // end of method 'saveFeatureWikidata'
+
 
 } // end of class FeatureWikidataExtractor
