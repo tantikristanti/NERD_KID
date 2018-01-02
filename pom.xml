@@ -172,14 +172,16 @@
         <dependency>
             <groupId>org.wikidata.wdtk</groupId>
             <artifactId>wdtk-datamodel</artifactId>
-            <version>0.7.0</version>
+            <version>0.8.0</version>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.wikidata.wdtk/wdtk-wikibaseapi -->
         <dependency>
             <groupId>org.wikidata.wdtk</groupId>
             <artifactId>wdtk-wikibaseapi</artifactId>
-            <version>0.7.0</version>
+            <version>0.8.0</version>
         </dependency>
+
 
         <!--JSON library-->
         <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
