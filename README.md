@@ -44,7 +44,7 @@ The result can be seen in `data/csv/GrobidNer/annotatedCorpusResult.csv`
 
 **3. Prepare new data**
 
-New data can be extracted by accessing the API of Nerd or Entity-Fishing.*
+*New data can be extracted by accessing the API of Nerd or Entity-Fishing.*
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.extractor.MainRestAPINerdCaller"```
 
@@ -95,7 +95,7 @@ Q76,PERSON
 ...
 ```
 
-are in correct format.
+are in a correct format.
 
 - Error in this step can appear if certain element's Id is no longer available in Wikidata. 
  Just delete the Id that want to be processed from the CSV files.
@@ -113,46 +113,37 @@ are in correct format.
 
 **6. Get new predicted classes**
 
-```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.rest.MainCallAPIWikidata"```
-
-- The result of predicted class can be seen in `result/Predicted_Testing.csv`
-
-**7. Example of the use**
-
 *Prepare the list of Wikidata Id*
 
 Firstly, prepare the list of new Wikidata Id that need to be predicted (in this case, Nerd_kid will predict the class for each Wikidata Id prepared)
-The list then can be copied into `data/preannotation/dataPreannotation.csv`.
-It is a very simple csv file that contain Wikidata Id for each line without name of label and Null for the class. For example:
+The list then can be copied into `data/csv/NewElements.csv`.
+It is a very simple csv file that contain Wikidata Id for each line without name of label and neither for the class. For example:
+
 ```
 WikidataID,Class
-Q76,PERSON
-Q1408,LOCATION
+Q76,
+Q1408,
 ```
 
 *To predict Wikidata Id:*
-- It is possible also to change the training data located in `data/Training.arff`
-- Run the service of prediction :
+
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preannotation.MainPreAnnotation"```
 
-*The example of result can be seen in the picture*
+- The result can be seen in `result/csv/ResultPredictedClass.csv`
 ![ResultPrediction](pic/ResultPrediction.jpg)
 
-*Build new datasets by integrating with new data*
-```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.rest.MainTrainer"```
 
-- Input is in csv format, default in /data/corpus/csv
+**7. Web version**
 
-Format the csv file. The label can be empty and the class can be `Null`, for example:
+Online version of class prediction can be accessed here `http://nerd.huma-num.fr/kid/service/ner?id=Q1`
 
-```
-WikidataID;labelWikidata;PredictedClass
-Q1016;Libya;Null
-Q11322507;;Null
-```
+User can only just change the Wikidata Id started with 'Q' and then the number.
+
+- The result will be Wikidata Id, the properties, and the result of predicted class.
 
 ## Contact
 
 Contact: Tanti Kristanti (<tantikristanti@gmail.com>)
+
 
