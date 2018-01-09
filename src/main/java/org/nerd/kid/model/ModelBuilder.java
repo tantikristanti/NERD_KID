@@ -105,8 +105,6 @@ public class ModelBuilder {
         // training with Random Forest classification
         forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 100);
 
-        //save the model
-
         // printing the result
         outputResults(System.out, testx, testy, max);
 
