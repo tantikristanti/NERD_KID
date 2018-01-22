@@ -64,7 +64,9 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
                     continue;
                 }
                 String value = (String) o.get("value");
-                if (value == null) {
+                Object valueObject = o.get("value");
+
+                if (value == null || valueObject == null) {
                     continue;
                 }
 
