@@ -18,7 +18,6 @@ import java.io.FileWriter;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class WikidataNERPredictor {
     private CSVWriter csvWriter = null;
@@ -27,7 +26,7 @@ public class WikidataNERPredictor {
     private RandomForest forest = null;
 
     public void loadModel() {
-        InputStream model = this.getClass().getResourceAsStream("/model.xml");
+        InputStream model = this.getClass().getResourceAsStream("/modelOriginal.xml");
         forest = (RandomForest) streamer.fromXML(model);
     }
 
