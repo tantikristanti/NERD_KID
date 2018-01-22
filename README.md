@@ -71,12 +71,8 @@ Q1408,LOCATION
 *(Basically, a training file built based on the datasets prepared in `data/csv/BaseElements.csv`
  This step is done if there isn't any training file or there is a need to build a new one.)*
 
-- It is also possible to add new data into training file that already exist. 
-  This new data can be put in `data/csv/NewElements.csv`, then run the service:
+- It is also possible to check first whether the data and features of wikidata Ids are correct/complete by checking the Csv file result located in `result/csv/ResultFromArffGenerator.csv`.
 
-```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.arff.AddDataTrainerGenerator"```
-
-- The result can be seen in `result/arff/Training.arff`
 
 *Note :* 
 - CSV files must have at least the header `WikidataID` and `Class`. So:

@@ -3,6 +3,7 @@ package org.nerd.kid.arff;
 import au.com.bytecode.opencsv.CSVWriter;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
+import org.apache.commons.lang3.StringUtils;
 import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.data.WikidataElementInfos;
 import org.nerd.kid.extractor.ClassExtractor;
@@ -15,6 +16,7 @@ import javax.xml.bind.SchemaOutputResolver;
 import java.io.*;
 import java.nio.file.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -125,19 +127,23 @@ public class MainTrainerGenerator {
 
         try {
             csvWriter = new CSVWriter(new FileWriter(csvDataPath), ',', CSVWriter.NO_QUOTE_CHARACTER);
+
             // the header's file
-            String[] headerPredict = {"WikidataID,LabelWikidata,Class"};
-            csvWriter.writeNext(headerPredict);
-            List<String> listPropertyValue = new ArrayList<String>();
+            List<String> headerPredict = Arrays.asList("WikidataID,LabelWikidata,Class");
+            List<String> headerPropertyValue = new ArrayList<String>();
+            List<String> headerCombined =  new ArrayList<String>();
+
             for (Map.Entry<String, List<String>> property : resultFeature.entrySet()) {
                 List<String> values = property.getValue();
 
                 for (String item : values) {
                     String propertyValue = property.getKey() + "_" + item;
-                    listPropertyValue.add(propertyValue);
+                    headerPropertyValue.add(propertyValue);
                 }
-                csvWriter.writeNext(listPropertyValue.toArray(new String[listPropertyValue.size()]));
             }
+            headerCombined.addAll(headerPredict);
+            headerCombined.addAll(headerPropertyValue);
+            csvWriter.writeNext(headerCombined.toArray(new String[headerCombined.size()]));
 
             // the data
             final List<Path> trainingFiles = listFiles(Paths.get("data/csv"), "*.{csv}");
@@ -153,16 +159,17 @@ public class MainTrainerGenerator {
                 wikidataFeatures.setRealClass(element.getRealClass());
 
                 //write the result into a Csv file
-                String[] dataGenerated = {wikidataFeatures.getWikidataId(), wikidataFeatures.getLabel(), wikidataFeatures.getRealClass()};
-                csvWriter.writeNext(dataGenerated);
-
+                List<String> dataGenerated = Arrays.asList(wikidataFeatures.getWikidataId(), wikidataFeatures.getLabel(), wikidataFeatures.getRealClass());
                 List<String> dataFeatureGenerated = new ArrayList<String>();
+                List<String> dataCombined =  new ArrayList<String>();
 
                 Integer[] features = wikidataFeatures.getFeatureVector();
                 for (Integer feature : features) {
                     dataFeatureGenerated.add(feature.toString());
                 }
-                csvWriter.writeNext(dataFeatureGenerated.toArray(new String[dataFeatureGenerated.size()]));
+                dataCombined.addAll(dataGenerated);
+                dataCombined.addAll(dataFeatureGenerated);
+                csvWriter.writeNext(dataCombined.toArray(new String[dataCombined.size()]));
 
             }
         } catch (Exception e) {
