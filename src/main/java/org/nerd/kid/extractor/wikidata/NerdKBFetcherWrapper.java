@@ -21,8 +21,11 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
 
+    //String nerdPathLocal = "http://localhost:8090/service/kb/concept/";
+
     String nerdUrl = "nerd.huma-num.fr";
-    String nerdPath = "/nerd/service/kb/concept";
+    //String nerdPath = "/nerd/service/kb/concept";
+    String nerdPath = "/test/service/kb/concept";
 
     @Override
     public WikidataElement getElement(String wikiId) throws Exception {

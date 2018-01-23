@@ -3,22 +3,15 @@ package org.nerd.kid.arff;
 import au.com.bytecode.opencsv.CSVWriter;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
-import org.apache.commons.lang3.StringUtils;
-import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.data.WikidataElementInfos;
 import org.nerd.kid.extractor.ClassExtractor;
 import org.nerd.kid.extractor.FeatureFileExtractor;
 import org.nerd.kid.extractor.FeatureWikidataExtractor;
 import org.nerd.kid.extractor.wikidata.NerdKBFetcherWrapper;
-import org.nerd.kid.extractor.wikidata.WikidataFetcherWrapper;
 
-import javax.xml.bind.SchemaOutputResolver;
 import java.io.*;
 import java.nio.file.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /*
 main class for generating Arff file
@@ -89,6 +82,8 @@ public class MainTrainerGenerator {
 
 
     public List<WikidataElementInfos> extractData(File inputFile) throws Exception {
+        // get all the data from Csv file containing fields of WikidataId and Class
+
         List<WikidataElementInfos> inputList = new ArrayList<>();
 
         Reader reader = new FileReader(inputFile);
@@ -104,7 +99,16 @@ public class MainTrainerGenerator {
 
         } // end of looping to read file that contains Wikidata Id and class
 
-        return inputList;
+//            return inputList;
+
+        // send only the unique wiki Ids (no duplicate)
+        Set<WikidataElementInfos> inputListUniqueProcess = new HashSet<>();
+        inputListUniqueProcess.addAll(inputList);
+
+        List<WikidataElementInfos> inputListUnique = new ArrayList(inputList);
+
+        return inputListUnique;
+
     }
 
     public static List<Path> listFiles(Path dir, String type) throws IOException {
@@ -131,7 +135,7 @@ public class MainTrainerGenerator {
             // the header's file
             List<String> headerPredict = Arrays.asList("WikidataID,LabelWikidata,Class");
             List<String> headerPropertyValue = new ArrayList<String>();
-            List<String> headerCombined =  new ArrayList<String>();
+            List<String> headerCombined = new ArrayList<String>();
 
             for (Map.Entry<String, List<String>> property : resultFeature.entrySet()) {
                 List<String> values = property.getValue();
@@ -161,7 +165,7 @@ public class MainTrainerGenerator {
                 //write the result into a Csv file
                 List<String> dataGenerated = Arrays.asList(wikidataFeatures.getWikidataId(), wikidataFeatures.getLabel(), wikidataFeatures.getRealClass());
                 List<String> dataFeatureGenerated = new ArrayList<String>();
-                List<String> dataCombined =  new ArrayList<String>();
+                List<String> dataCombined = new ArrayList<String>();
 
                 Integer[] features = wikidataFeatures.getFeatureVector();
                 for (Integer feature : features) {
