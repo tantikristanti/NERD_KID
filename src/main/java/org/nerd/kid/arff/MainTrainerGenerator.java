@@ -1,22 +1,17 @@
 package org.nerd.kid.arff;
 
+import au.com.bytecode.opencsv.CSVWriter;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
-import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.data.WikidataElementInfos;
 import org.nerd.kid.extractor.ClassExtractor;
 import org.nerd.kid.extractor.FeatureFileExtractor;
 import org.nerd.kid.extractor.FeatureWikidataExtractor;
+import org.nerd.kid.extractor.wikidata.NerdKBFetcherWrapper;
 
-import javax.xml.bind.SchemaOutputResolver;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.nio.file.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /*
 main class for generating Arff file
@@ -29,16 +24,22 @@ The list of classes can be found in 'data/resource/class_mapper.csv'
 * */
 
 public class MainTrainerGenerator {
+    ArffFileGenerator arffFileGenerator = new ArffFileGenerator();
+    NerdKBFetcherWrapper nerdKBFetcherWrapper = new NerdKBFetcherWrapper();
+    FeatureWikidataExtractor featureWikidataExtractor = new FeatureWikidataExtractor(nerdKBFetcherWrapper);
+    FeatureFileExtractor featureFileExtractor = new FeatureFileExtractor();
+    ClassExtractor classExtractor = new ClassExtractor();
 
     public static void main(String[] args) throws Exception {
-        new MainTrainerGenerator().run();
+        MainTrainerGenerator mainTrainerGenerator = new MainTrainerGenerator();
+
+        mainTrainerGenerator.run();
+
+        // create CSV file to check the result of data collected
+        mainTrainerGenerator.saveResultCsvFormat();
     }
 
     public void run() throws Exception {
-        ArffFileGenerator arffFileGenerator = new ArffFileGenerator();
-        FeatureWikidataExtractor featureWikidataExtractor = new FeatureWikidataExtractor();
-        FeatureFileExtractor featureFileExtractor = new FeatureFileExtractor();
-        ClassExtractor classExtractor = new ClassExtractor();
 
         // get the list of features
         Map<String, List<String>> resultFeature = featureFileExtractor.loadFeatures();
@@ -64,7 +65,7 @@ public class MainTrainerGenerator {
             training.addAll(elements);
         }
 
-        for(WikidataElementInfos element : training) {
+        for (WikidataElementInfos element : training) {
             try {
                 WikidataElementInfos wikidataFeatures = featureWikidataExtractor.getFeatureWikidata(element.getWikidataId());
                 wikidataFeatures.setRealClass(element.getRealClass());
@@ -81,8 +82,10 @@ public class MainTrainerGenerator {
 
 
     public List<WikidataElementInfos> extractData(File inputFile) throws Exception {
+        // get all the data from Csv file containing fields of WikidataId and Class
+
         List<WikidataElementInfos> inputList = new ArrayList<>();
-        
+
         Reader reader = new FileReader(inputFile);
         Iterable<CSVRecord> records = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(reader);
         for (CSVRecord record : records) {
@@ -96,7 +99,16 @@ public class MainTrainerGenerator {
 
         } // end of looping to read file that contains Wikidata Id and class
 
-        return inputList;
+//            return inputList;
+
+        // send only the unique wiki Ids (no duplicate)
+        Set<WikidataElementInfos> inputListUniqueProcess = new HashSet<>();
+        inputListUniqueProcess.addAll(inputList);
+
+        List<WikidataElementInfos> inputListUnique = new ArrayList(inputList);
+
+        return inputListUnique;
+
     }
 
     public static List<Path> listFiles(Path dir, String type) throws IOException {
@@ -109,5 +121,68 @@ public class MainTrainerGenerator {
             throw ex.getCause();
         }
         return result;
+    }
+
+    public void saveResultCsvFormat() throws Exception {
+        String csvDataPath = "result/csv/ResultFromArffGenerator.csv";
+        CSVWriter csvWriter = null;
+        // get the list of features
+        Map<String, List<String>> resultFeature = featureFileExtractor.loadFeatures();
+
+        try {
+            csvWriter = new CSVWriter(new FileWriter(csvDataPath), ',', CSVWriter.NO_QUOTE_CHARACTER);
+
+            // the header's file
+            List<String> headerPredict = Arrays.asList("WikidataID,LabelWikidata,Class");
+            List<String> headerPropertyValue = new ArrayList<String>();
+            List<String> headerCombined = new ArrayList<String>();
+
+            for (Map.Entry<String, List<String>> property : resultFeature.entrySet()) {
+                List<String> values = property.getValue();
+
+                for (String item : values) {
+                    String propertyValue = property.getKey() + "_" + item;
+                    headerPropertyValue.add(propertyValue);
+                }
+            }
+            headerCombined.addAll(headerPredict);
+            headerCombined.addAll(headerPropertyValue);
+            csvWriter.writeNext(headerCombined.toArray(new String[headerCombined.size()]));
+
+            // the data
+            final List<Path> trainingFiles = listFiles(Paths.get("data/csv"), "*.{csv}");
+            List<WikidataElementInfos> training = new ArrayList<>();
+            for (Path inputFile : trainingFiles) {
+                List<WikidataElementInfos> elements = extractData(inputFile.toFile());
+                training.addAll(elements);
+            }
+
+            for (WikidataElementInfos element : training) {
+
+                WikidataElementInfos wikidataFeatures = featureWikidataExtractor.getFeatureWikidata(element.getWikidataId());
+                wikidataFeatures.setRealClass(element.getRealClass());
+
+                //write the result into a Csv file
+                List<String> dataGenerated = Arrays.asList(wikidataFeatures.getWikidataId(), wikidataFeatures.getLabel(), wikidataFeatures.getRealClass());
+                List<String> dataFeatureGenerated = new ArrayList<String>();
+                List<String> dataCombined = new ArrayList<String>();
+
+                Integer[] features = wikidataFeatures.getFeatureVector();
+                for (Integer feature : features) {
+                    dataFeatureGenerated.add(feature.toString());
+                }
+                dataCombined.addAll(dataGenerated);
+                dataCombined.addAll(dataFeatureGenerated);
+                csvWriter.writeNext(dataCombined.toArray(new String[dataCombined.size()]));
+
+            }
+        } catch (Exception e) {
+            System.out.println("Some error encountered, skipping entity.");
+        } finally {
+            csvWriter.flush();
+            csvWriter.close();
+        }
+        System.out.print("Result in 'result/csv/ResultFromArffGenerator.csv'");
+
     }
 }

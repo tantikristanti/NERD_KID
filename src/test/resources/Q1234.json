@@ -1,0 +1,190 @@
+{
+  "rawName": "Seaborgium",
+  "preferredTerm": "Seaborgium",
+  "nerd_score": 0,
+  "nerd_selection_score": 0,
+  "wikipediaExternalRef": 28144,
+  "wikidataId": "Q1234",
+  "definitions": [
+    {
+      "definition": "'''Seaborgium''' is a [[chemical element]] with [[chemical symbol|symbol]] '''Sg''' and [[atomic number]] 106. It is named after the American [[nuclear chemist]] [[Glenn T. Seaborg]]. It is a [[synthetic element]] (an element that can be created in a laboratory but is not found in nature) and [[radioactive]]; the most stable known [[isotope]], 269Sg, has a [[half-life]] of approximately 3.1   minutes.",
+      "source": "wikipedia-en",
+      "lang": "en"
+    }
+  ],
+  "domains": [
+    "Chemistry"
+  ],
+  "categories": [
+    {
+      "source": "wikipedia-en",
+      "category": "Chemical elements",
+      "page_id": 691255
+    },
+    {
+      "source": "wikipedia-en",
+      "category": "Transition metals",
+      "page_id": 694948
+    },
+    {
+      "source": "wikipedia-en",
+      "category": "Synthetic elements",
+      "page_id": 15245057
+    },
+    {
+      "source": "wikipedia-en",
+      "category": "Seaborgium",
+      "page_id": 23177113
+    }
+  ],
+  "multilingual": [
+    {
+      "lang": "de",
+      "term": "Seaborgium",
+      "page_id": 41772
+    },
+    {
+      "lang": "fr",
+      "term": "Seaborgium",
+      "page_id": 23041
+    }
+  ],
+  "statements": [
+    {
+      "conceptId": "Q1234",
+      "propertyId": "P1036",
+      "propertyName": "Dewey Decimal Classification",
+      "valueType": "string",
+      "value": "546.449"
+    },
+    {
+      "conceptId": "Q1234",
+      "propertyId": "P1245",
+      "propertyName": "OmegaWiki Defined Meaning",
+      "valueType": "external-id",
+      "value": "359210"
+    },
+    {
+      "conceptId": "Q1234",
+      "propertyId": "P138",
+      "propertyName": "named after",
+      "valueType": "wikibase-item",
+      "value": "Q48973",
+      "valueName": "Glenn T. Seaborg"
+    },
+    {
+      "conceptId": "Q1234",
+      "propertyId": "P246",
+      "propertyName": "element symbol",
+      "valueType": "string",
+      "value": "Sg"
+    },
+    {
+      "conceptId": "Q1234",
+      "propertyId": "P373",
+      "propertyName": "Commons category",
+      "valueType": "string",
+      "value": "Seaborgium"
+    },
+    {
+      "conceptId": "Q1234",
+      "propertyId": "P575",
+      "propertyName": "time of discovery",
+      "valueType": "time",
+      "value": {
+        "time": "+1974-07-01T00:00:00Z",
+        "timezone": 0,
+        "before": 0,
+        "after": 0,
+        "precision": 10,
+        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+      }
+    },
+    {
+      "conceptId": "Q1234",
+      "propertyId": "P227",
+      "propertyName": "GND ID",
+      "valueType": "external-id",
+      "value": "4355423-4"
+    },
+    {
+      "conceptId": "Q1234",
+      "propertyId": "P910",
+      "propertyName": "topic's main category",
+      "valueType": "wikibase-item",
+      "value": "Q8724059",
+      "valueName": "Seaborgium"
+    },
+    {
+      "conceptId": "Q1234",
+      "propertyId": "P646",
+      "propertyName": "Freebase ID",
+      "valueType": "external-id",
+      "value": "/m/025sgk0"
+    },
+    {
+      "conceptId": "Q1234",
+      "propertyId": "P279",
+      "propertyName": "subclass of",
+      "valueType": "wikibase-item",
+      "value": "Q244979",
+      "valueName": "Period 7 element"
+    },
+    {
+      "conceptId": "Q1234",
+      "propertyId": "P31",
+      "propertyName": "instance of",
+      "valueType": "wikibase-item",
+      "value": "Q11344",
+      "valueName": "Chemical element"
+    },
+    {
+      "conceptId": "Q1234",
+      "propertyId": "P1086",
+      "propertyName": "atomic number",
+      "valueType": "quantity",
+      "value": {
+        "amount": "+106",
+        "unit": "1",
+        "upperBound": "+106",
+        "lowerBound": "+106"
+      }
+    },
+    {
+      "conceptId": "Q1234",
+      "propertyId": "P935",
+      "propertyName": "Commons gallery",
+      "valueType": "string",
+      "value": "Seaborgium"
+    },
+    {
+      "conceptId": "Q1234",
+      "propertyId": "P1343",
+      "propertyName": "described by source",
+      "valueType": "wikibase-item",
+      "value": "Q2657718",
+      "valueName": "Armenian Soviet Encyclopedia"
+    },
+    {
+      "conceptId": "Q1234",
+      "propertyId": "P1417",
+      "propertyName": "Encyclopædia Britannica Online ID",
+      "valueType": "external-id",
+      "value": "science/seaborgium"
+    },
+    {
+      "conceptId": "Q1234",
+      "propertyId": "P1296",
+      "propertyName": "Gran Enciclopèdia Catalana ID",
+      "valueType": "external-id",
+      "value": "0276445"
+    },
+    {
+      "conceptId": "Q1234",
+      "propertyId": "P231",
+      "propertyName": "CAS Registry Number",
+      "valueType": "external-id",
+      "value": "54038-81-2"
+    }
+  ]
+}

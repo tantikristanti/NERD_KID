@@ -21,7 +21,7 @@ public class GrobidNERTrainingDataTransformer {
         CSVWriter csvWriter = null;
 
         String xmlDataPath = "data/xml/annotatedCorpus.xml";
-        String csvDataPath = "data/csv/annotatedCorpusResult.csv";
+        String csvDataPath = "data/csv/GrobidNer/annotatedCorpusResult.csv";
 
         DocumentBuilder dbBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 
@@ -51,6 +51,6 @@ public class GrobidNERTrainingDataTransformer {
             csvWriter.flush();
             csvWriter.close();
         }
-        System.out.print("Result in 'data/csv/annotatedCorpusResult.csv'");
+        System.out.print("Result in 'data/csv/GrobidNer/annotatedCorpusResult.csv'");
     }
 }

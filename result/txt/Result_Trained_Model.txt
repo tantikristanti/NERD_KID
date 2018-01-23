@@ -1,46 +1,54 @@
 ** Classification with Random Forest of 100 trees **
 
-Total of instances			:	 443 
-Number of instance trained		:	 354 
-Number of instance predicted		:	 89 
-Correctly classified instances		:	 74 (83.146 %) 
-Incorrectly classified instances	:	 15 (16.854 %) 
-Out of Bag (OOB) error rate		:	 0.223
-Specificity				:	 0.985 
-accuracy				:	 0.831
-Macro Average Precision			:	 0.467
-Micro Average Precision			:	 0.831
-Macro Average Recall			:	 0.383
-Micro Average Recall			:	 0.831
-Macro Average FMeasure			:	 0.421
-Micro Average FMeasure			:	 0.831
+Total of instances			:	 2592 
+Number of instance trained		:	 2073 
+Number of instance predicted		:	 519 
+Correctly classified instances		:	 366 (70.520 %) 
+Incorrectly classified instances	:	 153 (29.480 %) 
+Out of Bag (OOB) error rate		:	 0.289
+Specificity				:	 0.977 
+accuracy				:	 0.705
+Macro Average Precision			:	 0.231
+Micro Average Precision			:	 0.705
+Macro Average Recall			:	 0.189
+Micro Average Recall			:	 0.705
+Macro Average FMeasure			:	 0.208
+Micro Average FMeasure			:	 0.705
 
 ** Confusion Matrix **
 Row: Actual; Column: Predicted
 Label of class:
-{0:BUSINESS; 1:CONCEPT; 2:CREATION; 3:INSTALLATION; 4:INSTITUTION; 5:LEGAL; 6:LOCATION; 7:MEASURE; 8:MEDIA; 9:NATIONAL; 10:ORGANISATION; 11:PERIOD; 12:PERSON; 13:PERSON_TYPE}
+{0:ANIMAL; 1:ARTIFACT; 2:AWARD; 3:BUSINESS; 4:CONCEPT; 5:CREATION; 6:EVENT; 7:INSTALLATION; 8:INSTITUTION; 9:LEGAL; 10:LOCATION; 11:MEASURE; 12:MEDIA; 13:NATIONAL; 14:ORGANISATION; 15:PERIOD; 16:PERSON; 17:PERSON_TYPE; 18:PLANT; 19:SPORT_TEAM; 20:SUBSTANCE; 21:WEBSITE}
 
-Class:		0	1	2	3	4	5	6	7	8	9	10	11	12	13	
-	0|	0	0	0	0	0	0	1	0	0	0	0	0	0	0	
-	1|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
-	2|	0	0	0	0	0	0	1	0	0	0	0	0	0	0	
-	3|	0	0	0	0	0	0	2	0	0	0	0	0	0	0	
-	4|	0	0	0	0	1	0	2	0	0	0	0	0	0	0	
-	5|	0	0	0	0	0	0	1	0	0	0	0	0	0	0	
-	6|	0	0	0	0	0	0	18	0	0	0	0	0	0	0	
-	7|	0	0	0	0	0	0	0	7	0	0	0	0	0	0	
-	8|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
-	9|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
-	10|	0	0	0	0	0	0	1	0	0	0	6	0	0	0	
-	11|	0	0	0	0	0	0	3	0	0	0	0	4	0	0	
-	12|	0	0	0	0	0	0	1	0	0	0	0	0	33	0	
-	13|	0	0	0	0	0	0	2	0	0	0	0	0	1	5	
+Class:		0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19	20	21	
+	0|	2	0	0	0	0	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	
+	1|	0	0	0	0	0	0	0	0	0	0	9	0	0	0	0	0	0	0	0	0	0	0	
+	2|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	3|	0	0	0	1	0	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	
+	4|	0	0	0	0	0	0	0	0	0	0	8	0	0	0	0	0	0	0	0	0	0	0	
+	5|	0	0	0	0	0	0	0	0	0	0	9	0	0	0	0	0	0	0	0	0	0	0	
+	6|	0	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	
+	7|	0	0	0	0	0	0	0	0	0	0	12	0	0	0	0	0	0	0	0	0	0	0	
+	8|	0	0	0	0	0	0	0	0	0	0	10	0	0	0	1	0	0	0	0	0	0	0	
+	9|	0	0	0	0	0	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	
+	10|	0	0	0	0	0	0	0	0	0	0	214	0	0	0	0	0	0	0	0	0	0	0	
+	11|	0	0	0	0	0	0	0	0	0	0	1	16	0	0	0	0	0	0	0	0	0	0	
+	12|	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	
+	13|	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	
+	14|	0	0	0	0	0	0	0	0	0	0	1	0	0	0	5	0	0	0	0	0	0	0	
+	15|	0	0	0	0	0	0	0	0	0	0	17	0	0	0	0	0	0	0	0	0	0	0	
+	16|	0	0	0	0	0	0	0	0	0	0	16	0	0	0	0	0	128	0	0	0	0	0	
+	17|	0	0	0	0	0	0	0	0	0	0	14	0	0	0	0	0	0	0	0	0	0	0	
+	18|	1	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	
+	19|	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	
+	20|	0	0	0	0	0	0	0	0	0	0	21	0	0	0	0	0	0	0	0	0	0	0	
+	21|	0	0	0	0	0	0	0	0	0	0	8	0	0	0	0	0	0	0	0	0	0	0	
 
 ** Validation for each class **
 
-Class		:	0	1	2	3	4	5	6	7	8	9	10	11	12	13
-FMeasure	:	0.00	0.00	0.00	0.00	0.50	0.00	0.72	1.00	0.00	0.00	0.92	0.73	0.97	0.77
-Precision	:	0.00	0.00	0.00	0.00	1.00	0.00	0.56	1.00	0.00	0.00	1.00	1.00	0.97	1.00
-Recall		:	0.00	0.00	0.00	0.00	0.33	0.00	1.00	1.00	0.00	0.00	0.86	0.57	0.97	0.63
-Spesificity	:	1.00	1.00	1.00	1.00	1.00	1.00	0.80	1.00	1.00	1.00	1.00	1.00	0.98	1.00
+Class		:	0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19	20	21
+FMeasure	:	0.40	0.00	0.00	0.33	0.00	0.00	0.00	0.00	0.00	0.00	0.74	0.97	0.00	0.00	0.83	0.00	0.94	0.00	0.00	0.00	0.00	0.00
+Precision	:	0.67	0.00	0.00	1.00	0.00	0.00	0.00	0.00	0.00	0.00	0.59	1.00	0.00	0.00	0.83	0.00	1.00	0.00	0.00	0.00	0.00	0.00
+Recall		:	0.29	0.00	0.00	0.20	0.00	0.00	0.00	0.00	0.00	0.00	1.00	0.94	0.00	0.00	0.83	0.00	0.89	0.00	0.00	0.00	0.00	0.00
+Spesificity	:	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	0.50	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00
 

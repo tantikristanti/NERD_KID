@@ -25,7 +25,7 @@ After copy the file, the mentions and classes can be extracted by this service
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preprocessing.GrobidNERTrainingDataTransformer"```
 
-The result can be seen in `data/csv/annotatedCorpusResult.csv`
+The result can be seen in `data/csv/GrobidNer/annotatedCorpusResult.csv`
 
 # Installation-Build-Run
 **1. Installation**
@@ -44,7 +44,7 @@ The result can be seen in `data/csv/annotatedCorpusResult.csv`
 
 **3. Prepare new data**
 
-New data can be extracted by accessing the API of Nerd or Entity-Fishing.*
+*New data can be extracted by accessing the API of Nerd or Entity-Fishing.*
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.extractor.MainRestAPINerdCaller"```
 
@@ -71,12 +71,8 @@ Q1408,LOCATION
 *(Basically, a training file built based on the datasets prepared in `data/csv/BaseElements.csv`
  This step is done if there isn't any training file or there is a need to build a new one.)*
 
-- It is also possible to add new data into training file that already exist. 
-  This new data can be put in `data/csv/NewElements.csv`, then run the service:
+- It is also possible to check first whether the data and features of wikidata Ids are correct/complete by checking the Csv file result located in `result/csv/ResultFromArffGenerator.csv`.
 
-```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.arff.AddDataTrainerGenerator"```
-
-- The result can be seen in `result/arff/Training.arff`
 
 *Note :* 
 - CSV files must have at least the header `WikidataID` and `Class`. So:
@@ -95,7 +91,7 @@ Q76,PERSON
 ...
 ```
 
-are in correct format.
+are in a correct format.
 
 - Error in this step can appear if certain element's Id is no longer available in Wikidata. 
  Just delete the Id that want to be processed from the CSV files.
@@ -108,49 +104,42 @@ are in correct format.
 
 - Input needed is the percentage of training-testing splitting data, e.g. `80` (%)
 - Result can be seen in `result/txt/Result_Trained_Model.txt`
+- The machine learning model itself (the result of Random Forest algorithm) can be found in the temporary file `tmp/model.xml`
+    It can be copied 
 
 **6. Get new predicted classes**
-
-```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.rest.MainCallAPIWikidata"```
-
-- The result of predicted class can be seen in `result/Predicted_Testing.csv`
-
-**7. Example of the use**
 
 *Prepare the list of Wikidata Id*
 
 Firstly, prepare the list of new Wikidata Id that need to be predicted (in this case, Nerd_kid will predict the class for each Wikidata Id prepared)
-The list then can be copied into `data/preannotation/dataPreannotation.csv`.
-It is a very simple csv file that contain Wikidata Id for each line without name of label and Null for the class. For example:
+The list then can be copied into `data/csv/NewElements.csv`.
+It is a very simple csv file that contain Wikidata Id for each line without name of label and neither for the class. For example:
+
 ```
 WikidataID,Class
-Q76,PERSON
-Q1408,LOCATION
+Q76,
+Q1408,
 ```
 
 *To predict Wikidata Id:*
-- It is possible also to change the training data located in `data/Training.arff`
-- Run the service of prediction :
+
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preannotation.MainPreAnnotation"```
 
-*The example of result can be seen in the picture*
+- The result can be seen in `result/csv/ResultPredictedClass.csv`
 ![ResultPrediction](pic/ResultPrediction.jpg)
 
-*Build new datasets by integrating with new data*
-```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.rest.MainTrainer"```
 
-- Input is in csv format, default in /data/corpus/csv
+**7. Web version**
 
-Format the csv file. The label can be empty and the class can be `Null`, for example:
+Online version of class prediction can be accessed here `http://nerd.huma-num.fr/kid/service/ner?id=Q1`
 
-```
-WikidataID;labelWikidata;PredictedClass
-Q1016;Libya;Null
-Q11322507;;Null
-```
+User can only just change the Wikidata Id started with 'Q' and then the number.
+
+- The result will be Wikidata Id, the properties, and the result of predicted class.
 
 ## Contact
 
 Contact: Tanti Kristanti (<tantikristanti@gmail.com>)
+
 
