@@ -95,6 +95,7 @@ public class MainTrainerGenerator {
             WikidataElementInfos wikidataElementInfos = new WikidataElementInfos();
             wikidataElementInfos.setRealClass(realClass);
             wikidataElementInfos.setWikidataId(wikidataId);
+
             inputList.add(wikidataElementInfos);
 
         } // end of looping to read file that contains Wikidata Id and class
@@ -163,7 +164,13 @@ public class MainTrainerGenerator {
                 wikidataFeatures.setRealClass(element.getRealClass());
 
                 //write the result into a Csv file
-                List<String> dataGenerated = Arrays.asList(wikidataFeatures.getWikidataId(), wikidataFeatures.getLabel(), wikidataFeatures.getRealClass());
+
+                // replace commas in Wikidata labels with the underscore to avoid incorrect extraction in the Csv file
+                String label = wikidataFeatures.getLabel();
+                if (label.contains(",")) {
+                    wikidataFeatures.setLabel(label.replace(",", "_"));
+                }
+                List<String> dataGenerated = Arrays.asList(wikidataFeatures.getWikidataId(), label, wikidataFeatures.getRealClass());
                 List<String> dataFeatureGenerated = new ArrayList<String>();
                 List<String> dataCombined = new ArrayList<String>();
 

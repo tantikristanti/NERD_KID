@@ -52,6 +52,11 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
             String rawName = (String) object.get("rawName");
             String preferredName = (String) object.get("preferredName");
 
+            // replace commas in Wikidata labels with the underscore to avoid incorrect extraction in the Csv file
+            if(rawName.contains(",")){
+                rawName = rawName.replace(",", "_;");
+            }
+
             element.setLabel(rawName);
 
             JSONArray properties = (JSONArray) object.get("statements");
