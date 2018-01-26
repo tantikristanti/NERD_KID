@@ -4,23 +4,23 @@ Q1019,Madagascar,LOCATION
 Q1026,Poles,PERSON_TYPE
 Q1055,Hamburg,LOCATION
 Q1085,Prague,LOCATION
-Q10910368,G_àö_àÇring (surname),PERSON
+Q10910368,G√∂ring (surname),PERSON
 Q11322507,German Army,INSTITUTION
 Q1142538,7000 (number),MEASURE
 Q115367,Max Frankel,PERSON
 Q11710682,,LOCATION
-Q117144,Mikl_àö_â•s Horthy,PERSON
+Q117144,Mikl√≥s Horthy,PERSON
 Q1179894,Ben Gurion (disambiguation),PERSON
 Q1216672,Eichmann (disambiguation),PERSON
 Q1218,Jerusalem,LOCATION
 Q1264562,Jacob Lestschinsky,PERSON
 Q127885,Serbs,PERSON_TYPE
 Q13048507,Bavarians,PERSON_TYPE
-Q1354183,National Socialists _√Ñ√¨ Left of the 21st century,PERSON_TYPE
+Q1354183,National Socialists ‚Äì Left of the 21st century,PERSON_TYPE
 Q142,France,LOCATION
 Q1432947,Vrba,PERSON
 Q1509992,Gerald Reitlinger,PERSON
-Q151179,Usta_âà¬∞e,PERSON_TYPE
+Q151179,Usta≈°e,PERSON_TYPE
 Q15440730,Helen Fein,PERSON
 Q15449544,Otto Dov Kulka,PERSON
 Q154498,Sachsenhausen concentration camp,INSTALLATION
@@ -150,7 +150,7 @@ Q43456,Soviet Army,INSTITUTION
 Q444731,Himmler (surname),PERSON
 Q44806,Ukrainians,PERSON_TYPE
 Q469726,Rudolf Vrba,PERSON
-Q47906,Hermann G_àö_àÇring,PERSON
+Q47906,Hermann G√∂ring,PERSON
 Q4802638,Aryan: Unbreakable,PERSON_TYPE
 Q49768,Social Democratic Party of Germany,ORGANISATION
 Q506120,Robert Gellately,PERSON
@@ -163,15 +163,15 @@ Q553527,Daniel Goldhagen,PERSON
 Q575610,Martin Gilbert,PERSON
 Q57575,Otto Ohlendorf,PERSON
 Q57676,Hermann Fegelein,PERSON
-Q58030,Heinrich M_àö¬∫ller (Gestapo),PERSON
+Q58030,Heinrich M√ºller (Gestapo),PERSON
 Q59098,Christopher Browning,PERSON
 Q595170,95 (number),MEASURE
 Q60,New York City,LOCATION
 Q60039,Reinhard Heydrich,PERSON
 Q606801,103 (number),MEASURE
-Q61,Washington_ D.C.,LOCATION
+Q61,"Washington_, D.C.",LOCATION
 Q61078,Walter Benjamin,PERSON
-Q645256,Reich_ Germany,LOCATION
+Q645256,"Reich_, Germany",LOCATION
 Q645260,65 (number),MEASURE
 Q649355,180 (number),MEASURE
 Q662563,,INSTALLATION
@@ -185,9 +185,9 @@ Q684424,Mittelbau-Dora,INSTALLATION
 Q6884672,Mizocz Ghetto,LOCATION
 Q690992,91 (number),MEASURE
 Q695770,Yehuda Bauer,PERSON
-Q699701,Saul Friedl_àö¬ßnder,PERSON
+Q699701,Saul Friedl√§nder,PERSON
 Q700112,Kovno Ghetto,LOCATION
-Q704138,D_àö_àÇnitz,PERSON
+Q704138,D√∂nitz,PERSON
 Q705173,Institute of National Remembrance,INSTITUTION
 Q712488,22 (number),MEASURE
 Q712701,32 (number),MEASURE
@@ -198,7 +198,7 @@ Q717056,120 (number),MEASURE
 Q719692,140 (number),MEASURE
 Q720,Genghis Khan,PERSON
 Q720721,146 (number),MEASURE
-Q720751,100,MEASURE
+Q720751,"100_,000",MEASURE
 Q721041,165 (number),MEASURE
 Q721070,130 (number),MEASURE
 Q722780,Ashkenazi (surname),PERSON_TYPE
@@ -210,7 +210,7 @@ Q7341,Auschwitz concentration camp,INSTALLATION
 Q7366409,Roosevelt (name),PERSON
 Q7376899,Ruderman,PERSON
 Q7383084,Ruth Linn,PERSON
-Q73974,Institut f_àö¬∫r Sexualwissenschaft,INSTITUTION
+Q73974,Institut f√ºr Sexualwissenschaft,INSTITUTION
 Q747312,Timothy D. Snyder,PERSON
 Q76372,Wolfgang Benz,PERSON
 Q76883,Ernst vom Rath,PERSON
@@ -248,7 +248,7 @@ Q937,Albert Einstein,PERSON
 Q937396,Robert Jan van Pelt,PERSON
 Q940348,Bosniaks,PERSON_TYPE
 Q948,Tunisia,LOCATION
-Q970397,Canadian_ Texas,LOCATION
+Q970397,"Canadian_, Texas",LOCATION
 Q980,Bavaria,LOCATION
 Q983983,Nisko,LOCATION
 Q157065,Kerch,LOCATION
@@ -322,7 +322,7 @@ Q28836852,Richard Reed,PERSON
 Q29,Spain,LOCATION
 Q291169,Jeremy Corbyn,PERSON
 Q302486,Iain Duncan Smith,PERSON
-Q3086688,_àö√¢ir_àö_â†g_àö_â†,ORGANISATION
+Q3086688,√âir√≠g√≠,ORGANISATION
 Q318471,Nigel Farage,PERSON
 Q3318231,Joko Widodo,PERSON
 Q418622,Akio Toyoda,PERSON
@@ -336,10 +336,10 @@ Q52847,European Economic Community,INSTITUTION
 Q53025,Gibraltar Socialist Labour Party,ORGANISATION
 Q5566787,Matthew Barzun,PERSON
 Q567,Angela Merkel,PERSON
-Q57434,V_àö¬∞clav Klaus,PERSON
+Q57434,V√°clav Klaus,PERSON
 Q575733,Priti Patel,PERSON
 Q577771,Bob Neill,PERSON
-Q58095,Jos_àö¬© Manuel Garc_àö_â†a-Margallo,PERSON
+Q58095,Jos√© Manuel Garc√≠a-Margallo,PERSON
 Q621429,Dyson (company),BUSINESS
 Q622441,Liberal Party (UK),ORGANISATION
 Q6294,Hillary Clinton,PERSON
@@ -369,13 +369,13 @@ Q14996968,Institute of Directors,INSTITUTION
 Q167457,Treaty of Rome,LEGAL
 Q23436,Edinburgh,LOCATION
 Q334,Singapore,LOCATION
-Q33518,Dover_ Delaware,LOCATION
+Q33518,"Dover_, Delaware",LOCATION
 Q695267,European Molecular Biology Laboratory,INSTITUTION
 Q8932,European Economic Area,INSTITUTION
 Q9531,BBC,MEDIA
 Q57815,Enda Kenny,PERSON
 Q946,Donald Tusk,PERSON
-Q157,Fran_àö√üois Hollande,PERSON
+Q157,Fran√ßois Hollande,PERSON
 Q3052772,Emmanuel Macron,PERSON
 Q332493,George Osborne,PERSON
 Q2042,Charles de Gaulle,PERSON
@@ -408,7 +408,7 @@ Q1028,Morocco,LOCATION
 Q1029,Mozambique,LOCATION
 Q103,Supercalifragilisticexpialidocious,CREATION
 Q1030,Namibia,LOCATION
-Q1031,France Pre_âà¬∞eren,PERSON
+Q1031,France Pre≈°eren,PERSON
 Q1032,Niger,LOCATION
 Q1033,Nigeria,LOCATION
 Q1034,Biel/Bienne,LOCATION
@@ -416,7 +416,7 @@ Q1035,Charles Darwin,PERSON
 Q1036,Uganda,LOCATION
 Q1037,Rwanda,LOCATION
 Q1038,Zirconium,SUBSTANCE
-Q1039,S_àö¬£o Tom_àö¬© and Pr_àö_â†ncipe,LOCATION
+Q1039,S√£o Tom√© and Pr√≠ncipe,LOCATION
 Q1040,Karlsruhe,LOCATION
 Q1042,Seychelles,LOCATION
 Q1043,Carl Linnaeus,PERSON
@@ -438,7 +438,7 @@ Q1064,Alessandro Manzoni,PERSON
 Q1065,United Nations,ORGANISATION
 Q1066,Lake Superior,LOCATION
 Q1067,Dante Alighieri,PERSON
-Q1068,Wilhelmsburg_ Hamburg,LOCATION
+Q1068,"Wilhelmsburg_, Hamburg",LOCATION
 Q1069,Geology,CONCEPT
 Q1070,Ahmedabad,LOCATION
 Q1071,Geography,CONCEPT
@@ -483,7 +483,7 @@ Q1136,Reddit,LOCATION
 Q1138,Barmbek-Nord,LOCATION
 Q1139,Ununennium,SUBSTANCE
 Q114,Kenya,LOCATION
-Q1140,Barmbek-S_àö¬∫d,LOCATION
+Q1140,Barmbek-S√ºd,LOCATION
 Q1141,Dulsberg,LOCATION
 Q1145,Jean-Philippe Rameau,PERSON
 Q1146,Unbinilium,SUBSTANCE
@@ -491,16 +491,16 @@ Q1148,Winterhude,LOCATION
 Q1149,Indira Gandhi,PERSON
 Q115,Ethiopia,LOCATION
 Q1151,Hector Berlioz,PERSON
-Q1153,Eppendorf_ Hamburg,LOCATION
+Q1153,"Eppendorf_, Hamburg",LOCATION
 Q1154,Jamnagar,LOCATION
 Q1155,Busto Arsizio,LOCATION
 Q1156,Mumbai,LOCATION
 Q1158,International Association of Athletics Federations,ORGANISATION
-Q1163,Fuhlsb_àö¬∫ttel,LOCATION
+Q1163,Fuhlsb√ºttel,LOCATION
 Q1167,Alsterdorf,LOCATION
 Q117,Ghana,LOCATION
-Q1172,Gro_àö√º Borstel,LOCATION
-Q1175,Langenhorn_ Hamburg,LOCATION
+Q1172,Gro√ü Borstel,LOCATION
+Q1175,"Langenhorn_, Hamburg",LOCATION
 Q1178,Maurice Ravel,PERSON
 Q118,April,PERIOD
 Q1181,Hoheluft,LOCATION
@@ -552,13 +552,13 @@ Q1253,Ban Ki-moon,PERSON
 Q1254,Kofi Annan,PERSON
 Q1257,Boutros Boutros-Ghali,PERSON
 Q1258,Meitnerium,SUBSTANCE
-Q1259,Javier P_àö¬©rez de Cu_àö¬©llar,PERSON
+Q1259,Javier P√©rez de Cu√©llar,PERSON
 Q126,December,PERIOD
 Q1260,Kurt Waldheim,PERSON
 Q1264,U Thant,PERSON
 Q1266,Darmstadtium,SUBSTANCE
-Q1267,Dag Hammarskj_àö_àÇld,PERSON
-Q1268,Fr_àö¬©d_àö¬©ric Chopin,PERSON
+Q1267,Dag Hammarskj√∂ld,PERSON
+Q1268,Fr√©d√©ric Chopin,PERSON
 Q127,Tuesday,PERIOD
 Q1271,Trygve Lie,PERSON
 Q1272,Roentgenium,SUBSTANCE
@@ -571,13 +571,13 @@ Q129,Thursday,PERIOD
 Q1290,Blaise Pascal,PERSON
 Q1291,Bron,LOCATION
 Q1292,Flemish Parliament,ORGANISATION
-Q1294,Ram_àö_â•n Barros Luco,PERSON
+Q1294,Ram√≥n Barros Luco,PERSON
 Q1295,Dortmund,LOCATION
 Q1296,Ghent,LOCATION
 Q1297,Chicago,LOCATION
 Q1298,Pedro Montt,PERSON
 Q130,Friday,PERIOD
-Q1300,Germ_àö¬∞n Riesco,PERSON
+Q1300,Germ√°n Riesco,PERSON
 Q1301,Nihonium,SUBSTANCE
 Q1302,Flerovium,SUBSTANCE
 Q1303,Moscovium,SUBSTANCE
@@ -594,22 +594,22 @@ Q1314,Autumn,PERIOD
 Q1315,Equinox,EVENT
 Q1316,Saddam Hussein,PERSON
 Q1317,Osama bin Laden,PERSON
-Q1318,An_àö_â†bal Za_àö¬±artu,PERSON
-Q1319,Federico Err_àö¬∞zuriz Echaurren,PERSON
+Q1318,An√≠bal Za√±artu,PERSON
+Q1319,Federico Err√°zuriz Echaurren,PERSON
 Q132,Sunday,PERIOD
 Q1320,Jorge Montt,PERSON
 Q1321,Spanish language,CONCEPT
-Q1322,Jos_àö¬© Manuel Balmaceda,PERSON
-Q1323,Domingo Santa Mar_àö_â†a,PERSON
-Q1324,An_àö_â†bal Pinto,PERSON
+Q1322,Jos√© Manuel Balmaceda,PERSON
+Q1323,Domingo Santa Mar√≠a,PERSON
+Q1324,An√≠bal Pinto,PERSON
 Q1325,Friedrich Hayek,PERSON
-Q1326,Federico Err_àö¬∞zuriz Za_àö¬±artu,PERSON
-Q1327,Jos_àö¬© Joaqu_àö_â†n P_àö¬©rez,PERSON
+Q1326,Federico Err√°zuriz Za√±artu,PERSON
+Q1327,Jos√© Joaqu√≠n P√©rez,PERSON
 Q1328,Manuel Montt,PERSON
 Q1329,Manuel Bulnes,PERSON
-Q1330,Jos_àö¬© Joaqu_àö_â†n Prieto,PERSON
+Q1330,Jos√© Joaqu√≠n Prieto,PERSON
 Q1331,Manuel Blanco Encalada,PERSON
-Q1332,Ram_àö_â•n Freire,PERSON
+Q1332,Ram√≥n Freire,PERSON
 Q1333,Francisco Antonio Pinto,PERSON
 Q1335,Montevideo,LOCATION
 Q1336,Rimouski,LOCATION
@@ -637,7 +637,7 @@ Q1361,Hyderabad,LOCATION
 Q1362,Islamabad,LOCATION
 Q1364,Fruit,PLANT
 Q1365,Swept Away (1974 film),CREATION
-Q1376,Mus_àö¬©e Saint-Raymond,INSTALLATION
+Q1376,Mus√©e Saint-Raymond,INSTALLATION
 Q1377,University of Ljubljana,INSTITUTION
 Q1378,University of Maribor,INSTITUTION
 Q1380,Capsicum annuum,PLANT
@@ -647,14 +647,14 @@ Q1383,Lake Huron,LOCATION
 Q1385,Cerium,SUBSTANCE
 Q1386,Praseodymium,SUBSTANCE
 Q1388,Neodymium,SUBSTANCE
-Q1389,St. Cecilia's Church_ Cologne,LOCATION
+Q1389,"St. Cecilia's Church_, Cologne",LOCATION
 Q1390,Insect,ANIMAL
 Q1392,Battle of Nieuwpoort,EVENT
 Q1394,Vladimir Lenin,PERSON
 Q1395,Leonardo Ortolani,PERSON
 Q1396,Europium,SUBSTANCE
 Q1398,Virgil,PERSON
-Q1399,Niccol_àö_â§ Machiavelli,PERSON
+Q1399,Niccol√≤ Machiavelli,PERSON
 Q140,Lion,ANIMAL
 Q1401,Petrarch,PERSON
 Q1402,Giovanni Boccaccio,PERSON
@@ -712,7 +712,7 @@ Q1470,M. C. Escher,PERSON
 Q1476,Le Mans,LOCATION
 Q1479,Bordeaux,LOCATION
 Q1480,Corazon Aquino,PERSON
-Q1481,Felsberg_ Hesse,LOCATION
+Q1481,"Felsberg_, Hesse",LOCATION
 Q1482,Cavite City,LOCATION
 Q1486,Buenos Aires,LOCATION
 Q1487,Hacker,PERSON_TYPE
@@ -725,7 +725,7 @@ Q1493,Pineapple,PLANT
 Q1496,Ferdinand Magellan,PERSON
 Q15,Africa,LOCATION
 Q150,French language,CONCEPT
-Q1500,Jos_àö¬© Rizal,PERSON
+Q1500,Jos√© Rizal,PERSON
 Q1501,Swimming pool,INSTALLATION
 Q1503,Manuel L. Quezon,PERSON
 Q1504,Cublize,LOCATION
@@ -733,13 +733,13 @@ Q1506,Place des Terreaux,LOCATION
 Q1507,Patagonia,LOCATION
 Q1508,Makati,LOCATION
 Q151,Wiktionary,WEBSITE
-Q1510,Ancient Theatre of Fourvi_àö¬Ære,INSTALLATION
+Q1510,Ancient Theatre of Fourvi√®re,INSTALLATION
 Q1511,Richard Wagner,PERSON
 Q1512,Robert Louis Stevenson,PERSON
 Q1513,Nagpur,LOCATION
 Q1514,Janis Joplin,PERSON
 Q1515,Abidjan,LOCATION
-Q1516,Basilica of Notre-Dame de Fourvi_àö¬Ære,INSTALLATION
+Q1516,Basilica of Notre-Dame de Fourvi√®re,INSTALLATION
 Q1517,Briedern,LOCATION
 Q1519,Abu Dhabi,LOCATION
 Q152,Fish,ANIMAL
@@ -763,19 +763,19 @@ Q1541,Cicero,PERSON
 Q1543,A.C. Milan,SPORT_TEAM
 Q1544,Tony Garnier (architect),PERSON
 Q1545,Cyndi Lauper,PERSON
-Q1547,Lyon_√Ñ√¨Saint-Exup_àö¬©ry Airport,INSTALLATION
+Q1547,Lyon‚ÄìSaint-Exup√©ry Airport,INSTALLATION
 Q1548,Valsonne,LOCATION
 Q1549,Amplepuis,LOCATION
 Q155,Brazil,LOCATION
 Q1550,Funiculars of Lyon,INSTALLATION
-Q1551,Altstadt_ Hamburg,LOCATION
+Q1551,"Altstadt_, Hamburg",LOCATION
 Q1552,Lyon Metro,INSTALLATION
-Q1554,Neustadt_ Hambur,LOCATION
+Q1554,"Neustadt_, Hamburg",LOCATION
 Q1555,Guatemala City,LOCATION
 Q1556,St. Pauli,INSTALLATION
 Q1557,Simeon,PERSON
-Q1559,Rh_àö¬•nexpress,INSTALLATION
-Q1560,St. Georg_ Hamburg,LOCATION
+Q1559,Rh√¥nexpress,INSTALLATION
+Q1560,"St. Georg_, Hamburg",LOCATION
 Q1561,HafenCity,LOCATION
 Q1562,Finkenwerder,LOCATION
 Q1563,Havana,LOCATION
@@ -783,10 +783,10 @@ Q1564,Borgfelde,LOCATION
 Q1565,Billstedt,LOCATION
 Q1567,Billbrook,LOCATION
 Q1568,Hindi,CONCEPT
-Q1569,Hamm_ Hambur,LOCATION
+Q1569,"Hamm_, Hamburg",LOCATION
 Q1570,Hammerbrook,LOCATION
 Q1571,Marathi language,CONCEPT
-Q1572,Horn_ Hamburg,LOCATION
+Q1572,"Horn_, Hamburg",LOCATION
 Q1573,Kleiner Grasbrook,LOCATION
 Q1574,Avast Antivirus,ARTIFACT
 Q1575,Internet Explorer,ARTIFACT
@@ -799,39 +799,39 @@ Q1587,Altona-Nord,LOCATION
 Q1589,Luigi Galvani,PERSON
 Q1591,Altona-Altstadt,LOCATION
 Q1592,Sternschanze,LOCATION
-Q1593,S_àö¬∫lldorf,LOCATION
+Q1593,S√ºlldorf,LOCATION
 Q1595,A6 autoroute,INSTALLATION
 Q1596,Rissen,LOCATION
 Q1597,Ottensen,LOCATION
 Q1598,Othmarschen,LOCATION
 Q16,Canada,LOCATION
 Q160,Cetacea,ANIMAL
-Q1600,Osdorf_ Hamburg,LOCATION
+Q1600,"Osdorf_, Hamburg",LOCATION
 Q1601,Nienstedten,LOCATION
 Q1602,Lurup,LOCATION
 Q1604,Tim Lincecum,PERSON
 Q1605,Iserbrook,LOCATION
-Q1606,Gro_àö√º Flottbek,LOCATION
+Q1606,Gro√ü Flottbek,LOCATION
 Q1607,Blankenese,LOCATION
 Q1608,Bahrenfeld,LOCATION
 Q1609,Eidelstedt,LOCATION
 Q161,Fiber,ARTIFACT
 Q1610,Alfa Romeo 159,BUSINESS
-Q1611,Eimsb_àö¬∫ttel (quarter),LOCATION
+Q1611,Eimsb√ºttel (quarter),LOCATION
 Q1613,Harvestehude,LOCATION
 Q1615,Neil Armstrong,PERSON
-Q1616,Niendorf_ Hamburg,LOCATION
+Q1616,"Niendorf_, Hamburg",LOCATION
 Q1617,Urdu,CONCEPT
 Q1618,Charles Lindbergh,PERSON
 Q1619,Rotherbaum,LOCATION
 Q162,Optical fiber,ARTIFACT
 Q1620,Schnelsen,LOCATION
-Q1623,Valenzuela_ Metro Manil,LOCATION
-Q1625,Sigfrid Edstr_àö_àÇm,PERSON
-Q1628,David Cecil_ 6th Marquess of Exeter,LOCATION
+Q1623,"Valenzuela_, Metro Manila",LOCATION
+Q1625,Sigfrid Edstr√∂m,PERSON
+Q1628,"David Cecil_, 6th Marquess of Exeter",LOCATION
 Q1629,Zamboanga City,LOCATION
-Q1630,Altona_ Hamburg,LOCATION
-Q1631,_àö√¢dith Piaf,PERSON
+Q1630,"Altona_, Hamburg",LOCATION
+Q1631,√âdith Piaf,PERSON
 Q1634,Adriaan Paulen,PERSON
 Q1636,Antipolo,LOCATION
 Q1638,Primo Nebiolo,PERSON
@@ -840,21 +840,21 @@ Q1641,Bergstedt,LOCATION
 Q1642,Bramfeld,LOCATION
 Q1643,Taguig,LOCATION
 Q1645,Cagayan de Oro,LOCATION
-Q1646,Fran_àö√üoise Sagan,PERSON
+Q1646,Fran√ßoise Sagan,PERSON
 Q1647,Rijeka,LOCATION
 Q165,Sea,LOCATION
 Q1651,Yohan Blake,PERSON
 Q1652,Justin Gatlin,PERSON
 Q1654,Warren Weir,PERSON
 Q1655,Kirani James,PERSON
-Q1656,Luguel_àö_â†n Santos,PERSON
+Q1656,Luguel√≠n Santos,PERSON
 Q1657,Lalonde Gordon,PERSON
 Q1659,David Rudisha,PERSON
 Q166,Black Sea,LOCATION
 Q1660,Nijel Amos,PERSON
 Q1661,Verse (poetry),CREATION
 Q1662,Timothy Kitum,PERSON
-Q1663,plit_ Croatia,LOCATION
+Q1663,"Split_, Croatia",LOCATION
 Q1665,Taoufik Makhloufi,PERSON
 Q1666,Jacques Brel,PERSON
 Q1668,Leonel Manzano,PERSON
@@ -870,12 +870,12 @@ Q1685,Jason Richardson,PERSON
 Q1686,Butuan,LOCATION
 Q1687,Hansle Parchment,PERSON
 Q169,Mango,PLANT
-Q1690,F_àö¬©lix S_àö¬∞nchez,PERSON
+Q1690,F√©lix S√°nchez,PERSON
 Q1691,Javier Culson,PERSON
 Q1692,Cabadbaran,LOCATION
 Q1693,North Sea,LOCATION
 Q1694,Bayugan,LOCATION
-Q1696,Legazpi_ Albay,LOCATION
+Q1696,"Legazpi_, Albay",LOCATION
 Q1698,Serge Gainsbourg,PERSON
 Q1699,Nesta Carter,PERSON
 Q170,Pirate Parties International,ORGANISATION
@@ -888,25 +888,25 @@ Q1707,Kiel,LOCATION
 Q1708,Chen Ding,PERSON
 Q1709,Schwerin,LOCATION
 Q171,Wiki,WEBSITE
-Q1710,Isabela_ Basilan,LOCATION
+Q1710,"Isabela_, Basilan",LOCATION
 Q1711,Potsdam,LOCATION
 Q1712,Erick Barrondo,PERSON
 Q1714,Lamitan,LOCATION
 Q1715,Hanover,LOCATION
 Q1716,Renaud,PERSON
 Q1717,Sergey Kirdyapkin,PERSON
-Q1718,D_àö¬∫sseldorf,LOCATION
-Q1719,Balanga_ Bataan,LOCATION
+Q1718,D√ºsseldorf,LOCATION
+Q1719,"Balanga_, Bataan",LOCATION
 Q172,Toronto,LOCATION
 Q1720,Mainz,LOCATION
 Q1721,Wiesbaden,LOCATION
 Q1723,Batangas City,LOCATION
-Q1724,Saarbr_àö¬∫cken,LOCATION
-Q1725,Lipa_ Batangas,LOCATION
+Q1724,Saarbr√ºcken,LOCATION
+Q1725,"Lipa_, Batangas",LOCATION
 Q1726,Munich,LOCATION
 Q1728,Jared Tallent,PERSON
 Q1729,Erfurt,LOCATION
-Q1730,Tanauan_ Batangas,LOCATION
+Q1730,"Tanauan_, Batangas",LOCATION
 Q1732,Ivan Ukhov,PERSON
 Q1733,Magdeburg,LOCATION
 Q1735,Innsbruck,LOCATION
@@ -914,15 +914,15 @@ Q1736,Erik Kynard,PERSON
 Q1737,Bregenz,LOCATION
 Q1738,Robbie Grabarz,PERSON
 Q1739,Mutaz Essa Barshim,PERSON
-Q174,S_àö¬£o Paulo,LOCATION
+Q174,S√£o Paulo,LOCATION
 Q1740,Sasuke Uchiha,PERSON
 Q1742,Renaud Lavillenie,PERSON
-Q1743,Bj_àö_àÇrn Otto,PERSON
+Q1743,Bj√∂rn Otto,PERSON
 Q1744,Madonna (entertainer),PERSON
 Q1745,Greg Rutherford,PERSON
 Q1747,Mitchell Watt,PERSON
 Q1748,Copenhagen,LOCATION
-Q175,S_àö¬£o Paulo (state),LOCATION
+Q175,S√£o Paulo (state),LOCATION
 Q1750,Will Claye,PERSON
 Q1751,Christian Taylor (athlete),PERSON
 Q1752,Macrinus,PERSON
@@ -936,7 +936,7 @@ Q1760,Reese Hoffa,PERSON
 Q1761,Dublin,LOCATION
 Q1762,Elagabalus,PERSON
 Q1763,Murmansk,LOCATION
-Q1764,Reykjav_àö_â†k,LOCATION
+Q1764,Reykjav√≠k,LOCATION
 Q1766,Robert Harting,PERSON
 Q1767,Kakashi Hatake,PERSON
 Q1768,Ella Fitzgerald,PERSON
@@ -947,10 +947,10 @@ Q1773,Riga,LOCATION
 Q1775,Brownie Mary,PERSON
 Q1776,Gerd Kanter,PERSON
 Q1777,Maximinus Thrax,PERSON
-Q1778,Kriszti_àö¬∞n Pars,PERSON
+Q1778,Kriszti√°n Pars,PERSON
 Q1779,Louis Armstrong,PERSON
 Q1782,Gordian I,PERSON
-Q1783,Primo_âà√¶ Kozmus,PERSON
+Q1783,Primo≈æ Kozmus,PERSON
 Q1784,Koji Murofushi,PERSON
 Q1785,Charles Aznavour,PERSON
 Q1786,Jan I Carondelet,PERSON
@@ -959,14 +959,14 @@ Q1789,Ashton Eaton,PERSON
 Q179,Boeing 747,ARTIFACT
 Q1790,Kim Wilde,PERSON
 Q1791,Jean Carondelet,PERSON
-Q1792,Gda_âà√ësk,LOCATION
+Q1792,Gda≈Ñsk,LOCATION
 Q1793,Trey Hardee,PERSON
 Q1794,Frankfurt,LOCATION
 Q1795,Asahan Regency,INSTALLATION
-Q1796,Leonel Su_àö¬∞rez,PERSON
+Q1796,Leonel Su√°rez,PERSON
 Q1797,Pupienus,PERSON
 Q1798,Ferry Carondelet,PERSON
-Q1799,Wroc_âà√áaw,LOCATION
+Q1799,Wroc≈Çaw,LOCATION
 Q18,South America,LOCATION
 Q180,Wikimedia Foundation,ORGANISATION
 Q1800,Kochi,LOCATION
@@ -985,7 +985,7 @@ Q1812,Gordian III,PERSON
 Q1813,Saint-Tropez,LOCATION
 Q1815,Lemsahl-Mellingstedt,LOCATION
 Q1817,Philip the Arab,PERSON
-Q1818,Poppenb_àö¬∫ttel,LOCATION
+Q1818,Poppenb√ºttel,LOCATION
 Q1819,Samarium,SUBSTANCE
 Q182,English,PERSON
 Q1820,Rahlstedt,LOCATION
@@ -998,10 +998,11 @@ Q1832,Gadolinium,SUBSTANCE
 Q1833,Wandsbek (quarter),LOCATION
 Q1834,Death Note,CREATION
 Q1835,Zinedine Zidane,PERSON
-Q1836,Wellingsb_àö¬∫ttel,LOCATION
+Q1836,Wellingsb√ºttel,LOCATION
 Q1837,Wohldorf-Ohlstedt,LOCATION
 Q1838,Terbium,SUBSTANCE
 Q1839,Laurent Blanc,PERSON
+Q1841,Catholicis,CONCEPT
 Q1842,Luxembourg City,LOCATION
 Q1843,Dysprosium,SUBSTANCE
 Q1844,Vaduz,LOCATION
@@ -1031,13 +1032,13 @@ Q187,Il Canto degli Italiani,CREATION
 Q1872,Americium,SUBSTANCE
 Q1874,Odessa,LOCATION
 Q1876,Curium,SUBSTANCE
-Q1877,∆í√™¬∑¬™√¨ng H¬∑¬™√µi,LOCATION
+Q1877,ƒê·ªìng H·ªõi,LOCATION
 Q1878,Michael Schmidt-Salomon,PERSON
 Q1879,Corentin Martins,PERSON
 Q1882,Berkelium,SUBSTANCE
 Q1883,Sabri Lamouchi,PERSON
-Q1884,D_àö¬∫ren,LOCATION
-Q1885,J_àö¬∫rgen Locadia,PERSON
+Q1884,D√ºren,LOCATION
+Q1885,J√ºrgen Locadia,PERSON
 Q1886,Atalanta B.C.,SPORT_TEAM
 Q1888,Californium,SUBSTANCE
 Q189,Iceland,LOCATION
@@ -1064,34 +1065,34 @@ Q1912,Karim Benzema,PERSON
 Q1913,Florent Malouda,PERSON
 Q1915,Laurent Koscielny,PERSON
 Q1916,Patrice Evra,PERSON
-Q1917,Philippe Mex_àö¬Æs,PERSON
-Q1918,Franck Rib_àö¬©ry,PERSON
+Q1917,Philippe Mex√®s,PERSON
+Q1918,Franck Rib√©ry,PERSON
 Q1919,Mathieu Valbuena,PERSON
 Q1920,Samir Nasri,PERSON
 Q1921,Blaise Matuidi,PERSON
-Q1922,Anthony R_àö¬©veill_àö¬Ære,PERSON
-Q1923,J_àö¬©r_àö¬©my M_àö¬©nez,PERSON
+Q1922,Anthony R√©veill√®re,PERSON
+Q1923,J√©r√©my M√©nez,PERSON
 Q1924,Steve Mandanda,PERSON
 Q1925,Yann M'Vila,PERSON
 Q1926,Alou Diarra,PERSON
 Q1927,Marvin Martin,PERSON
 Q1928,Hatem Ben Arfa,PERSON
-Q1929,Ga_àö¬¥l Clichy,PERSON
+Q1929,Ga√´l Clichy,PERSON
 Q193,Saturn,LOCATION
 Q1930,Ottawa,LOCATION
-Q1931,C_àö¬©dric Carrasso,PERSON
+Q1931,C√©dric Carrasso,PERSON
 Q1932,Space Race,EVENT
-Q1933,Anja P_àö¬ßrson,PERSON
+Q1933,Anja P√§rson,PERSON
 Q1934,Sidney Govou,PERSON
-Q1935,_àö√¢ric Abidal,PERSON
-Q1936,Djibril Ciss_àö¬©,PERSON
+Q1935,√âric Abidal,PERSON
+Q1936,Djibril Ciss√©,PERSON
 Q1937,William Gallas,PERSON
 Q1938,Bacary Sagna,PERSON
 Q1939,Nicolas Anelka,PERSON
-Q1940,Andr_àö¬©-Pierre Gignac,PERSON
-Q1942,S_àö¬©bastien Squillaci,PERSON
+Q1940,Andr√©-Pierre Gignac,PERSON
+Q1942,S√©bastien Squillaci,PERSON
 Q1943,Abou Diaby,PERSON
-Q1944,J_àö¬©r_àö¬©my Toulalan,PERSON
+Q1944,J√©r√©my Toulalan,PERSON
 Q1945,Benjamin Raich,PERSON
 Q1946,Moons of Jupiter,LOCATION
 Q1947,Juba,LOCATION
@@ -1100,8 +1101,8 @@ Q1950,Alberto Tomba,PERSON
 Q1951,Alberta,LOCATION
 Q1952,Nova Scotia,LOCATION
 Q1953,Yerevan,LOCATION
-Q1954,K_àö_àÇln Hauptbahnhof,INSTALLATION
-Q1955,Gustav Th_àö_àÇni,PERSON
+Q1954,K√∂ln Hauptbahnhof,INSTALLATION
+Q1955,Gustav Th√∂ni,PERSON
 Q1956,Hermann Maier,PERSON
 Q1957,Vologda,LOCATION
 Q1958,Vreni Schneider,PERSON
@@ -1112,11 +1113,11 @@ Q1962,Erika Hess,PERSON
 Q1963,Khartoum,LOCATION
 Q1964,Monsols,LOCATION
 Q1965,New Brunswick,LOCATION
-Q1966,Di_àö¬Æme,LOCATION
+Q1966,Di√®me,LOCATION
 Q1967,Chamelet,LOCATION
 Q1968,Formula One,EVENT
 Q1969,Ternand,LOCATION
-Q1970,Saint-Cl_àö¬©ment-sur-Valsonne,LOCATION
+Q1970,Saint-Cl√©ment-sur-Valsonne,LOCATION
 Q1971,Imagine (John Lennon song),CREATION
 Q1972,Moons of Saturn,LOCATION
 Q1974,British Columbia,LOCATION
@@ -1126,7 +1127,7 @@ Q1977,Rivolet,LOCATION
 Q1979,Prince Edward Island,LOCATION
 Q198,War,EVENT
 Q1980,Stade de Gerland,INSTALLATION
-Q1981,Ch_àö¬©nas,LOCATION
+Q1981,Ch√©nas,LOCATION
 Q1982,Odenas,LOCATION
 Q1983,Oingt,LOCATION
 Q1984,Maria Walliser,PERSON
@@ -1179,32 +1180,32 @@ Q252,Indonesia,LOCATION
 Q254,Wolfgang Amadeus Mozart,PERSON
 Q255,Ludwig van Beethoven,PERSON
 Q256,Turkish language,CONCEPT
-Q260,Jean-Fran_àö√üois Champollion,PERSON
+Q260,Jean-Fran√ßois Champollion,PERSON
 Q263,Wikisource,WEBSITE
 Q264,Hurricane Sandy,EVENT
 Q265,Uzbekistan,LOCATION
 Q266,Drosera,PLANT
 Q267,Cafeteria (bicosoecid),PLANT
-Q268,Pozna_âà√ë,LOCATION
+Q268,Pozna≈Ñ,LOCATION
 Q269,Tashkent,LOCATION
 Q27,Republic of Ireland,LOCATION
-Q271,Prytan_àö¬©e National Militaire,INSTITUTION
+Q271,Prytan√©e National Militaire,INSTITUTION
 Q272,Paul Morand,PERSON
 Q275,Forth Bridge,LOCATION
 Q276,Eurovision Song Contest,EVENT
 Q279,Modena,LOCATION
 Q283,Water,SUBSTANCE
-Q285,Cognac_ France,LOCATION
+Q285,"Cognac_, France",LOCATION
 Q289,Television,ARTIFACT
 Q293,Eurymorion,PLANT
 Q294,Icelandic language,CONCEPT
 Q296,Claude Monet,PERSON
-Q297,Diego Vel_àö¬∞zquez,PERSON
+Q297,Diego Vel√°zquez,PERSON
 Q298,Chile,LOCATION
 Q301,El Greco,PERSON
 Q302,Jesus,PERSON
 Q303,Elvis Presley,PERSON
-Q306,Sebasti_àö¬∞n Pi_àö¬±era,PERSON
+Q306,Sebasti√°n Pi√±era,PERSON
 Q307,Galileo Galilei,PERSON
 Q308,Mercury (planet),LOCATION
 Q312,Apple Inc.,BUSINESS
@@ -1233,9 +1234,9 @@ Q34,Sweden,LOCATION
 Q340,Montreal,LOCATION
 Q341,Free software,ARTIFACT
 Q342,Quimper,LOCATION
-Q343,La Fl_àö¬Æche,LOCATION
+Q343,La Fl√®che,LOCATION
 Q344,Future,PERIOD
-Q345,Mary_ mother of Jesus,PERSON
+Q345,"Mary_, mother of Jesus",PERSON
 Q346,Louis IX of France,PERSON
 Q347,Liechtenstein,LOCATION
 Q348,Time capsule,ARTIFACT
@@ -1258,12 +1259,12 @@ Q370,Wikiversity,WEBSITE
 Q372,We Live in Public,CREATION
 Q373,Wikivoyage,WEBSITE
 Q377,Yanka Kupala,PERSON
-Q379,Franti_âà¬∞ek Pl_àö¬∞ni∆í√ßka,PERSON
+Q379,Franti≈°ek Pl√°niƒçka,PERSON
 Q38,Italy,LOCATION
 Q381,Ubuntu (operating system),ARTIFACT
 Q384,Skopje,LOCATION
 Q385,Gdynia,LOCATION
-Q387,Old Bazaar_ Skopje,EVENT
+Q387,"Old Bazaar_, Skopje",EVENT
 Q388,Linux,ARTIFACT
 Q391,Saint Catherine Street,LOCATION
 Q392,Bob Dylan,PERSON
@@ -1299,20 +1300,20 @@ Q434,Pear,PLANT
 Q436,Szczebrzeszyn,LOCATION
 Q437,Ljubljana,LOCATION
 Q438,Vrhnika,LOCATION
-Q439,W∆í√ñchock,LOCATION
+Q439,WƒÖchock,LOCATION
 Q440,Salvador Allende,PERSON
 Q441,Botany,CONCEPT
 Q442,Natural History (Pliny),ARTIFACT
 Q443,Ich bin ein Berliner,ARTIFACT
-Q444,Lech Wa_âà√á∆í√¥sa,PERSON
+Q444,Lech Wa≈Çƒôsa,PERSON
 Q446,Wheel,ARTIFACT
-Q447,Encyclop_àö¬©die,CREATION
+Q447,Encyclop√©die,CREATION
 Q448,Denis Diderot,PERSON
 Q449,Georges Brassens,PERSON
 Q45,Portugal,LOCATION
 Q451,Mundaneum,INSTALLATION
-Q453,Borken_ North Rhine-Westphalia,LOCATION
-Q455,Encyclop_àö¬∂dia Britannica,CREATION
+Q453,"Borken_, North Rhine-Westphalia",LOCATION
+Q455,Encyclop√¶dia Britannica,CREATION
 Q456,Lyon,LOCATION
 Q457,Poissy,LOCATION
 Q458,European Union,ORGANISATION
@@ -1348,17 +1349,17 @@ Q491,Friendship,CONCEPT
 Q493,Arthur Rimbaud,PERSON
 Q494,Beakman's World,CREATION
 Q495,Turin,LOCATION
-Q498,Ulrich Frédéric Woldemar_ Comte de Lowendal,PERSON
+Q498,"Ulrich Fr√©d√©ric Woldemar_, Comte de Lowendal",PERSON
 Q500,Lemon,PLANT
 Q501,Charles Baudelaire,PERSON
 Q502,Stendhal,PERSON
 Q503,Banana,PLANT
-Q504,_àö√¢mile Zola,PERSON
+Q504,√âmile Zola,PERSON
 Q505,666,PERIOD
 Q506,Flower,PLANT
 Q507,Googol,MEASURE
 Q508,Googolplex,MEASURE
-Q509,Gallo-Roman Museum of Lyon-Fourvi_àö¬Ære,INSTALLATION
+Q509,Gallo-Roman Museum of Lyon-Fourvi√®re,INSTALLATION
 Q51,Antarctica,LOCATION
 Q511,Museum of Fine Arts of Lyon,INSTALLATION
 Q512,Vladimir Vysotsky,PERSON
@@ -1404,8 +1405,8 @@ Q575,Night,PERIOD
 Q576,Jorge Alessandri,PERSON
 Q577,Year,PERIOD
 Q578,Century,PERIOD
-Q579,Carlos Ib_àö¬∞_àö¬±ez del Campo,PERSON
-Q580,_âà√Ö_àö_â•d_âà_à´,LOCATION
+Q579,Carlos Ib√°√±ez del Campo,PERSON
+Q580,≈Å√≥d≈∫,LOCATION
 Q582,Villeurbanne,LOCATION
 Q585,Oslo,LOCATION
 Q586,Bonn,LOCATION
@@ -1413,16 +1414,16 @@ Q587,All Saints' Day,EVENT
 Q588,Katowice,LOCATION
 Q589,Black hole,LOCATION
 Q59,PHP,ARTIFACT
-Q590,Lu_àö_â†s de Cam_àö¬µes,PERSON
+Q590,Lu√≠s de Cam√µes,PERSON
 Q592,Gay,PERSON_TYPE
 Q593,A Gang Story,CREATION
 Q594,The King of Rome,ANIMAL
 Q595,The Intouchables,CREATION
 Q597,Lisbon,LOCATION
-Q598,Rzesz_àö_â•w,LOCATION
+Q598,Rzesz√≥w,LOCATION
 Q599,Wedding dress of Kate Middleton,ARTIFACT
 Q600,Ichiro Suzuki,PERSON
-Q603,Fr_àö¬©d_àö¬©ric Tadde_àö√ò,PERSON
+Q603,Fr√©d√©ric Tadde√Ø,PERSON
 Q605,Ezra Klein,PERSON
 Q607,Michael Bloomberg,PERSON
 Q609,Kateri Tekakwitha,PERSON
@@ -1433,7 +1434,7 @@ Q617,Padua,LOCATION
 Q618,Boron,SUBSTANCE
 Q619,Nicolaus Copernicus,PERSON
 Q62,San Francisco,LOCATION
-Q621,Versailles_ Yvelines,LOCATION
+Q621,"Versailles_, Yvelines",LOCATION
 Q622,Ludwigsburg,LOCATION
 Q623,Carbon,SUBSTANCE
 Q624,Alessandro Del Piero,PERSON
@@ -1478,7 +1479,7 @@ Q671,Francium,SUBSTANCE
 Q672,Tuvalu,LOCATION
 Q673,One Piece,BUSINESS
 Q674,Phosphorus,SUBSTANCE
-Q675,Andr_àö¬©-Marie Amp_àö¬Ære,PERSON
+Q675,Andr√©-Marie Amp√®re,PERSON
 Q677,Iron,SUBSTANCE
 Q68,Computer,ARTIFACT
 Q680,Alessandro Volta,PERSON
@@ -1487,7 +1488,7 @@ Q682,Sulfur,SUBSTANCE
 Q683,Samoa,LOCATION
 Q685,Solomon Islands,LOCATION
 Q686,Vanuatu,LOCATION
-Q687,Moli_àö¬Ære,PERSON
+Q687,Moli√®re,PERSON
 Q688,Chlorine,LOCATION
 Q691,Papua New Guinea,LOCATION
 Q692,William Shakespeare,PERSON
@@ -1514,8 +1515,8 @@ Q714,Stevie Wonder,PERSON
 Q715,Heilbronn,LOCATION
 Q716,Titanium,SUBSTANCE
 Q717,Venezuela,LOCATION
-Q72,Z_àö¬∫rich,LOCATION
-Q721,Life_ the Universe and Everything,CREATION
+Q72,Z√ºrich,LOCATION
+Q721,"Life_, the Universe and Everything",CREATION
 Q722,Vanadium,SUBSTANCE
 Q723,Rookie Blue,CREATION
 Q725,Chromium,SUBSTANCE
@@ -1548,13 +1549,13 @@ Q756,Plant,PLANT
 Q757,Saint Vincent and the Grenadines,LOCATION
 Q758,Zinc,SUBSTANCE
 Q760,Saint Lucia,LOCATION
-Q761,Bia_âà√áystok,LOCATION
+Q761,Bia≈Çystok,LOCATION
 Q762,Leonardo da Vinci,PERSON
 Q763,Saint Kitts and Nevis,LOCATION
 Q764,Fungus,PLANT
 Q765,Dario Fo,PERSON
 Q766,Jamaica,LOCATION
-Q767,St_àö¬©phane Mallarm_àö¬©,PERSON
+Q767,St√©phane Mallarm√©,PERSON
 Q768,Supetar,LOCATION
 Q769,Grenada,LOCATION
 Q77,Uruguay,LOCATION
@@ -1577,7 +1578,7 @@ Q796,Iraq,LOCATION
 Q798,Assen,LOCATION
 Q80,Tim Berners-Lee,PERSON
 Q800,Costa Rica,LOCATION
-Q802,Nowy S∆í√ñcz,LOCATION
+Q802,Nowy SƒÖcz,LOCATION
 Q804,Panama,LOCATION
 Q805,Yemen,LOCATION
 Q807,Lausanne,LOCATION
@@ -1586,11 +1587,11 @@ Q810,Jordan,LOCATION
 Q811,Nicaragua,LOCATION
 Q813,Kyrgyzstan,LOCATION
 Q814,Coco Austin,PERSON
-Q815,Gabriel Gonz_àö¬∞lez Videla,PERSON
+Q815,Gabriel Gonz√°lez Videla,PERSON
 Q817,Kuwait,LOCATION
 Q819,Laos,LOCATION
 Q82,Printer (computing),ARTIFACT
-Q820,Juan Antonio R_àö_â†os,PERSON
+Q820,Juan Antonio R√≠os,PERSON
 Q822,Lebanon,LOCATION
 Q826,Maldives,LOCATION
 Q83,MediaWiki,ARTIFACT
@@ -1606,7 +1607,7 @@ Q844,James Bond,CREATION
 Q845,Pedro Aguirre Cerda,PERSON
 Q846,Qatar,LOCATION
 Q848,Arturo Alessandri,PERSON
-Q849,Fran_àö√üois Villon,PERSON
+Q849,Fran√ßois Villon,PERSON
 Q85,Cairo,LOCATION
 Q850,MySQL,ARTIFACT
 Q851,Saudi Arabia,LOCATION
@@ -1620,7 +1621,7 @@ Q859,Plato,PERSON
 Q861,Gallium,SUBSTANCE
 Q862,Joseph Brodsky,PERSON
 Q863,Tajikistan,LOCATION
-Q864,Pok_àö¬©mon,BUSINESS
+Q864,Pok√©mon,BUSINESS
 Q865,Taiwan,LOCATION
 Q866,YouTube,WEBSITE
 Q867,Germanium,SUBSTANCE
@@ -1637,13 +1638,13 @@ Q876,Selenium,SUBSTANCE
 Q877,Iridium,SUBSTANCE
 Q878,United Arab Emirates,LOCATION
 Q879,Bromine,SUBSTANCE
-Q88,Alexandria_ Virginia,LOCATION
+Q88,"Alexandria_, Virginia",LOCATION
 Q880,Platinum,SUBSTANCE
 Q881,Vietnam,LOCATION
 Q882,Charlie Chaplin,PERSON
 Q883,Novosibirsk,LOCATION
 Q884,South Korea,LOCATION
-Q885,J_àö_â•zef Pi_âà√ásudski,PERSON
+Q885,J√≥zef Pi≈Çsudski,PERSON
 Q886,The Simpsons,CREATION
 Q887,Yekaterinburg,LOCATION
 Q888,Krypton,SUBSTANCE
@@ -1698,7 +1699,7 @@ Q944,Quantum mechanics,CONCEPT
 Q945,Togo,LOCATION
 Q949,John Bardeen,PERSON
 Q95,Google,BUSINESS
-Q950,Schn_àö¬∫tgen Museum,INSTALLATION
+Q950,Schn√ºtgen Museum,INSTALLATION
 Q953,Zambia,LOCATION
 Q954,Zimbabwe,LOCATION
 Q956,Beijing,LOCATION
@@ -1706,7 +1707,7 @@ Q957,List of lists of lists,WEBSITE
 Q958,South Sudan,LOCATION
 Q959,Vladivostok,LOCATION
 Q96,Mexico,LOCATION
-Q961,Stawka wi∆í√¥ksza ni_âà¬∫ _âà¬∫ycie,CREATION
+Q961,Stawka wiƒôksza ni≈º ≈ºycie,CREATION
 Q962,Benin,LOCATION
 Q963,Botswana,LOCATION
 Q964,Wikinews,WEBSITE
@@ -1723,11 +1724,11 @@ Q976,Tomsk,LOCATION
 Q977,Djibouti,LOCATION
 Q979,Polonium,SUBSTANCE
 Q98,Pacific Ocean,LOCATION
-Q981,Warburg_ Alberta,LOCATION
+Q981,"Warburg_, Alberta",LOCATION
 Q982,FIS Alpine Ski World Cup,EVENT
 Q983,Equatorial Guinea,LOCATION
 Q984,Miles Franklin,PERSON
-Q985,Baden-W_àö¬∫rttemberg,LOCATION
+Q985,Baden-W√ºrttemberg,LOCATION
 Q986,Eritrea,LOCATION
 Q987,New Delhi,LOCATION
 Q989,Pope John Paul II,PERSON
@@ -1739,3 +1740,333 @@ Q996,Miles Franklin Award,AWARD
 Q997,Andrei Sakharov,PERSON
 Q998,Infant,PERSON_TYPE
 Q999,Astatine,LOCATION
+Q329888,Allies of World War II,INSTITUTION
+Q2247,Jan-11,PERIOD
+Q2351,Feb-22,PERIOD
+Q2424,Mar-19,PERIOD
+Q2501,Apr-11,PERIOD
+Q2532,Apr-26,PERIOD
+Q2574,May-16,PERIOD
+Q2612,Jun-14,PERIOD
+Q2616,Jun-07,PERIOD
+Q2618,Jun-09,PERIOD
+Q2623,Jun-03,PERIOD
+Q2659,Jun-29,PERIOD
+Q2664,Jun-27,PERIOD
+Q2665,Jun-24,PERIOD
+Q2666,Jun-20,PERIOD
+Q2668,Jun-23,PERIOD
+Q2669,Jun-19,PERIOD
+Q2671,Jun-21,PERIOD
+Q1002,Chukchi Peninsula,LOCATION
+Q1024,Triglav,LOCATION
+Q1059,Immune system,LOCATION
+Q1060,Hamburg University of Technology,INSTITUTION
+Q1061,Gujarat,LOCATION
+Q107,Space,LOCATION
+Q1093,Limburg (Netherlands),LOCATION
+Q1095,Limburg (Belgium),LOCATION
+Q1101,North Brabant,LOCATION
+Q1107,Anime,CREATION
+Q1113,West Flanders,LOCATION
+Q1114,East Flanders,LOCATION
+Q1116,Antwerp (province),LOCATION
+Q1118,Flemish Brabant,LOCATION
+Q1120,Nice model,LOCATION
+Q1122,Walloon Brabant,LOCATION
+Q1125,Namur (province),LOCATION
+Q1126,Luxembourg (Belgium),LOCATION
+Q1127,Li√®ge (province),LOCATION
+Q1129,Hainaut (province),LOCATION
+Q113,Schulze method,CONCEPT
+Q1137,Lorraine,LOCATION
+Q1142,Alsace,LOCATION
+Q1152,Auvergne,LOCATION
+Q1159,Andhra Pradesh,LOCATION
+Q116,Monarch,LOCATION
+Q1162,Arunachal Pradesh,LOCATION
+Q1164,Assam,LOCATION
+Q1165,Bihar,LOCATION
+Q1166,Michigan,LOCATION
+Q1168,Chhattisgarh,LOCATION
+Q1169,Lake Michigan,LOCATION
+Q1171,Goa,LOCATION
+Q1173,Burgundy,LOCATION
+Q1174,Haryana,LOCATION
+Q1177,Himachal Pradesh,LOCATION
+Q1179,Aquitaine,LOCATION
+Q1180,Jammu and Kashmir,LOCATION
+Q1183,Puerto Rico,LOCATION
+Q1184,Jharkhand,LOCATION
+Q1185,Karnataka,LOCATION
+Q1186,Kerala,LOCATION
+Q1187,River Wandle,LOCATION
+Q1188,Madhya Pradesh,LOCATION
+Q1190,Limousin,LOCATION
+Q1191,Maharashtra,LOCATION
+Q1193,Manipur,LOCATION
+Q1195,Meghalaya,LOCATION
+Q1204,Illinois,LOCATION
+Q1207,North Dakota,LOCATION
+Q1210,Lombardy,LOCATION
+Q1211,South Dakota,LOCATION
+Q1212,Montana,LOCATION
+Q1214,Wyoming,LOCATION
+Q1216,Piedmont,LOCATION
+Q1219,Alster,LOCATION
+Q1221,Idaho,LOCATION
+Q1222,Aosta Valley,LOCATION
+Q1223,Washington (state),LOCATION
+Q1227,Nevada,LOCATION
+Q1229,Don River (Russia),LOCATION
+Q1237,Trentino-Alto Adige/S√ºdtirol,LOCATION
+Q1243,Veneto,LOCATION
+Q1248,Monte Viso,LOCATION
+Q1250,Friuli-Venezia Giulia,LOCATION
+Q1251,Cottian Alps,LOCATION
+Q1255,Autonomous Province of Kosovo and Metohija,LOCATION
+Q1256,Liguria,LOCATION
+Q1261,Colorado,LOCATION
+Q1262,Graian Alps,LOCATION
+Q1263,Emilia-Romagna,LOCATION
+Q1265,Colorado River,LOCATION
+Q1270,Pennine Alps,LOCATION
+Q1273,Tuscany,LOCATION
+Q1274,Lepontine Alps,LOCATION
+Q1277,Rhaetian Alps,LOCATION
+Q1279,Marche,LOCATION
+Q1280,Umbria,LOCATION
+Q1282,Lazio,LOCATION
+Q1283,Dolomites,LOCATION
+Q1284,Abruzzo,LOCATION
+Q1285,Apennine Mountains,LOCATION
+Q1286,Alps,LOCATION
+Q1288,Carpathian Mountains,LOCATION
+Q1305,Wageningen,LOCATION
+Q1309,Maastricht,LOCATION
+Q133,Mixed-member proportional representation,CONCEPT
+Q1338,Upper Peninsula of Michigan,LOCATION
+Q1343,TogliattiAzot,LOCATION
+Q1356,West Bengal,LOCATION
+Q1363,Tripura,LOCATION
+Q1367,Monkey,ANIMAL
+Q1370,Virginia,LOCATION
+Q1371,West Virginia,LOCATION
+Q1372,Gran Paradiso,LOCATION
+Q1373,Grivola,LOCATION
+Q1374,Matterhorn,LOCATION
+Q1384,New York (state),LOCATION
+Q1387,Rhode Island,LOCATION
+Q1391,Maryland,LOCATION
+Q1393,Delaware,LOCATION
+Q1397,Ohio,LOCATION
+Q1400,Pennsylvania,LOCATION
+Q1408,New Jersey,LOCATION
+Q1415,Indiana,LOCATION
+Q1428,Georgia (U.S. state),LOCATION
+Q1437,Rajasthan,LOCATION
+Q1438,Campania,LOCATION
+Q1439,Texas,LOCATION
+Q1443,Molise,LOCATION
+Q1445,Tamil Nadu,LOCATION
+Q1447,Apulia,LOCATION
+Q1451,Mount Pinatubo,LOCATION
+Q1452,Basilicata,LOCATION
+Q1454,North Carolina,LOCATION
+Q1456,South Carolina,LOCATION
+Q1458,Calabria,LOCATION
+Q1460,Sicily,LOCATION
+Q1462,Sardinia,LOCATION
+Q1465,Feltre,LOCATION
+Q1467,Cebu City,LOCATION
+Q1469,Loire,LOCATION
+Q1471,Seine,LOCATION
+Q1473,Davao City,LOCATION
+Q1475,Quezon City,LOCATION
+Q1478,Caloocan,LOCATION
+Q1484,Mayon,LOCATION
+Q1494,Mississippi,LOCATION
+Q1497,Mississippi River,LOCATION
+Q1498,Uttar Pradesh,LOCATION
+Q1499,Uttarakhand,LOCATION
+Q1502,Mizoram,LOCATION
+Q1505,Sikkim,LOCATION
+Q1509,Tennessee,LOCATION
+Q1522,New Mexico,LOCATION
+Q1527,Minnesota,LOCATION
+Q1537,Wisconsin,LOCATION
+Q1546,Iowa,LOCATION
+Q1553,Nebraska,LOCATION
+Q1558,Kansas,LOCATION
+Q1581,Missouri,LOCATION
+Q1588,Louisiana,LOCATION
+Q1599,Nagaland,LOCATION
+Q1603,Kentucky,LOCATION
+Q1612,Arkansas,LOCATION
+Q1622,Neuwerk,LOCATION
+Q1624,Pasig,LOCATION
+Q1626,Hamburg-Mitte,LOCATION
+Q1627,Hamburg-Nord,LOCATION
+Q163,Yorkshire,LOCATION
+Q1632,Eimsb√ºttel,LOCATION
+Q1633,Wandsbek,LOCATION
+Q1635,Harburg,LOCATION
+Q1637,Bergedorf,LOCATION
+Q1640,Osijek,LOCATION
+Q1644,Elbe,LOCATION
+Q1648,Ems (river),LOCATION
+Q1649,Oklahoma,LOCATION
+Q1650,Weser,LOCATION
+Q1653,Danube,LOCATION
+Q1658,Peene,LOCATION
+Q1664,Ruhr (river),LOCATION
+Q1667,Moselle,LOCATION
+Q1670,Main (river),LOCATION
+Q1673,Neckar,LOCATION
+Q1675,Aare,LOCATION
+Q1678,Saale,LOCATION
+Q1680,Mulde,LOCATION
+Q1682,Havel,LOCATION
+Q1684,Spree,LOCATION
+Q1688,Elde,LOCATION
+Q1695,Skagerrak,LOCATION
+Q1722,Dubrovnik,LOCATION
+Q1727,Samara Oblast,LOCATION
+Q173,Alabama,LOCATION
+Q1746,Samara Governorate,LOCATION
+Q1749,Kaliningrad Oblast,LOCATION
+Q1759,Murmansk Oblast,LOCATION
+Q1774,Zanzibar,LOCATION
+Q1822,Baguio,LOCATION
+Q1823,Aceh,LOCATION
+Q1825,Karasjok,LOCATION
+Q1840,Veenendaal,LOCATION
+Q1866,Bangka Belitung Islands,LOCATION
+Q1873,Acqua alta,LOCATION
+Q1875,Arkhangelsk Oblast,LOCATION
+Q1880,Concepci√≥n,LOCATION
+Q1881,Fyresdal,LOCATION
+Q1890,Bengkulu,LOCATION
+Q1906,Caserta,LOCATION
+Q1914,Republic of Karelia,LOCATION
+Q194,Rings of Saturn,LOCATION
+Q1941,Atmosphere of Venus,LOCATION
+Q1949,Wannsee,LOCATION
+Q1959,Ko≈Ñskowola,LOCATION
+Q223,Greenland,LOCATION
+Q231,Wallonia,LOCATION
+Q234,Flanders,LOCATION
+Q240,Brussels,LOCATION
+Q243,Eiffel Tower,LOCATION
+Q245,Raspberry Pi,LOCATION
+Q273,Islay,LOCATION
+Q299,Vidov,LOCATION
+Q311,P√®re Lachaise Cemetery,LOCATION
+Q321,Milky Way,LOCATION
+Q322,Llanfairpwllgwyngyll,LOCATION
+Q327,Brittany,LOCATION
+Q337,Lake Chaubunagungamaug,LOCATION
+Q339,Pluto,LOCATION
+Q351,Yellowstone National Park,LOCATION
+Q357,Guantanamo Bay detention camp,INSTALLATION
+Q358,National heritage site,INSTALLATION
+Q363,World War III,CONCEPT
+Q369,Wikiquote,WEBSITE
+Q405,Moon,LOCATION
+Q422,Mus√©um de Toulouse,INSTALLATION
+Q425,Betsiboka River,LOCATION
+Q426,Animal rights,CONCEPT
+Q427,Kuiper belt,LOCATION
+Q429,Pcim,LOCATION
+Q433,Gmina Kur√≥w,LOCATION
+Q435,Library of Alexandria,LOCATION
+Q44,Beer,UNKNOWN
+Q445,Bibliotheca universalis,INSTALLATION
+Q463,Rh√¥ne-Alpes,LOCATION
+Q510,Mariana Trench,LOCATION
+Q513,Mount Everest,LOCATION
+Q515,City,LOCATION
+Q516,H√¥tel de Ville,LOCATION
+Q519,Shit,UNKNOWN
+Q520,Olympus Mons,LOCATION
+Q524,Mount Vesuvius,LOCATION
+Q525,Sun,LOCATION
+Q528,PSR B1257+12,LOCATION
+Q532,Village,LOCATION
+Q541,Orvieto,LOCATION
+Q548,Vistula,LOCATION
+Q550,Champs-√âlys√©es,LOCATION
+Q552,Oder,LOCATION
+Q581,Canegrate,LOCATION
+Q583,Mont Blanc,LOCATION
+Q584,Rhine,LOCATION
+Q591,Fontgombault Abbey,LOCATION
+Q596,Ceres (dwarf planet),LOCATION
+Q601,Haumea,LOCATION
+Q602,Rh√¥ne,LOCATION
+Q604,Makemake,LOCATION
+Q610,Iona,LOCATION
+Q611,Eris (dwarf planet),LOCATION
+Q613,Emirate of Dubai,LOCATION
+Q625,Metallic tower of Fourvi√®re,INSTALLATION
+Q626,Volga River,LOCATION
+Q643,Po (river),LOCATION
+Q645,Neva River,LOCATION
+Q655,Chihuahua (state),LOCATION
+Q67,Airbus,BUSINESS
+Q676,Prose,CREATION
+Q69,Courrendlin,LOCATION
+Q690,Delft,LOCATION
+Q694,South Holland,LOCATION
+Q701,North Holland,LOCATION
+Q705,Zeeland,LOCATION
+Q707,Flevoland,LOCATION
+Q719,Saginaw,LOCATION
+Q724,Maine,LOCATION
+Q74,Breighton,LOCATION
+Q75,Internet,ARTIFACT
+Q752,Groningen (province),LOCATION
+Q759,New Hampshire,LOCATION
+Q770,Friesland,LOCATION
+Q771,Massachusetts,LOCATION
+Q772,Drenthe,LOCATION
+Q773,Overijssel,LOCATION
+Q775,Gelderland,LOCATION
+Q776,Utrecht (province),LOCATION
+Q779,Connecticut,LOCATION
+Q780,Chicken,ANIMAL
+Q782,Hawaii,LOCATION
+Q785,Jersey,LOCATION
+Q791,Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu,LOCATION
+Q797,Alaska,LOCATION
+Q803,Utrecht,LOCATION
+Q806,Randstad,LOCATION
+Q812,Florida,LOCATION
+Q816,Arizona,LOCATION
+Q818,Florida Province,LOCATION
+Q821,Cercado Province (Beni),LOCATION
+Q823,It√©nez Province,LOCATION
+Q824,Oregon,LOCATION
+Q827,Jos√© Ballivi√°n Province,LOCATION
+Q828,Americas,LOCATION
+Q829,Utah,LOCATION
+Q832,Mamor√© Province,LOCATION
+Q834,Valais,LOCATION
+Q841,Marb√°n Province,LOCATION
+Q896,Mountain Dew,LOCATION
+Q899,Suez Canal,LOCATION
+Q903,Erta Ale,LOCATION
+Q922,Braƒç,LOCATION
+Q933,South Pole,LOCATION
+Q934,North Pole,LOCATION
+Q940,Narcotic,SUBSTANCE
+Q952,Reggiolo,LOCATION
+Q955,Aardenburg,LOCATION
+Q960,Tuva,LOCATION
+Q969,Abbekerk,LOCATION
+Q972,Alkmaar,LOCATION
+Q973,Ob River,LOCATION
+Q988,Almelo,LOCATION
+Q99,California,LOCATION
+Q992,Amersfoort,LOCATION
+Q993,Kamchatka Peninsula,LOCATION

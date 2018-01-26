@@ -14,7 +14,7 @@ public class MainModelBuilder {
         ModelBuilder modelBuilder = new ModelBuilder();
         modelBuilder.loadData();
 
-        Integer split = 80;
+        int split = 80;
         System.out.print("Percentage of training data (in %): " + split);
         modelBuilder.splitModel(split);
         System.out.println("Result can be found in 'result/txt/Result_Trained_Model.txt'");

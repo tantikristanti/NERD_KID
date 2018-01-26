@@ -1,54 +1,55 @@
 ** Classification with Random Forest of 100 trees **
 
-Total of instances			:	 2592 
-Number of instance trained		:	 2073 
-Number of instance predicted		:	 519 
-Correctly classified instances		:	 366 (70.520 %) 
-Incorrectly classified instances	:	 153 (29.480 %) 
-Out of Bag (OOB) error rate		:	 0.289
-Specificity				:	 0.977 
-accuracy				:	 0.705
-Macro Average Precision			:	 0.231
-Micro Average Precision			:	 0.705
-Macro Average Recall			:	 0.189
-Micro Average Recall			:	 0.705
+Total of instances			:	 2071 
+Number of instance trained		:	 1656 
+Number of instance predicted		:	 415 
+Correctly classified instances		:	 334 (80.482 %) 
+Incorrectly classified instances	:	 81 (19.518 %) 
+Out of Bag (OOB) error rate		:	 0.231
+Specificity				:	 0.984 
+accuracy				:	 0.805
+Macro Average Precision			:	 0.238
+Micro Average Precision			:	 0.805
+Macro Average Recall			:	 0.185
+Micro Average Recall			:	 0.805
 Macro Average FMeasure			:	 0.208
-Micro Average FMeasure			:	 0.705
+Micro Average FMeasure			:	 0.805
 
 ** Confusion Matrix **
 Row: Actual; Column: Predicted
 Label of class:
-{0:ANIMAL; 1:ARTIFACT; 2:AWARD; 3:BUSINESS; 4:CONCEPT; 5:CREATION; 6:EVENT; 7:INSTALLATION; 8:INSTITUTION; 9:LEGAL; 10:LOCATION; 11:MEASURE; 12:MEDIA; 13:NATIONAL; 14:ORGANISATION; 15:PERIOD; 16:PERSON; 17:PERSON_TYPE; 18:PLANT; 19:SPORT_TEAM; 20:SUBSTANCE; 21:WEBSITE}
+{0:ANIMAL; 1:ARTIFACT; 2:AWARD; 3:BUSINESS; 4:CONCEPT; 5:CREATION; 6:EVENT; 7:INSTALLATION; 8:INSTITUTION; 9:LEGAL; 10:LOCATION; 11:MEASURE; 12:MEDIA; 13:NATIONAL; 14:ORGANISATION; 15:PERIOD; 16:PERSON; 17:PERSON_TYPE; 18:PLANT; 19:SPORT_TEAM; 20:SUBSTANCE; 21:WEBSITE; 22:UNKNOWN}
 
-Class:		0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19	20	21	
-	0|	2	0	0	0	0	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	
-	1|	0	0	0	0	0	0	0	0	0	0	9	0	0	0	0	0	0	0	0	0	0	0	
-	2|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
-	3|	0	0	0	1	0	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	
-	4|	0	0	0	0	0	0	0	0	0	0	8	0	0	0	0	0	0	0	0	0	0	0	
-	5|	0	0	0	0	0	0	0	0	0	0	9	0	0	0	0	0	0	0	0	0	0	0	
-	6|	0	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	
-	7|	0	0	0	0	0	0	0	0	0	0	12	0	0	0	0	0	0	0	0	0	0	0	
-	8|	0	0	0	0	0	0	0	0	0	0	10	0	0	0	1	0	0	0	0	0	0	0	
-	9|	0	0	0	0	0	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	
-	10|	0	0	0	0	0	0	0	0	0	0	214	0	0	0	0	0	0	0	0	0	0	0	
-	11|	0	0	0	0	0	0	0	0	0	0	1	16	0	0	0	0	0	0	0	0	0	0	
-	12|	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	
-	13|	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	
-	14|	0	0	0	0	0	0	0	0	0	0	1	0	0	0	5	0	0	0	0	0	0	0	
-	15|	0	0	0	0	0	0	0	0	0	0	17	0	0	0	0	0	0	0	0	0	0	0	
-	16|	0	0	0	0	0	0	0	0	0	0	16	0	0	0	0	0	128	0	0	0	0	0	
-	17|	0	0	0	0	0	0	0	0	0	0	14	0	0	0	0	0	0	0	0	0	0	0	
-	18|	1	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	
-	19|	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	
-	20|	0	0	0	0	0	0	0	0	0	0	21	0	0	0	0	0	0	0	0	0	0	0	
-	21|	0	0	0	0	0	0	0	0	0	0	8	0	0	0	0	0	0	0	0	0	0	0	
+Class:		0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19	20	21	22	
+	0|	1	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	
+	1|	0	0	0	0	0	0	0	0	0	0	9	0	0	0	0	0	0	0	0	0	0	0	0	
+	2|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	3|	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	
+	4|	0	0	0	0	0	0	0	0	0	0	10	0	0	0	0	0	0	0	0	0	0	0	0	
+	5|	0	0	0	0	0	0	0	0	0	0	6	0	0	0	0	0	0	0	0	0	0	0	0	
+	6|	0	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	
+	7|	0	0	0	0	0	0	0	0	0	0	9	0	0	0	0	0	0	0	0	0	0	0	0	
+	8|	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	
+	9|	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	
+	10|	0	0	0	0	0	0	0	0	0	0	197	0	0	0	0	0	0	0	0	0	1	0	0	
+	11|	0	0	0	0	0	0	0	0	0	0	7	0	0	0	0	0	0	0	0	0	0	0	0	
+	12|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	13|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	
+	14|	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	
+	15|	0	0	0	0	0	0	0	0	0	0	5	0	0	0	0	3	0	0	0	0	0	0	0	
+	16|	0	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	108	0	0	0	0	0	0	
+	17|	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	4	0	0	0	0	0	
+	18|	0	0	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	0	0	
+	19|	0	0	0	0	0	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	0	0	
+	20|	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	21	0	0	
+	21|	0	0	0	0	0	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	0	0	
+	22|	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	
 
 ** Validation for each class **
 
-Class		:	0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19	20	21
-FMeasure	:	0.40	0.00	0.00	0.33	0.00	0.00	0.00	0.00	0.00	0.00	0.74	0.97	0.00	0.00	0.83	0.00	0.94	0.00	0.00	0.00	0.00	0.00
-Precision	:	0.67	0.00	0.00	1.00	0.00	0.00	0.00	0.00	0.00	0.00	0.59	1.00	0.00	0.00	0.83	0.00	1.00	0.00	0.00	0.00	0.00	0.00
-Recall		:	0.29	0.00	0.00	0.20	0.00	0.00	0.00	0.00	0.00	0.00	1.00	0.94	0.00	0.00	0.83	0.00	0.89	0.00	0.00	0.00	0.00	0.00
-Spesificity	:	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	0.50	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00
+Class		:	0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19	20	21	22
+FMeasure	:	0.50	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.83	0.00	0.00	0.00	0.00	0.55	0.99	0.73	0.00	0.00	0.93	0.00	0.00
+Precision	:	1.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.71	0.00	0.00	0.00	0.00	1.00	1.00	0.80	0.00	0.00	0.95	0.00	0.00
+Recall		:	0.33	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.99	0.00	0.00	0.00	0.00	0.38	0.97	0.67	0.00	0.00	0.91	0.00	0.00
+Spesificity	:	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	0.64	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00
 

@@ -54,7 +54,7 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
 
             // replace commas in Wikidata labels with the underscore to avoid incorrect extraction in the Csv file
             if(rawName.contains(",")){
-                rawName = rawName.replace(",", "_;");
+                rawName = rawName.replace(",", "_");
             }
 
             element.setLabel(rawName);

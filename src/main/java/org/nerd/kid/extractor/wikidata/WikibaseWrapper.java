@@ -34,7 +34,7 @@ public class WikibaseWrapper implements WikidataFetcherWrapper {
 
             // replace commas in Wikidata labels with the underscore to avoid incorrect extraction in the Csv file
             if(labelItem.contains(",")){
-                labelItem = labelItem.replace(",", "_;");
+                labelItem = labelItem.replace(",", "_");
             }
 
             if (labelItem.equals(null)) {

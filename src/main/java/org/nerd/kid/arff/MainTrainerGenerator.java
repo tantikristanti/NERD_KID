@@ -163,13 +163,12 @@ public class MainTrainerGenerator {
                 WikidataElementInfos wikidataFeatures = featureWikidataExtractor.getFeatureWikidata(element.getWikidataId());
                 wikidataFeatures.setRealClass(element.getRealClass());
 
-                //write the result into a Csv file
-
                 // replace commas in Wikidata labels with the underscore to avoid incorrect extraction in the Csv file
                 String label = wikidataFeatures.getLabel();
                 if (label.contains(",")) {
                     wikidataFeatures.setLabel(label.replace(",", "_"));
                 }
+
                 List<String> dataGenerated = Arrays.asList(wikidataFeatures.getWikidataId(), label, wikidataFeatures.getRealClass());
                 List<String> dataFeatureGenerated = new ArrayList<String>();
                 List<String> dataCombined = new ArrayList<String>();

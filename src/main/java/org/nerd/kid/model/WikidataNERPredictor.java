@@ -26,7 +26,8 @@ public class WikidataNERPredictor {
     private RandomForest forest = null;
 
     public void loadModel() {
-        InputStream model = this.getClass().getResourceAsStream("/modelOriginal.xml");
+        // the model.xml is located in /src/main/resources
+        InputStream model = this.getClass().getResourceAsStream("/model.xml");
         forest = (RandomForest) streamer.fromXML(model);
     }
 
