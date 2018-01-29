@@ -46,6 +46,38 @@ public class FeatureFileExtractor {
         return featureMap;
     }
 
+    public List<String> loadFeaturesNoValue() {
+        try {
+            return loadFeaturesNoValue(new FileInputStream("data/resource/feature_mapper_no_value.csv"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+    }
+
+    public List<String> loadFeaturesNoValue(InputStream inputStreamFeatureNoValueFile){
+        List<String> featureMapNoValue = new ArrayList<>();
+        Reader featureMapperIn = new InputStreamReader(inputStreamFeatureNoValueFile);
+        Iterable<CSVRecord> recordsFeaturesNoValue = null;
+        try{
+            recordsFeaturesNoValue = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(featureMapperIn);
+
+        } catch (IOException e){
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+
+        for (CSVRecord recordFeatureNoValue : recordsFeaturesNoValue){
+            String property = recordFeatureNoValue.get("Property");
+
+            if(recordFeatureNoValue != null){
+                featureMapNoValue.add(property);
+            }
+        }
+
+        return featureMapNoValue;
+    }
+
     public void printWikidataFeatures(Map<String, List<String>> result) {
         for (Map.Entry<String, List<String>> entry : result.entrySet()) {
             System.out.println(entry.getKey() + ": ");
