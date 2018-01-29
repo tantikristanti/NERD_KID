@@ -5,6 +5,16 @@ import java.util.List;
 import java.util.Map;
 
 public class WikidataElement {
+    public List<String> getPropertiesNoValue() {
+        return propertiesNoValue;
+    }
+
+    public void setPropertiesNoValue(List<String> propertiesNoValue) {
+        this.propertiesNoValue = propertiesNoValue;
+    }
+
+    private List<String> propertiesNoValue;
+
     private String id;
 
     public String getId() {

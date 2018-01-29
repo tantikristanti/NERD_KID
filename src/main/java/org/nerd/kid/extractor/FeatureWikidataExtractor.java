@@ -41,11 +41,18 @@ public class FeatureWikidataExtractor {
     public WikidataElementInfos getFeatureWikidata(String wikidataId) {
         // count the number of features based on 'data/resource/feature_mapper.csv'
         Map<String, List<String>> featuresMap = new HashMap<>();
+        List<String> featuresNoValueMap = new ArrayList<>();
+
         int nbOfFeatures = 0;
         try {
             featuresMap = featureFileExtractor.loadFeatures();
             for (String key : featuresMap.keySet()) {
                 nbOfFeatures += featuresMap.get(key).size();
+            }
+
+            featuresNoValueMap = featureFileExtractor.loadFeaturesNoValue();
+            for (String feature : featuresNoValueMap) {
+                nbOfFeatures++;
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -67,6 +74,12 @@ public class FeatureWikidataExtractor {
         // properties and values got directly from Wikidata
         Map<String, List<String>> propertiesWiki = wikidataElement.getProperties();
 
+        // get the list of properties based on the result of 'data/resource/feature_mapper_no_value.csv'
+        List<String> propertyNoValueFeatureMapper = new ArrayList<>();
+        for (String propertyNoValueGot : featuresNoValueMap) {
+            propertyNoValueFeatureMapper.add(propertyNoValueGot);
+        }
+
         // get the list of properties-values based on the result of 'data/resource/feature_mapper.csv'
         List<String> propertyValueFeatureMapper = new ArrayList<>();
         for (Map.Entry<String, List<String>> propertyGot : featuresMap.entrySet()) {
@@ -80,8 +93,10 @@ public class FeatureWikidataExtractor {
 
         // get the list of properties-values based on the result directly from Wikidata
         List<String> propertyValueWikidata = new ArrayList<>();
+        List<String> propertyNoValueWikidata = new ArrayList<>();
         for (Map.Entry<String, List<String>> propertyGot : propertiesWiki.entrySet()) {
             String property = propertyGot.getKey();
+            propertyNoValueWikidata.add(property);
             List<String> values = propertyGot.getValue();
             for (String value : values) {
                 String propertyValue = property + "_" + value;
@@ -91,8 +106,19 @@ public class FeatureWikidataExtractor {
 
         Integer[] featureVector = new Integer[nbOfFeatures];
 
-        // put 1 if property-value for entities in Wikidata match with the list of 'data/resource/feature_mapper.csv', 0 if they aren't found
         int idx = 0;
+
+        // put 1 if property for entities in Wikidata match with the list of 'data/resource/feature_mapper.csv', otherwise put 0
+        for (String propertyNoValue : propertyNoValueFeatureMapper) {
+            if (propertyNoValueWikidata.contains(propertyNoValue)){
+                featureVector[idx] = 1;
+            } else {
+                featureVector[idx] = 0;
+            }
+            idx++;
+        }
+
+        // put 1 if property-value for entities in Wikidata match with the list of 'data/resource/feature_mapper.csv', otherwise put 0
         for (String propertyValue : propertyValueFeatureMapper) {
             if (propertyValueWikidata.contains(propertyValue)) {
                 featureVector[idx] = 1;
@@ -126,11 +152,13 @@ public class FeatureWikidataExtractor {
 
         // properties and values got directly from Wikidata
         Map<String, List<String>> propertiesWiki = wikidataElement.getProperties();
+        List<String> propertiesNoValueWiki = wikidataElement.getPropertiesNoValue();
 
         // get the list of properties-values based on the result directly from Wikidata
         List<String> propertyValueWikidata = new ArrayList<>();
         for (Map.Entry<String, List<String>> propertyGot : propertiesWiki.entrySet()) {
             String property = propertyGot.getKey();
+            propertyValueWikidata.add(property);
             List<String> values = propertyGot.getValue();
             for (String value : values) {
                 String propertyValue = property + "_" + value;
@@ -155,9 +183,15 @@ public class FeatureWikidataExtractor {
             if (csvReader.readNext() == null) {
 
                 Map<String, List<String>> featuresMap = featureFileExtractor.loadFeatures();
+                List<String> featuresNoValueMap = featureFileExtractor.loadFeaturesNoValue();
 
                 String[] headerMain = {"WikidataID,LabelWikidata,RealClass,PredictedClass"};
                 List<String> headerProperties = new ArrayList<>();
+
+                for (String propertyNoValueGot : featuresNoValueMap) {
+                    headerProperties.add(propertyNoValueGot);
+                }
+
                 for (Map.Entry<String, List<String>> propertyGot : featuresMap.entrySet()) {
                     String property = propertyGot.getKey();
                     List<String> values = propertyGot.getValue();
@@ -166,6 +200,7 @@ public class FeatureWikidataExtractor {
                         headerProperties.add(propertyValue);
                     }
                 }
+
                 String[] header = (String[]) ArrayUtils.addAll(headerMain, headerProperties.toArray());
                 csvWriter.writeNext(header);
             }

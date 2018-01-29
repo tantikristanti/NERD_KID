@@ -43,6 +43,7 @@ public class MainTrainerGenerator {
 
         // get the list of features
         Map<String, List<String>> resultFeature = featureFileExtractor.loadFeatures();
+        List<String> resultFeatureNoValue = featureFileExtractor.loadFeaturesNoValue();
 
         // get the list classes
         List<String> resultClass = classExtractor.loadClasses();
@@ -54,6 +55,7 @@ public class MainTrainerGenerator {
         arffFileGenerator.addHeader();
 
         // add attributes and class attribute
+        arffFileGenerator.addAttributeNoValue(resultFeatureNoValue);
         arffFileGenerator.addAttribute(resultFeature);
         arffFileGenerator.addClassHeader(resultClass);
 

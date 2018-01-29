@@ -88,6 +88,26 @@ public class ArffFileGenerator {
         return this;
     }
 
+    public ArffFileGenerator addAttributeNoValue(List<String> attributeListNoValue) {
+        if (hasBody) {
+            throw new RuntimeException("Cannot add attribute definition. ");
+        }
+        try {
+
+            for (String property : attributeListNoValue) {
+                writer.append("@ATTRIBUTE")
+                        .append(" ")
+                        .append(property)
+                        .append(" {0,1}")
+                        .append("\n");
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException("Cannot write arff file.", e);
+        }
+
+        return this;
+    }
 
     public ArffFileGenerator addClassHeader(List<String> classValues) {
         try {
