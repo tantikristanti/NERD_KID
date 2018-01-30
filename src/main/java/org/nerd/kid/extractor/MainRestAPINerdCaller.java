@@ -30,7 +30,7 @@ public class MainRestAPINerdCaller {
 
         if (parsedOptions.has("output")) {
             String jsonDataPath = (String) parsedOptions.valueOf("output") + "json/Result_NERDDataExtractor.json";
-            String csvDataPath = (String) parsedOptions.valueOf("output") + "csv/NewElements.csv";
+            String csvDataPath = (String) parsedOptions.valueOf("output") + "csv/NewElementsOriginal.csv";
 
             RestAPINERDCaller callAPIINERD = new RestAPINERDCaller();
 
@@ -77,7 +77,7 @@ public class MainRestAPINerdCaller {
                 csvWriter.close();
             }
 
-            System.out.print("Result CSV in '/data/csv/NewElements.csv'");
+            System.out.print("Result CSV in '/data/csv/NewElementsOriginal.csv'");
 
         } else {
             System.out.println("Missing parameter");

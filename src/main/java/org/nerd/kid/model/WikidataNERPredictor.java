@@ -103,7 +103,7 @@ public class WikidataNERPredictor {
 
     public void predictedResultAndProperties() throws Exception {
         try {
-            predictedResultAndProperties(new File("data/csv/NewElements.csv"));
+            predictedResultAndProperties(new File("data/csv/NewElementsOriginal.csv"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

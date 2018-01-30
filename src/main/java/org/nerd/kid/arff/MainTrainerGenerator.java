@@ -102,8 +102,6 @@ public class MainTrainerGenerator {
 
         } // end of looping to read file that contains Wikidata Id and class
 
-//            return inputList;
-
         // send only the unique wiki Ids (no duplicate)
         Set<WikidataElementInfos> inputListUniqueProcess = new HashSet<>();
         inputListUniqueProcess.addAll(inputList);
@@ -131,14 +129,21 @@ public class MainTrainerGenerator {
         CSVWriter csvWriter = null;
         // get the list of features
         Map<String, List<String>> resultFeature = featureFileExtractor.loadFeatures();
+        List<String> resultFeatureNoValue = featureFileExtractor.loadFeaturesNoValue();
 
         try {
             csvWriter = new CSVWriter(new FileWriter(csvDataPath), ',', CSVWriter.NO_QUOTE_CHARACTER);
 
             // the header's file
             List<String> headerPredict = Arrays.asList("WikidataID,LabelWikidata,Class");
+            List<String> headerPropertyNoValue = new ArrayList<String>();
             List<String> headerPropertyValue = new ArrayList<String>();
             List<String> headerCombined = new ArrayList<String>();
+
+            // header contains properties of Wiki Ids
+            for (String propertyNoValue : resultFeatureNoValue){
+                headerPropertyNoValue.add(propertyNoValue);
+            }
 
             for (Map.Entry<String, List<String>> property : resultFeature.entrySet()) {
                 List<String> values = property.getValue();
@@ -148,7 +153,9 @@ public class MainTrainerGenerator {
                     headerPropertyValue.add(propertyValue);
                 }
             }
+
             headerCombined.addAll(headerPredict);
+            headerCombined.addAll(headerPropertyNoValue);
             headerCombined.addAll(headerPropertyValue);
             csvWriter.writeNext(headerCombined.toArray(new String[headerCombined.size()]));
 

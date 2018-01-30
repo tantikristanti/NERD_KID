@@ -233,5 +233,4 @@ public class FeatureWikidataExtractor {
         }
     } // end of method 'saveFeatureWikidata'
 
-
 } // end of class FeatureWikidataExtractor
