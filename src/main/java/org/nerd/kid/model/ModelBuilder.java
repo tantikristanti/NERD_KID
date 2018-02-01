@@ -273,7 +273,7 @@ public class ModelBuilder {
             output.format("\t%.2f", resultRecall[i]);
         }
 
-        output.printf("\nSpesificity\t:");
+        output.printf("\nSpecificity\t:");
         for (int i = 0; i <= max; i++) {
             output.format("\t%.2f", resultSpecificity[i]);
         }

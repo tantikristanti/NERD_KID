@@ -9,8 +9,8 @@ import static org.junit.Assert.*;
 public class ModelEvaluationTest {
 
     ModelEvaluation target;
-    int[] testYClass = {0, 1, 2, 0, 0, 1, 2, 0, 1, 0, 1, 2, 2};
-    int[] testYPredictClass = {0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 2, 1, 1};
+    int[] testYClass =          {0, 1, 2, 0, 0, 1, 2, 0, 1, 0, 1, 2, 2};
+    int[] testYPredictClass =   {0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 2, 1, 1};
     int maxIndexClass;
 
     @Before

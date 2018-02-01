@@ -7,7 +7,7 @@ import smile.data.AttributeDataset;
 import java.io.*;
 
 /*
-* clas to predict test data
+* class to predict test data
 * */
 
 public class DataPredictor {
