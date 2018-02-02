@@ -12,6 +12,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.nerd.kid.data.WikidataElement;
+import org.nerd.kid.exception.DataException;
+import org.nerd.kid.exception.RemoteServiceException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,16 +31,27 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
 
     @Override
     public WikidataElement getElement(String wikiId) throws Exception {
-
         HttpClient httpclient = HttpClientBuilder.create().build();
         HttpHost target = new HttpHost(nerdUrl);
         HttpGet request = new HttpGet(nerdPath + "/" + wikiId);
         HttpResponse httpResponse = httpclient.execute(target, request);
         HttpEntity entity = httpResponse.getEntity();
 
-        String response = IOUtils.toString(entity.getContent(), UTF_8);
+        String response = null;
+        // get the response Id for throw the exception if it's not OK == 200
+        int responseId = httpResponse.getStatusLine().getStatusCode();
 
-        return fromJson(response);
+        if (responseId == 200) {
+            response = IOUtils.toString(entity.getContent(), UTF_8);
+            if(response.contains("wikidataId")){
+                return fromJson(response);
+            } else {
+                throw new DataException("Data parsing exception.");
+            }
+        }
+        else{
+            throw new RemoteServiceException("Remote service exception.");
+        }
     }
 
     public WikidataElement fromJson(String input) {
