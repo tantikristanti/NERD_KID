@@ -127,7 +127,6 @@ Q1408,
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preannotation.MainPreAnnotation"```
 
 - The result can be seen in `result/csv/ResultPredictedClass.csv`
-![ResultPrediction](pic/ResultPrediction.jpg)
 
 
 **7. Web version**
