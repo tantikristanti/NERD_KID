@@ -136,6 +136,8 @@ Online version of class prediction can be accessed here `http://nerd.huma-num.fr
 
 User can only just change the Wikidata Id started with 'Q' and then the number.
 
+![ResultPrediction](pic/ResultPredictionWeb.jpg)
+
 - The result will be Wikidata Id, the properties, and the result of predicted class.
 
 ## Contact
