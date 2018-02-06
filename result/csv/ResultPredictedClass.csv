@@ -1,1 +1,106 @@
 WikidataID,LabelWikidata,Class
+Q1,Universe,PERIOD
+Q2,Earth,PERIOD
+Q3,Life,PERIOD
+Q4,Death,PERIOD
+Q5,Human,PERIOD
+Q8,Happiness,PERIOD
+Q13,Triskaidekaphobia,PERIOD
+Q15,Africa,PERIOD
+Q18,South America,PERIOD
+Q19,Cheating,PERIOD
+Q44,Beer,PERIOD
+Q46,Europe,PERIOD
+Q48,Asia,PERIOD
+Q49,North America,PERIOD
+Q53,Club-Mate,PERIOD
+Q54,All your base are belong to us,PERIOD
+Q56,Lolcat,PERIOD
+Q57,Never Gonna Give You Up,PERIOD
+Q58,Penis,PERIOD
+Q68,Computer,PERIOD
+Q73,Internet Relay Chat,PERIOD
+Q75,Internet,PERIOD
+Q81,Carrot,PERIOD
+Q82,Printer (computing),PERIOD
+Q83,MediaWiki,PERIOD
+Q86,Headache,PERIOD
+Q89,Apple,PERIOD
+Q94,Android (operating system),PERIOD
+Q97,Atlantic Ocean,PERIOD
+Q98,Pacific Ocean,PERIOD
+Q101,Lopadotemachoselachogaleokranioleipsanodrimhypotrimmatosilphioparaomelitokatakechymenokichlepikossyphophattoperisteralektryonoptekephalliokigklopeleiolagoiosiraiobaphetraganopterygon,PERIOD
+Q102,Pneumonoultramicroscopicsilicovolcanoconiosis,PERIOD
+Q107,Space,PERIOD
+Q112,Mars (mythology),PERSON
+Q113,Schulze method,PERIOD
+Q116,Monarch,PERIOD
+Q133,Mixed-member proportional representation,PERIOD
+Q134,Bishop (chess),PERIOD
+Q135,Pawn (chess),PERIOD
+Q136,Knight (chess),PERIOD
+Q137,Rook (chess),PERIOD
+Q138,King (chess),PERIOD
+Q139,Queen (chess),PERIOD
+Q141,Timbits,PERIOD
+Q143,Esperanto,PERIOD
+Q147,Kitten,PERIOD
+Q149,Nyan Cat,PERIOD
+Q150,French language,PERIOD
+Q151,Wiktionary,PERIOD
+Q154,Alcoholic drink,PERIOD
+Q156,Alcohol,PERIOD
+Q161,Fiber,PERIOD
+Q162,Optical fiber,PERIOD
+Q164,Square,PERIOD
+Q165,Sea,PERIOD
+Q167,Pi,PERIOD
+Q168,Pi (letter),PERIOD
+Q169,Mango,PERIOD
+Q170,Pirate Parties International,PERIOD
+Q171,Wiki,PERIOD
+Q177,Pizza,PERIOD
+Q178,Pasta,PERIOD
+Q179,Boeing 747,PERIOD
+Q182,English,PERIOD
+Q188,German language,PERIOD
+Q190,God,PERIOD
+Q194,Rings of Saturn,PERIOD
+Q195,Chocolate,PERIOD
+Q196,Cherry,PERIOD
+Q197,Airplane,PERIOD
+Q198,War,PERIOD
+Q199,1,PERIOD
+Q200,2,PERIOD
+Q201,3,PERIOD
+Q202,4,PERIOD
+Q203,5,PERIOD
+Q204,0,PERIOD
+Q205,Infinity,PERIOD
+Q208,Rakfisk,PERIOD
+Q209,Rectangle,PERIOD
+Q210,Right angle,PERIOD
+Q245,Raspberry Pi,PERIOD
+Q246,Volkswagen,LOCATION
+Q247,Volkswagen Golf,PERIOD
+Q248,Intel,LOCATION
+Q249,Wireless,PERIOD
+Q250,Computer keyboard,PERIOD
+Q253,QWERTY,PERIOD
+Q256,Turkish language,PERIOD
+Q257,Mandelbrot set,PERIOD
+Q261,Linkin Park,PERIOD
+Q263,Wikisource,PERIOD
+Q274,Ardbeg distillery,LOCATION
+Q277,Kilchoman distillery,LOCATION
+Q278,Talisker distillery,LOCATION
+Q280,Lagavulin distillery,LOCATION
+Q281,Whisky,PERIOD
+Q282,Wine,PERIOD
+Q284,Cognac,PERIOD
+Q286,Leather,PERIOD
+Q287,Wood,PERIOD
+Q288,Tours,LOCATION
+Q289,Television,PERIOD
+Q290,Sex,PERIOD
+Q291,Pornography,PERIOD

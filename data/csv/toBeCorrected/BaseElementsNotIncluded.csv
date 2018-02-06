@@ -1,0 +1,527 @@
+WikidataID,LabelWikidata,Class
+Q1,Universe,LOCATION
+Q2,Earth,LOCATION
+Q3,Life,UNKNOWN
+Q4,Death,UNKNOWN
+Q5,Human,UNKNOWN
+Q8,Happiness,UNKNOWN
+Q13,Triskaidekaphobia,UNKNOWN
+Q15,Africa,LOCATION
+Q18,South America,LOCATION
+Q19,Cheating,UNKNOWN
+Q44,Beer,UNKNOWN
+Q46,Europe,LOCATION
+Q48,Asia,LOCATION
+Q49,North America,LOCATION
+Q53,Club-Mate,UNKNOWN
+Q54,All your base are belong to us,UNKNOWN
+Q56,Lolcat,UNKNOWN
+Q57,Never Gonna Give You Up,CREATION
+Q58,Penis,UNKNOWN
+Q68,Computer,UNKNOWN
+Q73,Internet Relay Chat,UNKNOWN
+Q75,Internet,UNKNOWN
+Q81,Carrot,UNKNOWN
+Q82,Printer (computing),UNKNOWN
+Q83,MediaWiki,UNKNOWN
+Q86,Headache,UNKNOWN
+Q89,Apple,UNKNOWN
+Q94,Android (operating system),UNKNOWN
+Q97,Atlantic Ocean,LOCATION
+Q98,Pacific Ocean,LOCATION
+Q101,Lopadotemachoselachogaleokranioleipsanodrimhypotrimmatosilphioparaomelitokatakechymenokichlepikossyphophattoperisteralektryonoptekephalliokigklopeleiolagoiosiraiobaphetraganopterygon,UNKNOWN
+Q102,Pneumonoultramicroscopicsilicovolcanoconiosis,UNKNOWN
+Q107,Space,UNKNOWN
+Q112,Mars (mythology),PERSON
+Q113,Schulze method,UNKNOWN
+Q116,Monarch,UNKNOWN
+Q133,Mixed-member proportional representation,UNKNOWN
+Q134,Bishop (chess),UNKNOWN
+Q135,Pawn (chess),UNKNOWN
+Q136,Knight (chess),UNKNOWN
+Q137,Rook (chess),UNKNOWN
+Q138,King (chess),UNKNOWN
+Q139,Queen (chess),UNKNOWN
+Q141,Timbits,UNKNOWN
+Q143,Esperanto,UNKNOWN
+Q147,Kitten,UNKNOWN
+Q149,Nyan Cat,UNKNOWN
+Q150,French language,CONCEPT
+Q151,Wiktionary,UNKNOWN
+Q154,Alcoholic drink,UNKNOWN
+Q156,Alcohol,UNKNOWN
+Q161,Fiber,UNKNOWN
+Q162,Optical fiber,UNKNOWN
+Q164,Square,UNKNOWN
+Q165,Sea,UNKNOWN
+Q167,Pi,UNKNOWN
+Q168,Pi (letter),UNKNOWN
+Q169,Mango,UNKNOWN
+Q170,Pirate Parties International,UNKNOWN
+Q171,Wiki,UNKNOWN
+Q177,Pizza,UNKNOWN
+Q178,Pasta,UNKNOWN
+Q179,Boeing 747,ARTIFACT
+Q182,English,UNKNOWN
+Q188,German language,CONCEPT
+Q190,God,UNKNOWN
+Q194,Rings of Saturn,LOCATION
+Q195,Chocolate,UNKNOWN
+Q196,Cherry,UNKNOWN
+Q197,Airplane,UNKNOWN
+Q198,War,UNKNOWN
+Q199,1,UNKNOWN
+Q200,2,UNKNOWN
+Q201,3,UNKNOWN
+Q202,4,UNKNOWN
+Q203,5,UNKNOWN
+Q204,0,UNKNOWN
+Q205,Infinity,UNKNOWN
+Q208,Rakfisk,UNKNOWN
+Q209,Rectangle,UNKNOWN
+Q210,Right angle,UNKNOWN
+Q245,Raspberry Pi,UNKNOWN
+Q246,Volkswagen,UNKNOWN
+Q247,Volkswagen Golf,UNKNOWN
+Q248,Intel,UNKNOWN
+Q249,Wireless,UNKNOWN
+Q250,Computer keyboard,UNKNOWN
+Q253,QWERTY,UNKNOWN
+Q256,Turkish language,CONCEPT
+Q257,Mandelbrot set,UNKNOWN
+Q261,Linkin Park,UNKNOWN
+Q263,Wikisource,UNKNOWN
+Q274,Ardbeg distillery,UNKNOWN
+Q277,Kilchoman distillery,UNKNOWN
+Q278,Talisker distillery,UNKNOWN
+Q280,Lagavulin distillery,UNKNOWN
+Q281,Whisky,UNKNOWN
+Q282,Wine,UNKNOWN
+Q284,Cognac,UNKNOWN
+Q286,Leather,UNKNOWN
+Q287,Wood,UNKNOWN
+Q288,Tours,UNKNOWN
+Q289,Television,UNKNOWN
+Q290,Sex,UNKNOWN
+Q291,Pornography,UNKNOWN
+Q300,Sagas of Icelanders,UNKNOWN
+Q305,Corporal punishment,UNKNOWN
+Q309,History,UNKNOWN
+Q315,Language,UNKNOWN
+Q316,Love,UNKNOWN
+Q317,Dictatorship,PERIOD
+Q321,Milky Way,LOCATION
+Q323,Big Bang,UNKNOWN
+Q325,Digital dark age,UNKNOWN
+Q328,English Wikipedia,UNKNOWN
+Q333,Astronomy,UNKNOWN
+Q336,Science,UNKNOWN
+Q338,Cosmology,UNKNOWN
+Q341,Free software,UNKNOWN
+Q348,Time capsule,UNKNOWN
+Q349,Sport,UNKNOWN
+Q356,Google+,UNKNOWN
+Q358,National heritage site,UNKNOWN
+Q363,World War III,UNKNOWN
+Q366,Corruption,UNKNOWN
+Q367,Wikibooks,UNKNOWN
+Q369,Wikiquote,UNKNOWN
+Q371,!!!,UNKNOWN
+Q373,Wikivoyage,UNKNOWN
+Q374,Vodka,UNKNOWN
+Q375,Waffle,UNKNOWN
+Q376,Clock,UNKNOWN
+Q380,,UNKNOWN
+Q381,Ubuntu (operating system),UNKNOWN
+Q388,Linux,UNKNOWN
+Q394,Metrology,UNKNOWN
+Q395,Mathematics,UNKNOWN
+Q396,U2,UNKNOWN
+Q397,Latin,UNKNOWN
+Q401,Cuneiform script,UNKNOWN
+Q405,Moon,LOCATION
+Q411,Astrobiology,UNKNOWN
+Q412,Pioneer plaque,UNKNOWN
+Q413,Physics,UNKNOWN
+Q415,Silbo Gomero,UNKNOWN
+Q416,Disk magazine,UNKNOWN
+Q418,Telecommunication,UNKNOWN
+Q420,Biology,UNKNOWN
+Q421,Unidentified flying object,UNKNOWN
+Q426,Animal rights,UNKNOWN
+Q430,Dinosaur,UNKNOWN
+Q431,Zoology,UNKNOWN
+Q432,Islam,UNKNOWN
+Q441,Botany,UNKNOWN
+Q445,Bibliotheca universalis,UNKNOWN
+Q446,Wheel,UNKNOWN
+Q450,Mind,UNKNOWN
+Q452,52-hertz whale,UNKNOWN
+Q454,Peace,UNKNOWN
+Q455,Encyclopædia Britannica,UNKNOWN
+Q460,Interpedia,UNKNOWN
+Q465,DBpedia,UNKNOWN
+Q466,World Wide Web,UNKNOWN
+Q469,Dyson sphere,UNKNOWN
+Q470,World Brain,UNKNOWN
+Q471,Memex,UNKNOWN
+Q473,The Library of Babel,UNKNOWN
+Q474,Aqueduct (bridge),UNKNOWN
+Q476,Ñ,UNKNOWN
+Q481,.xxx,UNKNOWN
+Q482,Poetry,UNKNOWN
+Q483,Megaupload,UNKNOWN
+Q484,Laziness,UNKNOWN
+Q485,Computer virus,UNKNOWN
+Q487,Smile,UNKNOWN
+Q491,Friendship,UNKNOWN
+Q492,Memory,UNKNOWN
+Q496,Feces,UNKNOWN
+Q497,Anus,UNKNOWN
+Q499,Axilla,UNKNOWN
+Q503,Banana,UNKNOWN
+Q506,Flower,UNKNOWN
+Q507,Googol,UNKNOWN
+Q508,Googolplex,UNKNOWN
+Q514,Anatomy,UNKNOWN
+Q515,City,UNKNOWN
+Q518,Betta edithae,UNKNOWN
+Q519,Shit,UNKNOWN
+Q521,Physiology,UNKNOWN
+Q522,Hyper Text Coffee Pot Control Protocol,UNKNOWN
+Q528,PSR B1257+12,UNKNOWN
+Q531,Light-year,UNKNOWN
+Q532,Village,UNKNOWN
+Q534,,LOCATION
+Q538,Oceania,UNKNOWN
+Q540,Freenet,UNKNOWN
+Q542,Sport of athletics,UNKNOWN
+Q543,Censorship,UNKNOWN
+Q544,Solar System,UNKNOWN
+Q545,Baltic Sea,UNKNOWN
+Q547,,LOCATION
+Q553,Tooth,UNKNOWN
+Q554,Cervelle de canut,UNKNOWN
+Q561,Human tooth,UNKNOWN
+Q564,Hell,UNKNOWN
+Q565,Wikimedia Commons,UNKNOWN
+Q566,Purgatory,UNKNOWN
+Q570,Loudspeaker,UNKNOWN
+Q571,Book,UNKNOWN
+Q575,Night,UNKNOWN
+Q587,All Saints' Day,UNKNOWN
+Q592,Gay,UNKNOWN
+Q599,Wedding dress of Kate Middleton,UNKNOWN
+Q606,,ANIMAL
+Q608,Human sexual activity,UNKNOWN
+Q616,Beaujolais,UNKNOWN
+Q638,Music,UNKNOWN
+Q639,Optical aberration,UNKNOWN
+Q642,Naruto,UNKNOWN
+Q646,Thermometer,UNKNOWN
+Q652,Italian language,CONCEPT
+Q653,Chihuahua (dog),ANIMAL
+Q659,North,PERIOD
+Q661,Hydraulic ram,PERIOD
+Q662,Neon Genesis Evangelion,PERIOD
+Q666,Number of the Beast,PERIOD
+Q667,South,PERIOD
+Q673,One Piece,PERIOD
+Q676,Prose,PERIOD
+Q679,West,PERIOD
+Q684,East,PERIOD
+Q689,Bastille (band),PERIOD
+Q693,Fable,PERIOD
+Q698,Firefox,PERIOD
+Q699,Fairy tale,PERIOD
+Q718,Chess,PERIOD
+Q728,Weapon,PERIOD
+Q732,Francesinha,LOCATION
+Q735,Art,PERIOD
+Q738,Croque-monsieur,PERIOD
+Q748,Buddhism,PERIOD
+Q777,Google Chrome,PERIOD
+Q780,Chicken,PERIOD
+Q788,Arctic Ocean,PERIOD
+Q795,Stupidity,PERIOD
+Q799,Wisdom,PERIOD
+Q808,Virus,ANIMAL
+Q809,Polish language,LOCATION
+Q825,God in Christianity,PERIOD
+Q828,Americas,PERIOD
+Q831,Ciao,PERIOD
+Q844,James Bond,PERIOD
+Q847,Tennis,PERIOD
+Q850,MySQL,PERIOD
+Q856,Barcode,PERIOD
+Q860,Foobar,PERIOD
+Q864,Pokémon,PERIOD
+Q870,Train,PERIOD
+Q872,Radio broadcasting,PERIOD
+Q886,The Simpsons,PERIOD
+Q893,Lemonade,PERIOD
+Q896,Mountain Dew,PERIOD
+Q901,Scientist,PERIOD
+Q904,Bleach (manga),PERIOD
+Q933,South Pole,PERIOD
+Q934,North Pole,PERIOD
+Q936,OpenStreetMap,PERIOD
+Q943,Yellow,PERIOD
+Q944,Quantum mechanics,PERIOD
+Q951,Toilet paper orientation,PERIOD
+Q957,List of lists of lists,PERIOD
+Q964,Wikinews,PERIOD
+Q978,Meme,PERIOD
+Q982,FIS Alpine Ski World Cup,PERIOD
+Q998,Infant,PERIOD
+Q1004,Comics,PERIOD
+Q1023,,PERSON
+Q1026,Poles,PERIOD
+Q1052,Rainbow,PERIOD
+Q1057,Metabolism,PERIOD
+Q1059,Immune system,PERIOD
+Q1063,Evolution,PERIOD
+Q1069,Geology,PERIOD
+Q1071,Geography,PERIOD
+Q1072,Heart,PERIOD
+Q1073,Brain,PERIOD
+Q1074,Skin,PERIOD
+Q1075,Color,PERIOD
+Q1076,Lawson (band),PERIOD
+Q1078,Birds of Tokyo,PERIOD
+Q1084,Noun,PERIOD
+Q1088,Blue,PERIOD
+Q1092,Star Trek,PERIOD
+Q1110,United Federation of Planets,LOCATION
+Q1111,Electric charge,PERIOD
+Q1120,Nice model,PERIOD
+Q1143,,LOCATION
+Q1147,,LOCATION
+Q1150,Mercury (mythology),PERSON
+Q1157,,LOCATION
+Q1161,Limburg,PERIOD
+Q1213,Salentino dialect,PERIOD
+Q1215,Straight edge,PERIOD
+Q1231,Kosovo field (region),PERIOD
+Q1239,Indian Ocean,PERIOD
+Q1247,Caribbean Sea,PERIOD
+Q1251,Cottian Alps,PERIOD
+Q1269,Fruit preserves,PERIOD
+Q1287,Jansenism,PERIOD
+Q1293,Draughts,PERIOD
+Q1299,The Beatles,PERIOD
+Q1315,Equinox,PERIOD
+Q1321,Spanish language,PERIOD
+Q1337,Leet,PERIOD
+Q1349,HC Lada Togliatti,PERIOD
+Q1351,Edgar (opera),PERIOD
+Q1364,Fruit,PERIOD
+Q1367,Monkey,PERIOD
+Q1368,Money,PERIOD
+Q1375,Dungeons & Dragons,PERIOD
+Q1406,Microsoft Windows,PERIOD
+Q1412,Finnish language,PERIOD
+Q1420,Car,PERIOD
+Q1431,KDE,PERIOD
+Q1441,Wanfried agreement,LOCATION
+Q1444,Organ (music),PERIOD
+Q1448,Hillbilly,PERIOD
+Q1455,Field hockey,PERIOD
+Q1472,Crohn's disease,PERIOD
+Q1474,,ANIMAL
+Q1477,Ulcerative colitis,PERIOD
+Q1483,Craniopagus parasiticus,PERIOD
+Q1485,Systemic lupus erythematosus,PERIOD
+Q1487,Hacker,PERIOD
+Q1501,Swimming pool,PERIOD
+Q1525,Roundabout,PERIOD
+Q1529,Traffic circle,PERIOD
+Q1536,Coordinated Universal Time,PERIOD
+Q1542,,LOCATION
+Q1566,Tobacco,PERIOD
+Q1568,Hindi,PERIOD
+Q1571,Marathi language,PERIOD
+Q1574,Avast Antivirus,PERIOD
+Q1575,Internet Explorer,PERIOD
+Q1576,Cigar,PERIOD
+Q1577,,LOCATION
+Q1578,Cigarette,LOCATION
+Q1586,Waltershof,LOCATION
+Q1614,,LOCATION
+Q1617,Urdu,PERIOD
+Q1621,,LOCATION
+Q1661,Verse (poetry),PERIOD
+Q1693,North Sea,PERIOD
+Q1700,,LOCATION
+Q1713,Citation,PERIOD
+Q1734,Volleyball,PERIOD
+Q1772,Epitaph,PERIOD
+Q1788,,PERSON
+Q1810,,LOCATION
+Q1811,Astronomical unit,PERIOD
+Q1814,,LOCATION
+Q1816,,LOCATION
+Q1821,,LOCATION
+Q1824,,LOCATION
+Q1827,Red wine,PERIOD
+Q1834,Death Note,PERIOD
+Q1847,Togliatti surface,PERIOD
+Q1852,X-ray astronomy,PERIOD
+Q1859,True Jesus Church,PERIOD
+Q1860,English language,PERIOD
+Q1871,Diplomacy (game),PERIOD
+Q1889,Diplomacy,PERIOD
+Q1932,Space Race,PERIOD
+Q1941,Atmosphere of Venus,PERIOD
+Q1968,Formula One,PERIOD
+Q2012,Maya calendar,PERIOD
+Q2013,Wikidata,PERIOD
+Q2020,Dragon Ball,PERIOD
+Q2027,Linux Mint,PERIOD
+Q2029,History of Lyon,PERIOD
+Q2033,Notepad++,PERIOD
+Q2053,HTML5,PERIOD
+Q2063,JSON,PERIOD
+Q2078,Scalable Vector Graphics,PERIOD
+Q2093,Document Object Model,PERIOD
+Q2095,Food,PERIOD
+Q2101,Elementary charge,PERIOD
+Q2102,Snake,PERIOD
+Q2111,Speed of light,PERIOD
+Q2115,XML,PERIOD
+Q2117,Canada AM,PERIOD
+Q2122,Oral sex,PERIOD
+Q2130,Favicon,PERIOD
+Q2134,LOL,PERIOD
+Q2146,UTC−12:00,PERIOD
+Q2154,UTC−11:00,PERIOD
+Q2159,UTC−10:30,PERIOD
+Q2163,UTC−10:00,PERIOD
+Q2171,UTC−09:30,PERIOD
+Q2182,QRpedia,PERIOD
+Q2183,UTC−09:00,PERIOD
+Q2192,GIF,PERIOD
+Q2194,Windows Media Audio,PERIOD
+Q2195,JPEG,PERIOD
+Q2197,Romulus and Remus,PERIOD
+Q2198,UTC−08:30,PERIOD
+Q2204,UTC−08:00,PERIOD
+Q2212,UTC−07:00,PERIOD
+Q2268,Old Nubian language,PERIOD
+Q2269,Industrial Revolution,PERIOD
+Q2305,Franklin's lost expedition,PERIOD
+Q2306,Pink Floyd,PERIOD
+Q2328,Coppermine Expedition of 1819–22,PERIOD
+Q2329,Chemistry,PERIOD
+Q2331,Led Zeppelin,PERIOD
+Q2346,Analytical chemistry,PERIOD
+Q2349,69 (sex position),PERIOD
+Q2371,Celebrity Solstice,PERIOD
+Q2409,Hydrochloric acid,PERIOD
+Q2444,GloFish,PERIOD
+Q2469,Andromeda Galaxy,PERIOD
+Q2482,Jameson Irish Whiskey,PERIOD
+Q2490,Barred spiral galaxy,PERIOD
+Q2493,Data compression,PERIOD
+Q2537,Natural satellite,PERIOD
+Q2541,Prediction by partial matching,PERIOD
+Q2565,Titan (moon),PERIOD
+Q2600,Cunt,PERIOD
+Q2799,Delta encoding,PERIOD
+Q2813,Coca-Cola,PERIOD
+Q2835,Retroreflector,PERIOD
+Q2863,Eau de Cologne,PERIOD
+Q2864,Cat's eye (road),PERIOD
+Q2903,,LOCATION
+Q2906,,LOCATION
+Q2911,,LOCATION
+Q2915,Dairy cattle,PERIOD
+Q2918,,LOCATION
+Q2935,Calf,PERIOD
+Q2945,History of Canada,PERIOD
+Q2977,Cathedral,PERIOD
+Q2979,Liberty,PERIOD
+Q3010,Boy,PERIOD
+Q3031,Girl,PERIOD
+Q3039,Cassoulet,PERIOD
+Q3041,Magnetosphere of Jupiter,PERIOD
+Q3045,Atmosphere of Jupiter,PERIOD
+Q3060,Rings of Jupiter,PERIOD
+Q3071,Punk rock,PERIOD
+Q3074,Traffic code,PERIOD
+Q3076,Comet Shoemaker–Levy 9,PERIOD
+Q3089,Journal amusant,PERIOD
+Q3096,Volcanology of Io,PERIOD
+Q3108,Lyon Tablet,PERIOD
+Q3122,Home Instead Senior Care,PERIOD
+Q3123,Io (moon),PERIOD
+Q3133,Green,PERIOD
+Q3134,Callisto (moon),PERIOD
+Q3142,Red,PERIOD
+Q3143,Europa (moon),PERIOD
+Q3169,Ganymede (moon),PERIOD
+Q3189,2012 Geneva Open Challenger,PERIOD
+Q3191,Sarcophagus of the Triumph of Bacchus (Lyon),PERIOD
+Q3196,Fire,PERIOD
+Q3199,Philinidae,PERIOD
+Q3230,Atmosphere of Earth,PERIOD
+Q3245,David Terry,PERIOD
+Q3248,Robert Newton (disambiguation),PERIOD
+Q3252,William Meredith,PERIOD
+Q3257,Amalthea (moon),PERIOD
+Q3263,Robert Rose,PERIOD
+Q3269,The Rezillos,PERIOD
+Q3276,Exploration of Jupiter,PERIOD
+Q3283,Geometric phase,PERIOD
+Q3294,Clarity (Zedd album),PERIOD
+Q3297,Moonmadness,PERIOD
+Q3303,Enceladus,PERIOD
+Q3310,SAKO,PERIOD
+Q3322,Titania (moon),PERIOD
+Q3332,Oberon (moon),PERIOD
+Q3333,,LOCATION
+Q3338,Umbriel (moon),PERIOD
+Q3341,Rubber duck debugging,PERIOD
+Q3343,Ariel (moon),PERIOD
+Q3352,Miranda (moon),PERIOD
+Q3359,Triton (moon),PERIOD
+Q3409,Sirius,PERIOD
+Q3427,Vega,PERIOD
+Q3450,Main sequence,PERIOD
+Q3465,Jinn,PERIOD
+Q3496,,LOCATION
+Q3521,Alien Siege,PERIOD
+Q3523,Secret Museum_ Naples,PERIOD
+Q3535,Formation and evolution of the Solar System,PERIOD
+Q3553,,LOCATION
+Q3568,Focus (geometry),PERIOD
+Q3577,Hoplitodromos,PERIOD
+Q3578,1867 in art,PERIOD
+Q3580,William Gibson (disambiguation),PERIOD
+Q3588,Revolutions of 1848,PERIOD
+Q3614,Occipital nerve stimulation,PERIOD
+Q3623,Dukes of Dixieland,PERIOD
+Q3638,Superman (franchise),PERIOD
+Q3658,List of Catholic dioceses (alphabetical),PERIOD
+Q3672,Space Flyer Unit,PERIOD
+Q3694,Holiday cottage,PERIOD
+Q3710,Foot (unit),PERIOD
+Q3721,Fraternities and sororities,PERIOD
+Q3842,Marxist humanism,PERIOD
+Q3849,Sony Ericsson M600,PERIOD
+Q3858,Music of Israel,PERIOD
+Q3872,Neuropsychology,PERIOD
+Q3887,Solar eclipse,PERIOD
+Q3913,Binary number,PERIOD
+Q3918,University,PERIOD
+Q3937,Supernova,PERIOD
+Q3944,Local Group,PERIOD
+Q3947,House,PERIOD
+Q3950,Villa,PERIOD
+Q3957,Town,PERIOD
+Q3962,Laptop,PERIOD
+Q3966,Computer hardware,PERIOD
+Q3968,Algebra,PERIOD
+Q3972,Power supply unit (computer),PERIOD
+Q3975,Computer case,PERIOD
+Q3988,Real-time computing,PERIOD
