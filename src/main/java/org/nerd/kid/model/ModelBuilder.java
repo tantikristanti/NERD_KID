@@ -203,6 +203,7 @@ public class ModelBuilder {
         int[] FP = evaluation.countingFalsePositive(confusMatrix, max);
         int[] FN = evaluation.countingFalseNegative(confusMatrix, max);
         int totalAll = evaluation.countingTotalClass(confusMatrix, max);
+        double[] resultAccuracy = evaluation.accuracy(TP, TN, FP, FN);
         double[] resultPrecision = evaluation.precision(TP, FP);
         double[] resultRecall = evaluation.recall(TP, FN);
         double[] resultSpecificity = evaluation.specificity(TN, FP);
@@ -211,21 +212,21 @@ public class ModelBuilder {
         // classfied instances
         output.println("** Classification with Random Forest of " + forest.size() + " trees **");
         output.print("\n");
-        output.format("Total of instances\t\t\t:\t %d \n", sizeDataAll);
-        output.format("Number of instance trained\t\t:\t %d \n", sizeDataTrained);
+        output.format("Total of instances\t\t\t\t\t:\t %d \n", sizeDataAll);
+        output.format("Number of instance trained\t\t\t:\t %d \n", sizeDataTrained);
         output.format("Number of instance predicted\t\t:\t %d \n", sizeDataPredicted);
         output.format("Correctly classified instances\t\t:\t %d (%.3f %%) %n", count_classified, count_classified / total_instances * 100.00);
         output.format("Incorrectly classified instances\t:\t %d (%.3f %%) %n", count_error, count_error / total_instances * 100.00);
-        output.format("Out of Bag (OOB) error rate\t\t:\t %.3f%n", forest.error());
-        output.format("Specificity\t\t\t\t:\t %.3f %n", evaluation.averageSpecificity(resultSpecificity));
-        output.format("accuracy\t\t\t\t:\t %.3f%n", evaluation.accuracy(TP, totalAll));
+        output.format("Out of Bag (OOB) error rate\t\t\t:\t %.3f%n", forest.error());
+        output.format("Specificity\t\t\t\t\t\t\t:\t %.3f %n", evaluation.averageSpecificity(resultSpecificity));
+        output.format("Average of accuracy\t\t\t\t\t:\t %.3f%n", evaluation.averageAccuracy(resultAccuracy));
         // FMeasure, Precision, Recall for all classes
-        output.format("Macro Average Precision\t\t\t:\t %.3f%n", evaluation.averagePrecisionMacro(resultPrecision));
-        output.format("Micro Average Precision\t\t\t:\t %.3f%n", evaluation.averagePrecisionMicro(TP, FP));
-        output.format("Macro Average Recall\t\t\t:\t %.3f%n", evaluation.averageRecallMacro(resultRecall));
-        output.format("Micro Average Recall\t\t\t:\t %.3f%n", evaluation.averageRecallMicro(TP, FN));
-        output.format("Macro Average FMeasure\t\t\t:\t %.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMacro(resultPrecision), evaluation.averageRecallMacro(resultRecall)));
-        output.format("Micro Average FMeasure\t\t\t:\t %.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMicro(TP, FP), evaluation.averageRecallMicro(TP, FN)));
+        output.format("Macro Average of Precision\t\t\t:\t %.3f%n", evaluation.averagePrecisionMacro(resultPrecision));
+        output.format("Micro Average of Precision\t\t\t:\t %.3f%n", evaluation.averagePrecisionMicro(TP, FP));
+        output.format("Macro Average of Recall\t\t\t\t:\t %.3f%n", evaluation.averageRecallMacro(resultRecall));
+        output.format("Micro Average of Recall\t\t\t\t:\t %.3f%n", evaluation.averageRecallMicro(TP, FN));
+        output.format("Macro Average of FMeasure\t\t\t:\t %.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMacro(resultPrecision), evaluation.averageRecallMacro(resultRecall)));
+        output.format("Micro Average of FMeasure\t\t\t:\t %.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMicro(TP, FP), evaluation.averageRecallMicro(TP, FN)));
 
         output.println("\n** Confusion Matrix **");
         output.println("Row: Actual; Column: Predicted");
@@ -238,7 +239,7 @@ public class ModelBuilder {
         }
         output.print("}\n\n");
 
-        output.print("Class:\t\t");
+        output.print("Class:\t");
         for (int i = 0; i <= max; i++) {
             output.print(i + "\t");
         }
@@ -255,12 +256,12 @@ public class ModelBuilder {
         output.println("\n** Validation for each class **");
         output.printf("\nClass\t\t:");
         for (int i = 0; i <= max; i++) {
-            output.printf("\t" + i);
+            output.printf("\t" + i + "\t");
         }
 
-        output.printf("\nFMeasure\t:");
+        output.printf("\nAccuracy\t:");
         for (int i = 0; i <= max; i++) {
-            output.format("\t%.2f", resultFmeasure[i]);
+            output.format("\t%.2f", resultAccuracy[i]);
         }
 
         output.printf("\nPrecision\t:");
@@ -271,6 +272,11 @@ public class ModelBuilder {
         output.printf("\nRecall\t\t:");
         for (int i = 0; i <= max; i++) {
             output.format("\t%.2f", resultRecall[i]);
+        }
+
+        output.printf("\nFMeasure\t:");
+        for (int i = 0; i <= max; i++) {
+            output.format("\t%.2f", resultFmeasure[i]);
         }
 
         output.printf("\nSpecificity\t:");

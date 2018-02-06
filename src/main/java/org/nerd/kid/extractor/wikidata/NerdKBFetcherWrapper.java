@@ -43,30 +43,29 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
 
         if (responseId == 200) {
             response = IOUtils.toString(entity.getContent(), UTF_8);
-            if(response.contains("wikidataId")){
+            if (response.contains("wikidataId")) {
                 return fromJson(response);
             } else {
                 throw new DataException("Data parsing exception.");
             }
-        }
-        else{
+        } else {
             throw new RemoteServiceException("Remote service exception.");
         }
     }
 
-    public WikidataElement fromJson(String input) {
+    public WikidataElement fromJson(String input) throws Exception {
         JSONParser parser = new JSONParser();
 
         WikidataElement element = new WikidataElement();
 
-        try {
+//        try {
             JSONObject object = (JSONObject) parser.parse(input);
 
             String rawName = (String) object.get("rawName");
             String preferredName = (String) object.get("preferredName");
 
             // replace commas in Wikidata labels with the underscore to avoid incorrect extraction in the Csv file
-            if(rawName.contains(",")){
+            if (rawName.contains(",")) {
                 rawName = rawName.replace(",", "_");
             }
 
@@ -76,32 +75,35 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
 
             final Map<String, List<String>> outputProperties = element.getProperties();
 
-            for (int i = 0; i < properties.size(); i++) {
-                final JSONObject o = (JSONObject) properties.get(i);
+//            if (properties != null) {
+                for (int i = 0; i < properties.size(); i++) {
+                    final JSONObject o = (JSONObject) properties.get(i);
 
-                String propertyId = (String) o.get("propertyId");
-                String valueType = (String) o.get("valueType");
-                if (!"wikibase-item".equals(valueType) && !"string".equals(valueType)) {
-                    continue;
+                    String propertyId = (String) o.get("propertyId");
+                    String valueType = (String) o.get("valueType");
+                    if (!"wikibase-item".equals(valueType) && !"string".equals(valueType)) {
+                        continue;
+                    }
+                    String value = (String) o.get("value");
+                    Object valueObject = o.get("value");
+
+                    if (value == null || valueObject == null) {
+                        continue;
+                    }
+
+                    if (outputProperties.get(propertyId) == null) {
+                        outputProperties.put(propertyId, new ArrayList<>());
+                    }
+                    outputProperties.get(propertyId).add(value);
                 }
-                String value = (String) o.get("value");
-                Object valueObject = o.get("value");
+//            } else {
+//                throw new DataException("Data parsing exception.");
+//            }
 
-                if (value == null || valueObject == null) {
-                    continue;
-                }
-
-                if (outputProperties.get(propertyId) == null) {
-                    outputProperties.put(propertyId, new ArrayList<>());
-                }
-                outputProperties.get(propertyId).add(value);
-            }
-
-
-        } catch (ParseException e) {
+        /*} catch (ParseException e) {
             e.printStackTrace();
         }
-
+*/
         return element;
 
     }
