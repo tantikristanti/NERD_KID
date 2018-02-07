@@ -1,0 +1,534 @@
+WikidataID,LabelWikidata,Class
+Q31,Belgium,LOCATION
+Q39,Switzerland,LOCATION
+Q153,Ethanol,SUBSTANCE
+Q678,Tonga,LOCATION
+Q837,Nepal,LOCATION
+Q1007,Guinea-Bissau,LOCATION
+Q1697,Moscow Oblast,LOCATION
+Q1,Universe,LOCATION
+Q2,Earth,LOCATION
+Q3,Life,UNKNOWN
+Q4,Death,UNKNOWN
+Q5,Human,UNKNOWN
+Q8,Happiness,UNKNOWN
+Q13,Triskaidekaphobia,UNKNOWN
+Q15,Africa,LOCATION
+Q18,South America,LOCATION
+Q19,Cheating,UNKNOWN
+Q44,Beer,UNKNOWN
+Q46,Europe,LOCATION
+Q48,Asia,LOCATION
+Q49,North America,LOCATION
+Q53,Club-Mate,UNKNOWN
+Q54,All your base are belong to us,UNKNOWN
+Q56,Lolcat,UNKNOWN
+Q57,Never Gonna Give You Up,CREATION
+Q58,Penis,UNKNOWN
+Q68,Computer,UNKNOWN
+Q73,Internet Relay Chat,UNKNOWN
+Q75,Internet,UNKNOWN
+Q81,Carrot,UNKNOWN
+Q82,Printer (computing),UNKNOWN
+Q83,MediaWiki,UNKNOWN
+Q86,Headache,UNKNOWN
+Q89,Apple,UNKNOWN
+Q94,Android (operating system),UNKNOWN
+Q97,Atlantic Ocean,LOCATION
+Q98,Pacific Ocean,LOCATION
+Q101,Lopadotemachoselachogaleokranioleipsanodrimhypotrimmatosilphioparaomelitokatakechymenokichlepikossyphophattoperisteralektryonoptekephalliokigklopeleiolagoiosiraiobaphetraganopterygon,UNKNOWN
+Q102,Pneumonoultramicroscopicsilicovolcanoconiosis,UNKNOWN
+Q107,Space,UNKNOWN
+Q112,Mars (mythology),PERSON
+Q113,Schulze method,UNKNOWN
+Q116,Monarch,UNKNOWN
+Q133,Mixed-member proportional representation,UNKNOWN
+Q134,Bishop (chess),UNKNOWN
+Q135,Pawn (chess),UNKNOWN
+Q136,Knight (chess),UNKNOWN
+Q137,Rook (chess),UNKNOWN
+Q138,King (chess),UNKNOWN
+Q139,Queen (chess),UNKNOWN
+Q141,Timbits,UNKNOWN
+Q143,Esperanto,UNKNOWN
+Q147,Kitten,UNKNOWN
+Q149,Nyan Cat,UNKNOWN
+Q150,French language,CONCEPT
+Q151,Wiktionary,UNKNOWN
+Q154,Alcoholic drink,UNKNOWN
+Q156,Alcohol,UNKNOWN
+Q161,Fiber,UNKNOWN
+Q162,Optical fiber,UNKNOWN
+Q164,Square,UNKNOWN
+Q165,Sea,UNKNOWN
+Q167,Pi,UNKNOWN
+Q168,Pi (letter),UNKNOWN
+Q169,Mango,UNKNOWN
+Q170,Pirate Parties International,UNKNOWN
+Q171,Wiki,UNKNOWN
+Q177,Pizza,UNKNOWN
+Q178,Pasta,UNKNOWN
+Q179,Boeing 747,ARTIFACT
+Q182,English,UNKNOWN
+Q188,German language,CONCEPT
+Q190,God,UNKNOWN
+Q194,Rings of Saturn,LOCATION
+Q195,Chocolate,UNKNOWN
+Q196,Cherry,UNKNOWN
+Q197,Airplane,UNKNOWN
+Q198,War,UNKNOWN
+Q199,1,UNKNOWN
+Q200,2,UNKNOWN
+Q201,3,UNKNOWN
+Q202,4,UNKNOWN
+Q203,5,UNKNOWN
+Q204,0,UNKNOWN
+Q205,Infinity,UNKNOWN
+Q208,Rakfisk,UNKNOWN
+Q209,Rectangle,UNKNOWN
+Q210,Right angle,UNKNOWN
+Q245,Raspberry Pi,UNKNOWN
+Q246,Volkswagen,UNKNOWN
+Q247,Volkswagen Golf,UNKNOWN
+Q248,Intel,UNKNOWN
+Q249,Wireless,UNKNOWN
+Q250,Computer keyboard,UNKNOWN
+Q253,QWERTY,UNKNOWN
+Q256,Turkish language,CONCEPT
+Q257,Mandelbrot set,UNKNOWN
+Q261,Linkin Park,UNKNOWN
+Q263,Wikisource,UNKNOWN
+Q274,Ardbeg distillery,UNKNOWN
+Q277,Kilchoman distillery,UNKNOWN
+Q278,Talisker distillery,UNKNOWN
+Q280,Lagavulin distillery,UNKNOWN
+Q281,Whisky,UNKNOWN
+Q282,Wine,UNKNOWN
+Q284,Cognac,UNKNOWN
+Q286,Leather,UNKNOWN
+Q287,Wood,UNKNOWN
+Q288,Tours,UNKNOWN
+Q289,Television,UNKNOWN
+Q290,Sex,UNKNOWN
+Q291,Pornography,UNKNOWN
+Q300,Sagas of Icelanders,UNKNOWN
+Q305,Corporal punishment,UNKNOWN
+Q309,History,UNKNOWN
+Q315,Language,UNKNOWN
+Q316,Love,UNKNOWN
+Q317,Dictatorship,PERIOD
+Q321,Milky Way,LOCATION
+Q323,Big Bang,UNKNOWN
+Q325,Digital dark age,UNKNOWN
+Q328,English Wikipedia,UNKNOWN
+Q333,Astronomy,UNKNOWN
+Q336,Science,UNKNOWN
+Q338,Cosmology,UNKNOWN
+Q341,Free software,UNKNOWN
+Q348,Time capsule,UNKNOWN
+Q349,Sport,UNKNOWN
+Q356,Google+,UNKNOWN
+Q358,National heritage site,UNKNOWN
+Q363,World War III,UNKNOWN
+Q366,Corruption,UNKNOWN
+Q367,Wikibooks,UNKNOWN
+Q369,Wikiquote,UNKNOWN
+Q371,!!!,UNKNOWN
+Q373,Wikivoyage,UNKNOWN
+Q374,Vodka,UNKNOWN
+Q375,Waffle,UNKNOWN
+Q376,Clock,UNKNOWN
+Q380,,UNKNOWN
+Q381,Ubuntu (operating system),UNKNOWN
+Q388,Linux,UNKNOWN
+Q394,Metrology,UNKNOWN
+Q395,Mathematics,UNKNOWN
+Q396,U2,UNKNOWN
+Q397,Latin,UNKNOWN
+Q401,Cuneiform script,UNKNOWN
+Q405,Moon,LOCATION
+Q411,Astrobiology,UNKNOWN
+Q412,Pioneer plaque,UNKNOWN
+Q413,Physics,UNKNOWN
+Q415,Silbo Gomero,UNKNOWN
+Q416,Disk magazine,UNKNOWN
+Q418,Telecommunication,UNKNOWN
+Q420,Biology,UNKNOWN
+Q421,Unidentified flying object,UNKNOWN
+Q426,Animal rights,UNKNOWN
+Q430,Dinosaur,UNKNOWN
+Q431,Zoology,UNKNOWN
+Q432,Islam,UNKNOWN
+Q441,Botany,UNKNOWN
+Q445,Bibliotheca universalis,UNKNOWN
+Q446,Wheel,UNKNOWN
+Q450,Mind,UNKNOWN
+Q452,52-hertz whale,UNKNOWN
+Q454,Peace,UNKNOWN
+Q455,Encyclopædia Britannica,UNKNOWN
+Q460,Interpedia,UNKNOWN
+Q465,DBpedia,UNKNOWN
+Q466,World Wide Web,UNKNOWN
+Q469,Dyson sphere,UNKNOWN
+Q470,World Brain,UNKNOWN
+Q471,Memex,UNKNOWN
+Q473,The Library of Babel,UNKNOWN
+Q474,Aqueduct (bridge),UNKNOWN
+Q476,Ñ,UNKNOWN
+Q481,.xxx,UNKNOWN
+Q482,Poetry,UNKNOWN
+Q483,Megaupload,UNKNOWN
+Q484,Laziness,UNKNOWN
+Q485,Computer virus,UNKNOWN
+Q487,Smile,UNKNOWN
+Q491,Friendship,UNKNOWN
+Q492,Memory,UNKNOWN
+Q496,Feces,UNKNOWN
+Q497,Anus,UNKNOWN
+Q499,Axilla,UNKNOWN
+Q503,Banana,UNKNOWN
+Q506,Flower,UNKNOWN
+Q507,Googol,UNKNOWN
+Q508,Googolplex,UNKNOWN
+Q514,Anatomy,UNKNOWN
+Q515,City,UNKNOWN
+Q518,Betta edithae,UNKNOWN
+Q519,Shit,UNKNOWN
+Q521,Physiology,UNKNOWN
+Q522,Hyper Text Coffee Pot Control Protocol,UNKNOWN
+Q528,PSR B1257+12,UNKNOWN
+Q531,Light-year,UNKNOWN
+Q532,Village,UNKNOWN
+Q534,,LOCATION
+Q538,Oceania,UNKNOWN
+Q540,Freenet,UNKNOWN
+Q542,Sport of athletics,UNKNOWN
+Q543,Censorship,UNKNOWN
+Q544,Solar System,UNKNOWN
+Q545,Baltic Sea,UNKNOWN
+Q547,,LOCATION
+Q553,Tooth,UNKNOWN
+Q554,Cervelle de canut,UNKNOWN
+Q561,Human tooth,UNKNOWN
+Q564,Hell,UNKNOWN
+Q565,Wikimedia Commons,UNKNOWN
+Q566,Purgatory,UNKNOWN
+Q570,Loudspeaker,UNKNOWN
+Q571,Book,UNKNOWN
+Q575,Night,UNKNOWN
+Q587,All Saints' Day,UNKNOWN
+Q592,Gay,UNKNOWN
+Q599,Wedding dress of Kate Middleton,UNKNOWN
+Q606,,ANIMAL
+Q608,Human sexual activity,UNKNOWN
+Q616,Beaujolais,UNKNOWN
+Q638,Music,UNKNOWN
+Q639,Optical aberration,UNKNOWN
+Q642,Naruto,UNKNOWN
+Q646,Thermometer,UNKNOWN
+Q652,Italian language,CONCEPT
+Q653,Chihuahua (dog),ANIMAL
+Q659,North,UNKNOWN
+Q661,Hydraulic ram,UNKNOWN
+Q662,Neon Genesis Evangelion,UNKNOWN
+Q666,Number of the Beast,UNKNOWN
+Q667,South,UNKNOWN
+Q673,One Piece,UNKNOWN
+Q676,Prose,UNKNOWN
+Q679,West,UNKNOWN
+Q684,East,UNKNOWN
+Q689,Bastille (band),UNKNOWN
+Q693,Fable,UNKNOWN
+Q698,Firefox,UNKNOWN
+Q699,Fairy tale,UNKNOWN
+Q718,Chess,UNKNOWN
+Q728,Weapon,UNKNOWN
+Q732,Francesinha,UNKNOWN
+Q735,Art,UNKNOWN
+Q738,Croque-monsieur,UNKNOWN
+Q748,Buddhism,CONCEPT
+Q777,Google Chrome,UNKNOWN
+Q780,Chicken,UNKNOWN
+Q788,Arctic Ocean,LOCATION
+Q795,Stupidity,UNKNOWN
+Q799,Wisdom,UNKNOWN
+Q808,Virus,UNKNOWN
+Q809,Polish language,CONCEPT
+Q825,God in Christianity,UNKNOWN
+Q828,Americas,LOCATION
+Q831,Ciao,PERIOD
+Q844,James Bond,UNKNOWN
+Q847,Tennis,UNKNOWN
+Q850,MySQL,UNKNOWN
+Q856,Barcode,UNKNOWN
+Q860,Foobar,UNKNOWN
+Q864,Pokémon,UNKNOWN
+Q870,Train,UNKNOWN
+Q872,Radio broadcasting,UNKNOWN
+Q886,The Simpsons,UNKNOWN
+Q893,Lemonade,UNKNOWN
+Q896,Mountain Dew,UNKNOWN
+Q901,Scientist,UNKNOWN
+Q904,Bleach (manga),UNKNOWN
+Q933,South Pole,LOCATION
+Q934,North Pole,LOCATION
+Q936,OpenStreetMap,UNKNOWN
+Q943,Yellow,UNKNOWN
+Q944,Quantum mechanics,UNKNOWN
+Q951,Toilet paper orientation,UNKNOWN
+Q957,List of lists of lists,UNKNOWN
+Q964,Wikinews,UNKNOWN
+Q978,Meme,UNKNOWN
+Q982,FIS Alpine Ski World Cup,EVENT
+Q998,Infant,UNKNOWN
+Q1004,Comics,UNKNOWN
+Q1023,,PERSON
+Q1026,Poles,PERSON_TYPE
+Q1052,Rainbow,UNKNOWN
+Q1057,Metabolism,UNKNOWN
+Q1059,Immune system,UNKNOWN
+Q1063,Evolution,UNKNOWN
+Q1069,Geology,UNKNOWN
+Q1071,Geography,UNKNOWN
+Q1072,Heart,UNKNOWN
+Q1073,Brain,UNKNOWN
+Q1074,Skin,UNKNOWN
+Q1075,Color,UNKNOWN
+Q1076,Lawson (band),UNKNOWN
+Q1078,Birds of Tokyo,UNKNOWN
+Q1084,Noun,UNKNOWN
+Q1088,Blue,UNKNOWN
+Q1092,Star Trek,UNKNOWN
+Q1110,United Federation of Planets,UNKNOWN
+Q1111,Electric charge,UNKNOWN
+Q1120,Nice model,UNKNOWN
+Q1143,,LOCATION
+Q1147,,LOCATION
+Q1150,Mercury (mythology),UNKNOWN
+Q1157,,LOCATION
+Q1161,Limburg,UNKNOWN
+Q1213,Salentino dialect,UNKNOWN
+Q1215,Straight edge,UNKNOWN
+Q1231,Kosovo field (region),LOCATION
+Q1239,Indian Ocean,LOCATION
+Q1247,Caribbean Sea,LOCATION
+Q1251,Cottian Alps,LOCATION
+Q1269,Fruit preserves,UNKNOWN
+Q1287,Jansenism,UNKNOWN
+Q1293,Draughts,UNKNOWN
+Q1299,The Beatles,UNKNOWN
+Q1315,Equinox,UNKNOWN
+Q1321,Spanish language,CONCEPT
+Q1337,Leet,UNKNOWN
+Q1349,HC Lada Togliatti,UNKNOWN
+Q1351,Edgar (opera),UNKNOWN
+Q1364,Fruit,UNKNOWN
+Q1367,Monkey,ANIMAL
+Q1368,Money,UNKNOWN
+Q1375,Dungeons & Dragons,UNKNOWN
+Q1406,Microsoft Windows,UNKNOWN
+Q1412,Finnish language,CONCEPT
+Q1420,Car,UNKNOWN
+Q1431,KDE,UNKNOWN
+Q1441,Wanfried agreement,UNKNOWN
+Q1444,Organ (music),UNKNOWN
+Q1448,Hillbilly,UNKNOWN
+Q1455,Field hockey,UNKNOWN
+Q1472,Crohn's disease,UNKNOWN
+Q1474,,ANIMAL
+Q1477,Ulcerative colitis,UNKNOWN
+Q1483,Craniopagus parasiticus,UNKNOWN
+Q1485,Systemic lupus erythematosus,UNKNOWN
+Q1487,Hacker,UNKNOWN
+Q1501,Swimming pool,UNKNOWN
+Q1525,Roundabout,UNKNOWN
+Q1529,Traffic circle,UNKNOWN
+Q1536,Coordinated Universal Time,UNKNOWN
+Q1542,,LOCATION
+Q1566,Tobacco,UNKNOWN
+Q1568,Hindi,LANGUAGE
+Q1571,Marathi language,LANGUAGE
+Q1574,Avast Antivirus,UNKNOWN
+Q1575,Internet Explorer,UNKNOWN
+Q1576,Cigar,UNKNOWN
+Q1577,,LOCATION
+Q1578,Cigarette,UNKNOWN
+Q1586,Waltershof,UNKNOWN
+Q1614,,LOCATION
+Q1617,Urdu,LANGUAGE
+Q1621,,LOCATION
+Q1661,Verse (poetry),UNKNOWN
+Q1693,North Sea,LOCATION
+Q1700,,LOCATION
+Q1713,Citation,UNKNOWN
+Q1734,Volleyball,UNKNOWN
+Q1772,Epitaph,UNKNOWN
+Q1788,,PERSON
+Q1810,,LOCATION
+Q1811,Astronomical unit,UNKNOWN
+Q1814,,LOCATION
+Q1816,,LOCATION
+Q1821,,LOCATION
+Q1824,,LOCATION
+Q1827,Red wine,UNKNOWN
+Q1834,Death Note,UNKNOWN
+Q1847,Togliatti surface,UNKNOWN
+Q1852,X-ray astronomy,UNKNOWN
+Q1859,True Jesus Church,UNKNOWN
+Q1860,English language,CONCEPT
+Q1871,Diplomacy (game),UNKNOWN
+Q1889,Diplomacy,UNKNOWN
+Q1932,Space Race,UNKNOWN
+Q1941,Atmosphere of Venus,UNKNOWN
+Q1968,Formula One,UNKNOWN
+Q2012,Maya calendar,UNKNOWN
+Q2013,Wikidata,UNKNOWN
+Q2020,Dragon Ball,UNKNOWN
+Q2027,Linux Mint,UNKNOWN
+Q2029,History of Lyon,UNKNOWN
+Q2033,Notepad++,UNKNOWN
+Q2053,HTML5,UNKNOWN
+Q2063,JSON,UNKNOWN
+Q2078,Scalable Vector Graphics,UNKNOWN
+Q2093,Document Object Model,UNKNOWN
+Q2095,Food,UNKNOWN
+Q2101,Elementary charge,UNKNOWN
+Q2102,Snake,ANIMAL
+Q2111,Speed of light,UNKNOWN
+Q2115,XML,UNKNOWN
+Q2117,Canada AM,UNKNOWN
+Q2122,Oral sex,UNKNOWN
+Q2130,Favicon,UNKNOWN
+Q2134,LOL,UNKNOWN
+Q2146,UTC−12:00,UNKNOWN
+Q2154,UTC−11:00,UNKNOWN
+Q2159,UTC−10:30,UNKNOWN
+Q2163,UTC−10:00,UNKNOWN
+Q2171,UTC−09:30,UNKNOWN
+Q2182,QRpedia,UNKNOWN
+Q2183,UTC−09:00,UNKNOWN
+Q2192,GIF,UNKNOWN
+Q2194,Windows Media Audio,UNKNOWN
+Q2195,JPEG,UNKNOWN
+Q2197,Romulus and Remus,UNKNOWN
+Q2198,UTC−08:30,UNKNOWN
+Q2204,UTC−08:00,UNKNOWN
+Q2212,UTC−07:00,UNKNOWN
+Q2268,Old Nubian language,CONCEPT
+Q2269,Industrial Revolution,UNKNOWN
+Q2305,Franklin's lost expedition,UNKNOWN
+Q2306,Pink Floyd,UNKNOWN
+Q2328,Coppermine Expedition of 1819–22,UNKNOWN
+Q2329,Chemistry,UNKNOWN
+Q2331,Led Zeppelin,UNKNOWN
+Q2346,Analytical chemistry,UNKNOWN
+Q2349,69 (sex position),UNKNOWN
+Q2371,Celebrity Solstice,UNKNOWN
+Q2409,Hydrochloric acid,UNKNOWN
+Q2444,GloFish,UNKNOWN
+Q2469,Andromeda Galaxy,UNKNOWN
+Q2482,Jameson Irish Whiskey,UNKNOWN
+Q2490,Barred spiral galaxy,UNKNOWN
+Q2493,Data compression,UNKNOWN
+Q2537,Natural satellite,UNKNOWN
+Q2541,Prediction by partial matching,UNKNOWN
+Q2565,Titan (moon),UNKNOWN
+Q2600,Cunt,UNKNOWN
+Q2799,Delta encoding,UNKNOWN
+Q2813,Coca-Cola,UNKNOWN
+Q2835,Retroreflector,UNKNOWN
+Q2863,Eau de Cologne,UNKNOWN
+Q2864,Cat's eye (road),UNKNOWN
+Q2903,,LOCATION
+Q2906,,LOCATION
+Q2911,,LOCATION
+Q2915,Dairy cattle,UNKNOWN
+Q2918,,LOCATION
+Q2935,Calf,UNKNOWN
+Q2945,History of Canada,UNKNOWN
+Q2977,Cathedral,UNKNOWN
+Q2979,Liberty,UNKNOWN
+Q3010,Boy,UNKNOWN
+Q3031,Girl,UNKNOWN
+Q3039,Cassoulet,UNKNOWN
+Q3041,Magnetosphere of Jupiter,UNKNOWN
+Q3045,Atmosphere of Jupiter,UNKNOWN
+Q3060,Rings of Jupiter,UNKNOWN
+Q3071,Punk rock,UNKNOWN
+Q3074,Traffic code,UNKNOWN
+Q3076,Comet Shoemaker–Levy 9,UNKNOWN
+Q3089,Journal amusant,UNKNOWN
+Q3096,Volcanology of Io,UNKNOWN
+Q3108,Lyon Tablet,UNKNOWN
+Q3122,Home Instead Senior Care,UNKNOWN
+Q3123,Io (moon),UNKNOWN
+Q3133,Green,UNKNOWN
+Q3134,Callisto (moon),UNKNOWN
+Q3142,Red,UNKNOWN
+Q3143,Europa (moon),UNKNOWN
+Q3169,Ganymede (moon),UNKNOWN
+Q3189,2012 Geneva Open Challenger,UNKNOWN
+Q3191,Sarcophagus of the Triumph of Bacchus (Lyon),UNKNOWN
+Q3196,Fire,UNKNOWN
+Q3199,Philinidae,UNKNOWN
+Q3230,Atmosphere of Earth,UNKNOWN
+Q3245,David Terry,UNKNOWN
+Q3248,Robert Newton (disambiguation),UNKNOWN
+Q3252,William Meredith,UNKNOWN
+Q3257,Amalthea (moon),LOCATION
+Q3263,Robert Rose,UNKNOWN
+Q3269,The Rezillos,UNKNOWN
+Q3276,Exploration of Jupiter,UNKNOWN
+Q3283,Geometric phase,UNKNOWN
+Q3294,Clarity (Zedd album),UNKNOWN
+Q3297,Moonmadness,UNKNOWN
+Q3303,Enceladus,UNKNOWN
+Q3310,SAKO,UNKNOWN
+Q3322,Titania (moon),LOCATION
+Q3332,Oberon (moon),LOCATION
+Q3333,,LOCATION
+Q3338,Umbriel (moon),LOCATION
+Q3341,Rubber duck debugging,UNKNOWN
+Q3343,Ariel (moon),LOCATION
+Q3352,Miranda (moon),LOCATION
+Q3359,Triton (moon),LOCATION
+Q3409,Sirius,UNKNOWN
+Q3427,Vega,UNKNOWN
+Q3450,Main sequence,UNKNOWN
+Q3465,Jinn,UNKNOWN
+Q3496,,LOCATION
+Q3521,Alien Siege,UNKNOWN
+Q3523,Secret Museum_ Naples,UNKNOWN
+Q3535,Formation and evolution of the Solar System,UNKNOWN
+Q3553,,LOCATION
+Q3568,Focus (geometry),UNKNOWN
+Q3577,Hoplitodromos,UNKNOWN
+Q3578,1867 in art,UNKNOWN
+Q3580,William Gibson (disambiguation),UNKNOWN
+Q3588,Revolutions of 1848,UNKNOWN
+Q3614,Occipital nerve stimulation,UNKNOWN
+Q3623,Dukes of Dixieland,UNKNOWN
+Q3638,Superman (franchise),UNKNOWN
+Q3658,List of Catholic dioceses (alphabetical),UNKNOWN
+Q3672,Space Flyer Unit,UNKNOWN
+Q3694,Holiday cottage,UNKNOWN
+Q3710,Foot (unit),UNKNOWN
+Q3721,Fraternities and sororities,UNKNOWN
+Q3842,Marxist humanism,UNKNOWN
+Q3849,Sony Ericsson M600,UNKNOWN
+Q3858,Music of Israel,UNKNOWN
+Q3872,Neuropsychology,UNKNOWN
+Q3887,Solar eclipse,UNKNOWN
+Q3913,Binary number,UNKNOWN
+Q3918,University,UNKNOWN
+Q3937,Supernova,UNKNOWN
+Q3944,Local Group,UNKNOWN
+Q3947,House,UNKNOWN
+Q3950,Villa,UNKNOWN
+Q3957,Town,UNKNOWN
+Q3962,Laptop,UNKNOWN
+Q3966,Computer hardware,UNKNOWN
+Q3968,Algebra,UNKNOWN
+Q3972,Power supply unit (computer),UNKNOWN
+Q3975,Computer case,UNKNOWN
+Q3988,Real-time computing,UNKNOWN

@@ -81,8 +81,8 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
             if (!"wikibase-item".equals(valueType) && !"string".equals(valueType)) {
                 continue;
             }
-            String value = (String) o.get("value");
-            Object valueObject = o.get("value");
+            Object value = (Object) o.get("value");
+            Object valueObject = (Object) o.get("value");
 
             if (value == null || valueObject == null) {
                 continue;
@@ -91,7 +91,7 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
             if (outputProperties.get(propertyId) == null) {
                 outputProperties.put(propertyId, new ArrayList<>());
             }
-            outputProperties.get(propertyId).add(value);
+            outputProperties.get(propertyId).add(value.toString());
         }
 
         return element;
