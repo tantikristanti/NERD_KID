@@ -39,19 +39,21 @@ public class FeatureWikidataExtractor {
 
     // method to get wikidataId, label, real-predicted class, and properties in binary form (0-1) based on the feature_mapper and Nerd KB
     public WikidataElementInfos getFeatureWikidata(String wikidataId) {
-        // count the number of features based on 'data/resource/feature_mapper.csv'
+        /* count the number of features based on 'data/resource/feature_mapper.csv'
+            and number of features based on the data/resource/feature_mapper_no_value.csv'
+         */
         Map<String, List<String>> featuresMap = new HashMap<>();
-        List<String> featuresNoValueMap = new ArrayList<>();
+        List<String> featuresNoValueList = new ArrayList<>();
 
-        int nbOfFeatures = 0;
+        int nbOfFeatures = 0; // number of features of feature_mapper.csv
         try {
             featuresMap = featureFileExtractor.loadFeatures();
             for (String key : featuresMap.keySet()) {
                 nbOfFeatures += featuresMap.get(key).size();
             }
 
-            featuresNoValueMap = featureFileExtractor.loadFeaturesNoValue();
-            for (String feature : featuresNoValueMap) {
+            featuresNoValueList = featureFileExtractor.loadFeaturesNoValue();
+            for (String feature : featuresNoValueList) {
                 nbOfFeatures++;
             }
         } catch (Exception e) {
@@ -76,7 +78,7 @@ public class FeatureWikidataExtractor {
 
         // get the list of properties based on the result of 'data/resource/feature_mapper_no_value.csv'
         List<String> propertyNoValueFeatureMapper = new ArrayList<>();
-        for (String propertyNoValueGot : featuresNoValueMap) {
+        for (String propertyNoValueGot : featuresNoValueList) {
             propertyNoValueFeatureMapper.add(propertyNoValueGot);
         }
 
@@ -90,7 +92,6 @@ public class FeatureWikidataExtractor {
                 propertyValueFeatureMapper.add(propertyValue);
             }
         }
-
         // get the list of properties-values based on the result directly from Wikidata
         List<String> propertyValueWikidata = new ArrayList<>();
         List<String> propertyNoValueWikidata = new ArrayList<>();

@@ -56,7 +56,7 @@ public class FeatureFileExtractor {
     }
 
     public List<String> loadFeaturesNoValue(InputStream inputStreamFeatureNoValueFile){
-        List<String> featureMapNoValue = new ArrayList<>();
+        List<String> featureListNoValue = new ArrayList<>();
         Reader featureMapperIn = new InputStreamReader(inputStreamFeatureNoValueFile);
         Iterable<CSVRecord> recordsFeaturesNoValue = null;
         try{
@@ -71,11 +71,11 @@ public class FeatureFileExtractor {
             String property = recordFeatureNoValue.get("Property");
 
             if(recordFeatureNoValue != null){
-                featureMapNoValue.add(property);
+                featureListNoValue.add(property);
             }
         }
 
-        return featureMapNoValue;
+        return featureListNoValue;
     }
 
     public void printWikidataFeatures(Map<String, List<String>> result) {
