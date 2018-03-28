@@ -2,6 +2,7 @@ package org.nerd.kid.arff;
 
 
 import org.nerd.kid.data.WikidataElementInfos;
+import org.nerd.kid.service.NerdKidPaths;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,7 +25,8 @@ public class ArffFileGenerator {
     private BufferedWriter writer;
     private boolean hasHeader = false;
     private boolean hasBody = false;
-    private String path = "result/arff/Training.arff";
+    String fileOutputArff = "Training.arff";
+    private String path = NerdKidPaths.RESULT_ARFF + "/" + fileOutputArff;
     private Path pathFile = Paths.get(path);
 
     // to create new file

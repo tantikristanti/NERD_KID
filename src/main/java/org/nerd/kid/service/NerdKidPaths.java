@@ -2,68 +2,89 @@ package org.nerd.kid.service;
 
 public class NerdKidPaths {
     // root
-    String ROOT = "/";
+    public static final String ROOT = "/";
 
     // source main
-    String SOURCE_MAIN = "src/main";
+    public static final String SOURCE_MAIN = "src/main";
 
     // nerd kid
-    String NERD_KID = SOURCE_MAIN + "/java/org/nerd/kid";
+    public static final String NERD_KID = SOURCE_MAIN + "/java/org/nerd/kid";
 
     // arff
-    String ARFF = "arff";
+    public static final String ARFF = "arff";
 
     // data
-    String DATA = "data";
+    public static final String DATA = "data";
 
     // evaluation
-    String EVALUATION = "evaluation";
+    public static final String EVALUATION = "evaluation";
 
     // extractor
-    String EXTRACTOR = "extractor";
+    public static final String EXTRACTOR = "extractor";
 
     // extractor of wikidata
-    String EXTRACTOR_WIKIDATA = EXTRACTOR + "/wikidata";
+    public static final String EXTRACTOR_WIKIDATA = EXTRACTOR + "/wikidata";
 
     // model
-    String MODEL = "model";
+    public static final String MODEL = "model";
 
     // pre-annotation
-    String PREANNOTATION = "preannotation";
+    public static final String PREANNOTATION = "preannotation";
 
     // pre-processing
-    String PREPROCESSING = "preprocessing";
+    public static final String PREPROCESSING = "preprocessing";
 
     // rest
-    String REST = "rest";
+    public static final String REST = "rest";
 
     // web
-    String WEB = "web";
+    public static final String WEB = "web";
 
     // web kid health check
-    String WEB_KIDHEALTHCHECK = WEB + "/healthcheck";
+    public static final String WEB_KIDHEALTHCHECK = WEB + "/healthcheck";
 
     // web module
-    String WEB_MODULE = WEB + "/module";
+    public static final String WEB_MODULE = WEB + "/module";
 
     // web resource
-    String WEB_RESOURCE = WEB + "/resource";
+    public static final String WEB_RESOURCE = WEB + "/resource";
 
     // data arff
-    String DATA_ARFF = DATA + "/" + ARFF;
+    public static final String DATA_ARFF = DATA + "/" + ARFF;
 
     // data corpus
-    String DATA_CORPUS = DATA + "/corpus";
+    public static final String DATA_CORPUS = DATA + "/corpus";
 
     // data csv
-    String DATA_CSV = DATA + "/csv";
+    public static final String DATA_CSV = DATA + "/csv";
 
     // data json
-    String DATA_JSON = DATA + "/json";
+    public static final String DATA_JSON = DATA + "/json";
 
     // data pre-annotation
-    String DATA_PREANNOTATION = DATA + "/" + PREANNOTATION;
+    public static final String DATA_PREANNOTATION = DATA + "/" + PREANNOTATION;
 
     // data resource
-    String DATA_RESOURCE = DATA  + "/resource";
+    public static final String DATA_RESOURCE = DATA  + "/resource";
+
+    // data xml
+    public static final String DATA_XML = DATA + "/xml";
+
+    // result
+    public static final String RESULT = "result";
+
+    // result arff
+    public static final String RESULT_ARFF = RESULT + "/arff";
+
+    // result csv
+    public static final String RESULT_CSV = RESULT + "/csv";
+
+    // result json
+    public static final String RESULT_JSON = RESULT + "/json";
+
+    // result txt
+    public static final String RESULT_TXT = RESULT + "/txt";
+
+    // result xml
+    public static final String RESULT_XML = RESULT + "/xml";
 }

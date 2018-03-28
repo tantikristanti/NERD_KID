@@ -8,6 +8,7 @@ import org.nerd.kid.extractor.ClassExtractor;
 import org.nerd.kid.extractor.FeatureFileExtractor;
 import org.nerd.kid.extractor.FeatureWikidataExtractor;
 import org.nerd.kid.extractor.wikidata.NerdKBFetcherWrapper;
+import org.nerd.kid.service.NerdKidPaths;
 
 import java.io.*;
 import java.nio.file.*;
@@ -15,13 +16,7 @@ import java.util.*;
 
 /*
 main class for generating Arff file
-
-It is possible to change the list of features and the list of classes
-
-The list of features can be found in 'data/resource/feature_mapper.csv'
-The list of classes can be found in 'data/resource/class_mapper.csv'
-
-* */
+*/
 
 public class MainTrainerGenerator {
     ArffFileGenerator arffFileGenerator = new ArffFileGenerator();
@@ -31,16 +26,18 @@ public class MainTrainerGenerator {
     ClassExtractor classExtractor = new ClassExtractor();
 
     public static void main(String[] args) throws Exception {
+        String fileOutputArff = "Training.arff";
+        String fileOutputCsv = "ResultFromArffGenerator.csv";
+
         MainTrainerGenerator mainTrainerGenerator = new MainTrainerGenerator();
 
-        mainTrainerGenerator.run();
+        mainTrainerGenerator.run(fileOutputArff);
 
         // create CSV file to check the result of data collected
-        mainTrainerGenerator.saveResultCsvFormat();
+        mainTrainerGenerator.saveResultCsvFormat(fileOutputCsv);
     }
 
-    public void run() throws Exception {
-
+    public void run(String fileOutput) throws Exception {
         // get the list of features
         Map<String, List<String>> resultFeature = featureFileExtractor.loadFeatures();
         List<String> resultFeatureNoValue = featureFileExtractor.loadFeaturesNoValue();
@@ -60,7 +57,7 @@ public class MainTrainerGenerator {
         arffFileGenerator.addClassHeader(resultClass);
 
         // add data
-        final List<Path> trainingFiles = listFiles(Paths.get("data/csv"), "*.{csv}");
+        final List<Path> trainingFiles = listFiles(Paths.get(NerdKidPaths.DATA_CSV), "*.{csv}");
         List<WikidataElementInfos> training = new ArrayList<>();
         for (Path inputFile : trainingFiles) {
             List<WikidataElementInfos> elements = extractData(inputFile.toFile());
@@ -79,7 +76,7 @@ public class MainTrainerGenerator {
 
         arffFileGenerator.close();
 
-        System.out.print("Result can be seen in 'result/arff/Training.arff' ");
+        System.out.print("Result can be seen in " + NerdKidPaths.RESULT_ARFF + "/" + fileOutput);
     }
 
 
@@ -124,8 +121,8 @@ public class MainTrainerGenerator {
         return result;
     }
 
-    public void saveResultCsvFormat() throws Exception {
-        String csvDataPath = "result/csv/ResultFromArffGenerator.csv";
+    public void saveResultCsvFormat(String fileOutput) throws Exception {
+        String csvDataPath = NerdKidPaths.RESULT_CSV  + "/" + fileOutput;
         CSVWriter csvWriter = null;
         // get the list of features
         Map<String, List<String>> resultFeature = featureFileExtractor.loadFeatures();
@@ -160,7 +157,7 @@ public class MainTrainerGenerator {
             csvWriter.writeNext(headerCombined.toArray(new String[headerCombined.size()]));
 
             // the data
-            final List<Path> trainingFiles = listFiles(Paths.get("data/csv"), "*.{csv}");
+            final List<Path> trainingFiles = listFiles(Paths.get(NerdKidPaths.DATA_CSV), "*.{csv}");
             List<WikidataElementInfos> training = new ArrayList<>();
             for (Path inputFile : trainingFiles) {
                 List<WikidataElementInfos> elements = extractData(inputFile.toFile());
@@ -197,7 +194,7 @@ public class MainTrainerGenerator {
             csvWriter.flush();
             csvWriter.close();
         }
-        System.out.print("Result in 'result/csv/ResultFromArffGenerator.csv'");
+        System.out.print("Result in " +csvDataPath);
 
     }
 }

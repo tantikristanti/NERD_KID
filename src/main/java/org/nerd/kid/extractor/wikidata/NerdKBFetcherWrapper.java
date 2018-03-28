@@ -15,7 +15,6 @@ import org.nerd.kid.exception.DataException;
 import org.nerd.kid.exception.RemoteServiceException;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,7 +23,6 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
 
     //String nerdPathLocal = "http://localhost:8090/service/kb/concept/";
-
     String nerdUrl = "nerd.huma-num.fr";
     //String nerdPath = "/nerd/service/kb/concept";
     String nerdPath = "/test/service/kb/concept";
@@ -72,23 +70,13 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
 
         JSONArray properties = (JSONArray) object.get("statements");
 
-        //final Map<String, List<String>> outputProperties = element.getProperties();
-
         Map<String, List<String>> outputProperties = element.getProperties();
 
         for (int i = 0; i < properties.size(); i++) {
             final JSONObject o = (JSONObject) properties.get(i);
 
             String propertyId = (String) o.get("propertyId");
-            String valueType = (String) o.get("valueType");
-//            if (!"wikibase-item".equals(valueType) && !"string".equals(valueType)) {
-//                continue;
-//            }
             String value = o.get("value").toString();
-
-//            if (value == null) {
-//                value = null;
-//            }
 
             if (outputProperties.get(propertyId) == null) {
                 outputProperties.put(propertyId, new ArrayList<>());

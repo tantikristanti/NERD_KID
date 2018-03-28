@@ -3,6 +3,7 @@ package org.nerd.kid.extractor;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.nerd.kid.exception.NerdKidException;
+import org.nerd.kid.service.NerdKidPaths;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -10,8 +11,10 @@ import java.util.List;
 
 public class ClassExtractor {
     public List<String> loadClasses()  {
+        String path = NerdKidPaths.DATA_RESOURCE;
+        String fileClassMapper = "class_mapper.csv";
         try {
-            return loadClasses(new FileInputStream("data/resource/class_mapper.csv"));
+            return loadClasses(new FileInputStream(path + "/" + fileClassMapper));
         }catch (FileNotFoundException e){
             throw new NerdKidException("An exception occured while NerdKid is running.", e);
         }

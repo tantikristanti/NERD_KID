@@ -4,6 +4,7 @@ import com.thoughtworks.xstream.XStream;
 import org.apache.commons.io.FileUtils;
 import org.nerd.kid.arff.ArffParser;
 import org.nerd.kid.evaluation.ModelEvaluation;
+import org.nerd.kid.service.NerdKidPaths;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import smile.classification.RandomForest;
@@ -31,10 +32,6 @@ public class ModelBuilder {
 
     private static final Logger logger = LoggerFactory.getLogger(ModelBuilder.class);
 
-    public void loadData() throws Exception {
-        loadData(new File("result/arff/Training.arff"));
-    }
-
     public void loadData(File file) throws Exception {
         // parsing the initial file to get the response index
         attributeDataset = arffParser.parse(new FileInputStream(file));
@@ -57,63 +54,9 @@ public class ModelBuilder {
         attributeDataset = arffParser.parse(file);
     }
 
-    // validation using training and testing data
-    public void trainTestModel(File fileInput, File fileOutput) throws Exception {
-        // if there isn't any training data
-        if (training == null) {
-            logger.debug("Training data doesn't exist");
-        }
-
-        // if there isn't any training data
-        if (testing == null) {
-            logger.debug("Testing data doesn't exist");
-        }
-
-        // training the data
-        logger.info("Training the model.");
-
-        // for getting output stream of the file for writing the result
-        File fl = new File("result/txt/Result_" + fileOutput.getName() + ".txt");
-
-        BufferedWriter result = new BufferedWriter(new FileWriter(fl));
-
-        // datax is for the examples, datay is for the class
-        double[][] trainx = training.toArray(new double[training.size()][]);
-        int[] trainy = training.toArray(new int[training.size()]);
-        double[][] testx = testing.toArray(new double[testing.size()][]);
-        int[] testy = testing.toArray(new int[testing.size()]);
-
-        int maxTemp = trainy[0];
-        // finding the biggest index in trainy
-        for (int i = 1; i < trainy.length; i++) {
-            if (trainy[i] >= maxTemp) {
-                maxTemp = trainy[i];
-            }
-        }
-        int max = maxTemp;
-        // finding the biggest index in testy
-        for (int i = 0; i < testy.length; i++) {
-            if (testy[i] >= max) {
-                max = testy[i];
-            }
-        }
-
-        // finding the biggest index between trainy and testy
-        if (maxTemp >= max)
-            max = maxTemp;
-
-        // training with Random Forest classification
-        forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 100);
-
-        // printing the result
-        outputResults(System.out, testx, testy, max);
-
-        // creating text file from the result
-        outputResults(new PrintStream(new FileOutputStream("result/txt/Result_Trained_Model.txt")), testx, testy, max);
-    }
-
     // splitting the model into training and data set
     public void splitModel(int split) throws Exception {
+        String pathOutput = NerdKidPaths.RESULT_TXT + "/Result_Trained_Model.txt";
         // if there isn't any training data
         if (attributeDataset == null) {
             logger.debug("Training data doesn't exist");
@@ -164,7 +107,7 @@ public class ModelBuilder {
         outputResults(System.out, testx, testy, max);
 
         // creating text file from the result
-        outputResults(new PrintStream(new FileOutputStream("result/txt/Result_Trained_Model.txt")), testx, testy, max);
+        outputResults(new PrintStream(new FileOutputStream(pathOutput)), testx, testy, max);
     }
 
     public int[] predictTestData(double[][] Testx) {
@@ -177,7 +120,8 @@ public class ModelBuilder {
     }
 
     public void outputResults(PrintStream output, double[][] Testx, int[] Testy, int max) throws Exception {
-        File fileInput = new File("result/arff/Training.arff");
+        String pathFileInput = NerdKidPaths.RESULT_ARFF + "/Training.arff";
+        File fileInput = new File(pathFileInput);
         // prediction and calculating the classes classified
         int[] yPredict = predictTestData(Testx);
 

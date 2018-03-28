@@ -1,6 +1,7 @@
 package org.nerd.kid.preprocessing;
 
 import au.com.bytecode.opencsv.CSVWriter;
+import org.nerd.kid.service.NerdKidPaths;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -20,12 +21,12 @@ public class GrobidNERTrainingDataTransformer {
 
         CSVWriter csvWriter = null;
 
-        String xmlDataPath = "data/xml/annotatedCorpus.xml";
-        String csvDataPath = "data/csv/GrobidNer/annotatedCorpusResult.csv";
+        String pathInput = NerdKidPaths.DATA_XML + "/AnnotatedCorpus.xml";
+        String pathOutput = NerdKidPaths.DATA_CSV + "/GrobidNer/AnnotatedCorpusResult.csv";
 
         DocumentBuilder dbBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 
-        File fileXML = new File(xmlDataPath);
+        File fileXML = new File(pathInput);
         Document doc = dbBuilder.parse(fileXML);
         doc.getDocumentElement().normalize();
 
@@ -33,7 +34,7 @@ public class GrobidNERTrainingDataTransformer {
         int total = nList.getLength();
 
         try {
-            csvWriter = new CSVWriter(new FileWriter(csvDataPath), ',', CSVWriter.NO_QUOTE_CHARACTER);
+            csvWriter = new CSVWriter(new FileWriter(pathOutput), ',', CSVWriter.NO_QUOTE_CHARACTER);
             // header's file
             String[] header = {"Mention,Class"};
             csvWriter.writeNext(header);
@@ -51,6 +52,6 @@ public class GrobidNERTrainingDataTransformer {
             csvWriter.flush();
             csvWriter.close();
         }
-        System.out.print("Result in 'data/csv/GrobidNer/annotatedCorpusResult.csv'");
+        System.out.print("Result in " + pathOutput);
     }
 }

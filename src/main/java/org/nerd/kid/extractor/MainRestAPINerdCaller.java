@@ -5,6 +5,7 @@ import joptsimple.OptionParser;
 import joptsimple.OptionSet;
 import org.nerd.kid.rest.NERDResponseJSONReader;
 import org.nerd.kid.rest.RestAPINERDCaller;
+import org.nerd.kid.service.NerdKidPaths;
 
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import java.util.Scanner;
 
 public class MainRestAPINerdCaller {
     public static void main(String[] args) throws Exception {
+        String fileOutput = "NewElements.csv";
         CSVWriter csvWriter = null;
         Scanner scanner = new Scanner(System.in);
 
@@ -77,7 +79,7 @@ public class MainRestAPINerdCaller {
                 csvWriter.close();
             }
 
-            System.out.print("Result CSV in '/data/csv/NewElementsOriginal.csv'");
+            System.out.print("Result CSV in " + NerdKidPaths.DATA_CSV + "/" + fileOutput);
 
         } else {
             System.out.println("Missing parameter");

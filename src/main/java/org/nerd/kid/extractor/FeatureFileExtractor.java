@@ -2,6 +2,7 @@ package org.nerd.kid.extractor;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
+import org.nerd.kid.service.NerdKidPaths;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -10,9 +11,14 @@ import java.util.List;
 import java.util.Map;
 
 public class FeatureFileExtractor {
+    private String pathSource = NerdKidPaths.DATA_RESOURCE;
+
     public Map<String, List<String>> loadFeatures() {
+
+        String fileFeatureMapper = "feature_mapper.csv";
+
         try {
-            return loadFeatures(new FileInputStream("data/resource/feature_mapper.csv"));
+            return loadFeatures(new FileInputStream(pathSource + "/" + fileFeatureMapper));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             return new HashMap<>();
@@ -47,8 +53,11 @@ public class FeatureFileExtractor {
     }
 
     public List<String> loadFeaturesNoValue() {
+
+        String fileFeatureMapperNoValue = "feature_mapper_no_value.csv";
+
         try {
-            return loadFeaturesNoValue(new FileInputStream("data/resource/feature_mapper_no_value.csv"));
+            return loadFeaturesNoValue(new FileInputStream(pathSource + "/" + fileFeatureMapperNoValue));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             return new ArrayList<>();

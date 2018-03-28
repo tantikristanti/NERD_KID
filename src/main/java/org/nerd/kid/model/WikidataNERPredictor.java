@@ -8,8 +8,8 @@ import org.nerd.kid.data.WikidataElementInfos;
 import org.nerd.kid.extractor.ClassExtractor;
 import org.nerd.kid.extractor.FeatureWikidataExtractor;
 import org.nerd.kid.extractor.wikidata.NerdKBFetcherWrapper;
-import org.nerd.kid.extractor.wikidata.WikibaseWrapper;
 import org.nerd.kid.extractor.wikidata.WikidataFetcherWrapper;
+import org.nerd.kid.service.NerdKidPaths;
 import smile.classification.RandomForest;
 
 import java.io.File;
@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WikidataNERPredictor {
+    private String pathResult = NerdKidPaths.RESULT_CSV;
     private CSVWriter csvWriter = null;
 
     private XStream streamer = new XStream();
@@ -67,24 +68,13 @@ public class WikidataNERPredictor {
         return wikidataElement;
     }
 
-    public void predictForPreannotation() throws Exception {
-        try {
-            String fileInput = "data/csv/NewElements.csv";
-            predictForPreannotation(new File(fileInput));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void predictForPreannotation(File file) throws Exception {
-        String csvDataPath = "result/csv/ResultPredictedClass.csv";
-
+    public void predictForPreannotation(File fileInput, File fileOutput) throws Exception {
         // get the wikiId and class from the new csv file
         MainTrainerGenerator mainTrainerGenerator = new MainTrainerGenerator();
         List<WikidataElementInfos> inputList = new ArrayList<>();
-        inputList = mainTrainerGenerator.extractData(file);
+        inputList = mainTrainerGenerator.extractData(fileInput);
         try {
-            csvWriter = new CSVWriter(new FileWriter(csvDataPath), ',', CSVWriter.NO_QUOTE_CHARACTER);
+            csvWriter = new CSVWriter(new FileWriter(fileOutput), ',', CSVWriter.NO_QUOTE_CHARACTER);
             // header's file
             String[] headerPredict = {"WikidataID,LabelWikidata,Class"};
             csvWriter.writeNext(headerPredict);
@@ -107,59 +97,6 @@ public class WikidataNERPredictor {
             csvWriter.flush();
             csvWriter.close();
         }
-        System.out.print("Result in " + csvDataPath);
-    }
-
-    public void predictedResultAndProperties() throws Exception {
-        try {
-            String fileInput = "data/csv/NewElementsOriginal.csv";
-            predictedResultAndProperties(new File(fileInput));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void predictedResultAndProperties(File file) throws Exception {
-        // extract the characteristics of entities from Wikidata
-        WikidataFetcherWrapper wrapper = new WikibaseWrapper();
-        FeatureWikidataExtractor extractor = new FeatureWikidataExtractor(wrapper);
-
-        String csvDataPath = "result/csv/ResultPredictedClassProperties.csv";
-
-        // get the wikiId and class from the new csv file
-        MainTrainerGenerator mainTrainerGenerator = new MainTrainerGenerator();
-        List<WikidataElementInfos> inputList = new ArrayList<>();
-        inputList = mainTrainerGenerator.extractData(file);
-        try {
-            csvWriter = new CSVWriter(new FileWriter(csvDataPath), ',', CSVWriter.NO_QUOTE_CHARACTER);
-            // header's file
-            String[] headerPredict = {"WikidataID,LabelWikidata,Class,Property_Value"};
-
-            csvWriter.writeNext(headerPredict);
-            for (WikidataElementInfos wikiElement : inputList) {
-                // predict every wikidata Id in the file
-                String resultPredict = predict(wikiElement.getWikidataId()).getPredictedClass();
-
-                // get the label of every wikidata Id in the csv file
-                final WikidataElementInfos wikidataElement = extractor.getRawFeatureWikidata(wikiElement.getWikidataId());
-                String label = wikidataElement.getLabel();
-
-                // get the raw properties of each wikidataId from Wikidata KB
-                List<String> propertyValueWikidata = extractor.getRawFeatureWikidata(wikiElement.getWikidataId()).getRawFeatureVector();
-                String propertyValueJoined = null;
-                for(String property : propertyValueWikidata) {
-                    propertyValueJoined = String.join("-", property);
-                }
-                // write the result into a new csv file
-                String[] dataPredict = {wikiElement.getWikidataId(),label,resultPredict,propertyValueJoined};
-                csvWriter.writeNext(dataPredict);
-            }
-
-        } finally {
-            csvWriter.flush();
-            csvWriter.close();
-        }
-        System.out.print("Result in " + csvDataPath);
-
+        System.out.print("Result in " + fileOutput);
     }
 }
