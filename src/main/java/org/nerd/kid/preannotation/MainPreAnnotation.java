@@ -13,7 +13,7 @@ public class MainPreAnnotation {
     public static void main(String[] args) throws Exception{
         WikidataNERPredictor wikidataNERPredictor = new WikidataNERPredictor();
         System.out.println("Processing the pre-annotation ...");
-        wikidataNERPredictor.predict();
+        wikidataNERPredictor.predictForPreannotation();
         System.out.println("Result in 'result/csv/ResultPredictedClass.csv'");
     }
 }

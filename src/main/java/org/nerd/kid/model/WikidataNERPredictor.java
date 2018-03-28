@@ -28,7 +28,8 @@ public class WikidataNERPredictor {
 
     public void loadModel() {
         // the model.xml is located in /src/main/resources
-        InputStream model = this.getClass().getResourceAsStream("/model.xml");
+        String pathModel = "/model.xml";
+        InputStream model = this.getClass().getResourceAsStream(pathModel);
         forest = (RandomForest) streamer.fromXML(model);
     }
 
@@ -66,15 +67,16 @@ public class WikidataNERPredictor {
         return wikidataElement;
     }
 
-    public void predict() throws Exception {
+    public void predictForPreannotation() throws Exception {
         try {
-            predict(new File("data/csv/NewElements.csv"));
+            String fileInput = "data/csv/NewElements.csv";
+            predictForPreannotation(new File(fileInput));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
 
-    public void predict(File file) throws Exception {
+    public void predictForPreannotation(File file) throws Exception {
         String csvDataPath = "result/csv/ResultPredictedClass.csv";
 
         // get the wikiId and class from the new csv file
@@ -105,12 +107,13 @@ public class WikidataNERPredictor {
             csvWriter.flush();
             csvWriter.close();
         }
-        System.out.print("Result in 'result/csv/ResultPredictedClass.csv'");
+        System.out.print("Result in " + csvDataPath);
     }
 
     public void predictedResultAndProperties() throws Exception {
         try {
-            predictedResultAndProperties(new File("data/csv/NewElementsOriginal.csv"));
+            String fileInput = "data/csv/NewElementsOriginal.csv";
+            predictedResultAndProperties(new File(fileInput));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -156,7 +159,7 @@ public class WikidataNERPredictor {
             csvWriter.flush();
             csvWriter.close();
         }
-        System.out.print("Result in 'result/csv/ResultPredictedClassProperties.csv'");
+        System.out.print("Result in " + csvDataPath);
 
     }
 }
