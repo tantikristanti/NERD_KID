@@ -24,6 +24,7 @@ public class WikidataNERPredictor {
 
     private XStream streamer = new XStream();
     private RandomForest forest = null;
+    private WikidataFetcherWrapper wrapper;
 
     public void loadModel() {
         // the model.xml is located in /src/main/resources
@@ -35,6 +36,12 @@ public class WikidataNERPredictor {
         XStream.setupDefaultSecurity(streamer);
         streamer.addPermission(AnyTypePermission.ANY);
         loadModel();
+    }
+
+    // to initialize the wrapper
+    public WikidataNERPredictor(WikidataFetcherWrapper wrapper){
+        this();
+        this.wrapper = wrapper;
     }
 
     public WikidataElementInfos predict(String wikidataId) {
