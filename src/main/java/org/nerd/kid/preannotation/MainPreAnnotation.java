@@ -8,8 +8,6 @@ import java.io.File;
 /*
 main class for annotating Wikidata Ids from a testing input file
 ex.
-
-Input Testing File (to be predicted) : data/preannotation/dataPreannotation.csv
 * */
 
 public class MainPreAnnotation {
@@ -20,6 +18,5 @@ public class MainPreAnnotation {
         WikidataNERPredictor wikidataNERPredictor = new WikidataNERPredictor();
         System.out.println("Processing the pre-annotation ...");
         wikidataNERPredictor.predictForPreannotation(new File(fileInput), new File(fileOutput));
-        System.out.println("Result in " + fileOutput);
     }
 }

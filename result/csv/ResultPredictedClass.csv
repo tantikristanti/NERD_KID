@@ -1,8 +1,11 @@
 WikidataID,LabelWikidata,Class
-Q31,Belgium,LOCATION
-Q39,Switzerland,LOCATION
-Q153,Ethanol,SUBSTANCE
-Q678,Tonga,LOCATION
-Q837,Nepal,LOCATION
-Q1007,Guinea-Bissau,LOCATION
-Q1697,Moscow Oblast,LOCATION
+Q40,Austria,INSTALLATION
+Q111,Mars,EVENT
+Q652,Italian language,EVENT
+Q2667,Paul von Hindenburg,MEDIA
+Q4087,Ammonia,EVENT
+Q7737,Russian language,MEDIA
+Q22686,Donald Trump,EVENT
+Q34687,Rose,EVENT
+Q19939,Tiger,EVENT
+Q215669,Allies of World War I,EVENT

@@ -7,6 +7,9 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import javax.ws.rs.Consumes;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
@@ -16,6 +19,7 @@ import java.io.FileWriter;
  * Extract Mentions and Classes from Grobid-Ner's data in XML format
  * Mention is the raw information from the text e.g. 'LEGAL, Washington Act'.
  */
+
 public class GrobidNERTrainingDataTransformer {
     public static void main(String[] args) throws Exception {
 
