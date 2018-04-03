@@ -52,7 +52,7 @@ public class FeatureWikidataExtractor {
         }
 
         // get the element based on the wrapper whether from Wikidata or Nerd KB
-        WikidataElement wikidataElement = null;
+        WikidataElement wikidataElement = new WikidataElement();
         try {
             wikidataElement = wikidataFetcherWrapper.getElement(wikidataId);
         } catch (Exception e) {
@@ -64,7 +64,7 @@ public class FeatureWikidataExtractor {
         wikidataElementInfos.setWikidataId(wikidataId);
         wikidataElementInfos.setLabel(wikidataElement.getLabel());
 
-        // properties and values got directly from Wikidata
+        // properties and values got directly from Wikidata or Nerd KB (it depends on the implementation of the WikidataFetcherWrapper interface)
         Map<String, List<String>> propertiesWiki = wikidataElement.getProperties();
 
         // get the list of properties based on the result of 'data/resource/feature_mapper_no_value.csv'
@@ -83,16 +83,16 @@ public class FeatureWikidataExtractor {
                 propertyValueFeatureMapper.add(propertyValue);
             }
         }
-        // get the list of properties-values based on the result directly from Wikidata
-        List<String> propertyValueWikidata = new ArrayList<>();
-        List<String> propertyNoValueWikidata = new ArrayList<>();
+        // get the list of properties-values based on the result directly from Wikidata or Nerd KB
+        List<String> propertyValueKB = new ArrayList<>();
+        List<String> propertyNoValueKB = new ArrayList<>();
         for (Map.Entry<String, List<String>> propertyGot : propertiesWiki.entrySet()) {
             String property = propertyGot.getKey();
-            propertyNoValueWikidata.add(property);
+            propertyNoValueKB.add(property);
             List<String> values = propertyGot.getValue();
             for (String value : values) {
                 String propertyValue = property + "_" + value;
-                propertyValueWikidata.add(propertyValue);
+                propertyValueKB.add(propertyValue);
             }
         }
 
@@ -102,7 +102,8 @@ public class FeatureWikidataExtractor {
 
         // put 1 if property for entities in Wikidata match with the list of 'data/resource/feature_mapper.csv', otherwise put 0
         for (String propertyNoValue : propertyNoValueFeatureMapper) {
-            if (propertyNoValueWikidata.contains(propertyNoValue)){
+            // search the existance of a certain property in the list of property
+            if (propertyNoValueKB.contains(propertyNoValue)){
                 featureVector[idx] = 1;
             } else {
                 featureVector[idx] = 0;
@@ -112,7 +113,8 @@ public class FeatureWikidataExtractor {
 
         // put 1 if property-value for entities in Wikidata match with the list of 'data/resource/feature_mapper.csv', otherwise put 0
         for (String propertyValue : propertyValueFeatureMapper) {
-            if (propertyValueWikidata.contains(propertyValue)) {
+            // search the existance of a certain property-value in the list of property-value
+            if (propertyValueKB.contains(propertyValue)) {
                 featureVector[idx] = 1;
             } else {
                 featureVector[idx] = 0;

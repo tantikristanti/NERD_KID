@@ -24,7 +24,7 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
 
     //String nerdPathLocal = "http://localhost:8090/service/kb/concept/";
     String nerdUrl = "nerd.huma-num.fr";
-    //String nerdPath = "/nerd/service/kb/concept";
+    //String nerdPath = "/service/kb/concept";
     String nerdPath = "/test/service/kb/concept";
 
     @Override
@@ -41,7 +41,7 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
 
         if (responseId == 200) {
             response = IOUtils.toString(entity.getContent(), UTF_8);
-            if (response.contains("wikidataId")) {
+            if (response.contains(wikiId)) {
                 return fromJson(response);
             } else {
                 throw new DataException("Data parsing exception.");
@@ -59,7 +59,7 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
         JSONObject object = (JSONObject) parser.parse(input);
 
         String rawName = (String) object.get("rawName");
-        String preferredName = (String) object.get("preferredName");
+        //String preferredName = (String) object.get("preferredName");
 
         // replace commas in Wikidata labels with the underscore to avoid incorrect extraction in the Csv file
         if (rawName.contains(",")) {
@@ -73,17 +73,25 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
         Map<String, List<String>> outputProperties = element.getProperties();
 
         for (int i = 0; i < properties.size(); i++) {
-            final JSONObject o = (JSONObject) properties.get(i);
+            final JSONObject obj = (JSONObject) properties.get(i);
 
-            String propertyId = (String) o.get("propertyId");
-            String value = o.get("value").toString();
+            String propertyId = (String) obj.get("propertyId");
 
-            if (outputProperties.get(propertyId) == null) {
-                outputProperties.put(propertyId, new ArrayList<>());
-            } else {
+            String value = (String) obj.get("value").toString();
+
+            if (value == null) {
+                continue;
+            }
+
+            if (outputProperties.containsKey(propertyId)) {
                 outputProperties.get(propertyId).add(value);
+            } else {
+                List<String> values = new ArrayList<>();
+                values.add(value);
+                outputProperties.put(propertyId, values);
             }
             element.setProperties(outputProperties);
+
         }
 
         return element;

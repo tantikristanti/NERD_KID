@@ -71,6 +71,7 @@ Q1408,LOCATION
 *(Basically, a training file built based on the datasets prepared in `data/csv/BaseElements.csv`
  This step is done if there isn't any training file or there is a need to build a new one.)*
 
+- The result of Arff file can be seen in `/result/arff/Training.arff`.
 - It is also possible to check first whether the data and features of wikidata Ids are correct/complete by checking the Csv file result located in `result/csv/ResultFromArffGenerator.csv`.
 
 

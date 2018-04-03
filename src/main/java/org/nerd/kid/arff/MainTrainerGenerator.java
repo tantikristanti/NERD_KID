@@ -60,10 +60,12 @@ public class MainTrainerGenerator {
         final List<Path> trainingFiles = listFiles(Paths.get(NerdKidPaths.DATA_CSV), "*.{csv}");
         List<WikidataElementInfos> training = new ArrayList<>();
         for (Path inputFile : trainingFiles) {
+            // get all the WikidataId and Class lists in the csv file
             List<WikidataElementInfos> elements = extractData(inputFile.toFile());
             training.addAll(elements);
         }
 
+        // iterate for every WikidataId got from the csv file to get the feature
         for (WikidataElementInfos element : training) {
             try {
                 WikidataElementInfos wikidataFeatures = featureWikidataExtractor.getFeatureWikidata(element.getWikidataId());
