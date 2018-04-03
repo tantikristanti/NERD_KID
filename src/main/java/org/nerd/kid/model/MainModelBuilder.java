@@ -13,7 +13,7 @@ import java.io.File;
 public class MainModelBuilder {
     public static void main(String[] args) throws Exception {
         String fileInput = "Training.arff";
-        String fileOutput = "Result_Trained_Model.txt";
+        String fileOutput = "Result_Trained_Model_03042018.txt";
         String pathInput = NerdKidPaths.RESULT_ARFF + "/" + fileInput;
 
         ModelBuilder modelBuilder = new ModelBuilder();

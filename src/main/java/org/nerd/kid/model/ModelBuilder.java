@@ -56,7 +56,7 @@ public class ModelBuilder {
 
     // splitting the model into training and data set
     public void splitModel(int split) throws Exception {
-        String pathOutput = NerdKidPaths.RESULT_TXT + "/Result_Trained_Model.txt";
+        String pathOutput = NerdKidPaths.RESULT_TXT + "/Result_Trained_Model_03042018.txt";
         // if there isn't any training data
         if (attributeDataset == null) {
             logger.debug("Training data doesn't exist");
