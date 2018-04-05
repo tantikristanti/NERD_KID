@@ -11,13 +11,16 @@ import java.util.List;
 import java.util.Map;
 
 public class FeatureFileExtractor {
-    private String pathSource = NerdKidPaths.DATA_RESOURCE;
-
     public Map<String, List<String>> loadFeatures() {
         // get the features (properties and values) from the list in the csv file
-        String fileFeatureMapper = pathSource + "/feature_mapper.csv";
+        //String fileFeatureMapper = pathSource + "/feature_mapper.csv";
+
+        String fileFeatureMapper = "feature_mapper.csv";
+        ClassLoader classLoader = getClass().getClassLoader();
+
         try {
-            InputStream inputStream = new FileInputStream(fileFeatureMapper);
+            File file = new File(classLoader.getResource(fileFeatureMapper).getFile());
+            InputStream inputStream = new FileInputStream(file);
             Map<String, List<String>> featureMap = new HashMap<>();
             Reader featureMapperIn = new InputStreamReader(inputStream);
             Iterable<CSVRecord> recordsFeatures = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(featureMapperIn);
@@ -40,14 +43,18 @@ public class FeatureFileExtractor {
             e.printStackTrace();
             return new HashMap<>();
         }
-
     }
 
     public List<String> loadFeaturesNoValue() {
         // get the features (properties) from the list in the csv file
-        String fileFeatureMapperNoValue = pathSource + "/feature_mapper_no_value.csv";
+        //String fileFeatureMapperNoValue = pathSource + "/feature_mapper_no_value.csv";
+
+        String fileFeatureMapper = "feature_mapper_no_value.csv";
+        ClassLoader classLoader = getClass().getClassLoader();
+
         try {
-            InputStream inputStream = new FileInputStream(fileFeatureMapperNoValue);
+            File file = new File(classLoader.getResource(fileFeatureMapper).getFile());
+            InputStream inputStream = new FileInputStream(file);
             List<String> featureListNoValue = new ArrayList<>();
             Reader featureMapperIn = new InputStreamReader(inputStream);
             Iterable<CSVRecord> recordsFeaturesNoValue = null;

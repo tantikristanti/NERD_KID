@@ -20,6 +20,10 @@ public class FeatureWikidataExtractor {
         return wikidataFetcherWrapper;
     }
 
+    public FeatureWikidataExtractor(){
+
+    }
+
     public FeatureWikidataExtractor(WikidataFetcherWrapper wikidataFetcherWrapper){
         this.wikidataFetcherWrapper = wikidataFetcherWrapper;
     }

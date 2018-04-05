@@ -24,6 +24,15 @@ public class WikidataNERPredictor {
     private CSVWriter csvWriter = null;
 
     private XStream streamer = new XStream();
+
+    public RandomForest getForest() {
+        return forest;
+    }
+
+    public void setForest(RandomForest forest) {
+        this.forest = forest;
+    }
+
     private RandomForest forest = null;
     private WikidataFetcherWrapper wrapper;
 

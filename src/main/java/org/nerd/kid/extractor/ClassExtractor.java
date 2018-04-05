@@ -10,20 +10,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClassExtractor {
-    public List<String> loadClasses()  {
-        String path = NerdKidPaths.DATA_RESOURCE;
-        String fileClassMapper = "class_mapper.csv";
-        try {
-            return loadClasses(new FileInputStream(path + "/" + fileClassMapper));
-        }catch (FileNotFoundException e){
-            throw new NerdKidException("An exception occured while NerdKid is running.", e);
-        }
-    }
+    public List<String> loadClasses() {
+        // get the classes from the list in the csv file
+        //String path = NerdKidPaths.DATA_RESOURCE;
+        //String fileClassMapper = "class_mapper.csv";
 
-    public List<String> loadClasses(InputStream inputStreamFeatureFile) {
+        String fileFeatureMapper = "class_mapper.csv";
+        ClassLoader classLoader = getClass().getClassLoader();
         try {
+            File file = new File(classLoader.getResource(fileFeatureMapper).getFile());
             List<String> classMap = new ArrayList<>();
-            Reader classMapperIn = new InputStreamReader(inputStreamFeatureFile);
+            InputStream inputStream = new FileInputStream(file);
+            Reader classMapperIn = new InputStreamReader(inputStream);
             Iterable<CSVRecord> recordsClasses = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(classMapperIn);
 
             for (CSVRecord recordClass : recordsClasses) {
