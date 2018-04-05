@@ -55,6 +55,23 @@ public class WikidataNERPredictor {
         this.wrapper = wrapper;
     }
 
+    public WikidataElementInfos predict(WikidataElementInfos wikiInfos) {
+        // get the feature of every instance
+        final int length =wikiInfos.getFeatureVector().length;
+        double[] rawFeatures = new double[length];
+        for (int i = 0; i < length; i++) {
+            rawFeatures[i] = ((double) wikiInfos.getFeatureVector()[i]);
+        }
+
+        // predict the instance's class based on the features collected
+        int prediction = forest.predict(rawFeatures);
+
+        List<String> classMapper = new ClassExtractor().loadClasses();
+        wikiInfos.setPredictedClass(classMapper.get(prediction));
+
+        return wikiInfos;
+    }
+
     public WikidataElementInfos predict(String wikidataId) {
         // extract the characteristics of entities from Nerd
         WikidataFetcherWrapper wrapper = new NerdKBFetcherWrapper();
