@@ -15,6 +15,7 @@ import org.nerd.kid.exception.DataException;
 import org.nerd.kid.exception.RemoteServiceException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -72,28 +73,32 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
 
         Map<String, List<String>> outputProperties = element.getProperties();
 
-        for (int i = 0; i < properties.size(); i++) {
-            final JSONObject obj = (JSONObject) properties.get(i);
+        if (properties != null) {
 
-            String propertyId = (String) obj.get("propertyId");
+            for (int i = 0; i < properties.size(); i++) {
+                final JSONObject obj = (JSONObject) properties.get(i);
 
-            String value = (String) obj.get("value").toString();
+                String propertyId = (String) obj.get("propertyId");
 
-            if (value == null) {
-                continue;
+                String value = (String) obj.get("value").toString();
+
+                if (value == null) {
+                    continue;
+                }
+
+                if (outputProperties.containsKey(propertyId)) {
+                    outputProperties.get(propertyId).add(value);
+                } else {
+                    List<String> values = new ArrayList<>();
+                    values.add(value);
+                    outputProperties.put(propertyId, values);
+                }
+                element.setProperties(outputProperties);
+
             }
-
-            if (outputProperties.containsKey(propertyId)) {
-                outputProperties.get(propertyId).add(value);
-            } else {
-                List<String> values = new ArrayList<>();
-                values.add(value);
-                outputProperties.put(propertyId, values);
-            }
-            element.setProperties(outputProperties);
-
+        } else {
+            element.setProperties(new HashMap<>());
         }
-
         return element;
 
     }
