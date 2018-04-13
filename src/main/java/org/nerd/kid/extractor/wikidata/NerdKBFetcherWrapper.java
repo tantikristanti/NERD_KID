@@ -24,22 +24,24 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
 
     //String nerdPathLocal = "http://localhost:8090/service/kb/concept/";
-    String nerdUrl = "nerd.huma-num.fr";
+    //String nerdUrl = "nerd.huma-num.fr";
     //String nerdPath = "/service/kb/concept";
-    String nerdPath = "/test/service/kb/concept";
+    //String nerdPath = "/test/service/kb/concept";
+    String urlNerd =  "http://nerd.huma-num.fr/nerd/service/kb/concept";
 
     @Override
     public WikidataElement getElement(String wikiId) throws Exception {
-        HttpClient httpclient = HttpClientBuilder.create().build();
-        HttpHost target = new HttpHost(nerdUrl);
-        HttpGet request = new HttpGet(nerdPath + "/" + wikiId);
-        HttpResponse httpResponse = httpclient.execute(target, request);
+        HttpClient client = HttpClientBuilder.create().build();
+//        HttpHost target = new HttpHost(nerdUrl);
+//        HttpGet request = new HttpGet(nerdPath + "/" + wikiId);
+//        HttpResponse httpResponse = httpclient.execute(target, request);
+        HttpGet request = new HttpGet(urlNerd+ "/" + wikiId);
+        HttpResponse httpResponse = client.execute(request);
         HttpEntity entity = httpResponse.getEntity();
 
         String response = null;
         // get the response Id for throw the exception if it's not OK == 200
         int responseId = httpResponse.getStatusLine().getStatusCode();
-
         if (responseId == 200) {
             response = IOUtils.toString(entity.getContent(), UTF_8);
             if (response.contains(wikiId)) {
