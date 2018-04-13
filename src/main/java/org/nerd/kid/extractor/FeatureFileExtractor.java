@@ -15,12 +15,14 @@ public class FeatureFileExtractor {
         // get the features (properties and values) from the list in the csv file
         //String fileFeatureMapper = pathSource + "/feature_mapper.csv";
 
-        String fileFeatureMapper = "feature_mapper.csv";
-        ClassLoader classLoader = getClass().getClassLoader();
+        String fileFeatureMapper = "/feature_mapper.csv";
+        InputStream inputStream = this.getClass().getResourceAsStream(fileFeatureMapper);
+        //ClassLoader classLoader = getClass().getClassLoader();
 
         try {
-            File file = new File(classLoader.getResource(fileFeatureMapper).getFile());
-            InputStream inputStream = new FileInputStream(file);
+            //File file = new File(classLoader.getResource(fileFeatureMapper).getFile());
+            //InputStream inputStream = new FileInputStream(file);
+
             Map<String, List<String>> featureMap = new HashMap<>();
             Reader featureMapperIn = new InputStreamReader(inputStream);
             Iterable<CSVRecord> recordsFeatures = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(featureMapperIn);
@@ -49,12 +51,13 @@ public class FeatureFileExtractor {
         // get the features (properties) from the list in the csv file
         //String fileFeatureMapperNoValue = pathSource + "/feature_mapper_no_value.csv";
 
-        String fileFeatureMapper = "feature_mapper_no_value.csv";
-        ClassLoader classLoader = getClass().getClassLoader();
+        String fileFeatureMapper = "/feature_mapper_no_value.csv";
+        InputStream inputStream = this.getClass().getResourceAsStream(fileFeatureMapper);
+        //ClassLoader classLoader = getClass().getClassLoader();
 
         try {
-            File file = new File(classLoader.getResource(fileFeatureMapper).getFile());
-            InputStream inputStream = new FileInputStream(file);
+            //File file = new File(classLoader.getResource(fileFeatureMapper).getFile());
+            //InputStream inputStream = new FileInputStream(file);
             List<String> featureListNoValue = new ArrayList<>();
             Reader featureMapperIn = new InputStreamReader(inputStream);
             Iterable<CSVRecord> recordsFeaturesNoValue = null;

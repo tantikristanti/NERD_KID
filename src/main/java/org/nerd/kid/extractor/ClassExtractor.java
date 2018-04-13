@@ -15,12 +15,13 @@ public class ClassExtractor {
         //String path = NerdKidPaths.DATA_RESOURCE;
         //String fileClassMapper = "class_mapper.csv";
 
-        String fileFeatureMapper = "class_mapper.csv";
-        ClassLoader classLoader = getClass().getClassLoader();
+        String fileFeatureMapper = "/class_mapper.csv";
+        InputStream inputStream = this.getClass().getResourceAsStream(fileFeatureMapper);
+        //ClassLoader classLoader = getClass().getClassLoader();
         try {
-            File file = new File(classLoader.getResource(fileFeatureMapper).getFile());
+            //File file = new File(classLoader.getResource(fileFeatureMapper).getFile());
             List<String> classMap = new ArrayList<>();
-            InputStream inputStream = new FileInputStream(file);
+            //InputStream inputStream = new FileInputStream(file);
             Reader classMapperIn = new InputStreamReader(inputStream);
             Iterable<CSVRecord> recordsClasses = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(classMapperIn);
 
