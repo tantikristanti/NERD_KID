@@ -55,6 +55,15 @@ public class WikidataNERPredictor {
         this.wrapper = wrapper;
     }
 
+    public String predict(double[] rawFeatures) {
+        // predict the instance's class based on the features got
+        int prediction = forest.predict(rawFeatures);
+
+        // define the name of the class
+        List<String> classMapper = new ClassExtractor().loadClasses();
+        return classMapper.get(prediction);
+    }
+
     public WikidataElementInfos predict(WikidataElementInfos wikiInfos) {
         // get the feature of every instance
         final int length =wikiInfos.getFeatureVector().length;
