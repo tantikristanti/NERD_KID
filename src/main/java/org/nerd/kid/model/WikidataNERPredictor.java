@@ -17,6 +17,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class WikidataNERPredictor {
@@ -56,12 +57,18 @@ public class WikidataNERPredictor {
     }
 
     public String predict(double[] rawFeatures) {
-        // predict the instance's class based on the features got
-        int prediction = forest.predict(rawFeatures);
+        // if the features are only 0 for all, don't need to predict, the class is UNKNOWN
+        double sumOfFeatures = Arrays.stream(rawFeatures).sum();
+        if (sumOfFeatures>0) {
+            // predict the instance's class based on the features got
+            int prediction = forest.predict(rawFeatures);
 
-        // define the name of the class
-        List<String> classMapper = new ClassExtractor().loadClasses();
-        return classMapper.get(prediction);
+            // define the name of the class
+            List<String> classMapper = new ClassExtractor().loadClasses();
+            return classMapper.get(prediction);
+        } else {
+            return "UNKNOWN";
+        }
     }
 
     public WikidataElementInfos predict(WikidataElementInfos wikiInfos) {
@@ -72,11 +79,17 @@ public class WikidataNERPredictor {
             rawFeatures[i] = ((double) wikiInfos.getFeatureVector()[i]);
         }
 
-        // predict the instance's class based on the features collected
-        int prediction = forest.predict(rawFeatures);
+        // if the features are only 0 for all, don't need to predict, the class is UNKNOWN
+        double sumOfFeatures = Arrays.stream(rawFeatures).sum();
+        if (sumOfFeatures>0) {
+            // predict the instance's class based on the features collected
+            int prediction = forest.predict(rawFeatures);
 
-        List<String> classMapper = new ClassExtractor().loadClasses();
-        wikiInfos.setPredictedClass(classMapper.get(prediction));
+            List<String> classMapper = new ClassExtractor().loadClasses();
+            wikiInfos.setPredictedClass(classMapper.get(prediction));
+        } else {
+            wikiInfos.setPredictedClass("UNKNOWN");
+        }
 
         return wikiInfos;
     }
@@ -93,12 +106,17 @@ public class WikidataNERPredictor {
         for (int i = 0; i < length; i++) {
             rawFeatures[i] = ((double) wikidataElement.getFeatureVector()[i]);
         }
+        // if the features are only 0 for all, don't need to predict, the class is UNKNOWN
+        double sumOfFeatures = Arrays.stream(rawFeatures).sum();
+        if (sumOfFeatures>0) {
+            // predict the instance's class based on the features collected
+            int prediction = forest.predict(rawFeatures);
 
-        // predict the instance's class based on the features collected
-        int prediction = forest.predict(rawFeatures);
-
-        List<String> classMapper = new ClassExtractor().loadClasses();
-        wikidataElement.setPredictedClass(classMapper.get(prediction));
+            List<String> classMapper = new ClassExtractor().loadClasses();
+            wikidataElement.setPredictedClass(classMapper.get(prediction));
+        } else {
+            wikidataElement.setPredictedClass("UNKNOWN");
+        }
 
         return wikidataElement;
     }
