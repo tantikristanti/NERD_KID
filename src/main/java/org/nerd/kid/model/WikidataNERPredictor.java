@@ -8,8 +8,8 @@ import org.nerd.kid.data.WikidataElementInfos;
 import org.nerd.kid.extractor.ClassExtractor;
 import org.nerd.kid.extractor.FeatureWikidataExtractor;
 import org.nerd.kid.extractor.wikidata.NerdKBFetcherWrapper;
-import org.nerd.kid.extractor.wikidata.WikibaseWrapper;
 import org.nerd.kid.extractor.wikidata.WikidataFetcherWrapper;
+import org.nerd.kid.service.NerdKidPaths;
 import smile.classification.RandomForest;
 
 import java.io.File;
@@ -17,16 +17,30 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class WikidataNERPredictor {
+    private String pathResult = NerdKidPaths.RESULT_CSV;
     private CSVWriter csvWriter = null;
 
     private XStream streamer = new XStream();
+
+    public RandomForest getForest() {
+        return forest;
+    }
+
+    public void setForest(RandomForest forest) {
+        this.forest = forest;
+    }
+
     private RandomForest forest = null;
+    private WikidataFetcherWrapper wrapper;
 
     public void loadModel() {
-        InputStream model = this.getClass().getResourceAsStream("/modelOriginal.xml");
+        // the model.xml is located in /src/main/resources
+        String pathModel = "/model.xml";
+        InputStream model = this.getClass().getResourceAsStream(pathModel);
         forest = (RandomForest) streamer.fromXML(model);
     }
 
@@ -34,6 +48,50 @@ public class WikidataNERPredictor {
         XStream.setupDefaultSecurity(streamer);
         streamer.addPermission(AnyTypePermission.ANY);
         loadModel();
+    }
+
+    // to initialize the wrapper
+    public WikidataNERPredictor(WikidataFetcherWrapper wrapper){
+        this();
+        this.wrapper = wrapper;
+    }
+
+    public String predict(double[] rawFeatures) {
+        // if the features are only 0 for all, don't need to predict, the class is UNKNOWN
+        double sumOfFeatures = Arrays.stream(rawFeatures).sum();
+        if (sumOfFeatures>0) {
+            // predict the instance's class based on the features got
+            int prediction = forest.predict(rawFeatures);
+
+            // define the name of the class
+            List<String> classMapper = new ClassExtractor().loadClasses();
+            return classMapper.get(prediction);
+        } else {
+            return "UNKNOWN";
+        }
+    }
+
+    public WikidataElementInfos predict(WikidataElementInfos wikiInfos) {
+        // get the feature of every instance
+        final int length =wikiInfos.getFeatureVector().length;
+        double[] rawFeatures = new double[length];
+        for (int i = 0; i < length; i++) {
+            rawFeatures[i] = ((double) wikiInfos.getFeatureVector()[i]);
+        }
+
+        // if the features are only 0 for all, don't need to predict, the class is UNKNOWN
+        double sumOfFeatures = Arrays.stream(rawFeatures).sum();
+        if (sumOfFeatures>0) {
+            // predict the instance's class based on the features collected
+            int prediction = forest.predict(rawFeatures);
+
+            List<String> classMapper = new ClassExtractor().loadClasses();
+            wikiInfos.setPredictedClass(classMapper.get(prediction));
+        } else {
+            wikiInfos.setPredictedClass("UNKNOWN");
+        }
+
+        return wikiInfos;
     }
 
     public WikidataElementInfos predict(String wikidataId) {
@@ -48,33 +106,28 @@ public class WikidataNERPredictor {
         for (int i = 0; i < length; i++) {
             rawFeatures[i] = ((double) wikidataElement.getFeatureVector()[i]);
         }
+        // if the features are only 0 for all, don't need to predict, the class is UNKNOWN
+        double sumOfFeatures = Arrays.stream(rawFeatures).sum();
+        if (sumOfFeatures>0) {
+            // predict the instance's class based on the features collected
+            int prediction = forest.predict(rawFeatures);
 
-        // predict the instance's class based on the features collected
-        int prediction = forest.predict(rawFeatures);
-
-        List<String> classMapper = new ClassExtractor().loadClasses();
-        wikidataElement.setPredictedClass(classMapper.get(prediction));
+            List<String> classMapper = new ClassExtractor().loadClasses();
+            wikidataElement.setPredictedClass(classMapper.get(prediction));
+        } else {
+            wikidataElement.setPredictedClass("UNKNOWN");
+        }
 
         return wikidataElement;
     }
 
-    public void predict() throws Exception {
-        try {
-            predict(new File("data/csv/NewElements.csv"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void predict(File file) throws Exception {
-        String csvDataPath = "result/csv/ResultPredictedClass.csv";
-
+    public void predictForPreannotation(File fileInput, File fileOutput) throws Exception {
         // get the wikiId and class from the new csv file
         MainTrainerGenerator mainTrainerGenerator = new MainTrainerGenerator();
         List<WikidataElementInfos> inputList = new ArrayList<>();
-        inputList = mainTrainerGenerator.extractData(file);
+        inputList = mainTrainerGenerator.extractData(fileInput);
         try {
-            csvWriter = new CSVWriter(new FileWriter(csvDataPath), ',', CSVWriter.NO_QUOTE_CHARACTER);
+            csvWriter = new CSVWriter(new FileWriter(fileOutput), ',', CSVWriter.NO_QUOTE_CHARACTER);
             // header's file
             String[] headerPredict = {"WikidataID,LabelWikidata,Class"};
             csvWriter.writeNext(headerPredict);
@@ -97,58 +150,6 @@ public class WikidataNERPredictor {
             csvWriter.flush();
             csvWriter.close();
         }
-        System.out.print("Result in 'result/csv/ResultPredictedClass.csv'");
-    }
-
-    public void predictedResultAndProperties() throws Exception {
-        try {
-            predictedResultAndProperties(new File("data/csv/NewElements.csv"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void predictedResultAndProperties(File file) throws Exception {
-        // extract the characteristics of entities from Wikidata
-        WikidataFetcherWrapper wrapper = new WikibaseWrapper();
-        FeatureWikidataExtractor extractor = new FeatureWikidataExtractor(wrapper);
-
-        String csvDataPath = "result/csv/ResultPredictedClassProperties.csv";
-
-        // get the wikiId and class from the new csv file
-        MainTrainerGenerator mainTrainerGenerator = new MainTrainerGenerator();
-        List<WikidataElementInfos> inputList = new ArrayList<>();
-        inputList = mainTrainerGenerator.extractData(file);
-        try {
-            csvWriter = new CSVWriter(new FileWriter(csvDataPath), ',', CSVWriter.NO_QUOTE_CHARACTER);
-            // header's file
-            String[] headerPredict = {"WikidataID,LabelWikidata,Class,Property_Value"};
-
-            csvWriter.writeNext(headerPredict);
-            for (WikidataElementInfos wikiElement : inputList) {
-                // predict every wikidata Id in the file
-                String resultPredict = predict(wikiElement.getWikidataId()).getPredictedClass();
-
-                // get the label of every wikidata Id in the csv file
-                final WikidataElementInfos wikidataElement = extractor.getRawFeatureWikidata(wikiElement.getWikidataId());
-                String label = wikidataElement.getLabel();
-
-                // get the raw properties of each wikidataId from Wikidata KB
-                List<String> propertyValueWikidata = extractor.getRawFeatureWikidata(wikiElement.getWikidataId()).getRawFeatureVector();
-                String propertyValueJoined = null;
-                for(String property : propertyValueWikidata) {
-                    propertyValueJoined = String.join("-", property);
-                }
-                // write the result into a new csv file
-                String[] dataPredict = {wikiElement.getWikidataId(),label,resultPredict,propertyValueJoined};
-                csvWriter.writeNext(dataPredict);
-            }
-
-        } finally {
-            csvWriter.flush();
-            csvWriter.close();
-        }
-        System.out.print("Result in 'result/csv/ResultPredictedClassProperties.csv'");
-
+        System.out.print("Result in " + fileOutput);
     }
 }

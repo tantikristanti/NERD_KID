@@ -1,5 +1,7 @@
 package org.nerd.kid.model;
 
+import org.nerd.kid.service.NerdKidPaths;
+
 import java.io.File;
 
 /*
@@ -10,14 +12,17 @@ import java.io.File;
 **/
 public class MainModelBuilder {
     public static void main(String[] args) throws Exception {
+        String fileInput = "Training.arff";
+        String fileOutput = "Result_Trained_Model.txt";
+        String pathInput = NerdKidPaths.RESULT_ARFF + "/" + fileInput;
 
         ModelBuilder modelBuilder = new ModelBuilder();
-        modelBuilder.loadData();
+        modelBuilder.loadData(new File(pathInput));
 
-        Integer split = 80;
+        int split = 80;
         System.out.print("Percentage of training data (in %): " + split);
         modelBuilder.splitModel(split);
-        System.out.println("Result can be found in 'result/txt/Result_Trained_Model.txt'");
+        System.out.println("Result can be found in " + NerdKidPaths.RESULT_TXT + "/" + fileOutput);
 
         final String pathname = "/tmp/model.xml";
         modelBuilder.saveModel(new File(pathname));

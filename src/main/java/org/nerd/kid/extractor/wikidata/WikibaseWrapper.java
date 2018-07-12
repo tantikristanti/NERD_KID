@@ -31,6 +31,12 @@ public class WikibaseWrapper implements WikidataFetcherWrapper {
 
             // get the label of wikidata Id
             labelItem = document.getLabels().get("en").getText();
+
+            // replace commas in Wikidata labels with the underscore to avoid incorrect extraction in the Csv file
+            if(labelItem.contains(",")){
+                labelItem = labelItem.replace(",", "_");
+            }
+
             if (labelItem.equals(null)) {
                 labelItem = "Null";
 

@@ -1,0 +1,49 @@
+** Classification with Random Forest of 100 trees **
+
+Total of instances					:	 3467 
+Number of instance trained			:	 2773 
+Number of instance predicted		:	 694 
+Correctly classified instances		:	 669 (96.398 %) 
+Incorrectly classified instances	:	 25 (3.602 %) 
+Out of Bag (OOB) error rate			:	 0.039
+Specificity							:	 0.996 
+Average of accuracy					:	 0.995
+Macro Average of Precision			:	 0.606
+Micro Average of Precision			:	 0.964
+Macro Average of Recall				:	 0.559
+Micro Average of Recall				:	 0.964
+Macro Average of FMeasure			:	 0.582
+Micro Average of FMeasure			:	 0.964
+
+** Confusion Matrix **
+Row: Actual; Column: Predicted
+Label of class:
+{0:ANIMAL; 1:ARTIFACT; 2:AWARD; 3:BUSINESS; 4:CONCEPT; 5:CREATION; 6:EVENT; 7:LEGAL; 8:LOCATION; 9:ORGANISATION; 10:PERIOD; 11:PERSON; 12:PERSON_TYPE; 13:PLANT; 14:SPORT_TEAM; 15:SUBSTANCE}
+
+Class:	0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	
+	0|	18	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	
+	1|	0	0	0	0	0	0	0	0	5	0	0	0	0	0	0	0	
+	2|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	3|	0	0	0	1	0	0	0	0	1	0	0	0	0	0	0	0	
+	4|	0	0	0	0	17	0	0	0	0	0	0	0	0	0	0	0	
+	5|	0	0	0	0	0	13	0	0	0	0	0	0	0	0	0	0	
+	6|	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	
+	7|	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	
+	8|	0	0	0	0	0	2	0	0	345	0	0	0	0	0	0	0	
+	9|	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	
+	10|	0	0	0	0	0	0	0	0	1	0	93	0	0	0	0	0	
+	11|	0	0	0	0	0	0	0	0	2	0	0	122	0	0	0	0	
+	12|	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	
+	13|	2	0	0	0	0	0	0	0	0	0	0	0	0	13	0	0	
+	14|	0	0	0	0	0	0	0	0	1	0	0	0	0	0	4	0	
+	15|	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	43	
+
+** Validation for each class **
+
+Class		:	0		1		2		3		4		5		6		7		8		9		10		11		12		13		14		15	
+Accuracy	:	0.99	0.99	1.00	1.00	1.00	1.00	1.00	1.00	0.97	1.00	1.00	1.00	1.00	1.00	1.00	1.00
+Precision	:	0.90	0.00	0.00	1.00	1.00	0.87	0.00	0.00	0.95	0.00	0.99	1.00	0.00	1.00	1.00	1.00
+Recall		:	0.86	0.00	0.00	0.50	1.00	1.00	0.00	0.00	0.99	0.00	0.99	0.98	0.00	0.87	0.80	0.96
+FMeasure	:	0.88	0.00	0.00	0.67	1.00	0.93	0.00	0.00	0.97	0.00	0.99	0.99	0.00	0.93	0.89	0.98
+Specificity	:	1.00	1.00	1.00	1.00	1.00	1.00	1.00	1.00	0.94	1.00	1.00	1.00	1.00	1.00	1.00	1.00
+

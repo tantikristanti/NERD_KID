@@ -109,19 +109,29 @@ public class ModelEvaluation {
         return TN;
     }
 
-    // accuracy of all class = TP of all class / number of all instances
-    public double accuracy(int[] TP, int calculTotal) {
-        double totalTP = 0.0;
-        for (int i = 0; i < TP.length; i++) {
-            totalTP += TP[i];
-        }
-        return ((float) (totalTP / calculTotal));
-    }
-
     /**
      Precision: Given all the predicted labels (for a given class X), how many instances were correctly predicted?
      Recall: For all instances that should have a label X, how many of these were correctly captured?
      **/
+
+    // accuracy = (tp + tn) / (tp + tn + fp + fn)
+    public double[] accuracy(int[] TP, int[] TN, int[] FP, int[] FN){
+        double[] resultAccuracy = new double[TP.length];
+        for (int i = 0; i < TP.length; i++) {
+            resultAccuracy[i] = Double.isNaN((float) (TP[i] + TN[i]) / (TP[i] + TN[i] + FP[i] + FN[i])) ? 0.0 : (float) (TP[i] + TN[i]) / (TP[i] + TN[i] + FP[i] + FN[i]);
+        }
+        return resultAccuracy;
+    }
+
+    // the average of Accuracy
+    public double averageAccuracy(double[] Accuracy) {
+        double resultAllAccuracy = 0.0, subTotal = 0.0;
+        for (int i = 0; i < Accuracy.length; i++) {
+            subTotal += Accuracy[i];
+        }
+        resultAllAccuracy = Double.isNaN((float) subTotal / Accuracy.length) ? 0.0 : (float) subTotal / Accuracy.length;
+        return resultAllAccuracy;
+    }
 
     // precision = TP / (TP + FP)
     public double[] precision(int[] TP, int[] FP) {
@@ -150,6 +160,17 @@ public class ModelEvaluation {
         return resultSpecificity;
     }
 
+    // the average of specificity
+    public double averageSpecificity(double[] Specificity) {
+        double resultAllSpecificity = 0.0;
+        double subTotal = 0.0;
+        for (int i = 0; i < Specificity.length; i++) {
+            subTotal += Specificity[i];
+        }
+        resultAllSpecificity = Double.isNaN((float) subTotal / Specificity.length) ? 0.0 : (float) subTotal / Specificity.length;
+        return resultAllSpecificity;
+    }
+
     // fmeasure = 2 * (precision * recall) / (precision + recall)
     public double[] fmeasure(double[] Precision, double[] Recall) {
         double[] resultFmeasure = new double[Precision.length];
@@ -175,7 +196,7 @@ public class ModelEvaluation {
         return resultAllPrecision;
     }
 
-    // the average of Precision micro
+    // the average of Precision micro (micro relate with documents, not really need in grouping some entities into classes)
     public double averagePrecisionMicro(int[] TP, int[] FP) {
         double resultAllPrecision = 0.0, subTotalTP = 0.0, subTotalFP = 0.0;
         for (int i = 0; i < TP.length; i++) {
@@ -197,7 +218,7 @@ public class ModelEvaluation {
         return resultAllRecall;
     }
 
-    // the average of Recall micro
+    // the average of Recall micro (micro relate with documents, not really need in grouping some entities into classes)
     public double averageRecallMicro(int[] TP, int[] FN) {
         double resultAllRecall = 0.0, subTotalTP = 0.0, subTotalFN = 0.0;
         for (int i = 0; i < TP.length; i++) {
@@ -206,17 +227,6 @@ public class ModelEvaluation {
         }
         resultAllRecall = Double.isNaN((float) subTotalTP / (subTotalTP + subTotalFN)) ? 0.0 : (float) (float) subTotalTP / (subTotalTP + subTotalFN);
         return resultAllRecall;
-    }
-
-    // the average of specificity
-    public double averageSpecificity(double[] Specificity) {
-        double resultAllSpecificity = 0.0;
-        double subTotal = 0.0;
-        for (int i = 0; i < Specificity.length; i++) {
-            subTotal += Specificity[i];
-        }
-        resultAllSpecificity = Double.isNaN((float) subTotal / Specificity.length) ? 0.0 : (float) subTotal / Specificity.length;
-        return resultAllSpecificity;
     }
 
     public int countingInstanceClassified(int[] Testy, int[] yPredict) {

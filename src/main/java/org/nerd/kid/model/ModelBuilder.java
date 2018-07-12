@@ -4,6 +4,7 @@ import com.thoughtworks.xstream.XStream;
 import org.apache.commons.io.FileUtils;
 import org.nerd.kid.arff.ArffParser;
 import org.nerd.kid.evaluation.ModelEvaluation;
+import org.nerd.kid.service.NerdKidPaths;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import smile.classification.RandomForest;
@@ -31,10 +32,6 @@ public class ModelBuilder {
 
     private static final Logger logger = LoggerFactory.getLogger(ModelBuilder.class);
 
-    public void loadData() throws Exception {
-        loadData(new File("result/arff/Training.arff"));
-    }
-
     public void loadData(File file) throws Exception {
         // parsing the initial file to get the response index
         attributeDataset = arffParser.parse(new FileInputStream(file));
@@ -57,63 +54,9 @@ public class ModelBuilder {
         attributeDataset = arffParser.parse(file);
     }
 
-    // validation using training and testing data
-    public void trainTestModel(File fileInput, File fileOutput) throws Exception {
-        // if there isn't any training data
-        if (training == null) {
-            logger.debug("Training data doesn't exist");
-        }
-
-        // if there isn't any training data
-        if (testing == null) {
-            logger.debug("Testing data doesn't exist");
-        }
-
-        // training the data
-        logger.info("Training the model.");
-
-        // for getting output stream of the file for writing the result
-        File fl = new File("result/txt/Result_" + fileOutput.getName() + ".txt");
-
-        BufferedWriter result = new BufferedWriter(new FileWriter(fl));
-
-        // datax is for the examples, datay is for the class
-        double[][] trainx = training.toArray(new double[training.size()][]);
-        int[] trainy = training.toArray(new int[training.size()]);
-        double[][] testx = testing.toArray(new double[testing.size()][]);
-        int[] testy = testing.toArray(new int[testing.size()]);
-
-        int maxTemp = trainy[0];
-        // finding the biggest index in trainy
-        for (int i = 1; i < trainy.length; i++) {
-            if (trainy[i] >= maxTemp) {
-                maxTemp = trainy[i];
-            }
-        }
-        int max = maxTemp;
-        // finding the biggest index in testy
-        for (int i = 0; i < testy.length; i++) {
-            if (testy[i] >= max) {
-                max = testy[i];
-            }
-        }
-
-        // finding the biggest index between trainy and testy
-        if (maxTemp >= max)
-            max = maxTemp;
-
-        // training with Random Forest classification
-        forest = new RandomForest(attributeDataset.attributes(), trainx, trainy, 100);
-
-        // printing the result
-        outputResults(System.out, testx, testy, max);
-
-        // creating text file from the result
-        outputResults(new PrintStream(new FileOutputStream("result/txt/Result_Trained_Model.txt")), testx, testy, max);
-    }
-
     // splitting the model into training and data set
     public void splitModel(int split) throws Exception {
+        String pathOutput = NerdKidPaths.RESULT_TXT + "/Result_Trained_Model.txt";
         // if there isn't any training data
         if (attributeDataset == null) {
             logger.debug("Training data doesn't exist");
@@ -164,7 +107,7 @@ public class ModelBuilder {
         outputResults(System.out, testx, testy, max);
 
         // creating text file from the result
-        outputResults(new PrintStream(new FileOutputStream("result/txt/Result_Trained_Model.txt")), testx, testy, max);
+        outputResults(new PrintStream(new FileOutputStream(pathOutput)), testx, testy, max);
     }
 
     public int[] predictTestData(double[][] Testx) {
@@ -177,7 +120,8 @@ public class ModelBuilder {
     }
 
     public void outputResults(PrintStream output, double[][] Testx, int[] Testy, int max) throws Exception {
-        File fileInput = new File("result/arff/Training.arff");
+        String pathFileInput = NerdKidPaths.RESULT_ARFF + "/Training.arff";
+        File fileInput = new File(pathFileInput);
         // prediction and calculating the classes classified
         int[] yPredict = predictTestData(Testx);
 
@@ -203,6 +147,7 @@ public class ModelBuilder {
         int[] FP = evaluation.countingFalsePositive(confusMatrix, max);
         int[] FN = evaluation.countingFalseNegative(confusMatrix, max);
         int totalAll = evaluation.countingTotalClass(confusMatrix, max);
+        double[] resultAccuracy = evaluation.accuracy(TP, TN, FP, FN);
         double[] resultPrecision = evaluation.precision(TP, FP);
         double[] resultRecall = evaluation.recall(TP, FN);
         double[] resultSpecificity = evaluation.specificity(TN, FP);
@@ -211,21 +156,21 @@ public class ModelBuilder {
         // classfied instances
         output.println("** Classification with Random Forest of " + forest.size() + " trees **");
         output.print("\n");
-        output.format("Total of instances\t\t\t:\t %d \n", sizeDataAll);
-        output.format("Number of instance trained\t\t:\t %d \n", sizeDataTrained);
+        output.format("Total of instances\t\t\t\t\t:\t %d \n", sizeDataAll);
+        output.format("Number of instance trained\t\t\t:\t %d \n", sizeDataTrained);
         output.format("Number of instance predicted\t\t:\t %d \n", sizeDataPredicted);
         output.format("Correctly classified instances\t\t:\t %d (%.3f %%) %n", count_classified, count_classified / total_instances * 100.00);
         output.format("Incorrectly classified instances\t:\t %d (%.3f %%) %n", count_error, count_error / total_instances * 100.00);
-        output.format("Out of Bag (OOB) error rate\t\t:\t %.3f%n", forest.error());
-        output.format("Specificity\t\t\t\t:\t %.3f %n", evaluation.averageSpecificity(resultSpecificity));
-        output.format("accuracy\t\t\t\t:\t %.3f%n", evaluation.accuracy(TP, totalAll));
+        output.format("Out of Bag (OOB) error rate\t\t\t:\t %.3f%n", forest.error());
+        output.format("Specificity\t\t\t\t\t\t\t:\t %.3f %n", evaluation.averageSpecificity(resultSpecificity));
+        output.format("Average of accuracy\t\t\t\t\t:\t %.3f%n", evaluation.averageAccuracy(resultAccuracy));
         // FMeasure, Precision, Recall for all classes
-        output.format("Macro Average Precision\t\t\t:\t %.3f%n", evaluation.averagePrecisionMacro(resultPrecision));
-        output.format("Micro Average Precision\t\t\t:\t %.3f%n", evaluation.averagePrecisionMicro(TP, FP));
-        output.format("Macro Average Recall\t\t\t:\t %.3f%n", evaluation.averageRecallMacro(resultRecall));
-        output.format("Micro Average Recall\t\t\t:\t %.3f%n", evaluation.averageRecallMicro(TP, FN));
-        output.format("Macro Average FMeasure\t\t\t:\t %.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMacro(resultPrecision), evaluation.averageRecallMacro(resultRecall)));
-        output.format("Micro Average FMeasure\t\t\t:\t %.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMicro(TP, FP), evaluation.averageRecallMicro(TP, FN)));
+        output.format("Macro Average of Precision\t\t\t:\t %.3f%n", evaluation.averagePrecisionMacro(resultPrecision));
+        output.format("Micro Average of Precision\t\t\t:\t %.3f%n", evaluation.averagePrecisionMicro(TP, FP));
+        output.format("Macro Average of Recall\t\t\t\t:\t %.3f%n", evaluation.averageRecallMacro(resultRecall));
+        output.format("Micro Average of Recall\t\t\t\t:\t %.3f%n", evaluation.averageRecallMicro(TP, FN));
+        output.format("Macro Average of FMeasure\t\t\t:\t %.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMacro(resultPrecision), evaluation.averageRecallMacro(resultRecall)));
+        output.format("Micro Average of FMeasure\t\t\t:\t %.3f%n", evaluation.averageFmeasure(evaluation.averagePrecisionMicro(TP, FP), evaluation.averageRecallMicro(TP, FN)));
 
         output.println("\n** Confusion Matrix **");
         output.println("Row: Actual; Column: Predicted");
@@ -238,7 +183,7 @@ public class ModelBuilder {
         }
         output.print("}\n\n");
 
-        output.print("Class:\t\t");
+        output.print("Class:\t");
         for (int i = 0; i <= max; i++) {
             output.print(i + "\t");
         }
@@ -255,12 +200,12 @@ public class ModelBuilder {
         output.println("\n** Validation for each class **");
         output.printf("\nClass\t\t:");
         for (int i = 0; i <= max; i++) {
-            output.printf("\t" + i);
+            output.printf("\t" + i + "\t");
         }
 
-        output.printf("\nFMeasure\t:");
+        output.printf("\nAccuracy\t:");
         for (int i = 0; i <= max; i++) {
-            output.format("\t%.2f", resultFmeasure[i]);
+            output.format("\t%.2f", resultAccuracy[i]);
         }
 
         output.printf("\nPrecision\t:");
@@ -273,7 +218,12 @@ public class ModelBuilder {
             output.format("\t%.2f", resultRecall[i]);
         }
 
-        output.printf("\nSpesificity\t:");
+        output.printf("\nFMeasure\t:");
+        for (int i = 0; i <= max; i++) {
+            output.format("\t%.2f", resultFmeasure[i]);
+        }
+
+        output.printf("\nSpecificity\t:");
         for (int i = 0; i <= max; i++) {
             output.format("\t%.2f", resultSpecificity[i]);
         }

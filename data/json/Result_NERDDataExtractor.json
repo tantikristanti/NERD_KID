@@ -2,721 +2,1087 @@
 {
   "global_categories": [
     {
-      "page_id": 46219968,
-      "weight": 9.78215559904802E-4,
+      "page_id": 36538921,
+      "weight": 0.0016235100149837158,
       "source": "wikipedia-en",
-      "category": "2010 in American law"
+      "category": "1916 in Austria-Hungary"
     },
     {
-      "page_id": 31555043,
-      "weight": 0.0026452285750994658,
+      "page_id": 39385183,
+      "weight": 0.0016388999895905216,
       "source": "wikipedia-en",
-      "category": "Republican Party state governors of the United States"
+      "category": "Recipients of the Military Merit Cross (Mecklenburg-Schwerin), 1st class"
     },
     {
-      "page_id": 24204659,
-      "weight": 0.001078429404778856,
+      "page_id": 36203567,
+      "weight": 0.001602155426804479,
       "source": "wikipedia-en",
-      "category": "Treaties of Armenia"
+      "category": "Bodies of water of the Netherlands"
     }
   ],
   "entities": [
     {
-      "wikipediaExternalRef": 534366,
-      "nerd_selection_score": 0.8464,
-      "wikidataId": "Q76",
-      "offsetStart": 18,
-      "offsetEnd": 30,
-      "domains": [
-        "Biology"
-      ],
-      "type": "PERSON",
-      "rawName": "Barack Obama",
-      "nerd_score": 0.3764
-    },
-    {
-      "wikipediaExternalRef": 3414021,
-      "nerd_selection_score": 0.6019,
-      "wikidataId": "Q207",
-      "offsetStart": 35,
-      "offsetEnd": 48,
-      "domains": [
-        "Biology",
-        "Sociology"
-      ],
-      "type": "PERSON",
-      "rawName": "George W Bush",
-      "nerd_score": 0.3764
-    },
-    {
       "nerd_selection_score": 0,
-      "offsetStart": 112,
-      "offsetEnd": 114,
+      "offsetStart": 0,
+      "offsetEnd": 7,
       "type": "LOCATION",
-      "rawName": "US",
+      "rawName": "Austria",
       "nerd_score": 0.8
     },
     {
-      "nerd_selection_score": 0,
-      "offsetStart": 155,
-      "offsetEnd": 161,
+      "wikipediaExternalRef": 10072531,
+      "nerd_selection_score": 0.5758,
+      "wikidataId": "Q1209256",
+      "offsetStart": 31,
+      "offsetEnd": 43,
+      "domains": [
+        "Military"
+      ],
+      "rawName": "Serbian army",
+      "nerd_score": 0.6962
+    },
+    {
+      "wikipediaExternalRef": 1614762,
+      "nerd_selection_score": 0.9308,
+      "wikidataId": "Q697748",
+      "offsetStart": 51,
+      "offsetEnd": 64,
+      "domains": [
+        "Military"
+      ],
+      "rawName": "Battle of Cer",
+      "nerd_score": 0.7522
+    },
+    {
+      "wikipediaExternalRef": 2167279,
+      "nerd_selection_score": 0.8508,
+      "wikidataId": "Q682699",
+      "offsetStart": 69,
+      "offsetEnd": 87,
+      "domains": [
+        "Military"
+      ],
+      "rawName": "Battle of Kolubara",
+      "nerd_score": 0.7502
+    },
+    {
+      "wikipediaExternalRef": 1491,
+      "nerd_selection_score": 0.4713,
+      "wikidataId": "Q2777",
+      "offsetStart": 101,
+      "offsetEnd": 110,
+      "domains": [
+        "Biology",
+        "Psychiatry",
+        "Health"
+      ],
+      "type": "PERIOD",
+      "rawName": "12 August",
+      "nerd_score": 0.7263
+    },
+    {
+      "wikipediaExternalRef": 40548,
+      "nerd_selection_score": 0.9178,
+      "wikidataId": "Q2667",
+      "offsetStart": 137,
+      "offsetEnd": 156,
+      "domains": [
+        "Administration",
+        "Biology",
+        "Military"
+      ],
       "type": "PERSON",
-      "rawName": "Donald",
-      "nerd_score": 0.8
+      "rawName": "Paul von Hindenburg",
+      "nerd_score": 0.7513
     },
     {
       "nerd_selection_score": 0,
-      "offsetStart": 181,
-      "offsetEnd": 184,
-      "type": "TITLE",
-      "rawName": "Mr",
-      "nerd_score": 0.8
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 185,
-      "offsetEnd": 190,
+      "offsetStart": 166,
+      "offsetEnd": 172,
       "type": "LOCATION",
-      "rawName": "Obama",
+      "rawName": "Russia",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 60142,
+      "nerd_selection_score": 0.9287,
+      "wikidataId": "Q153858",
+      "offsetStart": 228,
+      "offsetEnd": 248,
+      "domains": [
+        "Administration",
+        "Military"
+      ],
+      "type": "ORGANISATION",
+      "rawName": "Battle of Tannenberg",
+      "nerd_score": 0.7521
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 253,
+      "offsetEnd": 273,
+      "type": "PERIOD",
+      "rawName": "August – 2 September",
       "nerd_score": 0.8
     },
     {
       "nerd_selection_score": 0,
-      "offsetStart": 197,
-      "offsetEnd": 206,
-      "type": "PERSON_TYPE",
-      "rawName": "Americans",
+      "offsetStart": 291,
+      "offsetEnd": 298,
+      "type": "NATIONAL",
+      "rawName": "Russian",
       "nerd_score": 0.8
     },
     {
-      "nerd_selection_score": 0,
-      "offsetStart": 258,
-      "offsetEnd": 265,
-      "type": "TITLE",
-      "rawName": "Mr Bush",
-      "nerd_score": 0.8
-    },
-    {
-      "wikipediaExternalRef": 4848272,
-      "nerd_selection_score": 0.5824,
-      "wikidataId": "Q22686",
-      "offsetStart": 366,
-      "offsetEnd": 381,
+      "wikipediaExternalRef": 12354993,
+      "nerd_selection_score": 0.5047,
+      "wikidataId": "Q313422",
+      "offsetStart": 327,
+      "offsetEnd": 340,
       "domains": [
-        "Commerce",
-        "Enterprise",
-        "Biology",
-        "Meteorology"
-      ],
-      "rawName": "President Trump",
-      "nerd_score": 0.6283
-    },
-    {
-      "wikipediaExternalRef": 4848272,
-      "nerd_selection_score": 0.4267,
-      "wikidataId": "Q22686",
-      "offsetStart": 391,
-      "offsetEnd": 400,
-      "domains": [
-        "Commerce",
-        "Enterprise",
-        "Biology",
-        "Meteorology"
-      ],
-      "type": "TITLE",
-      "rawName": "Mr Trump",
-      "nerd_score": 0.6283
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 556,
-      "offsetEnd": 558,
-      "type": "TITLE",
-      "rawName": "Mr",
-      "nerd_score": 0.8
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 559,
-      "offsetEnd": 564,
-      "type": "PERSON",
-      "rawName": "Obama",
-      "nerd_score": 0.8
-    },
-    {
-      "wikipediaExternalRef": 4848272,
-      "nerd_selection_score": 0.4267,
-      "wikidataId": "Q22686",
-      "offsetStart": 632,
-      "offsetEnd": 640,
-      "domains": [
-        "Commerce",
-        "Enterprise",
-        "Biology",
-        "Meteorology"
-      ],
-      "type": "TITLE",
-      "rawName": "Mr Trump",
-      "nerd_score": 0.6283
-    },
-    {
-      "wikipediaExternalRef": 3414021,
-      "nerd_selection_score": 0.6019,
-      "wikidataId": "Q207",
-      "offsetStart": 645,
-      "offsetEnd": 658,
-      "domains": [
-        "Biology",
-        "Sociology"
-      ],
-      "type": "PERSON",
-      "rawName": "George W Bush",
-      "nerd_score": 0.3764
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 727,
-      "offsetEnd": 729,
-      "type": "TITLE",
-      "rawName": "Mr",
-      "nerd_score": 0.8
-    },
-    {
-      "wikipediaExternalRef": 25226624,
-      "nerd_selection_score": 0.5956,
-      "wikidataId": "Q1414593",
-      "offsetStart": 758,
-      "offsetEnd": 767,
-      "domains": [
-        "Applied_Science",
-        "Engineering",
-        "Biology"
-      ],
-      "type": "PERSON",
-      "rawName": "Obamacare",
-      "nerd_score": 0.4176
-    },
-    {
-      "wikipediaExternalRef": 19541,
-      "nerd_selection_score": 0.5868,
-      "wikidataId": "Q47740",
-      "offsetStart": 798,
-      "offsetEnd": 804,
-      "domains": [
-        "Biology",
+        "Military",
         "Administration"
       ],
-      "type": "PERSON",
-      "rawName": "Muslim",
-      "nerd_score": 0.3764
+      "rawName": "German troops",
+      "nerd_score": 0.7522
     },
     {
-      "wikipediaExternalRef": 30242372,
-      "nerd_selection_score": 0.6958,
-      "wikidataId": "Q21707860",
-      "offsetStart": 837,
-      "offsetEnd": 857,
+      "wikipediaExternalRef": 2198871,
+      "nerd_selection_score": 0.5248,
+      "wikidataId": "Q215669",
+      "offsetStart": 383,
+      "offsetEnd": 389,
       "domains": [
         "Administration",
-        "Meteorology"
+        "Military"
       ],
-      "rawName": "Paris climate accord",
-      "nerd_score": 0.4603
+      "rawName": "Allied",
+      "nerd_score": 0.7524
+    },
+    {
+      "wikipediaExternalRef": 171325,
+      "nerd_selection_score": 0.9074,
+      "wikidataId": "Q190712",
+      "offsetStart": 405,
+      "offsetEnd": 430,
+      "domains": [
+        "Military"
+      ],
+      "type": "EVENT",
+      "rawName": "First Battle of the Marne",
+      "nerd_score": 0.7491
+    },
+    {
+      "wikipediaExternalRef": 2198871,
+      "nerd_selection_score": 0.5623,
+      "wikidataId": "Q215669",
+      "offsetStart": 454,
+      "offsetEnd": 460,
+      "domains": [
+        "Administration",
+        "Military"
+      ],
+      "rawName": "Allies",
+      "nerd_score": 0.7524
+    },
+    {
+      "wikipediaExternalRef": 11867,
+      "nerd_selection_score": 0.4249,
+      "wikidataId": "Q183",
+      "offsetStart": 470,
+      "offsetEnd": 476,
+      "domains": [
+        "Administration"
+      ],
+      "type": "NATIONAL",
+      "rawName": "German",
+      "nerd_score": 0.3569
+    },
+    {
+      "wikipediaExternalRef": 160204,
+      "nerd_selection_score": 0.5408,
+      "wikidataId": "Q152099",
+      "offsetStart": 477,
+      "offsetEnd": 493,
+      "domains": [
+        "Administration",
+        "Biology",
+        "Military",
+        "Enterprise"
+      ],
+      "type": "PERSON",
+      "rawName": "King Constantine",
+      "nerd_score": 0.6497
+    },
+    {
+      "wikipediaExternalRef": 2198871,
+      "nerd_selection_score": 0.5512,
+      "wikidataId": "Q215669",
+      "offsetStart": 514,
+      "offsetEnd": 531,
+      "domains": [
+        "Administration",
+        "Military"
+      ],
+      "rawName": "Allied government",
+      "nerd_score": 0.7839
+    },
+    {
+      "wikipediaExternalRef": 305256,
+      "nerd_selection_score": 0.5445,
+      "wikidataId": "Q205545",
+      "offsetStart": 538,
+      "offsetEnd": 547,
+      "domains": [
+        "Administration",
+        "Military"
+      ],
+      "rawName": "Venizelos",
+      "nerd_score": 0.7156
+    },
+    {
+      "wikipediaExternalRef": 2198871,
+      "nerd_selection_score": 0.5248,
+      "wikidataId": "Q215669",
+      "offsetStart": 559,
+      "offsetEnd": 565,
+      "domains": [
+        "Administration",
+        "Military"
+      ],
+      "rawName": "Allied",
+      "nerd_score": 0.7524
+    },
+    {
+      "wikipediaExternalRef": 10637578,
+      "nerd_selection_score": 0.5014,
+      "wikidataId": "Q11682252",
+      "offsetStart": 566,
+      "offsetEnd": 585,
+      "domains": [
+        "Administration",
+        "Military"
+      ],
+      "rawName": "expeditionary force",
+      "nerd_score": 0.6935
     },
     {
       "nerd_selection_score": 0,
-      "offsetStart": 874,
-      "offsetEnd": 884,
-      "type": "CONCEPTUAL",
-      "rawName": "Democratic",
+      "offsetStart": 613,
+      "offsetEnd": 617,
+      "type": "PERIOD",
+      "rawName": "1915",
       "nerd_score": 0.8
     },
     {
-      "wikipediaExternalRef": 67234,
-      "nerd_selection_score": 0.4223,
-      "wikidataId": "Q25395",
-      "offsetStart": 903,
-      "offsetEnd": 909,
-      "domains": [
-        "Applied_Science"
-      ],
-      "type": "LOCATION",
-      "rawName": "Newark",
-      "nerd_score": 0.306
+      "nerd_selection_score": 0,
+      "offsetStart": 623,
+      "offsetEnd": 631,
+      "type": "PERSON_TYPE",
+      "rawName": "Italians",
+      "nerd_score": 0.8
     },
     {
-      "wikipediaExternalRef": 21648,
-      "nerd_selection_score": 0.6241,
-      "wikidataId": "Q1408",
-      "offsetStart": 911,
-      "offsetEnd": 921,
+      "wikipediaExternalRef": 3010720,
+      "nerd_selection_score": 0.7,
+      "wikidataId": "Q333809",
+      "offsetStart": 638,
+      "offsetEnd": 645,
       "domains": [
         "Administration",
+        "Military"
+      ],
+      "type": "PERSON",
+      "rawName": "Cadorna",
+      "nerd_score": 0.7465
+    },
+    {
+      "wikipediaExternalRef": 63627,
+      "nerd_selection_score": 0.7414,
+      "wikidataId": "Q202760",
+      "offsetStart": 679,
+      "offsetEnd": 685,
+      "domains": [
+        "Nautical",
+        "Transport"
+      ],
+      "rawName": "Isonzo",
+      "nerd_score": 0.7217
+    },
+    {
+      "wikipediaExternalRef": 63627,
+      "nerd_selection_score": 0.9114,
+      "wikidataId": "Q202760",
+      "offsetStart": 702,
+      "offsetEnd": 714,
+      "domains": [
+        "Nautical",
+        "Transport"
+      ],
+      "type": "LOCATION",
+      "rawName": "Isonzo River",
+      "nerd_score": 0.7217
+    },
+    {
+      "wikipediaExternalRef": 56092,
+      "nerd_selection_score": 0.8459,
+      "wikidataId": "Q546",
+      "offsetStart": 729,
+      "offsetEnd": 736,
+      "domains": [
         "Oceanography"
       ],
       "type": "LOCATION",
-      "rawName": "New Jersey",
-      "nerd_score": 0.3764
+      "rawName": "Trieste",
+      "nerd_score": 0.7003
+    },
+    {
+      "wikipediaExternalRef": 2654397,
+      "nerd_selection_score": 0.9349,
+      "wikidataId": "Q815179",
+      "offsetStart": 745,
+      "offsetEnd": 762,
+      "domains": [
+        "Military"
+      ],
+      "rawName": "Siege of Maubeuge",
+      "nerd_score": 0.7519
     },
     {
       "nerd_selection_score": 0,
-      "offsetStart": 923,
-      "offsetEnd": 925,
-      "type": "TITLE",
-      "rawName": "Mr",
+      "offsetStart": 769,
+      "offsetEnd": 774,
+      "type": "MEASURE",
+      "rawName": "40000",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 5843419,
+      "nerd_selection_score": 0.4114,
+      "wikidataId": "Q142",
+      "offsetStart": 775,
+      "offsetEnd": 781,
+      "domains": [
+        "Administration"
+      ],
+      "type": "NATIONAL",
+      "rawName": "French",
+      "nerd_score": 0.3569
+    },
+    {
+      "wikipediaExternalRef": 1671552,
+      "nerd_selection_score": 0.7807,
+      "wikidataId": "Q659246",
+      "offsetStart": 811,
+      "offsetEnd": 828,
+      "domains": [
+        "Military",
+        "Administration"
+      ],
+      "rawName": "battle of Galicia",
+      "nerd_score": 0.7415
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 849,
+      "offsetEnd": 852,
+      "type": "MEASURE",
+      "rawName": "100",
       "nerd_score": 0.8
     },
     {
       "nerd_selection_score": 0,
-      "offsetStart": 926,
-      "offsetEnd": 931,
-      "type": "PERSON",
-      "rawName": "Obama",
+      "offsetStart": 853,
+      "offsetEnd": 859,
+      "type": "MEASURE",
+      "rawName": "120000",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 266894,
+      "nerd_selection_score": 0.4891,
+      "wikidataId": "Q131964",
+      "offsetStart": 860,
+      "offsetEnd": 868,
+      "domains": [
+        "Geography",
+        "Astronomy",
+        "Administration",
+        "Military",
+        "Geology"
+      ],
+      "type": "NATIONAL",
+      "rawName": "Austrian",
+      "nerd_score": 0.7196
+    },
+    {
+      "wikipediaExternalRef": 342327,
+      "nerd_selection_score": 0.9598,
+      "wikidataId": "Q221967",
+      "offsetStart": 886,
+      "offsetEnd": 904,
+      "domains": [
+        "Military",
+        "Administration"
+      ],
+      "type": "BUSINESS",
+      "rawName": "Brusilov Offensive",
+      "nerd_score": 0.7443
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 911,
+      "offsetEnd": 918,
+      "type": "MEASURE",
+      "rawName": "325 000",
       "nerd_score": 0.8
     },
     {
       "nerd_selection_score": 0,
-      "offsetStart": 937,
-      "offsetEnd": 946,
+      "offsetStart": 922,
+      "offsetEnd": 929,
+      "type": "MEASURE",
+      "rawName": "417 000",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 930,
+      "offsetEnd": 937,
       "type": "PERSON_TYPE",
-      "rawName": "Americans",
+      "rawName": "Germans",
       "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 266894,
+      "nerd_selection_score": 0.6426,
+      "wikidataId": "Q131964",
+      "offsetStart": 942,
+      "offsetEnd": 951,
+      "domains": [
+        "Geography",
+        "Astronomy",
+        "Administration",
+        "Military",
+        "Geology"
+      ],
+      "type": "PERSON_TYPE",
+      "rawName": "Austrians",
+      "nerd_score": 0.7196
     },
     {
       "nerd_selection_score": 0,
-      "offsetStart": 1282,
-      "offsetEnd": 1284,
-      "type": "MEASURE",
-      "rawName": "50",
+      "offsetStart": 967,
+      "offsetEnd": 975,
+      "type": "PERSON_TYPE",
+      "rawName": "Russians",
       "nerd_score": 0.8
     },
     {
-      "nerd_selection_score": 0,
-      "offsetStart": 1305,
-      "offsetEnd": 1317,
-      "type": "ORGANISATION",
-      "rawName": "21st Century",
-      "nerd_score": 0.8
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 1327,
-      "offsetEnd": 1339,
-      "type": "MEASURE",
-      "rawName": "19th Century",
-      "nerd_score": 0.8
-    },
-    {
-      "wikipediaExternalRef": 100040,
-      "nerd_selection_score": 0.5654,
-      "wikidataId": "Q2521385",
-      "offsetStart": 1536,
-      "offsetEnd": 1544,
+      "wikipediaExternalRef": 60142,
+      "nerd_selection_score": 0.9287,
+      "wikidataId": "Q153858",
+      "offsetStart": 984,
+      "offsetEnd": 1004,
       "domains": [
         "Administration",
-        "Architecture"
+        "Military"
+      ],
+      "type": "EVENT",
+      "rawName": "Battle of Tannenberg",
+      "nerd_score": 0.7521
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 1005,
+      "offsetEnd": 1011,
+      "type": "MEASURE",
+      "rawName": "92,000",
+      "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 1012,
+      "offsetEnd": 1020,
+      "type": "PERSON_TYPE",
+      "rawName": "Russians",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 3343,
+      "nerd_selection_score": 0.6395,
+      "wikidataId": "Q31",
+      "offsetStart": 1057,
+      "offsetEnd": 1064,
+      "domains": [
+        "Administration"
       ],
       "type": "LOCATION",
-      "rawName": "Richmond",
-      "nerd_score": 0.3764
+      "rawName": "Belgium",
+      "nerd_score": 0.3569
     },
     {
-      "wikipediaExternalRef": 32432,
-      "nerd_selection_score": 0.4384,
-      "wikidataId": "Q1370",
-      "offsetStart": 1546,
-      "offsetEnd": 1554,
+      "wikipediaExternalRef": 17515,
+      "nerd_selection_score": 0.6811,
+      "wikidataId": "Q32",
+      "offsetStart": 1066,
+      "offsetEnd": 1076,
       "domains": [
         "Administration",
+        "Geology",
         "Oceanography",
-        "Sociology"
+        "Earth"
       ],
       "type": "LOCATION",
-      "rawName": "Virginia",
-      "nerd_score": 0.3764
+      "rawName": "Luxembourg",
+      "nerd_score": 0.3569
+    },
+    {
+      "wikipediaExternalRef": 143706,
+      "nerd_selection_score": 0.8058,
+      "wikidataId": "Q151985",
+      "offsetStart": 1085,
+      "offsetEnd": 1093,
+      "domains": [
+        "Plants",
+        "Environment"
+      ],
+      "type": "LOCATION",
+      "rawName": "Ardennes",
+      "nerd_score": 0.7521
+    },
+    {
+      "wikipediaExternalRef": 12354993,
+      "nerd_selection_score": 0.8534,
+      "wikidataId": "Q313422",
+      "offsetStart": 1099,
+      "offsetEnd": 1110,
+      "domains": [
+        "Military",
+        "Administration"
+      ],
+      "type": "ORGANISATION",
+      "rawName": "German Army",
+      "nerd_score": 0.7522
     },
     {
       "nerd_selection_score": 0,
-      "offsetStart": 1564,
-      "offsetEnd": 1568,
-      "type": "PERSON",
-      "rawName": "Weve",
+      "offsetStart": 1143,
+      "offsetEnd": 1149,
+      "type": "PERIOD",
+      "rawName": "August",
       "nerd_score": 0.8
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 1165,
+      "offsetEnd": 1171,
+      "type": "LOCATION",
+      "rawName": "France",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 611740,
+      "nerd_selection_score": 0.4559,
+      "wikidataId": "Q1076619",
+      "offsetStart": 1196,
+      "offsetEnd": 1207,
+      "domains": [
+        "Military"
+      ],
+      "rawName": "French army",
+      "nerd_score": 0.7471
+    },
+    {
+      "wikipediaExternalRef": 181061,
+      "nerd_selection_score": 0.916,
+      "wikidataId": "Q207958",
+      "offsetStart": 1215,
+      "offsetEnd": 1228,
+      "domains": [
+        "Administration",
+        "Biology",
+        "Military"
+      ],
+      "type": "PERSON",
+      "rawName": "Joseph Joffre",
+      "nerd_score": 0.7522
+    },
+    {
+      "wikipediaExternalRef": 207150,
+      "nerd_selection_score": 0.952,
+      "wikidataId": "Q919272",
+      "offsetStart": 1267,
+      "offsetEnd": 1294,
+      "domains": [
+        "Military"
+      ],
+      "type": "ORGANISATION",
+      "rawName": "British Expeditionary Force",
+      "nerd_score": 0.7531
+    },
+    {
+      "wikipediaExternalRef": 248715,
+      "nerd_selection_score": 0.9169,
+      "wikidataId": "Q335059",
+      "offsetStart": 1302,
+      "offsetEnd": 1317,
+      "domains": [
+        "Military",
+        "Medicine"
+      ],
+      "rawName": "Sir John French",
+      "nerd_score": 0.7524
+    },
+    {
+      "wikipediaExternalRef": 1654229,
+      "nerd_selection_score": 0.9594,
+      "wikidataId": "Q687572",
+      "offsetStart": 1356,
+      "offsetEnd": 1379,
+      "domains": [
+        "Military"
+      ],
+      "type": "ORGANISATION",
+      "rawName": "Battle of the Frontiers",
+      "nerd_score": 0.7527
+    },
+    {
+      "wikipediaExternalRef": 3432431,
+      "nerd_selection_score": 0.8403,
+      "wikidataId": "Q860150",
+      "offsetStart": 1413,
+      "offsetEnd": 1432,
+      "domains": [
+        "Military"
+      ],
+      "rawName": "Battle of Charleroi",
+      "nerd_score": 0.7521
+    },
+    {
+      "wikipediaExternalRef": 630014,
+      "nerd_selection_score": 0.9134,
+      "wikidataId": "Q1417205",
+      "offsetStart": 1441,
+      "offsetEnd": 1455,
+      "domains": [
+        "Biology",
+        "Military",
+        "Geography",
+        "Astronomy"
+      ],
+      "type": "ORGANISATION",
+      "rawName": "Battle of Mons",
+      "nerd_score": 0.7532
+    },
+    {
+      "wikipediaExternalRef": 4562039,
+      "nerd_selection_score": 0.8193,
+      "wikidataId": "Q2817826",
+      "offsetStart": 1482,
+      "offsetEnd": 1497,
+      "domains": [
+        "Military"
+      ],
+      "rawName": "French 5th Army",
+      "nerd_score": 0.7522
+    },
+    {
+      "wikipediaExternalRef": 877860,
+      "nerd_selection_score": 0.8203,
+      "wikidataId": "Q223130",
+      "offsetStart": 1541,
+      "offsetEnd": 1551,
+      "domains": [
+        "Military"
+      ],
+      "rawName": "3rd Armies",
+      "nerd_score": 0.7473
+    },
+    {
+      "wikipediaExternalRef": 11867,
+      "nerd_selection_score": 0.4249,
+      "wikidataId": "Q183",
+      "offsetStart": 1579,
+      "offsetEnd": 1585,
+      "domains": [
+        "Administration"
+      ],
+      "type": "NATIONAL",
+      "rawName": "German",
+      "nerd_score": 0.3569
+    },
+    {
+      "wikipediaExternalRef": 2198871,
+      "nerd_selection_score": 0.5535,
+      "wikidataId": "Q215669",
+      "offsetStart": 1614,
+      "offsetEnd": 1620,
+      "domains": [
+        "Administration",
+        "Military"
+      ],
+      "type": "BUSINESS",
+      "rawName": "Allied",
+      "nerd_score": 0.7524
+    },
+    {
+      "wikipediaExternalRef": 2410017,
+      "nerd_selection_score": 0.8816,
+      "wikidataId": "Q2003949",
+      "offsetStart": 1677,
+      "offsetEnd": 1696,
+      "domains": [
+        "Military"
+      ],
+      "rawName": "Battle of Le Cateau",
+      "nerd_score": 0.752
+    },
+    {
+      "wikipediaExternalRef": 2654397,
+      "nerd_selection_score": 0.9349,
+      "wikidataId": "Q815179",
+      "offsetStart": 1702,
+      "offsetEnd": 1719,
+      "domains": [
+        "Military"
+      ],
+      "rawName": "Siege of Maubeuge",
+      "nerd_score": 0.7519
+    },
+    {
+      "wikipediaExternalRef": 30860300,
+      "nerd_selection_score": 0.8858,
+      "wikidataId": "Q152008",
+      "offsetStart": 1728,
+      "offsetEnd": 1749,
+      "domains": [
+        "Military"
+      ],
+      "type": "EVENT",
+      "rawName": "Battle of St. Quentin",
+      "nerd_score": 0.7524
+    },
+    {
+      "wikipediaExternalRef": 12354993,
+      "nerd_selection_score": 0.6467,
+      "wikidataId": "Q313422",
+      "offsetStart": 1763,
+      "offsetEnd": 1774,
+      "domains": [
+        "Military",
+        "Administration"
+      ],
+      "rawName": "German army",
+      "nerd_score": 0.7522
     },
     {
       "nerd_selection_score": 0,
       "offsetStart": 1787,
-      "offsetEnd": 1795,
-      "type": "LOCATION",
-      "rawName": "New York",
+      "offsetEnd": 1789,
+      "type": "MEASURE",
+      "rawName": "70",
       "nerd_score": 0.8
     },
     {
       "nerd_selection_score": 0,
-      "offsetStart": 1797,
-      "offsetEnd": 1799,
-      "type": "TITLE",
-      "rawName": "Mr",
+      "offsetStart": 1794,
+      "offsetEnd": 1796,
+      "type": "MEASURE",
+      "rawName": "43",
       "nerd_score": 0.8
     },
     {
-      "nerd_selection_score": 0,
-      "offsetStart": 1800,
-      "offsetEnd": 1804,
-      "type": "PERSON",
-      "rawName": "Bush",
-      "nerd_score": 0.8
-    },
-    {
-      "wikipediaExternalRef": 5530,
-      "nerd_selection_score": 0.4386,
-      "wikidataId": "Q159535",
-      "offsetStart": 1875,
-      "offsetEnd": 1894,
-      "domains": [
-        "Biology",
-        "Psychiatry",
-        "Health"
-      ],
-      "rawName": "conspiracy theories",
-      "nerd_score": 0.2648
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 2034,
-      "offsetEnd": 2044,
-      "type": "PERSON_TYPE",
-      "rawName": "Americans",
-      "nerd_score": 0.8
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 2212,
-      "offsetEnd": 2217,
-      "type": "PERSON",
-      "rawName": "Weve",
-      "nerd_score": 0.8
-    },
-    {
-      "wikipediaExternalRef": 21748,
-      "nerd_selection_score": 0.5324,
-      "wikidataId": "Q6235",
-      "offsetStart": 2223,
-      "offsetEnd": 2234,
-      "domains": [
-        "Sociology"
-      ],
-      "rawName": "nationalism",
-      "nerd_score": 0.5317
-    },
-    {
-      "wikipediaExternalRef": 21304605,
-      "nerd_selection_score": 0.8175,
-      "wikidataId": "Q1969722",
-      "offsetStart": 2250,
-      "offsetEnd": 2258,
+      "wikipediaExternalRef": 22989,
+      "nerd_selection_score": 0.4926,
+      "wikidataId": "Q90",
+      "offsetStart": 1804,
+      "offsetEnd": 1809,
       "domains": [
         "Administration",
-        "Biology",
-        "Psychiatry",
-        "Health",
         "Sociology"
       ],
-      "rawName": "nativism",
-      "nerd_score": 0.5424
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 2322,
-      "offsetEnd": 2329,
       "type": "LOCATION",
-      "rawName": "America",
-      "nerd_score": 0.8
+      "rawName": "Paris",
+      "nerd_score": 0.3569
     },
     {
-      "wikipediaExternalRef": 5278,
-      "nerd_selection_score": 0.7392,
-      "wikidataId": "Q12948581",
-      "offsetStart": 2331,
-      "offsetEnd": 2346,
+      "wikipediaExternalRef": 171325,
+      "nerd_selection_score": 0.9074,
+      "wikidataId": "Q190712",
+      "offsetStart": 1822,
+      "offsetEnd": 1847,
       "domains": [
-        "Administration",
-        "Computer_Science",
-        "Finance"
+        "Military"
       ],
-      "rawName": "Image copyright",
-      "nerd_score": 0.523
+      "type": "EVENT",
+      "rawName": "First Battle of the Marne",
+      "nerd_score": 0.7491
     },
     {
       "nerd_selection_score": 0,
-      "offsetStart": 2347,
-      "offsetEnd": 2352,
-      "type": "BUSINESS",
-      "rawName": "Getty",
-      "nerd_score": 0.8
-    },
-    {
-      "wikipediaExternalRef": 4848272,
-      "nerd_selection_score": 0.6134,
-      "wikidataId": "Q22686",
-      "offsetStart": 2374,
-      "offsetEnd": 2389,
-      "domains": [
-        "Commerce",
-        "Enterprise",
-        "Biology",
-        "Meteorology"
-      ],
-      "type": "PERSON",
-      "rawName": "President Trump",
-      "nerd_score": 0.6283
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 2422,
-      "offsetEnd": 2424,
-      "type": "TITLE",
-      "rawName": "Mr",
-      "nerd_score": 0.8
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 2425,
-      "offsetEnd": 2430,
-      "type": "LOCATION",
-      "rawName": "Obama",
-      "nerd_score": 0.8
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 2435,
-      "offsetEnd": 2442,
-      "type": "TITLE",
-      "rawName": "Mr Bush",
-      "nerd_score": 0.8
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 2521,
-      "offsetEnd": 2523,
-      "type": "TITLE",
-      "rawName": "Mr",
-      "nerd_score": 0.8
-    },
-    {
-      "wikipediaExternalRef": 4848272,
-      "nerd_selection_score": 0.4267,
-      "wikidataId": "Q22686",
-      "offsetStart": 2573,
-      "offsetEnd": 2581,
-      "domains": [
-        "Commerce",
-        "Enterprise",
-        "Biology",
-        "Meteorology"
-      ],
-      "type": "TITLE",
-      "rawName": "Mr Trump",
-      "nerd_score": 0.6283
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 2610,
-      "offsetEnd": 2612,
-      "type": "TITLE",
-      "rawName": "Mr",
-      "nerd_score": 0.8
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 2613,
-      "offsetEnd": 2618,
-      "type": "LOCATION",
-      "rawName": "Obama",
-      "nerd_score": 0.8
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 2623,
-      "offsetEnd": 2625,
-      "type": "TITLE",
-      "rawName": "Mr",
-      "nerd_score": 0.8
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 2626,
-      "offsetEnd": 2630,
-      "type": "PERSON",
-      "rawName": "Bush",
-      "nerd_score": 0.8
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 2732,
-      "offsetEnd": 2734,
-      "type": "LOCATION",
-      "rawName": "US",
-      "nerd_score": 0.8
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 2763,
-      "offsetEnd": 2770,
+      "offsetStart": 1849,
+      "offsetEnd": 1863,
       "type": "PERIOD",
-      "rawName": "January",
+      "rawName": "6–12 September",
       "nerd_score": 0.8
     },
     {
-      "nerd_selection_score": 0,
-      "offsetStart": 2772,
-      "offsetEnd": 2781,
-      "type": "TITLE",
-      "rawName": "Mr Trumps",
-      "nerd_score": 0.8
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 2886,
-      "offsetEnd": 2895,
-      "type": "PERSON",
-      "rawName": "Democrats",
-      "nerd_score": 0.8
-    },
-    {
-      "wikipediaExternalRef": 32070,
-      "nerd_selection_score": 0.4848,
-      "wikidataId": "Q29468",
-      "offsetStart": 2900,
-      "offsetEnd": 2911,
+      "wikipediaExternalRef": 5843419,
+      "nerd_selection_score": 0.4114,
+      "wikidataId": "Q142",
+      "offsetStart": 1866,
+      "offsetEnd": 1872,
       "domains": [
-        "Administration",
-        "Sociology"
+        "Administration"
       ],
-      "type": "PERSON",
-      "rawName": "Republicans",
-      "nerd_score": 0.3764
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 3094,
-      "offsetEnd": 3108,
-      "type": "PERSON",
-      "rawName": "Gary ODonoghue",
-      "nerd_score": 0.8
-    },
-    {
-      "wikipediaExternalRef": 100040,
-      "nerd_selection_score": 0.5654,
-      "wikidataId": "Q2521385",
-      "offsetStart": 3112,
-      "offsetEnd": 3120,
-      "domains": [
-        "Administration",
-        "Architecture"
-      ],
-      "type": "LOCATION",
-      "rawName": "Richmond",
-      "nerd_score": 0.3764
-    },
-    {
-      "wikipediaExternalRef": 32432,
-      "nerd_selection_score": 0.4384,
-      "wikidataId": "Q1370",
-      "offsetStart": 3122,
-      "offsetEnd": 3130,
-      "domains": [
-        "Administration",
-        "Oceanography",
-        "Sociology"
-      ],
-      "type": "LOCATION",
-      "rawName": "Virginia",
-      "nerd_score": 0.3764
-    },
-    {
-      "wikipediaExternalRef": 534366,
-      "nerd_selection_score": 0.7221,
-      "wikidataId": "Q76",
-      "offsetStart": 3142,
-      "offsetEnd": 3154,
-      "domains": [
-        "Biology"
-      ],
-      "rawName": "Barack Obama",
-      "nerd_score": 0.3764
-    },
-    {
-      "wikipediaExternalRef": 4848272,
-      "nerd_selection_score": 0.9136,
-      "wikidataId": "Q22686",
-      "offsetStart": 3293,
-      "offsetEnd": 3305,
-      "domains": [
-        "Commerce",
-        "Enterprise",
-        "Biology",
-        "Meteorology"
-      ],
-      "type": "BUSINESS",
-      "rawName": "Donald Trump",
-      "nerd_score": 0.6283
-    },
-    {
-      "wikipediaExternalRef": 32070,
-      "nerd_selection_score": 0.4669,
-      "wikidataId": "Q29468",
-      "offsetStart": 3562,
-      "offsetEnd": 3572,
-      "domains": [
-        "Administration",
-        "Sociology"
-      ],
-      "rawName": "Republican",
-      "nerd_score": 0.3764
-    },
-    {
-      "wikipediaExternalRef": 3414021,
-      "nerd_selection_score": 0.5217,
-      "wikidataId": "Q207",
-      "offsetStart": 3583,
-      "offsetEnd": 3596,
-      "domains": [
-        "Biology",
-        "Sociology"
-      ],
-      "rawName": "George W Bush",
-      "nerd_score": 0.3764
-    },
-    {
-      "wikipediaExternalRef": 77182,
-      "nerd_selection_score": 0.5067,
-      "wikidataId": "Q179742",
-      "offsetStart": 3615,
-      "offsetEnd": 3622,
-      "domains": [
-        "Biology",
-        "Psychiatry",
-        "Health"
-      ],
-      "rawName": "bigotry",
-      "nerd_score": 0.4907
-    },
-    {
-      "nerd_selection_score": 0,
-      "offsetStart": 3649,
-      "offsetEnd": 3657,
       "type": "NATIONAL",
-      "rawName": "American",
+      "rawName": "French",
+      "nerd_score": 0.3569
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 1877,
+      "offsetEnd": 1884,
+      "type": "NATIONAL",
+      "rawName": "British",
       "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 11867,
+      "nerd_selection_score": 0.4249,
+      "wikidataId": "Q183",
+      "offsetStart": 1913,
+      "offsetEnd": 1919,
+      "domains": [
+        "Administration"
+      ],
+      "type": "NATIONAL",
+      "rawName": "German",
+      "nerd_score": 0.3569
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 1975,
+      "offsetEnd": 1978,
+      "type": "MEASURE",
+      "rawName": "1st",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 34367926,
+      "nerd_selection_score": 0.7069,
+      "wikidataId": "Q569495",
+      "offsetStart": 1983,
+      "offsetEnd": 1993,
+      "domains": [
+        "Military"
+      ],
+      "type": "ARTIFACT",
+      "rawName": "2nd Armies",
+      "nerd_score": 0.7527
+    },
+    {
+      "wikipediaExternalRef": 11867,
+      "nerd_selection_score": 0.4249,
+      "wikidataId": "Q183",
+      "offsetStart": 2006,
+      "offsetEnd": 2012,
+      "domains": [
+        "Administration"
+      ],
+      "type": "NATIONAL",
+      "rawName": "German",
+      "nerd_score": 0.3569
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2026,
+      "offsetEnd": 2032,
+      "type": "LOCATION",
+      "rawName": "France",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 12354993,
+      "nerd_selection_score": 0.6467,
+      "wikidataId": "Q313422",
+      "offsetStart": 2038,
+      "offsetEnd": 2049,
+      "domains": [
+        "Military",
+        "Administration"
+      ],
+      "rawName": "German army",
+      "nerd_score": 0.7522
+    },
+    {
+      "wikipediaExternalRef": 1284745,
+      "nerd_selection_score": 0.9557,
+      "wikidataId": "Q41962",
+      "offsetStart": 2073,
+      "offsetEnd": 2084,
+      "domains": [
+        "Nautical",
+        "Transport"
+      ],
+      "type": "LOCATION",
+      "rawName": "Aisne River",
+      "nerd_score": 0.747
+    },
+    {
+      "wikipediaExternalRef": 11867,
+      "nerd_selection_score": 0.4249,
+      "wikidataId": "Q183",
+      "offsetStart": 2215,
+      "offsetEnd": 2221,
+      "domains": [
+        "Administration"
+      ],
+      "type": "NATIONAL",
+      "rawName": "German",
+      "nerd_score": 0.3569
+    },
+    {
+      "wikipediaExternalRef": 7898212,
+      "nerd_selection_score": 0.4151,
+      "wikidataId": "Q1427134",
+      "offsetStart": 2260,
+      "offsetEnd": 2268,
+      "domains": [
+        "Military"
+      ],
+      "rawName": "outflank",
+      "nerd_score": 0.7469
+    },
+    {
+      "wikipediaExternalRef": 839722,
+      "nerd_selection_score": 0.7694,
+      "wikidataId": "Q250747",
+      "offsetStart": 2287,
+      "offsetEnd": 2303,
+      "domains": [
+        "Military"
+      ],
+      "rawName": "Race for the Sea",
+      "nerd_score": 0.7519
+    },
+    {
+      "wikipediaExternalRef": 182255,
+      "nerd_selection_score": 0.4751,
+      "wikidataId": "Q1852785",
+      "offsetStart": 2332,
+      "offsetEnd": 2338,
+      "domains": [
+        "Engineering"
+      ],
+      "rawName": "trench",
+      "nerd_score": 0.7122
+    },
+    {
+      "wikipediaExternalRef": 21179,
+      "nerd_selection_score": 0.8408,
+      "wikidataId": "Q1693",
+      "offsetStart": 2356,
+      "offsetEnd": 2365,
+      "domains": [
+        "Geology",
+        "Oceanography"
+      ],
+      "type": "LOCATION",
+      "rawName": "North Sea",
+      "nerd_score": 0.7345
+    },
+    {
+      "wikipediaExternalRef": 26748,
+      "nerd_selection_score": 0.5096,
+      "wikidataId": "Q39",
+      "offsetStart": 2373,
+      "offsetEnd": 2378,
+      "domains": [
+        "Administration",
+        "Geology",
+        "Oceanography",
+        "Earth"
+      ],
+      "type": "NATIONAL",
+      "rawName": "Swiss",
+      "nerd_score": 0.3569
+    },
+    {
+      "wikipediaExternalRef": 4900822,
+      "nerd_selection_score": 0.6216,
+      "wikidataId": "Q553157",
+      "offsetStart": 2403,
+      "offsetEnd": 2428,
+      "domains": [
+        "Military"
+      ],
+      "rawName": "German-occupied territory",
+      "nerd_score": 0.746
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2441,
+      "offsetEnd": 2447,
+      "type": "LOCATION",
+      "rawName": "France",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 53694,
+      "nerd_selection_score": 0.7378,
+      "wikidataId": "Q901785",
+      "offsetStart": 2450,
+      "offsetEnd": 2469,
+      "domains": [
+        "Engineering"
+      ],
+      "rawName": "pig-iron production",
+      "nerd_score": 0.6967
+    },
+    {
+      "nerd_selection_score": 0,
+      "offsetStart": 2471,
+      "offsetEnd": 2474,
+      "type": "MEASURE",
+      "rawName": "24%",
+      "nerd_score": 0.8
+    },
+    {
+      "wikipediaExternalRef": 189284,
+      "nerd_selection_score": 0.6196,
+      "wikidataId": "Q482090",
+      "offsetStart": 2482,
+      "offsetEnd": 2501,
+      "domains": [
+        "Engineering",
+        "Geology",
+        "Enterprise"
+      ],
+      "rawName": "steel manufacturing",
+      "nerd_score": 0.7236
+    },
+    {
+      "wikipediaExternalRef": 5843419,
+      "nerd_selection_score": 0.4114,
+      "wikidataId": "Q142",
+      "offsetStart": 2551,
+      "offsetEnd": 2557,
+      "domains": [
+        "Administration"
+      ],
+      "type": "NATIONAL",
+      "rawName": "French",
+      "nerd_score": 0.3569
     }
   ],
-  "runtime": 1589,
+  "runtime": 1943,
   "language": {
     "conf": 0.0,
     "lang": "en"
   },
-  "text": "Former Presidents Barack Obama and George W Bush have voiced concern about the current political climate in the US, in comments seen as a veiled rebuke of Donald Trumps leadership.  Mr Obama urged Americans to reject the politics of division and fear, while Mr Bush criticised bullying and prejudice in public life.  They were speaking separately. Neither mentioned President Trump by name.  Mr Trump, who has been critical of his two predecessors, is yet to comment.  Ex-presidents traditionally shy away from commenting publicly on their successors, and Mr Obama said on leaving office he would extend that courtesy for a time to Mr Trump, as George W Bush had to him.  He has broken his silence since to issue statements on Mr Trumps efforts to dismantle Obamacare, as well as his controversial Muslim ban and decision to abandon the Paris climate accord.  Speaking at a Democratic campaign event in Newark, New Jersey, Mr Obama said Americans should send a message to the world that we are rejecting a politics of division, we are rejecting a politics of fear.  He added: What we cant have is the same old politics of division that we have seen so many times before that dates back centuries.  Some of the politics we see now, we thought we put that to bed. Thats folks looking 50 years back. Its the 21st Century, not the 19th Century. Come on!Decoding Bushs thinly veiled Trump speech     Five reasons Trumps widow story stings     Top aide defends Trump over widow remarks  He touched on similar themes at another event later in Richmond, Virginia, saying: Weve got folks who are deliberately trying to make folks angry, to demonise people who have different ideas, to get the base all riled up because it provides a short-term tactical advantage.  Speaking just hours earlier in New York, Mr Bush said: Bigotry seems emboldened. Our politics seems more vulnerable to conspiracy theories and outright fabrication.  There are some signs that the intensity of support for democracy itself has waned - especially among the young.  Americans, he said, have seen our discourse degraded by casual cruelty.  At times it can seem like the forces pulling us apart are stronger than the forces binding us together.  Weve seen nationalism distorted into nativism, forgotten the dynamism that immigration has always brought to America. Image copyright Getty Images Image caption President Trump has in the past criticised both Mr Obama and Mr Bush  Both former presidents have until now largely avoided commenting publicly on Mr Trumps policies.  Before his election last year, Mr Trump was highly critical of both Mr Obama and Mr Bush, describing each of them at one time or another as perhaps the worst president in the history of the US.  Since his inauguration in January, Mr Trumps combative style and direct public comments on a number of key issues have caused controversy both among Democrats and Republicans.  He has regularly blamed the media, which he says do not focus on his achievements and instead choose to concentrate on what he describes as fake news. Shared concerns  Analysis by Gary ODonoghue in Richmond, Virginia  President Barack Obama still knows how to draw a crowd - and they queued round the block for hours to see him speak.  If they were hoping for head-on attacks on Donald Trump, they were to be disappointed.  However, the criticisms when they came were scarcely veiled - with talk of pandering to the extremes and sowing divisiveness.  The speech followed a much more full-frontal attack on the current political situation by former Republican President George W Bush.  He talked about bigotry and falsehood threatening American democracy - while celebrating immigration and arguing for a more open trade policy.  These attacks certainly arent co-ordinated - but they do demonstrate just how widely concerns about the current president are shared.",
+  "text": "Austria invaded and fought the Serbian army at the Battle of Cer and Battle of Kolubara beginning on 12 August. The army, led by general Paul von Hindenburg defeated Russia in a series of battles collectively known as the First Battle of Tannenberg (17 August – 2 September). But the failed Russian invasion, causing the fresh German troops to move to the east, allowed the tactical Allied victory at the First Battle of the Marne. Unfortunately for the Allies, the pro-German King Constantine I dismissed the pro-Allied government of E. Venizelos before the Allied expeditionary force could arrive. Beginning in 1915, the Italians under Cadorna mounted eleven offensives on the Isonzo front along the Isonzo River, northeast of Trieste. At the Siege of Maubeuge about 40000 French soldiers surrendered, at the battle of Galicia Russians took about 100-120000 Austrian captives, at the Brusilov Offensive about 325 000 to 417 000 Germans and Austrians surrendered to Russians, at the Battle of Tannenberg 92,000 Russians surrendered. After marching through Belgium, Luxembourg and the Ardennes, the German Army advanced, in the latter half of August, into northern France where they met both the French army, under Joseph Joffre, and the initial six divisions of the British Expeditionary Force, under Sir John French. A series of engagements known as the Battle of the Frontiers ensued. Key battles included the Battle of Charleroi and the Battle of Mons. In the former battle the French 5th Army was almost destroyed by the German 2nd and 3rd Armies and the latter delayed the German advance by a day. A general Allied retreat followed, resulting in more clashes such as the Battle of Le Cateau, the Siege of Maubeuge and the Battle of St. Quentin (Guise). The German army came within 70 km (43 mi) of Paris, but at the First Battle of the Marne (6–12 September), French and British troops were able to force a German retreat by exploiting a gap which appeared between the 1st and 2nd Armies, ending the German advance into France. The German army retreated north of the Aisne River and dug in there, establishing the beginnings of a static western front that was to last for the next three years. Following this German setback, the opposing forces tried to outflank each other in the Race for the Sea, and quickly extended their trench systems from the North Sea to the Swiss frontier. The resulting German-occupied territory held 64% of France\u0027s pig-iron production, 24% of its steel manufacturing, dealing a serious, but not crippling setback to French industry.",
   "onlyNER": false,
   "nbest": false
 }

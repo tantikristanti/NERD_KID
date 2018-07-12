@@ -5,6 +5,7 @@ import joptsimple.OptionParser;
 import joptsimple.OptionSet;
 import org.nerd.kid.rest.NERDResponseJSONReader;
 import org.nerd.kid.rest.RestAPINERDCaller;
+import org.nerd.kid.service.NerdKidPaths;
 
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -19,18 +20,22 @@ import java.util.Scanner;
 
 public class MainRestAPINerdCaller {
     public static void main(String[] args) throws Exception {
+        String pathJSON = NerdKidPaths.DATA_JSON;
+        String pathCSV = NerdKidPaths.DATA_CSV;
+        String fileOutputJson = "Result_NERDDataExtractor.json";
+        String fileOutputCsv = "NewElements.csv";
         CSVWriter csvWriter = null;
         Scanner scanner = new Scanner(System.in);
 
-        OptionParser optionParser = new OptionParser();
-        optionParser.accepts("output").withRequiredArg()
-                .describedAs("Directory where the list of Ids and Classes will be saved").ofType(String.class);
+//        OptionParser optionParser = new OptionParser();
+//        optionParser.accepts("output").withRequiredArg()
+//                .describedAs("Directory where the list of Ids and Classes will be saved").ofType(String.class);
+//
+//        OptionSet parsedOptions = optionParser.parse(args);
 
-        OptionSet parsedOptions = optionParser.parse(args);
-
-        if (parsedOptions.has("output")) {
-            String jsonDataPath = (String) parsedOptions.valueOf("output") + "json/Result_NERDDataExtractor.json";
-            String csvDataPath = (String) parsedOptions.valueOf("output") + "csv/NewElements.csv";
+//        if (parsedOptions.has("output")) {
+//            String jsonDataPath = (String) parsedOptions.valueOf("output") + "data/json/Result_NERDDataExtractor.json";
+//            String csvDataPath = (String) parsedOptions.valueOf("output") + "data/csv/NewElementsOK.csv";
 
             RestAPINERDCaller callAPIINERD = new RestAPINERDCaller();
 
@@ -41,14 +46,14 @@ public class MainRestAPINerdCaller {
             System.out.println("\n");
             String query = scanner.nextLine();
 
-            callAPIINERD.useCurl(url, query, jsonDataPath);
+            callAPIINERD.useCurl(url, query, pathJSON+"/"+fileOutputJson);
 
             NERDResponseJSONReader nerdResponseJSONReader = new NERDResponseJSONReader();
-            Map<String, ArrayList<String>> resultJsonReader = nerdResponseJSONReader.readJSON(jsonDataPath);
+            Map<String, ArrayList<String>> resultJsonReader = nerdResponseJSONReader.readJSON(pathJSON+"/"+fileOutputJson);
             List<String> dataJSONWikiId = new ArrayList<String>();
             List<String> dataJSONClass = new ArrayList<String>();
 
-            System.out.print("Result JSON in '/data/json/Result_NERDDataExtractor.json'");
+            System.out.print("JSON Result in " + pathJSON+"/"+fileOutputJson);
 
             // get the list of Wikidata Ids and Class from file JSON
             for (Map.Entry<String, ArrayList<String>> entry : resultJsonReader.entrySet()) {
@@ -62,7 +67,7 @@ public class MainRestAPINerdCaller {
 
             try {
 
-                csvWriter = new CSVWriter(new FileWriter(csvDataPath), ',', CSVWriter.NO_QUOTE_CHARACTER);
+                csvWriter = new CSVWriter(new FileWriter(pathCSV+"/"+fileOutputCsv), ',', CSVWriter.NO_QUOTE_CHARACTER);
                 // header's file
                 String[] header = {"WikidataID,Class"};
                 csvWriter.writeNext(header);
@@ -77,12 +82,12 @@ public class MainRestAPINerdCaller {
                 csvWriter.close();
             }
 
-            System.out.print("Result CSV in '/data/csv/NewElements.csv'");
+            System.out.print("CSV Result in " + pathCSV + "/" + fileOutputCsv);
 
-        } else {
-            System.out.println("Missing parameter");
-            optionParser.printHelpOn(System.out);
-        }
+//        } else {
+//            System.out.println("Missing parameter");
+//            optionParser.printHelpOn(System.out);
+//        }
     }
 }
 

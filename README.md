@@ -3,7 +3,11 @@
 This project will focus on machine learning for classifying items found in Wikidata into 27 classes in Nerd, for instance, Institution, Location, Person.
 
 # Goal
+<<<<<<< HEAD
 According to [Wikidata's statistics](https://www.wikidata.org/wiki/Special:Statistics), more than 35 million items can be found in Wikidata. With its rich and open knowledge base, it's interesting to learn how those items can be classified into 27 classes. These classes are based on [Grobid-NER](http://grobid-ner.readthedocs.io/en/latest/class-and-senses/) 's project results.
+=======
+According to [Wikidata's statistics](https://www.wikidata.org/wiki/Special:Statistics), more than 49 million items can be found in Wikidata. With its rich and open knowledge base, it's interesting to learn how those items can be classified into 27 classes. These classes are based on [Grobid-NER](http://grobid-ner.readthedocs.io/en/latest/class-and-senses/) 's project results.
+>>>>>>> web
 
 The idea of this project is to make computers <font color="red"> understand </font> how grouping millions of items in Wikidata into specific classes based on their data characteristics.
 
@@ -71,6 +75,7 @@ Q1408,LOCATION
 *(Basically, a training file built based on the datasets prepared in `data/csv/BaseElements.csv`
  This step is done if there isn't any training file or there is a need to build a new one.)*
 
+- The result of Arff file can be seen in `/result/arff/Training.arff`.
 - It is also possible to check first whether the data and features of wikidata Ids are correct/complete by checking the Csv file result located in `result/csv/ResultFromArffGenerator.csv`.
 
 
@@ -105,7 +110,7 @@ are in a correct format.
 - Input needed is the percentage of training-testing splitting data, e.g. `80` (%)
 - Result can be seen in `result/txt/Result_Trained_Model.txt`
 - The machine learning model itself (the result of Random Forest algorithm) can be found in the temporary file `tmp/model.xml`
-    It can be copied 
+    It can be copied by firstly open it `$ open /tmp`
 
 **6. Get new predicted classes**
 
@@ -127,7 +132,6 @@ Q1408,
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preannotation.MainPreAnnotation"```
 
 - The result can be seen in `result/csv/ResultPredictedClass.csv`
-![ResultPrediction](pic/ResultPrediction.jpg)
 
 
 **7. Web version**
@@ -135,6 +139,8 @@ Q1408,
 Online version of class prediction can be accessed here `http://nerd.huma-num.fr/kid/service/ner?id=Q1`
 
 User can only just change the Wikidata Id started with 'Q' and then the number.
+
+![ResultPrediction](pic/ResultPredictionWeb.jpg)
 
 - The result will be Wikidata Id, the properties, and the result of predicted class.
 

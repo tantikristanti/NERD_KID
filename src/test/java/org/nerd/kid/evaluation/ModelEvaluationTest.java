@@ -9,8 +9,8 @@ import static org.junit.Assert.*;
 public class ModelEvaluationTest {
 
     ModelEvaluation target;
-    int[] testYClass = {0, 1, 2, 0, 0, 1, 2, 0, 1, 0, 1, 2, 2};
-    int[] testYPredictClass = {0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 2, 1, 1};
+    int[] testYClass =          {0, 1, 2, 0, 0, 1, 2, 0, 1, 0, 1, 2, 2};
+    int[] testYPredictClass =   {0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 2, 1, 1};
     int maxIndexClass;
 
     @Before
@@ -55,7 +55,6 @@ public class ModelEvaluationTest {
         assertThat(totalRow[1], is(4));
         assertThat(totalRow[2], is(4));
     }
-
 
     @Test
     public void testCalculColumnClass() throws Exception {
@@ -122,11 +121,23 @@ public class ModelEvaluationTest {
         int[][] matrix = target.confusionMatrix(testYClass, testYPredictClass, maxIndexClass);
         int Idx = maxIndexClass;
         int[] TP = target.countingTruePositive(matrix, Idx);
-        int calculTotal = target.countingTotalClass(matrix, Idx);
+        int[] TN = target.countingTrueNegative(matrix, Idx);
+        int[] FP = target.countingFalsePositive(matrix, Idx);
+        int[] FN = target.countingFalseNegative(matrix, Idx);
 
-        final double accuracy = target.accuracy(TP, calculTotal);
+        final double[] accuracy = target.accuracy(TP, TN, FP, FN);
 
-        assertThat(accuracy, is(0.6153846383094788));
+        assertThat(accuracy[0], is(0.8461538553237915));
+        assertThat(accuracy[1], is(0.692307710647583));
+        assertThat(accuracy[2], is(0.692307710647583));
+    }
+
+    @Test
+    public void testAverageAccuracy() throws Exception {
+        double[] accuracy = {0.8461538553237915, 0.692307710647583, 0.692307710647583};
+
+        final double averageAccuracy = target.averageAccuracy(accuracy);
+        assertThat(averageAccuracy, is(0.7435896992683411));
     }
 
     @Test

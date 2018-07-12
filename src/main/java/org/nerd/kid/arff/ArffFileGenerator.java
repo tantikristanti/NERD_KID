@@ -2,6 +2,7 @@ package org.nerd.kid.arff;
 
 
 import org.nerd.kid.data.WikidataElementInfos;
+import org.nerd.kid.service.NerdKidPaths;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,7 +25,8 @@ public class ArffFileGenerator {
     private BufferedWriter writer;
     private boolean hasHeader = false;
     private boolean hasBody = false;
-    private String path = "result/arff/Training.arff";
+    String fileOutputArff = "Training.arff";
+    private String path = NerdKidPaths.RESULT_ARFF + "/" + fileOutputArff;
     private Path pathFile = Paths.get(path);
 
     // to create new file
@@ -88,6 +90,26 @@ public class ArffFileGenerator {
         return this;
     }
 
+    public ArffFileGenerator addAttributeNoValue(List<String> attributeListNoValue) {
+        if (hasBody) {
+            throw new RuntimeException("Cannot add attribute definition. ");
+        }
+        try {
+
+            for (String property : attributeListNoValue) {
+                writer.append("@ATTRIBUTE")
+                        .append(" ")
+                        .append(property)
+                        .append(" {0,1}")
+                        .append("\n");
+            }
+
+        } catch (IOException e) {
+            throw new RuntimeException("Cannot write arff file.", e);
+        }
+
+        return this;
+    }
 
     public ArffFileGenerator addClassHeader(List<String> classValues) {
         try {
