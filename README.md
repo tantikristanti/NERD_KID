@@ -132,7 +132,7 @@ Q1408,
 
 **7. Web version**
 
-Online version of class prediction can be accessed here `http://nerd.huma-num.fr/kid/service/ner?id=Q1`
+Online version of class prediction can be accessed here [Nerd-Kid](http://nerd.huma-num.fr/kid/service/ner?id=Q1) 
 
 User can only just change the Wikidata Id started with 'Q' and then the number.
 
