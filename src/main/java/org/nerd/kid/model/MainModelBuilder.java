@@ -7,7 +7,7 @@ import java.io.File;
 /*
     main class to build a model from training file
     ex.
-    Input from : data/arff/TrainingNew.arff
+    Input from : data/arff/Training.arff
     Percentage of training data (in %), the rest for testing : 80
 **/
 public class MainModelBuilder {
@@ -24,7 +24,7 @@ public class MainModelBuilder {
         modelBuilder.splitModel(split);
         System.out.println("Result can be found in " + NerdKidPaths.RESULT_TXT + "/" + fileOutput);
 
-        final String pathname = "/tmp/model.xml";
+        final String pathname = "/tmp/model3.xml";
         modelBuilder.saveModel(new File(pathname));
         System.out.println("Model has been saved in " + pathname);
     }
