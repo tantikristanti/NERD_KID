@@ -38,9 +38,9 @@ public class GrobidNERTrainingDataTransformer {
         int total = nList.getLength();
 
         try {
-            csvWriter = new CSVWriter(new FileWriter(pathOutput), ',', CSVWriter.NO_QUOTE_CHARACTER);
+            csvWriter = new CSVWriter(new FileWriter(pathOutput), ';', CSVWriter.NO_QUOTE_CHARACTER);
             // header's file
-            String[] header = {"Mention,Class"};
+            String[] header = {"Mention;Class"};
             csvWriter.writeNext(header);
 
             for (int i = 0; i < total; i++) {
