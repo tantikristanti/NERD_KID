@@ -38,16 +38,23 @@ public class GrobidNERTrainingDataTransformer {
         int total = nList.getLength();
 
         try {
-            csvWriter = new CSVWriter(new FileWriter(pathOutput), ';', CSVWriter.NO_QUOTE_CHARACTER);
+            csvWriter = new CSVWriter(new FileWriter(pathOutput), ',', CSVWriter.NO_QUOTE_CHARACTER);
             // header's file
-            String[] header = {"Mention;Class"};
+            String[] header = {"Mention,Class"};
             csvWriter.writeNext(header);
 
             for (int i = 0; i < total; i++) {
                 Node node = nList.item(i);
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element element = (Element) node;
-                    String[] data = {element.getTextContent(),element.getAttribute("type")};
+                    String mention = element.getTextContent();
+                    // replace all commas in mentions with semicolons
+                    String mentionModified = mention.replace(",", ";");
+                    mentionModified = mentionModified.replace("\"","");
+
+                    String claz = element.getAttribute("type");
+                    String[] data = {mentionModified,claz};
+
                     csvWriter.writeNext(data);
                 }
             }

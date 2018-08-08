@@ -21,11 +21,18 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 These files can be extracted from [Grobid-Ner](https://github.com/kermitt2/grobid-ner/tree/master/grobid-ner/resources/dataset/ner/corpus/xml/final)
 and can be copied into `data/xml/annotatedCorpus.xml`
 
-After copy the file, the mentions and classes can be extracted by this service
+After copying the file, the list of mentions and classes can be extracted by this service
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preprocessing.GrobidNERTrainingDataTransformer"```
 
-The result can be seen in `data/csv/GrobidNer/annotatedCorpusResult.csv`
+The result can be seen in `data/csv/GrobidNer/AnnotatedCorpusResult.csv`
+
+Meanwhile, for getting the wikidata Ids from the mentions by accessing API service for short text disambiguation of [Entity-Fishing](http://cloud.science-miner.com/nerd), then this service can be called
+
+```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.extractor.grobidNer.MentionExtractor"```
+
+The result can be seen in `data/json/Result_EntityFishingShortTextDisambiguation.json`
+
 
 # Installation-Build-Run
 **1. Installation**
