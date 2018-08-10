@@ -1,5 +1,6 @@
 package org.nerd.kid.service;
 
+import au.com.bytecode.opencsv.CSVWriter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.gson.Gson;
@@ -15,11 +16,18 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static org.apache.http.entity.ContentType.APPLICATION_JSON;
 
@@ -47,9 +55,9 @@ public class NerdClient {
     /*
     curl 'http://cloud.science-miner.com/nerd/service/disambiguate'
     -X POST -F
-    "query={'shortText': 'concrete pump sensor','language': { 'lang': 'en'},'nbest': 0,'customisation': 'generic' }"
+    "query={'shortText': 'Any short text is put here','language': { 'lang': 'en'},'nbest': 0,'customisation': 'generic' }"
     * */
-    public String shortTextDisambiguate(String text, String language) {
+    public String shortTextDisambiguate(String shorText, String language) {
         String result = null;
         try {
             final URI uri = new URIBuilder()
@@ -59,7 +67,7 @@ public class NerdClient {
 
             ObjectMapper mapper = new ObjectMapper();
             ObjectNode node = mapper.createObjectNode();
-            node.put("shortText", text);
+            node.put("shortText", shorText);
             if (language != null) {
                 ObjectNode dataNode = mapper.createObjectNode();
                 dataNode.put("lang", language);
@@ -73,9 +81,54 @@ public class NerdClient {
             CloseableHttpResponse closeableHttpResponse = httpResponse.execute(httpPost);
 
             if (closeableHttpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-                return IOUtils.toString(closeableHttpResponse.getEntity().getContent(), StandardCharsets.UTF_8);
-            } else {
-                return result;
+                result = IOUtils.toString(closeableHttpResponse.getEntity().getContent(), StandardCharsets.UTF_8);
+            }
+
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+    /*
+    curl 'http://cloud.science-miner.com/nerd/service/disambiguate'
+    -X POST -F
+    "query={'text': 'Any text is put here','language': { 'lang': 'en'},'nbest': 0,'customisation': 'generic' }"
+    * */
+    public String textDisambiguate(String text, String language) {
+        String result = null;
+        Gson gson = new Gson();
+        try {
+            final URI uri = new URIBuilder()
+                    .setScheme("http")
+                    .setHost(this.HOST + DISAMBIGUATE_SERVICE)
+                    .build();
+
+            ObjectMapper mapper = new ObjectMapper();
+            ObjectNode node = mapper.createObjectNode();
+            node.put("text", text);
+            if (language != null) {
+                ObjectNode dataNode = mapper.createObjectNode();
+                dataNode.put("lang", language);
+                node.set("language", dataNode);
+            }
+            HttpPost httpPost = new HttpPost(uri);
+            CloseableHttpClient httpResponse = HttpClients.createDefault();
+
+            httpPost.setHeader("Content-Type", APPLICATION_JSON.toString());
+            httpPost.setEntity(new StringEntity(node.toString()));
+            CloseableHttpResponse closeableHttpResponse = httpResponse.execute(httpPost);
+
+
+            if (closeableHttpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+                result = IOUtils.toString(closeableHttpResponse.getEntity().getContent(), StandardCharsets.UTF_8);
             }
 
         } catch (URISyntaxException e) {
@@ -97,11 +150,11 @@ public class NerdClient {
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String prettyJsonString = gson.toJson(jsonObject);
+
         return prettyJsonString;
     }
 
-    public void saveToFile(String resultToSave) {
-        String outputFile = "data/json/Result_EntityFishingShortTextDisambiguation.json";
+    public void saveToFileJson(String resultToSave, String outputFile) {
         try {
             File fl = new File(outputFile);
 

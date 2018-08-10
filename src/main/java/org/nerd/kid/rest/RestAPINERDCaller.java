@@ -11,7 +11,7 @@ public class RestAPINERDCaller {
     // using Curl for accessing API REST Nerd / entity-fishing
     public void useCurl(String url, String query, String outputFile) throws Exception {
 
-        System.out.println("** Accessing REST API Nerd, Example in /data/example/exampleCurlNERD.txt **");
+        System.out.println("** Accessing REST API Nerd, Example in /data/example/exampleText.txt **");
 
         // adding new elements of command in array list of string
         ArrayList<String> element = new ArrayList<String>();

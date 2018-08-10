@@ -16,23 +16,14 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 # Data from Grobid-Ner's Project
 
-*As base model (model0), this project use data from Grobid-Ner's project by collecting their mentions and classes*
+*As base model (model0), this project use data from Grobid-Ner's project by collecting their mentions and classes as well as disambiguation results with the use of Entity-Fishing Rest API*
+    - Firstly, the files from [Grobid-Ner](https://github.com/kermitt2/grobid-ner/tree/master/grobid-ner/resources/dataset/ner/corpus/xml/final)'s project are in Xml format and they need to be extract first for getting some mentions and their classes
+        - The result can be seen in `data/csv/GrobidNer/AnnotatedCorpusResult.csv`
+    - Then, every single mention got from previous step will be disambiguated by using Entity-Fishing Rest API (particularly, short text disambiguation service)
+        - The disambiguation results are prepared in Json format `data/json/Result_EntityFishingShortTextDisambiguation.json`and in Csv format `data/csv/toBeCorrected/NewElements.csv` for evaluation purposes
 
-These files can be extracted from [Grobid-Ner](https://github.com/kermitt2/grobid-ner/tree/master/grobid-ner/resources/dataset/ner/corpus/xml/final)
-and can be copied into `data/xml/annotatedCorpus.xml`
-
-After copying the file, the list of mentions and classes can be extracted by this service
-
+These 2 tasks can be done by this service:
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preprocessing.GrobidNERTrainingDataTransformer"```
-
-The result can be seen in `data/csv/GrobidNer/AnnotatedCorpusResult.csv`
-
-Meanwhile, for getting the wikidata Ids from the mentions by accessing API service for short text disambiguation of [Entity-Fishing](http://cloud.science-miner.com/nerd), then this service can be called
-
-```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.extractor.grobidNer.MentionExtractor"```
-
-The result can be seen in `data/json/Result_EntityFishingShortTextDisambiguation.json`
-
 
 # Installation-Build-Run
 **1. Installation**
@@ -51,25 +42,25 @@ The result can be seen in `data/json/Result_EntityFishingShortTextDisambiguation
 
 **3. Prepare new data**
 
-*New data can be extracted by accessing the API of Nerd or Entity-Fishing.*
+*New data can be collected by extracting the text with the text disambiguation service of [Entity-Fishing](http://nerd.readthedocs.io/en/latest/restAPI.html)*
+- Firstly, the ***text*** and the ***language*** need to be input in order to get some mentions and disambiguation results in Json format
+    - The example of the text can be seen in `/data/txt/exampleText.txt`
+    - If the language is not mentioned, the text will be processed as English text by default.
+    - The raw Json result can be seen in `/data/json/Result_EntityFishingTextDisambiguation.json`
+    
+- Secondly, the result from the previous step will be parsed in order to get a list of Wikidata Ids and their classes
+    - The list of Wikidata Ids and Classes can be seen in `/data/csv/NewElements.csv`. 
+    - It is a very simple csv file that contain Wikidata Ids and their classes. For example:
+    
+    ```
+    WikidataID,Class
+    Q76,PERSON
+    Q1408,LOCATION
+    ```
 
+These 2 tasks can be done by this service:
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.extractor.MainRestAPINerdCaller"```
 
-- It is possible to change the whole part of query or just the part of text. 
-(read further explanation about Nerd's REST API in [Entity-Fishing](http://nerd.readthedocs.io/en/latest/restAPI.html))
-
-- The example of how to enter the correct URL and Query can be seen in "data/example/exampleCurlNERD.txt"
-
-*( The raw result extracted from API in JSON format can be seen in `/data/json/Result_NERDDataExtractor.json`)*
-
-- The result of list of Wikidata Ids and Classes can be seen in `/data/csv/NewElements.csv`. 
-It is a very simple csv file that contain Wikidata Id and their classes. For example:
-
-```
-WikidataID,Class
-Q76,PERSON
-Q1408,LOCATION
-```
 **4. Build a training file**
 - In order to build a new training data, this service can be used:
 
