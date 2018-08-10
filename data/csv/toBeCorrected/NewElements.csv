@@ -1,4 +1,4 @@
-RawText,WikidataID,ClassGrobidNER,ClassEntityFishing,NerdScore,SelectionScore
+RawText,WikidataID,Class,ClassEntityFishing,NerdScore,SelectionScore
 Nazis,Q7310,PERSON_TYPE,PERSON_TYPE,0.995,0.4343
 chiefs,Q1259323,TITLE,,0.05,0.0826
 Jewish,Q7325,PERSON_TYPE,CONCEPTUAL,0.995,0.3585
