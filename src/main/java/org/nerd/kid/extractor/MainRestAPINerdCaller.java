@@ -1,93 +1,53 @@
 package org.nerd.kid.extractor;
 
-import au.com.bytecode.opencsv.CSVWriter;
-import joptsimple.OptionParser;
-import joptsimple.OptionSet;
-import org.nerd.kid.rest.NERDResponseJSONReader;
-import org.nerd.kid.rest.RestAPINERDCaller;
+import org.nerd.kid.extractor.grobidNer.WikidataIdClassExtractor;
+import org.nerd.kid.service.NerdClient;
+import org.nerd.kid.service.NerdEntity;
 import org.nerd.kid.service.NerdKidPaths;
 
-import java.io.FileWriter;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
 /*
-* Extract WikiIds and Classes directly from Nerd's services
-* http://cloud.science-miner.com/nerd/service/disambiguate
-* */
+ * This is class is meant to extract WikiIds and Classes as results from text disambiguation of Entity-Fishing Rest API
+ * http://cloud.science-miner.com/nerd/service/disambiguate
+ * */
 
 public class MainRestAPINerdCaller {
     public static void main(String[] args) throws Exception {
         String pathJSON = NerdKidPaths.DATA_JSON;
         String pathCSV = NerdKidPaths.DATA_CSV;
-        String fileOutputJson = "Result_NERDDataExtractor.json";
-        String fileOutputCsv = "NewElements.csv";
-        CSVWriter csvWriter = null;
+        String fileOutputJson = pathJSON + "/Result_EntityFishingTextDisambiguation.json";
+        String fileOutputCsv = pathCSV + "/NewElements.csv";
+        String result = null;
         Scanner scanner = new Scanner(System.in);
 
-//        OptionParser optionParser = new OptionParser();
-//        optionParser.accepts("output").withRequiredArg()
-//                .describedAs("Directory where the list of Ids and Classes will be saved").ofType(String.class);
-//
-//        OptionSet parsedOptions = optionParser.parse(args);
+        System.out.println("Text to be disambiguated with Entity-Fishing API Rest : ");
+        String text = scanner.nextLine();
+        System.out.println("Language (en, fr, de, it, es) : ");
+        String lang = scanner.nextLine();
+        NerdClient nerdClient = new NerdClient("cloud.science-miner.com/nerd/service");
+        // text disambiguation
+        if (lang != null && !lang.isEmpty()) {
+            result = nerdClient.textDisambiguate(text, lang);
 
-//        if (parsedOptions.has("output")) {
-//            String jsonDataPath = (String) parsedOptions.valueOf("output") + "data/json/Result_NERDDataExtractor.json";
-//            String csvDataPath = (String) parsedOptions.valueOf("output") + "data/csv/NewElementsOK.csv";
+        } else {
+            // language as default in English
+            result = nerdClient.textDisambiguate(text, "en");
+        }
 
-            RestAPINERDCaller callAPIINERD = new RestAPINERDCaller();
+        // save the result to Json file
+        String resultInJson = nerdClient.toJson(result);
+        nerdClient.saveToFileJson(resultInJson, fileOutputJson);
 
-            String url = "http://cloud.science-miner.com/nerd/service/disambiguate";
+        // extract and save to Json Csv
+        WikidataIdClassExtractor wikidataIdClassExtractor = new WikidataIdClassExtractor();
+        List<NerdEntity> extractionFromJson = wikidataIdClassExtractor.parseFromJsonFileToString(fileOutputJson);
+        wikidataIdClassExtractor.saveToFileCsv(extractionFromJson, fileOutputCsv);
 
-            System.out.println("Query (copy this format and change the part of text) : \n");
-            System.out.println("{\"text\": \"[change this part]\", \"shortText\": \"\", \"termVector\": [], \"language\": { \"lang\": \"en\" }, \"entities\": [], \"onlyNER\": false, \"resultLanguages\": [ \"de\", \"fr\" ], \"nbest\": false, \"sentence\": false,    \"customisation\": \"generic\"}");
-            System.out.println("\n");
-            String query = scanner.nextLine();
-
-            callAPIINERD.useCurl(url, query, pathJSON+"/"+fileOutputJson);
-
-            NERDResponseJSONReader nerdResponseJSONReader = new NERDResponseJSONReader();
-            Map<String, ArrayList<String>> resultJsonReader = nerdResponseJSONReader.readJSON(pathJSON+"/"+fileOutputJson);
-            List<String> dataJSONWikiId = new ArrayList<String>();
-            List<String> dataJSONClass = new ArrayList<String>();
-
-            System.out.print("JSON Result in " + pathJSON+"/"+fileOutputJson);
-
-            // get the list of Wikidata Ids and Class from file JSON
-            for (Map.Entry<String, ArrayList<String>> entry : resultJsonReader.entrySet()) {
-                if (entry.getKey() == "WikidataId") {
-                    dataJSONWikiId = entry.getValue();
-                } else if (entry.getKey() == "ClassNerd") {
-                    dataJSONClass = entry.getValue();
-                }
-            }
-            List<String[]> records = new ArrayList<String[]>();
-
-            try {
-
-                csvWriter = new CSVWriter(new FileWriter(pathCSV+"/"+fileOutputCsv), ',', CSVWriter.NO_QUOTE_CHARACTER);
-                // header's file
-                String[] header = {"WikidataID,Class"};
-                csvWriter.writeNext(header);
-
-                // the content of the file csv
-                for (int i = 0; i < dataJSONWikiId.size(); i++) {
-                    String[] data = {dataJSONWikiId.get(i), dataJSONClass.get(i)};
-                    csvWriter.writeNext(data);
-                }
-            } finally {
-                csvWriter.flush();
-                csvWriter.close();
-            }
-
-            System.out.print("CSV Result in " + pathCSV + "/" + fileOutputCsv);
-
-//        } else {
-//            System.out.println("Missing parameter");
-//            optionParser.printHelpOn(System.out);
-//        }
+        System.out.println(result);
+        System.out.println("The disambiguation result from Entity-Fishing in JSON format is in " + fileOutputJson);
+        System.out.println("The disambiguation result from Entity-Fishing in CSV format is in " + fileOutputCsv);
     }
 }
 

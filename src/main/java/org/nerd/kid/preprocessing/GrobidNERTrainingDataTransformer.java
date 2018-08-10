@@ -1,61 +1,67 @@
 package org.nerd.kid.preprocessing;
 
 import au.com.bytecode.opencsv.CSVWriter;
+import org.nerd.kid.arff.MainTrainerGenerator;
+import org.nerd.kid.data.WikidataElementInfos;
+import org.nerd.kid.extractor.grobidNer.GrobidNerEntity;
+import org.nerd.kid.extractor.grobidNer.MentionExtractor;
 import org.nerd.kid.service.NerdKidPaths;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Extract Mentions and Classes from Grobid-Ner's data in XML format
- * Mention is the raw information from the text e.g. 'LEGAL, Washington Act'.
+ * This class is meant to extract some Mentions and Classes from Grobid-Ner project
+ * and to get some ambiguation results from Entity-Fishing Rest API
  */
 
 public class GrobidNERTrainingDataTransformer {
-    public static void main(String[] args) throws Exception {
-
+    public static void main(String[] args) {
+        // collecting the result from Grobid-Ner project
+        //String pathInputGrobidNer = NerdKidPaths.DATA_XML + "/AnnotatedCorpus.xml";
+        String pathOutputEntityFishingJson = NerdKidPaths.DATA_JSON + "/Result_EntityFishingShortTextDisambiguation.json";
+        String pathOutputGrobidNerCsv = NerdKidPaths.DATA_CSV + "/GrobidNer/AnnotatedCorpusResult.csv";
+        String pathOutputEntityFishingCsv = NerdKidPaths.DATA_CSV + "/toBeCorrected/NewElements.csv";
+        MentionExtractor mentionExtractor = new MentionExtractor();
+        MainTrainerGenerator mainTrainerGenerator = new MainTrainerGenerator();
         CSVWriter csvWriter = null;
-
-        String pathInput = NerdKidPaths.DATA_XML + "/AnnotatedCorpus.xml";
-        String pathOutput = NerdKidPaths.DATA_CSV + "/GrobidNer/AnnotatedCorpusResult.csv";
-
-        DocumentBuilder dbBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-
-        File fileXML = new File(pathInput);
-        Document doc = dbBuilder.parse(fileXML);
-        doc.getDocumentElement().normalize();
-
-        NodeList nList = doc.getElementsByTagName("ENAMEX");
-        int total = nList.getLength();
-
         try {
-            csvWriter = new CSVWriter(new FileWriter(pathOutput), ',', CSVWriter.NO_QUOTE_CHARACTER);
             // header's file
+            csvWriter = new CSVWriter(new FileWriter(pathOutputGrobidNerCsv), ',', CSVWriter.NO_QUOTE_CHARACTER);
             String[] header = {"Mention,Class"};
             csvWriter.writeNext(header);
-
-            for (int i = 0; i < total; i++) {
-                Node node = nList.item(i);
-                if (node.getNodeType() == Node.ELEMENT_NODE) {
-                    Element element = (Element) node;
-                    String[] data = {element.getTextContent(),element.getAttribute("type")};
-                    csvWriter.writeNext(data);
-                }
-            }
-
-        } finally {
             csvWriter.flush();
             csvWriter.close();
+
+            // iterate through all xml file from Grobid-Ner project
+            final List<Path> xmlFiles = mainTrainerGenerator.listFiles(Paths.get(NerdKidPaths.DATA_XML), "*.{xml}");
+
+            // extract data from Grobid-Ner project
+            List<WikidataElementInfos> training = new ArrayList<>();
+            for (Path inputFile : xmlFiles) {
+                mentionExtractor.loadMentionClassFromGrobidNerProject(inputFile, pathOutputGrobidNerCsv);
+            }
+
+            // get the list of mentions
+            List<GrobidNerEntity> listMentions = mentionExtractor.loadMentionClassFromCsv(new File(pathOutputGrobidNerCsv));
+
+            // save to Json file in case will be needed for evaluation purpose
+            mentionExtractor.mentionDisambiguationToJson(listMentions, pathOutputEntityFishingJson);
+
+            // get the disambiguation results by using Entity-Fishing Rest API and save it to Csv file
+            mentionExtractor.mentionDisambiguationToCsv(listMentions, pathOutputEntityFishingCsv);
+
+            System.out.println("The extraction result from Grobid-Ner project is in " + pathOutputGrobidNerCsv);
+            System.out.println("The disambiguation result from Entity-Fishing in Json format is in " + pathOutputEntityFishingJson);
+            System.out.println("The disambiguation result from Entity-Fishing in CSV format is in " + pathOutputEntityFishingCsv);
+
+        }catch (IOException e){
+            e.printStackTrace();
         }
-        System.out.print("Result in " + pathOutput);
     }
 }

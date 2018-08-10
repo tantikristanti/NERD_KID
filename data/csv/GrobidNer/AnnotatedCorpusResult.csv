@@ -1,20 +1,29 @@
 Mention,Class
+Nazis,PERSON_TYPE
+chiefs,TITLE
+Jewish,PERSON_TYPE
+Jewish,PERSON_TYPE
+staff; chiefs; mayors and their assistants,TITLE
+1919-1924,PERIOD
+Russia,LOCATION
+Suvalkų area and Pakruojis local rural district,LOCATION
+auxiliary police,INSTITUTION
 Anti-Jewish legislation,LEGAL
 prewar Nazi Germany,LOCATION
 Nazi Germany,LOCATION
-Nuremberg Laws, and Haavara Agreement,LEGAL
+Nuremberg Laws; and Haavara Agreement,LEGAL
 Third Reich,INSTITUTION
 Nazi,PERSON_TYPE
 Volksgemeinschaft,CONCEPT
 Nazi,PERSON_TYPE
 two,MEASURE
-Volksgenossen,PERSON_TYPE
+Volksgenossen (national comrades),PERSON_TYPE
 Volksgemeinschaft,CONCEPT
 Gemeinschaftsfremde,PERSON_TYPE
 Nazi,PERSON_TYPE
 three,MEASURE
 Jews and the Romani,PERSON_TYPE
-Marxists, liberals, Christians and the ""reactionaries"",PERSON_TYPE
+Marxists; liberals; Christians and the reactionaries,PERSON_TYPE
 National Comrades,PERSON_TYPE
 homosexuals,PERSON_TYPE
 National Comrades,PERSON_TYPE
@@ -32,18 +41,16 @@ Detlev Peukert,PERSON
 National Socialists,PERSON_TYPE
 Volksgemeinschaft,CONCEPT
 Peukert,PERSON
-Community Aliens,PERSON_TYPE
+Treatment of Community Aliens,LEGAL
 1944,PERIOD
 Nazi,PERSON_TYPE
 March 1933 Reichstag elections,EVENT
 Nazis,PERSON_TYPE
-Dachau,LOCATION
+Dachau,INSTALLATION
 9 March 1933,PERIOD
 Communists and Social Democrats,PERSON_TYPE
-Sturmabteilung,INSTITUTION
-SA,INSTITUTION
-Schutzstaffel,INSTITUTION
-SS,INSTITUTION
+Sturmabteilung (SA),INSTITUTION
+Schutzstaffel (SS),INSTITUTION
 mid-1934,PERIOD
 SS,INSTITUTION
 Germans,PERSON_TYPE
@@ -58,6 +65,7 @@ Germany,LOCATION
 German,NATIONAL
 1 April 1933,PERIOD
 Jewish,PERSON_TYPE
+first,MEASURE
 antisemitic,CONCEPTUAL
 a week,PERIOD
 one day,PERIOD
@@ -87,17 +95,16 @@ Journalists' Association,ORGANISATION
 July 1933,PERIOD
 Law for the Prevention of Hereditarily Diseased Offspring,LEGAL
 over 200,MEASURE
-Hereditary Health Courts,INSTITUTION
-Erbgesundheitsgerichte,INSTITUTION
-over 400,000,MEASURE
-Nazi period,PERIOD
+Hereditary Health Courts (Erbgesundheitsgerichte),INSTITUTION
+over 400;000,MEASURE
+Nazi period,EVENT
 Nuremberg Laws of 1935,LEGAL
 1935,PERIOD
 Hitler,PERSON
 Nuremberg Laws,LEGAL
 Aryans,PERSON_TYPE
 Jews,PERSON_TYPE
-Gypsies, Negroes,PERSON_TYPE
+Gypsies; Negroes,PERSON_TYPE
 Law for the Protection of German Blood and German Honor,LEGAL
 German Jews,PERSON_TYPE
 Nazis,PERSON_TYPE
@@ -109,25 +116,22 @@ Hitler,PERSON
 Jewish,PERSON_TYPE
 National-Socialist Party,ORGANISATION
 final solution,UNKNOWN
-final solution,UNKNOWN
-Endlösung,UNKNOWN
+final solution (Endlösung),UNKNOWN
 Nazi,PERSON_TYPE
 Jews,PERSON_TYPE
 January 1939,PERIOD
 Jewry,PERSON_TYPE
 Europe,LOCATION
-Bolshevization of the earth,CONCEP
+Bolshevization of the earth,CONCEPT
 Jewry,PERSON_TYPE
 Jewish,PERSON_TYPE
 Europe,LOCATION
 1940,PERIOD
 Nazi,PERSON_TYPE
-The Eternal Jew,CREATION
-Der ewige Jude,CREATION
+The Eternal Jew (Der ewige Jude),CREATION
 Jews,PERSON_TYPE
 Europe,LOCATION
 Intellectuals,PERSON_TYPE
-Jews,PERSON_TYPE
 Walter Benjamin,PERSON
 Paris,LOCATION
 18 March 1933,PERIOD
@@ -155,7 +159,8 @@ Sigmund Freud,PERSON
 Vienna,LOCATION
 England,LOCATION
 Saul Friedländer,PERSON
-Max Liebermann, honorary president of the Prussian Academy of Arts,PERSON
+Max Liebermann; honorary president of the Prussian Academy of Arts,PERSON
+two years later,PERIOD
 1943,PERIOD
 85,MEASURE
 Kristallnacht (1938),EVENT
@@ -175,20 +180,18 @@ Nazi Party,INSTITUTION
 SA,INSTITUTION
 Nazi Germany,LOCATION
 Germany,LOCATION
-Austria, and Sudetenland,LOCATION
-Kristallnacht,EVENT
-Crystal Night,EVENT
-Night of Broken Glass,EVENT
+Austria; and Sudetenland,LOCATION
+Kristallnacht (Crystal Night or Night of Broken Glass),EVENT
 Jews,PERSON_TYPE
 Jewish,PERSON_TYPE
-Over 7,000,MEASURE
+Over 7;000,MEASURE
 Jewish,PERSON_TYPE
-more than 1,200,MEASURE
+more than 1;200,MEASURE
 two-thirds,MEASURE
 German,NATIONAL
 91,MEASURE
-30,000,MEASURE
-Dachau, Sachsenhausen, Buchenwald, and Oranienburg,LOCATION
+30;000,MEASURE
+Dachau; Sachsenhausen; Buchenwald; and Oranienburg,LOCATION
 several weeks,PERIOD
 Nazis,PERSON_TYPE
 German Jewry,PERSON_TYPE
@@ -202,7 +205,7 @@ Romani and Slavs,PERSON_TYPE
 930,MEASURE
 Jewish,PERSON_TYPE
 MS St. Louis,ARTIFACT
-Cuba, the United States and Canada,LOCATION
+Cuba; the United States and Canada,LOCATION
 Europe,LOCATION
 Nazis,PERSON_TYPE
 German,PERSON_TYPE
@@ -220,11 +223,10 @@ Siberia,LOCATION
 Palestine,LOCATION
 Nazi,PERSON_TYPE
 1933,PERIOD
-Zionist Federation of Germany,ORGANISATION
-Zionistische Vereinigung für Deutschland,ORGANISATION
+Zionist Federation of Germany (die Zionistische Vereinigung für Deutschland),ORGANISATION
 Nazi government,INSTITUTION
 Haavara Agreement,LEGAL
-60,000,MEASURE
+60;000,MEASURE
 German Jews,PERSON_TYPE
 100 million,MEASURE
 Germany,LOCATION
@@ -239,7 +241,7 @@ Germans,PERSON_TYPE
 United Kingdom and France,LOCATION
 Jews,PERSON_TYPE
 British Palestine,LOCATION
-Italian Abyssinia, British Rhodesia, French Madagascar, and Australia,LOCATION
+Italian Abyssinia; British Rhodesia; French Madagascar; and Australia,LOCATION
 Madagascar,LOCATION
 Heydrich,PERSON
 Madagascar Plan,UNKNOWN
@@ -255,9 +257,9 @@ German Foreign Office,INSTITUTION
 Soviet Union,LOCATION
 Jews,PERSON_TYPE
 Nazi,PERSON_TYPE
-Ethnic Germans,PERSON_TYPE
+Germans,PERSON_TYPE
 Lebensraum,CONCEPT
-Nazi doctrine,CONCEPT
+Nazi,CONCEPTUAL
 Nazis,PERSON_TYPE
 Poland,LOCATION
 Russia,LOCATION
@@ -265,12 +267,9 @@ Operation Barbarossa,EVENT
 Russian and Slavic,PERSON_TYPE
 Hitler,PERSON
 Jewish Bolshevism,CONCEPT
-German,NATIONAL
-Poland,LOCATION
+German-occupied Poland,LOCATION
 Holocaust in Poland,EVENT
-Poland,LOCATION
-Poland,LOCATION
-1939–45,PERIOD
+Invasion of Poland; Occupation of Poland (1939–45),EVENT
 Jews,PERSON_TYPE
 Poland,LOCATION
 Nazi Germany,LOCATION
@@ -290,18 +289,13 @@ Poland,LOCATION
 September 1939,PERIOD
 Himmler,PERSON
 Reinhard Heydrich,PERSON
-chief of the Reich Main Security Office,TITLE
-Reichssicherheitshauptamt,INSTITUTION
-RSHA,INSTITUTION
+chief of the Reich Main Security Office (Reichssicherheitshauptamt or RSHA),TITLE
 seven,MEASURE
-Security Service,INSTITUTION
-SD,INSTITUTION
-Gestapo,INSTITUTION
+Security Service (SD) and Gestapo,INSTITUTION
 SS,INSTITUTION
-Poland,LOCATION
+occupied Poland,LOCATION
 Jews,PERSON_TYPE
 Heydrich,PERSON
-first,MEASURE
 Jews,PERSON_TYPE
 German,NATIONAL
 Operation Tannenberg,EVENT
@@ -314,8 +308,8 @@ Heydrich,PERSON
 1961,PERIOD
 Adolf Eichmann,PERSON
 Jews,PERSON_TYPE
-Hans Frank, Nazi governor,PERSON
-Poland,LOCATION
+Hans Frank; Nazi governor,PERSON
+occupied Poland,LOCATION
 Jews,PERSON_TYPE
 General Government area of central Poland,LOCATION
 Reich Labor Office,INSTITUTION
@@ -324,8 +318,7 @@ many thousands,MEASURE
 Nazis,PERSON_TYPE
 Vernichtung durch Arbeit,CONCEPT
 Jewish,PERSON_TYPE
-German,NATIONAL
-Poland,LOCATION
+German-occupied Poland,LOCATION
 late 1941,PERIOD
 SS,INSTITUTION
 Jews,PERSON_TYPE
@@ -340,25 +333,22 @@ more than a million,MEASURE
 Germany,LOCATION
 Soviet Union,LOCATION
 Jewish,PERSON_TYPE
-Zolochiv, west Ukraine,LOCATION
-Nazi,PERSON_TYPE
-USSR,LOCATION
+Zolochiv; west Ukraine (Nazi occupied USSR),LOCATION
 Soviets,PERSON_TYPE
 Gestapo,INSTITUTION
 Zolochiv,LOCATION
 Germany,LOCATION
-Norway, the Netherlands, Luxembourg, Belgium, and France,LOCATION
+Norway; the Netherlands; Luxembourg; Belgium; and France,LOCATION
 1940,PERIOD
 Yugoslavia and Greece,LOCATION
 1941,PERIOD
 antisemitic,CONCEPTUAL
 Jews,PERSON_TYPE
 1942,PERIOD
-Vichy regime,INSTITUTION
-France,LOCATION
+Vichy regime in occupied France,INSTITUTION
 French Jews,PERSON_TYPE
 Germany,LOCATION
-Italy, Hungary, Romania, Bulgaria and Finland,LOCATION
+Italy; Hungary; Romania; Bulgaria and Finland,LOCATION
 antisemitic,CONCEPTUAL
 900,MEASURE
 Jews,PERSON_TYPE
@@ -366,7 +356,7 @@ Jews,PERSON_TYPE
 Roma,PERSON_TYPE
 Banjica concentration camp,INSTALLATION
 Belgrade,LOCATION
-Serbian communists, royalists,PERSON_TYPE
+Serbian communists; royalists,PERSON_TYPE
 German,NATIONAL
 Croatia,LOCATION
 Jews,PERSON_TYPE
@@ -380,7 +370,8 @@ Holocaust,EVENT
 Ashkenazi,PERSON_TYPE
 Sephardi and Mizrahi Jews,PERSON_TYPE
 1938,PERIOD
-Fascist Italian,NATIONAL
+Fascist,CONCEPTUAL
+Italian,NATIONAL
 anti-Semitic laws,LEGAL
 Jews,PERSON_TYPE
 Jewish,PERSON_TYPE
@@ -393,7 +384,7 @@ over 44,MEASURE
 1942,PERIOD
 Nazis,PERSON_TYPE
 Benghazi's Jewish Quarter,LOCATION
-more than 2,000,MEASURE
+more than 2;000,MEASURE
 Jews,PERSON_TYPE
 Nazi,PERSON_TYPE
 WWII,EVENT
@@ -401,13 +392,13 @@ one-fifth,MEASURE
 Jews,PERSON_TYPE
 Libya,LOCATION
 Giado camp,INSTALLATION
-2,600,MEASURE
+2;600,MEASURE
 562,MEASURE
-Gharyan, Jeren, and Tigrinna,LOCATION
+Gharyan; Jeren; and Tigrinna,LOCATION
 Tunisia,LOCATION
 North African,NATIONAL
 Nazi,PERSON_TYPE
-100,000,MEASURE
+100;000,MEASURE
 Jews,PERSON_TYPE
 Nazis,PERSON_TYPE
 November 1942,PERIOD
@@ -417,13 +408,14 @@ anti-Semitic,CONCEPTUAL
 Tunisia,LOCATION
 Jews,PERSON_TYPE
 Yellow Star,UNKNOWN
-5,000,MEASURE
+5;000,MEASURE
 Tunisian Jews,PERSON_TYPE
 European,NATIONAL
-More than 2,500,MEASURE
+More than 2;500,MEASURE
 Tunisian Jews,PERSON_TYPE
 German,NATIONAL
-General Government and Lublin reservation,LOCATION
+General Government,LOCATION
+Lublin reservation,INSTALLATION
 Nisko plan,UNKNOWN
 Nisko Plan,UNKNOWN
 General Government,LOCATION
@@ -433,24 +425,25 @@ Lublin area,LOCATION
 German-Soviet agreement,LEGAL
 Lithuania,LOCATION
 Nisko Plan,UNKNOWN
-Lublin-Lipowa Reservation,LOCATION
+Lublin-Lipowa Reservation,INSTALLATION
 Adolf Eichmann,PERSON
 Jews,PERSON_TYPE
-Germany, Austria, and the Protectorate of Bohemia and Moravia,LOCATION
-Jews,PERSON_TYPE
+Germany; Austria; and the Protectorate of Bohemia and Moravia,LOCATION
 Lublin,LOCATION
 18 October 1939,PERIOD
 Jews,PERSON_TYPE
 Austria and the Protectorate of Bohemia and Moravia,LOCATION
 30 January 1940,PERIOD
-78,000,MEASURE
+78;000,MEASURE
 Jews,PERSON_TYPE
 Lublin,LOCATION
-Germany, Austria, and Czechoslovakia,LOCATION
+Germany; Austria; and Czechoslovakia,LOCATION
 12 and 13 February 1940,MEASURE
 Pomeranian Jews,PERSON_TYPE
-Lublin reservation,LOCATION
+Lublin reservation,INSTALLATION
 Pomeranian Gauleiter Franz Schwede-Coburg,PERSON
+first,MEASURE
+judenrein,LOCATION
 Jews,PERSON_TYPE
 24 March 1940,PERIOD
 Göring,PERSON
@@ -459,7 +452,7 @@ the end of April,PERIOD
 Nisko Plan,UNKNOWN
 Jews,PERSON_TYPE
 Nisko,LOCATION
-95,000,MEASURE
+95;000,MEASURE
 July 1940,PERIOD
 General Government,LOCATION
 Hitler,PERSON
@@ -467,11 +460,11 @@ October 1940,PERIOD
 Gauleiters Josef Bürckel and Robert Heinrich Wagner,PERSON
 Operation Bürckel,EVENT
 Jews,PERSON_TYPE
-France,LOCATION
+unoccupied France,LOCATION
 Alsace-Lorraine,LOCATION
 Reich,INSTITUTION
 Jews,PERSON_TYPE
-6,500,MEASURE
+6;500,MEASURE
 Jews,PERSON_TYPE
 Operation Bürckel,EVENT
 two hours,PERIOD
@@ -486,12 +479,11 @@ Vichy government,INSTITUTION
 Jews,PERSON_TYPE
 Operation Bürckel,EVENT
 Vichy,LOCATION
-Gurs, Rivesaltes and Les Milles,LOCATION
+Gurs; Rivesaltes and Les Milles,LOCATION
 Germany,LOCATION
 1940 and 1941,PERIOD
 Jews,PERSON_TYPE
-German,NATIONAL
-Poland,LOCATION
+German-occupied Poland,LOCATION
 Jews,PERSON_TYPE
 General Government,LOCATION
 Jews,PERSON_TYPE
@@ -508,28 +500,28 @@ Nazi,PERSON_TYPE
 Nazi,PERSON_TYPE
 12 April 1945,PERIOD
 Lager Nordhausen,INSTALLATION
-20,000,MEASURE
+20;000,MEASURE
 Third Reich,INSTITUTION
 50%,MEASURE
 After 1939,PERIOD
 Jews and POWs,PERSON_TYPE
 1942,PERIOD
-six,INSTITUTION
+six,MEASURE
 Poland,LOCATION
 Germans,PERSON_TYPE
-15,000,MEASURE
+15;000,MEASURE
 eastern Europe,LOCATION
-Jewish, Polish intelligentsia, communist, or Roma and Sinti,PERSON_TYPE
+Jewish; Polish intelligentsia; communist; or Roma and Sinti,PERSON_TYPE
 Germany,LOCATION
 V-2 rockets,ARTIFACT
 Mittelbau-Dora,INSTALLATION
 Mauthausen-Gusen concentration camp,INSTALLATION
 12- to 14-hour,PERIOD
 1939–1945,PERIOD
-Europe,LOCATION
+occupied Europe,LOCATION
 1939-1944,PERIOD
 Nazi,PERSON_TYPE
-Białystok, Budapest, Kovno, Łódź, Lvov, Riga, Vilna, Warsaw,LOCATION
+Białystok; Budapest; Kovno; Łódź; Lvov; Riga; Vilna; Warsaw,LOCATION
 Warsaw Ghetto,LOCATION
 Poland,LOCATION
 Nazis,PERSON_TYPE
@@ -537,16 +529,14 @@ General Government,LOCATION
 Jews,PERSON_TYPE
 Jews,PERSON_TYPE
 Germany,LOCATION
-Judenrat,INSTITUTION
-Jewish council,INSTITUTION
+Judenrat (Jewish council),INSTITUTION
+first,MEASURE
 29 September 1939,PERIOD
 Heydrich,PERSON
 Einsatzgruppen,INSTITUTION
 Germans,PERSON_TYPE
 Nazi,PERSON_TYPE
 Judenrat,INSTITUTION
-council leaders,TITLE
-Leaders,TITLE
 Joseph Parnas,PERSON
 Lviv,LOCATION
 14 October 1942,PERIOD
@@ -568,10 +558,10 @@ council,INSTITUTION
 Germans,PERSON_TYPE
 Warsaw Ghetto,LOCATION
 Warsaw Ghetto,LOCATION
-380,000,MEASURE
+380;000,MEASURE
 Łódź Ghetto,LOCATION
 second,MEASURE
-160,000,MEASURE
+160;000,MEASURE
 Warsaw Ghetto,LOCATION
 30%,MEASURE
 Warsaw,LOCATION
@@ -579,11 +569,11 @@ Warsaw,LOCATION
 9.2,MEASURE
 Between 1940 and 1942,PERIOD
 hundreds of thousands,MEASURE
-Over 43,000,MEASURE
+Over 43;000,MEASURE
 Warsaw ghetto,LOCATION
 one in ten,MEASURE
 1941,PERIOD
-Theresienstadt,LOCATION
+Theresienstadt,INSTALLATION
 more than half,MEASURE
 1942,PERIOD
 Germans,PERSON_TYPE
@@ -593,14 +583,14 @@ Abraham Malik,PERSON
 Kovno Ghetto,LOCATION
 Himmler,PERSON
 19 July 1942,PERIOD
-three days later, on 22 July,PERIOD
+three days later; on 22 July,PERIOD
 Warsaw Ghetto,LOCATION
-next 52 days, until 12 September,MEASURE
-300,000,MEASURE
+next 52 days; until 12 September,MEASURE
+300;000,MEASURE
 Warsaw,LOCATION
 Treblinka extermination camp,INSTALLATION
 Treblinka,INSTALLATION
-first,PERIOD
+first,MEASURE
 September 1942,PERIOD
 Łachwa in southeast Poland,LOCATION
 1943,PERIOD
@@ -608,28 +598,28 @@ Warsaw Ghetto Uprising and the Białystok Ghetto Uprising,EVENT
 Nazi,PERSON_TYPE
 Jews,PERSON_TYPE
 1939–1942,PERIOD
-Dorohoi Pogrom, Iaşi pogrom, Jedwabne Massacre, Legionnaires' Rebellion and Bucharest Pogrom,EVENT
+Dorohoi Pogrom; Iaşi pogrom; Jedwabne Massacre; Legionnaires' Rebellion and Bucharest Pogrom,EVENT
 Lviv,LOCATION
-Lviv pogroms and the Holocaust, and Odessa massacre,EVENT
+Lviv pogroms and the Holocaust; and Odessa massacre,EVENT
 Jewish,PERSON_TYPE
-Lviv, Ukraine,LOCATION
+Lviv; Ukraine,LOCATION
 July 1941,PERIOD
 Second World War,EVENT
-Nazis,EVENT
+Nazis,PERSON_TYPE
 Iaşi pogrom in Romania on 30 June 1941,EVENT
-14,000,MEASURE
+14;000,MEASURE
 Jews,PERSON_TYPE
 Romanian,NATIONAL
 police,INSTITUTION
 Lviv pogroms,EVENT
-Poland,LOCATION
+occupied Poland,LOCATION
 nationalists from the Ukrainian People's Militia,PERSON_TYPE
 Lwów,LOCATION
 Ukraine,LOCATION
-some 6,000,MEASURE
+some 6;000,MEASURE
 Polish Jews,PERSON_TYPE
 between 30 June and 29 July 1941,PERIOD
-3,000,MEASURE
+3;000,MEASURE
 Einsatzgruppe C.,INSTITUTION
 Ukrainian militia,ORGANISATION
 Polish,NATIONAL
@@ -643,18 +633,18 @@ German,PERSON_TYPE
 40,MEASURE
 Jewish,PERSON_TYPE
 1941–1943,PERIOD
-The Holocaust in Ukraine, The Holocaust in Lithuania, The Holocaust in Latvia, The Holocaust in Estonia, The Holocaust in Belarus, The Holocaust in Russia,EVENT
+The Holocaust in Ukraine; The Holocaust in Lithuania; The Holocaust in Latvia; The Holocaust in Estonia; The Holocaust in Belarus; The Holocaust in Russia,EVENT
 Einsatzgruppen,INSTITUTION
 Soviet Union,LOCATION
 Wehrmacht,INSTITUTION
 Axis Powers,INSTITUTION
 World War II,EVENT
-Babi Yar, Rumbula massacre, Kamianets-Podilskyi Massacre, and Ponary massacre,EVENT
+Babi Yar; Rumbula massacre; Kamianets-Podilskyi Massacre; and Ponary massacre,EVENT
 Germany's invasion of the Soviet Union in June 1941,EVENT
 Holocaust,EVENT
 invasion of the Soviet Union,EVENT
 German,NATIONAL
-anti-Bolshevik, anti-Semitic and anti-Slavic,CONCEPTUAL
+anti-Bolshevik; anti-Semitic and anti-Slavic,CONCEPTUAL
 Wehrmacht officers,TITLE
 Jewish Bolshevik,PERSON_TYPE
 Mongol,PERSON_TYPE
@@ -662,23 +652,22 @@ Asiatic,PERSON_TYPE
 Nazi,PERSON_TYPE
 Soviet Union,LOCATION
 German National Socialism and Jewish Bolshevism,CONCEPT
-Germans and the Bolsheviks, Jews, Romani and Slavic Untermenschen,PERSON_TYPE
+Germans and the Bolsheviks; Jews; Romani and Slavic Untermenschen,PERSON_TYPE
 Hitler,PERSON
 30 March 1941,PERIOD
 Soviet Union,LOCATION
 Nazis,PERSON_TYPE
 Lithuania,LOCATION
 80%,MEASURE
-220,000,MEASURE
+220;000,MEASURE
 Jews,PERSON_TYPE
 Soviet territories,LOCATION
 early 1942,PERIOD
-Belarus, Estonia, Latvia, Lithuania, Ukraine, and Moldova and most Russian territory west of the line Leningrad–Moscow–Rostov,LOCATION
+Belarus; Estonia; Latvia; Lithuania; Ukraine; and Moldova and most Russian territory west of the line Leningrad–Moscow–Rostov,LOCATION
 three million,MEASURE
 Jews,PERSON_TYPE
 Jews,PERSON_TYPE
-German army mobile killing units,INSTITUTION
-Einsatzgruppen,INSTITUTION
+German army mobile killing units (Einsatzgruppen),INSTITUTION
 Ivanhorod,LOCATION
 Ukraine,LOCATION
 Eastern Front,LOCATION
@@ -687,12 +676,12 @@ Polish resistance,ORGANISATION
 February 1943,PERIOD
 Eastern Europe,LOCATION
 Bolshevism,CONCEPT
-Soviet,NATIONAL
+occupied Soviet territories,LOCATION
 Jews,PERSON_TYPE
 Germans,PERSON_TYPE
 Jews,PERSON_TYPE
 Waffen-SS,INSTITUTION
-Lithuania, Latvia, and western Ukraine,LOCATION
+Lithuania; Latvia; and western Ukraine,LOCATION
 Jews,PERSON_TYPE
 German occupation,EVENT
 Latvian Arajs Kommando,ORGANISATION
@@ -701,14 +690,14 @@ Jews,PERSON_TYPE
 Belarus,LOCATION
 south,LOCATION
 Ukrainians,PERSON_TYPE
-24,000,MEASURE
+24;000,MEASURE
 Jews,PERSON_TYPE
 Poland,LOCATION
 Ustaše militia in Croatia,INSTITUTION
 Jews,PERSON_TYPE
 German,NATIONAL
 Jews,PERSON_TYPE
-Soviet territories,LOCATION
+occupied Soviet territories,LOCATION
 SS,INSTITUTION
 Einsatzgruppen,INSTITUTION
 Heydrich,PERSON
@@ -722,13 +711,13 @@ Belarus,LOCATION
 Einsatzgruppe C,INSTITUTION
 north and central Ukraine,LOCATION
 Einsatzgruppe D,INSTITUTION
-Moldova, south Ukraine, Crimea,LOCATION
+Moldova; south Ukraine; Crimea,LOCATION
 1942,PERIOD
 north Caucasus,LOCATION
 Einsatzgruppen,INSTITUTION
 Otto Ohlendorf,PERSON
 Einsatzgruppen,INSTITUTION
-Jews, Gypsies,PERSON_TYPE
+Jews; Gypsies,PERSON_TYPE
 Communist,PERSON_TYPE
 Communists,PERSON_TYPE
 Jewish,PERSON_TYPE
@@ -736,28 +725,30 @@ Einsatzgruppe,INSTITUTION
 December 1941,PERIOD
 four,MEASURE
 Einsatzgruppen,INSTITUTION
-125,000, 45,000, 75,000, and 55,000,MEASURE
-300,000,MEASURE
+125;000; 45;000; 75;000; and 55;000,MEASURE
+300;000,MEASURE
 United States Holocaust Memorial Museum,INSTALLATION
+one,MEASURE
 Einsatzgruppen,INSTITUTION
-Piryatin, Ukraine,LOCATION
+Piryatin; Ukraine,LOCATION
 Germans,PERSON_TYPE
-1,600,MEASURE
+1;600,MEASURE
 Jews,PERSON_TYPE
-6 April 1942, the second day of Passover,PERIOD
+6 April 1942; the second day of Passover,PERIOD
 5:00 pm,PERIOD
 Ruderman,PERSON
+five,MEASURE
 Jews,PERSON_TYPE
 Soviet Union,LOCATION
 Babi Yar,LOCATION
 Kiev,LOCATION
-33,771,MEASURE
+33;771,MEASURE
 Jews,PERSON_TYPE
 29–3 September 1941,PERIOD
 Jews,PERSON_TYPE
 Kiev,LOCATION
-Major-General Friedrich Eberhardt, the Police Commander for Army Group South SS-Obergruppenführer Friedrich Jeckeln, and the Einsatzgruppe C Commander Otto Rasch,PERSON
-SS, SD, and Security Police,INSTITUTION
+Major-General Friedrich Eberhardt; the Police Commander for Army Group South SS-Obergruppenführer Friedrich Jeckeln; and the Einsatzgruppe C Commander Otto Rasch,PERSON
+SS; SD; and Security Police,INSTITUTION
 Ukrainian police,INSTITUTION
 6th Army,INSTITUTION
 Jews of Kiev,PERSON_TYPE
@@ -770,10 +761,10 @@ ten,MEASURE
 15 meters,MEASURE
 Schutzpolizei,INSTITUTION
 Jews,PERSON_TYPE
-Jew,PERSON
+Jew,PERSON_TYPE
 Jews,PERSON_TYPE
 Jew,PERSON_TYPE
-Heinrich Himmler, Reinhard Heydrich, and Karl Wolff,PERSON
+Heinrich Himmler; Reinhard Heydrich; and Karl Wolff,PERSON
 Obersalzberg,LOCATION
 May 1939,PERIOD
 Wolff,PERSON
@@ -792,7 +783,7 @@ SS,INSTITUTION
 Party,ORGANISATION
 Germany,LOCATION
 Einsatzgruppen,INSTITUTION
-anti-Bolshevik, anti-partisan or anti-bandit,CONCEPTUAL
+anti-Bolshevik; anti-partisan or anti-bandit,CONCEPTUAL
 German,NATIONAL
 Andreas Hillgruber,PERSON
 German Army,INSTITUTION
@@ -806,15 +797,15 @@ Einsatzgruppen,INSTITUTION
 anti-partisan,CONCEPTUAL
 Army,INSTITUTION
 SS,INSTITUTION
-anti-Bolshevik, anti-partisan and anti-Jewish,CONCEPTUAL
+anti-Bolshevik; anti-partisan and anti-Jewish,CONCEPTUAL
 mid-1941,PERIOD
 SS Cavalry Brigade,INSTITUTION
 Hermann Fegelein,PERSON
 699,MEASURE
-Red Army,PERSON_TYPE
-1,100,MEASURE
+Red Army,INSTITUTION
+1;100,MEASURE
 partisans,PERSON_TYPE
-14,178,MEASURE
+14;178,MEASURE
 Jews,PERSON_TYPE
 anti-partisan,CONCEPTUAL
 Pripyat Marshes,LOCATION
@@ -844,7 +835,7 @@ partisan,PERSON_TYPE
 Jew,PERSON_TYPE
 Jew,PERSON_TYPE
 partisan,PERSON_TYPE
-Head of the OKW, Field-Marshal Wilhelm Keitel,PERSON
+Head of the OKW; Field-Marshal Wilhelm Keitel,PERSON
 12 September 1941,PERIOD
 Bolshevism,CONCEPT
 Jews,PERSON_TYPE
@@ -860,20 +851,19 @@ White Ruthenia,LOCATION
 Jews,PERSON_TYPE
 SD,INSTITUTION
 Jürgen Förster,PERSON
-Wehrmacht's war crimes,EVENT
+Wehrmacht,INSTITUTION
 Wehrmacht,INSTITUTION
 Holocaust,EVENT
 Shoah,EVENT
 SS,INSTITUTION
 Wehrmacht,INSTITUTION
-2,749,MEASURE
+2;749,MEASURE
 Jews,PERSON_TYPE
-beach near the city of Liepāja, in Latvia,LOCATION
+beach near the city of Liepāja; in Latvia,LOCATION
 15–17 December 1941,PERIOD
 December 1939,PERIOD
 Nazis,PERSON_TYPE
-Pomerania, East Prussia,LOCATION
-Poland,LOCATION
+Pomerania; East Prussia; and occupied Poland,LOCATION
 Action T4,UNKNOWN
 Sachsenhausen concentration camp,INSTALLATION
 100,MEASURE
@@ -881,22 +871,20 @@ from November 1941,PERIOD
 Chełmno extermination camp,INSTALLATION
 December 1941,PERIOD
 15,MEASURE
-Einsatzgruppen,INSTALLATION
-Soviet Union,LOCATION
-SS-Reichssicherheitshauptamt,INSTITUTION
-Reich Main Security Office,INSTITUTION
-500,000,MEASURE
+Einsatzgruppen,INSTITUTION
+occupied Soviet Union,LOCATION
+SS-Reichssicherheitshauptamt (Reich Main Security Office),INSTITUTION
+500;000,MEASURE
 Jews,PERSON_TYPE
-Romani,PERSON
+Romani,PERSON_TYPE
 a month,PERIOD
 ninety seven thousand,MEASURE
 three,MEASURE
-Hans Frank, governor of the General Government,PERSON
+Hans Frank; governor of the General Government,PERSON
 Christian Wirth,PERSON
 Wannsee Conference,EVENT
-Final Solution,UNKNOWN
-1942–1945,PERIOD
-Operation Reinhard, Wannsee Conference,EVENT
+Final Solution (1942–1945),UNKNOWN
+Operation Reinhard; Wannsee Conference,EVENT
 Final Solution,CONCEPT
 Wannsee villa,LOCATION
 Wannsee conference,EVENT
@@ -908,31 +896,31 @@ Wannsee Conference,EVENT
 Jews,PERSON_TYPE
 European,NATIONAL
 Auschwitz I,INSTALLATION
-Auschwitz II,INSTALLATION
-Birkenau,INSTALLATION
+Auschwitz II (Birkenau),INSTALLATION
 museum at Auschwitz II,INSTALLATION
 Crematorium II,INSTALLATION
-Auschwitz II,INSTALLATION
-Birkenau,INSTALLATION
+Auschwitz II (Birkenau),INSTALLATION
 Holocaust,EVENT
 Robert Jan van Pelt,PERSON
 Earth,LOCATION
-500,000,MEASURE
+500;000,MEASURE
 Nazis,PERSON_TYPE
 Holocaust,EVENT
 thousands,MEASURE
 Höfle Telegram,UNKNOWN
 Adolf Eichmann,PERSON
 January 1943,PERIOD
-1,274,166,MEASURE
+1;274;166,MEASURE
 Jews,PERSON_TYPE
+four,MEASURE
 Aktion Reinhard camps,INSTALLATION
 1942,PERIOD
 Reinhard Heydrich,PERSON
 Wannsee Conference on 20 January 1942 in Berlin's Wannsee suburb,EVENT
 15,MEASURE
-Nazi leaders,TITLE
-state secretaries, senior officials, party leaders, SS officers,TITLE
+Nazi,PERSON_TYPE
+state secretaries,TITLE
+SS officers,TITLE
 Jewish,PERSON_TYPE
 Jewish question in Europe,CONCEPT
 Heydrich,PERSON
@@ -953,11 +941,10 @@ UK and the US,LOCATION
 Heydrich,PERSON
 Final Solution,CONCEPT
 Jews,PERSON_TYPE
-officials,TITLE
 2.3 million,MEASURE
 Jews,PERSON_TYPE
 General Government,LOCATION
-850,000,MEASURE
+850;000,MEASURE
 Hungary,LOCATION
 1.1 million,MEASURE
 five million,MEASURE
@@ -966,14 +953,15 @@ two million,MEASURE
 Soviet,NATIONAL
 6.5 million,MEASURE
 Poland,LOCATION
-Auschwitz,LOCATION
-Göring's representative, Erich Neumann,PERSON
+Auschwitz,INSTALLATION
+Göring's representative; Erich Neumann,PERSON
 German,PERSON_TYPE
 1983,PERIOD
 Popular Opinion and Political Dissent in the Third Reich,CREATION
 Ian Kershaw,PERSON
+Alltagsgeschichte,CONCEPT
 Bavaria,LOCATION
-Nazi period,PERIOD
+Nazi period,EVENT
 Bavarians,PERSON_TYPE
 Kershaw,PERSON
 Jews,PERSON_TYPE
@@ -1015,7 +1003,7 @@ Christof Dipper,PERSON
 Der Deutsche Widerstand und die Juden,CREATION
 English,CONCEPT
 The German Resistance and the Jews,CREATION
-Yad Vashem Studies, Volume 16, 1984,CREATION
+Yad Vashem Studies; Volume 16; 1984,CREATION
 anti-Nazi national-conservatives,PERSON_TYPE
 antisemitic,CONCEPTUAL
 Dipper,PERSON
@@ -1033,8 +1021,8 @@ German,PERSON_TYPE
 Jewish Question,CONCEPT
 2012,PERIOD
 Berlin,LOCATION
-3,000,MEASURE
-1,300,MEASURE
+3;000,MEASURE
+1;300,MEASURE
 Hamburg,LOCATION
 German,PERSON_TYPE
 Robert Gellately,PERSON
@@ -1063,7 +1051,7 @@ Jews,PERSON_TYPE
 Nazi,PERSON_TYPE
 Hamburg,LOCATION
 commander,TITLE
-1,500,MEASURE
+1;500,MEASURE
 Jews from Józefów,PERSON_TYPE
 12,MEASURE
 500,MEASURE
@@ -1085,8 +1073,7 @@ anti-Communist,CONCEPTUAL
 anti-Semitic,CONCEPTUAL
 Ukraine,LOCATION
 Latvia and Lithuania,LOCATION
-Hilfswillige,PERSON_TYPE
-Hiwis,PERSON_TYPE
+Hilfswillige; or Hiwis,PERSON_TYPE
 Kudryashov,PERSON
 Communists,PERSON_TYPE
 SS,INSTITUTION
@@ -1100,29 +1087,34 @@ Trawniki,PERSON_TYPE
 Trawniki,PERSON_TYPE
 Final Solution,CONCEPT
 Jews,PERSON_TYPE
-Belzec, Sobibór, Treblinka II,INSTALLATION
+Belzec; Sobibór; Treblinka II,INSTALLATION
 Warsaw,LOCATION
-Częstochowa, Lublin, Lvov, Radom, Kraków, Białystok,LOCATION
+three,MEASURE
+Częstochowa; Lublin; Lvov; Radom; Kraków; Białystok,LOCATION
+twice,MEASURE
 Majdanek,INSTALLATION
 Auschwitz,INSTALLATION
 Trawniki,INSTALLATION
-KL Lublin/Majdanek camp complex,INSTALLATION
-Poniatowa, Budzyń, Kraśnik, Puławy, Lipowa,INSTALLATION
-Łomazy, Międzyrzec, Łuków, Radzyń, Parczew, Końskowola, Komarówka,LOCATION
+KL Lublin/Majdanek camp,INSTALLATION
+Poniatowa; Budzyń; Kraśnik; Puławy; Lipowa,INSTALLATION
+Łomazy; Międzyrzec; Łuków; Radzyń; Parczew; Końskowola; Komarówka,LOCATION
 1942,PERIOD
 Auschwitz,INSTALLATION
+five,MEASURE
 Reinhard plan,UNKNOWN
+Two,MEASURE
 Chełmno,INSTALLATION
 Majdanek,INSTALLATION
 POW,PERSON_TYPE
+Three,MEASURE
 Jews,PERSON_TYPE
-Belzec,INSTALLATION
-Sobibór,INSTALLATION
-Treblinka,INSTALLATION
+Belzec; Sobibór and Treblinka,INSTALLATION
 Auschwitz,INSTALLATION
-Maly Trostinets in Belarus,INSTALLATION
+seventh,MEASURE
+Maly Trostinets,INSTALLATION
+Belarus,LOCATION
 Jasenovac,INSTALLATION
-ethnic Serbs,PERSON_TYPE
+Serbs,PERSON_TYPE
 Dachau and Belsen,INSTALLATION
 Germany,LOCATION
 Nazi regime,INSTITUTION
@@ -1130,32 +1122,33 @@ Communists and homosexuals,PERSON_TYPE
 German,NATIONAL
 Nazi,PERSON_TYPE
 Jews,PERSON_TYPE
-one,LOCATION
-five,LOCATION
+one,MEASURE
+five,MEASURE
 heart of Europe,LOCATION
 couple of hours,PERIOD
 ninety percent,MEASURE
 Rudolf Vrba,PERSON
-Judenrampe in Auschwitz,INSTALLATION
+Judenrampe,INSTALLATION
+Auschwitz,INSTALLATION
 from 18 August 1942 to 7 June 1943,PERIOD
-Mauthausen-Gusen concentration camp in pre-war Austria,INSTALLATION
-doctor,TITLE
+Mauthausen-Gusen concentration camp,INSTALLATION
+pre-war Austria,LOCATION
 Nazis,PERSON_TYPE
 Auschwitz–Birkenau,INSTALLATION
 American,NATIONAL
 13 September 1944,PERIOD
-Rudolf Höss, commandant of Auschwitz,PERSON
+Rudolf Höss; commandant of Auschwitz,PERSON
 bunker 1,INSTALLATION
 800,MEASURE
 bunker 2,INSTALLATION
-1,200,MEASURE
+1;200,MEASURE
 Zyklon-B,ARTIFACT
 HCN,SUBSTANCE
 hydrogen cyanide,SUBSTANCE
 20 minutes,PERIOD
 Höß,PERSON
 one-third,MEASURE
-Johann Kremer, an SS doctor,PERSON
+Johann Kremer; an SS doctor,PERSON
 four hours,PERIOD
 gold,SUBSTANCE
 Sonderkommando,ORGANISATION
@@ -1172,10 +1165,11 @@ between September and November 1942,PERIOD
 Himmler,PERSON
 early 1943,PERIOD
 Treblinka,INSTALLATION
-2,000,MEASURE
+2;000,MEASURE
 Treblinka,INSTALLATION
 10,MEASURE
 200,MEASURE
+two,MEASURE
 SS doctors,TITLE
 Auschwitz,INSTALLATION
 doctors,TITLE
@@ -1183,7 +1177,7 @@ Treblinka,INSTALLATION
 Treblinka,INSTALLATION
 Auschwitz,INSTALLATION
 Auschwitz,INSTALLATION
-Rudolf Höss, Auschwitz camp commandant,PERSON
+Rudolf Höss; Auschwitz camp commandant,PERSON
 Nuremberg,LOCATION
 Jewish resistance,ORGANISATION
 Jews,PERSON_TYPE
@@ -1216,6 +1210,7 @@ Jewish,PERSON_TYPE
 Jewish,PERSON_TYPE
 Jewish resistance,ORGANISATION
 Franz Stangl,PERSON
+two,MEASURE
 West German,NATIONAL
 Jewish,PERSON_TYPE
 Treblinka,INSTALLATION
@@ -1225,6 +1220,7 @@ Vilnius Ghetto,LOCATION
 FPO,ORGANISATION
 Warsaw,LOCATION
 Timothy Snyder,PERSON
+three months,PERIOD
 massive deportations of July–September 1942,EVENT
 Jewish,PERSON_TYPE
 Jewish,PERSON_TYPE
@@ -1256,9 +1252,9 @@ Germans,PERSON_TYPE
 Germans,PERSON_TYPE
 17,MEASURE
 93,MEASURE
-13,000,MEASURE
+13;000,MEASURE
 Jews,PERSON_TYPE
-57,885,MEASURE
+57;885,MEASURE
 German,NATIONAL
 uprising,EVENT
 revolt in the Treblinka extermination camp in May 1943,EVENT
@@ -1270,8 +1266,7 @@ German,PERSON_TYPE
 Two weeks later,PERIOD
 uprising in the Białystok Ghetto,EVENT
 16 August 1943,PERIOD
-Nazi,PERSON_TYPE
-Poland,LOCATION
+Nazi-occupied Poland,LOCATION
 Warsaw Ghetto Uprising of April–May 1943,EVENT
 German,NATIONAL
 Ghetto,LOCATION
@@ -1283,8 +1278,7 @@ Molotov cocktails,ARTIFACT
 German,NATIONAL
 September,PERIOD
 uprising in the Vilna Ghetto,EVENT
-Jewish resistance group Fareynikte Partizaner Organizatsye,ORGANISATION
-United Partisan Organization,ORGANISATION
+Jewish resistance group Fareynikte Partizaner Organizatsye (United Partisan Organization),ORGANISATION
 Nazi,PERSON_TYPE
 World War II,EVENT
 German,NATIONAL
@@ -1307,44 +1301,45 @@ Soviet partisans,PERSON_TYPE
 Jewish Sonderkommandos,PERSON_TYPE
 Auschwitz,INSTALLATION
 Crematorium IV,INSTALLATION
+Three,MEASURE
 German,NATIONAL
 uprising,EVENT
 Sonderkommandos,ORGANISATION
 250,MEASURE
 Jewish Soviet POW,NATIONAL
-German Army,ORGANISATION
+German Army,INSTITUTION
 August 1941,PERIOD
-500,000,MEASURE
+500;000,MEASURE
 Jews,PERSON_TYPE
 Soviet Army,ORGANISATION
 World War II,EVENT
 Jewish partisan,PERSON_TYPE
 partisan,PERSON_TYPE
-20,000 to 30,000,MEASURE
+20;000 to 30;000,MEASURE
 Jews,PERSON_TYPE
 Soviet partisan movement,ORGANISATION
 Nazis,PERSON_TYPE
 Eastern Europe,LOCATION
 Nazis,PERSON_TYPE
 Lithuania,LOCATION
-3,000,MEASURE
+3;000,MEASURE
 German,NATIONAL
 1.4 million,MEASURE
 Jewish,PERSON_TYPE
 Allied,INSTITUTION
-500,000,MEASURE
+500;000,MEASURE
 Red Army,INSTITUTION
-550,000,MEASURE
+550;000,MEASURE
 U.S. Army,INSTITUTION
-100,000,MEASURE
+100;000,MEASURE
 Polish army,INSTITUTION
-30,000,MEASURE
+30;000,MEASURE
 British army,INSTITUTION
-200,000,MEASURE
+200;000,MEASURE
 Jewish,PERSON_TYPE
 Red Army,INSTITUTION
 Jewish Brigade,ORGANISATION
-5,000,MEASURE
+5;000,MEASURE
 Jewish,PERSON_TYPE
 British Mandate of Palestine,LOCATION
 British Army,INSTITUTION
@@ -1353,8 +1348,7 @@ Jewish,PERSON_TYPE
 Special Interrogation Group,ORGANISATION
 Nazis,PERSON_TYPE
 Western Desert Campaign,EVENT
-Poland,LOCATION
-Soviet territories,LOCATION
+occupied Poland and Soviet territories,LOCATION
 thousands,MEASURE
 Jews,PERSON_TYPE
 partisans,PERSON_TYPE
@@ -1385,7 +1379,7 @@ Home Army and the People's Army,ORGANISATION
 Jews,PERSON_TYPE
 Warsaw Uprising of August 1944,EVENT
 Warsaw Ghetto Uprising of April 1943,EVENT
-partisans,EVENT
+partisans,PERSON_TYPE
 Jewish,PERSON_TYPE
 French Jews,PERSON_TYPE
 French Resistance,ORGANISATION
@@ -1405,12 +1399,11 @@ EEIF,ORGANISATION
 Vichy regime,INSTITUTION
 1943,PERIOD
 Zionist Jews,PERSON_TYPE
-Armee Juive,ORGANISATION
-Jewish Army,ORGANISATION
+Armee Juive (Jewish Army),ORGANISATION
 Zionist,CONCEPTUAL
 Jews,PERSON_TYPE
 1944,PERIOD
-liberation of Paris, Lyon, Toulouse, Grenoble, and Nice,EVENT
+liberation of Paris; Lyon; Toulouse; Grenoble; and Nice,EVENT
 Jews,PERSON_TYPE
 Jewish,PERSON_TYPE
 Resistance,ORGANISATION
@@ -1420,15 +1413,13 @@ Jews,PERSON_TYPE
 Warsaw Ghetto,LOCATION
 1943,PERIOD
 Jews,PERSON_TYPE
-German officials,TITLE
+German,PERSON_TYPE
 Nazis,PERSON_TYPE
 Jewish,PERSON_TYPE
-Reich Association of Jews,ORGANISATION
-Reichsvereinigung der Juden,ORGANISATION
+Reich Association of Jews (Reichsvereinigung der Juden),ORGANISATION
 Germany,LOCATION
-Jewish Councils,INSTITUTION
-Judenräte,INSTITUTION
-Poland,LOCATION
+Jewish Councils (Judenräte),INSTITUTION
+occupied Poland,LOCATION
 Jewish,PERSON_TYPE
 Holocaust,EVENT
 Alexander Kimel,PERSON
@@ -1436,8 +1427,8 @@ Jewish,PERSON_TYPE
 Europe,LOCATION
 Warsaw Ghetto uprising,EVENT
 Jewish,PERSON_TYPE
-500,000,MEASURE
-100,000,MEASURE
+500;000,MEASURE
+100;000,MEASURE
 Jews,PERSON_TYPE
 a millennium and a half,PERIOD
 Jewish,PERSON_TYPE
@@ -1449,21 +1440,26 @@ Jews,PERSON_TYPE
 railway stations at Auschwitz,INSTALLATION
 Jan Karski,PERSON
 Polish resistance,ORGANISATION
-Allies,INSTITUTION
+western Allies,INSTITUTION
 Jewish Uprisings,EVENT
 Nazi,PERSON_TYPE
 Jewish resistance,ORGANISATION
-Mordechaj Anielewicz, leader of the Jewish Combat Organization,PERSON
+Mordechaj Anielewicz,PERSON
+Jewish Combat Organization,ORGANISATION
 Warsaw Ghetto Uprising,EVENT
 1943,PERIOD
-Paweł Frenkiel, a Polish Jewish youth leader in Warsaw and a senior commander of the Jewish Military Union,PERSON
-JMU,ORGANISATION
-Icchak Cukierman, one of the leaders of the Warsaw Ghetto Uprising 1943,PERSON
-1944 Warsaw Uprising,EVENT
-Zivia Lubetkin, one of the leaders of the Jewish underground,PERSON
-Nazi,PERSON_TYPE
+Paweł Frenkiel,PERSON
+Polish Jewish,PERSON_TYPE
 Warsaw,LOCATION
-Żydowska Organizacja Bojowa,ORGANISATION
+senior commander of the Jewish Military Union,TITLE
+JMU,ORGANISATION
+Icchak Cukierman,PERSON
+Warsaw Ghetto Uprising 1943,EVENT
+1944 Warsaw Uprising,EVENT
+Zivia Lubetkin,PERSON
+Jewish underground,ORGANISATION
+Nazi-occupied Warsaw,LOCATION
+High Command of the resistance group Żydowska Organizacja Bojowa,ORGANISATION
 Dov Lopatyn,PERSON
 partisan,PERSON_TYPE
 Abba Kovner,PERSON
@@ -1480,38 +1476,38 @@ head of the RSHA,TITLE
 Ernst Kaltenbrunner,PERSON
 Heydrich,PERSON
 Kaltenbrunner,PERSON
-Gestapo, Sicherheitsdienst,INSTITUTION
+Gestapo; Sicherheitsdienst,INSTITUTION
 Final Solution,CONCEPT
 1943 and 1944,PERIOD
 hundreds of thousands,MEASURE
 German,NATIONAL
 spring of 1944,PERIOD
-8,000,MEASURE
-Auschwitz,LOCATION
+8;000,MEASURE
+Auschwitz,INSTALLATION
 Jewish,PERSON_TYPE
 General Government,LOCATION
 1943,PERIOD
-100,000,MEASURE
+100;000,MEASURE
 Warsaw Ghetto,LOCATION
 early 1943,PERIOD
 Warsaw Ghetto Uprising,EVENT
-About 42,000,MEASURE
+About 42;000,MEASURE
 Jews,PERSON_TYPE
 Operation Harvest Festival on 3–4 November 1943,EVENT
 western and southern Europe,LOCATION
 Jews,PERSON_TYPE
-Soviet territories,LOCATION
+occupied Soviet territories,LOCATION
 Jews,PERSON_TYPE
 SS,INSTITUTION
 end of 1943,PERIOD
 Germans,PERSON_TYPE
 Soviet territory,LOCATION
-Budapest, Hungary,LOCATION
+Budapest; Hungary,LOCATION
 Hungarian and German,NATIONAL
 Jews,PERSON_TYPE
 municipal theatre,INSTALLATION
 October 1944,PERIOD
-Budapest, Hungary,LOCATION
+Budapest; Hungary,LOCATION
 Jewish,PERSON_TYPE
 Wesselényi Street,LOCATION
 20–22 October 1944,PERIOD
@@ -1523,9 +1519,9 @@ Allied,INSTITUTION
 German,NATIONAL
 Nazis,PERSON_TYPE
 Jews,PERSON_TYPE
-Army leaders,TITLE
+Army,INSTITUTION
 Jewish,PERSON_TYPE
-Nazi leaders,TITLE
+Nazi,PERSON_TYPE
 SS,INSTITUTION
 east,LOCATION
 Jews,PERSON_TYPE
@@ -1534,7 +1530,6 @@ SS,INSTITUTION
 Germans,PERSON_TYPE
 Nazi fanaticism,CONCEPT
 Germany,LOCATION
-senior officials,TITLE
 Germany,LOCATION
 Himmler,PERSON
 SS,INSTITUTION
@@ -1543,12 +1538,11 @@ Himmler,PERSON
 Hitler,PERSON
 October 1943,PERIOD
 Himmler,PERSON
-senior Nazi Party officials,TITLE
+Nazi Party,INSTITUTION
 Poznań,LOCATION
 Jews,PERSON_TYPE
 Jewish,PERSON_TYPE
 Jewish,PERSON_TYPE
-party member,TITLE
 Jews,PERSON_TYPE
 80 million,MEASURE
 Germans,PERSON_TYPE
@@ -1556,7 +1550,7 @@ Jew,PERSON_TYPE
 Jew,PERSON_TYPE
 100,MEASURE
 500,MEASURE
-1,000,MEASURE
+1;000,MEASURE
 Jews,PERSON_TYPE
 Jews,PERSON_TYPE
 German nation,LOCATION
@@ -1578,14 +1572,14 @@ Final Solution,CONCEPT
 Speer,PERSON
 post-war,PERIOD
 1944,PERIOD
-Poland,LOCATION
+occupied Poland,LOCATION
 19 March 1944,PERIOD
 Hitler,PERSON
 Hungary,LOCATION
 Eichmann,PERSON
 Budapest,LOCATION
 Hungary,LOCATION
-800,000,MEASURE
+800;000,MEASURE
 Jews,PERSON_TYPE
 Hungary,LOCATION
 Jewish,PERSON_TYPE
@@ -1593,8 +1587,8 @@ Jewish,PERSON_TYPE
 Hungary,LOCATION
 More than half,MEASURE
 Auschwitz,INSTALLATION
-commandant, Rudolf Höss,PERSON
-400,000,MEASURE
+commandant; Rudolf Höss,PERSON
+400;000,MEASURE
 Hungarian Jews,PERSON_TYPE
 three months,PERIOD
 Blood for goods,CONCEPT
@@ -1609,7 +1603,7 @@ Jewish,PERSON_TYPE
 Eichmann,PERSON
 one million,MEASURE
 Jews,PERSON_TYPE
-10,000,MEASURE
+10;000,MEASURE
 blood for goods,CONCEPT
 Eichman's trial in Jerusalem,EVENT
 Allies,INSTITUTION
@@ -1617,16 +1611,15 @@ April–June 1944,PERIOD
 Bratislava,LOCATION
 June–July 1944,PERIOD
 Rudolf Vrba,PERSON
-Auschwitz,LOCATION
-April 7, 1944,PERIOD
-first,MEASURE
+Auschwitz,INSTALLATION
+April 7; 1944,PERIOD
 Arnost Rosin,PERSON
 27 May 1944,PERIOD
 The Mass Extermination of Jews in German Occupied Poland,CREATION
 Polish government-in-exile,INSTITUTION
-United Nations,INSTITUTION
+United Nations,ORGANISATION
 1942,PERIOD
-Auschwitz ""Camp of death"",CREATION
+Auschwitz Camp of death,CREATION
 Natalia Zarembina,PERSON
 1942,PERIOD
 1940,PERIOD
@@ -1658,20 +1651,20 @@ British,NATIONAL
 Jews,PERSON_TYPE
 Netherlands,LOCATION
 December 1942,PERIOD
-Allies,INSTITUTION
+western Allies,INSTITUTION
 Joint Declaration by Members of the United Nations,EVENT
 Hitler,PERSON
 Jewish,PERSON_TYPE
 Europe,LOCATION
 1942,PERIOD
 Jan Karski,PERSON
-Polish, British and US governments,INSTITUTION
+Polish; British and US governments,INSTITUTION
 Poland,LOCATION
 destruction of the Warsaw Ghetto and the Holocaust of the Jews,EVENT
 Polish,NATIONAL
 prime minister,TITLE
-Socialist Party, National Party, Labor Party, People's Party, Jewish Bund and Poalei Zion,ORGANISATION
-Anthony Eden, the British foreign secretary,PERSON
+Socialist Party; National Party; Labor Party; People's Party; Jewish Bund and Poalei Zion,ORGANISATION
+Anthony Eden; the British foreign secretary,PERSON
 Warsaw and Bełżec,LOCATION
 1943,PERIOD
 London,LOCATION
@@ -1689,7 +1682,7 @@ Roosevelt,PERSON
 Poland,LOCATION
 Jews,PERSON_TYPE
 United States,LOCATION
-Felix Frankfurter, Cordell Hull, William Joseph Donovan, and Stephen Wise,PERSON
+Felix Frankfurter; Cordell Hull; William Joseph Donovan; and Stephen Wise,PERSON
 Karski,PERSON
 Cardinal Samuel Stritch,PERSON
 Hollywood,LOCATION
@@ -1707,7 +1700,7 @@ September 1940,PERIOD
 Captain Witold Pilecki,PERSON
 Polish underground,ORGANISATION
 Polish Home Army,ORGANISATION
-Auschwitz,INSTALLLATION
+Auschwitz,INSTALLATION
 Auschwitz,INSTALLATION
 Związek Organizacji Wojskowej,ORGANISATION
 Union of Military Organizations,ORGANISATION
@@ -1718,13 +1711,12 @@ Pilecki,PERSON
 Auschwitz,INSTALLATION
 two,MEASURE
 August 1943,PERIOD
-Office of Strategic Services,INSTITUTION
-OSS,INSTITUTION
+Office of Strategic Services (OSS),INSTITUTION
 London,LOCATION
 three,MEASURE
 Birkenau,INSTALLATION
-10,000,MEASURE
-30,000,MEASURE
+10;000,MEASURE
+30;000,MEASURE
 one,MEASURE
 Pilecki,PERSON
 Poland,LOCATION
@@ -1737,7 +1729,7 @@ Auschwitz,INSTALLATION
 Ukrainian Eugeniusz Bendera,PERSON
 three,MEASURE
 Poles,PERSON_TYPE
-Kazimierz Piechowski, Stanisław Gustaw Jaster and Józef Lempart,PERSON
+Kazimierz Piechowski; Stanisław Gustaw Jaster and Józef Lempart,PERSON
 SS-Totenkopfverbände,INSTITUTION
 SS,INSTITUTION
 Steyr 220,ARTIFACT
@@ -1766,26 +1758,25 @@ Arnost Rosin and Czesław Mordowicz,PERSON
 27 May 1944,PERIOD
 Slovakia,LOCATION
 6 June,PERIOD
-Normandy landing,EVENT
-D-Day,PERIOD
-Normandy,LOCATION
+Normandy landing (D-Day),EVENT
+Normandy,EVENT
 eight days,PERIOD
 Judenrat,INSTITUTION
 Judenrat,INSTITUTION
 Vrba and Wetzler's report,CREATION
 Auschwitz Protocols,CREATION
 between 15 and 27 May 1944,PERIOD
-100,000,MEASURE
+100;000,MEASURE
 Hungarian Jews,PERSON_TYPE
 Birkenau,INSTALLATION
 BBC and The New York Times,MEDIA
 Vrba-Wetzler report,CREATION
-15 June, 20 June, 3 July and 6 July 1944,PERIOD
+15 June; 20 June; 3 July and 6 July 1944,PERIOD
 Miklós Horthy,PERSON
 Jews,PERSON_TYPE
 Hungary to Auschwitz,LOCATION
 9 July,PERIOD
-200,000,MEASURE
+200;000,MEASURE
 Jews,PERSON_TYPE
 14 November 2001,PERIOD
 150th,MEASURE
@@ -1808,8 +1799,7 @@ Congress,INSTITUTION
 Europe's Jews,PERSON_TYPE
 The New York Times,MEDIA
 Holocaust,EVENT
-Death marches,EVENT
-1944–1945,PERIOD
+Death marches (1944–1945),EVENT
 Death marches,EVENT
 Holocaust,EVENT
 Grave and Memorial in Wodzisław,INSTALLATION
@@ -1829,7 +1819,7 @@ Germany,LOCATION
 Germany,LOCATION
 1944,PERIOD
 German armies,INSTITUTION
-Soviet Union, the Balkans and Italy,LOCATION
+Soviet Union; the Balkans and Italy,LOCATION
 German,NATIONAL
 Allies,INSTITUTION
 June,PERIOD
@@ -1841,7 +1831,6 @@ Jews,PERSON_TYPE
 Poland,LOCATION
 Soviet armed forces,INSTITUTION
 eastern Poland,LOCATION
-west,LOCATION
 Germany,LOCATION
 Auschwitz,INSTALLATION
 Gross Rosen in Silesia,INSTALLATION
@@ -1858,7 +1847,7 @@ last weeks of the war,PERIOD
 months or years,PERIOD
 tens of miles,MEASURE
 days,PERIOD
-250,000,MEASURE
+250;000,MEASURE
 Jews,PERSON_TYPE
 death marches,EVENT
 January 1945,PERIOD
@@ -1868,16 +1857,16 @@ Nine days,PERIOD
 Soviets,PERSON_TYPE
 Auschwitz,INSTALLATION
 SS,INSTITUTION
-60,000,MEASURE
+60;000,MEASURE
 Wodzisław,LOCATION
 German,CONCEPT
 Loslau,LOCATION
-56 km,MEASURE
-35 mi,MEASURE
-15,000,MEASURE
+56 km (35 mi),MEASURE
+15;000,MEASURE
 Elie Wiesel,PERSON
-Battle of Berlin, Death of Adolf Hitler, Prague Offensive, and Victory in Europe Day,EVENT
+Battle of Berlin; Death of Adolf Hitler; Prague Offensive; and Victory in Europe Day,EVENT
 Bergen-Belsen,INSTALLATION
+first,MEASURE
 Allied,INSTITUTION
 Majdanek,INSTALLATION
 Soviets,PERSON_TYPE
@@ -1905,7 +1894,7 @@ Americans,PERSON_TYPE
 Theresienstadt,INSTALLATION
 Soviets,PERSON_TYPE
 8 May,PERIOD
-Treblinka, Sobibór, and Bełżec,INSTALLATION
+Treblinka; Sobibór; and Bełżec,INSTALLATION
 Nazis,PERSON_TYPE
 1943,PERIOD
 Colonel William W. Quinn,PERSON
@@ -1915,14 +1904,14 @@ Mauthausen camp,INSTALLATION
 5 May 1945,PERIOD
 Soviets,PERSON_TYPE
 a few thousand,MEASURE
-7,600,MEASURE
+7;600,MEASURE
 Auschwitz,INSTALLATION
 180,MEASURE
-60,000,MEASURE
+60;000,MEASURE
 Bergen-Belsen,INSTALLATION
 British 11th Armoured Division,INSTITUTION
-13,000,MEASURE
-10,000,MEASURE
+13;000,MEASURE
+10;000,MEASURE
 British,PERSON_TYPE
 SS,INSTITUTION
 BBC,MEDIA
@@ -1944,7 +1933,7 @@ British,NATIONAL
 Martin Gilbert,PERSON
 six million—around 78 percent of the 7.3 million,MEASURE
 Jews,PERSON_TYPE
-Europe,LOCATION
+occupied Europe,LOCATION
 Timothy D. Snyder,PERSON
 Holocaust,CONCEPT
 two,MEASURE
@@ -1958,19 +1947,19 @@ two million,MEASURE
 Jewish,PERSON_TYPE
 Poles,PERSON_TYPE
 Nazi occupation,EVENT
-90,000-220,000,MEASURE
+90;000-220;000,MEASURE
 Romani,PERSON_TYPE
-270,000,MEASURE
+270;000,MEASURE
 Germany's eugenics program,UNKNOWN
-80,000–200,000,MEASURE
+80;000–200;000,MEASURE
 Freemasons,PERSON_TYPE
-20,000–25,000,MEASURE
+20;000–25;000,MEASURE
 Slovenes,PERSON_TYPE
-5,000–15,000,MEASURE
+5;000–15;000,MEASURE
 homosexuals,PERSON_TYPE
-2,500–5,000,MEASURE
+2;500–5;000,MEASURE
 Jehovah's Witnesses,PERSON_TYPE
-7,000,MEASURE
+7;000,MEASURE
 Spanish Republicans,PERSON_TYPE
 11 million,MEASURE
 six million,MEASURE
@@ -1994,10 +1983,9 @@ Jews,PERSON_TYPE
 three million,MEASURE
 Jewish,PERSON_TYPE
 six million,MEASURE
-Adolf Eichmann, a senior SS official,PERSON
+Adolf Eichmann; a senior SS,PERSON
 about 4.2 to 4.5 million,MEASURE
-The Final Solution,CREATION
-1953,PERIOD
+The Final Solution (1953),CREATION
 Gerald Reitlinger,PERSON
 Russian,NATIONAL
 5.1 million,MEASURE
@@ -2020,13 +2008,13 @@ Hilberg,PERSON
 5.1 million,MEASURE
 third,MEASURE
 The Destruction of the European Jews,CREATION
-800,000,MEASURE
-1,400,000,MEASURE
-2,900,000,MEASURE
+800;000,MEASURE
+1;400;000,MEASURE
+2;900;000,MEASURE
 Hilberg,PERSON
 Jews,PERSON_TYPE
 Poland,LOCATION
-3,000,000,MEASURE
+3;000;000,MEASURE
 Hilberg,PERSON
 Martin Gilbert,PERSON
 over 5.75 million,MEASURE
@@ -2050,39 +2038,39 @@ Jews,PERSON_TYPE
 beginning of World War II,PERIOD
 Jewish,PERSON_TYPE
 Baltic States,LOCATION
-350,000: 250,000,MEASURE
+350;000: 250;000,MEASURE
 Lithuania,LOCATION
-95,000,MEASURE
+95;000,MEASURE
 Latvia,LOCATION
-4,500,MEASURE
+4;500,MEASURE
 Estonia,LOCATION
 end of 1941,PERIOD
-230,000,MEASURE
+230;000,MEASURE
 Jews,PERSON_TYPE
 Latvia and Lithuania,LOCATION
 previous six months,PERIOD
-4,000,MEASURE
+4;000,MEASURE
 Jews,PERSON_TYPE
 Estonia,LOCATION
 before the German invasion,EVENT
-3,000,MEASURE
+3;000,MEASURE
 Soviet Union,LOCATION
-1,000,MEASURE
+1;000,MEASURE
 SS,INSTITUTION
-750,000,MEASURE
+750;000,MEASURE
 Jews,PERSON_TYPE
 Germany and Austria,LOCATION
 1933,PERIOD
 about a quarter,MEASURE
 German Jews,PERSON_TYPE
 before 1939,PERIOD
-Czechoslovakia, France or the Netherlands,LOCATION
-Czechoslovakia, Greece, the Netherlands, and Yugoslavia,LOCATION
+Czechoslovakia; France or the Netherlands,LOCATION
+Czechoslovakia; Greece; the Netherlands; and Yugoslavia,LOCATION
 70 percent,MEASURE
 Fifty to 70 percent,MEASURE
-Romania, Belgium and Hungary,LOCATION
+Romania; Belgium and Hungary,LOCATION
 Belarus and Ukraine,LOCATION
-Bulgaria, Denmark, France, Italy, and Norway,LOCATION
+Bulgaria; Denmark; France; Italy; and Norway,LOCATION
 Albania,LOCATION
 Germany,LOCATION
 Jewish,PERSON_TYPE
@@ -2111,22 +2099,23 @@ half a million,MEASURE
 Jews,PERSON_TYPE
 Germany,LOCATION
 Jewish,PERSON_TYPE
+last year,PERIOD
 Nazis,PERSON_TYPE
 Poland,LOCATION
 million,MEASURE
 Jews,PERSON_TYPE
 50 percent,MEASURE
-800,000 to one million,MEASURE
+800;000 to one million,MEASURE
 Jews,PERSON_TYPE
 Einsatzgruppen,INSTITUTION
-Soviet,NATIONAL
+occupied Soviet territories,LOCATION
 Einsatzgruppen,INSTITUTION
 Poland,LOCATION
 Jewish Holocaust,EVENT
 Jewish,PERSON_TYPE
 1990s,PERIOD
 Eastern Europe,LOCATION
-Hilberg, Dawidowicz and Gilbert,PERSON
+Hilberg; Dawidowicz and Gilbert,PERSON
 Gilbert,PERSON
 two million,MEASURE
 Auschwitz-Birkenau,INSTALLATION
@@ -2137,29 +2126,29 @@ villa Am Grossen Wannsee,LOCATION
 January 1942,PERIOD
 six million,MEASURE
 holocaust,EVENT
-165,000,MEASURE
+165;000,MEASURE
 Jews from Germany,PERSON_TYPE
-65,000,MEASURE
+65;000,MEASURE
 Austria,LOCATION
-32,000,MEASURE
+32;000,MEASURE
 France and Belgium,LOCATION
-100,000,MEASURE
+100;000,MEASURE
 Netherlands,LOCATION
-60,000,MEASURE
+60;000,MEASURE
 Greece,LOCATION
 Yugoslavia,LOCATION
-140,000,MEASURE
+140;000,MEASURE
 Czechoslovakia,LOCATION
 half a million,MEASURE
 Hungary,LOCATION
-, 2.2 million,MEASURE
+2.2 million,MEASURE
 Soviet Union,LOCATION
 2.7 million,MEASURE
 Poland,LOCATION
 Romania and Transitrien,LOCATION
-200,000,MEASURE
+200;000,MEASURE
 Jews,PERSON_TYPE
-Albania and Norway, Denmark and Italy,LOCATION
+Albania and Norway; Denmark and Italy,LOCATION
 Luxembourg and Bulgaria,LOCATION
 Wolfgang Benz,PERSON
 Jews,PERSON_TYPE
@@ -2179,7 +2168,7 @@ Holocaust,EVENT
 Yiddish,CONCEPT
 Holocaust,EVENT
 Yiddish,CONCEPT
-Yiddish,CONCEPT
+Yiddish Renaissance,PERIOD
 World War II,EVENT
 11 to 13 million,MEASURE
 Yiddish,CONCEPT
@@ -2190,7 +2179,7 @@ five million (85%),MEASURE
 Holocaust,EVENT
 Yiddish,CONCEPT
 Yiddish,CONCEPT
-Ladino (Judaeo-Spanish),NATIONAL
+Ladino (Judaeo-Spanish),PERSON_TYPE
 Jewish,PERSON_TYPE
 Greece,LOCATION
 Balkans,LOCATION
@@ -2203,7 +2192,7 @@ Generalplan Ost,UNKNOWN
 Hitler,PERSON
 Mein Kampf,CREATION
 German,NATIONAL
-Lebensraum,LOCATION
+Lebensraum,CONCEPT
 Eastern Europe,LOCATION
 Slavs,PERSON_TYPE
 Nazis,PERSON_TYPE
@@ -2218,11 +2207,11 @@ German,NATIONAL
 East,LOCATION
 Germany,LOCATION
 Germans,PERSON_TYPE
-General Government,INSTITUTION
+General Government,LOCATION
 500,MEASURE
 Germans,PERSON_TYPE
 Himmler,PERSON
-Germanization,CONCEPT
+Germanization,CONCEPTUAL
 Eastern Europe,LOCATION
 East,LOCATION
 German,NATIONAL
@@ -2246,7 +2235,7 @@ Rudolph Rummel,PERSON
 Slav,PERSON_TYPE
 POWs,PERSON_TYPE
 Nazis,PERSON_TYPE
-10,547,000,MEASURE
+10;547;000,MEASURE
 William W. Hagen,PERSON
   Generalplan Ost,UNKNOWN
 European,PERSON_TYPE
@@ -2259,19 +2248,18 @@ Ukrainians,PERSON_TYPE
 Czechs,PERSON_TYPE
 50 percent,MEASURE
 Russian,PERSON_TYPE
+four,MEASURE
 Slavic,CONCEPTUAL
 Generalplan Ost,UNKNOWN
 20 to 30 million,MEASURE
 Slavs and Jews,PERSON_TYPE
 Heinrich Himmler,PERSON
-Operation Barbarossa, June 1941,EVENT
-Ethnic Poles,PERSON_TYPE
+Operation Barbarossa; June 1941,EVENT
+Poles,PERSON_TYPE
 Nazi,PERSON_TYPE
 Poles,PERSON_TYPE
-Occupation of Poland,EVENT
-1939–1945,PERIOD
-German,NATIONAL
-Poland,LOCATION
+Occupation of Poland (1939–1945),EVENT
+German-occupied Poland,LOCATION
 Sonderfahndungsbuch Polen,CREATION
 Holocaust,EVENT
 Poland,LOCATION
@@ -2284,7 +2272,7 @@ Polish,PERSON_TYPE
 Warsaw,LOCATION
 Poles,PERSON_TYPE
 Jews,PERSON_TYPE
-Execution of Poles by Einsatzkommando, Leszno, October 1939,EVENT
+Execution of Poles by Einsatzkommando; Leszno; October 1939,EVENT
 German,NATIONAL
 November 1939,PERIOD
 Poles,PERSON_TYPE
@@ -2293,7 +2281,7 @@ Heinrich Himmler,PERSON
 Polish,NATIONAL
 German occupation,EVENT
 Poles,PERSON_TYPE
-German,PERSON_TYPE
+German colonists,PERSON_TYPE
 Poles,PERSON_TYPE
 1952,PERIOD
 three–four million,MEASURE
@@ -2312,7 +2300,7 @@ Poles,PERSON_TYPE
 Jews,PERSON_TYPE
 Polish,NATIONAL
 German,PERSON_TYPE
-ethnic Poles,PERSON_TYPE
+Poles,PERSON_TYPE
 Jews,PERSON_TYPE
 Polish Jews,PERSON_TYPE
 90%,MEASURE
@@ -2322,14 +2310,15 @@ German occupation,EVENT
 Between 1.8 and 2.1 million,MEASURE
 Jewish Polish,PERSON_TYPE
 German,NATIONAL
-ethnic Poles,PERSON_TYPE
+four-fifths,MEASURE
+Poles,PERSON_TYPE
 Ukrainians and Belarusians,PERSON_TYPE
-200,000,MEASURE
-146,000,MEASURE
+200;000,MEASURE
+146;000,MEASURE
 Auschwitz,INSTALLATION
 Warsaw Uprising,EVENT
-120,000,MEASURE
-200,000,MEASURE
+120;000,MEASURE
+200;000,MEASURE
 Germans,PERSON_TYPE
 Poland,LOCATION
 13 to 18 per thousand,MEASURE
@@ -2343,7 +2332,7 @@ Poland,LOCATION
 3.1 million of the 3.3 million,MEASURE
 Polish Jews,PERSON_TYPE
 two million of the 31.7 million,MEASURE
-Jewish Polish,PERSON_TYPES
+Jewish Polish,PERSON_TYPE
 German,NATIONAL
 2009,PERIOD
 IPN,INSTITUTION
@@ -2353,11 +2342,10 @@ German occupation,EVENT
 90 percent,MEASURE
 Nazi Germany,LOCATION
 Soviet Union,LOCATION
-invasion of Poland,EVENT
+few days before the invasion of Poland,PERIOD
 22 August 1939,PERIOD
 Adolf Hitler,PERSON
 Genghis Khan,PERSON
-founder,TITLE
 Polish,NATIONAL
 Lebensraum,CONCEPT
 Armenians,PERSON_TYPE
@@ -2367,21 +2355,24 @@ Russia,LOCATION
 Poland,LOCATION
 West Slavs,PERSON_TYPE
 West Slavic,PERSON_TYPE
-345,000,MEASURE
+345;000,MEASURE
 Czechoslovak,PERSON_TYPE
 hundreds of thousands,MEASURE
 Lidice and Ležáky,LOCATION
 Nazis,PERSON_TYPE
+16 years,PERIOD
 Nazi,PERSON_TYPE
 German ethnic Sorbian,NATIONAL
-Ethnic Serbs,PERSON_TYPE
+Serbs,PERSON_TYPE
 South Slavs,PERSON_TYPE
 World War II,EVENT
 Serbs,PERSON_TYPE
 Croatian Ustaše,PERSON_TYPE
-Branko Jungić, an ethnic Serb from Bosnia,PERSON
+Branko Jungić,PERSON
+Serb,NATIONAL
+Bosnia,LOCATION
 Balkans,LOCATION
-581,000,MEASURE
+581;000,MEASURE
 Yugoslav,PERSON_TYPE
 World War II,EVENT
 Yugoslavia,LOCATION
@@ -2391,28 +2382,27 @@ Serbs,PERSON_TYPE
 Untermenschen,PERSON_TYPE
 Ustaše,ORGANISATION
 Serbs,PERSON_TYPE
-Bosniaks, Croats,PERSON_TYPE
+Bosniaks; Croats,PERSON_TYPE
 Jasenovac concentration camp,INSTALLATION
 Ustaša,ORGANISATION
 Croatia,LOCATION
 between 1941 and 1945,PERIOD
-Serbs, Jews, Roma, Muslims [Bosniaks],PERSON_TYPE
+Serbs; Jews; Roma; Muslims [Bosniaks],PERSON_TYPE
 Catholic,PERSON_TYPE
 Croatian,NATIONAL
-United States Holocaust Memorial Museum (USHMM),INSTITUTION
+United States Holocaust Memorial Museum (USHMM),INSTALLATION
 Jewish Virtual Library,WEBSITE
-between 56,000 and 97,000,MEASURE
+between 56;000 and 97;000,MEASURE
 Jasenovac concentration camp,INSTALLATION
 Yad Vashem,INSTALLATION
-500,000,MEASURE
+500;000,MEASURE
 Serbs,PERSON_TYPE
 Ustaše,PERSON_TYPE
 Bošnjaci u Jasenovačkom logoru,CREATION
 Jasenovac concentration camp,INSTALLATION
 Nihad Halilbegović,PERSON
-103,000,MEASURE
-Bosniaks,PERSON_TYPE
-Bosnian Muslims,PERSON_TYPE
+103;000,MEASURE
+Bosniaks (Bosnian Muslims),PERSON_TYPE
 Holocaust,EVENT
 Nazi regime,INSTITUTION
 Croatian Ustaše,PERSON_TYPE
@@ -2422,7 +2412,7 @@ Bosniaks,PERSON_TYPE
 Roma,PERSON_TYPE
 Slovenes,PERSON_TYPE
 Italian,NATIONAL
-between 20,000 and 25,000,MEASURE
+between 20;000 and 25;000,MEASURE
 Slovenes,PERSON_TYPE
 Nazis or fascists,PERSON_TYPE
 Albanian,NATIONAL
@@ -2432,23 +2422,24 @@ Serbs,PERSON_TYPE
 Albanian,PERSON_TYPE
 fascists,CONCEPTUAL
 Albanian SS Skenderbeg Division and the Balli Kombëtar,INSTITUTION
-3,000 to 10,000,MEASURE
+3;000 to 10;000,MEASURE
 Kosovo Serbs,PERSON_TYPE
 Albanians,PERSON_TYPE
-30,000 to
-				100,000,MEASURE
+30;000 to 						100;000,MEASURE
 East Slavs,PERSON_TYPE
 Occupation of Belarus by Nazi Germany and Reichskommissariat Ukraine,EVENT
 Soviet,PERSON_TYPE
-Minsk, Belarus,LOCATION
+Minsk; Belarus,LOCATION
 1943,PERIOD
 Soviet,NATIONAL
 Eastern Front,LOCATION
 Leningrad,LOCATION
 one million,MEASURE
-Soviet Russia, Belarus and Ukraine,LOCATION
+Thousands,MEASURE
+Soviet Russia; Belarus and Ukraine,LOCATION
 German,NATIONAL
 Bohdan Wytwycky,PERSON
+one-quarter,MEASURE
 Soviet,PERSON_TYPE
 Nazis,PERSON_TYPE
 Russian Academy of Sciences,INSTITUTION
@@ -2457,18 +2448,18 @@ USSR,LOCATION
 German,NATIONAL
 Jews,PERSON_TYPE
 13.7 million,MEASURE
-20%,MEASURE
-68 million,MEASURE
-USSR,LOCATION
+20% of the 68 million,MEASURE
+occupied USSR,LOCATION
 7.4 million,MEASURE
 Nazi,PERSON_TYPE
 Belarus,LOCATION
 Nazi Germany,LOCATION
-9,000,MEASURE
-380,000,MEASURE
+9;000,MEASURE
+380;000,MEASURE
+hundreds of thousands,MEASURE
 600,MEASURE
 Khatyn,LOCATION
-5,295,MEASURE
+5;295,MEASURE
 Belarusian,NATIONAL
 Nazis,PERSON_TYPE
 Tim Snyder,PERSON
@@ -2477,17 +2468,17 @@ Soviet Belarus,LOCATION
 1941,PERIOD
 1.6 million,MEASURE
 Germans,PERSON_TYPE
-700,000,MEASURE
-500,000,MEASURE
+700;000,MEASURE
+500;000,MEASURE
 Jews,PERSON_TYPE
-320,000,MEASURE
+320;000,MEASURE
 partisans,PERSON_TYPE
 German,PERSON_TYPE
 Slavs,PERSON_TYPE
 Jews,PERSON_TYPE
 Germans,PERSON_TYPE
 Slavs,PERSON_TYPE
-German,LOCATION
+German,NATIONAL
 Hitler,PERSON
 Slavs,PERSON_TYPE
 Slavs,PERSON_TYPE
@@ -2504,17 +2495,19 @@ Soviet,PERSON_TYPE
 57 percent,MEASURE
 Soviet POWs,PERSON_TYPE
 between June 1941 and May 1945,PERIOD
+first year,PERIOD
 Daniel Goldhagen,PERSON
 2.8 million,MEASURE
 Soviet POWs,PERSON_TYPE
+eight months,PERIOD
 1941–42,PERIOD
 3.5 million,MEASURE
 by mid-1944,PERIOD
-USHMM,INSTITUTION
+USHMM,INSTALLATION
 3.3 million of the 5.7 million,MEASURE
 Soviet POWs,PERSON_TYPE
 German,NATIONAL
-8,300 of 231,000,MEASURE
+8;300 of 231;000,MEASURE
 British and American,PERSON_TYPE
 POWs,PERSON_TYPE
 German,NATIONAL
@@ -2547,28 +2540,28 @@ Nazi Germany,LOCATION
 Luxembourg and the Baltic,LOCATION
 Nazis,PERSON_TYPE
 Romani,PERSON_TYPE
-Denmark, Greece,LOCATION
+Denmark; Greece,LOCATION
 Romanis,PERSON_TYPE
 Donald Niewyk and Frances Nicosia,PERSON
-130,000,MEASURE
+130;000,MEASURE
 one million,MEASURE
 Romani,PERSON_TYPE
 Nazi-controlled Europe,LOCATION
 Michael Berenbaum,PERSON
-between 90,000 and 220,000,MEASURE
+between 90;000 and 220;000,MEASURE
 Sybil Milton,PERSON
 U.S. Holocaust Memorial Museum,INSTITUTION
-220,000,MEASURE
-500,000,MEASURE
+220;000,MEASURE
+500;000,MEASURE
 Independent State of Croatia,LOCATION
 Romanies,PERSON_TYPE
 Martin Gilbert,PERSON
-more than  220,000,MEASURE
-700,000,MEASURE
+more than 220;000 of the 700;000,MEASURE
 Romani,PERSON_TYPE
 Europe,LOCATION
-Ian Hancock, Director of the Program of Romani Studies and the Romani Archives and Documentation Center at the University of Texas at Austin,PERSON
-between 500,000 and 1,500,000,MEASURE
+Ian Hancock; Director of the Program of Romani Studies and the Romani Archives and Documentation Center at the University of Texas at Austin,PERSON
+between 500;000 and 1;500;000,MEASURE
+several hundred,MEASURE
 Warsaw Ghetto,LOCATION
 Einsatzgruppen,INSTITUTION
 Romani,PERSON_TYPE
@@ -2585,21 +2578,21 @@ May 1942,PERIOD
 Romani,PERSON_TYPE
 Jews,PERSON_TYPE
 16 December 1942,PERIOD
-Heinrich Himmler, Commander of the SS and regarded as the ""architect"" of the Nazi genocide,PERSON
-Gypsy Mischlinge,PERSON
+Heinrich Himmler; Commander of the SS,PERSON
+architect of the Nazi genocide,TITLE
+Gypsy Mischlinge,PERSON_TYPE
 Romani,PERSON_TYPE
-Balkan,LOCATION
+Balkan,PERSON_TYPE
 German,NATIONAL
-Auschwitz,ISTALLATION
+Auschwitz,INSTALLATION
 Wehrmacht,INSTITUTION
 29 January 1943,PERIOD
 German Romani,PERSON_TYPE
 Auschwitz,INSTALLATION
 15 November 1943,PERIOD
 Himmler,PERSON
-Soviet,NATIONAL
-Gypsies and part-Gypsies,PERSON_TYPE
-Mischlinge,PERSON_TYPE
+occupied Soviet areas,LOCATION
+Gypsies and part-Gypsies (Mischlinge),PERSON_TYPE
 Nomadic Gypsies and part-Gypsies,PERSON_TYPE
 Jews,PERSON_TYPE
 Bauer,PERSON
@@ -2607,27 +2600,28 @@ Nazi,PERSON_TYPE
 Romani,PERSON_TYPE
 Aryan,PERSON_TYPE
 Romani,PERSON_TYPE
-Black,PERSON_TYPE
+Black people,PERSON_TYPE
 Nazi Germany,LOCATION
 Rhineland Bastard,PERSON_TYPE
 Nazi Germany,LOCATION
 Aryans,PERSON_TYPE
+black people,PERSON_TYPE
 Germany,LOCATION
 Nazis,PERSON_TYPE
-5,000–25,000,MEASURE
+5;000–25;000,MEASURE
 Asians,PERSON_TYPE
 United States Holocaust Memorial Museum,INSTITUTION
-Washington, D.C.,LOCATION
+Washington; D.C.,LOCATION
+black people,PERSON_TYPE
 from 1933 to 1945,PERIOD
-Nazi Germany,LOCATION
-German,NATIONAL
+Nazi Germany and in German-occupied territories,LOCATION
 Jews,PERSON_TYPE
-Afrikaaners, Berbers, Iranians and Pre-Partition Indians,PERSON
-Aryans,PERSON
+Afrikaaners; Berbers; Iranians and Pre-Partition Indians,PERSON
+Aryans,PERSON_TYPE
 Turkic,PERSON_TYPE
 Arabs and South Asians,PERSON_TYPE
 German,NATIONAL
-Nazi eugenics, Action T4,UNKNOWN
+Nazi eugenics; Action T4,UNKNOWN
 Erbkrank,CREATION
 Law for the Prevention of Hereditarily Diseased Offspring,LEGAL
 Life unworthy of life,CREATION
@@ -2638,27 +2632,27 @@ Joseph Goebbels,PERSON
 1938,PERIOD
 Nazis,PERSON_TYPE
 Lebensunwertes Leben,CONCEPT
-Life unworthy of life,CONCEPT
 October 1939,PERIOD
 Adolf Hitler,PERSON
 1 September 1939,PERIOD
-Reichsleiter Philipp Bouhler, the chief of his Chancellery,PERSON
-Karl Brandt, Hitler 's personal physician,PERSON
-  Reich Leader Bouhler and Dr.Brandt,PERSON
+Reichsleiter Philipp Bouhler; the chief of his Chancellery,PERSON
+Karl Brandt,PERSON
+Hitler,PERSON
+Reich Leader Bouhler and Dr.Brandt,PERSON
 Adolf Hitler,PERSON
 Action T4,UNKNOWN
 German,PERSON_TYPE
 Between 1939 and 1941,PERIOD
-80,000 to 100,000,MEASURE
-5,000,MEASURE
-1,000,MEASURE
+80;000 to 100;000,MEASURE
+5;000,MEASURE
+1;000,MEASURE
 Jews,PERSON_TYPE
-20,000,MEASURE
-Georg Renno, the deputy director of Schloss Hartheim,PERSON
-400,000,MEASURE
-Frank Zeireis, the commandant of Mauthausen concentration camp,PERSON
-300,000,MEASURE
-270,000,MEASURE
+20;000,MEASURE
+Georg Renno; the deputy director of Schloss Hartheim,PERSON
+400;000,MEASURE
+Frank Zeireis; the commandant of Mauthausen concentration camp,PERSON
+300;000,MEASURE
+270;000,MEASURE
 Nazis,PERSON_TYPE
 Jews,PERSON_TYPE
 Holocaust,EVENT
@@ -2670,7 +2664,7 @@ Tiergartenstraße 4,UNKNOWN
 Berlin,LOCATION
 Tiergarten,LOCATION
 General Foundation for Welfare and Institutional Care,INSTITUTION
-Philipp Bouhler, head of Hitler 's private chancellery (Kanzlei des Führer der NSDAP) and Karl Brandt, Hitler's personal physician,PERSON
+Philipp Bouhler; head of Hitler 's private chancellery (Kanzlei des Führer der NSDAP) and Karl Brandt; Hitler's personal physician,PERSON
 Brandt,PERSON
 December 1946,PERIOD
 Nuremberg,LOCATION
@@ -2690,7 +2684,7 @@ Homomonument,INSTALLATION
 Amsterdam,LOCATION
 homosexual,PERSON_TYPE
 Nazi Germany,LOCATION
-Between 5,000 and 15,000,MEASURE
+Between 5;000 and 15;000,MEASURE
 homosexuals,PERSON_TYPE
 German,NATIONAL
 James D. Steakley,PERSON
@@ -2699,6 +2693,7 @@ gesundes Volksempfinden,CONCEPT
 1936,PERIOD
 Himmler,PERSON
 Reich Central Office for the Combating of Homosexuality and Abortion,INSTITUTION
+homosexuals,PERSON_TYPE
 German,NATIONAL
 Gestapo,INSTITUTION
 Tens of thousands,MEASURE
@@ -2712,7 +2707,7 @@ Germany,LOCATION
 German,NATIONAL
 Nazism,CONCEPT
 Dachau,INSTALLATION
-German communists, socialists and trade unionists,PERSON_TYPE
+German communists; socialists and trade unionists,PERSON_TYPE
 Nazism,CONCEPT
 Hitler,PERSON
 communism,CONCEPT
@@ -2732,52 +2727,51 @@ MI6,INSTITUTION
 Gestapo,INSTITUTION
 Communism,CONCEPT
 October 1937,PERIOD
-the head of the British agency's Berlin station, Frank Foley,PERSON
+the head of the British agency's Berlin station; Frank Foley,PERSON
 Heinrich Müller,PERSON
 communism,CONCEPT
 Hitler,PERSON
 Nazis,PERSON_TYPE
 German leftists,PERSON_TYPE
-leaders of German leftist groups,TITLE
+German,NATIONAL
 Jews,PERSON_TYPE
 Jews,PERSON_TYPE
-leaders of the Spartacist uprising,TITLE
-1919,PERIOD
+Spartacist uprising in 1919,EVENT
 Hitler,PERSON
-Marxism and ""Bolshevism,CONCEPT
+Marxism and Bolshevism,CONCEPT
 Jew,PERSON_TYPE
 Nordics or Aryans,PERSON_TYPE
-Buchenwald,LOCATION
+Buchenwald,INSTALLATION
 German communists,PERSON_TYPE
 Jews,PERSON_TYPE
 Nazis,PERSON_TYPE
+communist; socialist; or anarchist,CONCEPTUAL
 Hitler's infamous Commissar Order,PERSON
 Soviet,NATIONAL
 Communist Party,ORGANISATION
 German,NATIONAL
 Einsatzgruppen,INSTITUTION
-Nacht und Nebel,LEGAL
-Night and Fog,LEGAL
+Nacht und Nebel (Night and Fog),LEGAL
 Hitler,PERSON
 7 December 1941,PERIOD
 Chief of Staff of the Armed Forces Wilhelm Keitel,PERSON
-Nazi Germany,LOCATION
-German socialists Hermann Brill, Rudolf Breitscheid , Heinrich Bußmann, Josef Felder, Heinrich Fulda, Ernst Heilmann, and Alfred Schmieder; German communists Emil Carlebach, Ernst Grube, Walter Krämer, Adolf Maislinger, Oskar Müller, Beppo Römer, Werner Scholem, and Ernst Thälmann; Jewish socialist and former French Prime Minister Léon Blum; Slovenian socialist activist Andrej Gosar; Jewish Austrian socialist Robert Danneberg; and Austrian socialist (and later Interior Minister) Franz Olah,PERSON
-Kurt Schumacher, a leading German socialist politician,PERSON
+Nazi Germany's occupied territories,LOCATION
+German socialists Hermann Brill; Rudolf Breitscheid ; Heinrich Bußmann; Josef Felder; Heinrich Fulda; Ernst Heilmann; and Alfred Schmieder; German communists Emil Carlebach; Ernst Grube; Walter Krämer; Adolf Maislinger; Oskar Müller; Beppo Römer; Werner Scholem; and Ernst Thälmann; Jewish socialist and former French Prime Minister Léon Blum; Slovenian socialist activist Andrej Gosar; Jewish Austrian socialist Robert Danneberg; and Austrian socialist (and later Interior Minister) Franz Olah,PERSON
+Kurt Schumacher; a leading German socialist politician,PERSON
 ten years,PERIOD
 1948,PERIOD
 1952,PERIOD
 Social Democratic Party of Germany,ORGANISATION
 Freemasons,PERSON_TYPE
 Freemasonry,INSTITUTION
-Nazi Germany,LOCATION
-Europe,LOCATION
+Nazi Germany and Occupied Europe,LOCATION
 Nacht und Nebel,LEGAL
 Loge Liberté chérie,ORGANISATION
 November 1943,PERIOD
 Hut 6,INSTITUTION
-Emslandlager VII (KZ Esterwegen),LOCATION
+Emslandlager VII (KZ Esterwegen),INSTALLATION
 one of two,MEASURE
+Masonic,CONCEPTUAL
 Nazi,PERSON_TYPE
 Mein Kampf,CREATION
 Hitler,PERSON
@@ -2785,7 +2779,7 @@ Freemasonry,INSTITUTION
 Jews,PERSON_TYPE
 Freemasonry,INSTITUTION
 Jewish,PERSON_TYPE
-Reich,LOCATION
+Reich,INSTITUTION
 Freemasons,PERSON_TYPE
 from the mid-1930s,PERIOD
 Heydrich,PERSON
@@ -2794,6 +2788,7 @@ Eichmann,PERSON
 SD,INSTITUTION
 Hitler,PERSON
 27 April 1938,PERIOD
+third,MEASURE
 Freemasons,PERSON_TYPE
 Führer,PERSON
 Freemasonry,INSTITUTION
@@ -2807,16 +2802,16 @@ Nazi,PERSON_TYPE
 Freemasons,PERSON_TYPE
 Grand Lodge of Scotland,ORGANISATION
 Freemasons,PERSON_TYPE
-between 80,000 and 200,000,MEASURE
+between 80;000 and 200;000,MEASURE
 Jehovah's Witnesses,ORGANISATION
 Jehovah's Witnesses,ORGANISATION
 Nazi Germany,LOCATION
 Nazi,PERSON_TYPE
-12,000,MEASURE
+12;000,MEASURE
 Jehovah's Witnesses,ORGANISATION
 purple triangle,UNKNOWN
-Between 2,500 and 5,000,MEASURE
-Historian Detlef Garbe, director of Hamburg's Neuengamme Memorial,PERSON
+Between 2;500 and 5;000,MEASURE
+Historian Detlef Garbe; director of Hamburg's Neuengamme Memorial,PERSON
 National Socialism,CONCEPT
 Spanish Republicans,PERSON_TYPE
 Spanish Civil War,EVENT
@@ -2824,7 +2819,7 @@ France,LOCATION
 France,LOCATION
 Mauthausen-Gusen concentration camp,INSTALLATION
 7000,MEASURE
-Shimon Samuels, director for International Liaison of the Simon Wiesenthal Centre,PERSON
+Shimon Samuels; director for International Liaison of the Simon Wiesenthal Centre,PERSON
 Holocaust,EVENT
 specifists,CONCEPTUAL
 universalists,CONCEPTUAL
@@ -2865,32 +2860,36 @@ Nazi,PERSON_TYPE
 Nuremberg trials,EVENT
 Nuremberg trials,EVENT
 Hermann Göring,PERSON
-Third Reich,LOCATION
+first,MEASURE
+Third Reich,INSTITUTION
 Hitler,PERSON
 Göring,PERSON
 Nuremberg trials,EVENT
-Allied forces,INSTITUTION
+Allied,INSTITUTION
 World War II,EVENT
 Nazi Germany,LOCATION
-Nuremberg, Germany,LOCATION
+Nuremberg; Germany,LOCATION
+first,MEASURE
 Norman Birkett,PERSON
 British,PERSON_TYPE
 International Military Tribunal (IMT),INSTITUTION
 between 20 November 1945 and 1 October 1946,PERIOD
 23,MEASURE
-Third Reich,LOCATION
-Adolf Hitler, Heinrich Himmler, and Joseph Goebbels,PERSON
+Third Reich,INSTITUTION
+Adolf Hitler; Heinrich Himmler; and Joseph Goebbels,PERSON
+several months before,PERIOD
 International Military Tribunal,INSTITUTION
-November 19, 1945,PERIOD
+November 19; 1945,PERIOD
 Palace of Justice,INSTALLATION
 Nuremberg,LOCATION
-Soviet judge, Nikitchenko,PERSON
+first,MEASURE
+Soviet judge; Nikitchenko,PERSON
 24,MEASURE
 seven,MEASURE
-Nazi party, the Reich Cabinet, the Schutzstaffel (SS), Sicherheitsdienst (SD), the Gestapo, the Sturmabteilung (SA) and the ""General Staff and High Command"",INSTITUTION
+Nazi party; the Reich Cabinet; the Schutzstaffel (SS); Sicherheitsdienst (SD); the Gestapo; the Sturmabteilung (SA) and the General Staff and High Command,INSTITUTION
+senior military officers,TITLE
 10 to 15 years,PERIOD
 Israel and West Germany,LOCATION
-Railcar,BUSINESS
 Maschinenfabrik Esslingen,BUSINESS
 Jerusalem,LOCATION
 Germany,LOCATION
@@ -2903,15 +2902,15 @@ Germany,LOCATION
 March 1951,PERIOD
 Israel's foreign minister Moshe Sharett,PERSON
 Israel,LOCATION
-$1.5 billion,MEASURE
+1.5 billion,MEASURE
 Israel,LOCATION
-500,000,MEASURE
+500;000,MEASURE
 Jewish,PERSON_TYPE
 West German Chancellor Konrad Adenauer,PERSON
 Jewish Material Claims against Germany,ORGANISATION
 New York City,LOCATION
 Nahum Goldmann,PERSON
-$845 million,MEASURE
+845 million,MEASURE
 14 years,PERIOD
 1952,PERIOD
 Ben Gurion,PERSON
@@ -2920,32 +2919,4117 @@ Holocaust,EVENT
 Israel,LOCATION
 1988,PERIOD
 West Germany,LOCATION
-$125 million,MEASURE
+125 million,MEASURE
 1999,PERIOD
 German,NATIONAL
-Deutsche Bank, Siemens or BMW,BUSINESS
+Deutsche Bank; Siemens or BMW,BUSINESS
 World War II,EVENT
 Germany,LOCATION
-$5 billion,MEASURE
+5 billion,MEASURE
 Jewish,PERSON_TYPE
-between $2,500 and $7,500,MEASURE
+between $2;500 and $7;500,MEASURE
 2012,PERIOD
 Germany,LOCATION
-€772 million,MEASURE
+772 million,MEASURE
 Israel,LOCATION
 2014,PERIOD
 SNCF,BUSINESS
 French,NATIONAL
-$60 million,MEASURE
+60 million,MEASURE
 American Jewish,PERSON_TYPE
 Holocaust,EVENT
 Germany,LOCATION
-$100,000,MEASURE
+100;000,MEASURE
 SNCF,BUSINESS
 German,NATIONAL
 French Jews,PERSON_TYPE
-Serge Klarsfeld, president of the organization Sons and Daughters of Jewish Deportees,PERSON
+Serge Klarsfeld; president of the organization Sons and Daughters of Jewish Deportees,PERSON
 France,LOCATION
 Israel,LOCATION
 between 1993 and 2009,PERIOD
-$57 million,MEASURE
+57 million,MEASURE
+anti-semitic,CONCEPTUAL
+April 1942,PERIOD
+Jews,PERSON_TYPE
+Jewish,PERSON_TYPE
+chief,TITLE
+Aryan,PERSON_TYPE
+Jews,PERSON_TYPE
+August 1942,PERIOD
+Jews,PERSON_TYPE
+Jews,PERSON_TYPE
+Jews,PERSON_TYPE
+from September 1941,PERIOD
+Benjamin Arditti,PERSON
+Bulgarian Jewry,NATIONAL
+1850-1964,PERIOD
+Benjamin Arditti,PERSON
+Vienna,LOCATION
+1897,PERIOD
+Sofia,LOCATION
+two years,PERIOD
+World War II,EVENT
+from 1916-1949,PERIOD
+Zionist movement in Bulgaria,ORGANISATION
+Central Committee of the Zionist Union in Bulgaria,ORGANISATION
+1919-1923,PERIOD
+five,MEASURE
+representative to the World Zionist Congress,TITLE
+chairman of the Zionist Organization in Sofia,TITLE
+Revisionist movement in Bulgaria,ORGANISATION
+chairman,TITLE
+from 1925-1935,PERIOD
+Arditti,PERSON
+Committee for the Rescue of Bulgarian Jewry during World War II,ORGANISATION
+Zionist,CONCEPTUAL
+aliya to Eretz Israel,CONCEPT
+after 1944,PERIOD
+Arditti,PERSON
+representative of the Revisionists in the Union of Bulgarian Jews,TITLE
+1947-1949,PERIOD
+aliya to Israel,CONCEPT
+Herut party and the Organization of Sephardi Jews in Israel,ORGANISATION
+1949,PERIOD
+chairman of the Central Committee of the World Sephardi Federation,TITLE
+Knesset,INSTITUTION
+1930s,PERIOD
+Benjamin Arditti,PERSON
+Jews of Bulgaria,PERSON_TYPE
+two,MEASURE
+Israel,LOCATION
+Holocaust,EVENT
+Jewish,PERSON_TYPE
+Zionist movement in Bulgaria,ORGANISATION
+Sephardi Jews,PERSON_TYPE
+Eretz Israel,LOCATION
+Benjamin Arditti,PERSON
+Benjamin Arditti,PERSON
+Benjamin Arditti,PERSON
+Benjamin Arditti,PERSON
+Knesset,INSTITUTION
+Sephardi Jewish,PERSON_TYPE
+Jews in Bulgaria,PERSON_TYPE
+until World War II,PERIOD
+Zionism,CONCEPT
+Zionist movement in Bulgaria,ORGANISATION
+Jews of Bulgaria,PERSON_TYPE
+World War II,EVENT
+Bulgaria,LOCATION
+anti-Jewish legislation,LEGAL
+anti-Semitic policy,LEGAL
+Commissariat for Jewish Affairs activities,INSTITUTION
+Jewish,PERSON_TYPE
+Bulgaria,LOCATION
+aliya,CONCEPT
+Eretz Israel,LOCATION
+two,MEASURE
+Salvador,CREATION
+Struma,CREATION
+Holocaust of the Jews of Turkey and Macedonia,EVENT
+Bulgaria,LOCATION
+Rescue of the Jews of Bulgaria,EVENT
+aliya,CONCEPT
+Bulgaria,LOCATION
+Eretz Israel,LOCATION
+from the late 19th century until theGreat Aliya; 1948-1949,PERIOD
+Arditti,PERSON
+Jews of Bulgaria,PERSON_TYPE
+before the 1940s,PERIOD
+Zionist movement,ORGANISATION
+Bulgaria,LOCATION
+Jews of Bulgaria; Turkey and Macedonia,PERSON_TYPE
+Holocaust,EVENT
+United Kingdom European Union membership referendum,EVENT
+United Kingdom,LOCATION
+EU referendum,EVENT
+Brexit referendum,EVENT
+Thursday 23 June 2016,PERIOD
+UK and Gibraltar,LOCATION
+European Union,INSTITUTION
+EU,INSTITUTION
+51.9%,MEASURE
+72%,MEASURE
+UK,LOCATION
+1992 UK General Election,EVENT
+United Kingdom,LOCATION
+England and Wales,LOCATION
+Scotland and Northern Ireland,LOCATION
+Gibraltar,LOCATION
+EU,INSTITUTION
+several years,PERIOD
+British government,INSTITUTION
+Article 50 of the Treaty on European Union,LEGAL
+EU,INSTITUTION
+United Kingdom,LOCATION
+European Economic Community (EEC; or Common Market),INSTITUTION
+1973,PERIOD
+EEC,INSTITUTION
+1975,PERIOD
+67%,MEASURE
+Conservative Party,ORGANISATION
+UK Parliament,INSTITUTION
+European Union Referendum Act 2015,LEGAL
+Britain Stronger in Europe,ORGANISATION
+UK,LOCATION
+EU,INSTITUTION
+Vote Leave,ORGANISATION
+British,NATIONAL
+European Union,INSTITUTION
+Brexit,EVENT
+British,NATIONAL
+EU,INSTITUTION
+EU,INSTITUTION
+EU,INSTITUTION
+UK,LOCATION
+billions,MEASURE
+EU,INSTITUTION
+UK,LOCATION
+UK,LOCATION
+EU,INSTITUTION
+EU,INSTITUTION
+UK,LOCATION
+European,NATIONAL
+UK,LOCATION
+EU,INSTITUTION
+UK,LOCATION
+2 trillion,MEASURE
+United States,LOCATION
+24 June 2016,PERIOD
+3 trillion,MEASURE
+US,LOCATION
+27 June,PERIOD
+US,LOCATION
+31,MEASURE
+UK,LOCATION
+EU,INSTITUTION
+Standard & Poor's,BUSINESS
+29 June,PERIOD
+Prime Minister David Cameron,PERSON
+Britain Stronger in Europe,ORGANISATION
+HM Government,INSTITUTION
+Theresa May,PERSON
+13 July,PERIOD
+Labour Party,ORGANISATION
+EU referendum,EVENT
+Scottish Government,INSTITUTION
+United Kingdom,LOCATION
+EU,INSTITUTION
+Scotland,LOCATION
+EU,INSTITUTION
+Nigel Farage,PERSON
+EU,INSTITUTION
+UKIP,ORGANISATION
+European Communities Act 1972 (UK) and European Union Act 2011,LEGAL
+European Economic Community (EEC),INSTITUTION
+1957,PERIOD
+United Kingdom (UK),LOCATION
+1961,PERIOD
+France,LOCATION
+UK,LOCATION
+1973,PERIOD
+two years later,PERIOD
+67%,MEASURE
+Maastricht Treaty,LEGAL
+European Union (EU),INSTITUTION
+1993,PERIOD
+Treaty of Lisbon,LEGAL
+EEC,INSTITUTION
+2015,PERIOD
+David Cameron,PERSON
+EU,INSTITUTION
+European Parliament election in 2014,EVENT
+UK Independence Party (UKIP),ORGANISATION
+Conservative Party,ORGANISATION
+third,MEASURE
+first,MEASURE
+Conservatives or Labour,PERSON_TYPE
+108 years,PERIOD
+European Parliament,INSTITUTION
+UKIP,ORGANISATION
+British,NATIONAL
+European Parliament,INSTITUTION
+May 2012 NATO summit meeting,EVENT
+British Prime Minister David Cameron; William Hague and Ed Llewellyn,PERSON
+European Union,INSTITUTION
+Eurosceptic,CONCEPTUAL
+Conservative Party,ORGANISATION
+January 2013,PERIOD
+Cameron,PERSON
+Conservative Party,ORGANISATION
+2015 general election,EVENT
+UK Government,INSTITUTION
+British,NATIONAL
+EU,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+May 2013,PERIOD
+Conservative Party,ORGANISATION
+EU Referendum Bill,LEGAL
+2015,PERIOD
+31 December 2017,PERIOD
+Private Member,TITLE
+Conservative MP James Wharton,PERSON
+First,MEASURE
+House of Commons,INSTITUTION
+19 June 2013,PERIOD
+Cameron,PERSON
+Conservative Party,ORGANISATION
+UK Governement,INSTITUTION
+2015-20 Parliament,INSTITUTION
+EU,INSTITUTION
+end of December 2017,PERIOD
+Secretary of State,TITLE
+end of 2016,PERIOD
+2015,PERIOD
+Parliament,INSTITUTION
+Second,MEASURE
+5 July 2013,PERIOD
+304,MEASURE
+Labour MPs,TITLE
+Liberal Democrat MPs,TITLE
+Commons,INSTITUTION
+November 2013,PERIOD
+House of Lords,INSTITUTION
+December 2013,PERIOD
+Conservative MP Bob Neill,PERSON
+Alternative Referendum Bill,LEGAL
+Commons,INSTITUTION
+17 October 2014,PERIOD
+Public Bills Committee,ORGANISATION
+Commons,INSTITUTION
+Dissolution of Parliament on 27 March 2015,EVENT
+Ed Miliband,PERSON
+between 2010 and 2015,PERIOD
+Labour Party,ORGANISATION
+UK,LOCATION
+EU,INSTITUTION
+2015 general election,EVENT
+Liberal Democrats,ORGANISATION
+EU,INSTITUTION
+The UK Independence Party (UKIP); the British National Party (BNP); the Green Party; the Democratic Unionist Party and the Respect Party,ORGANISATION
+Conservative Party,ORGANISATION
+House of Commons,INSTITUTION
+May 2015 general election,EVENT
+Cameron,PERSON
+UK,LOCATION
+EU,INSTITUTION
+end of 2017,PERIOD
+Britain,LOCATION
+EU,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+2016,PERIOD
+early 2014,PERIOD
+Prime Minister David Cameron,PERSON
+EU,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+EU,INSTITUTION
+EU,INSTITUTION
+European Court of Human Rights,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+EU,INSTITUTION
+EU,INSTITUTION
+November that year,PERIOD
+Cameron,PERSON
+EU,INSTITUTION
+Eurozone,INSTITUTION
+Eurozone,INSTITUTION
+EU,INSTITUTION
+Eurozone,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+EU,INSTITUTION
+UK,LOCATION
+four years,PERIOD
+February 2016,PERIOD
+United Kingdom,LOCATION
+European Union,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+four years,PERIOD
+European Council,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+Cameron,PERSON
+EU,INSTITUTION
+EU,INSTITUTION
+European Council,INSTITUTION
+Eurozone,INSTITUTION
+two,MEASURE
+third,MEASURE
+Union,INSTITUTION
+EU,INSTITUTION
+EU,INSTITUTION
+EU,INSTITUTION
+David Cameron,PERSON
+UK,LOCATION
+first four years,PERIOD
+seven years,PERIOD
+Brexit referendum,EVENT
+UK,LOCATION
+EU,INSTITUTION
+Cameron,PERSON
+Brexit,EVENT
+European,NATIONAL
+Financial Times,MEDIA
+EU,INSTITUTION
+Angela Merkel,PERSON
+German Parliament,INSTITUTION
+European,NATIONAL
+Great Britain,LOCATION
+United Kingdom and Gibraltar,LOCATION
+two,MEASURE
+first,MEASURE
+European Union Referendum Act 2015,LEGAL
+Parliament of the United Kingdom,INSTITUTION
+Royal Assent,LEGAL
+17 December 2015,PERIOD
+second,MEASURE
+European Union (Referendum) Act 2016,LEGAL
+Gibraltar Parliament ,INSTITUTION
+Gibraltar,LOCATION
+Royal Assent,LEGAL
+28 January 2016,PERIOD
+Queen 's Speech on 27 May 2015,EVENT
+Cameron,PERSON
+October 2016,PERIOD
+European Union Referendum Act 2015,LEGAL
+House of Commons,INSTITUTION
+following day,PERIOD
+three weeks after the election,PERIOD
+second,MEASURE
+9 June,PERIOD
+House of Commons,INSTITUTION
+544,MEASURE
+53,MEASURE
+Scottish National Party,ORGANISATION
+Labour Party,ORGANISATION
+2015 general election,EVENT
+Miliband,PERSON
+Labour,ORGANISATION
+Harriet Harman,PERSON
+EU,INSTITUTION
+2017,PERIOD
+June,PERIOD
+First Ministers of Northern Ireland; Scotland; and Wales,TITLE
+Cameron,PERSON
+June,PERIOD
+previous month,PERIOD
+a year,PERIOD
+2015 General Election,EVENT
+Westminster,LOCATION
+Fixed Term parliament Act,LEGAL
+Cameron,PERSON
+February 2016,PERIOD
+Cameron,PERSON
+UK,LOCATION
+EU,INSTITUTION
+23 June,PERIOD
+Parliament,INSTITUTION
+European Union Referendum Act 2015,LEGAL
+22 February,PERIOD
+UK Government,INSTITUTION
+Cabinet collective responsibility,LEGAL
+European Union Referendum Act 2015,LEGAL
+British; Irish,PERSON_TYPE
+Commonwealth,INSTITUTION
+18,MEASURE
+UK or Gibraltar,LOCATION
+British,PERSON_TYPE
+UK,LOCATION
+last 15 years,PERIOD
+midnight on 7 June 2016,PERIOD
+48 hours,PERIOD
+7 June,PERIOD
+Leave campaign,ORGANISATION
+Conservative MP Sir Gerald Howarth,PERSON
+Remain,ORGANISATION
+Remain,ORGANISATION
+46.5 million,MEASURE
+Crown dependencies of the Isle of Man; Jersey and Guernsey,LOCATION
+EU,INSTITUTION
+Gibraltar,LOCATION
+EU,INSTITUTION
+European Union,INSTITUTION
+three,MEASURE
+EU,INSTITUTION
+Algeria,LOCATION
+1962; independence from France,EVENT
+Greenland,LOCATION
+1985,PERIOD
+Saint Barthélemy,LOCATION
+2012,PERIOD
+two,MEASURE
+Overseas Countries and Territories of the European Union,LOCATION
+Article 49A of the Treaty of Lisbon,LEGAL
+1 December 2009,PERIOD
+first,MEASURE
+EU,INSTITUTION
+Union,INSTITUTION
+European Council,INSTITUTION
+European Council,INSTITUTION
+Union,INSTITUTION
+Union,INSTITUTION
+Article 218 (3) of the Treaty on the Functioning of the European Union,LEGAL
+Union,INSTITUTION
+Council,INSTITUTION
+European Parliament,INSTITUTION
+two years,PERIOD
+European Council,INSTITUTION
+The Guardian,MEDIA
+Article 50,LEGAL
+article 50,LEGAL
+Brussels; Berlin or Paris,LOCATION
+article 50,LEGAL
+EU,INSTITUTION
+Brexit,EVENT
+European Union,INSTITUTION
+Kenneth Armstrong; professor of European law at Cambridge University,PERSON
+article 50,LEGAL
+British government,INSTITUTION
+European council,INSTITUTION
+EU,INSTITUTION
+Reuters,MEDIA
+EU,INSTITUTION
+EU,INSTITUTION
+Scotland Act 1998,LEGAL
+Scottish Parliament,INSTITUTION
+EU,INSTITUTION
+Scotland,LOCATION
+Scottish Parliament,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+Scotland Act 1998,LEGAL
+UK Parliament,INSTITUTION
+Scottish Parliament,INSTITUTION
+Leave,ORGANISATION
+26 June 2016,PERIOD
+First Minister Nicola Sturgeon,PERSON
+Scottish Parliament,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+1998 Act,LEGAL
+Section 28 (7) of the Act,LEGAL
+Parliament of the United Kingdom,INSTITUTION
+Scotland,LOCATION
+Electoral Commission,ORGANISATION
+September 2015,PERIOD
+third,MEASURE
+May 2016,PERIOD
+United Kingdom,LOCATION
+European Union,INSTITUTION
+European Union,INSTITUTION
+European Union,INSTITUTION
+European Union,INSTITUTION
+United Kingdom European Union membership referendum; 2016,EVENT
+Britain Stronger in Europe,ORGANISATION
+London,LOCATION
+June 2016,PERIOD
+Leave and Remain campaigns,ORGANISATION
+Pimlico; London,LOCATION
+As of October 2015,PERIOD
+Britain,LOCATION
+Britain Stronger in Europe,ORGANISATION
+two,MEASURE
+Leave,ORGANISATION
+EU,INSTITUTION
+UKIP,ORGANISATION
+Nigel Farage,PERSON
+Vote Leave,ORGANISATION
+Conservative Party Eurosceptics,PERSON_TYPE
+Electoral Commission,ORGANISATION
+13 April 2016,PERIOD
+Vote Leave,ORGANISATION
+7m,MEASURE
+600;000,MEASURE
+Leave,ORGANISATION
+EU,INSTITUTION
+Grassroots Out,ORGANISATION
+UK government,INSTITUTION
+April,PERIOD
+16 June,PERIOD
+19 June,PERIOD
+killing of MP Jo Cox,EVENT
+HM Government,INSTITUTION
+England,LOCATION
+11 April,PERIOD
+Scotland; Wales and Northern Ireland,LOCATION
+5 May,PERIOD
+UK,LOCATION
+EU,INSTITUTION
+85%,MEASURE
+9.3 million,MEASURE
+16 May,PERIOD
+Electoral Commission,ORGANISATION
+UK and Gibraltar,LOCATION
+eight,MEASURE
+Britain Stronger in Europe,ORGANISATION
+Vote Leave,ORGANISATION
+Westminster,LOCATION
+European,NATIONAL
+Britain First; the British National Party (BNP); Éirígí; Respect Party; Trade Unionist and Socialist Coalition (TUSC); SDP; Liberal Party; and Independence from Europe,ORGANISATION
+EU,INSTITUTION
+Scottish Socialist Party (SSP),ORGANISATION
+EU,INSTITUTION
+Women's Equality Party (WE),ORGANISATION
+Gibraltar Parliament,INSTITUTION
+Remain,ORGANISATION
+Gibraltar Social Democrats (GSD); the Gibraltar Socialist Labour Party (GSLP); and the Liberal Party of Gibraltar,ORGANISATION
+Conservative Party MPs,TITLE
+Labour MPs,TITLE
+Labour; Conservative; Liberal Democrat; UKIP; and Green,ORGANISATION
+Cabinet ministers,TITLE
+backbench MPs,TITLE
+United Kingdom European Union membership referendum 2016,EVENT
+The Cabinet of the United Kingdom,INSTITUTION
+Prime Minister,TITLE
+February,PERIOD
+23,MEASURE
+30,MEASURE
+Cabinet ministers,TITLE
+UK,LOCATION
+EU,INSTITUTION
+Iain Duncan Smith,PERSON
+19 March,PERIOD
+Stephen Crabb,PERSON
+Crabb,PERSON
+Secretary of State for Wales,TITLE
+Alun Cairns,PERSON
+25,MEASURE
+United Kingdom European Union membership referendum,EVENT
+UK,LOCATION
+UK,LOCATION
+EU,INSTITUTION
+Shell; BT and Vodafone,BUSINESS
+Britain,LOCATION
+EU,INSTITUTION
+British Bankers' Association,ORGANISATION
+RBS,BUSINESS
+HSBC,BUSINESS
+JP Morgan and Deutsche Bank,BUSINESS
+Brexit,EVENT
+Goldman Sachs,BUSINESS
+City of London,LOCATION
+City of London,LOCATION
+European,NATIONAL
+February 2016,PERIOD
+36,MEASURE
+FTSE 100,CONCEPT
+Shell; BAE Systems; BT and Rio Tinto,BUSINESS
+EU,INSTITUTION
+60%,MEASURE
+Institute of Directorsand,ORGANISATION
+EEF,ORGANISATION
+UK,LOCATION
+Sainsbury's,BUSINESS
+Richard Branson,PERSON
+UK,LOCATION
+EU,INSTITUTION
+Alan Sugar,PERSON
+June 2016,PERIOD
+James Dyson,PERSON
+Dyson company,BUSINESS
+British,NATIONAL
+Britain,LOCATION
+100 billion,MEASURE
+EU,INSTITUTION
+Treasury,INSTITUTION
+EU,INSTITUTION
+Dyson,PERSON
+28,MEASURE
+EU,INSTITUTION
+Rolls-Royce,BUSINESS
+UK,LOCATION
+EU,INSTITUTION
+UK,LOCATION
+UK,LOCATION
+EU,INSTITUTION
+UK,LOCATION
+half,MEASURE
+UK,LOCATION
+1%,MEASURE
+UK,LOCATION
+Two,MEASURE
+Ford and BMW,BUSINESS
+2013,PERIOD
+Brexit,EVENT
+2015,PERIOD
+Reuters,MEDIA
+UK,LOCATION
+EU,INSTITUTION
+CEO of Vauxhall,TITLE
+Brexit,EVENT
+Toyota CEO Akio Toyoda,PERSON
+Britain,LOCATION
+EU,INSTITUTION
+Toyota,BUSINESS
+Britain,LOCATION
+UK,LOCATION
+Boris Johnson,PERSON
+UK,LOCATION
+seven-year,MEASURE
+HSBC,BUSINESS
+Daragh Maher; head of HSBC,PERSON
+Brexit,EVENT
+European,NATIONAL
+Brexit,EVENT
+June 2016,PERIOD
+Leave campaign,ORGANISATION
+10,MEASURE
+one per cent,MEASURE
+UK,LOCATION
+April,PERIOD
+11.2%,MEASURE
+1998,PERIOD
+US,LOCATION
+Eurozone,INSTITUTION
+China,LOCATION
+January and February 2016,PERIOD
+FTSE 100,CONCEPT
+1.5%,MEASURE
+16 days,PERIOD
+14 June,PERIOD
+Brexit,EVENT
+FTSE 100,CONCEPT
+2%;,MEASURE
+98 billion,MEASURE
+Remain,ORGANISATION
+FTSE,CONCEPT
+2016,PERIOD
+FTSE 100,CONCEPT
+2016,PERIOD
+1.5018,MEASURE
+Remain campaign,ORGANISATION
+Sunderland,LOCATION
+1.3777,MEASURE
+since 1985,PERIOD
+following Monday,PERIOD
+1.32,MEASURE
+London Stock Exchange,BUSINESS
+morning of 24 June,PERIOD
+FTSE 100,CONCEPT
+6338.10,MEASURE
+5806.13,MEASURE
+first ten minutes,PERIOD
+6091.27,MEASURE
+90 minutes,PERIOD
+6162.97,MEASURE
+end of the day,PERIOD
+Following Monday,PERIOD
+FTSE 100,CONCEPT
+over 2%,MEASURE
+mid-afternoon,PERIOD
+Friday after the referendum,PERIOD
+US Dow Jones Industrial Average,CONCEPT
+450,MEASURE
+2½%,MEASURE
+half an hour,PERIOD
+Associated Press,MEDIA
+mid afternoon on 27 June 2016,PERIOD
+31,MEASURE
+11%,MEASURE
+two,MEASURE
+FTSE 100,CONCEPT
+85 billion,MEASURE
+29 June,PERIOD
+European,NATIONAL
+Czech prime minister Bohuslav Sobotka,PERSON
+Czech Republic,LOCATION
+EU,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+Former Czech President Václav Klaus,PERSON
+Britain,LOCATION
+EU,INSTITUTION
+dissolution of Czechoslovakia,EVENT
+Marine Le Pen,PERSON
+French Front national,ORGANISATION
+Brexit,EVENT
+fall of the Berlin Wall,EVENT
+Brexit,EVENT
+European,NATIONAL
+France,LOCATION
+59%,MEASURE
+French,PERSON_TYPE
+Britain,LOCATION
+EU,INSTITUTION
+Polish President Andrzej Duda,PERSON
+UK,LOCATION
+EU,INSTITUTION
+Moldovan Prime Minister Pavel Filip,PERSON
+Moldova,LOCATION
+UK,LOCATION
+British,NATIONAL
+UK,LOCATION
+EU,INSTITUTION
+Spanish foreign minister José García-Margallo,PERSON
+Spain,LOCATION
+Gibraltar,LOCATION
+British,NATIONAL
+EU,INSTITUTION
+Margallo,PERSON
+Gibraltar,LOCATION
+Britain,LOCATION
+EU,INSTITUTION
+Dutch,NATIONAL
+Geert Wilders,PERSON
+Netherlands,LOCATION
+Britain,NATIONAL
+1940s,PERIOD
+Britain,LOCATION
+Europe,LOCATION
+Brussels,LOCATION
+11 June 2016,PERIOD
+Swedish foreign minister Margot Wallstrom,PERSON
+Britain,LOCATION
+EU,INSTITUTION
+EU,INSTITUTION
+Britain,LOCATION
+EU,INSTITUTION
+European,NATIONAL
+International Monetary Fund,INSTITUTION
+February 2016,PERIOD
+Christine Lagarde; the managing director of the International Monetary Fund,PERSON
+British,NATIONAL
+Leave,ORGANISATION
+Priti Patel,PERSON
+IMF,INSTITUTION
+UK,LOCATION
+IMF,INSTITUTION
+United States,LOCATION
+October 2015,PERIOD
+United States Trade Representative Michael Froman,PERSON
+United States,LOCATION
+FTA,ACRONYM
+Britain,LOCATION
+EU,INSTITUTION
+The Guardian,MEDIA
+Britain,LOCATION
+FTA,ACRONYM
+October 2015,PERIOD
+United States Ambassador to the United Kingdom Matthew Barzun,PERSON
+UK,LOCATION
+NATO,INSTITUTION
+EU,INSTITUTION
+British,PERSON_TYPE
+US,LOCATION
+April 2016,PERIOD
+eight,MEASURE
+former US Secretaries of the Treasury,TITLE
+Democratic and Republican presidents,TITLE
+Britain,LOCATION
+EU,INSTITUTION
+July 2015,PERIOD
+President Barack Obama,PERSON
+US,LOCATION
+UK,LOCATION
+EU,INSTITUTION
+Obama,PERSON
+UK,LOCATION
+EU,INSTITUTION
+after World War II,PERIOD
+United Kingdom,LOCATION
+Obama,PERSON
+Republican Senator Ted Cruz,PERSON
+British,NATIONAL
+president,TITLE
+Britain,LOCATION
+America,LOCATION
+Brexit,EVENT
+Republican,PERSON_TYPE
+Donald Trump,PERSON
+Britain,LOCATION
+Democratic,PERSON_TYPE
+Hillary Clinton,PERSON
+Britain,LOCATION
+EU,INSTITUTION
+October 2015,PERIOD
+Chinese President Xi Jinping,PERSON
+Britain,LOCATION
+EU,INSTITUTION
+China,LOCATION
+Europe,LOCATION
+EU,INSTITUTION
+Britain,LOCATION
+EU,INSTITUTION
+China,LOCATION
+EU,INSTITUTION
+Chinese,NATIONAL
+People's Republic,LOCATION
+EU,INSTITUTION
+American,NATIONAL
+EU,INSTITUTION
+Britain,LOCATION
+United States,LOCATION
+February 2016,PERIOD
+finance ministers,TITLE
+G20,ORGANISATION
+EU,INSTITUTION
+May 2016,PERIOD
+Australian Prime Minister Malcolm Turnbull,PERSON
+Australia,LOCATION
+UK,LOCATION
+EU,INSTITUTION
+British,PERSON_TYPE
+Britain and Australia,LOCATION
+Indonesian president Joko Widodo,PERSON
+European,NATIONAL
+Brexit,EVENT
+Sri Lankan Prime Minister Ranil Wickremesinghe,PERSON
+Brexit,EVENT
+Russian President Vladimir Putin,PERSON
+UK,LOCATION
+Maria Zakharova,PERSON
+Russian foreign ministry,TITLE
+Russia,LOCATION
+Brexit,EVENT
+November 2015,PERIOD
+Governor of the Bank of England Mark Carney,PERSON
+Bank of England,INSTITUTION
+UK,LOCATION
+British,PERSON_TYPE
+EU,INSTITUTION
+March 2016,PERIOD
+Carney,PERSON
+MPs,TITLE
+EU,INSTITUTION
+UK,LOCATION
+European Monetary Union,INSTITUTION
+UK,LOCATION
+May 2016,PERIOD
+Carney,PERSON
+UK,LOCATION
+EU,INSTITUTION
+Iain Duncan Smith,PERSON
+Carney,PERSON
+December 2015,PERIOD
+Bank of England,INSTITUTION
+10 percent,MEASURE
+2 percent,MEASURE
+March 2016,PERIOD
+Nobel prize,AWARD
+Joseph Stiglitz,PERSON
+UK,LOCATION
+EU,INSTITUTION
+Transatlantic Trade and Investment Partnership (TTIP),LEGAL
+Stiglitz,PERSON
+TTIP,LEGAL
+asbestos,SUBSTANCE
+tobacco,PLANT
+German,NATIONAL
+Clemens Fuest,PERSON
+liberal,CONCEPTUAL
+EU,INSTITUTION
+UK; the Netherlands; the Czech Republic; Sweden; Denmark; Ireland; Slovakia; Finland; Estonia; Latvia; and  Lithuania,LOCATION
+32%,MEASURE
+European Council,INSTITUTION
+dirigiste; protectionist,CONCEPTUAL
+France,LOCATION
+Germany,LOCATION
+French,NATIONAL
+dirigiste,CONCEPTUAL
+British,NATIONAL
+German,NATIONAL
+liberal,CONCEPTUAL
+Germany,LOCATION
+Britain,LOCATION
+dirigiste France,LOCATION
+Britain,LOCATION
+liberal,CONCEPTUAL
+French,NATIONAL
+EU,INSTITUTION
+dirigiste,CONCEPTUAL
+Berlin,LOCATION
+Institute for Fiscal Studies,INSTITUTION
+May 2016,PERIOD
+Institute for Fiscal Studies,INSTITUTION
+EU,INSTITUTION
+two more years,PERIOD
+20 billion to £40 billion,MEASURE
+head of the IFS; Paul Johnson,PERSON
+UK,LOCATION
+EU,INSTITUTION
+Centre for Economics and Business Research,INSTITUTION
+June 2016,PERIOD
+Centre for Economics and Business Research,INSTITUTION
+800;000,MEASURE
+Britain,LOCATION
+World Trade Organisation (WTO),INSTITUTION
+Europe,LOCATION
+Brexiteers Boris Johnson; Michael Gove and Nigel Farage,PERSON
+Britain,LOCATION
+EU,INSTITUTION
+WTO,INSTITUTION
+10 per cent,MEASURE
+75 per cent,MEASURE
+tobacco,PLANT
+22 per cent,MEASURE
+12 per cent,MEASURE
+Oxford Economics,BUSINESS
+Law Society of England and Wales,ORGANISATION
+Brexit,EVENT
+UK,LOCATION
+2030,PERIOD
+Law Society,ORGANISATION
+Brexit,EVENT
+EU,INSTITUTION
+UK,LOCATION
+World Pensions Forum director M. Nicolas Firzi,PERSON
+Brexit,EVENT
+EU,INSTITUTION
+English,NATIONAL
+British Parliament,INSTITUTION
+tens,MEASURE
+EU,INSTITUTION
+Brussels,LOCATION
+transposition,CONCEPT
+EU commissars,TITLE
+English,NATIONAL
+UK,LOCATION
+late May 2016,PERIOD
+57%,MEASURE
+EU,INSTITUTION
+NHS,INSTITUTION
+Simon Stevens; head of NHS England,PERSON
+May 2016,PERIOD
+Brexit,EVENT
+British,NATIONAL
+NHS,INSTITUTION
+Three-quarters,MEASURE
+NHS,INSTITUTION
+EU,INSTITUTION
+NHS,INSTITUTION
+eight out of 10,MEASURE
+EU,INSTITUTION
+April 2016,PERIOD
+200,MEASURE
+NHS,INSTITUTION
+Britain,LOCATION
+European Union,INSTITUTION
+UK,LOCATION
+Charity Commission for England and Wales,INSTITUTION
+EU,INSTITUTION
+Simon Wessely; head of psychological medicine at the Institute of Psychiatry; King's College London,PERSON
+7 March 2016,PERIOD
+Cameron,PERSON
+remain campaign,ORGANISATION
+June 2016,PERIOD
+UK,LOCATION
+92%,MEASURE
+EU,INSTITUTION
+EU's Common Fisheries Policy,LEGAL
+three-quarters,MEASURE
+93%,MEASURE
+EU,INSTITUTION
+May 2016,PERIOD
+300,MEASURE
+The Guardian,MEDIA
+Britain,LOCATION
+EU,INSTITUTION
+Britain,LOCATION
+Europe,LOCATION
+Britain,LOCATION
+Europe,LOCATION
+David Cameron,PERSON
+EU,INSTITUTION
+British,NATIONAL
+Institute of Economic Affairs (IEA),INSTITUTION
+July 2013,PERIOD
+UK,LOCATION
+European Union,INSTITUTION
+2015 general election,EVENT
+Iain Mansfield,PERSON
+Cambridge,INSTITUTION
+UKTI,INSTITUTION
+A Blueprint for Britain: Openness not Isolation,CREATION
+Mansfield,PERSON
+United Kingdom European Union membership referendum,EVENT
+2010,PERIOD
+British,PERSON_TYPE
+EU,INSTITUTION
+November 2012,PERIOD
+56%,MEASURE
+30%,MEASURE
+June 2015,PERIOD
+Britain,LOCATION
+EU,INSTITUTION
+43%,MEASURE
+36%,MEASURE
+20;000,MEASURE
+March 2014,PERIOD
+41%,MEASURE
+41%,MEASURE
+18%,MEASURE
+Britain,LOCATION
+EU,INSTITUTION
+UK Government,INSTITUTION
+British,NATIONAL
+more than 50%,MEASURE
+Britain,LOCATION
+EU,INSTITUTION
+February 2016,PERIOD
+YouGov,BUSINESS
+euroscepticism,CONCEPT
+EU,INSTITUTION
+euroscepticism,CONCEPT
+Tory,CONCEPTUAL
+Scotland; Wales,LOCATION
+English urban areas,LOCATION
+EU,INSTITUTION
+EU,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+United Kingdom European Union membership referendum; 2016,EVENT
+BBC,MEDIA
+Leave campaign,ORGANISATION
+EU,INSTITUTION
+EU,INSTITUTION
+millions,MEASURE
+EU,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+EU,INSTITUTION
+United Kingdom,LOCATION
+EU,INSTITUTION
+EU,INSTITUTION
+United Kingdom,LOCATION
+EU,INSTITUTION
+four,MEASURE
+EU,INSTITUTION
+EU,INSTITUTION
+UK,LOCATION
+Office for Budget Responsibility,INSTITUTION
+Leave campaign,ORGANISATION
+British,NATIONAL
+Office for National Statistics,INSTITUTION
+2015,PERIOD
+333;000,MEASURE
+second,MEASURE
+David Cameron,PERSON
+tens of thousands,MEASURE
+EU,INSTITUTION
+184;000,MEASURE
+77;000,MEASURE
+EU,INSTITUTION
+Britain,LOCATION
+Rowena Mason,PERSON
+The Guardian,MEDIA
+UK,LOCATION
+Britons,PERSON_TYPE
+The Times,MEDIA
+Philip Collins,PERSON
+European Union,INSTITUTION
+Conservative MEP (Member of the European Parliament),TITLE
+South East England,LOCATION
+Daniel Hannan,PERSON
+BBC program Newsnight,CREATION
+Brexit,EVENT
+zero,MEASURE
+EU,INSTITUTION
+Leave campaign,ORGANISATION
+Remain,ORGANISATION
+EU,INSTITUTION
+David Cameron,PERSON
+UK,LOCATION
+first four years,PERIOD
+seven years,PERIOD
+Brexit referendum,EVENT
+UK,LOCATION
+EU,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+EU,INSTITUTION
+United Kingdom,LOCATION
+Scotland's First Minister; Nicola Sturgeon,PERSON
+second,MEASURE
+Scots,PERSON_TYPE
+UK,LOCATION
+EU,INSTITUTION
+Scotland,LOCATION
+First Minister of Wales Carwyn Jones,PERSON
+Wales,LOCATION
+EU,INSTITUTION
+UK,LOCATION
+UK,LOCATION
+England,LOCATION
+Transatlantic Trade and Investment Partnership (TTIP),LEGAL
+United States,LOCATION
+EU,INSTITUTION
+EU,INSTITUTION
+Jeremy Corbyn,PERSON
+Remain,ORGANISATION
+TTIP,LEGAL
+John Mills,PERSON
+Leave,ORGANISATION
+UK,LOCATION
+TTIP,LEGAL
+European Council,INSTITUTION
+European Union,INSTITUTION
+UK,LOCATION
+NATO and the United Nations,INSTITUTION
+EU,INSTITUTION
+The Guardian,MEDIA
+15 March 2016,PERIOD
+UKIP,ORGANISATION
+Nigel Farage,PERSON
+Conservative MP Andrea Leadsom,PERSON
+Labour 's yes campaign,EVENT
+Alan Johnson,PERSON
+Liberal Democrats,ORGANISATION
+Nick Clegg,PERSON
+11 January,PERIOD
+Nigel Farage and Carwyn Jones,PERSON
+First Minister of Wales,TITLE
+Welsh Labour Party,ORGANISATION
+Conservative Party,ORGANISATION
+Leave and Remain,ORGANISATION
+The Spectator,MEDIA
+Andrew Neil,PERSON
+26 April,PERIOD
+Nick Clegg; Liz Kendall and Chuka Umunna,PERSON
+Nigel Farage; Daniel Hannan and Kate Hoey,PERSON
+Daily Express,MEDIA
+3 June,PERIOD
+Nigel Farage; Labour MP Kate Hoey and Conservative MP Jacob Rees-Mogg,PERSON
+Labour MPs Siobhain McDonagh and Chuka Umunna,PERSON
+Richard Reed,PERSON
+Innocent drinks,BUSINESS
+Essex TV,MEDIA
+Is Essex IN or OUT,CREATION
+20 June,PERIOD
+Boris Johnson,PERSON
+Essex,LOCATION
+Andrew Neil,PERSON
+four,MEASURE
+Hilary Benn; George Osborne; Nigel Farage and Iain Duncan Smith,PERSON
+6; 8; 10 and 17 May,PERIOD
+ITV,MEDIA
+9 June,PERIOD
+Angela Eagle; Amber Rudd and Nicola Sturgeon; Boris Johnson; Andrea Leadsom; and Gisela Stuart,PERSON
+EU Referendum: The Great Debate,CREATION
+Wembley Arena,INSTALLATION
+21 June,PERIOD
+David Dimbleby; Mishal Husain and Emily Maitlis,PERSON
+6;000,MEASURE
+Sadiq Khan; Ruth Davidson and Frances O'Grady,PERSON
+Remain,ORGANISATION
+Leave,ORGANISATION
+ITV debate on 9 June,EVENT
+Johnson; Leadsom and Stuart,PERSON
+Europe: The Final Debate,CREATION
+Jeremy Paxman,PERSON
+Channel 4,MEDIA
+Gibraltar on the Iberian Peninsula,LOCATION
+Leave,ORGANISATION
+Remain,ORGANISATION
+England,LOCATION
+from 0700 BST until 2200 BST (0600 to 2100 BST in Gibraltar),PERIOD
+41;000,MEASURE
+382,MEASURE
+2;500,MEASURE
+four,MEASURE
+United Kingdom,LOCATION
+Gibraltar,LOCATION
+382,MEASURE
+twelve,MEASURE
+England,LOCATION
+2011 AV referendum,EVENT
+326,MEASURE
+nine,MEASURE
+English,NATIONAL
+Scotland,LOCATION
+32,MEASURE
+Scottish,NATIONAL
+Wales,LOCATION
+22,MEASURE
+Welsh,NATIONAL
+Northern Ireland,LOCATION
+AV referendum,EVENT
+Westminster,LOCATION
+Gibraltar,LOCATION
+South West England,LOCATION
+European Zionist,CONCEPTUAL
+1901-1931,PERIOD
+L'echo Sioniste,MEDIA
+Jewish,PERSON_TYPE
+Bulgaria,LOCATION
+May 1901,PERIOD
+Die Arbeit,MEDIA
+Hapoel Hatzair,ORGANISATION
+15 February 1920,PERIOD
+Haolam,MEDIA
+Zionist,CONCEPTUAL
+Europe,LOCATION
+World War I,EVENT
+Wikipedia,WEBSITE
+World War I,EVENT
+Wikipedia,WEBSITE
+World War I (WWI),EVENT
+Europe,LOCATION
+28 July 1914,PERIOD
+until 11 November 1918,PERIOD
+Great War,EVENT
+World War II,EVENT
+1939,PERIOD
+First World War,EVENT
+World War I,EVENT
+two,MEASURE
+Allies,INSTITUTION
+Triple Entente of the United Kingdom; France and the Russian Empire,LEGAL
+Central Powers of Germany and Austria-Hungary,ORGANISATION
+Italy,LOCATION
+Triple Alliance,INSTITUTION
+Germany and Austria-Hungary,LOCATION
+Central Powers,INSTITUTION
+Austria-Hungary,LOCATION
+Italy; Japan and the United States,LOCATION
+Allies,INSTITUTION
+Ottoman Empire and Bulgaria,LOCATION
+Central Powers,INSTITUTION
+more than 70 million,MEASURE
+60 million,MEASURE
+Europeans,PERSON_TYPE
+More than 9 million,MEASURE
+fifth,MEASURE
+imperialism,CONCEPT
+Europe,LOCATION
+Archduke Franz Ferdinand of Austria,PERSON
+Austria-Hungary,LOCATION
+28 June 1914,PERIOD
+Yugoslav nationalist Gavrilo Princip,PERSON
+Sarajevo,LOCATION
+Austria-Hungary,LOCATION
+Kingdom of Serbia,LOCATION
+previous decades,PERIOD
+weeks,PERIOD
+28 July,PERIOD
+Austro-Hungarians,PERSON_TYPE
+Serbia,LOCATION
+Russians,PERSON_TYPE
+Germans,PERSON_TYPE
+Belgium and Luxembourg,LOCATION
+France,LOCATION
+Britain,LOCATION
+Germany,LOCATION
+German march on Paris,EVENT
+Miracle of the Marne,EVENT
+Western Front,LOCATION
+Eastern Front,LOCATION
+Russian army,INSTITUTION
+Austro - Hungarians,PERSON_TYPE
+East Prussia,LOCATION
+Germans,PERSON_TYPE
+November,PERIOD
+Ottoman Empire,LOCATION
+Caucasus; Mesopotamia and the Sinai,LOCATION
+Italy and Bulgaria,LOCATION
+1915,PERIOD
+Romania,LOCATION
+1916,PERIOD
+Russia,LOCATION
+tsar's government,INSTITUTION
+March 1917,PERIOD
+November,PERIOD
+Russians,PERSON_TYPE
+Central Powers,INSTITUTION
+1918,PERIOD
+German,NATIONAL
+western front,LOCATION
+Allies,INSTITUTION
+Germans,PERSON_TYPE
+American,NATIONAL
+Germany,LOCATION
+11 November 1918,PERIOD
+Allies,INSTITUTION
+four,MEASURE
+German; Russian; Austro - Hungarian and Ottoman empires,LOCATION
+two,MEASURE
+two,MEASURE
+central Europe,LOCATION
+League of Nations,INSTITUTION
+European,NATIONAL
+nationalism,CONCEPT
+Germany,LOCATION
+Nazis,PERSON_TYPE
+World War II,EVENT
+Canada,LOCATION
+Maclean's Magazine,MEDIA
+October 1914,PERIOD
+Great War,EVENT
+early months,PERIOD
+New York,LOCATION
+late 1914,PERIOD
+The World War,CREATION
+Interwar period,PERIOD
+World War and the Great War,EVENT
+English,CONCEPT
+Second World War,EVENT
+1939,PERIOD
+World War I,EVENT
+First World War,EVENT
+British and Canadian,NATIONAL
+First World War,EVENT
+Americans,PERSON_TYPE
+World War I,EVENT
+First World War,EVENT
+September 1914,PERIOD
+German,NATIONAL
+Ernst Haeckel,PERSON
+European War,EVENT
+first world war,EVENT
+First World,EVENT
+1920,PERIOD
+officer,TITLE
+Charles Court,PERSON
+World War I,EVENT
+19th century,PERIOD
+European,NATIONAL
+Europe,LOCATION
+1900,PERIOD
+1815,PERIOD
+Holy Alliance,INSTITUTION
+Prussia; Russia; and Austria,LOCATION
+October 1873,PERIOD
+German Chancellor Otto von Bismarck,PERSON
+League of the Three Emperors,INSTITUTION
+German,CONCEPT
+Dreikaiserbund,INSTITUTION
+Austria-Hungary; Russia and Germany,LOCATION
+Austria-Hungary and Russia,LOCATION
+Balkan policy,LEGAL
+Germany and Austria-Hungary,LOCATION
+1879,PERIOD
+Dual Alliance,INSTITUTION
+Russian,NATIONAL
+Balkans,LOCATION
+Ottoman Empire,LOCATION
+1882,PERIOD
+Italy,LOCATION
+Triple Alliance,INSTITUTION
+Bismarck,PERSON
+Russia,LOCATION
+Germany,LOCATION
+two,MEASURE
+France and Russia,LOCATION
+Wilhelm II,PERSON
+German Emperor (Kaiser) ,TITLE
+Bismarck,PERSON
+Kaiser,TITLE
+Reinsurance Treaty,LEGAL
+Russia,LOCATION
+1890,PERIOD
+Two years later,PERIOD
+Franco - Russian Alliance,LEGAL
+Triple Alliance,INSTITUTION
+1904,PERIOD
+Britain,LOCATION
+France,LOCATION
+Entente Cordiale,LEGAL
+1907,PERIOD
+Britain,LOCATION
+Russia,LOCATION
+Anglo - Russian Convention,LEGAL
+Britain with France or Russia,LOCATION
+British,NATIONAL
+France or Russia,LOCATION
+Triple Entente,INSTITUTION
+German,NATIONAL
+1871,PERIOD
+mid - 1890s,PERIOD
+Wilhelm II,PERSON
+Kaiserliche Marine (Imperial German Navy) ,INSTITUTION
+Admiral Alfred von Tirpitz,PERSON
+British Royal Navy,INSTITUTION
+HMS Dreadnought,ARTIFACT
+1906,PERIOD
+British Empire,LOCATION
+German,NATIONAL
+Britain and Germany,LOCATION
+Europe,LOCATION
+European,NATIONAL
+Between 1908 and 1913,PERIOD
+European,NATIONAL
+50%,MEASURE
+Austria-Hungary,LOCATION
+Bosnian crisis of 1908 - 1909,EVENT
+Ottoman,NATIONAL
+Bosnia and Herzegovina,LOCATION
+1878,PERIOD
+Kingdom of Serbia,LOCATION
+Pan - Slavic,CONCEPTUAL
+Orthodox Russian Empire,LOCATION
+Russian,NATIONAL
+Europe,LOCATION
+1912 and 1913,PERIOD
+First Balkan War,EVENT
+Balkan League,INSTITUTION
+Ottoman Empire,LOCATION
+Treaty of London,LEGAL
+Ottoman Empire,LOCATION
+Albanian,NATIONAL
+Bulgaria; Serbia; Montenegro; and Greece,LOCATION
+Bulgaria,LOCATION
+Serbia and Greece,LOCATION
+16 June 1913,PERIOD
+Macedonia to Serbia and Greece and Southern Dobruja to Romania,LOCATION
+33 - day Second Balkan War,EVENT
+July 1914 crisis,EVENT
+July Crisis,EVENT
+28 June 1914,PERIOD
+Gavrilo Princip,PERSON
+Bosnian Serb,NATIONAL
+Young Bosnia,ORGANISATION
+Austro - Hungarian,NATIONAL
+Archduke Franz Ferdinand of Austria,PERSON
+Sarajevo; Bosnia,LOCATION
+Austria-Hungary; Germany; Russia; France; and Britain,LOCATION
+July Crisis,EVENT
+Serbian,NATIONAL
+Bosnia,LOCATION
+Black Hand,ORGANISATION
+Princip,PERSON
+Austrians,PERSON_TYPE
+Serbian officers,TITLE
+Austria-Hungary,LOCATION
+July Ultimatum,EVENT
+Serbia,LOCATION
+ten,MEASURE
+Serbia,LOCATION
+Serbia,LOCATION
+eight of the ten,MEASURE
+Austria-Hungary,LOCATION
+28 July 1914,PERIOD
+Strachan,PERSON
+Serbia,LOCATION
+Austria-Hungary,LOCATION
+Franz Ferdinand,PERSON
+Russian Empire,LOCATION
+Austria-Hungary,LOCATION
+Balkans,LOCATION
+Serb,PERSON_TYPE
+one day later,PERIOD
+German Empire,LOCATION
+30 July 1914,PERIOD
+Schlieffen Plan,CONCEPT
+France,LOCATION
+French army,INSTITUTION
+Russia,LOCATION
+French cabinet,INSTITUTION
+10 km,MEASURE
+France,LOCATION
+evening of 2 August,PERIOD
+Germany,LOCATION
+Belgium,LOCATION
+French,NATIONAL
+Germany,LOCATION
+Russia,LOCATION
+Britain,LOCATION
+Germany,LOCATION
+4 August 1914,PERIOD
+British,NATIONAL
+Belgium,LOCATION
+Central Powers,INSTITUTION
+Central Powers,INSTITUTION
+Germany,LOCATION
+Austria-Hungary,LOCATION
+Serbia,LOCATION
+1914,PERIOD
+Austro - Hungarian,NATIONAL
+Germany,LOCATION
+Russia,LOCATION
+Germany,LOCATION
+Austria-Hungary,LOCATION
+Russia,LOCATION
+Germany,LOCATION
+France,LOCATION
+Austro - Hungarian Army,INSTITUTION
+Russian and Serbian fronts,LOCATION
+9 September 1914,PERIOD
+Septemberprogramm,UNKNOWN
+Germany,LOCATION
+Germany,LOCATION
+Allied,INSTITUTION
+German Chancellor; Theobald von Bethmann-Hollweg,PERSON
+Serbian,NATIONAL
+Serbian,NATIONAL
+World War I,EVENT
+Austria,LOCATION
+Serbian army,INSTITUTION
+Battle of Cer and Battle of Kolubara,EVENT
+12 August,PERIOD
+next two weeks,PERIOD
+Austrian,NATIONAL
+Allied,INSTITUTION
+Austro - Hungarian,NATIONAL
+Austria,LOCATION
+Serbian,NATIONAL
+Russia,LOCATION
+Serbia,LOCATION
+Austro - Hungarian invasion of 1914,EVENT
+last century,PERIOD
+German,NATIONAL
+Belgium and France,LOCATION
+Western Front,LOCATION
+World War I,EVENT
+World War I,EVENT
+German army,INSTITUTION
+seven,MEASURE
+Schlieffen Plan,UNKNOWN
+German,NATIONAL
+Belgium,LOCATION
+France,LOCATION
+French army,INSTITUTION
+German,NATIONAL
+France,LOCATION
+Germany and Russia,LOCATION
+Germany,LOCATION
+France,LOCATION
+one,MEASURE
+Russia,LOCATION
+Schlieffen Plan,UNKNOWN
+Germany,LOCATION
+France,LOCATION
+Franco - Prussian War of 1870 - 71,EVENT
+Germany,LOCATION
+Alsace - Lorraine,LOCATION
+river Rhine,LOCATION
+Paris,LOCATION
+English Channel,LOCATION
+British,NATIONAL
+Paris,LOCATION
+Russia,LOCATION
+Russia,LOCATION
+Central Powers,INSTITUTION
+German,NATIONAL
+German,NATIONAL
+Belgium,LOCATION
+Germany,LOCATION
+Belgium,LOCATION
+Netherlands,LOCATION
+Kaiser Wilhelm II,TITLE
+France,LOCATION
+Belgium,LOCATION
+Germans,PERSON_TYPE
+Belgium,LOCATION
+France,LOCATION
+Belgium,LOCATION
+Belgium,LOCATION
+Belgian,NATIONAL
+German,NATIONAL
+Belgium,LOCATION
+French,NATIONAL
+Belgian army,INSTITUTION
+Antwerp,LOCATION
+German,NATIONAL
+French,NATIONAL
+Franco - German border,LOCATION
+Belgian border,LOCATION
+French,NATIONAL
+Paris,LOCATION
+Germans,PERSON_TYPE
+Battle of the Frontiers (14 - 24 August) ,EVENT
+12 September,PERIOD
+French,PERSON_TYPE
+British,NATIONAL
+German,NATIONAL
+Paris,LOCATION
+First Battle of the Marne (5 - 12 September) ,EVENT
+German,NATIONAL
+50 km,MEASURE
+last days,PERIOD
+French,NATIONAL
+Southern Alsace,LOCATION
+20 August,PERIOD
+Battle of Mulhouse,EVENT
+Russians,PERSON_TYPE
+two,MEASURE
+German,NATIONAL
+Russians,PERSON_TYPE
+8th,INSTITUTION
+France; to East Prussia,LOCATION
+German Empire,LOCATION
+Paul von Hindenburg,PERSON
+Russia,LOCATION
+First Battle of Tannenberg (17 August - 2 September) ,EVENT
+Russian,NATIONAL
+German,NATIONAL
+Allied,INSTITUTION
+First Battle of the Marne,EVENT
+Central Powers,INSTITUTION
+France,LOCATION
+two,MEASURE
+German,NATIONAL
+France,LOCATION
+230; 000,MEASURE
+French,NATIONAL
+British,NATIONAL
+Germany,LOCATION
+Asia and the Pacific,LOCATION
+Asian,NATIONAL
+Pacific,LOCATION
+World War I,EVENT
+New Zealand occupied German Samoa,LOCATION
+Western Samoa,LOCATION
+30 August 1914,PERIOD
+11 September,EVENT
+Australian Naval and Military Expeditionary Force,INSTITUTION
+Neu Pommern,LOCATION
+New Britain,LOCATION
+German New Guinea,LOCATION
+28 October,PERIOD
+SMS Emden,ARTIFACT
+Russian cruiser Zhemchug,ARTIFACT
+Battle of Penang,EVENT
+Japan,LOCATION
+Germany,LOCATION
+Micronesian,NATIONAL
+Siege of Tsingtao,EVENT
+port of Qingdao,LOCATION
+Chinese Shandong peninsula,LOCATION
+Vienna,LOCATION
+Austro - Hungarian cruiser  Kaiserin Elisabeth ,ARTIFACT
+Tsingtao,LOCATION
+Japan,LOCATION
+Germany,LOCATION
+Austria-Hungary,LOCATION
+Tsingtao,LOCATION
+November 1914,PERIOD
+Allied,INSTITUTION
+German,NATIONAL
+Pacific,LOCATION
+New Guinea,LOCATION
+African,NATIONAL
+African,NATIONAL
+World War I,EVENT
+British; French; and German,NATIONAL
+Africa,LOCATION
+7 August,PERIOD
+French and British,NATIONAL
+German protectorate of Togoland,LOCATION
+10 August,PERIOD
+German,NATIONAL
+South - West Africa,LOCATION
+South Africa,LOCATION
+German,NATIONAL
+German East Africa,LOCATION
+Colonel Paul von Lettow - Vorbeck,PERSON
+World War I,EVENT
+two weeks after the armistice,PERIOD
+Europe,LOCATION
+Indian,NATIONAL
+Allies,INSTITUTION
+Third Anglo - Afghan War,EVENT
+Hindu - German Conspiracy,UNKNOWN
+British,NATIONAL
+India,LOCATION
+Britain,LOCATION
+Indian,NATIONAL
+Indian National Congress,INSTITUTION
+British,NATIONAL
+Indian Home Rule,ORGANISATION
+Indian Army,INSTITUTION
+British Army,INSTITUTION
+1. 3 million,MEASURE
+Indian,NATIONAL
+Europe; Africa; and the Middle East,LOCATION
+140; 000,MEASURE
+Western Front,LOCATION
+700; 000,MEASURE
+Indian,NATIONAL
+47; 746,MEASURE
+65; 126,MEASURE
+British government,INSTITUTION
+India,LOCATION
+Mohandas Karamchand Gandhi,PERSON
+Western Front,LOCATION
+Western Front,LOCATION
+World War I,EVENT
+Trench warfare,EVENT
+1914 - 1915,PERIOD
+World War I,EVENT
+1870s,PERIOD
+Commanders,TITLE
+First Battle of the Marne (5 - 12 September 1914) ,EVENT
+Entente,INSTITUTION
+German,NATIONAL
+Race to the Sea,EVENT
+Britain and France,LOCATION
+German,NATIONAL
+Lorraine to Belgium's coast,LOCATION
+Britain and France,LOCATION
+Germany,LOCATION
+occupied territories,LOCATION
+German,NATIONAL
+Anglo - French,NATIONAL
+German,NATIONAL
+22 April 1915,PERIOD
+Second Battle of Ypres,EVENT
+Germans,PERSON_TYPE
+Hague Convention,LEGAL
+first,MEASURE
+Western Front,LOCATION
+British,NATIONAL
+Battle of Flers - Courcelette,EVENT
+Somme offensive,EVENT
+15 September 1916,PERIOD
+Germans,PERSON_TYPE
+Allied,INSTITUTION
+1916 - 1917,PERIOD
+next two years,PERIOD
+1915 - 17,PERIOD
+British Empire and France,LOCATION
+Germany,LOCATION
+Germans,PERSON_TYPE
+Allies,INSTITUTION
+German,NATIONAL
+February 1916,PERIOD
+Germans,PERSON_TYPE
+French,NATIONAL
+Verdun,LOCATION
+until December 1916,PERIOD
+German,NATIONAL
+French,NATIONAL
+French,PERSON_TYPE
+Germans,PERSON_TYPE
+700; 000 to 975; 000,MEASURE
+Verdun,EVENT
+French,NATIONAL
+Battle of the Somme,EVENT
+Anglo - French,NATIONAL
+from July to November 1916,PERIOD
+1 July 1916,PERIOD
+British Army,INSTITUTION
+57; 470,MEASURE
+19; 240,MEASURE
+Somme offensive,EVENT
+British Army,INSTITUTION
+420; 000,MEASURE
+French,PERSON_TYPE
+200; 000,MEASURE
+Germans,PERSON_TYPE
+Verdun,EVENT
+1916,PERIOD
+Somme,LOCATION
+French army,INSTITUTION
+British,NATIONAL
+French poilu,PERSON_TYPE
+French Army,INSTITUTION
+Nivelle Offensive of April - May 1917,EVENT
+British,NATIONAL
+Battle of Arras,EVENT
+Arras,LOCATION
+Vimy Ridge,LOCATION
+Canadian Corps,INSTITUTION
+Canada,LOCATION
+Canada,LOCATION
+British,NATIONAL
+French,NATIONAL
+Passchendaele (July - November 1917) ,EVENT
+Allies,INSTITUTION
+October,PERIOD
+200; 000 - 400; 000,MEASURE
+years of trench warfare,EVENT
+British; French; and German,NATIONAL
+Naval warfare of World War I,EVENT
+German Empire,LOCATION
+Allied,INSTITUTION
+British Royal Navy,INSTITUTION
+Allied,INSTITUTION
+German,NATIONAL
+SMS Emden,ARTIFACT
+East - Asia,LOCATION
+Qingdao,LOCATION
+15,MEASURE
+Russian,NATIONAL
+French,NATIONAL
+German East - Asia,NATIONAL
+Scharnhorst and Gneisenau,ARTIFACT
+Nurnberg and Leipzig,ARTIFACT
+two,MEASURE
+Germany,LOCATION
+British,NATIONAL
+German,NATIONAL
+Dresden,ARTIFACT
+two,MEASURE
+Battle of Coronel,EVENT
+Battle of the Falkland Islands in December 1914,EVENT
+Dresden,ARTIFACT
+Battle of Mas a Tierra,EVENT
+Britain,LOCATION
+naval blockade of Germany,EVENT
+past two centuries,PERIOD
+Britain,LOCATION
+Germany,LOCATION
+The 1916 Battle of Jutland,EVENT
+German,CONCEPT
+Skagerrakschlacht,EVENT
+Battle of the Skagerrak,EVENT
+31 May - 1 June 1916,PERIOD
+North Sea of Jutland,LOCATION
+Kaiserliche Marine's High Seas Fleet,INSTITUTION
+Vice Admiral Reinhard Scheer,PERSON
+Royal Navy's Grand Fleet,INSTITUTION
+Admiral Sir John Jellicoe,PERSON
+Germans,PERSON_TYPE
+British,NATIONAL
+British,NATIONAL
+British,PERSON_TYPE
+German,NATIONAL
+German,NATIONAL
+U - boats,ARTIFACT
+North America and Britain,LOCATION
+United States,LOCATION
+Germany,LOCATION
+RMS Lusitania,ARTIFACT
+1915,PERIOD
+Germany,LOCATION
+Britain,LOCATION
+World War II,EVENT
+Wikipedia,WEBSITE
+World War II,EVENT
+Wikipedia,WEBSITE
+World War II (WWII or WW2) ,EVENT
+Second World War,EVENT
+1939,PERIOD
+1945,PERIOD
+two,MEASURE
+Allies,INSTITUTION
+Axis,INSTITUTION
+100 million,MEASURE
+30,MEASURE
+total war,EVENT
+Holocaust,EVENT
+50 million,MEASURE
+85 million,MEASURE
+World War II,EVENT
+Empire of Japan,LOCATION
+East Asia,LOCATION
+Republic of China,LOCATION
+1937,PERIOD
+1 September 1939,PERIOD
+invasion of Poland,EVENT
+Germany,LOCATION
+Germany,LOCATION
+France,LOCATION
+United Kingdom,LOCATION
+From late 1939 to early 1941,PERIOD
+Germany,LOCATION
+Axis alliance,INSTITUTION
+Italy,LOCATION
+Europe,LOCATION
+Molotov - Ribbentrop Pact,LEGAL
+Germany and the Soviet Union,LOCATION
+European,NATIONAL
+Poland and the Baltic states,LOCATION
+United Kingdom,LOCATION
+British Commonwealth,INSTITUTION
+Allied,INSTITUTION
+Axis,INSTITUTION
+North Africa,LOCATION
+Battle of the Atlantic,EVENT
+June 1941,PERIOD
+European Axis,INSTITUTION
+invasion of the Soviet Union,EVENT
+Axis,INSTITUTION
+December 1941,PERIOD
+Japan,LOCATION
+Axis,INSTITUTION
+United States and European territories,LOCATION
+Pacific Ocean,LOCATION
+Western Pacific,LOCATION
+Axis,INSTITUTION
+1942,PERIOD
+Japan,LOCATION
+battle at Midway,EVENT
+Hawaii,LOCATION
+Germany,LOCATION
+North Africa,LOCATION
+Stalingrad in Russia,LOCATION
+1943,PERIOD
+German,NATIONAL
+Eastern Europe,LOCATION
+Allied invasion of Italy,EVENT
+American,NATIONAL
+Pacific,LOCATION
+Axis,INSTITUTION
+1944,PERIOD
+Western Allies,INSTITUTION
+France,LOCATION
+Soviet Union,UNKNOWN
+Germany,LOCATION
+1944 and 1945,PERIOD
+United States,LOCATION
+Japanese Navy,INSTITUTION
+Western Pacific islands,LOCATION
+Europe,LOCATION
+Germany,LOCATION
+Western Allies,INSTITUTION
+Soviet Union,LOCATION
+capture of Berlin,EVENT
+Soviet and Polish,NATIONAL
+German,NATIONAL
+8 May 1945,PERIOD
+Potsdam Declaration,EVENT
+Allies,INSTITUTION
+26 July 1945,PERIOD
+United States,LOCATION
+Japanese,NATIONAL
+Hiroshima and Nagasaki,LOCATION
+6 August and 9 August,PERIOD
+Japanese archipelago,LOCATION
+Soviet Union,LOCATION
+Japan,LOCATION
+Manchuria,LOCATION
+Japan,LOCATION
+15 August 1945,PERIOD
+Asia,LOCATION
+Allies,INSTITUTION
+Axis,INSTITUTION
+World War II,EVENT
+United Nations (UN) ,ORGANISATION
+United States; the Soviet Union; China; the United Kingdom; and France,LOCATION
+United Nations Security Council,ORGANISATION
+Soviet Union,LOCATION
+United States,LOCATION
+Cold War,EVENT
+next 46 years,PERIOD
+European,NATIONAL
+Asia and Africa,LOCATION
+Europe,LOCATION
+Cold War,EVENT
+1 September 1939,PERIOD
+German invasion of Poland,EVENT
+Britain and France,LOCATION
+Germany,LOCATION
+two days later,PERIOD
+Second Sino - Japanese War on 7 July 1937,EVENT
+British,NATIONAL
+A. J. P. Taylor,PERSON
+Sino - Japanese War,EVENT
+Europe,LOCATION
+two,MEASURE
+World War II,EVENT
+Italian invasion of Abyssinia on 3 October 1935,EVENT
+British,NATIONAL
+Antony Beevor,PERSON
+Second World War,EVENT
+Battles of Khalkhin Gol,EVENT
+Japan and the Soviet Union,LOCATION
+from May to September 1939,PERIOD
+the armistice of 14 August 1945 (V - J Day) ,EVENT
+surrender of Japan (2 September 1945) ,EVENT
+European,NATIONAL
+V - E Day (8 May 1945) ,PERIOD
+Treaty of Peace,LEGAL
+Japan,LOCATION
+1951,PERIOD
+Germany,LOCATION
+1990,PERIOD
+World War II,EVENT
+World War I,EVENT
+Central Powers,INSTITUTION
+Austria-Hungary; Germany and the Ottoman Empire,LOCATION
+1917 Bolshevik seizure of power in Russia,EVENT
+Allies,INSTITUTION
+France; Belgium; Italy; Greece and Romania,LOCATION
+Austria-Hungary and the Russian and Ottoman Empires,LOCATION
+nationalism,CONCEPT
+European,NATIONAL
+Irredentism and revanchism,CONCEPT
+Germany,LOCATION
+Treaty of Versailles,LEGAL
+Germany,LOCATION
+13 percent,MEASURE
+German,NATIONAL
+Russian Civil War,EVENT
+Soviet Union,LOCATION
+German Empire,LOCATION
+German Revolution of 1918 - 1919,EVENT
+Weimar Republic,LOCATION
+interwar period,PERIOD
+Italy,LOCATION
+Italian,NATIONAL
+nationalists,CONCEPTUAL
+Britain and France,LOCATION
+Italian,NATIONAL
+From 1922 to 1925,PERIOD
+Fascist movement,ORGANISATION
+Benito Mussolini,PERSON
+Italy,LOCATION
+nationalist; totalitarian; and class collaborationist,CONCEPTUAL
+socialist; left - wing and liberal,PERSON_TYPE
+Italy,LOCATION
+New Roman Empire,CONCEPT
+Germany,LOCATION
+Nazi Party,INSTITUTION
+Adolf Hitler,PERSON
+Nazi,CONCEPT
+Germany,LOCATION
+Great Depression,EVENT
+Nazis,PERSON_TYPE
+1933,PERIOD
+Hitler,PERSON
+Chancellor of Germany,TITLE
+Reichstag fire,EVENT
+Hitler,PERSON
+Nazis,PERSON_TYPE
+Kuomintang (KMT) ,ORGANISATION
+China,LOCATION
+unification campaign,EVENT
+China,LOCATION
+1920s,PERIOD
+Chinese communist allies,PERSON_TYPE
+1931,PERIOD
+Japanese Empire,LOCATION
+China,LOCATION
+first,MEASURE
+Asia,LOCATION
+Mukden Incident,EVENT
+invasion of Manchuria,EVENT
+Manchukuo,LOCATION
+Japan,LOCATION
+China,LOCATION
+League of Nations,INSTITUTION
+Japan,LOCATION
+League of Nations,INSTITUTION
+Manchuria,LOCATION
+two,MEASURE
+Shanghai; Rehe and Hebei,LOCATION
+Tanggu Truce,LEGAL
+1933,PERIOD
+Chinese,NATIONAL
+Japanese,NATIONAL
+Manchuria,LOCATION
+Chahar and Suiyuan,LOCATION
+Adolf Hitler,PERSON
+German government,INSTITUTION
+1923,PERIOD
+Chancellor of Germany,TITLE
+1933,PERIOD
+second,MEASURE
+Great War,EVENT
+France,LOCATION
+Italy,LOCATION
+Ethiopia,LOCATION
+Italy,LOCATION
+1935,PERIOD
+Territory of the Saar Basin,LOCATION
+Germany,LOCATION
+Hitler,PERSON
+Treaty of Versailles,LEGAL
+Germany,LOCATION
+United Kingdom; France and Italy,LOCATION
+Stresa Front,INSTITUTION
+Soviet Union,LOCATION
+Germany,LOCATION
+eastern Europe,LOCATION
+France,LOCATION
+Franco - Soviet pact,LEGAL
+League of Nations,INSTITUTION
+June 1935,PERIOD
+United Kingdom,LOCATION
+independent naval agreement,LEGAL
+Germany,LOCATION
+United States,LOCATION
+Europe,LOCATION
+Asia,LOCATION
+Neutrality Act,LEGAL
+August,PERIOD
+October,PERIOD
+Italy,LOCATION
+Ethiopia,LOCATION
+Germany,LOCATION
+European,NATIONAL
+Italy,LOCATION
+Germany,LOCATION
+Austria,LOCATION
+Hitler,PERSON
+Versailles and Locarno treaties,LEGAL
+Rhineland,LOCATION
+March 1936,PERIOD
+European,NATIONAL
+Spanish Civil War,EVENT
+July,PERIOD
+Hitler and Mussolini,PERSON
+fascist and authoritarian Nationalist,CONCEPTUAL
+Soviet,NATIONAL
+Spanish Republic,LOCATION
+Nationalists,PERSON_TYPE
+1939,PERIOD
+October 1936,PERIOD
+Germany and Italy,LOCATION
+Rome - Berlin Axis,INSTITUTION
+Germany and Japan,LOCATION
+Anti - Comintern Pact,LEGAL
+Italy,LOCATION
+China,LOCATION
+Xi' an Incident,EVENT
+Kuomintang,ORGANISATION
+communist,PERSON_TYPE
+Italian invasion of Ethiopia (1935),EVENT
+Second Italo - Abyssinian War,EVENT
+Second Italo - Abyssinian War,EVENT
+began in October 1935 and ended in May 1936,PERIOD
+Kingdom of Italy (Regno d'Italia) ,LOCATION
+Ethiopian Empire,LOCATION
+Abyssinia,LOCATION
+Ethiopia,LOCATION
+Italian East Africa (Africa Orientale Italiana; or AOI) ,LOCATION
+League of Nations,ORGANISATION
+Italy and Ethiopia,LOCATION
+the League,ORGANISATION
+League's own Article,LEGAL
+Spanish Civil War (1936-39),EVENT
+Spanish Civil War,EVENT
+Spanish Civil War,EVENT
+Hitler and Mussolini,PERSON
+Nationalist rebels,PERSON_TYPE
+General Francisco Franco,PERSON
+Soviet Union,LOCATION
+Spanish Republic,LOCATION
+30; 000,MEASURE
+International Brigades,ORGANISATION
+Nationalists,PERSON_TYPE
+Germany and the USSR,LOCATION
+bombing of Guernica,EVENT
+German Condor Legion,INSTITUTION
+April 1937,PERIOD
+Nationalists,PERSON_TYPE
+April 1939,PERIOD
+Franco,PERSON
+Second World War,EVENT
+German,NATIONAL
+Spain,LOCATION
+Japanese invasion of China (1937),EVENT
+Second Sino - Japanese War,EVENT
+July 1937,PERIOD
+Japan,LOCATION
+Chinese,NATIONAL
+Beijing,LOCATION
+Marco Polo Bridge Incident,EVENT
+Japanese,NATIONAL
+China,LOCATION
+Soviets,PERSON_TYPE
+non - aggression pact,LEGAL
+China,LOCATION
+China,LOCATION
+Germany,LOCATION
+Generalissimo Chiang Kai - shek,PERSON
+Shanghai,LOCATION
+after three months,PERIOD
+Shanghai,LOCATION
+Japanese,NATIONAL
+Chinese,NATIONAL
+Nanking,LOCATION
+December 1937,PERIOD
+Nanking Massacre,EVENT
+June 1938,PERIOD
+Chinese,NATIONAL
+Japanese,NATIONAL
+Yellow River,LOCATION
+Chinese,PERSON_TYPE
+Wuhan,LOCATION
+October,PERIOD
+Japanese,NATIONAL
+Chinese,NATIONAL
+Japan,LOCATION
+Chinese government,INSTITUTION
+Chongqing,LOCATION
+Japanese invasion of the Soviet Union and Mongolia (1938) ,NATIONAL
+29 July 1938,PERIOD
+Japanese,PERSON_TYPE
+USSR,LOCATION
+Battle of Lake Khasan,EVENT
+Soviet,NATIONAL
+Japanese,PERSON_TYPE
+11 May 1939,PERIOD
+Japanese-Mongolian border,LOCATION
+Khalkhin Gol River,LOCATION
+Japanese,NATIONAL
+Mongolia,LOCATION
+Red Army,ORGANISATION
+first,MEASURE
+Japanese Kwantung Army,INSTITUTION
+Japanese government,INSTITUTION
+Soviet government,INSTITUTION
+China,LOCATION
+US,LOCATION
+European,NATIONAL
+Pacific,LOCATION
+Soviet,NATIONAL
+Georgy Zhukov,PERSON
+defence of Moscow,EVENT
+European,NATIONAL
+Anschluss,EVENT
+Munich Agreement,LEGAL
+German occupation of Czechoslovakia,EVENT
+Molotov - Ribbentrop Pact,LEGAL
+Europe,LOCATION
+Germany and Italy,LOCATION
+March 1938,PERIOD
+Germany,LOCATION
+Austria,LOCATION
+European,NATIONAL
+Hitler,PERSON
+German,NATIONAL
+Sudetenland,LOCATION
+Czechoslovakia,LOCATION
+German,NATIONAL
+France and Britain,LOCATION
+Germany,LOCATION
+Munich Agreement,LEGAL
+Czechoslovak government,INSTITUTION
+Germany and Italy,LOCATION
+Czechoslovakia,LOCATION
+Hungary and Poland,LOCATION
+Germany,LOCATION
+Hitler,PERSON
+British,NATIONAL
+Czechoslovakia,LOCATION
+one,MEASURE
+Hitler,PERSON
+British and Jewish,PERSON_TYPE
+January 1939,PERIOD
+German navy,INSTITUTION
+British,NATIONAL
+March 1939,PERIOD
+Germany,LOCATION
+Czechoslovakia,LOCATION
+German Protectorate of  Bohemia and Moravia,LOCATION
+German,NATIONAL
+Slovak Republic,LOCATION
+Hitler,PERSON
+Danzig,LOCATION
+France and Britain,LOCATION
+Polish independence,EVENT
+Italy,LOCATION
+Albania,LOCATION
+April 1939,PERIOD
+Romania and Greece,LOCATION
+Franco - British,NATIONAL
+Poland,LOCATION
+Germany and Italy,LOCATION
+Pact of Steel,LEGAL
+Hitler,PERSON
+Britain and Poland,LOCATION
+Germany,LOCATION
+Anglo - German Naval Agreement and the German - Polish Non - Aggression Pact,LEGAL
+Poland,LOCATION
+non - aggression pact,LEGAL
+German,NATIONAL
+Danzig,LOCATION
+Germany,LOCATION
+Poles,PERSON_TYPE
+Danzig,LOCATION
+Poland,LOCATION
+August 1939,PERIOD
+Germany and the Soviet Union,LOCATION
+Molotov - Ribbentrop Pact; a non - aggression treaty,LEGAL
+western Poland and Lithuania,LOCATION
+Germany,LOCATION
+eastern Poland; Finland; Estonia; Latvia and Bessarabia,LOCATION
+USSR,LOCATION
+Polish independence,EVENT
+Hitler,PERSON
+Germany,LOCATION
+two,MEASURE
+World War I,EVENT
+Poland,LOCATION
+August,PERIOD
+German,NATIONAL
+Polish,NATIONAL
+Italian foreign minister; Count  Ciano,PERSON
+Hitler,PERSON
+Poland,LOCATION
+German,NATIONAL
+Britain or France,LOCATION
+23 August,PERIOD
+Hitler,PERSON
+26 August,PERIOD
+Britain,LOCATION
+Poland,LOCATION
+Italy,LOCATION
+British,NATIONAL
+Germany,LOCATION
+29 August,PERIOD
+Polish,NATIONAL
+Berlin,LOCATION
+Danzig,LOCATION
+Polish Corridor,LOCATION
+Germany,LOCATION
+German,NATIONAL
+Poland,LOCATION
+Poles,PERSON_TYPE
+31 August,PERIOD
+Germany,LOCATION
+World War II,EVENT
+Europe,LOCATION
+1939 - 40,PERIOD
+1 September 1939,PERIOD
+Germany and Slovakia,LOCATION
+German,NATIONAL
+invaded Poland,EVENT
+Poland,LOCATION
+German,NATIONAL
+3 September,PERIOD
+France and Britain,LOCATION
+Dominions of the British Commonwealth,LOCATION
+Australia; Canada; New Zealand and South Africa,LOCATION
+Germany,LOCATION
+Poland,LOCATION
+French attack into the Saarland,EVENT
+Britain and France,LOCATION
+Germany,LOCATION
+3 September,PERIOD
+Germany,LOCATION
+U - boat,ARTIFACT
+Allied,INSTITUTION
+Battle of the Atlantic,EVENT
+17 September 1939,PERIOD
+Japan,LOCATION
+Soviets,ORGANISATION
+Poland,LOCATION
+Polish army,INSTITUTION
+Warsaw,LOCATION
+Germans,PERSON_TYPE
+27 September,PERIOD
+6 October,PERIOD
+Poland,LOCATION
+Germany and the Soviet Union,LOCATION
+Lithuania and Slovakia,LOCATION
+Poles,PERSON_TYPE
+Polish Underground State,ORGANISATION
+Home Army,ORGANISATION
+Allies,INSTITUTION
+Europe and North Africa,LOCATION
+100; 000,MEASURE
+Polish,NATIONAL
+Romania,LOCATION
+Baltic,LOCATION
+Germans,PERSON_TYPE
+Poland,LOCATION
+Enigma,ARTIFACT
+France,LOCATION
+Japan,LOCATION
+first,MEASURE
+Changsha,LOCATION
+Chinese,NATIONAL
+September,PERIOD
+6 October,PERIOD
+Hitler,PERSON
+Britain and France,LOCATION
+Poland,LOCATION
+Germany and the Soviet Union,LOCATION
+Chamberlain,PERSON
+12 October,PERIOD
+German Government,INSTITUTION
+Hitler,PERSON
+France,LOCATION
+May of next year,PERIOD
+December 1939,PERIOD
+Britain,LOCATION
+Germany,LOCATION
+south Atlantic,LOCATION
+Battle of the River Plate,EVENT
+Poland,LOCATION
+German - Soviet treaty,LEGAL
+Lithuania,LOCATION
+Soviet Union,LOCATION
+Baltic,LOCATION
+Soviet,NATIONAL
+Finland,LOCATION
+Soviet Union,LOCATION
+November 1939,PERIOD
+March 1940,PERIOD
+Finnish,NATIONAL
+France and the United Kingdom,LOCATION
+Soviet,NATIONAL
+Finland,LOCATION
+Germans,PERSON_TYPE
+Soviet,NATIONAL
+USSR,LOCATION
+League of Nations,INSTITUTION
+Western Europe,LOCATION
+British,NATIONAL
+Continent,LOCATION
+Phoney War,EVENT
+British,NATIONAL
+ Sitzkrieg  (sitting war) ,EVENT
+Germans,PERSON_TYPE
+April 1940,PERIOD
+Soviet Union and Germany,LOCATION
+February 1940,PERIOD
+Soviets,ORGANISATION
+German,NATIONAL
+Germany,LOCATION
+Allied,INSTITUTION
+Western Europe,LOCATION
+1940 - 41,PERIOD
+April 1940,PERIOD
+Germany,LOCATION
+Denmark and Norway,LOCATION
+Sweden,LOCATION
+Allies,INSTITUTION
+Norwegian,NATIONAL
+Denmark,LOCATION
+Allied,INSTITUTION
+Norway,LOCATION
+two months,PERIOD
+British,NATIONAL
+Norwegian,NATIONAL
+British Prime Minister; Neville Chamberlain,PERSON
+Winston Churchill,PERSON
+10 May 1940,PERIOD
+Germany,LOCATION
+France,LOCATION
+Belgium; the Netherlands; and Luxembourg,LOCATION
+10 May 1940,PERIOD
+Britain,LOCATION
+Iceland,LOCATION
+German,NATIONAL
+Netherlands and Belgium,LOCATION
+blitzkrieg,LOCATION
+few days and weeks,PERIOD
+French,NATIONAL
+Maginot Line,LOCATION
+Allied,INSTITUTION
+Belgium,LOCATION
+Ardennes,LOCATION
+French,NATIONAL
+Allied armies,INSTITUTION
+British,NATIONAL
+Dunkirk,LOCATION
+June,PERIOD
+10 June,PERIOD
+Italy,LOCATION
+France,LOCATION
+France and Britain,LOCATION
+Paris,LOCATION
+14 June,PERIOD
+eight days later,PERIOD
+France,LOCATION
+German and Italian,NATIONAL
+Vichy Regime,EVENT
+Germany,LOCATION
+France,LOCATION
+British,PERSON_TYPE
+Germans,PERSON_TYPE
+3 July,PERIOD
+British,NATIONAL
+June 1940,PERIOD
+Soviet Union,LOCATION
+Estonia; Latvia and Lithuania,LOCATION
+Romanian region of Bessarabia,LOCATION
+Nazi - Soviet,NATIONAL
+19 July,PERIOD
+Hitler,PERSON
+British Empire,LOCATION
+Britain,LOCATION
+Lord Halifax,PERSON
+Europe,LOCATION
+Germany,LOCATION
+Britain,LOCATION
+Battle of Britain,EVENT
+September,PERIOD
+British,NATIONAL
+Berlin,LOCATION
+Germany,LOCATION
+British,NATIONAL
+the Blitz,EVENT
+British,NATIONAL
+French,NATIONAL
+German Navy,INSTITUTION
+Royal Navy,INSTITUTION
+U - boats,ARTIFACT
+British,NATIONAL
+Atlantic,LOCATION
+British,PERSON_TYPE
+27 May 1941,PERIOD
+German,NATIONAL
+Bismarck,ARTIFACT
+Battle of Britain,EVENT
+Royal Air Force,INSTITUTION
+Luftwaffe,INSTITUTION
+German,NATIONAL
+May 1941,PERIOD
+United States,LOCATION
+China,LOCATION
+Western Allies,INSTITUTION
+November 1939,PERIOD
+American Neutrality Act,LEGAL
+Allies,INSTITUTION
+1940,PERIOD
+German capture of Paris,EVENT
+United States Navy,INSTITUTION
+September,PERIOD
+United States,LOCATION
+American,NATIONAL
+British,NATIONAL
+American,NATIONAL
+1941,PERIOD
+Roosevelt,PERSON
+United States,LOCATION
+December 1940,PERIOD
+Hitler,PERSON
+US,LOCATION
+the passage of Lend - Lease,CONCEPT
+British,NATIONAL
+January 1941,PERIOD
+British,PERSON_TYPE
+Germany,LOCATION
+US,LOCATION
+Italy,LOCATION
+Germany,LOCATION
+end of September 1940,PERIOD
+Tripartite Pact,LEGAL
+Japan; Italy and Germany,LOCATION
+Axis Powers,INSTITUTION
+Tripartite Pact,LEGAL
+Soviet Union,LOCATION
+Axis Power,INSTITUTION
+three,MEASURE
+Axis,INSTITUTION
+November 1940,PERIOD
+Hungary; Slovakia and Romania,LOCATION
+Tripartite Pact,LEGAL
+Romania,LOCATION
+Axis,INSTITUTION
+USSR,LOCATION
+USSR,LOCATION
+Ion Antonescu,PERSON
+communism,CONCEPT
+the Archive,INSTITUTION
+four,MEASURE
+first,MEASURE
+from 1919-1940,PERIOD
+Lithuanian independence,EVENT
+World War I,EVENT
+second,MEASURE
+from 1941-1944,PERIOD
+Nazi occupation of Lithuania,EVENT
+third,MEASURE
+from 1944-1991,PERIOD
+Soviet regime,EVENT
+fourth,MEASURE
+from 1991 to the present,PERIOD
+first,MEASURE
+Constitution,LEGAL
+Central National Archives,INSTITUTION
+Kaunas,LOCATION
+Lithuania,LOCATION
+1921,PERIOD
+peace treaty,LEGAL
+Soviet Russia and Lithuania,LOCATION
+Kaunas,LOCATION
+Russia,LOCATION
+Czarist regime,EVENT
+second,MEASURE
+Nazi rule,EVENT
+the Archive,INSTITUTION
+the Archive,INSTITUTION
+Reichskommissariat Ostland,INSTITUTION
+German,NATIONAL
+the Archives,INSTITUTION
+Office for Internal Affairs,INSTITUTION
+Kaunas,LOCATION
+third,MEASURE
+two,MEASURE
+1940,PERIOD
+Soviet Union,LOCATION
+the Archives,INSTITUTION
+Vilnius,LOCATION
+the Archives,INSTITUTION
+NKVD,INSTITUTION
+Soviet Union,LOCATION
+after World War II,PERIOD
+the Archives,INSTITUTION
+NKVD,INSTITUTION
+1960,PERIOD
+the Archives,INSTITUTION
+National Council of Soviet Union Archives,INSTITUTION
+the Archives Law,LEGAL
+Archives,INSTITUTION
+Lithuanian Central State Archives,INSTITUTION
+the Archives,INSTITUTION
+Central Archives administration,INSTITUTION
+Lithuanian Council of Ministers,INSTITUTION
+the Archives,INSTITUTION
+between 1918 and 1990,PERIOD
+Lithuanian,NATIONAL
+the Archives,INSTITUTION
+Lithuanian Constitution,LEGAL
+European Union legislation,LEGAL
+the Archives,INSTITUTION
+the Archives,INSTITUTION
+from 1918 until 1990,PERIOD
+The division of Sound and Image,INSTITUTION
+Lithuania,LOCATION
+since 1919,PERIOD
+since 1850's,PERIOD
+since 1950,PERIOD
+since 1988 until the present day,PERIOD
+Archives,INSTITUTION
+31 000 linear meters,MEASURE
+the Archive,INSTITUTION
+177,MEASURE
+Nazi occupation,EVENT
+72 189,MEASURE
+Nazi period,EVENT
+390;000,MEASURE
+middle of the 19th c,PERIOD
+A. Strauss; J. Čechavičius; A. Fleury; V. Zatorskis,PERSON
+J. Bulhakas; M. Smečechauskas; J. Karazija; J. Miežlaiškis; B. Buračas; A.Varnas; A. Mickus; V. Janiselis,PERSON
+Soviet period,PERIOD
+Lithuanian,NATIONAL
+ELTA,MEDIA
+J. Juknevičius; V. Kapočius; A. Žižiūnas,PERSON
+20;000,MEASURE
+Lithuanian,NATIONAL
+Riga,LOCATION
+Riga,LOCATION
+1907,PERIOD
+3;000,MEASURE
+1988,PERIOD
+the Archives,INSTITUTION
+National Liberation Movement Sąjūdis,ORGANISATION
+independence of Lithuania,EVENT
+January 1991,PERIOD
+partisans,PERSON_TYPE
+the Archives,INSTITUTION
+Lithuanian National Foundation; Inc,ORGANISATION
+9;000,MEASURE
+1910s– to date,PERIOD
+Lumieres,PERSON
+1895,PERIOD
+the Archives,INSTITUTION
+Lithuanian,NATIONAL
+from 1918–1940,PERIOD
+Lithuanian,NATIONAL
+K. Lukšys; J.Milius; brothers Motūza-Beleckas; S. Vainalavičius; S. Uzdonas and J. Miežlaiškis,PERSON
+World War II,EVENT
+Lithuanian Film Studios,BUSINESS
+Lithuanian,NATIONAL
+1946–1990,PERIOD
+Lithuanian,NATIONAL
+Blue Horizon (Žydrasis horizontas);The Bridge (Tiltas); Ignotas Returned Home (Ignotas grįžo namo); The Turkeys (Kalakutai),CREATION
+World War Z: An Oral History of the Zombie War (2006),CREATION
+Max Brooks,PERSON
+United Nations Postwar Commission,INSTITUTION
+decade,MEASURE
+World War Z,CREATION
+Brooks,PERSON
+The Zombie Survival Guide (2003),CREATION
+The Good War: An Oral History of World War Two (1984),CREATION
+Studs Terkel,PERSON
+George A. Romero,PERSON
+Brooks,PERSON
+World War Z,CREATION
+American isolationism,CONCEPT
+survivalism,CONCEPT
+Alan Alda; Mark Hamill; and John Turturro,PERSON
+Audie Award,AWARD
+2007,PERIOD
+Marc Forster,PERSON
+Brad Pitt,PERSON
+2013,PERIOD
+Max Brooks,PERSON
+United Nations Postwar Commission,INSTITUTION
+China,LOCATION
+Chinese government,INSTITUTION
+Taiwan,LOCATION
+South Africa,LOCATION
+Israel,LOCATION
+Palestinian territories,LOCATION
+Jews and Palestinians,PERSON_TYPE
+ultra-Orthodox uprising,CONCEPTUAL
+Israeli,NATIONAL
+United States,LOCATION
+Great Panic,EVENT
+Pakistan and Iran,LOCATION
+Iranian government,INSTITUTION
+Pakistan,LOCATION
+Iran,LOCATION
+New York City,LOCATION
+U.S. military,INSTITUTION
+Yonkers,LOCATION
+Battle of Yonkers,EVENT
+South Africa,LOCATION
+apartheid-era,PERIOD
+Paul Redeker,PERSON
+Japanese archipelago,LOCATION
+Kamchatka,LOCATION
+North America,LOCATION
+northern Canada,LOCATION
+Arctic,LOCATION
+eleven million,MEASURE
+cannibalism,CONCEPT
+cannibalism,CONCEPT
+United States,LOCATION
+three,MEASURE
+International Space Station,INSTALLATION
+Chinese space station,INSTALLATION
+ISS,INSTITUTION
+American Great Plains and Central Asia,LOCATION
+Earth,LOCATION
+U.S.,LOCATION
+Rocky Mountains,LOCATION
+next decade,PERIOD
+U.S. government,INSTITUTION
+Re-education Act,LEGAL
+Seven years after the outbreak,PERIOD
+coast of Honolulu,LOCATION
+USS Saratoga,INSTALLATION
+U.S. President,TITLE
+U.S. military,INSTITUTION
+Indian Army,INSTITUTION
+Great Panic,EVENT
+Lobotomizer,ARTIFACT
+Lobo,ARTIFACT
+American,NATIONAL
+three-year,PERIOD
+United States,LOCATION
+Ten years after the official end of the zombie war,PERIOD
+millions,MEASURE
+Cuba,LOCATION
+China,LOCATION
+Chinese Federation,LOCATION
+Tibet,LOCATION
+Chinese,NATIONAL
+Lhasa,LOCATION
+Russian orthodoxy,CONCEPT
+Russia,LOCATION
+Holy Russian Empire,LOCATION
+Russians,NATIONAL
+North Korea,LOCATION
+British Isles,LOCATION
+Ireland,LOCATION
+British Royal Family,PERSON_TYPE
+Ireland and the Isle of Man,LOCATION
+Antonine Wall,INSTALLATION
+Windsor Castle,INSTALLATION
+Queen,TITLE
+The Papacy,INSTITUTION
+Roman Catholic Archdiocese of Armagh,INSTALLATION
+France,LOCATION
+Palace of Versailles,INSTALLATION
+the catacombs,INSTALLATION
+Paris,LOCATION
+the catacombs,INSTALLATION
+a quarter of a million,MEASURE
+Iceland,LOCATION
+Israelis and Palestinians,PERSON_TYPE
+occupied territories,LOCATION
+Unified Palestine,LOCATION
+Mexico,LOCATION
+Aztlán,LOCATION
+Pacific Continent,LOCATION
+Saudi Royal Family,PERSON_TYPE
+Saudi Arabia,LOCATION
+United Nations,ORGANISATION
+Brooks,PERSON
+World War Z,CREATION
+The Zombie Survival Guide (2003),CREATION
+The Zombie Survival Guide,CREATION
+Max Brooks,PERSON
+George Romero,PERSON
+SDCC,EVENT
+2007,PERIOD
+Brooks,PERSON
+The Good War: An Oral History of World War Two (1984),CREATION
+Studs Terkel,PERSON
+Terkel,PERSON
+World War II,EVENT
+World War Z: An Oral History of the Zombie War,CREATION
+Brooks,PERSON
+George A. Romero,PERSON
+The Return of the Living Dead,CREATION
+the living dead,CREATION
+Batman,CREATION
+The Dark Knight,CREATION
+Brooks,PERSON
+Transformers,CREATION
+Brooks,PERSON
+World War Z,CREATION
+Brooks,PERSON
+U.S. Army,INSTITUTION
+National Archives of Belgium,INSTITUTION
+French law of October 26th 1796 (5 Brumair V),LEGAL
+Brussels,LOCATION
+Ancien Régime,PERIOD
+1831,PERIOD
+Brussels,LOCATION
+National Archives of Belgium,INSTITUTION
+early nineteenth century,PERIOD
+National State Archivist,TITLE
+National Archives,INSTITUTION
+1851,PERIOD
+The “Archives Générales du Royaume”(National Archives of Belgium) and the “Archives de l’État dans les Provinces”(State Archives in the Provinces),INSTITUTION
+State Archives,INSTITUTION
+“Service Public Fédéral de Programmation Politique scientifique”(Belgian Federal Science Policy Office),INSTITUTION
+Archives Générales du Royaume,INSTITUTION
+Brussels,LOCATION
+18,MEASURE
+State Archives,INSTITUTION
+State Archives,INSTITUTION
+State Archives,INSTITUTION
+State Archives,INSTITUTION
+30 years,PERIOD
+National Archives of Belgium 2 – Joseph Cuvelier repository,INSTITUTION
+Federal Public Service Justice,INSTITUTION
+Brussels-Capital Region,LOCATION
+justices of peace; police tribunals; Court of Cassation,INSTITUTION
+Federal Public Service Economy,INSTITUTION
+Ministry for Reconstruction,INSTITUTION
+http://search.arch.be/,WEBSITE
+State Archives,INSTITUTION
+Brexit,EVENT
+United Kingdom (UK),LOCATION
+European Union (EU),INSTITUTION
+June 2016 referendum,EVENT
+52%,MEASURE
+EU,INSTITUTION
+UK,LOCATION
+European Union,INSTITUTION
+Article 50 of the Treaty On European Union of EU member states,LEGAL
+since 2007,PERIOD
+UK,LOCATION
+UE law – Article 50,LEGAL
+two years,PERIOD
+Britain,LOCATION
+June 2016,PERIOD
+two-year,PERIOD
+UK,LOCATION
+European Economic Community (EEC),INSTITUTION
+EU,INSTITUTION
+1973,PERIOD
+EEC,INSTITUTION
+1975 referendum,EVENT
+67%,MEASURE
+UK,LOCATION
+Treaty of Rome,LEGAL
+EEC,INSTITUTION
+1957,PERIOD
+1963,PERIOD
+1967,PERIOD
+President of France; Charles de Gaulle,PERSON
+Britain,LOCATION
+Britain,LOCATION
+Europe,LOCATION
+Britain,LOCATION
+European,NATIONAL
+de Gaulle,PERSON
+French,NATIONAL
+UK,LOCATION
+third,MEASURE
+Conservative Prime Minister Edward Heath,PERSON
+European Communities Act 1972,LEGAL
+1 January 1973,PERIOD
+United Kingdom,LOCATION
+EEC; or Common Market,INSTITUTION
+Labour Party,ORGANISATION
+Harold Wilson,PERSON
+October 1974 general election,EVENT
+Britain,LOCATION
+EEC,INSTITUTION
+EEC,INSTITUTION
+1975 referendum,EVENT
+United Kingdom European Communities membership referendum; 1975,EVENT
+1975,PERIOD
+United Kingdom,LOCATION
+UK,LOCATION
+EEC,INSTITUTION
+EEC,INSTITUTION
+Labour party;,ORGANISATION
+2:1,MEASURE
+one-day,PERIOD
+26 April 1975,PERIOD
+European,NATIONAL
+European,NATIONAL
+Harold Wilson,PERSON
+Cabinet collective responsibility,LEGAL
+Seven of the twenty-three,MEASURE
+EEC,INSTITUTION
+5 June 1975,PERIOD
+UK,LOCATION
+European Community (Common Market),INSTITUTION
+UK,LOCATION
+Shetland Islands,LOCATION
+Outer Hebrides,LOCATION
+67%,MEASURE
+United Kingdom,LOCATION
+EEC,INSTITUTION
+United Kingdom European Community (Common Market) Membership Referendum 1975,EVENT
+Labour Party,ORGANISATION
+1983 general election,EVENT
+EEC,INSTITUTION
+Conservative,PERSON_TYPE
+Margaret Thatcher,PERSON_TYPE
+Labour Party,ORGANISATION
+Maastricht Treaty,LEGAL
+EEC,INSTITUTION
+European Union,INSTITUTION
+1 November 1993,PERIOD
+Referendum Party,ORGANISATION
+1994,PERIOD
+Sir James Goldsmith,PERSON
+1997 general election,EVENT
+UK,LOCATION
+EU,INSTITUTION
+547,MEASURE
+810;860,MEASURE
+2.6%,MEASURE
+Goldsmith,PERSON
+505,MEASURE
+UK Independence Party (UKIP),ORGANISATION
+Eurosceptic,CONCEPTUAL
+1993,PERIOD
+third,MEASURE
+UK,LOCATION
+2004 European elections,EVENT
+second,MEASURE
+2009 European elections,EVENT
+first,MEASURE
+2014 European elections,EVENT
+27.5%,MEASURE
+first,MEASURE
+1910 general election,EVENT
+Labour or Conservative parties,ORGANISATION
+2014,PERIOD
+UKIP,ORGANISATION
+two,MEASURE
+Conservative MPs,TITLE
+UKIP,ORGANISATION
+MPs,TITLE
+2015 general election,EVENT
+UKIP,ORGANISATION
+12.6%,MEASURE
+one of the two,MEASURE
+2014,PERIOD
+Brexit,EVENT
+Brexit,EVENT
+Brexit,EVENT
+Britain,LOCATION
+Grexit,CONCEPT
+Brexit,EVENT
+UK,LOCATION
+EU,INSTITUTION
+Peter Wilding,PERSON
+Euractiv,MEDIA
+15 May 2012,PERIOD
+2016 referendum,EVENT
+United Kingdom European Union membership referendum; 2016,EVENT
+United Kingdom European Union membership referendum; 2016,EVENT
+United Kingdom European Union membership referendum; 2016,EVENT
+Wikipedia,WEBSITE
+2012,PERIOD
+Prime Minister David Cameron,PERSON
+UK,LOCATION
+EU,INSTITUTION
+BBC,MEDIA
+prime minister,TITLE
+UK,LOCATION
+European Union,INSTITUTION
+British,PERSON_TYPE
+MPs,TITLE
+UKIP,ORGANISATION
+January 2013,PERIOD
+Cameron,PERSON
+Conservative,PERSON_TYPE
+EU,INSTITUTION
+before the end of 2017,PERIOD
+2015,PERIOD
+Conservative Party,ORGANISATION
+2015 general election,EVENT
+European Union Referendum Act 2015,LEGAL
+Parliament,INSTITUTION
+European Union,INSTITUTION
+Cameron,PERSON
+Conservative Ministers and MPs,TITLE
+EU,INSTITUTION
+cabinet collective responsibility,LEGAL
+Cameron,PERSON
+cabinet ministers,TITLE
+EU,INSTITUTION
+House of Commons,INSTITUTION
+22 February 2016,PERIOD
+Cameron,PERSON
+23 June 2016,PERIOD
+European Union,INSTITUTION
+Article 50 of the Lisbon Treaty,LEGAL
+Cameron,PERSON
+Article 50,LEGAL
+two-year,PERIOD
+United Kingdom European Union membership referendum; 2016,EVENT
+EU,INSTITUTION
+Vote Leave,ORGANISATION
+Leave,ORGANISATION
+EU,INSTITUTION
+Grassroots Out; and Better Off Out,ORGANISATION
+EU,INSTITUTION
+United Kingdom,LOCATION
+Commonwealth Freedom of Movement Organisation,ORGANISATION
+EU,INSTITUTION
+Stuart Rose,PERSON
+Britain Stronger in Europe,ORGANISATION
+Remain,ORGANISATION
+EU,INSTITUTION
+Conservatives In; Labour in for Britain; #INtogether (Liberal Democrats); Greens for a Better Europe; Scientists for EU; Environmentalists For Europe; Universities for Europe and Another is Possible,ORGANISATION
+United Kingdom European Union membership referendum; 2016,EVENT
+morning of 24 June,PERIOD
+52%,MEASURE
+European Union,INSTITUTION
+48%,MEASURE
+European Union,INSTITUTION
+United Kingdom European Union membership referendum; 2016,EVENT
+Leave,ORGANISATION
+Remain,ORGANISATION
+UK,LOCATION
+Cameron,PERSON
+October,PERIOD
+13 July,PERIOD
+Theresa May,PERSON
+Prime Minister,TITLE
+George Osborne,PERSON
+Chancellor of the Exchequer,TITLE
+Philip Hammond,PERSON
+Boris Johnson,PERSON
+Secretary of State for Foreign and Commonwealth Affairs,TITLE
+David Davis,PERSON
+Secretary of State for Exiting the European Union,TITLE
+Labour,ORGANISATION
+Jeremy Corbyn,PERSON
+4 July,PERIOD
+Nigel Farage,PERSON
+head of UKIP,TITLE
+UK,LOCATION
+Eurosceptic,CONCEPTUAL
+UK,LOCATION
+a week after the Brexit,PERIOD
+EU,INSTITUTION
+Europe,LOCATION
+Dutch,NATIONAL
+Geert Wilders,PERSON
+Netherlands,LOCATION
+Britain,LOCATION
+Netherlands,LOCATION
+European Union,INSTITUTION
+British referendum,EVENT
+Netherlands,LOCATION
+European,NATIONAL
+Eurosceptic movements,ORGANISATION
+second,MEASURE
+less than 60%,MEASURE
+less than 75%,MEASURE
+tens of thousands,MEASURE
+EU,INSTITUTION
+more than four million,MEASURE
+Parliament,INSTITUTION
+27 June 2016,PERIOD
+David Cameron,PERSON
+Britain,LOCATION
+European Union,INSTITUTION
+Home Secretary Theresa May,PERSON
+Cameron,PERSON
+Conservative,PERSON_TYPE
+Prime Minister,TITLE
+30 June,PERIOD
+EU,INSTITUTION
+Brexit,EVENT
+Brexit,EVENT
+9 July,PERIOD
+EU,INSTITUTION
+Commons Petitions Committee,ORGANISATION
+5 September 2016,PERIOD
+Article 50,LEGAL
+EU,INSTITUTION
+UK,LOCATION
+Article 50,LEGAL
+Article 50 of the Treaty on European Union,LEGAL
+European Council,INSTITUTION
+two year,PERIOD
+Scottish independence referendum,EVENT
+two years earlier,PERIOD
+2016 referendum,EVENT
+Article 50,LEGAL
+Cameron,PERSON
+Article 50,LEGAL
+Civil Service,INSTITUTION
+Foreign Affairs Select Committee,ORGANISATION
+Cameron,PERSON
+Conservative party conference in October,EVENT
+Prime Minister,TITLE
+Article 50,LEGAL
+European Union,INSTITUTION
+Prime Minister,TITLE
+Prime Minister,TITLE
+Article 50,LEGAL
+EU,INSTITUTION
+David Cameron,PERSON
+EU referendum,EVENT
+PM,TITLE
+24 June 2016,PERIOD
+uk,LOCATION
+25 June 2016,PERIOD
+second,MEASURE
+Alan Renwick,PERSON
+Constitution Unit of University College London,ORGANISATION
+Article 50,LEGAL
+Article 50,LEGAL
+UK government,INSTITUTION
+UK Government,INSTITUTION
+Article 50,LEGAL
+UK,LOCATION
+EU,INSTITUTION
+EU,INSTITUTION
+EU,INSTITUTION
+UK,LOCATION
+Article 50,LEGAL
+UK,LOCATION
+EU,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+Article 7,LEGAL
+EU,INSTITUTION
+EU,INSTITUTION
+Article 7,LEGAL
+EU,INSTITUTION
+UK,LOCATION
+Article 50,LEGAL
+Jean-Claude Juncker,PERSON
+EU Commision,INSTITUTION
+UK,LOCATION
+Brexit,EVENT
+29 June,PERIOD
+European Council president Donald Tusk,PERSON
+UK,LOCATION
+European Single Market,INSTITUTION
+four,MEASURE
+German Chancellor Angela Merkel,PERSON
+European Union,INSTITUTION
+Cameron,PERSON
+Prime Minister,TITLE
+Article 50,LEGAL
+EU,INSTITUTION
+27 June 2016,PERIOD
+senior Conservative Oliver Letwin,PERSON
+Prime Minister,TITLE
+UK,LOCATION
+28 June 2016,PERIOD
+EU Parliament,INSTITUTION
+Article 50,LEGAL
+EU,INSTITUTION
+PM Theresa May,PERSON
+EU,INSTITUTION
+UK,LOCATION
+Scotland,LOCATION
+15 July 2016,PERIOD
+May,PERSON
+article 50,LEGAL
+UK,LOCATION
+article 50,LEGAL
+Article 50,LEGAL
+prime minister,TITLE
+Article 50,LEGAL
+Act of Parliament,LEGAL
+Three,MEASURE
+one,MEASURE
+Article 50,LEGAL
+Scottish Parliament,INSTITUTION
+First Minister of Scotland Nicola Sturgeon,PERSON
+Scotland,LOCATION
+EU,INSTITUTION
+Scotland,LOCATION
+Brexit,EVENT
+Two days,PERIOD
+PM,TITLE
+Theresa May,PERSON
+Edinburgh,LOCATION
+Sturgeon,PERSON
+Scotland,LOCATION
+UK,LOCATION
+Bute House,INSTALLATION
+May,PERSON
+Scotland,LOCATION
+UK,LOCATION
+EU,INSTITUTION
+first minister,TITLE
+Scottish government,INSTITUTION
+Article 50,LEGAL
+19 July 2016,PERIOD
+High Court,INSTITUTION
+Article 50,LEGAL
+prime minister,TITLE
+end of 2016,PERIOD
+Nicolas J. Firzli of the World Pensions Council (WPC),PERSON
+Britain,LOCATION
+Her Majesty's Government,INSTITUTION
+Brussels,LOCATION
+Article 50,LEGAL
+UK,LOCATION
+Prime Minister Theresa May,PERSON
+EU,INSTITUTION
+2016,PERIOD
+European council,INSTITUTION
+United Kingdom,LOCATION
+article 50,LEGAL
+May,PERSON
+ 20 July,PERIOD
+Germany's Chancellor Angela Merkel,PERSON
+UK,LOCATION
+EU,INSTITUTION
+European Union,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+EU,INSTITUTION
+UK Parliament,INSTITUTION
+EU,INSTITUTION
+European Economic Area (EEA),INSTITUTION
+European Free Trade Association (EFTA),INSTITUTION
+Iceland; Liechtenstein; Norway and Switzerland,LOCATION
+Swiss,NATIONAL
+Britain,LOCATION
+since before 1973,PERIOD
+UK,LOCATION
+EEA,INSTITUTION
+EFTA,INSTITUTION
+EU,INSTITUTION
+EU,INSTITUTION
+EU,INSTITUTION
+EU,INSTITUTION
+EU,INSTITUTION
+EEA,INSTITUTION
+EEA Agreement,LEGAL
+EU and EFTA,INSTITUTION
+Switzerland,LOCATION
+Common Agriculture and Fisheries Policies; Customs Union; Common Trade Policy; Common Foreign and Security Policy; direct and indirect taxation; and Police and Judicial Co-operation in Criminal Matters,LEGAL
+EFTA,INSTITUTION
+EFTA,INSTITUTION
+EU,INSTITUTION
+EEA Agreement,LEGAL
+Switzerland,LOCATION
+Brexit,EVENT
+EEA Agreement,LEGAL
+EU and EEA,INSTITUTION
+EEA,INSTITUTION
+EU,INSTITUTION
+EU,INSTITUTION
+Swiss,NATIONAL
+UK,LOCATION
+EU,INSTITUTION
+EU,INSTITUTION
+Swiss,NATIONAL
+EU,INSTITUTION
+Swiss immigration referendum; February 2014,EVENT
+February 2017,PERIOD
+Switzerland,LOCATION
+European Union,INSTITUTION
+Switzerland,LOCATION
+EU,INSTITUTION
+July 2016,PERIOD
+EU,INSTITUTION
+Tim Oliver of the German Institute for International and Security Affairs,PERSON
+British,NATIONAL
+EU,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+European,NATIONAL
+EU,INSTITUTION
+protectionism,CONCEPT
+EU,INSTITUTION
+EU,INSTITUTION
+EU,INSTITUTION
+Conservative MEP,TITLE
+South East England,LOCATION
+Daniel Hannan,PERSON
+BBC Newsnight,CREATION
+European Union,INSTITUTION
+Brexit,EVENT
+EU,INSTITUTION
+Leave campaign,ORGANISATION
+EU,INSTITUTION
+David Cameron,PERSON
+UK,LOCATION
+first four years,PERIOD
+seven years,PERIOD
+Brexit referendum,EVENT
+UK,LOCATION
+EU,INSTITUTION
+July 2016,PERIOD
+UK,LOCATION
+EU,INSTITUTION
+seven years,PERIOD
+UK government,INSTITUTION
+The Observer,MEDIA
+UK,LOCATION
+EU,INSTITUTION
+EU,INSTITUTION
+The Daily Telegraph,MEDIA
+Conservative Party,ORGANISATION
+Tory MPs,TITLE
+European,NATIONAL
+28,MEASURE
+UK treasury,INSTITUTION
+EU,INSTITUTION
+UK,LOCATION
+EU,INSTITUTION
+International Monetary Fund (IMF),INSTITUTION
+0.1%,MEASURE
+UK,LOCATION
+EU,INSTITUTION
+EU,INSTITUTION
+Britain,LOCATION
+EU,INSTITUTION
+European Free Trade Area,INSTITUTION
+Institute for Fiscal Studies,INSTITUTION
+Brexit,EVENT
+UK,LOCATION
+EU,INSTITUTION
+15 June 2016,PERIOD
+Vote Leave,ORGANISATION
+Britain,LOCATION
+EU,INSTITUTION
+Parliament,INSTITUTION
+Finance Bill,LEGAL
+VAT,ACRONYM
+Asylum and Immigration Control Bill,LEGAL
+EU,INSTITUTION
+Britain,LOCATION
+National Health Service (Funding Target) Bill,LEGAL
+100 million,MEASURE
+European Union Law (Emergency Provisions) Bill,LEGAL
+Free Trade Bill,LEGAL
+EU,INSTITUTION
+European Communities Act 1972 (Repeal) Bill,LEGAL
+European Court of Justice,INSTITUTION
+Britain,LOCATION
+EU,INSTITUTION
+24 June 2016,PERIOD
+Moody's,BUSINESS
+UK,LOCATION
+Aa1,MEASURE
+Fitch Ratings,BUSINESS
+AA+,MEASURE
+AA,MEASURE
+GDP,ACRONYM
+Standard & Poor's,BUSINESS
+UK,LOCATION
+AA,MEASURE
+U.K.,LOCATION
+UK,LOCATION
+27 June 2016,PERIOD
+Chancellor of the Exchequer George Osborne,PERSON
+UK,LOCATION
+Institute of Directors,ORGANISATION
+two-thirds,MEASURE
+FTSE 100,CONCEPT
+24 June 2016,PERIOD
+British,NATIONAL
+Osborne,PERSON
+Britain,LOCATION
+British,NATIONAL
+15 July 2016,PERIOD
+Reuters,MEDIA
+UK,LOCATION
+40 billion,MEASURE
+8.2 percent,MEASURE
+three weeks,PERIOD
+Britain,LOCATION
+EU,INSTITUTION
+EPFR (Emerging Portfolio Fund Research),BUSINESS
+Société Générale,BUSINESS
+France,LOCATION
+Brexit,EVENT
+UK,LOCATION
+one month after Brexit,PERIOD
+Guardian,MEDIA
+2tn,MEASURE
+22 July 2016,PERIOD
+July,PERIOD
+Markit Purchasing Managers' Index,CONCEPT
+2009,PERIOD
+one,MEASURE
+29 July 2016,PERIOD
+The Guardian,MEDIA
+Brexit referendum,EVENT
+The City of Berlin; Germany,LOCATION
+UK,LOCATION
+Berlin,LOCATION
+IMF,INSTITUTION
+19 July 2016,PERIOD
+IMF,INSTITUTION
+Brexit,EVENT
+European Union,INSTITUTION
+UK,LOCATION
+International Monetary Fund,INSTITUTION
+British,NATIONAL
+1.7 per cent,MEASURE
+this year,PERIOD
+1.3 per cent,MEASURE
+next year,PERIOD
+UK,LOCATION
+second,MEASURE
+Group of Seven,ORGANISATION
+this year,PERIOD
+United States,LOCATION
+third,MEASURE
+next year,PERIOD
+US and Canada,LOCATION
+European,NATIONAL
+World Pensions Council (WPC) and the University of Bath,INSTITUTION
+Britain,LOCATION
+UK,LOCATION
+EU,INSTITUTION
+Britain,LOCATION
+London,LOCATION
+M Nicolas Firzli; director-general of the World Pensions Council (WPC) and advisory board member for the World Bank Global Infrastructure Facility,PERSON
+Bruce Morley,PERSON
+University of Bath,INSTITUTION
+UK,LOCATION
+Union,INSTITUTION
+Britain,LOCATION
+4 August 2016,PERIOD
+Britain,LOCATION
+Bank of England,INSTITUTION
+10 August,PERIOD
+Institute for Fiscal Studies,INSTITUTION
+Economic and Social Research Council,INSTITUTION
+Britain,LOCATION
+EU,INSTITUTION
+EU,INSTITUTION
+IFS,INSTITUTION
+UK,LOCATION
+70Bn,MEASURE
+8Bn,MEASURE
+Scotland; Northern Ireland; Gibraltar,LOCATION
+Scottish,NATIONAL
+UK,LOCATION
+EU,INSTITUTION
+Scotland,LOCATION
+second,MEASURE
+Scottish,NATIONAL
+Former Labour Scottish First Minister Henry McLeish,PERSON
+Scottish,NATIONAL
+2013,PERIOD
+Scotland,LOCATION
+three and a half,MEASURE
+UK,LOCATION
+EU,INSTITUTION
+Scotland in Union,ORGANISATION
+Scotland,LOCATION
+EU,INSTITUTION
+Brexit,EVENT
+UK,LOCATION
+EU,INSTITUTION
+'Brexit' referendum,EVENT
+Britain,LOCATION
+European Union,INSTITUTION
+Northern Ireland and the Republic of Ireland,LOCATION
+Enda Kenny; the Taoiseach of Ireland,PERSON
+UK,LOCATION
+European Union,INSTITUTION
+Northern Ireland,LOCATION
+Northern Ireland Secretary Theresa Villiers,PERSON
+Germany's parliamentary finance committee,INSTITUTION
+UK and Ireland,LOCATION
+24 June 2016,PERIOD
+UK,LOCATION
+EU,INSTITUTION
+Northern Ireland's Deputy First Minister Martin McGuinness,PERSON
+Irish,NATIONAL
+2015,PERIOD
+Chief Minister of Gibraltar Fabian Picardo,PERSON
+Gibraltar,LOCATION
+EU,INSTITUTION
+UK,LOCATION
+British,NATIONAL
+UK Foreign Affairs Select Committee,ORGANISATION
+Gibraltar,LOCATION
+Brexit,EVENT
+Spain's foreign minister José García-Margallo,PERSON
+Spain,LOCATION
+Gibraltar,LOCATION
+British,NATIONAL
+EU,INSTITUTION
+London,LOCATION
+London,LOCATION
+UK,LOCATION
+EU,INSTITUTION
+Scottish First Minister Nicola Sturgeon,PERSON
+London Mayor Sadiq Khan,PERSON
+EU,INSTITUTION
+London,LOCATION
+Khan,PERSON
+London,LOCATION
+UK,LOCATION
+tens of thousands,MEASURE
+London,LOCATION
+London,LOCATION
+Singapore,LOCATION
+EU,INSTITUTION
+Khan,PERSON
+London,LOCATION
+France,LOCATION
+Mayor of Saint-Quentin; Xavier Bertrand,PERSON
+February 2016,PERIOD
+Britain,LOCATION
+Europe,LOCATION
+Calais,LOCATION
+Dover,LOCATION
+Britain,LOCATION
+European Union,INSTITUTION
+French Finance Minister Emmanuel Macron,PERSON
+Le Touquet treaty,LEGAL
+EU,INSTITUTION
+Brexit,EVENT
+Xavier Bertrand,PERSON
+François Hollande,PERSON
+Touquet agreement,LEGAL
+two years,PERIOD
+Hollande,PERSON
+Touquet deal,LEGAL
+Britain,LOCATION
+Brexit,EVENT
+Union,INSTITUTION
+Bernard Cazeneuve; the French Interior Minister,PERSON
+Calais,LOCATION
+UK,LOCATION
+EU,INSTITUTION
+16%,MEASURE
+EU,INSTITUTION
+British,NATIONAL
+St George's; University of London professor,TITLE
+UKIP,ORGANISATION
+Angus Dalgleish,PERSON
+Britain,LOCATION
+EU,INSTITUTION
+European,NATIONAL
+CERN,INSTITUTION
+European Molecular Biology Laboratory (EMBL),INSTITUTION
+Lisbon Treaty,LEGAL
+EU,INSTITUTION
+Britain,LOCATION
+London School of Economics emeritus professor,TITLE
+UKIP,ORGANISATION
+Alan Sked,PERSON
+EU,INSTITUTION
+Israel and Switzerland,LOCATION
+EU,INSTITUTION
+Britain,LOCATION
+EU,INSTITUTION
+Britain,LOCATION
+EU,INSTITUTION
+2-year,PERIOD
+Article 50 of Treaty of European Union (TEU),LEGAL
+UK government,INSTITUTION
+EU,INSTITUTION
+Horizon 2020,UNKNOWN
+UK,LOCATION
+EU,INSTITUTION
+UK,LOCATION
+July 2016,PERIOD
+The Guardian,MEDIA
+European,NATIONAL
+British,NATIONAL
+Holocaust,EVENT
+Greek,CONCEPT
+ὁλόκαυστος,EVENT
+holókaustos,EVENT
+Shoah,EVENT
+Hebrew,CONCEPT
+השואה,EVENT
+HaShoah,EVENT
+Adolf Hitler,PERSON
+Germany,LOCATION
+six million,MEASURE
+Jews,PERSON_TYPE
+1.5 million,MEASURE
+two - thirds of the nine million,MEASURE
+Jews,PERSON_TYPE
+Europe,LOCATION
+Holocaust,EVENT
+five million,MEASURE
+Jewish,PERSON_TYPE
+Nazi,PERSON_TYPE
+11 million,MEASURE
+Nazi Germany; German - occupied territories,LOCATION
+Nazi Germany,LOCATION
+From 1941 to 1945,PERIOD
+Jews,PERSON_TYPE
+Europe,LOCATION
+Nazi regime,INSTITUTION
+SS,INSTITUTION
+Nazi Party,INSTITUTION
+Germany,LOCATION
+Nazi,PERSON_TYPE
+ethnic Poles,PERSON_TYPE
+Soviet,PERSON_TYPE
+Soviet POWs,PERSON_TYPE
+Slavs; Romanis; communists; homosexuals; Freemasons; Jehovah ' s Witnesses,PERSON_TYPE
+42;500,MEASURE
+Germany and German - occupied territories,LOCATION
+200;000,MEASURE
+Holocaust,EVENT
+Nazis,PERSON_TYPE
+Final Solution to the Jewish Question (die Endlösungder Judenfrage),CONCEPT
+Jews,PERSON_TYPE
+Europe,LOCATION
+German government,INSTITUTION
+Jews,PERSON_TYPE
+Nuremberg Laws of 1935,LEGAL
+Nazis,PERSON_TYPE
+1933,PERIOD
+World War II in 1939,EVENT
+1941,PERIOD
+Germany,LOCATION
+eastern Europe,LOCATION
+Einsatzgruppen,INSTITUTION
+two million,MEASURE
+Jews; partisans,PERSON_TYPE
+end of 1942,PERIOD
+end of World War II,PERIOD
+Europe,LOCATION
+April – May 1945,PERIOD
+Jewish armed resistance,ORGANISATION
+Warsaw Ghetto Uprising of 1943,EVENT
+thousands,MEASURE
+Jewish,PERSON_TYPE
+Waffen - SS,INSTITUTION
+four weeks,PERIOD
+20;000 – 30;000,MEASURE
+Jewish partisans,PERSON_TYPE
+Nazis,PERSON_TYPE
+Eastern Europe,LOCATION
+French Jews,PERSON_TYPE
+French Resistance,ORGANISATION
+Nazis Vichy French,PERSON_TYPE
+Over a hundred,MEASURE
+Jewish,PERSON_TYPE
+Holocaust,EVENT
+holocaust,EVENT
+Greek,CONCEPT
+holókauston,CONCEPT
+Latin,CONCEPT
+Richard of Devizes,PERSON
+12th - century,PERIOD
+first,MEASURE
+Chronicon de rebus gestis Ricardi Primi (1192),CREATION
+holocaustum,CONCEPT
+Thomas Browne,PERSON
+holocaust,CONCEPT
+Urn Burial,CREATION
+1658,PERIOD
+centuries,PERIOD
+English,CONCEPT
+1960s,PERIOD
+Nazi genocide of Jews,EVENT
+Holocaust,EVENT
+after 1978,PERIOD
+shoah,EVENT
+שואה,CONCEPT
+sho'ah,CONCEPT
+shoa,CONCEPT
+Hebrew,CONCEPT
+Holocaust,EVENT
+1940s,PERIOD
+Europe and Israel,LOCATION
+Shoah,CONCEPT
+Jews,PERSON_TYPE
+holocaust,CONCEPT
+Greek,CONCEPT
+Nazis,PERSON_TYPE
+Final Solution to the Jewish Question,CONCEPT
+Final Solution,CONCEPT
+Jews,PERSON_TYPE
+Europe,LOCATION
+Jews,PERSON_TYPE
+Germany,LOCATION
+Third Reich,INSTITUTION
+Holocaust,EVENT
+Michael Berenbaum,PERSON
+Interior Ministry,INSTITUTION
+Jewish,PERSON_TYPE
+Post Office,INSTITUTION
+Finance Ministry,INSTITUTION
+Jewish,PERSON_TYPE
+German,NATIONAL
+Jewish,PERSON_TYPE
+Jewish,PERSON_TYPE
+Jews,PERSON_TYPE
+Jewish,PERSON_TYPE
+German,NATIONAL
+Dehomag (IBM Germany),BUSINESS
+Germany,LOCATION
+Berenbaum,PERSON
+the Final Solution of the Jewish question,CONCEPT
+Germany,LOCATION
+German National Bank,BUSINESS
+Saul Friedländer,PERSON
+Germany,LOCATION
+Europe,LOCATION
+Jews,PERSON_TYPE
+Christian,PERSON_TYPE
+Jews,PERSON_TYPE
+Friedländer,PERIOD
+Holocaust,EVENT
+antisemitic,CONCEPTUAL
+Antisemitism Yellowbadge logo,UNKNOWN
+Jewish,PERSON_TYPE
+Israeli,NATIONAL
+Yehuda Bauer,PERSON
+Holocaust,EVENT
+Nazi,PERSON_TYPE
+Jewish,PERSON_TYPE
+Aryan,PERSON_TYPE
+German,NATIONAL
+Eberhard Jäckel,PERSON
+1986,PERIOD
+Holocaust,EVENT
+German - occupied territory,LOCATION
+35,MEASURE
+European,NATIONAL
+Central and Eastern Europe,LOCATION
+seven million,MEASURE
+Jews,PERSON_TYPE
+1939,PERIOD
+five million,MEASURE
+Jews,PERSON_TYPE
+three million,MEASURE
+occupied Poland,LOCATION
+over one million,MEASURE
+Soviet Union,LOCATION
+Hundreds of thousands,MEASURE
+Netherlands; France; Belgium; Yugoslavia; and Greece,LOCATION
+Wannsee Protocol,LEGAL
+Nazis,PERSON_TYPE
+final solution of the Jewish question,CONCEPT
+Britain,LOCATION
+Europe,LOCATION
+Ireland; Switzerland; Turkey; Sweden; Portugal; and Spain,LOCATION
+three or four,MEASURE
+Jewish,PERSON_TYPE
+Nazis,PERSON_TYPE
+Jews,PERSON_TYPE
+Germany,LOCATION
+before 18 January 1871,PERIOD
+Holocaust,EVENT
+Auschwitz; Belzec; Chełmno; Jasenovac; Majdanek; Maly Trostenets; Sobibór; and Treblinka,LOCATION
+millions,MEASURE
+Nazi,PERSON_TYPE
+Action T4,UNKNOWN
+Nazi,PERSON_TYPE
+Nazi,PERSON_TYPE
+Raul Hilberg,PERSON
+German,NATIONAL
+Nazified,CONCEPTUAL
+Auschwitz; Dachau; Buchenwald; Ravensbrück; Sachsenhausen; and Natzweiler concentration camps,INSTALLATION
+Josef Mengele,PERSON
+Auschwitz,INSTALLATION
+Otmar von Verschuer,PERSON
+Mengele,PERSON
+Kaiser Wilhelm Institute,INSTITUTION
+Mengele,PERSON
+Mengele,PERSON
+Romani,PERSON_TYPE
+Onkel (Uncle) Mengele,PERSON
+Vera Alexander,PERSON
+Jewish,PERSON_TYPE
+Auschwitz,INSTALLATION
+50,MEASURE
+Romani,PERSON_TYPE
+Guido and Ina,PERSON
+four,MEASURE
+Mengele,PERSON
+Stella,PERSON
+Yehuda Bauer and Lucy Dawidowicz,PERSON
+from the Middle Ages,PERIOD
+German,NATIONAL
+antisemitism,CONCEPT
+Rhineland Massacres,EVENT
+Nazi,PERSON_TYPE
+second half of the 19th century,PERIOD
+Germany and Austria - Hungary,LOCATION
+Völkisch movement,ORGANISATION
+Houston Stewart Chamberlain and Paul de Lagarde,PERSON
+racism,CONCEPT
+Jews,PERSON_TYPE
+Aryan,PERSON_TYPE
+Völkisch antisemitism,CONCEPT
+Christian antisemitism,CONCEPT
+Jews,PERSON_TYPE
+Friedrich Nietzsche,PERSON
+antisemitism and nationalism,CONCEPT
+1886,PERIOD
+Jews,PERSON_TYPE
+Jews,PERSON_TYPE
+Friedrich Nietzsche,PERSON
+1886,PERIOD
+Reichstag,INSTITUTION
+1895,PERIOD
+völkisch,PERSON_TYPE
+Hermann Ahlwardt,PERSON
+Jews,PERSON_TYPE
+German,PERSON_TYPE
+1912,PERIOD
+Wenn ich der Kaiser wär (If I were the Kaiser),CREATION
+Heinrich Class,PERSON
+völkisch,CONCEPTUAL
+Alldeutscher Verband,ORGANISATION
+German Jews,PERSON_TYPE
+German,NATIONAL
+Fremdenrecht,CONCEPT
+Class,PERSON
+Jews,PERSON_TYPE
+German,NATIONAL
+Class,PERSON
+Jew,PERSON_TYPE
+Jewish,PERSON_TYPE
+German Empire,LOCATION
+1871,PERIOD
+one,MEASURE
+Jewish,PERSON_TYPE
+first,MEASURE
+Germans,PERSON_TYPE
+German South - West Africa,LOCATION
+Herero and Namaqua Genocide,EVENT
+Holocaust,EVENT
+German Empire,LOCATION
+völkisch,CONCEPTUAL
+racism,CONCEPT
+Germany,LOCATION
+völkisch parties,ORGANISATION
+1912 Reichstag elections,EVENT
+antisemitism,CONCEPT
+National Socialist German Workers ' Party (Nazi Party; NSDAP),INSTITUTION
+1920,PERIOD
+völkisch movement,ORGANISATION
+antisemitism,CONCEPT
+1986,PERIOD
+German,NATIONAL
+Hans Mommsen,PERSON
+post – First World WarGermany,LOCATION
+Hitler ' s weltanschauung,CONCEPT
+Auschwitz,INSTALLATION
+Jews,PERSON_TYPE
+Hitler,PERSON
+NSDAP,INSTITUTION
+Deutschvölkisch Schutz - und Trutzbund[German Racial Union for Protection and Defiance],ORGANISATION
+Pan - German Union,ORGANISATION
+Germany,LOCATION
+late 19th and early 20th centuries,PERIOD
+racist; social Darwinist; and eugenicist,CONCEPTUAL
+Detlev Peukert,PERSON
+Shoah,EVENT
+antisemitism,CONCEPT
+After the First World War,EVENT
+German,NATIONAL
+Antisemitism,CONCEPT
+Germany,LOCATION
+1 April 1933,PERIOD
+SA,INSTITUTION
+Jewish,PERSON_TYPE
+Israel's Department Store in Berlin,BUSINESS
+Germans,PERSON_TYPE
+Jews,PERSON_TYPE
+Deutsche,PERSON_TYPE
+Juden,PERSON_TYPE
+Kristallnacht in 1938,EVENT
+Jewish,PERSON_TYPE
+Germany,LOCATION
+Europe,LOCATION
+after World War I,PERIOD
+antisemitism,CONCEPT
+Germans,PERSON_TYPE
+Stab - in - the - back,CONCEPT
+Jews and Communists,PERSON_TYPE
+Germany,LOCATION
+Jewish,PERSON_TYPE
+ethnic Jews,PERSON_TYPE
+Communist,CONCEPTUAL
+Europe,LOCATION
+Russian Bolshevik,PERSON_TYPE
+Vladimir Lenin,PERSON
+Germany,LOCATION
+Ernst Toller,PERSON
+Bavaria,LOCATION
+Jewish olshevism,CONCEPT
+Great Depression,EVENT
+German,NATIONAL
+Nazis,PERSON_TYPE
+1933,PERIOD
+German,NATIONAL
+Hitler,PERSON
+Jews,PERSON_TYPE
+Hitler,PERSON
+anti-Semitism,CONCEPT
+Hitler,PERSON
+Mein Kampf,CREATION
+anti-Semite,PERSON_TYPE
+Vienna,LOCATION
+Mein Kampf,CREATION
+Germany,LOCATION
+From the early 1920s,PERIOD
+Hitler,PERSON
+Jews,PERSON_TYPE
+August 1920,PERIOD
+Jew,PERSON_TYPE
+Mein Kampf,CREATION
+Hitler,PERSON
+Hitler,PERSON
+twelve or fifteen thousand,MEASURE
+Hebrew,PERSON_TYPE
+hundreds of thousands,MEASURE
+German,NATIONAL
+millions,MEASURE
+Hitler,PERSON
+Marxism,CONCEPT
+Jewish,PERSON_TYPE
+Jewish Marxism,CONCEPT
+Mein Kampf,CREATION
+Hitler,PERSON
+Jewish Question,CONCEPT
+Hitler,PERSON
+Jewish Question,CONCEPT
+German,PERSON_TYPE
+Juda,PERSON_TYPE
+Ian Kershaw,PERSON
+Mein Kampf,CREATION
+1922,PERIOD
+Major Joseph Hell,PERSON
+Jews,PERSON_TYPE
+Marienplatz in Munich,LOCATION
+Jews,PERSON_TYPE
+Jew,PERSON_TYPE
+Munich,LOCATION
+Germany,LOCATION
+Jews,PERSON_TYPE
+1933,PERIOD
+Julius Streicher,PERSON
+Jews,PERSON_TYPE
+Nazi,PERSON_TYPE
+Der Stürmer,MEDIA
+Streicher,PERSON
+Jewish,PERSON_TYPE
+Mommsen,PERSON
+three,MEASURE
+antisemitism,CONCEPT
+Germany,LOCATION
+1,MEASURE
+cultural antisemitism,CONCEPT
+German conservatives,PERSON_TYPE
+2,MEASURE
+volkisch,ORGANISATION
+antisemitism or racism,CONCEPT
+Jews,PERSON_TYPE
+3,MEASURE
+Judaism,CONCEPT
+Catholic Church,INSTITUTION
+antisemitism,CONCEPT
+antisemitism,CONCEPT
+Nazis,PERSON_TYPE
+antisemitism,CONCEPT
+Jews,PERSON_TYPE
+Benjamin Arditti,PERSON
+Vienna,LOCATION
+1897,PERIOD
+Sofia,LOCATION
+two years,PERIOD
+World War II,EVENT
+from 1916-1949,PERIOD
+Zionist movement in Bulgaria,ORGANISATION
+Central Committee of the Zionist Union in Bulgaria,ORGANISATION
+1919-1923,PERIOD
+five,MEASURE
+representative to the World Zionist Congress,TITLE
+chairman of the Zionist Organization in Sofia,TITLE
+Revisionist movement in Bulgaria,ORGANISATION
+chairman,TITLE
+from 1925-1935,PERIOD
+Arditti,PERSON
+Committee for the Rescue of Bulgarian Jewry during World War II,ORGANISATION
+Zionist,CONCEPTUAL
+aliya to Eretz Israel,CONCEPT
+after 1944,PERIOD
+Arditti,PERSON
+representative of the Revisionists in the Union of Bulgarian Jews,TITLE
+1947-1949,PERIOD
+aliya to Israel,CONCEPT
+Herut party and the Organization of Sephardi Jews in Israel,ORGANISATION
+1949,PERIOD
+chairman of the Central Committee of the World Sephardi Federation,TITLE
+Knesset,INSTITUTION
+1930s,PERIOD
+Benjamin Arditti,PERSON
+Jews of Bulgaria,PERSON_TYPE
+two,MEASURE
+Israel,LOCATION
+Holocaust,EVENT
+Jewish,PERSON_TYPE
+Zionist movement in Bulgaria,ORGANISATION
+Sephardi Jews,PERSON_TYPE
+Eretz Israel,LOCATION
+Benjamin Arditti,PERSON
+1,MEASURE
+2,MEASURE
+Benjamin Arditti,PERSON
+3,MEASURE
+Benjamin Arditti,PERSON
+4,MEASURE
+Benjamin Arditti,PERSON
+Knesset,INSTITUTION
+Sephardi Jewish,PERSON_TYPE
+5,MEASURE
+Jews,PERSON_TYPE
+Bulgaria,LOCATION
+until World War II,PERIOD
+Zionism,CONCEPT
+Zionist movement in Bulgaria,ORGANISATION
+6,MEASURE
+Jews of Bulgaria,PERSON_TYPE
+World War II,EVENT
+Bulgaria,LOCATION
+anti-Jewish legislation,LEGAL
+anti-Semitic policy,LEGAL
+Commissariat for Jewish Affairs,INSTITUTION
+Jewish,PERSON_TYPE
+Bulgaria,LOCATION
+aliya,CONCEPT
+Eretz Israel,LOCATION
+two,MEASURE
+Salvador,CREATION
+Struma,CREATION
+Holocaust of the Jews of Turkey and Macedonia,EVENT
+Bulgaria,LOCATION
+Rescue of the Jews of Bulgaria,EVENT
+7,MEASURE
+aliya,CONCEPT
+Bulgaria,LOCATION
+Eretz Israel,LOCATION
+from the late 19th century until theGreat Aliya; 1948-1949,PERIOD
+Arditti,PERSON
+Jews of Bulgaria,PERSON_TYPE
+before the 1940s,PERIOD
+Zionist movement in Bulgaria,ORGANISATION
+Jews of Bulgaria; Turkey and Macedonia,PERSON_TYPE
+Holocaust,EVENT
+IDEA ALM,ARTIFACT
+Yad Vashem Archives,INSTITUTION
+Yad Vashem,INSTITUTION
+Jews of Crimea,PERSON_TYPE
+1941-1942,PERIOD
+Soviet Extraordinary State Commission (ChGK) in the Crimean occupied territory,INSTITUTION
+Jews,PERSON_TYPE
+Yevpatoria; Zuya; Kheyrus and Biyuk-Onlar,LOCATION
+January-March 1942,PERIOD
+mayor of Simferopol,TITLE
+Jews,PERSON_TYPE
+15 March 1942,PERIOD
+Foma Paskitovski,PERSON
+Kerch,LOCATION
+Kerch jail,INSTALLATION
+December 1941,PERIOD

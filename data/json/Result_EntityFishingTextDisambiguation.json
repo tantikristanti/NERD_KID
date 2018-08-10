@@ -1,0 +1,133 @@
+{
+  "runtime": 99,
+  "nbest": false,
+  "text": "Austria invaded and fought the Serbian army at the Battle of Cer and Battle of Kolubara beginning on 12 August.",
+  "language": {
+    "lang": "en",
+    "conf": 0.0
+  },
+  "global_categories": [
+    {
+      "weight": 0.058945238742297804,
+      "source": "wikipedia-en",
+      "category": "1914 in Serbia",
+      "page_id": 28862075
+    },
+    {
+      "weight": 0.029472619371148902,
+      "source": "wikipedia-en",
+      "category": "November 1914 events",
+      "page_id": 52630503
+    },
+    {
+      "weight": 0.029472619371148902,
+      "source": "wikipedia-en",
+      "category": "December 1914 events",
+      "page_id": 52653798
+    },
+    {
+      "weight": 0.058945238742297804,
+      "source": "wikipedia-en",
+      "category": "Battles of World War I involving Serbia",
+      "page_id": 28862056
+    },
+    {
+      "weight": 0.058945238742297804,
+      "source": "wikipedia-en",
+      "category": "Battles involving Austria",
+      "page_id": 8684527
+    },
+    {
+      "weight": 0.058945238742297804,
+      "source": "wikipedia-en",
+      "category": "Conflicts in 1914",
+      "page_id": 9974120
+    },
+    {
+      "weight": 0.058945238742297804,
+      "source": "wikipedia-en",
+      "category": "Battles of the Balkans Theatre (World War I)",
+      "page_id": 19365529
+    },
+    {
+      "weight": 0.058945238742297804,
+      "source": "wikipedia-en",
+      "category": "Battles of World War I involving Austria-Hungary",
+      "page_id": 27403549
+    }
+  ],
+  "entities": [
+    {
+      "rawName": "Austria",
+      "type": "LOCATION",
+      "offsetStart": 0,
+      "offsetEnd": 7,
+      "nerd_score": 0.995,
+      "nerd_selection_score": 0.638,
+      "wikipediaExternalRef": 26964606,
+      "wikidataId": "Q40",
+      "domains": [
+        "Atomic_Physic",
+        "Engineering",
+        "Administration",
+        "Geology",
+        "Oceanography",
+        "Earth"
+      ]
+    },
+    {
+      "rawName": "Serbian army",
+      "offsetStart": 31,
+      "offsetEnd": 43,
+      "nerd_score": 1,
+      "nerd_selection_score": 0.6148,
+      "wikipediaExternalRef": 10072531,
+      "wikidataId": "Q1209256",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "Battle of Cer",
+      "type": "EVENT",
+      "offsetStart": 51,
+      "offsetEnd": 64,
+      "nerd_score": 1,
+      "nerd_selection_score": 0.9976,
+      "wikipediaExternalRef": 1614762,
+      "wikidataId": "Q697748",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "Battle of Kolubara",
+      "type": "EVENT",
+      "offsetStart": 69,
+      "offsetEnd": 87,
+      "nerd_score": 1,
+      "nerd_selection_score": 0.9966,
+      "wikipediaExternalRef": 2167279,
+      "wikidataId": "Q682699",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "12 August",
+      "type": "PERIOD",
+      "offsetStart": 101,
+      "offsetEnd": 110,
+      "nerd_score": 1,
+      "nerd_selection_score": 0.5656,
+      "wikipediaExternalRef": 1491,
+      "wikidataId": "Q2777",
+      "domains": [
+        "Biology",
+        "Psychiatry",
+        "Health",
+        "Physics"
+      ]
+    }
+  ]
+}

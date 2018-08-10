@@ -25,6 +25,7 @@ public class NerdKidPaths {
     // extractor of wikidata
     public static final String EXTRACTOR_WIKIDATA = EXTRACTOR + "/wikidata";
 
+
     // model
     public static final String MODEL = "model";
 

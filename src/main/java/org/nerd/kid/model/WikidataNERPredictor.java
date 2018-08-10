@@ -13,7 +13,6 @@ import org.nerd.kid.service.NerdKidPaths;
 import smile.classification.RandomForest;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -38,8 +37,8 @@ public class WikidataNERPredictor {
     private WikidataFetcherWrapper wrapper;
 
     public void loadModel() {
-        // the model.xml is located in /src/main/resources
-        String pathModel = "/model.xml";
+        // the model3.xml is located in /src/main/resources
+        String pathModel = "/model3.xml";
         InputStream model = this.getClass().getResourceAsStream(pathModel);
         forest = (RandomForest) streamer.fromXML(model);
     }
