@@ -1,6 +1,6 @@
 # <font color="blue"> NERD_KID </font> :neckbeard:
 
-This project will focus on machine learning for classifying items found in Wikidata into 27 classes in Nerd, for instance, Institution, Location, Person.
+This project focuses on machine learning for classifying items found in Wikidata into 27 classes in Nerd, for instance, Institution, Location, Person.
 
 # Goal
 According to [Wikidata's statistics](https://www.wikidata.org/wiki/Special:Statistics), more than 49 million items can be found in Wikidata. With its rich and open knowledge base, it's interesting to learn how those items can be classified into 27 classes. These classes are based on [Grobid-NER](http://grobid-ner.readthedocs.io/en/latest/class-and-senses/) 's project results.
@@ -16,7 +16,7 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 # Data from Grobid-Ner's Project
 
-*As base model (model0), this project use data from Grobid-Ner's project by collecting their mentions and classes as well as disambiguation results with the use of Entity-Fishing Rest API*
+*As base model (model0), this project uses data from Grobid-Ner's project by collecting their mentions and classes as well as disambiguation results with the use of Entity-Fishing Rest API*
 
 - Firstly, the files from [Grobid-Ner](https://github.com/kermitt2/grobid-ner/tree/master/grobid-ner/resources/dataset/ner/corpus/xml/final)'s project are in Xml format and they need to be extract first for getting some mentions and their classes
     - The result can be seen in `data/csv/GrobidNer/AnnotatedCorpusResult.csv`
