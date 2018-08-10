@@ -17,11 +17,12 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 # Data from Grobid-Ner's Project
 
 *As base model (model0), this project use data from Grobid-Ner's project by collecting their mentions and classes as well as disambiguation results with the use of Entity-Fishing Rest API*
-    - Firstly, the files from [Grobid-Ner](https://github.com/kermitt2/grobid-ner/tree/master/grobid-ner/resources/dataset/ner/corpus/xml/final)'s project are in Xml format and they need to be extract first for getting some mentions and their classes
-        - The result can be seen in `data/csv/GrobidNer/AnnotatedCorpusResult.csv`
-    - Then, every single mention got from previous step will be disambiguated by using Entity-Fishing Rest API (particularly, short text disambiguation service)
-        - The disambiguation results are prepared in Json format `data/json/Result_EntityFishingShortTextDisambiguation.json`and in Csv format `data/csv/toBeCorrected/NewElements.csv` for evaluation purposes
-        - New elements collected are need to be corrected and verified manually first whether they have right class typee or not
+
+- Firstly, the files from [Grobid-Ner](https://github.com/kermitt2/grobid-ner/tree/master/grobid-ner/resources/dataset/ner/corpus/xml/final)'s project are in Xml format and they need to be extract first for getting some mentions and their classes
+    - The result can be seen in `data/csv/GrobidNer/AnnotatedCorpusResult.csv`
+- Then, every single mention got from previous step will be disambiguated by using Entity-Fishing Rest API (particularly, short text disambiguation service)
+    - The disambiguation results are prepared in Json format `data/json/Result_EntityFishingShortTextDisambiguation.json`and in Csv format `data/csv/toBeCorrected/NewElements.csv` for evaluation purposes
+    - New elements collected are need to be corrected and verified manually first whether they have right class typee or not
 
 These 2 tasks can be done by this service:
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preprocessing.GrobidNERTrainingDataTransformer"```
