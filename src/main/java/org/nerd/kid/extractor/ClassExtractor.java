@@ -3,7 +3,6 @@ package org.nerd.kid.extractor;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.nerd.kid.exception.NerdKidException;
-import org.nerd.kid.service.NerdKidPaths;
 
 import java.io.*;
 import java.util.ArrayList;

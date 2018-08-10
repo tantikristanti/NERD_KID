@@ -2,7 +2,6 @@ package org.nerd.kid.extractor.wikidata;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;
-import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -27,7 +26,7 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
     //String nerdUrl = "nerd.huma-num.fr";
     //String nerdPath = "/service/kb/concept";
     //String nerdPath = "/test/service/kb/concept";
-    String urlNerd =  "http://nerd.huma-num.fr/nerd/service/kb/concept";
+    String urlNerd = "http://nerd.huma-num.fr/nerd/service/kb/concept";
 
     @Override
     public WikidataElement getElement(String wikiId) throws Exception {
@@ -35,7 +34,7 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
 //        HttpHost target = new HttpHost(nerdUrl);
 //        HttpGet request = new HttpGet(nerdPath + "/" + wikiId);
 //        HttpResponse httpResponse = httpclient.execute(target, request);
-        HttpGet request = new HttpGet(urlNerd+ "/" + wikiId);
+        HttpGet request = new HttpGet(urlNerd + "/" + wikiId);
         HttpResponse httpResponse = client.execute(request);
         HttpEntity entity = httpResponse.getEntity();
 

@@ -18,11 +18,11 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 *As base model (model0), this project uses data from Grobid-Ner's project by collecting their mentions and classes as well as disambiguation results with the use of Entity-Fishing Rest API*
 
-- Firstly, the files from [Grobid-Ner](https://github.com/kermitt2/grobid-ner/tree/master/grobid-ner/resources/dataset/ner/corpus/xml/final)'s project are in Xml format and they need to be extract first for getting some mentions and their classes
-    - The result can be seen in `data/csv/GrobidNer/AnnotatedCorpusResult.csv`
-- Then, every single mention got from previous step will be disambiguated by using Entity-Fishing Rest API (particularly, short text disambiguation service)
-    - The disambiguation results are prepared in Json format `data/json/Result_EntityFishingShortTextDisambiguation.json`and in Csv format `data/csv/toBeCorrected/NewElements.csv` for evaluation purposes
-    - New elements collected are need to be corrected and verified manually first whether they have right class typee or not
+- Firstly, the files from [Grobid-Ner](https://github.com/kermitt2/grobid-ner/tree/master/grobid-ner/resources/dataset/ner/corpus/xml/final)'s project which are in Xml format and they need to be extracted for getting some mentions and their classes
+    - The result can be seen in ![Annotated Corpus Result](data/csv/GrobidNer/AnnotatedCorpusResult.csv) 
+- Then, every single mention (raw text) got from previous step will be disambiguated by using Entity-Fishing Rest API (particularly, short text disambiguation service)
+    - The disambiguation results are prepared in Json format ![Json format](data/json/Result_EntityFishingShortTextDisambiguation.json) and in ![Csv format](data/csv/toBeCorrected/NewElements.csv) for evaluation purposes
+    - New elements collected need to be checked manually first whether they have the correct classes before being used for data training or evaluation purposes
 
 These 2 tasks can be done by this service:
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preprocessing.GrobidNERTrainingDataTransformer"```
@@ -46,12 +46,12 @@ These 2 tasks can be done by this service:
 
 *New data can be collected by extracting the text with the text disambiguation service of [Entity-Fishing](http://nerd.readthedocs.io/en/latest/restAPI.html)*
 - Firstly, the ***text*** and the ***language*** need to be input in order to get some mentions and disambiguation results in Json format
-    - The example of the text can be seen in `/data/txt/exampleText.txt`
+    - The example of the text can be seen here ![Text Example](data/txt/exampleText.txt) 
     - If the language is not mentioned, the text will be processed as English text by default.
-    - The raw Json result can be seen in `/data/json/Result_EntityFishingTextDisambiguation.json`
+    - The raw Json result from Entity-Fsihing can be seen in ![Entity-Fishing Text Disambiguation](data/json/Result_EntityFishingTextDisambiguation.json) 
     
 - Secondly, the result from the previous step will be parsed in order to get a list of Wikidata Ids and their classes
-    - The list of Wikidata Ids and Classes can be seen in `/data/csv/NewElements.csv`. 
+    - The list of Wikidata Ids and Classes can be seen in ![New Elements](data/csv/NewElements.csv) 
     - It is a very simple csv file that contain Wikidata Ids and their classes. For example:
     
     ```
@@ -68,11 +68,11 @@ These 2 tasks can be done by this service:
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.arff.MainTrainerGenerator"```
 
-*(Basically, a training file built based on the datasets prepared in `data/csv/BaseElements.csv`
+*(Basically, a training file built based on the datasets prepared in ![Base Elements](data/csv/BaseElements.csv) 
  This step is done if there isn't any training file or there is a need to build a new one.)*
 
-- The result of Arff file can be seen in `/result/arff/Training.arff`.
-- It is also possible to check first whether the data and features of wikidata Ids are correct/complete by checking the Csv file result located in `result/csv/ResultFromArffGenerator.csv`.
+- The result of Arff file can be seen in ![Training](result/arff/Training.arff) 
+- It is also possible to check first whether the data and features of wikidata Ids are correct/complete by checking the Csv file result located in ![Result From Arff Generator](result/csv/ResultFromArffGenerator.csv)  
 
 
 *Note :* 
@@ -104,7 +104,7 @@ are in a correct format.
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.model.MainModelBuilder"```
 
 - Input needed is the percentage of training-testing splitting data, e.g. `80` (%)
-- Result can be seen in `result/txt/Result_Trained_Model.txt`
+- Result can be seen in ![Result_Trained_Model](result/txt/Result_Trained_Model.txt) 
 - The machine learning model itself (the result of Random Forest algorithm) can be found in the temporary file `tmp/model.xml`
     It can be copied by firstly open it `$ open /tmp`
 
@@ -113,7 +113,7 @@ are in a correct format.
 *Prepare the list of Wikidata Id*
 
 Firstly, prepare the list of new Wikidata Id that need to be predicted (in this case, Nerd_kid will predict the class for each Wikidata Id prepared)
-The list then can be copied into `data/csv/NewElements.csv`.
+The list then can be copied in ![New Elements](data/csv/NewElements.csv) or generated as explained in step *3. Prepare new data into*
 It is a very simple csv file that contain Wikidata Id for each line without name of label and neither for the class. For example:
 
 ```
@@ -127,7 +127,7 @@ Q1408,
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preannotation.MainPreAnnotation"```
 
-- The result can be seen in `result/csv/ResultPredictedClass.csv`
+- The result can be seen in ![Result Predicted Class](result/csv/ResultPredictedClass.csv)
 
 
 **7. Web version**

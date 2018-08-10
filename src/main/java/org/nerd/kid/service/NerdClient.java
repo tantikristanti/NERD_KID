@@ -1,6 +1,5 @@
 package org.nerd.kid.service;
 
-import au.com.bytecode.opencsv.CSVWriter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.gson.Gson;
@@ -16,18 +15,11 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import static org.apache.http.entity.ContentType.APPLICATION_JSON;
 
@@ -36,7 +28,7 @@ public class NerdClient {
     private String HOST = "http://cloud.science-miner.com/nerd/service";
     //    private String HOST = "localhost:8090/service";
     private String DISAMBIGUATE_SERVICE = "/disambiguate";
-    private int PORT =  -1;
+    private int PORT = -1;
 
     public NerdClient() {
 

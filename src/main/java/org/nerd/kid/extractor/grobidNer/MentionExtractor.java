@@ -149,7 +149,7 @@ public class MentionExtractor {
             NerdClient nerdClient = new NerdClient("cloud.science-miner.com/nerd/service");
 
             // header of Csv file
-            String[] header = {"RawText,WikidataID,ClassGrobidNER,ClassEntityFishing,NerdScore,SelectionScore"};
+            String[] header = {"RawText,WikidataID,Class,ClassEntityFishing,NerdScore,SelectionScore"};
             csvWriter.writeNext(header);
 
             for (GrobidNerEntity grobidNerEntity : mentionList) {
