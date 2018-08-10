@@ -21,6 +21,7 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
         - The result can be seen in `data/csv/GrobidNer/AnnotatedCorpusResult.csv`
     - Then, every single mention got from previous step will be disambiguated by using Entity-Fishing Rest API (particularly, short text disambiguation service)
         - The disambiguation results are prepared in Json format `data/json/Result_EntityFishingShortTextDisambiguation.json`and in Csv format `data/csv/toBeCorrected/NewElements.csv` for evaluation purposes
+        - New elements collected are need to be corrected and verified manually first whether they have right class typee or not
 
 These 2 tasks can be done by this service:
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preprocessing.GrobidNERTrainingDataTransformer"```
