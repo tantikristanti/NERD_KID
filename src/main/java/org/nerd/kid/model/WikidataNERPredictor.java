@@ -105,18 +105,21 @@ public class WikidataNERPredictor {
         for (int i = 0; i < length; i++) {
             rawFeatures[i] = ((double) wikidataElement.getFeatureVector()[i]);
         }
-        // if the features are only 0 for all, don't need to predict, the class is UNKNOWN
-        double sumOfFeatures = Arrays.stream(rawFeatures).sum();
-        if (sumOfFeatures>0) {
-            // predict the instance's class based on the features collected
-            int prediction = forest.predict(rawFeatures);
+        // if the items have the type of "Wikimedia disambiguation page" --> instance of (P31) - Wikimedia disambiguation page (Q4167410)
+        // they don't need to be predicted, they are automatically stated as as UKNONWN
+        if (!wikidataElement.getPredictedClass().equals("UNKNOWN")){
+            // if the features are only 0 for all, they don't need to be predicted; they are stated as UNKNOWN
+            double sumOfFeatures = Arrays.stream(rawFeatures).sum();
+            if (sumOfFeatures>0) {
+                // predict the instance's class based on the features collected
+                int prediction = forest.predict(rawFeatures);
 
-            List<String> classMapper = new ClassExtractor().loadClasses();
-            wikidataElement.setPredictedClass(classMapper.get(prediction));
-        } else {
-            wikidataElement.setPredictedClass("UNKNOWN");
+                List<String> classMapper = new ClassExtractor().loadClasses();
+                wikidataElement.setPredictedClass(classMapper.get(prediction));
+            } else {
+                wikidataElement.setPredictedClass("UNKNOWN");
+            }
         }
-
         return wikidataElement;
     }
 

@@ -174,6 +174,10 @@ public class FeatureWikidataExtractor {
             for (String value : values) {
                 String propertyValue = property + "_" + value;
                 propertyValueFeatureMapper.add(propertyValue);
+                // if item is Wikimedia disambiguation page (instance of/P31 - Wikimedia disambiguation page/Q4167410)
+                if (property.equals("P31") && value.equals("Q4167410")){
+                    wikidataElementInfos.setPredictedClass("UNKNOWN");
+                }
             }
         }
         // get the list of properties-values based on the result directly from Wikidata or Nerd KB
