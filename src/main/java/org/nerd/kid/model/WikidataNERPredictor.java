@@ -79,7 +79,7 @@ public class WikidataNERPredictor {
         }
         // if the items have the type of "Wikimedia disambiguation page" --> instance of (P31) - Wikimedia disambiguation page (Q4167410)
         // they don't need to be predicted, they are automatically stated as as UKNONWN
-        if (!wikiInfos.getPredictedClass().equals("UNKNOWN")) {
+        //if (!wikiInfos.getPredictedClass().equals("UNKNOWN")) {
             // if the features are only 0 for all, don't need to predict, the class is UNKNOWN
             double sumOfFeatures = Arrays.stream(rawFeatures).sum();
             if (sumOfFeatures > 0) {
@@ -91,7 +91,7 @@ public class WikidataNERPredictor {
             } else {
                 wikiInfos.setPredictedClass("UNKNOWN");
             }
-        }
+        //}
         return wikiInfos;
     }
 
@@ -109,7 +109,7 @@ public class WikidataNERPredictor {
         }
         // if the items have the type of "Wikimedia disambiguation page" --> instance of (P31) - Wikimedia disambiguation page (Q4167410)
         // they don't need to be predicted, they are automatically stated as as UKNONWN
-        if (!wikidataElement.getPredictedClass().equals("UNKNOWN")){
+        //if (!wikidataElement.getPredictedClass().equals("UNKNOWN")){
             // if the features are only 0 for all, they don't need to be predicted; they are stated as UNKNOWN
             double sumOfFeatures = Arrays.stream(rawFeatures).sum();
             if (sumOfFeatures>0) {
@@ -121,7 +121,7 @@ public class WikidataNERPredictor {
             } else {
                 wikidataElement.setPredictedClass("UNKNOWN");
             }
-        }
+        //}
         return wikidataElement;
     }
 
