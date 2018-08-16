@@ -48,7 +48,10 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
             } else {
                 throw new DataException("Data parsing exception.");
             }
-        } else {
+        } else if (responseId == 404) {
+            throw new RemoteServiceException("Item doesn't exist.");
+
+        }else {
             throw new RemoteServiceException("Remote service exception.");
         }
     }
