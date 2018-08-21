@@ -69,8 +69,11 @@ public class MainTrainerGenerator {
         for (WikidataElementInfos element : training) {
             try {
                 WikidataElementInfos wikidataFeatures = featureWikidataExtractor.getFeatureWikidata(element.getWikidataId());
-                wikidataFeatures.setRealClass(element.getRealClass());
-                arffFileGenerator.addSingle(wikidataFeatures);
+                if (wikidataFeatures != null) {
+                    wikidataFeatures.setRealClass(element.getRealClass());
+                    arffFileGenerator.addSingle(wikidataFeatures);
+                } else
+                    continue;
             } catch (Exception e) {
                 System.out.println("Some error encountered, skipping entity: " + element.getWikidataId());
             }

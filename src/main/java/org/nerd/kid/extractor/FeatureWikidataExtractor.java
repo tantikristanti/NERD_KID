@@ -2,6 +2,7 @@ package org.nerd.kid.extractor;
 
 import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.data.WikidataElementInfos;
+import org.nerd.kid.exception.RemoteServiceException;
 import org.nerd.kid.extractor.wikidata.WikidataFetcherWrapper;
 
 import java.util.ArrayList;
@@ -143,11 +144,10 @@ public class FeatureWikidataExtractor {
         // get the element based on the wrapper whether from Wikidata or Nerd API
         WikidataElement wikidataElement = new WikidataElement();
         try {
-            wikidataElement = wikidataFetcherWrapper.getElement(wikidataId);
+                wikidataElement = wikidataFetcherWrapper.getElement(wikidataId);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         // note the properties from feature mappers
         Map<String, List<String>> featuresMap = featureFileExtractor.loadFeatures();
         List<String> featuresNoValueList = featureFileExtractor.loadFeaturesNoValue();
@@ -174,6 +174,10 @@ public class FeatureWikidataExtractor {
             for (String value : values) {
                 String propertyValue = property + "_" + value;
                 propertyValueFeatureMapper.add(propertyValue);
+                // if item is Wikimedia disambiguation page (instance of/P31 - Wikimedia disambiguation page/Q4167410)
+                if (property.equals("P31") && value.equals("Q4167410")){
+                    wikidataElementInfos.setPredictedClass("UNKNOWN");
+                }
             }
         }
         // get the list of properties-values based on the result directly from Wikidata or Nerd KB

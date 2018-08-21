@@ -13,6 +13,7 @@ import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.exception.DataException;
 import org.nerd.kid.exception.RemoteServiceException;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,28 +30,45 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
     String urlNerd = "http://nerd.huma-num.fr/nerd/service/kb/concept";
 
     @Override
-    public WikidataElement getElement(String wikiId) throws Exception {
-        HttpClient client = HttpClientBuilder.create().build();
+    public WikidataElement getElement(String wikiId) {
+        WikidataElement result = null;
+        try {
+            HttpClient client = HttpClientBuilder.create().build();
 //        HttpHost target = new HttpHost(nerdUrl);
 //        HttpGet request = new HttpGet(nerdPath + "/" + wikiId);
 //        HttpResponse httpResponse = httpclient.execute(target, request);
-        HttpGet request = new HttpGet(urlNerd + "/" + wikiId);
-        HttpResponse httpResponse = client.execute(request);
-        HttpEntity entity = httpResponse.getEntity();
+            HttpGet request = new HttpGet(urlNerd + "/" + wikiId);
+            HttpResponse httpResponse = client.execute(request);
+            HttpEntity entity = httpResponse.getEntity();
 
-        String response = null;
-        // get the response Id for throw the exception if it's not OK == 200
-        int responseId = httpResponse.getStatusLine().getStatusCode();
-        if (responseId == 200) {
-            response = IOUtils.toString(entity.getContent(), UTF_8);
-            if (response.contains(wikiId)) {
-                return fromJson(response);
-            } else {
-                throw new DataException("Data parsing exception.");
+            String response = null;
+            // get the response Id for throw the exception if it's not OK == 200
+            int responseId = httpResponse.getStatusLine().getStatusCode();
+            if (responseId == 404) {
+                throw new RemoteServiceException("Item doesn't exist.");
             }
-        } else {
-            throw new RemoteServiceException("Remote service exception.");
+
+            if (responseId == 200) {
+                response = IOUtils.toString(entity.getContent(), UTF_8);
+                if (response.contains(wikiId)) {
+                    result = fromJson(response);
+                    return result;
+                }else {
+                    throw new DataException("Data parsing exception.");
+                }
+            } else {
+                throw new RemoteServiceException("Remote service exception.");
+            }
+        }catch (IOException e) {
+            e.printStackTrace();
+        }catch (RemoteServiceException e) {
+             e.printStackTrace();
+        } catch (DataException e) {
+            e.printStackTrace();
+        }catch (Exception e){
+            e.printStackTrace();
         }
+        return result;
     }
 
     public WikidataElement fromJson(String input) throws Exception {

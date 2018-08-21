@@ -24,7 +24,7 @@ public class MainModelBuilder {
         modelBuilder.splitModel(split);
         System.out.println("Result can be found in " + NerdKidPaths.RESULT_TXT + "/" + fileOutput);
 
-        final String pathname = "/tmp/model3.xml";
+        final String pathname = "/tmp/model.xml";
         modelBuilder.saveModel(new File(pathname));
         System.out.println("Model has been saved in " + pathname);
     }

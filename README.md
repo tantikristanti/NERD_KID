@@ -18,11 +18,11 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 *As base model (model0), this project uses data from Grobid-Ner's project by collecting their mentions and classes as well as disambiguation results with the use of Entity-Fishing Rest API*
 
-- Firstly, the files from [Grobid-Ner](https://github.com/kermitt2/grobid-ner/tree/master/grobid-ner/resources/dataset/ner/corpus/xml/final)'s project which are in Xml format and they need to be extracted for getting some mentions and their classes
+- Firstly, the files from [Grobid-Ner](https://github.com/kermitt2/grobid-ner/tree/master/grobid-ner/resources/dataset/ner/corpus/xml/final)'s project which are in TEI-XML format need to be extracted in order to get some mentions (tokens and their positions in the original text) and also their type of classes. The type of classes which is 27 in total and their detail explanations can be seen in [Classes](https://grobid-ner.readthedocs.io/en/latest/class-and-senses/)
     - The result can be seen in ![Annotated Corpus Result](data/csv/GrobidNer/AnnotatedCorpusResult.csv) 
-- Then, every single mention (raw text) got from previous step will be disambiguated by using Entity-Fishing Rest API (particularly, short text disambiguation service)
-    - The disambiguation results are prepared in Json format ![Json format](data/json/Result_EntityFishingShortTextDisambiguation.json) and in ![Csv format](data/csv/toBeCorrected/NewElements.csv) for evaluation purposes
-    - New elements collected need to be checked manually first whether they have the correct classes before being used for data training or evaluation purposes
+    - Then, every single mention (raw text) collected from previous step will be disambiguated by using Entity-Fishing Rest-API (particularly with the use of short text disambiguation service)
+    - The disambiguation results are prepared in ![Json format](data/json/Result_EntityFishingShortTextDisambiguation.json) and in ![Csv format](data/csv/NewElements.csv) for evaluation purposes
+    - New elements collected can also be checked manually whether they have the correct classes before being used for training or evaluation purposes. 
 
 These 2 tasks can be done by this service:
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.preprocessing.GrobidNERTrainingDataTransformer"```
