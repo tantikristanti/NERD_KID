@@ -2,6 +2,7 @@ package org.nerd.kid.extractor;
 
 import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.data.WikidataElementInfos;
+import org.nerd.kid.exception.RemoteServiceException;
 import org.nerd.kid.extractor.wikidata.WikidataFetcherWrapper;
 
 import java.util.ArrayList;
@@ -143,11 +144,10 @@ public class FeatureWikidataExtractor {
         // get the element based on the wrapper whether from Wikidata or Nerd API
         WikidataElement wikidataElement = new WikidataElement();
         try {
-            wikidataElement = wikidataFetcherWrapper.getElement(wikidataId);
+                wikidataElement = wikidataFetcherWrapper.getElement(wikidataId);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         // note the properties from feature mappers
         Map<String, List<String>> featuresMap = featureFileExtractor.loadFeatures();
         List<String> featuresNoValueList = featureFileExtractor.loadFeaturesNoValue();

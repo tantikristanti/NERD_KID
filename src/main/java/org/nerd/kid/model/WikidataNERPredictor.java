@@ -38,7 +38,7 @@ public class WikidataNERPredictor {
 
     public void loadModel() {
         // the model3.xml is located in /src/main/resources
-        String pathModel = "/model3.xml";
+        String pathModel = "/model.xml";
         InputStream model = this.getClass().getResourceAsStream(pathModel);
         forest = (RandomForest) streamer.fromXML(model);
     }
