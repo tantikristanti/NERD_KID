@@ -97,18 +97,24 @@ are in a correct format.
 - Error in this step can appear if certain element's Id is no longer available in Wikidata. 
  Just delete the Id that want to be processed from the CSV files.
   
-**5. Train the model**
+**5. Train, evaluate, and build the model**
 
 *Model training using Random Forest classification [SMILE](https://github.com/haifengl/smile/)*
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.model.MainModelBuilder"```
 
-- Input needed is the percentage of training-testing splitting data, e.g. `80` (%)
-- Result can be seen in ![Result_Trained_Model](result/txt/Result_Trained_Model.txt) 
-- The machine learning model itself (the result of Random Forest algorithm) can be found in the temporary file `tmp/model.xml`
-    It can be copied by firstly open it `$ open /tmp`
+- The evaluation result can be seen in ![Result_Trained_Model](result/txt/Result_Trained_Model.txt) 
+- The model itself can be found in Xml and Zip format which are located in the temporary file `/tmp`
 
-**6. Get new predicted classes**
+**6. Decompress the model**
+
+*This service is used when no model in XML format available or there is a need to extract the model from Zip into Xml format.*
+The model normally is located in `/resource/model.zip`. For decompressing the file, this service can be called:
+
+```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.model.ExtractModel"```
+
+
+**7. Get new predicted classes**
 
 *Prepare the list of Wikidata Id*
 
