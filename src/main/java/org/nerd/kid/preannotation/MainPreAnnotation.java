@@ -17,7 +17,6 @@ public class MainPreAnnotation {
 
         WikidataNERPredictor wikidataNERPredictor = new WikidataNERPredictor();
         System.out.println("Processing the pre-annotation ...");
-        wikidataNERPredictor.extractModel();
         wikidataNERPredictor.predictForPreannotation(new File(fileInput), new File(fileOutput));
     }
 }

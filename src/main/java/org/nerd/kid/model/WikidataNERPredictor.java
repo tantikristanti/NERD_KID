@@ -50,7 +50,7 @@ public class WikidataNERPredictor {
     }
 
     public void loadModel() {
-        String pathModel = "/modelExtracted.xml";
+        String pathModel = "/model.xml";
         try {
 
             // the model.xml is located in /src/main/resources

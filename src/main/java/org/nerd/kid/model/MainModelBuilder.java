@@ -14,7 +14,6 @@ public class MainModelBuilder {
     public static void main(String[] args) throws Exception {
         final String pathnameXML = "/tmp/model.xml";
         final String pathnameZIP = "/tmp/model.zip";
-        final String pathnameXMLExtracted = "/tmp/modelExtracted.xml";
         String fileInput = "Training.arff";
         String fileOutput = "Result_Trained_Model.txt";
         String pathInput = NerdKidPaths.RESULT_ARFF + "/" + fileInput;
@@ -31,6 +30,5 @@ public class MainModelBuilder {
         byte[] resultInBytes= modelBuilder.readBytesFromFile(new File(pathnameXML));
         modelBuilder.createZip(resultInBytes, new File(pathnameZIP));
         System.out.println("Model has been saved in " + pathnameXML + " and " + pathnameZIP);
-        modelBuilder.extractZip(new File(pathnameZIP), new File(pathnameXMLExtracted));
     }
 }
