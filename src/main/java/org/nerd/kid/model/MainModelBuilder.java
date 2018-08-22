@@ -12,6 +12,9 @@ import java.io.File;
 **/
 public class MainModelBuilder {
     public static void main(String[] args) throws Exception {
+        final String pathnameXML = "/tmp/model.xml";
+        final String pathnameZIP = "/tmp/model.zip";
+        final String pathnameXMLExtracted = "/tmp/modelExtracted.xml";
         String fileInput = "Training.arff";
         String fileOutput = "Result_Trained_Model.txt";
         String pathInput = NerdKidPaths.RESULT_ARFF + "/" + fileInput;
@@ -24,8 +27,10 @@ public class MainModelBuilder {
         modelBuilder.splitModel(split);
         System.out.println("Result can be found in " + NerdKidPaths.RESULT_TXT + "/" + fileOutput);
 
-        final String pathname = "/tmp/model.xml";
-        modelBuilder.saveModel(new File(pathname));
-        System.out.println("Model has been saved in " + pathname);
+        modelBuilder.saveModelToXML(new File(pathnameXML));
+        byte[] resultInBytes= modelBuilder.readBytesFromFile(new File(pathnameXML));
+        modelBuilder.createZip(resultInBytes, new File(pathnameZIP));
+        System.out.println("Model has been saved in " + pathnameXML + " and " + pathnameZIP);
+        modelBuilder.extractZip(new File(pathnameZIP), new File(pathnameXMLExtracted));
     }
 }

@@ -12,9 +12,7 @@ import org.nerd.kid.extractor.wikidata.WikidataFetcherWrapper;
 import org.nerd.kid.service.NerdKidPaths;
 import smile.classification.RandomForest;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.InputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -36,11 +34,31 @@ public class WikidataNERPredictor {
     private RandomForest forest = null;
     private WikidataFetcherWrapper wrapper;
 
+    ModelBuilder modelBuilder = new ModelBuilder();
+
+    public void extractModel() {
+        String pathModelZip = "model.zip";
+        String pathModelExtracted = "src/main/resources/model.xml";
+        ClassLoader classLoader = getClass().getClassLoader();
+
+        try{
+            File fileExtracted = new File(classLoader.getResource(pathModelZip).getFile());
+            modelBuilder.extractZip(fileExtracted,new File(pathModelExtracted));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     public void loadModel() {
-        // the model3.xml is located in /src/main/resources
-        String pathModel = "/model.xml";
-        InputStream model = this.getClass().getResourceAsStream(pathModel);
-        forest = (RandomForest) streamer.fromXML(model);
+        String pathModel = "/modelExtracted.xml";
+        try {
+
+            // the model.xml is located in /src/main/resources
+            InputStream model = this.getClass().getResourceAsStream(pathModel);
+            forest = (RandomForest) streamer.fromXML(model);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public WikidataNERPredictor() {

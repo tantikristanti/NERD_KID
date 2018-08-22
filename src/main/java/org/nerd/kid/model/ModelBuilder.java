@@ -12,6 +12,10 @@ import smile.data.AttributeDataset;
 import smile.math.Math;
 
 import java.io.*;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.GZIPOutputStream;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 /*
 class to build machine learning models from datasets using Random Forests
@@ -232,17 +236,83 @@ public class ModelBuilder {
     }
 
     // method to save the model built
-    public void saveModel(File modelFile) throws Exception {
-        if (forest == null) {
-            throw new RuntimeException("No model exists.");
-        }
+    public void saveModelToXML(File modelFile) {
+        try {
+            if (forest == null) {
+                throw new RuntimeException("No model exists.");
+            }
 
-        if (modelFile.exists()) {
-            String renameTo = modelFile.getAbsoluteFile() + ".old";
-            modelFile.renameTo(new File(renameTo));
-            FileUtils.deleteQuietly(modelFile);
+            if (modelFile.exists()) {
+                String renameTo = modelFile.getAbsoluteFile() + ".old";
+                modelFile.renameTo(new File(renameTo));
+                FileUtils.deleteQuietly(modelFile);
+            }
+            streamer.toXML(this.forest, new FileOutputStream(modelFile));
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
         }
-        streamer.toXML(this.forest, new FileOutputStream(modelFile));
+    }
+
+    // create zip file from the model built
+    public void createZip(byte[] inputByte, File outputFile) throws IOException {
+        GZIPOutputStream gzipOutputStream = null;
+        FileOutputStream outputStream = null;
+        try{
+            if (forest == null){
+                throw  new RuntimeException("No model exists.");
+            }
+
+            if (outputFile.exists()){
+                String renameTo = outputFile.getAbsoluteFile() + ".old";
+                outputFile.renameTo(new File(renameTo));
+                FileUtils.deleteQuietly(outputFile);
+            }
+            outputStream = new FileOutputStream(outputFile);
+            gzipOutputStream = new GZIPOutputStream(outputStream);
+
+            byte[] data = inputByte;
+            gzipOutputStream.write(data);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }finally {
+            gzipOutputStream.close();
+            outputStream.close();
+        }
+    }
+
+    // read bytes from file
+    public byte[] readBytesFromFile(File inputFile){
+        FileInputStream fileInputStream = null;
+        byte[] bytes = null;
+        try{
+            bytes = new byte[(int) inputFile.length()];
+            fileInputStream = new FileInputStream(inputFile);
+            fileInputStream.read(bytes);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return bytes;
+    }
+
+    public void extractZip(File inputFile, File outputFile) throws IOException {
+        byte[] buffer = null;
+        GZIPInputStream gzipInputStream = null;
+        FileOutputStream outputStream = null;
+        try{
+            gzipInputStream = new GZIPInputStream(new FileInputStream(inputFile));
+            outputStream = new FileOutputStream(outputFile);
+            buffer = new byte[1024];
+            int length;
+            while((length = gzipInputStream.read(buffer)) != -1){
+                outputStream.write(buffer,0, length);
+            }
+
+            gzipInputStream.close();
+            outputStream.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
 }
