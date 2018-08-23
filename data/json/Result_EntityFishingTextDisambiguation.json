@@ -1,133 +1,255 @@
 {
-  "runtime": 99,
+  "runtime": 397,
   "nbest": false,
-  "text": "Austria invaded and fought the Serbian army at the Battle of Cer and Battle of Kolubara beginning on 12 August.",
+  "text": "In computational neuroscience it is generally accepted that human  motor memory contains neural representations of the physics of the musculoskeletal system  and the objects in the environment. These representations are called \u0026quot;internal models\u0026quot;.  Force field studies, in which subjects have to adapt to dynamic perturbations induced by a robotic manipulandum,  are an established tool to analyze the characteristics of such internal models.  The aim of the current study was to investigate whether catch trials during force field learning could influence  the consolidation of motor memory in more complex tasks. Thereby, the force field was more than double  the force field of previous studies (35 N�s/m). Moreover, the arm of the subjects was not supported.  A total of 46 subjects participated in this study and performed center-out movements at a robotic manipulandum in two different force fields.  Two control groups learned force field A on day 1 and were retested in the same force field on day 3 (AA).",
   "language": {
     "lang": "en",
     "conf": 0.0
   },
   "global_categories": [
     {
-      "weight": 0.058945238742297804,
+      "weight": 0.03857207246781961,
       "source": "wikipedia-en",
-      "category": "1914 in Serbia",
-      "page_id": 28862075
+      "category": "Nervous system",
+      "page_id": 698571
     },
     {
-      "weight": 0.029472619371148902,
+      "weight": 0.03857207246781961,
       "source": "wikipedia-en",
-      "category": "November 1914 events",
-      "page_id": 52630503
+      "category": "Memory processes",
+      "page_id": 16136695
     },
     {
-      "weight": 0.029472619371148902,
+      "weight": 0.09594663382060571,
       "source": "wikipedia-en",
-      "category": "December 1914 events",
-      "page_id": 52653798
+      "category": "Fictional armour",
+      "page_id": 11665558
     },
     {
-      "weight": 0.058945238742297804,
+      "weight": 0.09594663382060571,
       "source": "wikipedia-en",
-      "category": "Battles of World War I involving Serbia",
-      "page_id": 28862056
+      "category": "Fictional superhuman features or abilities",
+      "page_id": 19022280
     },
     {
-      "weight": 0.058945238742297804,
+      "weight": 0.057858108701729416,
       "source": "wikipedia-en",
-      "category": "Battles involving Austria",
-      "page_id": 8684527
+      "category": "Motor control",
+      "page_id": 22728692
     },
     {
-      "weight": 0.058945238742297804,
+      "weight": 0.09594663382060571,
       "source": "wikipedia-en",
-      "category": "Conflicts in 1914",
-      "page_id": 9974120
+      "category": "Physics in fiction",
+      "page_id": 1903794
     },
     {
-      "weight": 0.058945238742297804,
+      "weight": 0.09594663382060571,
       "source": "wikipedia-en",
-      "category": "Battles of the Balkans Theatre (World War I)",
-      "page_id": 19365529
+      "category": "Science fiction themes",
+      "page_id": 786868
     },
     {
-      "weight": 0.058945238742297804,
+      "weight": 0.09594663382060571,
       "source": "wikipedia-en",
-      "category": "Battles of World War I involving Austria-Hungary",
-      "page_id": 27403549
+      "category": "Fictional technology",
+      "page_id": 1891719
+    },
+    {
+      "weight": 0.09594663382060571,
+      "source": "wikipedia-en",
+      "category": "Space technology",
+      "page_id": 7406479
     }
   ],
   "entities": [
     {
-      "rawName": "Austria",
-      "type": "LOCATION",
-      "offsetStart": 0,
-      "offsetEnd": 7,
+      "rawName": "computational neuroscience",
+      "offsetStart": 3,
+      "offsetEnd": 29,
+      "nerd_score": 1,
+      "nerd_selection_score": 0.9822,
+      "wikipediaExternalRef": 271430,
+      "wikidataId": "Q8037925",
+      "domains": [
+        "Medicine"
+      ]
+    },
+    {
+      "rawName": "motor memory",
+      "offsetStart": 67,
+      "offsetEnd": 79,
+      "nerd_score": 1,
+      "nerd_selection_score": 0.9227,
+      "wikipediaExternalRef": 487908,
+      "wikidataId": "Q852461",
+      "domains": [
+        "Biology"
+      ]
+    },
+    {
+      "rawName": "musculoskeletal",
+      "offsetStart": 134,
+      "offsetEnd": 149,
+      "nerd_score": 1,
+      "nerd_selection_score": 0.4358,
+      "wikipediaExternalRef": 653348,
+      "wikidataId": "Q726543",
+      "domains": [
+        "Animal_Husbandry"
+      ]
+    },
+    {
+      "rawName": "field studies",
+      "offsetStart": 263,
+      "offsetEnd": 276,
+      "nerd_score": 1,
+      "nerd_selection_score": 0.4026,
+      "wikipediaExternalRef": 5669923,
+      "wikidataId": "Q1402508",
+      "domains": [
+        "Economy",
+        "Applied_Science",
+        "Artisanship",
+        "Furniture"
+      ]
+    },
+    {
+      "rawName": "internal models",
+      "offsetStart": 434,
+      "offsetEnd": 449,
+      "nerd_score": 1,
+      "nerd_selection_score": 0.7907,
+      "wikipediaExternalRef": 22732293,
+      "wikidataId": "Q13580300",
+      "domains": [
+        "Medicine"
+      ]
+    },
+    {
+      "rawName": "force field",
+      "offsetStart": 528,
+      "offsetEnd": 539,
       "nerd_score": 0.995,
-      "nerd_selection_score": 0.638,
-      "wikipediaExternalRef": 26964606,
-      "wikidataId": "Q40",
+      "nerd_selection_score": 0.5369,
+      "wikipediaExternalRef": 286106,
+      "wikidataId": "Q1341441",
       "domains": [
-        "Atomic_Physic",
-        "Engineering",
-        "Administration",
-        "Geology",
-        "Oceanography",
-        "Earth"
-      ]
-    },
-    {
-      "rawName": "Serbian army",
-      "offsetStart": 31,
-      "offsetEnd": 43,
-      "nerd_score": 1,
-      "nerd_selection_score": 0.6148,
-      "wikipediaExternalRef": 10072531,
-      "wikidataId": "Q1209256",
-      "domains": [
-        "Military"
-      ]
-    },
-    {
-      "rawName": "Battle of Cer",
-      "type": "EVENT",
-      "offsetStart": 51,
-      "offsetEnd": 64,
-      "nerd_score": 1,
-      "nerd_selection_score": 0.9976,
-      "wikipediaExternalRef": 1614762,
-      "wikidataId": "Q697748",
-      "domains": [
-        "Military"
-      ]
-    },
-    {
-      "rawName": "Battle of Kolubara",
-      "type": "EVENT",
-      "offsetStart": 69,
-      "offsetEnd": 87,
-      "nerd_score": 1,
-      "nerd_selection_score": 0.9966,
-      "wikipediaExternalRef": 2167279,
-      "wikidataId": "Q682699",
-      "domains": [
-        "Military"
-      ]
-    },
-    {
-      "rawName": "12 August",
-      "type": "PERIOD",
-      "offsetStart": 101,
-      "offsetEnd": 110,
-      "nerd_score": 1,
-      "nerd_selection_score": 0.5656,
-      "wikipediaExternalRef": 1491,
-      "wikidataId": "Q2777",
-      "domains": [
-        "Biology",
-        "Psychiatry",
-        "Health",
         "Physics"
       ]
+    },
+    {
+      "rawName": "motor memory",
+      "offsetStart": 587,
+      "offsetEnd": 599,
+      "nerd_score": 1,
+      "nerd_selection_score": 0.9227,
+      "wikipediaExternalRef": 487908,
+      "wikidataId": "Q852461",
+      "domains": [
+        "Biology"
+      ]
+    },
+    {
+      "rawName": "force field",
+      "offsetStart": 636,
+      "offsetEnd": 647,
+      "nerd_score": 0.995,
+      "nerd_selection_score": 0.5369,
+      "wikipediaExternalRef": 286106,
+      "wikidataId": "Q1341441",
+      "domains": [
+        "Physics"
+      ]
+    },
+    {
+      "rawName": "force field",
+      "offsetStart": 674,
+      "offsetEnd": 685,
+      "nerd_score": 0.995,
+      "nerd_selection_score": 0.5369,
+      "wikipediaExternalRef": 286106,
+      "wikidataId": "Q1341441",
+      "domains": [
+        "Physics"
+      ]
+    },
+    {
+      "rawName": "35",
+      "type": "MEASURE",
+      "offsetStart": 707,
+      "offsetEnd": 709,
+      "nerd_score": 0.8,
+      "nerd_selection_score": 0
+    },
+    {
+      "rawName": "46",
+      "type": "MEASURE",
+      "offsetStart": 783,
+      "offsetEnd": 785,
+      "nerd_score": 0.8,
+      "nerd_selection_score": 0
+    },
+    {
+      "rawName": "control groups",
+      "offsetStart": 919,
+      "offsetEnd": 933,
+      "nerd_score": 1.0007,
+      "nerd_selection_score": 0.4401,
+      "wikipediaExternalRef": 1640288,
+      "wikidataId": "Q367359",
+      "domains": [
+        "Computer_Science",
+        "Pedagogy"
+      ]
+    },
+    {
+      "rawName": "force field",
+      "offsetStart": 942,
+      "offsetEnd": 953,
+      "nerd_score": 0.995,
+      "nerd_selection_score": 0.5369,
+      "wikipediaExternalRef": 286106,
+      "wikidataId": "Q1341441",
+      "domains": [
+        "Physics"
+      ]
+    },
+    {
+      "rawName": "1",
+      "type": "MEASURE",
+      "offsetStart": 963,
+      "offsetEnd": 964,
+      "nerd_score": 0.8,
+      "nerd_selection_score": 0
+    },
+    {
+      "rawName": "force field",
+      "offsetStart": 995,
+      "offsetEnd": 1006,
+      "nerd_score": 0.995,
+      "nerd_selection_score": 0.5369,
+      "wikipediaExternalRef": 286106,
+      "wikidataId": "Q1341441",
+      "domains": [
+        "Physics"
+      ]
+    },
+    {
+      "rawName": "3",
+      "type": "MEASURE",
+      "offsetStart": 1014,
+      "offsetEnd": 1015,
+      "nerd_score": 0.8,
+      "nerd_selection_score": 0
+    },
+    {
+      "rawName": "AA",
+      "type": "ORGANISATION",
+      "offsetStart": 1017,
+      "offsetEnd": 1019,
+      "nerd_score": 0.8,
+      "nerd_selection_score": 0
     }
   ]
 }

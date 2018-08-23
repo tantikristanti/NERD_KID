@@ -2,7 +2,6 @@ package org.nerd.kid.extractor;
 
 import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.data.WikidataElementInfos;
-import org.nerd.kid.exception.RemoteServiceException;
 import org.nerd.kid.extractor.wikidata.WikidataFetcherWrapper;
 
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
 package org.nerd.kid.preprocessing;
 
 import au.com.bytecode.opencsv.CSVWriter;
-import org.nerd.kid.arff.MainTrainerGenerator;
+import org.nerd.kid.arff.TrainerGenerator;
 import org.nerd.kid.data.WikidataElementInfos;
 import org.nerd.kid.extractor.grobidNer.GrobidNerEntity;
 import org.nerd.kid.extractor.grobidNer.MentionExtractor;
@@ -28,7 +28,7 @@ public class GrobidNERTrainingDataTransformer {
         String pathOutputGrobidNerCsv = NerdKidPaths.DATA_CSV + "/GrobidNer/AnnotatedCorpusResult.csv";
         String pathOutputEntityFishingCsv = NerdKidPaths.DATA_CSV + "/toBeCorrected/NewElements.csv";
         MentionExtractor mentionExtractor = new MentionExtractor();
-        MainTrainerGenerator mainTrainerGenerator = new MainTrainerGenerator();
+        TrainerGenerator trainerGenerator = new TrainerGenerator();
         CSVWriter csvWriter = null;
         try {
             // header's file
@@ -39,7 +39,7 @@ public class GrobidNERTrainingDataTransformer {
             csvWriter.close();
 
             // iterate through all xml file from Grobid-Ner project
-            final List<Path> xmlFiles = mainTrainerGenerator.listFiles(Paths.get(NerdKidPaths.DATA_XML), "*.{xml}");
+            final List<Path> xmlFiles = trainerGenerator.listFiles(Paths.get(NerdKidPaths.DATA_XML), "*.{xml}");
 
             // extract data from Grobid-Ner project
             List<WikidataElementInfos> training = new ArrayList<>();
