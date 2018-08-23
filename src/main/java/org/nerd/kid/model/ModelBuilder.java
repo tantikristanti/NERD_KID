@@ -297,10 +297,13 @@ public class ModelBuilder {
 
     public void extractZip(File inputFile, File outputFile) throws IOException {
         byte[] buffer = null;
-        GZIPInputStream gzipInputStream = null;
+        FileInputStream inputStream = null;
         FileOutputStream outputStream = null;
+        GZIPInputStream gzipInputStream = null;
+
         try{
-            gzipInputStream = new GZIPInputStream(new FileInputStream(inputFile));
+            inputStream = new FileInputStream(inputFile);
+            gzipInputStream = new GZIPInputStream(inputStream);
             outputStream = new FileOutputStream(outputFile);
             buffer = new byte[1024];
             int length;
@@ -309,10 +312,45 @@ public class ModelBuilder {
             }
 
             gzipInputStream.close();
+            inputStream.close();
             outputStream.close();
         }catch (IOException e){
             e.printStackTrace();
         }
     }
 
+    public InputStream readZipFile(File file) {
+        FileInputStream fileInputStream = null;
+        GZIPInputStream gzipInputStream = null;
+        try {
+            fileInputStream = new FileInputStream(file);
+            gzipInputStream = new GZIPInputStream(fileInputStream);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return gzipInputStream;
+    }
+
+    /*main class to build a model from training file*/
+    public static void main(String[] args) throws Exception {
+        final String pathnameXML = "/tmp/model.xml";
+        final String pathnameZIP = "/tmp/model.zip";
+        String fileInput = "Training.arff";
+        String fileOutput = "Result_Trained_Model.txt";
+        String pathInput = NerdKidPaths.RESULT_ARFF + "/" + fileInput;
+
+        ModelBuilder modelBuilder = new ModelBuilder();
+        modelBuilder.loadData(new File(pathInput));
+
+        int split = 80;
+        System.out.print("Percentage of training data (in %): " + split);
+        modelBuilder.splitModel(split);
+        System.out.println("Result can be found in " + NerdKidPaths.RESULT_TXT + "/" + fileOutput);
+
+        modelBuilder.saveModelToXML(new File(pathnameXML));
+        byte[] resultInBytes= modelBuilder.readBytesFromFile(new File(pathnameXML));
+        modelBuilder.createZip(resultInBytes, new File(pathnameZIP));
+        System.out.println("Model has been saved in " + pathnameXML + " and " + pathnameZIP);
+    }
 }

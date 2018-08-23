@@ -3,7 +3,7 @@ package org.nerd.kid.model;
 import au.com.bytecode.opencsv.CSVWriter;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.security.AnyTypePermission;
-import org.nerd.kid.arff.MainTrainerGenerator;
+import org.nerd.kid.arff.TrainerGenerator;
 import org.nerd.kid.data.WikidataElementInfos;
 import org.nerd.kid.extractor.ClassExtractor;
 import org.nerd.kid.extractor.FeatureWikidataExtractor;
@@ -36,23 +36,23 @@ public class WikidataNERPredictor {
 
     ModelBuilder modelBuilder = new ModelBuilder();
 
-    public void extractModel() {
+    public WikidataNERPredictor() {
         String pathModelZip = "model.zip";
-        String pathModelExtracted = "src/main/resources/model.xml";
         ClassLoader classLoader = getClass().getClassLoader();
-
-        try{
-            File fileExtracted = new File(classLoader.getResource(pathModelZip).getFile());
-            modelBuilder.extractZip(fileExtracted,new File(pathModelExtracted));
+        try {
+            XStream.setupDefaultSecurity(streamer);
+            streamer.addPermission(AnyTypePermission.ANY);
+            InputStream modelStream = modelBuilder.readZipFile(new File(classLoader.getResource(pathModelZip).getFile()));
+            loadModel(modelStream);
         }catch (Exception e){
             e.printStackTrace();
         }
     }
 
+    // loading model in Xml format
     public void loadModel() {
         String pathModel = "/model.xml";
         try {
-
             // the model.xml is located in /src/main/resources
             InputStream model = this.getClass().getResourceAsStream(pathModel);
             forest = (RandomForest) streamer.fromXML(model);
@@ -61,10 +61,13 @@ public class WikidataNERPredictor {
         }
     }
 
-    public WikidataNERPredictor() {
-        XStream.setupDefaultSecurity(streamer);
-        streamer.addPermission(AnyTypePermission.ANY);
-        loadModel();
+    // loading model in Inputstream format --> after decompressing with GzipInputStream
+    public void loadModel(InputStream modelStream) {
+        try {
+            forest = (RandomForest) streamer.fromXML(modelStream);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     // to initialize the wrapper
@@ -145,9 +148,9 @@ public class WikidataNERPredictor {
 
     public void predictForPreannotation(File fileInput, File fileOutput) throws Exception {
         // get the wikiId and class from the new csv file
-        MainTrainerGenerator mainTrainerGenerator = new MainTrainerGenerator();
+        TrainerGenerator trainerGenerator = new TrainerGenerator();
         List<WikidataElementInfos> inputList = new ArrayList<>();
-        inputList = mainTrainerGenerator.extractData(fileInput);
+        inputList = trainerGenerator.extractData(fileInput);
         try {
             csvWriter = new CSVWriter(new FileWriter(fileOutput), ',', CSVWriter.NO_QUOTE_CHARACTER);
             // header's file
@@ -173,5 +176,14 @@ public class WikidataNERPredictor {
             csvWriter.close();
         }
         System.out.print("Result in " + fileOutput);
+    }
+
+    public static void main(String[] args) throws Exception{
+        String fileInput = NerdKidPaths.DATA_CSV + "/NewElements.csv";
+        String fileOutput = NerdKidPaths.RESULT_CSV + "/ResultPredictedClass.csv";
+
+        WikidataNERPredictor wikidataNERPredictor = new WikidataNERPredictor();
+        System.out.println("Processing the pre-annotation ...");
+        wikidataNERPredictor.predictForPreannotation(new File(fileInput), new File(fileOutput));
     }
 }
