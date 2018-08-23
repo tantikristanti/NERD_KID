@@ -9,11 +9,15 @@ The idea of this project is to make computers <font color="red"> understand </fo
 
 Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki/Q937) in Wikidata which has an identifier 'Q937'. This item actually has a number of properties (e.g. 'instance of-P31', 'sex or gender-P21', etc.) as well as a number of values for each property (e.g. 'human-Q5' as a value of property 'P31', 'male-Q6581097' as a value of property 'P-21'). Based on a trained given model, computers will understand how making some predictions and classifying the Albert Einstein's item into a certain class, Person class, for instance. This project will also consider disambiguity of items. For instance, computers will not classify [Marshall Plan](https://www.wikidata.org/wiki/Q4576) into a Person class, because it's not a name of a person, rather it's an American initiative to aid Western Europe. 
 
-<img align="middle" width="500" height="450" src="pic/AlbertEinstein.jpg"/>
+<center>
+<img width="550" height="350" alt = "Albert Einstein" src="pic/AlbertEinstein.jpg"/>
+</center>
 
 # Tools
 
-<img align="middle" width="500" height="450" src="pic/Tools.jpg"/>
+<center>
+<img width="550" height="350" alt = "Developing Tools" src="pic/Tools.jpg"/>
+</center>
 
 # Installation-Build-Run
 **1. Installation**
@@ -102,7 +106,9 @@ For testing purposes, Nerd-Kid is available here [Nerd-Kid](http://nerd.huma-num
 
 User can only just change the Wikidata Id started with 'Q' and then the number.
 
-<img align="middle" width="500" height="200" src="pic/ResultPredictionWeb.jpg"/>
+<center>
+<img width="550" height="150" alt = "Prediction Result" src="pic/ResultPredictionWeb.jpg"/>
+</center>
 
 - The result will be Wikidata Id, the properties, and the result of predicted class.
 
