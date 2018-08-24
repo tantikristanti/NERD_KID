@@ -4,7 +4,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/*
+Wikidata Element class is made to collect the Wikidata Id, Label, and the properties of this Wikidata Id
+* */
+
 public class WikidataElement {
+    private String id;
+
+    private String label;
+
+    private Map<String, List<String>> properties = new HashMap<>();
+
+    private List<String> propertiesNoValue;
+
     public List<String> getPropertiesNoValue() {
         return propertiesNoValue;
     }
@@ -13,10 +25,6 @@ public class WikidataElement {
         this.propertiesNoValue = propertiesNoValue;
     }
 
-    private List<String> propertiesNoValue;
-
-    private String id;
-
     public String getId() {
         return id;
     }
@@ -24,8 +32,6 @@ public class WikidataElement {
     public void setId(String id) {
         this.id = id;
     }
-
-    private String label;
 
     public String getLabel() {
         return label;
@@ -43,5 +49,4 @@ public class WikidataElement {
         this.properties = properties;
     }
 
-    private Map<String, List<String>> properties = new HashMap<>();
 }

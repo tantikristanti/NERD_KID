@@ -3,6 +3,10 @@ package org.nerd.kid.data;
 import java.util.List;
 
 public class WikidataElementInfos {
+    private String wikidataId, label, realClass, predictedClass;
+
+    private Double[] featureVector;
+
     public String getWikidataId() {
         return wikidataId;
     }
@@ -35,26 +39,12 @@ public class WikidataElementInfos {
         this.predictedClass = predictedClass;
     }
 
-    public Integer[] getFeatureVector() {
+    public Double[] getFeatureVector() {
         return featureVector;
     }
 
-    public void setFeatureVector(Integer[] featureVector) {
+    public void setFeatureVector(Double[] featureVector) {
         this.featureVector = featureVector;
     }
-
-    private String wikidataId, label, realClass, predictedClass;
-    
-    private Integer[] featureVector;
-
-    public List<String> getRawFeatureVector() {
-        return rawFeatureVector;
-    }
-
-    public void setRawFeatureVector(List<String> rawFeatureVector) {
-        this.rawFeatureVector = rawFeatureVector;
-    }
-
-    private List<String> rawFeatureVector;
 
 }

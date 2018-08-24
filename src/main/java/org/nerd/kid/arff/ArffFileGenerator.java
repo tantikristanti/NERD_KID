@@ -150,8 +150,8 @@ public class ArffFileGenerator {
     public ArffFileGenerator addSingle(WikidataElementInfos result) {
         StringBuilder line = new StringBuilder();
 
-        Integer[] features = result.getFeatureVector();
-        for (Integer feature : features) {
+        Double[] features = result.getFeatureVector();
+        for (Double feature : features) {
             line.append(feature.toString()).append(",");
         }
         line.append(result.getRealClass()).append("\n");

@@ -6,7 +6,7 @@ import org.apache.commons.csv.CSVRecord;
 import org.nerd.kid.data.WikidataElementInfos;
 import org.nerd.kid.extractor.ClassExtractor;
 import org.nerd.kid.extractor.FeatureFileExtractor;
-import org.nerd.kid.extractor.FeatureWikidataExtractor;
+import org.nerd.kid.extractor.FeatureDataExtractor;
 import org.nerd.kid.extractor.wikidata.NerdKBFetcherWrapper;
 import org.nerd.kid.service.NerdKidPaths;
 
@@ -21,7 +21,7 @@ main class for generating Arff file
 public class TrainerGenerator {
     ArffFileGenerator arffFileGenerator = new ArffFileGenerator();
     NerdKBFetcherWrapper nerdKBFetcherWrapper = new NerdKBFetcherWrapper();
-    FeatureWikidataExtractor featureWikidataExtractor = new FeatureWikidataExtractor(nerdKBFetcherWrapper);
+    FeatureDataExtractor featureWikidataExtractor = new FeatureDataExtractor(nerdKBFetcherWrapper);
     FeatureFileExtractor featureFileExtractor = new FeatureFileExtractor();
     ClassExtractor classExtractor = new ClassExtractor();
 
@@ -173,8 +173,8 @@ public class TrainerGenerator {
                 List<String> dataFeatureGenerated = new ArrayList<String>();
                 List<String> dataCombined = new ArrayList<String>();
 
-                Integer[] features = wikidataFeatures.getFeatureVector();
-                for (Integer feature : features) {
+                Double[] features = wikidataFeatures.getFeatureVector();
+                for (Double feature : features) {
                     dataFeatureGenerated.add(feature.toString());
                 }
                 dataCombined.addAll(dataGenerated);
