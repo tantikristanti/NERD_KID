@@ -28,7 +28,8 @@ public class TrainerGenerator {
 
     public void run(String fileOutput) throws Exception {
         // get the list of features
-        Map<String, List<String>> resultFeature = featureFileExtractor.loadFeatures();
+        //Map<String, List<String>> resultFeature = featureFileExtractor.loadFeatures();
+        List<String> resultFeature = featureFileExtractor.loadFeatures();
         List<String> resultFeatureNoValue = featureFileExtractor.loadFeaturesNoValue();
 
         // get the list classes
@@ -119,7 +120,8 @@ public class TrainerGenerator {
         String csvDataPath = NerdKidPaths.RESULT_CSV  + "/" + fileOutput;
         CSVWriter csvWriter = null;
         // get the list of features
-        Map<String, List<String>> resultFeature = featureFileExtractor.loadFeatures();
+        //Map<String, List<String>> resultFeature = featureFileExtractor.loadFeatures();
+        List<String> resultFeature = featureFileExtractor.loadFeatures();
         List<String> resultFeatureNoValue = featureFileExtractor.loadFeaturesNoValue();
 
         try {
@@ -127,27 +129,27 @@ public class TrainerGenerator {
 
             // the header's file
             List<String> headerPredict = Arrays.asList("WikidataID,LabelWikidata,Class");
-            List<String> headerPropertyNoValue = new ArrayList<String>();
-            List<String> headerPropertyValue = new ArrayList<String>();
+//            List<String> headerPropertyNoValue = new ArrayList<String>();
+//            List<String> headerPropertyValue = new ArrayList<String>();
             List<String> headerCombined = new ArrayList<String>();
 
             // header contains properties of Wiki Ids
-            for (String propertyNoValue : resultFeatureNoValue){
-                headerPropertyNoValue.add(propertyNoValue);
-            }
-
-            for (Map.Entry<String, List<String>> property : resultFeature.entrySet()) {
-                List<String> values = property.getValue();
-
-                for (String item : values) {
-                    String propertyValue = property.getKey() + "_" + item;
-                    headerPropertyValue.add(propertyValue);
-                }
-            }
+//            for (String propertyNoValue : resultFeatureNoValue){
+//                headerPropertyNoValue.add(propertyNoValue);
+//            }
+//
+//            for (Map.Entry<String, List<String>> property : resultFeature.entrySet()) {
+//                List<String> values = property.getValue();
+//
+//                for (String item : values) {
+//                    String propertyValue = property.getKey() + "_" + item;
+//                    headerPropertyValue.add(propertyValue);
+//                }
+//            }
 
             headerCombined.addAll(headerPredict);
-            headerCombined.addAll(headerPropertyNoValue);
-            headerCombined.addAll(headerPropertyValue);
+            headerCombined.addAll(resultFeatureNoValue);
+            headerCombined.addAll(resultFeature);
             csvWriter.writeNext(headerCombined.toArray(new String[headerCombined.size()]));
 
             // the data

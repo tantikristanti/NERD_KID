@@ -8,12 +8,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class FeatureFileExtractor {
-    public Map<String, List<String>> loadFeatures() {
+    public List<String> loadFeatures() {
         // get the features (properties and values) from the list in the csv file
         //String fileFeatureMapper = pathSource + "/feature_mapper.csv";
 
@@ -25,27 +24,33 @@ public class FeatureFileExtractor {
             //File file = new File(classLoader.getResource(fileFeatureMapper).getFile());
             //InputStream inputStream = new FileInputStream(file);
 
-            Map<String, List<String>> featureMap = new HashMap<>();
+//            Map<String, List<String>> featureMap = new HashMap<>();
+            List<String> featureList = new ArrayList<>();
             Reader featureMapperIn = new InputStreamReader(inputStream);
             Iterable<CSVRecord> recordsFeatures = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(featureMapperIn);
 
             for (CSVRecord recordFeature : recordsFeatures) {
                 String property = recordFeature.get("Property");
                 String value = recordFeature.get("Value");
+                String propertyValue = property+"_"+value;
 
                 // in order to get unique of property-value combination
-                if (featureMap.keySet().contains(property)) {
-                    featureMap.get(property).add(value); // if a property-value exists, get it
-                } else {
-                    List<String> values = new ArrayList<>();
-                    values.add(value);
-                    featureMap.put(property, values); // if there aren't exist yet, add a new one
+//                if (featureMap.keySet().contains(property)) {
+//                    featureMap.get(property).add(value); // if a property-value exists, get it
+//                } else {
+//                    List<String> values = new ArrayList<>();
+//                    values.add(value);
+//                    featureMap.put(property, values); // if they don't exist yet, add a new one
+//                }
+
+                if (property != null) {
+                    featureList.add(propertyValue);
                 }
             }
-            return featureMap;
+            return featureList;
         } catch (IOException e) {
             e.printStackTrace();
-            return new HashMap<>();
+            return new ArrayList<>();
         }
     }
 
@@ -68,7 +73,7 @@ public class FeatureFileExtractor {
             for (CSVRecord recordFeatureNoValue : recordsFeaturesNoValue) {
                 String property = recordFeatureNoValue.get("Property");
 
-                if (recordFeatureNoValue != null) {
+                if (property != null) {
                     featureListNoValue.add(property);
                 }
             }

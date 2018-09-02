@@ -65,22 +65,31 @@ public class ArffFileGenerator {
         return this;
     }
 
-    public ArffFileGenerator addAttribute(Map<String, List<String>> attributeList) {
+    //public ArffFileGenerator addAttribute(Map<String, List<String>> attributeList) {
+    public ArffFileGenerator addAttribute(List<String> attributeList) {
         if (hasBody) {
             throw new RuntimeException("Cannot add attribute definition. ");
         }
         try {
 
-            for (Map.Entry<String, List<String>> property : attributeList.entrySet()) {
-                List<String> values = property.getValue();
-                for (String item : values) {
-                    String propertyValue = property.getKey() + "_" + item;
-                    writer.append("@ATTRIBUTE")
-                            .append(" ")
-                            .append(propertyValue)
-                            .append(" {0,1}")
-                            .append("\n");
-                }
+//            for (Map.Entry<String, List<String>> property : attributeList.entrySet()) {
+//                List<String> values = property.getValue();
+//                for (String item : values) {
+//                    String propertyValue = property.getKey() + "_" + item;
+//                    writer.append("@ATTRIBUTE")
+//                            .append(" ")
+//                            .append(propertyValue)
+//                            .append(" {0,1}")
+//                            .append("\n");
+//                }
+//            }
+
+            for (String propertyValue : attributeList) {
+                writer.append("@ATTRIBUTE")
+                        .append(" ")
+                        .append(propertyValue)
+                        .append(" {0,1}")
+                        .append("\n");
             }
 
         } catch (IOException e) {

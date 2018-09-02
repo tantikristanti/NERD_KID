@@ -3,17 +3,22 @@ package org.nerd.kid.extractor;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.File;
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class FeatureDataExtractorTest {
     FeatureDataExtractor featureDataExtractor;
-    List<String> propertiesNoValue = Arrays.asList("P1001","P1128","P136","P1435","P159","P1772","P276","P50","P580","P86");
+    // features for item "Q1077 - Star Trek: The Original Series" with the class "CREATION"
+    List<String> propertiesNoValueList = Arrays.asList("P136","P1476","P170","P179","P580","P582","P86");
+
+    // features for item "Q1017 - Aachen" with the class "LOCATION"
+    List<String> propertiesList = Arrays.asList("Q1187811","Q1549591","Q22865","Q515");
+    Map<String, List<String>> propertiesMap = new HashMap<>();
 
     @Before
     public void setUp() throws Exception {
@@ -22,22 +27,53 @@ public class FeatureDataExtractorTest {
 
     @Test
     public void getFeatureWikidataTest1() {
-        Double[] result = featureDataExtractor.getFeatureWikidata(propertiesNoValue);
-        assertThat(result[0], is(1.0));
+        Double[] result = featureDataExtractor.getFeatureWikidata(propertiesNoValueList);
+        // index is the row position in file resources\feature_mapper_no_value.csc (minus) 2
+        assertThat(result[0], is(0.0));
+        assertThat(result[1], is(0.0));
         assertThat(result[2], is(0.0));
-        assertThat(result[3], is(1.0));
+        assertThat(result[3], is(0.0));
         assertThat(result[4], is(0.0));
         assertThat(result[5], is(0.0));
         assertThat(result[6], is(1.0));
         assertThat(result[7], is(0.0));
         assertThat(result[8], is(0.0));
-        assertThat(result[9], is(1.0));
-        assertThat(result[13], is(1.0));
-        assertThat(result[18], is(1.0));
-        assertThat(result[25], is(1.0));
-        assertThat(result[31], is(1.0));
+        assertThat(result[9], is(0.0));
+        assertThat(result[10], is(1.0));
+        assertThat(result[11], is(0.0));
+        assertThat(result[12], is(0.0));
+        assertThat(result[13], is(0.0));
+        assertThat(result[14], is(0.0));
+        assertThat(result[15], is(1.0));
+        assertThat(result[20], is(1.0));
         assertThat(result[33], is(1.0));
-        assertThat(result[37], is(1.0));
+        assertThat(result[34], is(1.0));
     }
 
+    @Test
+    public void getFeatureWikidataTest2() {
+        propertiesMap.put("P31", propertiesList);
+        Double[] result = featureDataExtractor.getFeatureWikidata(propertiesMap);
+
+        assertThat(propertiesMap.get("P31").get(0), is("Q1187811"));
+        assertThat(propertiesMap.get("P31").get(1), is("Q1549591"));
+        assertThat(propertiesMap.get("P31").get(2), is("Q22865"));
+        assertThat(propertiesMap.get("P31").get(3), is("Q515"));
+
+        // index is the row position in file resources\feature_mapper_no_value.csc (minus) 2
+        assertThat(result[0], is(0.0));
+        assertThat(result[1], is(0.0));
+        assertThat(result[2], is(0.0));
+        assertThat(result[3], is(0.0));
+        assertThat(result[4], is(0.0));
+        assertThat(result[5], is(0.0));
+        assertThat(result[6], is(0.0));
+        assertThat(result[7], is(0.0));
+        assertThat(result[8], is(0.0));
+        assertThat(result[9], is(0.0));
+        assertThat(result[39], is(1.0));
+        assertThat(result[54], is(1.0));
+        assertThat(result[83], is(1.0));
+        assertThat(result[127], is(1.0));
+    }
 }
