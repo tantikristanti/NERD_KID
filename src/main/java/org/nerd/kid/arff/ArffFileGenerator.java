@@ -161,7 +161,8 @@ public class ArffFileGenerator {
 
         Double[] features = result.getFeatureVector();
         for (Double feature : features) {
-            line.append(feature.toString()).append(",");
+//            line.append(feature.toString()).append(",");
+            line.append(String.valueOf(feature.intValue())).append(",");
         }
         line.append(result.getRealClass()).append("\n");
 

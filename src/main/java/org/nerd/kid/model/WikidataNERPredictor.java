@@ -24,7 +24,6 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 public class WikidataNERPredictor {
-    private String pathResult = NerdKidPaths.RESULT_CSV;
     private CSVWriter csvWriter = null;
     private XStream streamer = new XStream();
     private RandomForest forest = null;
@@ -45,6 +44,12 @@ public class WikidataNERPredictor {
         }
     }
 
+//    public WikidataNERPredictor() {
+//        XStream.setupDefaultSecurity(streamer);
+//        streamer.addPermission(AnyTypePermission.ANY);
+//        loadModel();
+//    }
+
     public RandomForest getForest() {
         return forest;
     }
@@ -54,16 +59,16 @@ public class WikidataNERPredictor {
     }
 
     // loading model in Xml format
-    public void loadModel() {
-        String pathModel = "/model.xml";
-        try {
-            // the model.xml is located in /src/main/resources
-            InputStream model = this.getClass().getResourceAsStream(pathModel);
-            forest = (RandomForest) streamer.fromXML(model);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    public void loadModel() {
+//        String pathModel = "/model.xml";
+//        try {
+//            // the model.xml is located in /src/main/resources
+//            InputStream model = this.getClass().getResourceAsStream(pathModel);
+//            forest = (RandomForest) streamer.fromXML(model);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     // loading model in Inputstream format --> after decompressing with GzipInputStream
     public void loadModel(InputStream modelStream) {
@@ -120,6 +125,7 @@ public class WikidataNERPredictor {
         return wikidataElementInfos;
     }
 
+    // get the input of wikidata element infos and retur the result of prediction
     public WikidataElementInfos predict(WikidataElementInfos wikiInfos) {
         // get the feature of every instance
         final int length = wikiInfos.getFeatureVector().length;
@@ -143,7 +149,7 @@ public class WikidataNERPredictor {
         return wikiInfos;
     }
 
-    // method to get the input of Wikidata Id and return the prediction result
+    // get the input of Wikidata Id and return the prediction result
     public WikidataElementInfos predict(String wikidataId) {
         // extract the characteristics of entities from Nerd
         WikidataFetcherWrapper wrapper = new NerdKBFetcherWrapper();

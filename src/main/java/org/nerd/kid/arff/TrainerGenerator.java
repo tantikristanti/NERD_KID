@@ -177,8 +177,9 @@ public class TrainerGenerator {
 
                 Double[] features = wikidataFeatures.getFeatureVector();
                 for (Double feature : features) {
-                    dataFeatureGenerated.add(feature.toString());
+                    dataFeatureGenerated.add(Integer.toString(feature.intValue()));
                 }
+
                 dataCombined.addAll(dataGenerated);
                 dataCombined.addAll(dataFeatureGenerated);
                 csvWriter.writeNext(dataCombined.toArray(new String[dataCombined.size()]));

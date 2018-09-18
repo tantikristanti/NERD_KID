@@ -36,7 +36,6 @@ public class FeatureDataExtractor {
         /* count the number of features based on '/resources/feature_mapper.csv'
             and number of features based on the '/resources/feature_mapper_no_value.csv'
          */
-        //Map<String, List<String>> featuresMap = new HashMap<>();
         List<String> featuresList = new ArrayList<>();
         List<String> featuresNoValueList = new ArrayList<>();
 
@@ -44,7 +43,6 @@ public class FeatureDataExtractor {
         try {
             featuresList = featureFileExtractor.loadFeatures();
             for (String feature : featuresList) {
-                //nbOfFeatures += featuresMap.get(key).size();
                 nbOfFeatures++;
             }
 
@@ -82,19 +80,6 @@ public class FeatureDataExtractor {
     }
 
     public Double[] getFeatureWikidata(Map<String, List<String>> properties) {
-        // get the features from feature mapper list files
-        //Map<String, List<String>> featuresMap = featureFileExtractor.loadFeatures();
-        // get the list of properties-values from 'resources/feature_mapper.csv'
-//        List<String> propertyValueFeatureMapper = new ArrayList<>();
-//        for (Map.Entry<String, List<String>> propertyGot : featuresMap.entrySet()) {
-//            String property = propertyGot.getKey();
-//            List<String> values = propertyGot.getValue();
-//            for (String value : values) {
-//                String propertyValue = property + "_" + value;
-//                propertyValueFeatureMapper.add(propertyValue);
-//            }
-//        }
-
         List<String> propertyValueFeatureMapper = featureFileExtractor.loadFeatures();
 
         Double[] featureVector = new Double[propertyValueFeatureMapper.size()];
@@ -141,7 +126,6 @@ public class FeatureDataExtractor {
             e.printStackTrace();
         }
         // get the features from feature mapper list files
-        //Map<String, List<String>> featuresMap = featureFileExtractor.loadFeatures();
         List<String> featuresMap = featureFileExtractor.loadFeatures();
         List<String> featuresNoValueList = featureFileExtractor.loadFeaturesNoValue();
 
@@ -153,20 +137,6 @@ public class FeatureDataExtractor {
         // properties and values got directly from Wikidata or Nerd API (it depends on the implementation of the WikidataFetcherWrapper interface)
         Map<String, List<String>> propertiesWiki = wikidataElement.getProperties();
 
-        // get the list of properties-values from 'resources/feature_mapper.csv'
-//        List<String> propertyValueFeatureMapper = new ArrayList<>();
-//        for (Map.Entry<String, List<String>> propertyGot : featuresMap.entrySet()) {
-//            String property = propertyGot.getKey();
-//            List<String> values = propertyGot.getValue();
-//            for (String value : values) {
-//                String propertyValue = property + "_" + value;
-//                propertyValueFeatureMapper.add(propertyValue);
-//                // if item is Wikimedia disambiguation page (instance of/P31 - Wikimedia disambiguation page/Q4167410)
-//                if (property.equals("P31") && value.equals("Q4167410")) {
-//                    wikidataElementInfos.setPredictedClass("UNKNOWN");
-//                }
-//            }
-//        }
         // collect the result of properties-values fetched directly from Wikidata or Nerd KB
         List<String> propertyValueKB = new ArrayList<>();
         List<String> propertyNoValueKB = new ArrayList<>();
