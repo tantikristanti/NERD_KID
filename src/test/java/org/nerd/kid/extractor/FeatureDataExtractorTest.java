@@ -26,9 +26,9 @@ public class FeatureDataExtractorTest {
     }
 
     @Test
-    public void getFeatureWikidataTest1() {
+    public void getFeatureWikidataTestPropertiesNoValues1() {
         Double[] result = featureDataExtractor.getFeatureWikidata(propertiesNoValueList);
-        // index is the row position in file resources\feature_mapper_no_value.csc (minus) 2
+        // index is the row position in file resources\feature_maspper_no_value.csc (minus) 2
         assertThat(result[0], is(0.0));
         assertThat(result[1], is(0.0));
         assertThat(result[2], is(0.0));
@@ -51,7 +51,17 @@ public class FeatureDataExtractorTest {
     }
 
     @Test
-    public void getFeatureWikidataTest2() {
+    public void getFeatureWikidataTestPropertiesNoValues2() {
+        propertiesNoValueList = Arrays.asList("P1566","P30","P36");
+        Double[] result = featureDataExtractor.getFeatureWikidata(propertiesNoValueList);
+        // index is the row position in file resources\feature_maspper_no_value.csc (minus) 2
+        assertThat(result[12], is(1.0));
+        assertThat(result[26], is(1.0));
+        assertThat(result[28], is(1.0));
+    }
+
+    @Test
+    public void getFeatureWikidataTestProperties() {
         propertiesMap.put("P31", propertiesList);
         Double[] result = featureDataExtractor.getFeatureWikidata(propertiesMap);
 

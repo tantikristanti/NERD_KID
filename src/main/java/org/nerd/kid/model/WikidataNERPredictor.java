@@ -17,10 +17,7 @@ import smile.classification.RandomForest;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class WikidataNERPredictor {
@@ -87,11 +84,9 @@ public class WikidataNERPredictor {
 
     /* Method for accepting Wikidata element (id, label, properties-values) to be predicted*/
     public WikidataElementInfos predict(WikidataElement wikidataElement) {
+        featureDataExtractor = new FeatureDataExtractor();
+
         final WikidataElementInfos wikidataElementInfos = new WikidataElementInfos();
-        final int lengthPropertiesNoValue = wikidataElement.getPropertiesNoValue().size();
-        final int lengthProperties = wikidataElement.getProperties().size();
-        final int totalLength = lengthProperties + lengthPropertiesNoValue;
-        double[] rawFeatures = new double[totalLength];
 
         // fill the wikidata element with basic infos (id, label)
         wikidataElementInfos.setWikidataId(wikidataElement.getId());
@@ -104,6 +99,7 @@ public class WikidataNERPredictor {
         /* convert the properties information into the format binary 0-1 if they are found in the feature mapper files
         since Smile can only predict with the type of Array in double, then the results are already converted into the proper type double[]
         */
+
         Double[] resultGetFeatureWikidataPropertiesNoValue = featureDataExtractor.getFeatureWikidata(propertiesNoValue);
         Double[] resultGetFeatureWikidataProperties = featureDataExtractor.getFeatureWikidata(properties);
 
@@ -212,11 +208,38 @@ public class WikidataNERPredictor {
     }
 
     public static void main(String[] args) throws Exception {
-        String fileInput = NerdKidPaths.DATA_CSV + "/NewElements.csv";
-        String fileOutput = NerdKidPaths.RESULT_CSV + "/ResultPredictedClass.csv";
+//        String fileInput = NerdKidPaths.DATA_CSV + "/NewElements.csv";
+//        String fileOutput = NerdKidPaths.RESULT_CSV + "/ResultPredictedClass.csv";
+//
+//        WikidataNERPredictor wikidataNERPredictor = new WikidataNERPredictor();
+//        System.out.println("Processing the pre-annotation ...");
+//        wikidataNERPredictor.predictForPreannotation(new File(fileInput), new File(fileOutput));
+
 
         WikidataNERPredictor wikidataNERPredictor = new WikidataNERPredictor();
-        System.out.println("Processing the pre-annotation ...");
-        wikidataNERPredictor.predictForPreannotation(new File(fileInput), new File(fileOutput));
+        WikidataElement wikidataElement = new WikidataElement();
+        wikidataElement.setId("Q1011"); // Cape Verde (Class: LOCATION)
+        List<String> propertiesNoValue = Arrays.asList("P1566","P30","P36");
+        Map<String,List<String>> properties = new HashMap<>();
+        properties.put("P31",Arrays.asList("Q6256"));
+        wikidataElement.setProperties(properties);
+        wikidataElement.setPropertiesNoValue(propertiesNoValue);
+        List<String> tempPropertiesNoValue = wikidataElement.getPropertiesNoValue();
+        for (String element : tempPropertiesNoValue){
+            System.out.println(element);
+        }
+
+        Map<String, List<String>> tempProperties = wikidataElement.getProperties();
+        for (Map.Entry<String, List<String>> element : tempProperties.entrySet()){
+            System.out.println(element.getKey());
+            List<String> vals = element.getValue();
+            for (String val : vals){
+                System.out.println(val);
+            }
+        }
+
+        WikidataElementInfos result = wikidataNERPredictor.predict(wikidataElement);
+
+        System.out.println("Class predicted: " + result.getPredictedClass());
     }
 }
