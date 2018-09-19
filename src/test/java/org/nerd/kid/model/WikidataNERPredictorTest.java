@@ -23,7 +23,7 @@ public class WikidataNERPredictorTest {
         try {
             wikidataNERPredictor = new WikidataNERPredictor();
             wikidataElement = new WikidataElement();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -37,14 +37,53 @@ public class WikidataNERPredictorTest {
     }
 
     @Test
-    public void predictWikidataElement() {
+    public void predictWikidataElement1() {
         wikidataElement.setId("Q1011"); // Cape Verde (Class: LOCATION)
-        propertiesNoValue = Arrays.asList("P1566","P30","P36");
-        properties.put("P31",Arrays.asList("Q6256"));
+        propertiesNoValue = Arrays.asList("P1566", "P30", "P36");
+        properties.put("P31", Arrays.asList("Q6256"));
         wikidataElement.setProperties(properties);
         wikidataElement.setPropertiesNoValue(propertiesNoValue);
         predictionResult = wikidataNERPredictor.predict(wikidataElement).getPredictedClass();
 
-        assertThat(predictionResult,is("LOCATION"));
+        assertThat(predictionResult, is("LOCATION"));
+    }
+
+    @Test
+    public void predictWikidataElement2() {
+        wikidataElement.setId("Q103748"); // Team Stronach (Class: ORGANISATION)
+        propertiesNoValue = Arrays.asList("P159");
+        properties.put("P31", Arrays.asList("Q7278"));
+        wikidataElement.setProperties(properties);
+        wikidataElement.setPropertiesNoValue(propertiesNoValue);
+        predictionResult = wikidataNERPredictor.predict(wikidataElement).getPredictedClass();
+
+        assertThat(predictionResult, is("ORGANISATION"));
+    }
+
+    // test if a list containing properties without any values is null
+    @Test
+    public void predictWikidataElement3() {
+        wikidataElement.setId("Q76"); // Barack Obama (Class: PERSON)
+        properties.put("P21", Arrays.asList("Q6581097"));
+        properties.put("P31", Arrays.asList("Q5"));
+        wikidataElement.setProperties(properties);
+        wikidataElement.setPropertiesNoValue(propertiesNoValue);
+        predictionResult = wikidataNERPredictor.predict(wikidataElement).getPredictedClass();
+
+        assertThat(predictionResult, is("PERSON"));
+
+    }
+
+    // test if a map containing properties with values is null
+    @Test
+    public void predictWikidataElement4() {
+        wikidataElement.setId("Q1097"); // Berlin Hauptbahnhof (Class: INSTALLATION)
+        propertiesNoValue = Arrays.asList("P1566","P84");
+        wikidataElement.setProperties(properties);
+        wikidataElement.setPropertiesNoValue(propertiesNoValue);
+        predictionResult = wikidataNERPredictor.predict(wikidataElement).getPredictedClass();
+
+        assertThat(predictionResult, is("INSTALLATION"));
+
     }
 }

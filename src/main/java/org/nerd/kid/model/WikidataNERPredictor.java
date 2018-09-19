@@ -41,19 +41,12 @@ public class WikidataNERPredictor {
         }
     }
 
+    // constructor for loading model in XML format
 //    public WikidataNERPredictor() {
 //        XStream.setupDefaultSecurity(streamer);
 //        streamer.addPermission(AnyTypePermission.ANY);
 //        loadModel();
 //    }
-
-    public RandomForest getForest() {
-        return forest;
-    }
-
-    public void setForest(RandomForest forest) {
-        this.forest = forest;
-    }
 
     // loading model in Xml format
 //    public void loadModel() {
@@ -66,6 +59,14 @@ public class WikidataNERPredictor {
 //            e.printStackTrace();
 //        }
 //    }
+
+    public RandomForest getForest() {
+        return forest;
+    }
+
+    public void setForest(RandomForest forest) {
+        this.forest = forest;
+    }
 
     // loading model in Inputstream format --> after decompressing with GzipInputStream
     public void loadModel(InputStream modelStream) {
@@ -84,6 +85,7 @@ public class WikidataNERPredictor {
 
     /* Method for accepting Wikidata element (id, label, properties-values) to be predicted*/
     public WikidataElementInfos predict(WikidataElement wikidataElement) {
+        // feature data extractor doesn't depend on any wrapper, accepting the wikidata element object
         featureDataExtractor = new FeatureDataExtractor();
 
         final WikidataElementInfos wikidataElementInfos = new WikidataElementInfos();
@@ -103,7 +105,7 @@ public class WikidataNERPredictor {
         Double[] resultGetFeatureWikidataPropertiesNoValue = featureDataExtractor.getFeatureWikidata(propertiesNoValue);
         Double[] resultGetFeatureWikidataProperties = featureDataExtractor.getFeatureWikidata(properties);
 
-        // combine the result of features collected
+        // combine all the features collected (with and without values)
         Double[] combinedFeatureWikidata = Stream.concat(Arrays.stream(resultGetFeatureWikidataPropertiesNoValue), Arrays.stream(resultGetFeatureWikidataProperties)).toArray(Double[]::new);
 
         // if the features are only 0 for all, they don't need to be predicted; they are stated as UNKNOWN
@@ -208,38 +210,11 @@ public class WikidataNERPredictor {
     }
 
     public static void main(String[] args) throws Exception {
-//        String fileInput = NerdKidPaths.DATA_CSV + "/NewElements.csv";
-//        String fileOutput = NerdKidPaths.RESULT_CSV + "/ResultPredictedClass.csv";
-//
-//        WikidataNERPredictor wikidataNERPredictor = new WikidataNERPredictor();
-//        System.out.println("Processing the pre-annotation ...");
-//        wikidataNERPredictor.predictForPreannotation(new File(fileInput), new File(fileOutput));
-
+        String fileInput = NerdKidPaths.DATA_CSV + "/NewElements.csv";
+        String fileOutput = NerdKidPaths.RESULT_CSV + "/ResultPredictedClass.csv";
 
         WikidataNERPredictor wikidataNERPredictor = new WikidataNERPredictor();
-        WikidataElement wikidataElement = new WikidataElement();
-        wikidataElement.setId("Q1011"); // Cape Verde (Class: LOCATION)
-        List<String> propertiesNoValue = Arrays.asList("P1566","P30","P36");
-        Map<String,List<String>> properties = new HashMap<>();
-        properties.put("P31",Arrays.asList("Q6256"));
-        wikidataElement.setProperties(properties);
-        wikidataElement.setPropertiesNoValue(propertiesNoValue);
-        List<String> tempPropertiesNoValue = wikidataElement.getPropertiesNoValue();
-        for (String element : tempPropertiesNoValue){
-            System.out.println(element);
-        }
-
-        Map<String, List<String>> tempProperties = wikidataElement.getProperties();
-        for (Map.Entry<String, List<String>> element : tempProperties.entrySet()){
-            System.out.println(element.getKey());
-            List<String> vals = element.getValue();
-            for (String val : vals){
-                System.out.println(val);
-            }
-        }
-
-        WikidataElementInfos result = wikidataNERPredictor.predict(wikidataElement);
-
-        System.out.println("Class predicted: " + result.getPredictedClass());
+        System.out.println("Processing the pre-annotation ...");
+        wikidataNERPredictor.predictForPreannotation(new File(fileInput), new File(fileOutput));
     }
 }
