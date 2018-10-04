@@ -319,12 +319,23 @@ public class ModelBuilder {
         }
     }
 
+    public InputStream readZipFile(InputStream is) {
+        GZIPInputStream gzipInputStream = null;
+        try {
+            gzipInputStream = new GZIPInputStream(is);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return gzipInputStream;
+    }
+
     public InputStream readZipFile(File file) {
         FileInputStream fileInputStream = null;
         GZIPInputStream gzipInputStream = null;
         try {
             fileInputStream = new FileInputStream(file);
-            gzipInputStream = new GZIPInputStream(fileInputStream);
+            readZipFile(fileInputStream);
 
         }catch (IOException e){
             e.printStackTrace();

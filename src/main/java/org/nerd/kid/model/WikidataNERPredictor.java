@@ -30,11 +30,10 @@ public class WikidataNERPredictor {
 
     public WikidataNERPredictor() {
         String pathModelZip = "model.zip";
-        ClassLoader classLoader = getClass().getClassLoader();
         try {
             XStream.setupDefaultSecurity(streamer);
             streamer.addPermission(AnyTypePermission.ANY);
-            InputStream modelStream = modelBuilder.readZipFile(new File(classLoader.getResource(pathModelZip).getFile()));
+            InputStream modelStream = modelBuilder.readZipFile(this.getClass().getResourceAsStream(pathModelZip));
             loadModel(modelStream);
         } catch (Exception e) {
             e.printStackTrace();
