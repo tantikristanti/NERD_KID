@@ -28,7 +28,7 @@ public class WikidataNERPredictor {
     private FeatureDataExtractor featureDataExtractor = null;
     private ModelBuilder modelBuilder = new ModelBuilder();
 
-    public WikidataNERPredictor() {
+    public void init() {
         String pathModelZip = "model.zip";
         try {
             XStream.setupDefaultSecurity(streamer);
@@ -78,7 +78,7 @@ public class WikidataNERPredictor {
 
     // to initialize the wrapper
     public WikidataNERPredictor(WikidataFetcherWrapper wrapper) {
-        this();
+        init();
         this.wrapper = wrapper;
     }
 
@@ -149,7 +149,6 @@ public class WikidataNERPredictor {
     // get the input of Wikidata Id and return the prediction result
     public WikidataElementInfos predict(String wikidataId) {
         // extract the characteristics of entities from Nerd
-        WikidataFetcherWrapper wrapper = new NerdKBFetcherWrapper();
         FeatureDataExtractor extractor = new FeatureDataExtractor(wrapper);
         final WikidataElementInfos wikidataElementInfos = extractor.getFeatureWikidata(wikidataId);
 
@@ -191,7 +190,6 @@ public class WikidataNERPredictor {
                 String resultPredict = predict(wikiElement.getWikidataId()).getPredictedClass();
 
                 // get the label of every wikidata Id in the csv file
-                WikidataFetcherWrapper wrapper = new NerdKBFetcherWrapper();
                 FeatureDataExtractor extractor = new FeatureDataExtractor(wrapper);
                 final WikidataElementInfos wikidataElement = extractor.getFeatureWikidata(wikiElement.getWikidataId());
                 String label = wikidataElement.getLabel();
@@ -212,7 +210,8 @@ public class WikidataNERPredictor {
         String fileInput = NerdKidPaths.DATA_CSV + "/NewElements.csv";
         String fileOutput = NerdKidPaths.RESULT_CSV + "/ResultPredictedClass.csv";
 
-        WikidataNERPredictor wikidataNERPredictor = new WikidataNERPredictor();
+        WikidataFetcherWrapper wrapper = new NerdKBFetcherWrapper();
+        WikidataNERPredictor wikidataNERPredictor = new WikidataNERPredictor(wrapper);
         System.out.println("Processing the pre-annotation ...");
         wikidataNERPredictor.predictForPreannotation(new File(fileInput), new File(fileOutput));
     }
