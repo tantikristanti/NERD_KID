@@ -16,6 +16,7 @@ import smile.classification.RandomForest;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
 import java.util.stream.Stream;
@@ -25,8 +26,13 @@ public class WikidataNERPredictor {
     private XStream streamer = new XStream();
     private RandomForest forest = null;
     private WikidataFetcherWrapper wrapper = null;
-    private FeatureDataExtractor featureDataExtractor = null;
-    private ModelBuilder modelBuilder = new ModelBuilder();
+    private FeatureDataExtractor featureDataExtractor;
+    private ModelBuilder modelBuilder;
+
+    public WikidataNERPredictor(){
+        featureDataExtractor = new FeatureDataExtractor();
+        modelBuilder = new ModelBuilder();
+    }
 
     public void init() {
         String pathModelZip = "model.zip";
@@ -37,27 +43,9 @@ public class WikidataNERPredictor {
             loadModel(modelStream);
         } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }
     }
-
-    // constructor for loading model in XML format
-//    public WikidataNERPredictor() {
-//        XStream.setupDefaultSecurity(streamer);
-//        streamer.addPermission(AnyTypePermission.ANY);
-//        loadModel();
-//    }
-
-    // loading model in Xml format
-//    public void loadModel() {
-//        String pathModel = "/model.xml";
-//        try {
-//            // the model.xml is located in /src/main/resources
-//            InputStream model = this.getClass().getResourceAsStream(pathModel);
-//            forest = (RandomForest) streamer.fromXML(model);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     public RandomForest getForest() {
         return forest;
@@ -73,6 +61,7 @@ public class WikidataNERPredictor {
             forest = (RandomForest) streamer.fromXML(modelStream);
         } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }
     }
 
@@ -84,8 +73,6 @@ public class WikidataNERPredictor {
 
     /* Method for accepting Wikidata element (id, label, properties-values) to be predicted*/
     public WikidataElementInfos predict(WikidataElement wikidataElement) {
-        // feature data extractor doesn't depend on any wrapper, accepting the wikidata element object
-        featureDataExtractor = new FeatureDataExtractor();
 
         final WikidataElementInfos wikidataElementInfos = new WikidataElementInfos();
 
@@ -100,7 +87,6 @@ public class WikidataNERPredictor {
         /* convert the properties information into the format binary 0-1 if they are found in the feature mapper files
         since Smile can only predict with the type of Array in double, then the results are already converted into the proper type double[]
         */
-
         Double[] resultGetFeatureWikidataPropertiesNoValue = featureDataExtractor.getFeatureWikidata(propertiesNoValue);
         Double[] resultGetFeatureWikidataProperties = featureDataExtractor.getFeatureWikidata(properties);
 
@@ -175,12 +161,13 @@ public class WikidataNERPredictor {
         return wikidataElementInfos;
     }
 
-    public void predictForPreannotation(File fileInput, File fileOutput) throws Exception {
+    public void predictForPreannotation(File fileInput, File fileOutput) throws IOException{
         // get the wikiId and class from the new csv file
         TrainerGenerator trainerGenerator = new TrainerGenerator();
         List<WikidataElementInfos> inputList = new ArrayList<>();
-        inputList = trainerGenerator.extractData(fileInput);
+
         try {
+            inputList = trainerGenerator.extractData(fileInput);
             csvWriter = new CSVWriter(new FileWriter(fileOutput), ',', CSVWriter.NO_QUOTE_CHARACTER);
             // header's file
             String[] headerPredict = {"WikidataID,LabelWikidata,Class"};
@@ -190,8 +177,8 @@ public class WikidataNERPredictor {
                 String resultPredict = predict(wikiElement.getWikidataId()).getPredictedClass();
 
                 // get the label of every wikidata Id in the csv file
-                FeatureDataExtractor extractor = new FeatureDataExtractor(wrapper);
-                final WikidataElementInfos wikidataElement = extractor.getFeatureWikidata(wikiElement.getWikidataId());
+                featureDataExtractor = new FeatureDataExtractor(wrapper);
+                final WikidataElementInfos wikidataElement = featureDataExtractor.getFeatureWikidata(wikiElement.getWikidataId());
                 String label = wikidataElement.getLabel();
 
                 // write the result into a new csv file
@@ -199,13 +186,17 @@ public class WikidataNERPredictor {
                 csvWriter.writeNext(dataPredict);
             }
 
-        } finally {
+        } catch (Exception e){
+            e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
+        }finally {
             csvWriter.flush();
             csvWriter.close();
         }
         System.out.print("Result in " + fileOutput);
     }
 
+    // for predicting a list of wikidata Ids in a form of Csv file
     public static void main(String[] args) throws Exception {
         String fileInput = NerdKidPaths.DATA_CSV + "/NewElements.csv";
         String fileOutput = NerdKidPaths.RESULT_CSV + "/ResultPredictedClass.csv";

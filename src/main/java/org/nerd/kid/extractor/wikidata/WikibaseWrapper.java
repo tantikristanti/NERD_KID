@@ -12,14 +12,19 @@ import java.util.Map;
 
 public class WikibaseWrapper implements WikidataFetcherWrapper {
 
-    private WikibaseDataFetcher wikibaseDataFetcher = WikibaseDataFetcher.getWikidataDataFetcher();
+    private WikibaseDataFetcher wikibaseDataFetcher;
 
-    FeatureFileExtractor featureFileExtractor = new FeatureFileExtractor();
+    private FeatureFileExtractor featureFileExtractor;
+
+    public WikibaseWrapper(){
+        wikibaseDataFetcher = WikibaseDataFetcher.getWikidataDataFetcher();
+        featureFileExtractor = new FeatureFileExtractor();
+    }
 
     public WikidataElement getElement(String wikiId) throws Exception {
         String labelItem = null;
 
-        System.out.println("Fetch data from wikidata " + wikiId);
+        System.out.println("Fetch data from Wikidata API..." + wikiId);
 
         WikidataElement wikidataElement = new WikidataElement();
 

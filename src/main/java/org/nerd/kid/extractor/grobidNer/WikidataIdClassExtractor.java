@@ -27,10 +27,13 @@ public class WikidataIdClassExtractor {
 
         }catch (FileNotFoundException e){
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }catch (IOException e){
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }catch (ParseException e){
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }
         return nerdEntityList;
     }
@@ -110,6 +113,7 @@ public class WikidataIdClassExtractor {
             //return nerdEntityList;
         }catch (ParseException e){
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }
         return nerdEntityList;
     }
@@ -132,6 +136,7 @@ public class WikidataIdClassExtractor {
 
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }
     }
 

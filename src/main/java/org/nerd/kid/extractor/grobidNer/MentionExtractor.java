@@ -24,6 +24,12 @@ public class MentionExtractor {
     /* method for extracting list of mentions and their classes from Grobid-Ner project
     https://github.com/kermitt2/grobid-ner/blob/master/grobid-ner/resources/dataset/ner/corpus/xml/final
     * */
+    private NerdClient nerdClient;
+
+    public MentionExtractor(){
+        nerdClient = new NerdClient("cloud.science-miner.com/nerd/service");
+    }
+
     public void loadMentionClassFromGrobidNerProject(Path fileInput, String fileOutput) {
         CSVWriter csvWriter = null;
 
@@ -62,10 +68,13 @@ public class MentionExtractor {
             csvWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         } catch (SAXException e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }
     }
 
@@ -106,7 +115,7 @@ public class MentionExtractor {
 
         int length = mentionList.size();
         try {
-            NerdClient nerdClient = new NerdClient("cloud.science-miner.com/nerd/service");
+            nerdClient = new NerdClient("cloud.science-miner.com/nerd/service");
             File fl = new File(outputFile);
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fl));
 
@@ -134,6 +143,7 @@ public class MentionExtractor {
             System.out.println("Result of disambiguation of Entity-Fishing can be seen in : " + outputFile);
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }
     }
 
@@ -146,7 +156,6 @@ public class MentionExtractor {
 
         try {
             CSVWriter csvWriter = new CSVWriter(new FileWriter(outputFile), ',', CSVWriter.NO_QUOTE_CHARACTER);
-            NerdClient nerdClient = new NerdClient("cloud.science-miner.com/nerd/service");
 
             // header of Csv file
             String[] header = {"RawText,WikidataID,Class,ClassEntityFishing,NerdScore,SelectionScore"};
@@ -173,6 +182,7 @@ public class MentionExtractor {
 
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }
     }
 

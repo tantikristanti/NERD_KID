@@ -31,6 +31,7 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
 
     @Override
     public WikidataElement getElement(String wikiId) {
+        System.out.println("Fetch data from Nerd knowledge base through API service... " + wikiId);
         WikidataElement result = null;
         try {
             HttpClient client = HttpClientBuilder.create().build();
@@ -61,12 +62,16 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
             }
         }catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }catch (RemoteServiceException e) {
              e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         } catch (DataException e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }catch (Exception e){
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }
         return result;
     }

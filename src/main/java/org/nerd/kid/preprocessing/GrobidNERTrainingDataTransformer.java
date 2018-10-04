@@ -62,6 +62,7 @@ public class GrobidNERTrainingDataTransformer {
 
         }catch (IOException e){
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }
     }
 }

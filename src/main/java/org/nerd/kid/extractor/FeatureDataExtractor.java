@@ -15,20 +15,13 @@ public class FeatureDataExtractor {
     private WikidataFetcherWrapper wikidataFetcherWrapper = null;
 
     // for reading feature pattern in feature mapper files in '/resources' directory
-    private FeatureFileExtractor featureFileExtractor = new FeatureFileExtractor();
+    private FeatureFileExtractor featureFileExtractor;
 
     public FeatureDataExtractor() {
+        featureFileExtractor = new FeatureFileExtractor();
     }
 
     public FeatureDataExtractor(WikidataFetcherWrapper wikidataFetcherWrapper) {
-        this.wikidataFetcherWrapper = wikidataFetcherWrapper;
-    }
-
-    public WikidataFetcherWrapper getWikidataFetcherWrapper() {
-        return wikidataFetcherWrapper;
-    }
-
-    public void setWikidataFetcherWrapper(WikidataFetcherWrapper wikidataFetcherWrapper) {
         this.wikidataFetcherWrapper = wikidataFetcherWrapper;
     }
 
@@ -36,29 +29,13 @@ public class FeatureDataExtractor {
         /* count the number of features based on '/resources/feature_mapper.csv'
             and number of features based on the '/resources/feature_mapper_no_value.csv'
          */
-        List<String> featuresList = new ArrayList<>();
-        List<String> featuresNoValueList = new ArrayList<>();
-
-        int nbOfFeatures = 0; // number of features of feature_mapper.csv
-        try {
-            featuresList = featureFileExtractor.loadFeatures();
-            for (String feature : featuresList) {
-                nbOfFeatures++;
-            }
-
-            featuresNoValueList = featureFileExtractor.loadFeaturesNoValue();
-            for (String feature : featuresNoValueList) {
-                nbOfFeatures++;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        List<String> featuresList = featureFileExtractor.loadFeatures();
+        List<String> featuresNoValueList = featureFileExtractor.loadFeaturesNoValue();
+        int nbOfFeatures = featuresList.size() + featuresNoValueList.size();
         return nbOfFeatures;
     }
 
     public Double[] getFeatureWikidata(List<String> propertiesNoValue) {
-        // count the number of features
-        int nbOfFeatures = propertiesNoValue.size();
         int idx = 0;
 
         // get the features from feature mapper list files
@@ -120,17 +97,15 @@ public class FeatureDataExtractor {
 
         // get the element based on the wrapper whether from Wikidata or Nerd API
         WikidataElement wikidataElement = new WikidataElement();
+        WikidataElementInfos wikidataElementInfos = new WikidataElementInfos();
+
         try {
             wikidataElement = wikidataFetcherWrapper.getElement(wikidataId); // wikidata Id, label, properties-values
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         // get the features from feature mapper list files
         List<String> featuresMap = featureFileExtractor.loadFeatures();
         List<String> featuresNoValueList = featureFileExtractor.loadFeaturesNoValue();
 
         // set information of id, label, predicted class, features, real class
-        WikidataElementInfos wikidataElementInfos = new WikidataElementInfos();
         wikidataElementInfos.setWikidataId(wikidataId);
         wikidataElementInfos.setLabel(wikidataElement.getLabel());
 
@@ -182,6 +157,11 @@ public class FeatureDataExtractor {
 
         // set information of feature vector
         wikidataElementInfos.setFeatureVector(featureVector);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
+        }
 
         return wikidataElementInfos;
     } // end of method 'getFeatureWikidata'

@@ -81,12 +81,16 @@ public class NerdClient {
 
         } catch (URISyntaxException e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         } catch (ClientProtocolException e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }
 
         return result;
@@ -129,12 +133,16 @@ public class NerdClient {
 
         } catch (URISyntaxException e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         } catch (ClientProtocolException e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }
 
         return result;
@@ -160,6 +168,7 @@ public class NerdClient {
             result.close();
         } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }
     }
 

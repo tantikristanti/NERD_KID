@@ -27,6 +27,7 @@ public class WikidataNERPredictorTest {
             wikidataElement = new WikidataElement();
         } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }
     }
 

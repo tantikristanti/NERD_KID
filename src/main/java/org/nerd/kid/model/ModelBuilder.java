@@ -14,27 +14,26 @@ import smile.math.Math;
 import java.io.*;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipOutputStream;
 
 /*
 class to build machine learning models from datasets using Random Forests
-
 * */
 
 public class ModelBuilder {
-    ModelEvaluation evaluation = new ModelEvaluation();
-    ArffParser accessArff = new ArffParser();
-    private XStream streamer = new XStream();
-
-    private smile.data.parser.ArffParser arffParser = new smile.data.parser.ArffParser();
+    private ModelEvaluation evaluation;
+    private ArffParser accessArff;
+    private XStream streamer;
+    private smile.data.parser.ArffParser arffParser;
     private AttributeDataset attributeDataset = null;
-    private AttributeDataset training = null;
-    private AttributeDataset testing = null;
-
     private RandomForest forest = null;
-
     private static final Logger logger = LoggerFactory.getLogger(ModelBuilder.class);
+
+    public ModelBuilder(){
+        evaluation = new ModelEvaluation();
+        accessArff = new ArffParser();
+        streamer = new XStream();
+        arffParser = new smile.data.parser.ArffParser();
+    }
 
     public void loadData(File file) throws Exception {
         // parsing the initial file to get the response index
@@ -250,6 +249,7 @@ public class ModelBuilder {
             streamer.toXML(this.forest, new FileOutputStream(modelFile));
         }catch (FileNotFoundException e){
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }
     }
 
@@ -275,6 +275,7 @@ public class ModelBuilder {
 
         }catch (IOException e){
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }finally {
             gzipOutputStream.close();
             outputStream.close();
@@ -291,32 +292,9 @@ public class ModelBuilder {
             fileInputStream.read(bytes);
         }catch (IOException e){
             e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }
         return bytes;
-    }
-
-    public void extractZip(File inputFile, File outputFile) throws IOException {
-        byte[] buffer = null;
-        FileInputStream inputStream = null;
-        FileOutputStream outputStream = null;
-        GZIPInputStream gzipInputStream = null;
-
-        try{
-            inputStream = new FileInputStream(inputFile);
-            gzipInputStream = new GZIPInputStream(inputStream);
-            outputStream = new FileOutputStream(outputFile);
-            buffer = new byte[1024];
-            int length;
-            while((length = gzipInputStream.read(buffer)) != -1){
-                outputStream.write(buffer,0, length);
-            }
-
-            gzipInputStream.close();
-            inputStream.close();
-            outputStream.close();
-        }catch (IOException e){
-            e.printStackTrace();
-        }
     }
 
     public InputStream readZipFile(InputStream is) {
@@ -326,19 +304,7 @@ public class ModelBuilder {
 
         }catch (IOException e){
             e.printStackTrace();
-        }
-        return gzipInputStream;
-    }
-
-    public InputStream readZipFile(File file) {
-        FileInputStream fileInputStream = null;
-        GZIPInputStream gzipInputStream = null;
-        try {
-            fileInputStream = new FileInputStream(file);
-            readZipFile(fileInputStream);
-
-        }catch (IOException e){
-            e.printStackTrace();
+            System.out.println("Error : " + e.getMessage());
         }
         return gzipInputStream;
     }
