@@ -24,7 +24,7 @@ public class WikidataNERPredictorTest {
     @Before
     public void setUp() {
         try {
-            wikidataNERPredictor = new WikidataNERPredictor();
+            wikidataNERPredictor = new WikidataNERPredictor(wrapper);
             wikidataElement = new WikidataElement();
         } catch (Exception e) {
             e.printStackTrace();
