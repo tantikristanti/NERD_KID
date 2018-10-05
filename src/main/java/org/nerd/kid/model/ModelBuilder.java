@@ -250,7 +250,7 @@ public class ModelBuilder {
             }
             streamer.toXML(this.forest, new FileOutputStream(modelFile));
         }catch (FileNotFoundException e){
-            LOGGER.info("Some errors encountered when saving the result into a Csv file in \""+ modelFile + "\"");
+            LOGGER.info("Some errors encountered when saving the result into a Csv file in \""+ modelFile + "\"", e);
         }
     }
 
@@ -275,7 +275,7 @@ public class ModelBuilder {
             gzipOutputStream.write(data);
 
         }catch (IOException e){
-            LOGGER.info("Some errors encountered when generating a Zip file in \""+ outputFile + "\"");
+            LOGGER.info("Some errors encountered when generating a Zip file in \""+ outputFile + "\"", e);
         }finally {
             gzipOutputStream.close();
             outputStream.close();
@@ -291,7 +291,7 @@ public class ModelBuilder {
             fileInputStream = new FileInputStream(inputFile);
             fileInputStream.read(bytes);
         }catch (IOException e){
-            LOGGER.info("Some errors encountered when reading the result a file in \""+ inputFile + "\"");
+            LOGGER.info("Some errors encountered when reading the result a file in \""+ inputFile + "\"", e);
         }
         return bytes;
     }
@@ -316,7 +316,7 @@ public class ModelBuilder {
             inputStream.close();
             outputStream.close();
         }catch (IOException e){
-            LOGGER.info("Some errors encountered when extracting a Zip file in \""+ outputFile + "\"");
+            LOGGER.info("Some errors encountered when extracting a Zip file in \""+ outputFile + "\"", e);
         }
     }
 
@@ -326,7 +326,7 @@ public class ModelBuilder {
             gzipInputStream = new GZIPInputStream(is);
 
         }catch (IOException e){
-            LOGGER.info("Some errors encountered when reading a Zip file in input stream format from \""+ is + "\"");
+            LOGGER.info("Some errors encountered when reading a Zip file in input stream format from \""+ is + "\"", e);
         }
         return gzipInputStream;
     }
@@ -339,7 +339,7 @@ public class ModelBuilder {
             readZipFile(fileInputStream);
 
         }catch (IOException e){
-            LOGGER.info("Some errors encountered when reading a Zip file in \""+ file + "\"");
+            LOGGER.info("Some errors encountered when reading a Zip file in \""+ file + "\"", e);
         }
         return gzipInputStream;
     }

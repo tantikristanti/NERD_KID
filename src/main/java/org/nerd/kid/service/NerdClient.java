@@ -85,13 +85,13 @@ public class NerdClient {
             }
 
         } catch (URISyntaxException e) {
-            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of short text disambiguation.");
+            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of short text disambiguation.", e);
         } catch (UnsupportedEncodingException e) {
-            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of short text disambiguation.");
+            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of short text disambiguation.", e);
         } catch (ClientProtocolException e) {
-            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of short text disambiguation.");
+            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of short text disambiguation.", e);
         } catch (IOException e) {
-            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of short text disambiguation.");
+            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of short text disambiguation.", e);
         }
 
         return result;
@@ -133,13 +133,13 @@ public class NerdClient {
             }
 
         } catch (URISyntaxException e) {
-            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of text disambiguation.");
+            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of text disambiguation.", e);
         } catch (UnsupportedEncodingException e) {
-            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of text disambiguation.");
+            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of text disambiguation.", e);
         } catch (ClientProtocolException e) {
-            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of text disambiguation.");
+            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of text disambiguation.", e);
         } catch (IOException e) {
-            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of text disambiguation.");
+            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of text disambiguation.", e);
         }
 
         return result;
@@ -164,7 +164,7 @@ public class NerdClient {
             result.write(resultToSave);
             result.close();
         } catch (Exception e) {
-            LOGGER.info("Some errors encountered when saving the result into \"" + outputFile +"\"");
+            LOGGER.info("Some errors encountered when saving the result into \"" + outputFile +"\"", e);
         }
     }
 

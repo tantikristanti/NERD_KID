@@ -64,13 +64,13 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
                 throw new RemoteServiceException("Remote service exception.");
             }
         }catch (IOException e) {
-            LOGGER.info("Some errors encountered when loading a file.");
+            LOGGER.info("Some errors encountered when loading a file.", e);
         }catch (RemoteServiceException e) {
-            LOGGER.info("Some errors encountered from remote service.");
+            LOGGER.info("Some errors encountered from remote service.", e);
         } catch (DataException e) {
-            LOGGER.info("Some errors encountered from data loading.");
+            LOGGER.info("Some errors encountered from data loading.", e);
         }catch (Exception e){
-            LOGGER.info("Some errors encountered when extracting Json string.");
+            LOGGER.info("Some errors encountered when extracting Json string.", e);
         }
         return result;
     }

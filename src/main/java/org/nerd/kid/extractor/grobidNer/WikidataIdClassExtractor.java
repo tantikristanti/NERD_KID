@@ -32,11 +32,11 @@ public class WikidataIdClassExtractor {
             nerdEntityList = wikidataIdClassExtractor.parseFromJsonString(jsonObject.toString());
 
         }catch (FileNotFoundException e){
-            LOGGER.info("Some errors encountered when loading a file \""+ inputFile +"\"");
+            LOGGER.info("Some errors encountered when loading a file \""+ inputFile +"\"", e);
         }catch (IOException e){
-            LOGGER.info("Some errors encountered when loading a file \""+ inputFile +"\"");
+            LOGGER.info("Some errors encountered when loading a file \""+ inputFile +"\"", e);
         }catch (ParseException e){
-            LOGGER.info("Some errors encountered when parsing a file \""+ inputFile +"\"");
+            LOGGER.info("Some errors encountered when parsing a file \""+ inputFile +"\"", e);
         }
         return nerdEntityList;
     }
@@ -115,7 +115,7 @@ public class WikidataIdClassExtractor {
             }
             //return nerdEntityList;
         }catch (ParseException e){
-            LOGGER.info("Some errors encountered when parsing some Json strings.");
+            LOGGER.info("Some errors encountered when parsing some Json strings.", e);
         }
         return nerdEntityList;
     }
@@ -137,7 +137,7 @@ public class WikidataIdClassExtractor {
             csvWriter.close();
 
         } catch (IOException e) {
-            LOGGER.info("Some errors encountered when saving to a Csv file in \""+ resultToSave +"\"");
+            LOGGER.info("Some errors encountered when saving to a Csv file in \""+ resultToSave +"\"", e);
         }
     }
 

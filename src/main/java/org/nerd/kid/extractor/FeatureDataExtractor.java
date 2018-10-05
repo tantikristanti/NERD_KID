@@ -107,7 +107,7 @@ public class FeatureDataExtractor {
         try {
             wikidataElement = wikidataFetcherWrapper.getElement(wikidataId); // wikidata Id, label, properties-values
         } catch (Exception e) {
-            LOGGER.info("Some errors encountered when collecting some features for a Wikidata Id \""+ wikidataId +"\"");
+            LOGGER.info("Some errors encountered when collecting some features for a Wikidata Id \""+ wikidataId +"\"", e);
         }
         // get the features from feature mapper list files
         List<String> featuresMap = featureFileExtractor.loadFeatures();

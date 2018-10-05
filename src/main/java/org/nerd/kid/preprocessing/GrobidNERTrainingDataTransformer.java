@@ -66,7 +66,7 @@ public class GrobidNERTrainingDataTransformer {
             System.out.println("The disambiguation result from Entity-Fishing in CSV format is in " + pathOutputEntityFishingCsv);
 
         }catch (IOException e){
-            LOGGER.info("Some errors encountered when extracting mentions and classes.");
+            LOGGER.info("Some errors encountered when extracting mentions and classes.", e);
         }
     }
 }

@@ -1,10 +1,3 @@
 WikidataID,LabelWikidata,Class
-Q852461,Motor learning,UNKNOWN
-Q76,Barack Obama,PERSON
-Q8037925,Computational neuroscience,UNKNOWN
-Q726543,Human musculoskeletal system,UNKNOWN
-Q13580300,Internal model (motor control),UNKNOWN
-Q1402508,Field research,UNKNOWN
-Q1341441,Force field (fiction),UNKNOWN
-Q367359,Scientific control,UNKNOWN
-Q128709,Viscosity,CONCEPT
+Q1,Universe,LOCATION
+Q2,Earth,LOCATION

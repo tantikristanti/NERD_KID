@@ -34,7 +34,7 @@ public class ArffFileBuilder {
         try {
             os = new FileOutputStream(Files.createFile(filePath, new FileAttribute[0]).toFile(), false);
         } catch (FileAlreadyExistsException e) {
-            LOGGER.info("File " + filePath.toString() + " exists. Removing it.");
+            LOGGER.info("File " + filePath.toString() + " exists. Removing it.", e);
             filePath.toFile().delete();
             os = new FileOutputStream(Files.createFile(filePath, new FileAttribute[0]).toFile(), false);
         }

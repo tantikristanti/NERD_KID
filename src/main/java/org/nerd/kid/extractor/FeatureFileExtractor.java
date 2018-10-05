@@ -53,7 +53,7 @@ public class FeatureFileExtractor {
             }
             return featureList;
         } catch (IOException e) {
-            LOGGER.info("Some errors encountered when loading some features from file in \""+ fileFeatureMapper + "\"");
+            LOGGER.info("Some errors encountered when loading some features from file in \""+ fileFeatureMapper + "\"", e);
             return new ArrayList<>();
         }
     }
@@ -84,7 +84,7 @@ public class FeatureFileExtractor {
 
             return featureListNoValue;
         } catch (IOException e) {
-            LOGGER.info("Some errors encountered when loading some features in \""+ fileFeatureMapper + "\"");
+            LOGGER.info("Some errors encountered when loading some features in \""+ fileFeatureMapper + "\"", e);
             return new ArrayList<>();
         }
     }

@@ -66,11 +66,11 @@ public class MentionExtractor {
             csvWriter.flush();
             csvWriter.close();
         } catch (IOException e) {
-            LOGGER.info("Some errors encountered when loading list of classes from Grobid-Ner project.");
+            LOGGER.info("Some errors encountered when loading list of classes from Grobid-Ner project.", e);
         } catch (SAXException e) {
-            LOGGER.info("Some errors encountered when loading mentions from Grobid-Ner project.");
+            LOGGER.info("Some errors encountered when loading mentions from Grobid-Ner project.", e);
         } catch (ParserConfigurationException e) {
-            LOGGER.info("Some errors encountered when parsing mentions from Grobid-Ner project.");
+            LOGGER.info("Some errors encountered when parsing mentions from Grobid-Ner project.", e);
         }
     }
 
@@ -138,7 +138,7 @@ public class MentionExtractor {
             bufferedWriter.close();
             System.out.println("Result of disambiguation of Entity-Fishing can be seen in : " + outputFile);
         } catch (IOException e) {
-            LOGGER.info("Some errors encountered when saving the result in \" " + outputFile + "\"");
+            LOGGER.info("Some errors encountered when saving the result in \" " + outputFile + "\"", e);
         }
     }
 
@@ -177,7 +177,7 @@ public class MentionExtractor {
             csvWriter.close();
 
         } catch (IOException e) {
-            LOGGER.info("Some errors encountered when saving the result into a Csv file in \" " + outputFile + "\"");
+            LOGGER.info("Some errors encountered when saving the result into a Csv file in \" " + outputFile + "\"", e);
         }
     }
 

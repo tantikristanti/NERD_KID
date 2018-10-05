@@ -38,7 +38,7 @@ public class ArffFileGenerator {
         try {
             writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path.toString(), false), StandardCharsets.UTF_8));
         } catch (IOException e) {
-            LOGGER.info("File " + path.toString() + " exists. Removing it.");
+            LOGGER.info("File " + path.toString() + " exists. Removing it.", e);
             path.toFile().delete();
             writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path.toString(), false), StandardCharsets.UTF_8));
         }

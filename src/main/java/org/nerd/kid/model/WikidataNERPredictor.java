@@ -41,7 +41,7 @@ public class WikidataNERPredictor {
             InputStream modelStream = modelBuilder.readZipFile(this.getClass().getResourceAsStream(pathModelZip));
             loadModel(modelStream);
         } catch (Exception e) {
-            LOGGER.info("Some errors encountered when loading a model in \""+ pathModelZip + "\"");
+            LOGGER.info("Some errors encountered when loading a model in \""+ pathModelZip + "\"", e);
         }
     }
 
@@ -77,7 +77,7 @@ public class WikidataNERPredictor {
         try {
             forest = (RandomForest) streamer.fromXML(modelStream);
         } catch (Exception e) {
-            LOGGER.info("Some errors encountered when loading a stream of model in \""+ modelStream + "\"");
+            LOGGER.info("Some errors encountered when loading a stream of model in \""+ modelStream + "\"", e);
         }
     }
 

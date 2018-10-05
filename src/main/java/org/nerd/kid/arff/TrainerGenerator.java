@@ -68,7 +68,7 @@ public class TrainerGenerator {
                 } else
                     continue;
             } catch (Exception e) {
-                LOGGER.info("Some errors encountered when generating an Arff file, skipping entity: " + element.getWikidataId());
+                LOGGER.info("Some errors encountered when generating an Arff file, skipping entity: " + element.getWikidataId(), e);
             }
         }
 
@@ -188,7 +188,7 @@ public class TrainerGenerator {
 
             }
         } catch (Exception e) {
-            LOGGER.info("Some errors encountered when saving the result into a Csv file in \""+ csvDataPath + "\"");
+            LOGGER.info("Some errors encountered when saving the result into a Csv file in \""+ csvDataPath + "\"", e);
         } finally {
             csvWriter.flush();
             csvWriter.close();
