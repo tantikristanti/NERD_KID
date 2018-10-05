@@ -3,9 +3,12 @@ package org.nerd.kid.preprocessing;
 import au.com.bytecode.opencsv.CSVWriter;
 import org.nerd.kid.arff.TrainerGenerator;
 import org.nerd.kid.data.WikidataElementInfos;
+import org.nerd.kid.extractor.FeatureFileExtractor;
 import org.nerd.kid.extractor.grobidNer.GrobidNerEntity;
 import org.nerd.kid.extractor.grobidNer.MentionExtractor;
 import org.nerd.kid.service.NerdKidPaths;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -21,6 +24,8 @@ import java.util.List;
  */
 
 public class GrobidNERTrainingDataTransformer {
+    private static final Logger LOGGER = LoggerFactory.getLogger(GrobidNERTrainingDataTransformer.class);
+
     public static void main(String[] args) {
         // collecting the result from Grobid-Ner project
         //String pathInputGrobidNer = NerdKidPaths.DATA_XML + "/AnnotatedCorpus.xml";
@@ -61,7 +66,7 @@ public class GrobidNERTrainingDataTransformer {
             System.out.println("The disambiguation result from Entity-Fishing in CSV format is in " + pathOutputEntityFishingCsv);
 
         }catch (IOException e){
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when extracting mentions and classes.");
         }
     }
 }

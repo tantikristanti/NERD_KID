@@ -6,6 +6,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.nerd.kid.service.NerdEntity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -14,7 +16,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/*A class to extract the Wikidata Ids from Grobid-Ner extraction results which are in Json format into a Csv file*/
+
 public class WikidataIdClassExtractor {
+    private static final Logger LOGGER = LoggerFactory.getLogger(WikidataIdClassExtractor.class);
+
     public List<NerdEntity> parseFromJsonFileToString(String inputFile) {
         List<NerdEntity> nerdEntityList = new ArrayList<NerdEntity>();
         WikidataIdClassExtractor wikidataIdClassExtractor = new WikidataIdClassExtractor();
@@ -26,11 +32,11 @@ public class WikidataIdClassExtractor {
             nerdEntityList = wikidataIdClassExtractor.parseFromJsonString(jsonObject.toString());
 
         }catch (FileNotFoundException e){
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when loading a file \""+ inputFile +"\"");
         }catch (IOException e){
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when loading a file \""+ inputFile +"\"");
         }catch (ParseException e){
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when parsing a file \""+ inputFile +"\"");
         }
         return nerdEntityList;
     }
@@ -109,7 +115,7 @@ public class WikidataIdClassExtractor {
             }
             //return nerdEntityList;
         }catch (ParseException e){
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when parsing some Json strings.");
         }
         return nerdEntityList;
     }
@@ -131,7 +137,7 @@ public class WikidataIdClassExtractor {
             csvWriter.close();
 
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when saving to a Csv file in \""+ resultToSave +"\"");
         }
     }
 

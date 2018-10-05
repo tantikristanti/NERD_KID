@@ -14,8 +14,6 @@ import smile.math.Math;
 import java.io.*;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipOutputStream;
 
 /*
 class to build machine learning models from datasets using Random Forests
@@ -23,18 +21,16 @@ class to build machine learning models from datasets using Random Forests
 * */
 
 public class ModelBuilder {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ModelBuilder.class);
+
     ModelEvaluation evaluation = new ModelEvaluation();
     ArffParser accessArff = new ArffParser();
     private XStream streamer = new XStream();
 
     private smile.data.parser.ArffParser arffParser = new smile.data.parser.ArffParser();
     private AttributeDataset attributeDataset = null;
-    private AttributeDataset training = null;
-    private AttributeDataset testing = null;
-
     private RandomForest forest = null;
 
-    private static final Logger logger = LoggerFactory.getLogger(ModelBuilder.class);
 
     public void loadData(File file) throws Exception {
         // parsing the initial file to get the response index
@@ -63,11 +59,11 @@ public class ModelBuilder {
         String pathOutput = NerdKidPaths.RESULT_TXT + "/Result_Trained_Model.txt";
         // if there isn't any training data
         if (attributeDataset == null) {
-            logger.debug("Training data doesn't exist");
+            LOGGER.info("Training data doesn't exist.");
         }
 
         // training the data
-        logger.info("Training the model.");
+        LOGGER.info("Training the model");
 
         // datax is for the examples, datay is for the class
         double[][] datax = attributeDataset.toArray(new double[attributeDataset.size()][]);
@@ -249,7 +245,7 @@ public class ModelBuilder {
             }
             streamer.toXML(this.forest, new FileOutputStream(modelFile));
         }catch (FileNotFoundException e){
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when saving the result into a Csv file in \""+ modelFile + "\"");
         }
     }
 
@@ -274,7 +270,7 @@ public class ModelBuilder {
             gzipOutputStream.write(data);
 
         }catch (IOException e){
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when generating a Zip file in \""+ outputFile + "\"");
         }finally {
             gzipOutputStream.close();
             outputStream.close();
@@ -290,7 +286,7 @@ public class ModelBuilder {
             fileInputStream = new FileInputStream(inputFile);
             fileInputStream.read(bytes);
         }catch (IOException e){
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when reading the result a file in \""+ inputFile + "\"");
         }
         return bytes;
     }
@@ -315,7 +311,7 @@ public class ModelBuilder {
             inputStream.close();
             outputStream.close();
         }catch (IOException e){
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when extracting a Zip file in \""+ outputFile + "\"");
         }
     }
 
@@ -325,7 +321,7 @@ public class ModelBuilder {
             gzipInputStream = new GZIPInputStream(is);
 
         }catch (IOException e){
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when reading a Zip file in input stream format from \""+ is + "\"");
         }
         return gzipInputStream;
     }
@@ -338,7 +334,7 @@ public class ModelBuilder {
             readZipFile(fileInputStream);
 
         }catch (IOException e){
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when reading a Zip file in \""+ file + "\"");
         }
         return gzipInputStream;
     }

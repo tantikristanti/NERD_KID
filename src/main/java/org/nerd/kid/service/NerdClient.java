@@ -15,7 +15,10 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.nerd.kid.extractor.FeatureFileExtractor;
 import org.nerd.kid.extractor.grobidNer.WikidataIdClassExtractor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.net.URI;
@@ -27,6 +30,8 @@ import java.util.Scanner;
 import static org.apache.http.entity.ContentType.APPLICATION_JSON;
 
 public class NerdClient {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(NerdClient.class);
 
     private String HOST = "http://cloud.science-miner.com/nerd/service";
     //    private String HOST = "localhost:8090/service";
@@ -80,13 +85,13 @@ public class NerdClient {
             }
 
         } catch (URISyntaxException e) {
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of short text disambiguation.");
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of short text disambiguation.");
         } catch (ClientProtocolException e) {
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of short text disambiguation.");
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of short text disambiguation.");
         }
 
         return result;
@@ -128,13 +133,13 @@ public class NerdClient {
             }
 
         } catch (URISyntaxException e) {
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of text disambiguation.");
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of text disambiguation.");
         } catch (ClientProtocolException e) {
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of text disambiguation.");
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when extracting data from Entity-Fishing API service of text disambiguation.");
         }
 
         return result;
@@ -159,7 +164,7 @@ public class NerdClient {
             result.write(resultToSave);
             result.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when saving the result into \"" + outputFile +"\"");
         }
     }
 

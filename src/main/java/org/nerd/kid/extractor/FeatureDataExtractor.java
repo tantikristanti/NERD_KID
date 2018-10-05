@@ -2,7 +2,10 @@ package org.nerd.kid.extractor;
 
 import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.data.WikidataElementInfos;
+import org.nerd.kid.extractor.grobidNer.WikidataIdClassExtractor;
 import org.nerd.kid.extractor.wikidata.WikidataFetcherWrapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +15,8 @@ import java.util.Map;
  * extract features (properties and values) of WikidataId directly from Wikidata or Nerd knowledge base
  **/
 public class FeatureDataExtractor {
+    private static final Logger LOGGER = LoggerFactory.getLogger(FeatureDataExtractor.class);
+
     private WikidataFetcherWrapper wikidataFetcherWrapper = null;
 
     // for reading feature pattern in feature mapper files in '/resources' directory
@@ -51,7 +56,7 @@ public class FeatureDataExtractor {
                 nbOfFeatures++;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when counting number of features.");
         }
         return nbOfFeatures;
     }
@@ -123,7 +128,7 @@ public class FeatureDataExtractor {
         try {
             wikidataElement = wikidataFetcherWrapper.getElement(wikidataId); // wikidata Id, label, properties-values
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when collecting some features for a Wikidata Id \""+ wikidataId +"\"");
         }
         // get the features from feature mapper list files
         List<String> featuresMap = featureFileExtractor.loadFeatures();

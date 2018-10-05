@@ -9,6 +9,8 @@ import org.nerd.kid.extractor.FeatureFileExtractor;
 import org.nerd.kid.extractor.FeatureDataExtractor;
 import org.nerd.kid.extractor.wikidata.NerdKBFetcherWrapper;
 import org.nerd.kid.service.NerdKidPaths;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.nio.file.*;
@@ -19,6 +21,7 @@ main class for generating Arff file
 */
 
 public class TrainerGenerator {
+    private static final Logger LOGGER = LoggerFactory.getLogger(TrainerGenerator.class);
     ArffFileGenerator arffFileGenerator = new ArffFileGenerator();
     NerdKBFetcherWrapper nerdKBFetcherWrapper = new NerdKBFetcherWrapper();
     FeatureDataExtractor featureWikidataExtractor = new FeatureDataExtractor(nerdKBFetcherWrapper);
@@ -65,12 +68,11 @@ public class TrainerGenerator {
                 } else
                     continue;
             } catch (Exception e) {
-                System.out.println("Some error encountered, skipping entity: " + element.getWikidataId());
+                LOGGER.info("Some errors encountered when generating an Arff file, skipping entity: " + element.getWikidataId());
             }
         }
 
         arffFileGenerator.close();
-
         System.out.print("Result can be seen in " + NerdKidPaths.RESULT_ARFF + "/" + fileOutput);
     }
 
@@ -186,7 +188,7 @@ public class TrainerGenerator {
 
             }
         } catch (Exception e) {
-            System.out.println("Some error encountered, skipping entity.");
+            LOGGER.info("Some errors encountered when saving the result into a Csv file in \""+ csvDataPath + "\"");
         } finally {
             csvWriter.flush();
             csvWriter.close();

@@ -2,6 +2,8 @@ package org.nerd.kid.extractor;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,6 +14,8 @@ import java.util.List;
 import java.util.Map;
 
 public class FeatureFileExtractor {
+    private static final Logger LOGGER = LoggerFactory.getLogger(FeatureFileExtractor.class);
+
     public List<String> loadFeatures() {
         // get the features (properties and values) from the list in the csv file
         //String fileFeatureMapper = pathSource + "/feature_mapper.csv";
@@ -49,7 +53,7 @@ public class FeatureFileExtractor {
             }
             return featureList;
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when loading some features from file in \""+ fileFeatureMapper + "\"");
             return new ArrayList<>();
         }
     }
@@ -80,18 +84,8 @@ public class FeatureFileExtractor {
 
             return featureListNoValue;
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when loading some features in \""+ fileFeatureMapper + "\"");
             return new ArrayList<>();
-        }
-    }
-
-    public void printWikidataFeatures(Map<String, List<String>> result) {
-        for (Map.Entry<String, List<String>> entry : result.entrySet()) {
-            System.out.println(entry.getKey() + ": ");
-            List<String> values = entry.getValue();
-            for (String item : values) {
-                System.out.println("\t" + item);
-            }
         }
     }
 }

@@ -9,9 +9,12 @@ import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.data.WikidataElementInfos;
 import org.nerd.kid.extractor.ClassExtractor;
 import org.nerd.kid.extractor.FeatureDataExtractor;
+import org.nerd.kid.extractor.FeatureFileExtractor;
 import org.nerd.kid.extractor.wikidata.NerdKBFetcherWrapper;
 import org.nerd.kid.extractor.wikidata.WikidataFetcherWrapper;
 import org.nerd.kid.service.NerdKidPaths;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import smile.classification.RandomForest;
 
 import java.io.File;
@@ -21,6 +24,8 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class WikidataNERPredictor {
+    private static final Logger LOGGER = LoggerFactory.getLogger(WikidataNERPredictor.class);
+
     private CSVWriter csvWriter = null;
     private XStream streamer = new XStream();
     private RandomForest forest = null;
@@ -36,28 +41,28 @@ public class WikidataNERPredictor {
             InputStream modelStream = modelBuilder.readZipFile(this.getClass().getResourceAsStream(pathModelZip));
             loadModel(modelStream);
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when loading a model in \""+ pathModelZip + "\"");
         }
     }
 
     // constructor for loading model in XML format
-//    public WikidataNERPredictor() {
-//        XStream.setupDefaultSecurity(streamer);
-//        streamer.addPermission(AnyTypePermission.ANY);
-//        loadModel();
-//    }
+/*    public WikidataNERPredictor() {
+        XStream.setupDefaultSecurity(streamer);
+        streamer.addPermission(AnyTypePermission.ANY);
+        loadModel();
+    }
 
-    // loading model in Xml format
-//    public void loadModel() {
-//        String pathModel = "/model.xml";
-//        try {
-//            // the model.xml is located in /src/main/resources
-//            InputStream model = this.getClass().getResourceAsStream(pathModel);
-//            forest = (RandomForest) streamer.fromXML(model);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
+     loading model in Xml format
+    public void loadModel() {
+        String pathModel = "/model.xml";
+        try {
+            // the model.xml is located in /src/main/resources
+            InputStream model = this.getClass().getResourceAsStream(pathModel);
+            forest = (RandomForest) streamer.fromXML(model);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }*/
 
     public RandomForest getForest() {
         return forest;
@@ -72,7 +77,7 @@ public class WikidataNERPredictor {
         try {
             forest = (RandomForest) streamer.fromXML(modelStream);
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.info("Some errors encountered when loading a stream of model in \""+ modelStream + "\"");
         }
     }
 
@@ -118,7 +123,6 @@ public class WikidataNERPredictor {
         } else {
             wikidataElementInfos.setPredictedClass("UNKNOWN");
         }
-        //}
         return wikidataElementInfos;
     }
 
