@@ -197,6 +197,7 @@ public class TrainerGenerator {
 
     }
 
+    /*
     public static void main(String[] args) throws Exception {
         String fileOutputArff = "Training.arff";
         String fileOutputCsv = "ResultFromArffGenerator.csv";
@@ -207,5 +208,5 @@ public class TrainerGenerator {
 
         // create CSV file to check the result of data collected
         trainerGenerator.saveResultCsvFormat(fileOutputCsv);
-    }
+    }*/
 }

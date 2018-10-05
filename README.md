@@ -30,7 +30,7 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 ```$ mvn clean install```
 
-
+<!--
 **3. Build a training Arff file**
 - In order to build a new training data, this service can be used:
 
@@ -50,8 +50,9 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 - The evaluation result can be seen in ![Result_Trained_Model](result/txt/Result_Trained_Model.txt) 
 - The model itself can be found in Xml and Zip format which are located in the temporary file `/tmp` and they can be copied to ![Resources](src/main/resources) directory
+-->
 
-**5. Prepare new data to be predicted**
+**3. Prepare new data to be predicted**
 The prediction service provided by Nerd-Kid can be done if the list of new Wikidata Id is available in ![New Elements](data/csv/hasBeenCorrected/NewElements.csv).
 In order to do so, there are some possibilities of:
     a. Filling manually the list of Wikidata Ids and their Classes  
@@ -86,7 +87,7 @@ In order to do so, there are some possibilities of:
    These 2 tasks can be done by this service:
     ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.service.NerdClient"```
 
-**5. Get the prediction results**
+**4. Get the prediction results**
 
 To predict each Wikidata Id prepared in ![New Elements](data/csv/NewElements.csv), this service can be called:
 
@@ -96,7 +97,7 @@ To predict each Wikidata Id prepared in ![New Elements](data/csv/NewElements.csv
 - The result can be seen in ![Result Predicted Class](result/csv/ResultPredictedClass.csv)
 
 
-**6. Web version**
+**5. Web version**
 
 For testing purposes, Nerd-Kid is available here [Nerd-Kid](http://nerd.huma-num.fr/kid/service/ner?id=Q1) 
 

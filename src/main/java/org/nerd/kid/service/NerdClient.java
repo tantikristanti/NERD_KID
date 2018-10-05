@@ -15,7 +15,6 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.nerd.kid.extractor.FeatureFileExtractor;
 import org.nerd.kid.extractor.grobidNer.WikidataIdClassExtractor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -199,8 +198,8 @@ public class NerdClient {
         List<NerdEntity> extractionFromJson = wikidataIdClassExtractor.parseFromJsonFileToString(fileOutputJson);
         wikidataIdClassExtractor.saveToFileCsv(extractionFromJson, fileOutputCsv);
 
-        System.out.println(result);
-        System.out.println("The disambiguation result from Entity-Fishing in JSON format is in " + fileOutputJson);
+        //System.out.println(result);
+        //System.out.println("The disambiguation result from Entity-Fishing in JSON format is in " + fileOutputJson);
         System.out.println("The disambiguation result from Entity-Fishing in CSV format is in " + fileOutputCsv);
     }
 }

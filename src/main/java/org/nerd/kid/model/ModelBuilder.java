@@ -344,7 +344,7 @@ public class ModelBuilder {
         return gzipInputStream;
     }
 
-    /*main class to build a model from training file*/
+    /*main class to build a model from training file
     public static void main(String[] args) throws Exception {
         final String pathnameXML = "/tmp/model.xml";
         final String pathnameZIP = "/tmp/model.zip";
@@ -364,5 +364,5 @@ public class ModelBuilder {
         byte[] resultInBytes= modelBuilder.readBytesFromFile(new File(pathnameXML));
         modelBuilder.createZip(resultInBytes, new File(pathnameZIP));
         System.out.println("Model has been saved in " + pathnameXML + " and " + pathnameZIP);
-    }
+    }*/
 }
