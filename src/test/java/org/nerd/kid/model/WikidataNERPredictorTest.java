@@ -5,6 +5,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.data.WikidataElementInfos;
+import org.nerd.kid.extractor.wikidata.NerdKBFetcherWrapper;
 import org.nerd.kid.extractor.wikidata.WikidataFetcherWrapper;
 
 import java.util.*;
@@ -15,7 +16,7 @@ import static org.junit.Assert.*;
 public class WikidataNERPredictorTest {
     WikidataNERPredictor wikidataNERPredictor;
     WikidataElement wikidataElement;
-    WikidataFetcherWrapper wrapper;
+    WikidataFetcherWrapper wrapper = new NerdKBFetcherWrapper();
     String predictionResult;
     List<String> propertiesNoValue = new ArrayList<>();
     Map<String, List<String>> properties = new HashMap<>();
@@ -23,16 +24,14 @@ public class WikidataNERPredictorTest {
     @Before
     public void setUp() {
         try {
-            wikidataNERPredictor = new WikidataNERPredictor(wrapper);
+            wikidataNERPredictor = new WikidataNERPredictor();
             wikidataElement = new WikidataElement();
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Error : " + e.getMessage());
         }
     }
 
     @Test
-    @Ignore("For testing later on")
     public void predictWikidataId() {
         assertThat(wikidataNERPredictor.predict("Q1077").getPredictedClass(), is("CREATION"));
         assertThat(wikidataNERPredictor.predict("Q490").getPredictedClass(), is("LOCATION"));

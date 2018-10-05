@@ -12,6 +12,9 @@ import org.json.simple.parser.JSONParser;
 import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.exception.DataException;
 import org.nerd.kid.exception.RemoteServiceException;
+import org.nerd.kid.extractor.grobidNer.WikidataIdClassExtractor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,6 +25,7 @@ import java.util.Map;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
+    private static final Logger LOGGER = LoggerFactory.getLogger(NerdKBFetcherWrapper.class);
 
     //String nerdPathLocal = "http://localhost:8090/service/kb/concept/";
     //String nerdUrl = "nerd.huma-num.fr";
@@ -31,7 +35,6 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
 
     @Override
     public WikidataElement getElement(String wikiId) {
-        System.out.println("Fetch data from Nerd knowledge base through API service... " + wikiId);
         WikidataElement result = null;
         try {
             HttpClient client = HttpClientBuilder.create().build();
@@ -61,17 +64,13 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
                 throw new RemoteServiceException("Remote service exception.");
             }
         }catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Error : " + e.getMessage());
+            LOGGER.info("Some errors encountered when loading a file.");
         }catch (RemoteServiceException e) {
-             e.printStackTrace();
-            System.out.println("Error : " + e.getMessage());
+            LOGGER.info("Some errors encountered from remote service.");
         } catch (DataException e) {
-            e.printStackTrace();
-            System.out.println("Error : " + e.getMessage());
+            LOGGER.info("Some errors encountered from data loading.");
         }catch (Exception e){
-            e.printStackTrace();
-            System.out.println("Error : " + e.getMessage());
+            LOGGER.info("Some errors encountered when extracting Json string.");
         }
         return result;
     }

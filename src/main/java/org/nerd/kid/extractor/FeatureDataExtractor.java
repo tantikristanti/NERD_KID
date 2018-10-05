@@ -3,6 +3,8 @@ package org.nerd.kid.extractor;
 import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.data.WikidataElementInfos;
 import org.nerd.kid.extractor.wikidata.WikidataFetcherWrapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,13 +14,14 @@ import java.util.Map;
  * extract features (properties and values) of WikidataId directly from Wikidata or Nerd knowledge base
  **/
 public class FeatureDataExtractor {
+    private static final Logger LOGGER = LoggerFactory.getLogger(FeatureDataExtractor.class);
+
     private WikidataFetcherWrapper wikidataFetcherWrapper = null;
 
     // for reading feature pattern in feature mapper files in '/resources' directory
-    private FeatureFileExtractor featureFileExtractor;
+    private FeatureFileExtractor featureFileExtractor = new FeatureFileExtractor();
 
     public FeatureDataExtractor() {
-        featureFileExtractor = new FeatureFileExtractor();
     }
 
     public FeatureDataExtractor(WikidataFetcherWrapper wikidataFetcherWrapper) {
@@ -36,6 +39,8 @@ public class FeatureDataExtractor {
     }
 
     public Double[] getFeatureWikidata(List<String> propertiesNoValue) {
+        // count the number of features
+        int nbOfFeatures = propertiesNoValue.size();
         int idx = 0;
 
         // get the features from feature mapper list files
@@ -101,6 +106,9 @@ public class FeatureDataExtractor {
 
         try {
             wikidataElement = wikidataFetcherWrapper.getElement(wikidataId); // wikidata Id, label, properties-values
+        } catch (Exception e) {
+            LOGGER.info("Some errors encountered when collecting some features for a Wikidata Id \""+ wikidataId +"\"");
+        }
         // get the features from feature mapper list files
         List<String> featuresMap = featureFileExtractor.loadFeatures();
         List<String> featuresNoValueList = featureFileExtractor.loadFeaturesNoValue();
@@ -157,11 +165,6 @@ public class FeatureDataExtractor {
 
         // set information of feature vector
         wikidataElementInfos.setFeatureVector(featureVector);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Error : " + e.getMessage());
-        }
 
         return wikidataElementInfos;
     } // end of method 'getFeatureWikidata'

@@ -3,9 +3,12 @@ package org.nerd.kid.extractor.grobidNer;
 import au.com.bytecode.opencsv.CSVWriter;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
+import org.nerd.kid.arff.ArffFileBuilder;
 import org.nerd.kid.exception.NerdKidException;
 import org.nerd.kid.service.NerdClient;
 import org.nerd.kid.service.NerdEntity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -24,11 +27,7 @@ public class MentionExtractor {
     /* method for extracting list of mentions and their classes from Grobid-Ner project
     https://github.com/kermitt2/grobid-ner/blob/master/grobid-ner/resources/dataset/ner/corpus/xml/final
     * */
-    private NerdClient nerdClient;
-
-    public MentionExtractor(){
-        nerdClient = new NerdClient("cloud.science-miner.com/nerd/service");
-    }
+    private static final Logger LOGGER = LoggerFactory.getLogger(MentionExtractor.class);
 
     public void loadMentionClassFromGrobidNerProject(Path fileInput, String fileOutput) {
         CSVWriter csvWriter = null;
@@ -67,14 +66,11 @@ public class MentionExtractor {
             csvWriter.flush();
             csvWriter.close();
         } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Error : " + e.getMessage());
+            LOGGER.info("Some errors encountered when loading list of classes from Grobid-Ner project.");
         } catch (SAXException e) {
-            e.printStackTrace();
-            System.out.println("Error : " + e.getMessage());
+            LOGGER.info("Some errors encountered when loading mentions from Grobid-Ner project.");
         } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-            System.out.println("Error : " + e.getMessage());
+            LOGGER.info("Some errors encountered when parsing mentions from Grobid-Ner project.");
         }
     }
 
@@ -115,7 +111,7 @@ public class MentionExtractor {
 
         int length = mentionList.size();
         try {
-            nerdClient = new NerdClient("cloud.science-miner.com/nerd/service");
+            NerdClient nerdClient = new NerdClient("cloud.science-miner.com/nerd/service");
             File fl = new File(outputFile);
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fl));
 
@@ -142,8 +138,7 @@ public class MentionExtractor {
             bufferedWriter.close();
             System.out.println("Result of disambiguation of Entity-Fishing can be seen in : " + outputFile);
         } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Error : " + e.getMessage());
+            LOGGER.info("Some errors encountered when saving the result in \" " + outputFile + "\"");
         }
     }
 
@@ -156,6 +151,7 @@ public class MentionExtractor {
 
         try {
             CSVWriter csvWriter = new CSVWriter(new FileWriter(outputFile), ',', CSVWriter.NO_QUOTE_CHARACTER);
+            NerdClient nerdClient = new NerdClient("cloud.science-miner.com/nerd/service");
 
             // header of Csv file
             String[] header = {"RawText,WikidataID,Class,ClassEntityFishing,NerdScore,SelectionScore"};
@@ -181,8 +177,7 @@ public class MentionExtractor {
             csvWriter.close();
 
         } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Error : " + e.getMessage());
+            LOGGER.info("Some errors encountered when saving the result into a Csv file in \" " + outputFile + "\"");
         }
     }
 

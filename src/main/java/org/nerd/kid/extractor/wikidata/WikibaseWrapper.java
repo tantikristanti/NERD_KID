@@ -2,6 +2,8 @@ package org.nerd.kid.extractor.wikidata;
 
 import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.extractor.FeatureFileExtractor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.wikidata.wdtk.datamodel.interfaces.*;
 import org.wikidata.wdtk.wikibaseapi.WikibaseDataFetcher;
 
@@ -11,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 public class WikibaseWrapper implements WikidataFetcherWrapper {
+    private static final Logger LOGGER = LoggerFactory.getLogger(WikibaseWrapper.class);
 
     private WikibaseDataFetcher wikibaseDataFetcher;
 
