@@ -53,6 +53,7 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 -->
 
 **3. Prepare new data to be predicted**
+
 The prediction service provided by Nerd-Kid can be done if the list of new Wikidata Id is available in ![New Elements](data/csv/hasBeenCorrected/NewElements.csv).
 In order to do so, there are some possibilities of:
     a. Filling manually the list of Wikidata Ids and their Classes  
@@ -97,7 +98,7 @@ To predict each Wikidata Id prepared in ![New Elements](data/csv/NewElements.csv
 - The result can be seen in ![Result Predicted Class](result/csv/ResultPredictedClass.csv)
 
 
-**5. Web version**
+**5. Demo version**
 
 For testing purposes, Nerd-Kid is available here [Nerd-Kid](http://nerd.huma-num.fr/kid/service/ner?id=Q1) 
 
