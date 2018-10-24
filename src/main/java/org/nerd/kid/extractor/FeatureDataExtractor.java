@@ -6,7 +6,9 @@ import org.nerd.kid.extractor.wikidata.WikidataFetcherWrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -103,23 +105,28 @@ public class FeatureDataExtractor {
         // get the element based on the wrapper whether from Wikidata or Nerd API
         WikidataElement wikidataElement = new WikidataElement();
         WikidataElementInfos wikidataElementInfos = new WikidataElementInfos();
-
+        String label = null;
+        Map<String, List<String>> propertiesWiki = new HashMap<>();
+        List<String> featuresMap = new ArrayList<>();
+        List<String> featuresNoValueList = new ArrayList<>();
         try {
             wikidataElement = wikidataFetcherWrapper.getElement(wikidataId); // wikidata Id, label, properties-values
-        } catch (Exception e) {
-            LOGGER.info("Some errors encountered when collecting some features for a Wikidata Id \""+ wikidataId +"\"", e);
-        }
+            // set information of id, label, predicted class, features, real class
+            wikidataElementInfos.setWikidataId(wikidataId);
+            label = wikidataElement.getLabel();
+            if (label != null)
+                wikidataElementInfos.setLabel(wikidataElement.getLabel());
+
         // get the features from feature mapper list files
-        List<String> featuresMap = featureFileExtractor.loadFeatures();
-        List<String> featuresNoValueList = featureFileExtractor.loadFeaturesNoValue();
-
-        // set information of id, label, predicted class, features, real class
-        wikidataElementInfos.setWikidataId(wikidataId);
-        wikidataElementInfos.setLabel(wikidataElement.getLabel());
-
+        featuresMap = featureFileExtractor.loadFeatures();
+        featuresNoValueList = featureFileExtractor.loadFeaturesNoValue();
         // properties and values got directly from Wikidata or Nerd API (it depends on the implementation of the WikidataFetcherWrapper interface)
-        Map<String, List<String>> propertiesWiki = wikidataElement.getProperties();
-
+        propertiesWiki = wikidataElement.getProperties();
+        } catch (RuntimeException e) {
+            LOGGER.info("Some errors encountered when collecting some features for a Wikidata Id \""+ wikidataId +"\"", e);
+        }catch (Exception e){
+            LOGGER.info("Some errors encountered when getting some elements for a Wikidata Id \""+ wikidataId +"\"", e);
+        }
         // collect the result of properties-values fetched directly from Wikidata or Nerd KB
         List<String> propertyValueKB = new ArrayList<>();
         List<String> propertyNoValueKB = new ArrayList<>();

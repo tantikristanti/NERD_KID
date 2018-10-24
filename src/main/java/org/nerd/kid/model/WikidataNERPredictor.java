@@ -7,6 +7,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.nerd.kid.arff.TrainerGenerator;
 import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.data.WikidataElementInfos;
+import org.nerd.kid.exception.RemoteServiceException;
 import org.nerd.kid.extractor.ClassExtractor;
 import org.nerd.kid.extractor.FeatureDataExtractor;
 import org.nerd.kid.extractor.FeatureFileExtractor;
@@ -152,29 +153,38 @@ public class WikidataNERPredictor {
 
     // get the input of Wikidata Id and return the prediction result
     public WikidataElementInfos predict(String wikidataId) {
-        // extract the characteristics of entities from Nerd
-        FeatureDataExtractor extractor = new FeatureDataExtractor(wrapper);
-        final WikidataElementInfos wikidataElementInfos = extractor.getFeatureWikidata(wikidataId);
+        FeatureDataExtractor extractor;
+        WikidataElementInfos wikidataElementInfos = new WikidataElementInfos();
+        try {
 
-        // get the feature of every instance
-        final int length = wikidataElementInfos.getFeatureVector().length;
-        double[] rawFeatures = new double[length];
-        for (int i = 0; i < length; i++) {
-            // convert feature to double for Smile can predict it
-            rawFeatures[i] = ((double) wikidataElementInfos.getFeatureVector()[i]);
-        }
+            // extract the characteristics of entities from Nerd
+            extractor = new FeatureDataExtractor(wrapper);
+            wikidataElementInfos = extractor.getFeatureWikidata(wikidataId);
 
-        // if the features are only 0 for all, they don't need to be predicted; they are stated as UNKNOWN
-        double sumOfFeatures = Arrays.stream(rawFeatures).sum();
-        if (sumOfFeatures > 0) {
-            // predict the instance's class based on the features collected
-            int prediction = forest.predict(rawFeatures);
+            // get the feature of every instance
+            final int length = wikidataElementInfos.getFeatureVector().length;
+            if (length >= 0) {
+                double[] rawFeatures = new double[length];
+                for (int i = 0; i < length; i++) {
+                    // convert feature to double for Smile can predict it
+                    rawFeatures[i] = ((double) wikidataElementInfos.getFeatureVector()[i]);
+                }
 
-            List<String> classMapper = new ClassExtractor().loadClasses();
-            // set the class with the prediction result
-            wikidataElementInfos.setPredictedClass(classMapper.get(prediction));
-        } else {
-            wikidataElementInfos.setPredictedClass("UNKNOWN");
+                // if the features are only 0 for all, they don't need to be predicted; they are stated as UNKNOWN
+                double sumOfFeatures = Arrays.stream(rawFeatures).sum();
+                if (sumOfFeatures > 0) {
+                    // predict the instance's class based on the features collected
+                    int prediction = forest.predict(rawFeatures);
+
+                    List<String> classMapper = new ClassExtractor().loadClasses();
+                    // set the class with the prediction result
+                    wikidataElementInfos.setPredictedClass(classMapper.get(prediction));
+                } else {
+                    wikidataElementInfos.setPredictedClass("UNKNOWN");
+                }
+            }
+        }catch (RuntimeException e){
+            LOGGER.info("Some errors encountered when collecting some features for predicting a Wikidata Id \""+ wikidataId +"\"", e);
         }
         return wikidataElementInfos;
     }
@@ -184,30 +194,33 @@ public class WikidataNERPredictor {
         TrainerGenerator trainerGenerator = new TrainerGenerator();
         List<WikidataElementInfos> inputList = new ArrayList<>();
         inputList = trainerGenerator.extractData(fileInput);
+        String[] headerPredict = {"WikidataID,LabelWikidata,Class"};
+        String resultPredict, label, wikidata = null;
         try {
             csvWriter = new CSVWriter(new FileWriter(fileOutput), ',', CSVWriter.NO_QUOTE_CHARACTER);
             // header's file
-            String[] headerPredict = {"WikidataID,LabelWikidata,Class"};
             csvWriter.writeNext(headerPredict);
             for (WikidataElementInfos wikiElement : inputList) {
+                wikidata = wikiElement.getWikidataId();
                 // get the prediction result of every wikidata Id in the csv file
-                String resultPredict = predict(wikiElement.getWikidataId()).getPredictedClass();
-
+                resultPredict = predict(wikidata).getPredictedClass();
                 // get the label of every wikidata Id in the csv file
                 FeatureDataExtractor extractor = new FeatureDataExtractor(wrapper);
-                final WikidataElementInfos wikidataElement = extractor.getFeatureWikidata(wikiElement.getWikidataId());
-                String label = wikidataElement.getLabel();
+
+                final WikidataElementInfos wikidataElement = extractor.getFeatureWikidata(wikidata);
+                label = wikidataElement.getLabel();
 
                 // write the result into a new csv file
                 String[] dataPredict = {wikiElement.getWikidataId(), label, resultPredict};
                 csvWriter.writeNext(dataPredict);
             }
 
-        } finally {
-            csvWriter.flush();
-            csvWriter.close();
+        } catch (RuntimeException e){
+            LOGGER.info("Some errors encountered when collecting some features for predicting a Wikidata Id \""+ wikidata +"\"", e);
         }
         System.out.print("Result in " + fileOutput);
+        csvWriter.flush();
+        csvWriter.close();
     }
 
     public static void main(String[] args) throws Exception {

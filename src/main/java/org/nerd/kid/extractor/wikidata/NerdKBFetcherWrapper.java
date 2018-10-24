@@ -48,8 +48,8 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
             String response = null;
             // get the response Id for throw the exception if it's not OK == 200
             int responseId = httpResponse.getStatusLine().getStatusCode();
-            if (responseId == 404) {
-                throw new RemoteServiceException("Item doesn't exist.");
+            if(responseId == 404){
+                throw new RuntimeException("Run time exception.");
             }
 
             if (responseId == 200) {
