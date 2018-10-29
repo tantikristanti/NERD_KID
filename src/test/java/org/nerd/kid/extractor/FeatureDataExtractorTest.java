@@ -1,6 +1,7 @@
 package org.nerd.kid.extractor;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -35,19 +36,21 @@ public class FeatureDataExtractorTest {
         assertThat(result[3], is(0.0));
         assertThat(result[4], is(0.0));
         assertThat(result[5], is(0.0));
-        assertThat(result[6], is(1.0));
-        assertThat(result[7], is(0.0));
+        assertThat(result[6], is(0.0));
+        assertThat(result[7], is(1.0));
         assertThat(result[8], is(0.0));
         assertThat(result[9], is(0.0));
-        assertThat(result[10], is(1.0));
-        assertThat(result[11], is(0.0));
+        assertThat(result[10], is(0.0));
+        assertThat(result[11], is(1.0));
         assertThat(result[12], is(0.0));
         assertThat(result[13], is(0.0));
         assertThat(result[14], is(0.0));
-        assertThat(result[15], is(1.0));
-        assertThat(result[20], is(1.0));
-        assertThat(result[33], is(1.0));
-        assertThat(result[34], is(1.0));
+        assertThat(result[15], is(0.0));
+        assertThat(result[16], is(0.0));
+        assertThat(result[17], is(1.0));
+        assertThat(result[22], is(1.0));
+        assertThat(result[42], is(1.0));
+        assertThat(result[46], is(1.0));
     }
 
     @Test
@@ -55,9 +58,9 @@ public class FeatureDataExtractorTest {
         propertiesNoValueList = Arrays.asList("P1566","P30","P36");
         Double[] result = featureDataExtractor.getFeatureWikidata(propertiesNoValueList);
         // index is the row position in file resources\feature_maspper_no_value.csc (minus) 2
-        assertThat(result[12], is(1.0));
-        assertThat(result[26], is(1.0));
-        assertThat(result[28], is(1.0));
+        assertThat(result[13], is(1.0));
+        assertThat(result[32], is(1.0));
+        assertThat(result[34], is(1.0));
     }
 
     @Test
@@ -81,9 +84,9 @@ public class FeatureDataExtractorTest {
         assertThat(result[7], is(0.0));
         assertThat(result[8], is(0.0));
         assertThat(result[9], is(0.0));
-        assertThat(result[39], is(1.0));
-        assertThat(result[54], is(1.0));
-        assertThat(result[83], is(1.0));
-        assertThat(result[127], is(1.0));
+        assertThat(result[44], is(1.0));
+        assertThat(result[62], is(1.0));
+        assertThat(result[93], is(1.0));
+        assertThat(result[144], is(1.0));
     }
 }

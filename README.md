@@ -2,6 +2,7 @@
 
 This project focuses on machine learning for classifying items found in Wikidata into 27 classes in Nerd, for instance, Institution, Location, Person.
 
+
 # Goal
 According to [Wikidata's statistics](https://www.wikidata.org/wiki/Special:Statistics), more than 49 million items can be found in Wikidata. With its rich and open knowledge base, it's interesting to learn how those items can be classified into 27 classes. These classes are based on [Grobid-NER](http://grobid-ner.readthedocs.io/en/latest/class-and-senses/) 's project results.
 
@@ -12,8 +13,10 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 <img width="550" height="350" alt = "Albert Einstein" src="pic/AlbertEinstein.jpg"/>
 
 # Tools
-
+ 
 <img width="550" height="350" alt = "Developing Tools" src="pic/Tools.jpg"/>
+
+For the training purpose, 9660 items of Wikidata were chosen. They were sequential items from Q1 to Q10000, but since 340 items from these data collections didn't exist in Wikidata knowledge base (i.e `Q6`), they weren't involved neither in the training nor in the testing process. 
 
 # Installation-Build-Run
 **1. Installation**
