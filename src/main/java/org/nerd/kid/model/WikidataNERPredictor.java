@@ -113,7 +113,8 @@ public class WikidataNERPredictor {
         // combine all the features collected (with and without values)
         Double[] combinedFeatureWikidata = Stream.concat(Arrays.stream(resultGetFeatureWikidataPropertiesNoValue), Arrays.stream(resultGetFeatureWikidataProperties)).toArray(Double[]::new);
 
-        // if the features are only 0 for all, they don't need to be predicted; they are stated as UNKNOWN
+        // if the features are only 0 for all, they don't need to be predicted; they are stated as OTHER
+        // OTHER might be entity but recognized as UNKNOWN class type or it might be not entity)
         double sumOfFeatures = Arrays.stream(ArrayUtils.toPrimitive(combinedFeatureWikidata)).sum();
         if (sumOfFeatures > 0) {
             // predict the instance's class based on the features collected
@@ -122,7 +123,7 @@ public class WikidataNERPredictor {
             List<String> classMapper = new ClassExtractor().loadClasses();
             wikidataElementInfos.setPredictedClass(classMapper.get(prediction));
         } else {
-            wikidataElementInfos.setPredictedClass("UNKNOWN");
+            wikidataElementInfos.setPredictedClass("OTHER");
         }
         return wikidataElementInfos;
     }
@@ -136,7 +137,7 @@ public class WikidataNERPredictor {
             rawFeatures[i] = ((double) wikiInfos.getFeatureVector()[i]);
         }
 
-        // if the features are only 0 for all, they don't need to be predicted; they are stated as UNKNOWN
+        // if the features are only 0 for all, they don't need to be predicted; they are stated as OTHER
         double sumOfFeatures = Arrays.stream(rawFeatures).sum();
         if (sumOfFeatures > 0) {
             // predict the instance's class based on the features collected
@@ -145,7 +146,7 @@ public class WikidataNERPredictor {
             List<String> classMapper = new ClassExtractor().loadClasses();
             wikiInfos.setPredictedClass(classMapper.get(prediction));
         } else {
-            wikiInfos.setPredictedClass("UNKNOWN");
+            wikiInfos.setPredictedClass("OTHER");
         }
         //}
         return wikiInfos;
@@ -170,7 +171,7 @@ public class WikidataNERPredictor {
                     rawFeatures[i] = ((double) wikidataElementInfos.getFeatureVector()[i]);
                 }
 
-                // if the features are only 0 for all, they don't need to be predicted; they are stated as UNKNOWN
+                // if the features are only 0 for all, they don't need to be predicted; they are stated as OTHER
                 double sumOfFeatures = Arrays.stream(rawFeatures).sum();
                 if (sumOfFeatures > 0) {
                     // predict the instance's class based on the features collected
@@ -180,7 +181,7 @@ public class WikidataNERPredictor {
                     // set the class with the prediction result
                     wikidataElementInfos.setPredictedClass(classMapper.get(prediction));
                 } else {
-                    wikidataElementInfos.setPredictedClass("UNKNOWN");
+                    wikidataElementInfos.setPredictedClass("OTHER");
                 }
             }
         }catch (RuntimeException e){

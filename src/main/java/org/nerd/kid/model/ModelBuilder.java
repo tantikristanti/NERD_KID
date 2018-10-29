@@ -344,8 +344,8 @@ public class ModelBuilder {
         return gzipInputStream;
     }
 
-    /*main class to build a model from training file
-    public static void main(String[] args) throws Exception {
+    //main class to build a model from training file
+    /*public static void main(String[] args) throws Exception {
         final String pathnameXML = "/tmp/model.xml";
         final String pathnameZIP = "/tmp/model.zip";
         String fileInput = "Training.arff";
