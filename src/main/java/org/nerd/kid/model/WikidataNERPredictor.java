@@ -156,20 +156,19 @@ public class WikidataNERPredictor {
         FeatureDataExtractor extractor;
         WikidataElementInfos wikidataElementInfos = new WikidataElementInfos();
         try {
-
             // extract the characteristics of entities from Nerd
             extractor = new FeatureDataExtractor(wrapper);
             wikidataElementInfos = extractor.getFeatureWikidata(wikidataId);
 
             // get the feature of every instance
             final int length = wikidataElementInfos.getFeatureVector().length;
-            if (length >= 0) {
+            // if there is at least 1 feature
+            if (wikidataElementInfos.getFeatureVector() != null) {
                 double[] rawFeatures = new double[length];
                 for (int i = 0; i < length; i++) {
                     // convert feature to double for Smile can predict it
                     rawFeatures[i] = ((double) wikidataElementInfos.getFeatureVector()[i]);
                 }
-
                 // if the features are only 0 for all, they don't need to be predicted; they are stated as OTHER
                 double sumOfFeatures = Arrays.stream(rawFeatures).sum();
                 if (sumOfFeatures > 0) {
@@ -209,7 +208,10 @@ public class WikidataNERPredictor {
 
                 final WikidataElementInfos wikidataElement = extractor.getFeatureWikidata(wikidata);
                 label = wikidataElement.getLabel();
-
+                // to fill the null result by string "null"
+                if (resultPredict == null){
+                    resultPredict = "null";
+                }
                 // write the result into a new csv file
                 String[] dataPredict = {wikiElement.getWikidataId(), label, resultPredict};
                 csvWriter.writeNext(dataPredict);

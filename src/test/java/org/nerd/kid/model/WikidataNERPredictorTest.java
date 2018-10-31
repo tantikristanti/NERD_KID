@@ -1,11 +1,14 @@
 package org.nerd.kid.model;
 
+import org.hamcrest.core.IsNull;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.nerd.kid.data.WikidataElement;
 import org.nerd.kid.extractor.wikidata.NerdKBFetcherWrapper;
 import org.nerd.kid.extractor.wikidata.WikidataFetcherWrapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 
@@ -13,6 +16,8 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 public class WikidataNERPredictorTest {
+    private static final Logger LOGGER = LoggerFactory.getLogger(WikidataNERPredictorTest.class);
+
     WikidataNERPredictor wikidataNERPredictor;
     WikidataElement wikidataElement;
     WikidataFetcherWrapper wrapper = new NerdKBFetcherWrapper();
@@ -37,6 +42,16 @@ public class WikidataNERPredictorTest {
         assertThat(wikidataNERPredictor.predict("Q12345").getPredictedClass(), is("PERSON")); //Q12345-Count von Count
         assertThat(wikidataNERPredictor.predict("Q55555").getPredictedClass(), is("CREATION")); //Q55555-19 Part One: Boot Camp
         assertThat(wikidataNERPredictor.predict("Q8454").getPredictedClass(), is("OTHER")); //Q8454-capital punishment
+    }
+
+    @Test
+    public void predictWikidataIdNull() {
+        String wikidataIdNull = "Q26023384";
+        try {
+            assertThat(wikidataNERPredictor.predict(wikidataIdNull).getPredictedClass(), is(IsNull.nullValue())); //Q26023384-This entity does not exist
+        }catch (RuntimeException e){
+            LOGGER.info("\"" + wikidataIdNull + "\" might be does not exist in Wikidata knowledge base", e);
+        }
     }
 
     @Test

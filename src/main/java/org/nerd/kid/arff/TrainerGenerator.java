@@ -31,7 +31,6 @@ public class TrainerGenerator {
 
     public void run(String fileOutput) throws Exception {
         // get the list of features
-        //Map<String, List<String>> resultFeature = featureFileExtractor.loadFeatures();
         List<String> resultFeature = featureFileExtractor.loadFeatures();
         List<String> resultFeatureNoValue = featureFileExtractor.loadFeaturesNoValue();
 
@@ -62,6 +61,7 @@ public class TrainerGenerator {
         for (WikidataElementInfos element : training) {
             try {
                 WikidataElementInfos wikidataFeatures = featureWikidataExtractor.getFeatureWikidata(element.getWikidataId());
+                // arff file for training or testing won't involve any entity that doesn't exist in Wikidata knowledge base
                 if (wikidataFeatures != null) {
                     wikidataFeatures.setRealClass(element.getRealClass());
                     arffFileGenerator.addSingle(wikidataFeatures);
@@ -79,7 +79,6 @@ public class TrainerGenerator {
 
     public List<WikidataElementInfos> extractData(File inputFile) throws Exception {
         // get all the data from Csv file containing fields of WikidataId and Class
-
         List<WikidataElementInfos> inputList = new ArrayList<>();
 
         Reader reader = new FileReader(inputFile);
@@ -122,7 +121,6 @@ public class TrainerGenerator {
         String csvDataPath = NerdKidPaths.RESULT_CSV  + "/" + fileOutput;
         CSVWriter csvWriter = null;
         // get the list of features
-        //Map<String, List<String>> resultFeature = featureFileExtractor.loadFeatures();
         List<String> resultFeature = featureFileExtractor.loadFeatures();
         List<String> resultFeatureNoValue = featureFileExtractor.loadFeaturesNoValue();
 
@@ -131,23 +129,7 @@ public class TrainerGenerator {
 
             // the header's file
             List<String> headerPredict = Arrays.asList("WikidataID,LabelWikidata,Class");
-//            List<String> headerPropertyNoValue = new ArrayList<String>();
-//            List<String> headerPropertyValue = new ArrayList<String>();
             List<String> headerCombined = new ArrayList<String>();
-
-            // header contains properties of Wiki Ids
-//            for (String propertyNoValue : resultFeatureNoValue){
-//                headerPropertyNoValue.add(propertyNoValue);
-//            }
-//
-//            for (Map.Entry<String, List<String>> property : resultFeature.entrySet()) {
-//                List<String> values = property.getValue();
-//
-//                for (String item : values) {
-//                    String propertyValue = property.getKey() + "_" + item;
-//                    headerPropertyValue.add(propertyValue);
-//                }
-//            }
 
             headerCombined.addAll(headerPredict);
             headerCombined.addAll(resultFeatureNoValue);
@@ -163,7 +145,6 @@ public class TrainerGenerator {
             }
 
             for (WikidataElementInfos element : training) {
-
                 WikidataElementInfos wikidataFeatures = featureWikidataExtractor.getFeatureWikidata(element.getWikidataId());
                 wikidataFeatures.setRealClass(element.getRealClass());
 
@@ -178,10 +159,11 @@ public class TrainerGenerator {
                 List<String> dataCombined = new ArrayList<String>();
 
                 Double[] features = wikidataFeatures.getFeatureVector();
-                for (Double feature : features) {
-                    dataFeatureGenerated.add(Integer.toString(feature.intValue()));
+                if (features != null) {
+                    for (Double feature : features) {
+                        dataFeatureGenerated.add(Integer.toString(feature.intValue()));
+                    }
                 }
-
                 dataCombined.addAll(dataGenerated);
                 dataCombined.addAll(dataFeatureGenerated);
                 csvWriter.writeNext(dataCombined.toArray(new String[dataCombined.size()]));
