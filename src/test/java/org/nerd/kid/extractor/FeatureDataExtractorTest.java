@@ -29,7 +29,7 @@ public class FeatureDataExtractorTest {
     @Test
     public void getFeatureWikidataTestPropertiesNoValues1() {
         Double[] result = featureDataExtractor.getFeatureWikidata(propertiesNoValueList);
-        // index is the row position in file resources\feature_maspper_no_value.csc (minus) 2
+        // index is the row position in file resources\feature_mapper_no_value.csc (minus) 2
         assertThat(result[0], is(0.0));
         assertThat(result[1], is(0.0));
         assertThat(result[2], is(0.0));
@@ -37,20 +37,21 @@ public class FeatureDataExtractorTest {
         assertThat(result[4], is(0.0));
         assertThat(result[5], is(0.0));
         assertThat(result[6], is(0.0));
-        assertThat(result[7], is(1.0));
-        assertThat(result[8], is(0.0));
+        assertThat(result[7], is(0.0));
+        assertThat(result[8], is(1.0));
         assertThat(result[9], is(0.0));
         assertThat(result[10], is(0.0));
-        assertThat(result[11], is(1.0));
-        assertThat(result[12], is(0.0));
+        assertThat(result[11], is(0.0));
+        assertThat(result[12], is(1.0));
         assertThat(result[13], is(0.0));
         assertThat(result[14], is(0.0));
         assertThat(result[15], is(0.0));
         assertThat(result[16], is(0.0));
-        assertThat(result[17], is(1.0));
-        assertThat(result[22], is(1.0));
-        assertThat(result[42], is(1.0));
+        assertThat(result[19], is(1.0));
+        assertThat(result[24], is(1.0));
+        assertThat(result[45], is(1.0));
         assertThat(result[46], is(1.0));
+        assertThat(result[50], is(1.0));
     }
 
     @Test
@@ -58,9 +59,9 @@ public class FeatureDataExtractorTest {
         propertiesNoValueList = Arrays.asList("P1566","P30","P36");
         Double[] result = featureDataExtractor.getFeatureWikidata(propertiesNoValueList);
         // index is the row position in file resources\feature_maspper_no_value.csc (minus) 2
-        assertThat(result[13], is(1.0));
-        assertThat(result[32], is(1.0));
-        assertThat(result[34], is(1.0));
+        assertThat(result[14], is(1.0));
+        assertThat(result[35], is(1.0));
+        assertThat(result[37], is(1.0));
     }
 
     @Test
@@ -87,6 +88,6 @@ public class FeatureDataExtractorTest {
         assertThat(result[44], is(1.0));
         assertThat(result[62], is(1.0));
         assertThat(result[93], is(1.0));
-        assertThat(result[144], is(1.0));
+        assertThat(result[145], is(1.0));
     }
 }

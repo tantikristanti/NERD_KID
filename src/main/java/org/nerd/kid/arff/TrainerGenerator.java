@@ -16,9 +16,6 @@ import java.io.*;
 import java.nio.file.*;
 import java.util.*;
 
-/*
-main class for generating Arff file
-*/
 
 public class TrainerGenerator {
     private static final Logger LOGGER = LoggerFactory.getLogger(TrainerGenerator.class);
@@ -179,7 +176,11 @@ public class TrainerGenerator {
 
     }
 
-/*
+    /*
+        main class for generating Arff file
+    */
+
+
     public static void main(String[] args) throws Exception {
         String fileOutputArff = "Training.arff";
         String fileOutputCsv = "ResultFromArffGenerator.csv";
@@ -191,5 +192,5 @@ public class TrainerGenerator {
         // create CSV file to check the result of data collected
         trainerGenerator.saveResultCsvFormat(fileOutputCsv);
     }
-    */
+
 }

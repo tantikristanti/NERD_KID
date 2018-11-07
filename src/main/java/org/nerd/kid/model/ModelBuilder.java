@@ -345,7 +345,7 @@ public class ModelBuilder {
     }
 
     //main class to build a model from training file
-    /*public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         final String pathnameXML = "/tmp/model.xml";
         final String pathnameZIP = "/tmp/model.zip";
         String fileInput = "Training.arff";
@@ -364,5 +364,5 @@ public class ModelBuilder {
         byte[] resultInBytes= modelBuilder.readBytesFromFile(new File(pathnameXML));
         modelBuilder.createZip(resultInBytes, new File(pathnameZIP));
         System.out.println("Model has been saved in " + pathnameXML + " and " + pathnameZIP);
-    }*/
+    }
 }
