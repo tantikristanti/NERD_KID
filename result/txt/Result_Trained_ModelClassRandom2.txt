@@ -1,0 +1,42 @@
+** Classification with Random Forest of 100 trees **
+
+Total of instances					:	 90 
+Number of instance trained			:	 72 
+Number of instance predicted		:	 18 
+Correctly classified instances		:	 11 (61.111 %) 
+Incorrectly classified instances	:	 7 (38.889 %) 
+Out of Bag (OOB) error rate			:	 0.583
+Specificity							:	 0.889 
+Average of accuracy					:	 0.914
+Macro Average of Precision			:	 0.068
+Micro Average of Precision			:	 0.611
+Macro Average of Recall				:	 0.111
+Micro Average of Recall				:	 0.611
+Macro Average of FMeasure			:	 0.084
+Micro Average of FMeasure			:	 0.611
+
+** Confusion Matrix **
+Row: Actual; Column: Predicted
+Label of class:
+{0:ANIMAL; 1:BUSINESS; 2:CREATION; 3:EVENT; 4:INSTALLATION; 5:LOCATION; 6:OTHER; 7:PERSON; 8:SUBSTANCE}
+
+Class:	0	1	2	3	4	5	6	7	8	
+	0|	0	0	0	0	0	0	0	0	0	
+	1|	0	0	0	0	0	0	0	0	0	
+	2|	0	0	0	0	0	0	1	0	0	
+	3|	0	0	0	0	0	0	0	0	0	
+	4|	0	0	0	0	0	0	1	0	0	
+	5|	0	0	0	0	0	0	3	0	0	
+	6|	0	0	0	0	0	0	11	0	0	
+	7|	0	0	0	0	0	0	1	0	0	
+	8|	0	0	0	0	0	0	1	0	0	
+
+** Validation for each class **
+
+Class		:	0		1		2		3		4		5		6		7		8	
+Accuracy	:	1.00	1.00	0.94	1.00	0.94	0.83	0.61	0.94	0.94
+Precision	:	0.00	0.00	0.00	0.00	0.00	0.00	0.61	0.00	0.00
+Recall		:	0.00	0.00	0.00	0.00	0.00	0.00	1.00	0.00	0.00
+FMeasure	:	0.00	0.00	0.00	0.00	0.00	0.00	0.76	0.00	0.00
+Specificity	:	1.00	1.00	1.00	1.00	1.00	1.00	0.00	1.00	1.00
+
