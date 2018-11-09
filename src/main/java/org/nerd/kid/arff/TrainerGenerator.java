@@ -142,28 +142,35 @@ public class TrainerGenerator {
             }
 
             for (WikidataElementInfos element : training) {
-                WikidataElementInfos wikidataFeatures = featureWikidataExtractor.getFeatureWikidata(element.getWikidataId());
-                wikidataFeatures.setRealClass(element.getRealClass());
+                try {
+                    WikidataElementInfos wikidataFeatures = featureWikidataExtractor.getFeatureWikidata(element.getWikidataId());
+                    if (wikidataFeatures != null) {
+                        wikidataFeatures.setRealClass(element.getRealClass());
 
-                // replace commas in Wikidata labels with the underscore to avoid incorrect extraction in the Csv file
-                String label = wikidataFeatures.getLabel();
-                if (label.contains(",")) {
-                    wikidataFeatures.setLabel(label.replace(",", "_"));
+                        // replace commas in Wikidata labels with the underscore to avoid incorrect extraction in the Csv file
+                        String label = wikidataFeatures.getLabel();
+                        if (label.contains(",")) {
+                            wikidataFeatures.setLabel(label.replace(",", "_"));
+                        }
+
+                        List<String> dataGenerated = Arrays.asList(wikidataFeatures.getWikidataId(), label, wikidataFeatures.getRealClass());
+                        List<String> dataFeatureGenerated = new ArrayList<String>();
+                        List<String> dataCombined = new ArrayList<String>();
+
+                        Double[] features = wikidataFeatures.getFeatureVector();
+                        if (features != null) {
+                            for (Double feature : features) {
+                                dataFeatureGenerated.add(Integer.toString(feature.intValue()));
+                            }
+                        }
+                        dataCombined.addAll(dataGenerated);
+                        dataCombined.addAll(dataFeatureGenerated);
+                        csvWriter.writeNext(dataCombined.toArray(new String[dataCombined.size()]));
+                    }else
+                        continue;
+                }catch (RuntimeException e){
+                    LOGGER.info("Some errors encountered when getting element for wikidata Id.", e);
                 }
-
-                List<String> dataGenerated = Arrays.asList(wikidataFeatures.getWikidataId(), label, wikidataFeatures.getRealClass());
-                List<String> dataFeatureGenerated = new ArrayList<String>();
-                List<String> dataCombined = new ArrayList<String>();
-
-                Double[] features = wikidataFeatures.getFeatureVector();
-                if (features != null) {
-                    for (Double feature : features) {
-                        dataFeatureGenerated.add(Integer.toString(feature.intValue()));
-                    }
-                }
-                dataCombined.addAll(dataGenerated);
-                dataCombined.addAll(dataFeatureGenerated);
-                csvWriter.writeNext(dataCombined.toArray(new String[dataCombined.size()]));
 
             }
         } catch (Exception e) {
