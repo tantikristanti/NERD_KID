@@ -51,7 +51,6 @@ public class NerdKBFetcherWrapper implements WikidataFetcherWrapper {
             if(responseId == 404){
                 throw new RuntimeException("Run time exception.");
             }
-
             if (responseId == 200) {
                 response = IOUtils.toString(entity.getContent(), UTF_8);
                 if (response.contains(wikiId)) {

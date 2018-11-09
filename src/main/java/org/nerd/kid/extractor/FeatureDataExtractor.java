@@ -6,7 +6,6 @@ import org.nerd.kid.extractor.wikidata.WikidataFetcherWrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -111,68 +110,71 @@ public class FeatureDataExtractor {
         List<String> featuresNoValueList = new ArrayList<>();
         try {
             wikidataElement = wikidataFetcherWrapper.getElement(wikidataId); // wikidata Id, label, properties-values
+        } catch (RuntimeException e) {
+            LOGGER.info("Some errors encountered when collecting some features for a Wikidata Id \"" + wikidataId + "\"", e);
+        } catch (Exception e) {
+            LOGGER.info("Some errors encountered when getting some elements for a Wikidata Id \"" + wikidataId + "\"", e);
+        }
+        if (wikidataElement != null) {
             // set information of id, label, predicted class, features, real class
             wikidataElementInfos.setWikidataId(wikidataId);
             label = wikidataElement.getLabel();
             if (label != null)
                 wikidataElementInfos.setLabel(wikidataElement.getLabel());
 
-        // get the features from feature mapper list files
-        featuresMap = featureFileExtractor.loadFeatures();
-        featuresNoValueList = featureFileExtractor.loadFeaturesNoValue();
-        // properties and values got directly from Wikidata or Nerd API (it depends on the implementation of the WikidataFetcherWrapper interface)
-        propertiesWiki = wikidataElement.getProperties();
-        } catch (RuntimeException e) {
-            LOGGER.info("Some errors encountered when collecting some features for a Wikidata Id \""+ wikidataId +"\"", e);
-        }catch (Exception e){
-            LOGGER.info("Some errors encountered when getting some elements for a Wikidata Id \""+ wikidataId +"\"", e);
-        }
-        // collect the result of properties-values fetched directly from Wikidata or Nerd KB
-        List<String> propertyValueKB = new ArrayList<>();
-        List<String> propertyNoValueKB = new ArrayList<>();
-        for (Map.Entry<String, List<String>> propertyGot : propertiesWiki.entrySet()) {
-            String property = propertyGot.getKey();
-            propertyNoValueKB.add(property);
-            List<String> values = propertyGot.getValue();
-            // if values for the property exist
-            if (values != null) {
-                for (String value : values) {
-                    String propertyValue = property + "_" + value;
-                    propertyValueKB.add(propertyValue);
+            // get the features from feature mapper list files
+            featuresMap = featureFileExtractor.loadFeatures();
+            featuresNoValueList = featureFileExtractor.loadFeaturesNoValue();
+            // properties and values got directly from Wikidata or Nerd API (it depends on the implementation of the WikidataFetcherWrapper interface)
+            propertiesWiki = wikidataElement.getProperties();
+
+            // collect the result of properties-values fetched directly from Wikidata or Nerd KB
+            List<String> propertyValueKB = new ArrayList<>();
+            List<String> propertyNoValueKB = new ArrayList<>();
+            if (propertiesWiki != null) {
+                for (Map.Entry<String, List<String>> propertyGot : propertiesWiki.entrySet()) {
+                    String property = propertyGot.getKey();
+                    propertyNoValueKB.add(property);
+                    List<String> values = propertyGot.getValue();
+                    // if values for the property exist
+                    if (values != null) {
+                        for (String value : values) {
+                            String propertyValue = property + "_" + value;
+                            propertyValueKB.add(propertyValue);
+                        }
+                    }
                 }
+                // the index is based on the number of properties in both feature mapper file
+                Double[] featureVector = new Double[nbOfFeatures];
+
+                int idx = 0;
+
+                // put 1 if property for entities in Wikidata match with the list of 'resources/feature_mapper_no_value.csv', otherwise put 0
+                for (String propertyNoValue : featuresNoValueList) {
+                    // search the existance of a certain property in the list of property
+                    if (propertyNoValueKB.contains(propertyNoValue)) {
+                        featureVector[idx] = 1.0;
+                    } else {
+                        featureVector[idx] = 0.0;
+                    }
+                    idx++;
+                }
+
+                // put 1 if property-value for entities in Wikidata match with the list of 'resources/feature_mapper.csv', otherwise put 0
+                for (String propertyValue : featuresMap) {
+                    // search the existance of a certain property-value in the list of property-value
+                    if (propertyValueKB.contains(propertyValue)) {
+                        featureVector[idx] = 1.0;
+                    } else {
+                        featureVector[idx] = 0.0;
+                    }
+                    idx++;
+                }
+
+                // set information of feature vector
+                wikidataElementInfos.setFeatureVector(featureVector);
             }
         }
-
-        // the index is based on the number of properties in both feature mapper file
-        Double[] featureVector = new Double[nbOfFeatures];
-
-        int idx = 0;
-
-        // put 1 if property for entities in Wikidata match with the list of 'resources/feature_mapper_no_value.csv', otherwise put 0
-        for (String propertyNoValue : featuresNoValueList) {
-            // search the existance of a certain property in the list of property
-            if (propertyNoValueKB.contains(propertyNoValue)) {
-                featureVector[idx] = 1.0;
-            } else {
-                featureVector[idx] = 0.0;
-            }
-            idx++;
-        }
-
-        // put 1 if property-value for entities in Wikidata match with the list of 'resources/feature_mapper.csv', otherwise put 0
-        for (String propertyValue : featuresMap) {
-            // search the existance of a certain property-value in the list of property-value
-            if (propertyValueKB.contains(propertyValue)) {
-                featureVector[idx] = 1.0;
-            } else {
-                featureVector[idx] = 0.0;
-            }
-            idx++;
-        }
-
-        // set information of feature vector
-        wikidataElementInfos.setFeatureVector(featureVector);
-
         return wikidataElementInfos;
     } // end of method 'getFeatureWikidata'
 
