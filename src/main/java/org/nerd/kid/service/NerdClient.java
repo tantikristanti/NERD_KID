@@ -32,8 +32,8 @@ public class NerdClient {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(NerdClient.class);
 
-    private String HOST = "http://cloud.science-miner.com/nerd/service";
-    //    private String HOST = "localhost:8090/service";
+    //private String HOST = "http://cloud.science-miner.com/nerd/service";
+    private String HOST = "localhost:8090/service";
     private String DISAMBIGUATE_SERVICE = "/disambiguate";
     private int PORT = -1;
 
@@ -171,7 +171,8 @@ public class NerdClient {
         String pathJSON = NerdKidPaths.DATA_JSON;
         String pathCSV = NerdKidPaths.DATA_CSV;
         String fileOutputJson = pathJSON + "/Result_EntityFishingTextDisambiguation.json";
-        String fileOutputCsv = pathCSV + "/NewElements.csv";
+        //String fileOutputCsv = pathCSV + "/NewElements.csv";
+        String fileOutputCsv = NerdKidPaths.RESULT_CSV + "/Result_EntityFishingTextDisambiguation.csv";
         String result = null;
         Scanner scanner = new Scanner(System.in);
 
@@ -179,7 +180,8 @@ public class NerdClient {
         String text = scanner.nextLine();
         System.out.println("Language (en, fr, de, it, es) : ");
         String lang = scanner.nextLine();
-        NerdClient nerdClient = new NerdClient("cloud.science-miner.com/nerd/service");
+        //NerdClient nerdClient = new NerdClient("cloud.science-miner.com/nerd/service");
+        NerdClient nerdClient = new NerdClient();
         // text disambiguation
         if (lang != null && !lang.isEmpty()) {
             result = nerdClient.textDisambiguate(text, lang);
@@ -196,7 +198,8 @@ public class NerdClient {
         // extract and save to Json Csv
         WikidataIdClassExtractor wikidataIdClassExtractor = new WikidataIdClassExtractor();
         List<NerdEntity> extractionFromJson = wikidataIdClassExtractor.parseFromJsonFileToString(fileOutputJson);
-        wikidataIdClassExtractor.saveToFileCsv(extractionFromJson, fileOutputCsv);
+        //wikidataIdClassExtractor.saveToFileCsv(extractionFromJson, fileOutputCsv);
+        wikidataIdClassExtractor.saveToFileCsvComplete(extractionFromJson, fileOutputCsv);
 
         //System.out.println(result);
         //System.out.println("The disambiguation result from Entity-Fishing in JSON format is in " + fileOutputJson);

@@ -1,255 +1,954 @@
 {
-  "runtime": 397,
+  "runtime": 3600,
   "nbest": false,
-  "text": "In computational neuroscience it is generally accepted that human  motor memory contains neural representations of the physics of the musculoskeletal system  and the objects in the environment. These representations are called \u0026quot;internal models\u0026quot;.  Force field studies, in which subjects have to adapt to dynamic perturbations induced by a robotic manipulandum,  are an established tool to analyze the characteristics of such internal models.  The aim of the current study was to investigate whether catch trials during force field learning could influence  the consolidation of motor memory in more complex tasks. Thereby, the force field was more than double  the force field of previous studies (35 N�s/m). Moreover, the arm of the subjects was not supported.  A total of 46 subjects participated in this study and performed center-out movements at a robotic manipulandum in two different force fields.  Two control groups learned force field A on day 1 and were retested in the same force field on day 3 (AA).",
+  "text": "Austria invaded and fought the Serbian army at the Battle of Cer and Battle of Kolubara beginning on 12 August. \\n\\nThe army, led by general Paul von Hindenburg defeated Russia in a series of battles collectively known as the First Battle of Tannenberg (17 August ? 2 September). But the failed Russian invasion, causing the fresh German troops to move to the east, allowed the tactical Allied victory at the First Battle of the Marne. \\n\\nUnfortunately for the Allies, the pro-German King Constantine I dismissed the pro-Allied government of E. Venizelos before the Allied expeditionary force could arrive. Beginning in 1915, the Italians under Cadorna mounted eleven offensives on the Isonzo front along the Isonzo River, northeast of Trieste.\\n\\n At the Siege of Maubeuge about 40000 French soldiers surrendered, at the battle of Galicia Russians took about 100-120000 Austrian captives, at the Brusilov Offensive about 325 000 to 417 000 Germans and Austrians surrendered to Russians, at the Battle of Tannenberg 92,000 Russians surrendered.\\n\\n After marching through Belgium, Luxembourg and the Ardennes, the German Army advanced, in the latter half of August, into northern France where they met both the French army, under Joseph Joffre, and the initial six divisions of the British Expeditionary Force, under Sir John French. A series of engagements known as the Battle of the Frontiers ensued. Key battles included the Battle of Charleroi and the Battle of Mons. In the former battle the French 5th Army was almost destroyed by the German 2nd and 3rd Armies and the latter delayed the German advance by a day. A general Allied retreat followed, resulting in more clashes such as the Battle of Le Cateau, the Siege of Maubeuge and the Battle of St. Quentin (Guise). \\n\\nThe German army came within 70 km (43 mi) of Paris, but at the First Battle of the Marne (6?12 September), French and British troops were able to force a German retreat by exploiting a gap which appeared between the 1st and 2nd Armies, ending the German advance into France. The German army retreated north of the Aisne River and dug in there, establishing the beginnings of a static western front that was to last for the next three years. Following this German setback, the opposing forces tried to outflank each other in the Race for the Sea, and quickly extended their trench systems from the North Sea to the Swiss frontier. The resulting German-occupied territory held 64% of France\u0027s pig-iron production, 24% of its steel manufacturing, dealing a serious, but not crippling setback to French industry.\\n ",
   "language": {
     "lang": "en",
     "conf": 0.0
   },
   "global_categories": [
     {
-      "weight": 0.03857207246781961,
+      "weight": 0.001566824640510981,
       "source": "wikipedia-en",
-      "category": "Nervous system",
-      "page_id": 698571
+      "category": "1916 in Austria-Hungary",
+      "page_id": 36538921
     },
     {
-      "weight": 0.03857207246781961,
+      "weight": 0.001566824640510981,
       "source": "wikipedia-en",
-      "category": "Memory processes",
-      "page_id": 16136695
+      "category": "Recipients of the Military Merit Cross (Mecklenburg-Schwerin), 1st class",
+      "page_id": 39385183
     },
     {
-      "weight": 0.09594663382060571,
+      "weight": 0.0023358931336685306,
       "source": "wikipedia-en",
-      "category": "Fictional armour",
-      "page_id": 11665558
-    },
-    {
-      "weight": 0.09594663382060571,
-      "source": "wikipedia-en",
-      "category": "Fictional superhuman features or abilities",
-      "page_id": 19022280
-    },
-    {
-      "weight": 0.057858108701729416,
-      "source": "wikipedia-en",
-      "category": "Motor control",
-      "page_id": 22728692
-    },
-    {
-      "weight": 0.09594663382060571,
-      "source": "wikipedia-en",
-      "category": "Physics in fiction",
-      "page_id": 1903794
-    },
-    {
-      "weight": 0.09594663382060571,
-      "source": "wikipedia-en",
-      "category": "Science fiction themes",
-      "page_id": 786868
-    },
-    {
-      "weight": 0.09594663382060571,
-      "source": "wikipedia-en",
-      "category": "Fictional technology",
-      "page_id": 1891719
-    },
-    {
-      "weight": 0.09594663382060571,
-      "source": "wikipedia-en",
-      "category": "Space technology",
-      "page_id": 7406479
+      "category": "Modern history of Germany",
+      "page_id": 46538433
     }
   ],
   "entities": [
     {
-      "rawName": "computational neuroscience",
-      "offsetStart": 3,
-      "offsetEnd": 29,
-      "nerd_score": 1,
-      "nerd_selection_score": 0.9822,
-      "wikipediaExternalRef": 271430,
-      "wikidataId": "Q8037925",
+      "rawName": "Austria",
+      "type": "LOCATION",
+      "typeKid": "LOCATION",
+      "offsetStart": 0,
+      "offsetEnd": 7,
+      "confidence_score": 0.6365,
+      "wikipediaExternalRef": 26964606,
+      "wikidataId": "Q40",
+      "domains": [
+        "Atomic_Physic",
+        "Engineering",
+        "Administration",
+        "Geology",
+        "Oceanography",
+        "Earth"
+      ]
+    },
+    {
+      "rawName": "Serbian army",
+      "typeKid": "OTHER",
+      "offsetStart": 31,
+      "offsetEnd": 43,
+      "confidence_score": 0.5985,
+      "wikipediaExternalRef": 10072531,
+      "wikidataId": "Q1209256",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "Battle of Cer",
+      "type": "EVENT",
+      "typeKid": "EVENT",
+      "offsetStart": 51,
+      "offsetEnd": 64,
+      "confidence_score": 0.699,
+      "wikipediaExternalRef": 1614762,
+      "wikidataId": "Q697748",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "Battle of Kolubara",
+      "type": "EVENT",
+      "typeKid": "EVENT",
+      "offsetStart": 69,
+      "offsetEnd": 87,
+      "confidence_score": 0.7016,
+      "wikipediaExternalRef": 2167279,
+      "wikidataId": "Q682699",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "12 August",
+      "type": "PERIOD",
+      "typeKid": "PERIOD",
+      "offsetStart": 101,
+      "offsetEnd": 110,
+      "confidence_score": 0.3737,
+      "wikipediaExternalRef": 1491,
+      "wikidataId": "Q2777",
+      "domains": [
+        "Biology",
+        "Psychiatry",
+        "Health",
+        "Physics"
+      ]
+    },
+    {
+      "rawName": "Paul von Hindenburg",
+      "type": "PERSON",
+      "typeKid": "PERSON",
+      "offsetStart": 141,
+      "offsetEnd": 160,
+      "confidence_score": 0.6991,
+      "wikipediaExternalRef": 40548,
+      "wikidataId": "Q2667",
       "domains": [
         "Medicine"
       ]
     },
     {
-      "rawName": "motor memory",
-      "offsetStart": 67,
-      "offsetEnd": 79,
-      "nerd_score": 1,
-      "nerd_selection_score": 0.9227,
-      "wikipediaExternalRef": 487908,
-      "wikidataId": "Q852461",
+      "rawName": "Russia",
+      "type": "UNKNOWN",
+      "typeKid": "LOCATION",
+      "offsetStart": 170,
+      "offsetEnd": 176,
+      "confidence_score": 0.6407,
+      "wikipediaExternalRef": 25391,
+      "wikidataId": "Q159",
       "domains": [
-        "Biology"
+        "Administration",
+        "Geology",
+        "Economy"
       ]
     },
     {
-      "rawName": "musculoskeletal",
-      "offsetStart": 134,
-      "offsetEnd": 149,
-      "nerd_score": 1,
-      "nerd_selection_score": 0.4358,
-      "wikipediaExternalRef": 653348,
-      "wikidataId": "Q726543",
+      "rawName": "Battle of Tannenberg",
+      "type": "EVENT",
+      "typeKid": "EVENT",
+      "offsetStart": 232,
+      "offsetEnd": 252,
+      "confidence_score": 0.9474,
+      "wikipediaExternalRef": 60142,
+      "wikidataId": "Q153858",
       "domains": [
-        "Animal_Husbandry"
+        "Administration",
+        "Military"
       ]
     },
     {
-      "rawName": "field studies",
-      "offsetStart": 263,
-      "offsetEnd": 276,
-      "nerd_score": 1,
-      "nerd_selection_score": 0.4026,
-      "wikipediaExternalRef": 5669923,
-      "wikidataId": "Q1402508",
-      "domains": [
-        "Economy",
-        "Applied_Science",
-        "Artisanship",
-        "Furniture"
-      ]
-    },
-    {
-      "rawName": "internal models",
-      "offsetStart": 434,
-      "offsetEnd": 449,
-      "nerd_score": 1,
-      "nerd_selection_score": 0.7907,
-      "wikipediaExternalRef": 22732293,
-      "wikidataId": "Q13580300",
-      "domains": [
-        "Medicine"
-      ]
-    },
-    {
-      "rawName": "force field",
-      "offsetStart": 528,
-      "offsetEnd": 539,
-      "nerd_score": 0.995,
-      "nerd_selection_score": 0.5369,
-      "wikipediaExternalRef": 286106,
-      "wikidataId": "Q1341441",
+      "rawName": "17 August",
+      "type": "PERIOD",
+      "typeKid": "PERIOD",
+      "offsetStart": 254,
+      "offsetEnd": 263,
+      "confidence_score": 0.3738,
+      "wikipediaExternalRef": 1490,
+      "wikidataId": "Q2827",
       "domains": [
         "Physics"
       ]
     },
     {
-      "rawName": "motor memory",
-      "offsetStart": 587,
-      "offsetEnd": 599,
-      "nerd_score": 1,
-      "nerd_selection_score": 0.9227,
-      "wikipediaExternalRef": 487908,
-      "wikidataId": "Q852461",
+      "rawName": "September",
+      "type": "PERIOD",
+      "offsetStart": 268,
+      "offsetEnd": 277,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Russian",
+      "type": "NATIONAL",
+      "offsetStart": 295,
+      "offsetEnd": 302,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "German",
+      "type": "NATIONAL",
+      "offsetStart": 331,
+      "offsetEnd": 337,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Allied",
+      "type": "CONCEPTUAL",
+      "offsetStart": 387,
+      "offsetEnd": 393,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "First Battle of the Marne",
+      "type": "EVENT",
+      "typeKid": "EVENT",
+      "offsetStart": 409,
+      "offsetEnd": 434,
+      "confidence_score": 0.6991,
+      "wikipediaExternalRef": 171325,
+      "wikidataId": "Q190712",
       "domains": [
-        "Biology"
+        "Military"
       ]
     },
     {
-      "rawName": "force field",
-      "offsetStart": 636,
-      "offsetEnd": 647,
-      "nerd_score": 0.995,
-      "nerd_selection_score": 0.5369,
-      "wikipediaExternalRef": 286106,
-      "wikidataId": "Q1341441",
-      "domains": [
-        "Physics"
-      ]
-    },
-    {
-      "rawName": "force field",
-      "offsetStart": 674,
-      "offsetEnd": 685,
-      "nerd_score": 0.995,
-      "nerd_selection_score": 0.5369,
-      "wikipediaExternalRef": 286106,
-      "wikidataId": "Q1341441",
-      "domains": [
-        "Physics"
-      ]
-    },
-    {
-      "rawName": "35",
-      "type": "MEASURE",
-      "offsetStart": 707,
-      "offsetEnd": 709,
-      "nerd_score": 0.8,
-      "nerd_selection_score": 0
-    },
-    {
-      "rawName": "46",
-      "type": "MEASURE",
-      "offsetStart": 783,
-      "offsetEnd": 785,
-      "nerd_score": 0.8,
-      "nerd_selection_score": 0
-    },
-    {
-      "rawName": "control groups",
-      "offsetStart": 919,
-      "offsetEnd": 933,
-      "nerd_score": 1.0007,
-      "nerd_selection_score": 0.4401,
-      "wikipediaExternalRef": 1640288,
-      "wikidataId": "Q367359",
-      "domains": [
-        "Computer_Science",
-        "Pedagogy"
-      ]
-    },
-    {
-      "rawName": "force field",
-      "offsetStart": 942,
-      "offsetEnd": 953,
-      "nerd_score": 0.995,
-      "nerd_selection_score": 0.5369,
-      "wikipediaExternalRef": 286106,
-      "wikidataId": "Q1341441",
-      "domains": [
-        "Physics"
-      ]
-    },
-    {
-      "rawName": "1",
-      "type": "MEASURE",
-      "offsetStart": 963,
-      "offsetEnd": 964,
-      "nerd_score": 0.8,
-      "nerd_selection_score": 0
-    },
-    {
-      "rawName": "force field",
-      "offsetStart": 995,
-      "offsetEnd": 1006,
-      "nerd_score": 0.995,
-      "nerd_selection_score": 0.5369,
-      "wikipediaExternalRef": 286106,
-      "wikidataId": "Q1341441",
-      "domains": [
-        "Physics"
-      ]
-    },
-    {
-      "rawName": "3",
-      "type": "MEASURE",
-      "offsetStart": 1014,
-      "offsetEnd": 1015,
-      "nerd_score": 0.8,
-      "nerd_selection_score": 0
-    },
-    {
-      "rawName": "AA",
+      "rawName": "Allies",
       "type": "ORGANISATION",
+      "offsetStart": 462,
+      "offsetEnd": 468,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "pro-German",
+      "typeKid": "LOCATION",
+      "offsetStart": 474,
+      "offsetEnd": 484,
+      "confidence_score": 0.4021,
+      "wikipediaExternalRef": 12674,
+      "wikidataId": "Q43287",
+      "domains": [
+        "Astronomy",
+        "Administration",
+        "Geography"
+      ]
+    },
+    {
+      "rawName": "Constantine",
+      "type": "PERSON",
+      "offsetStart": 490,
+      "offsetEnd": 501,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Allied government",
+      "typeKid": "OTHER",
+      "offsetStart": 522,
+      "offsetEnd": 539,
+      "confidence_score": 0.4797,
+      "wikipediaExternalRef": 2198871,
+      "wikidataId": "Q215669",
+      "domains": [
+        "Administration",
+        "Military"
+      ]
+    },
+    {
+      "rawName": "E. Venizelos",
+      "type": "PERSON",
+      "offsetStart": 543,
+      "offsetEnd": 555,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Allied",
+      "type": "CONCEPTUAL",
+      "offsetStart": 567,
+      "offsetEnd": 573,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "1915",
+      "type": "PERIOD",
+      "offsetStart": 621,
+      "offsetEnd": 625,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Italians",
+      "type": "PERSON_TYPE",
+      "offsetStart": 631,
+      "offsetEnd": 639,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Cadorna",
+      "type": "PERSON",
+      "typeKid": "PERSON",
+      "offsetStart": 646,
+      "offsetEnd": 653,
+      "confidence_score": 0.5768,
+      "wikipediaExternalRef": 3010720,
+      "wikidataId": "Q333809",
+      "domains": [
+        "Administration",
+        "Military"
+      ]
+    },
+    {
+      "rawName": "Isonzo River",
+      "type": "LOCATION",
+      "typeKid": "LOCATION",
+      "offsetStart": 710,
+      "offsetEnd": 722,
+      "confidence_score": 0.91,
+      "wikipediaExternalRef": 63627,
+      "wikidataId": "Q202760",
+      "domains": [
+        "Nautical",
+        "Transport"
+      ]
+    },
+    {
+      "rawName": "Trieste",
+      "type": "LOCATION",
+      "typeKid": "LOCATION",
+      "offsetStart": 737,
+      "offsetEnd": 744,
+      "confidence_score": 0.8345,
+      "wikipediaExternalRef": 56092,
+      "wikidataId": "Q546",
+      "domains": [
+        "Oceanography"
+      ]
+    },
+    {
+      "rawName": "Siege of Maubeuge",
+      "type": "EVENT",
+      "typeKid": "EVENT",
+      "offsetStart": 757,
+      "offsetEnd": 774,
+      "confidence_score": 0.8156,
+      "wikipediaExternalRef": 2654397,
+      "wikidataId": "Q815179",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "40000",
+      "type": "MEASURE",
+      "offsetStart": 781,
+      "offsetEnd": 786,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "French soldiers",
+      "typeKid": "OTHER",
+      "offsetStart": 787,
+      "offsetEnd": 802,
+      "confidence_score": 0.4285,
+      "wikipediaExternalRef": 611740,
+      "wikidataId": "Q1076619",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "battle of Galicia",
+      "typeKid": "EVENT",
+      "offsetStart": 823,
+      "offsetEnd": 840,
+      "confidence_score": 0.5761,
+      "wikipediaExternalRef": 1671552,
+      "wikidataId": "Q659246",
+      "domains": [
+        "Military",
+        "Administration"
+      ]
+    },
+    {
+      "rawName": "100",
+      "type": "MEASURE",
+      "offsetStart": 861,
+      "offsetEnd": 864,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "120000",
+      "type": "MEASURE",
+      "offsetStart": 865,
+      "offsetEnd": 871,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Austrian",
+      "type": "NATIONAL",
+      "offsetStart": 872,
+      "offsetEnd": 880,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Brusilov Offensive",
+      "typeKid": "EVENT",
+      "offsetStart": 898,
+      "offsetEnd": 916,
+      "confidence_score": 0.6178,
+      "wikipediaExternalRef": 342327,
+      "wikidataId": "Q221967",
+      "domains": [
+        "Military",
+        "Administration"
+      ]
+    },
+    {
+      "rawName": "325",
+      "type": "MEASURE",
+      "offsetStart": 923,
+      "offsetEnd": 926,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "000",
+      "type": "MEASURE",
+      "offsetStart": 927,
+      "offsetEnd": 930,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "417 000",
+      "type": "MEASURE",
+      "offsetStart": 934,
+      "offsetEnd": 941,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Germans",
+      "type": "PERSON_TYPE",
+      "offsetStart": 942,
+      "offsetEnd": 949,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Austrians",
+      "type": "PERSON_TYPE",
+      "offsetStart": 954,
+      "offsetEnd": 963,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Russians",
+      "type": "PERSON_TYPE",
+      "offsetStart": 979,
+      "offsetEnd": 987,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Battle of Tannenberg",
+      "type": "EVENT",
+      "typeKid": "EVENT",
+      "offsetStart": 996,
+      "offsetEnd": 1016,
+      "confidence_score": 0.9474,
+      "wikipediaExternalRef": 60142,
+      "wikidataId": "Q153858",
+      "domains": [
+        "Administration",
+        "Military"
+      ]
+    },
+    {
+      "rawName": "92,000",
+      "type": "MEASURE",
       "offsetStart": 1017,
-      "offsetEnd": 1019,
-      "nerd_score": 0.8,
-      "nerd_selection_score": 0
+      "offsetEnd": 1023,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Russians",
+      "type": "PERSON_TYPE",
+      "offsetStart": 1024,
+      "offsetEnd": 1032,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Belgium",
+      "type": "LOCATION",
+      "typeKid": "LOCATION",
+      "offsetStart": 1073,
+      "offsetEnd": 1080,
+      "confidence_score": 0.632,
+      "wikipediaExternalRef": 3343,
+      "wikidataId": "Q31",
+      "domains": [
+        "Administration"
+      ]
+    },
+    {
+      "rawName": "Luxembourg",
+      "type": "LOCATION",
+      "typeKid": "LOCATION",
+      "offsetStart": 1082,
+      "offsetEnd": 1092,
+      "confidence_score": 0.4742,
+      "wikipediaExternalRef": 17515,
+      "wikidataId": "Q32",
+      "domains": [
+        "Administration",
+        "Geology",
+        "Oceanography",
+        "Earth"
+      ]
+    },
+    {
+      "rawName": "Ardennes",
+      "type": "LOCATION",
+      "typeKid": "LOCATION",
+      "offsetStart": 1101,
+      "offsetEnd": 1109,
+      "confidence_score": 0.736,
+      "wikipediaExternalRef": 143706,
+      "wikidataId": "Q151985",
+      "domains": [
+        "Plants",
+        "Environment"
+      ]
+    },
+    {
+      "rawName": "German Army",
+      "type": "ORGANISATION",
+      "offsetStart": 1115,
+      "offsetEnd": 1126,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "August",
+      "type": "PERIOD",
+      "offsetStart": 1159,
+      "offsetEnd": 1165,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "France",
+      "type": "LOCATION",
+      "typeKid": "LOCATION",
+      "offsetStart": 1181,
+      "offsetEnd": 1187,
+      "confidence_score": 0.6188,
+      "wikipediaExternalRef": 5843419,
+      "wikidataId": "Q142",
+      "domains": [
+        "Administration"
+      ]
+    },
+    {
+      "rawName": "French",
+      "type": "NATIONAL",
+      "offsetStart": 1212,
+      "offsetEnd": 1218,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Joseph Joffre",
+      "type": "PERSON",
+      "typeKid": "PERSON",
+      "offsetStart": 1231,
+      "offsetEnd": 1244,
+      "confidence_score": 0.7027,
+      "wikipediaExternalRef": 181061,
+      "wikidataId": "Q207958",
+      "domains": [
+        "Administration",
+        "Biology",
+        "Military"
+      ]
+    },
+    {
+      "rawName": "British Expeditionary Force",
+      "type": "ORGANISATION",
+      "typeKid": "OTHER",
+      "offsetStart": 1283,
+      "offsetEnd": 1310,
+      "confidence_score": 0.9718,
+      "wikipediaExternalRef": 207150,
+      "wikidataId": "Q919272",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "Sir John French",
+      "type": "PERSON",
+      "typeKid": "PERSON",
+      "offsetStart": 1318,
+      "offsetEnd": 1333,
+      "confidence_score": 0.6684,
+      "wikipediaExternalRef": 248715,
+      "wikidataId": "Q335059",
+      "domains": [
+        "Military",
+        "Medicine"
+      ]
+    },
+    {
+      "rawName": "Battle of the Frontiers",
+      "type": "EVENT",
+      "typeKid": "EVENT",
+      "offsetStart": 1372,
+      "offsetEnd": 1395,
+      "confidence_score": 0.6911,
+      "wikipediaExternalRef": 1654229,
+      "wikidataId": "Q687572",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "Battle of Charleroi",
+      "type": "EVENT",
+      "typeKid": "LOCATION",
+      "offsetStart": 1429,
+      "offsetEnd": 1448,
+      "confidence_score": 0.6854,
+      "wikipediaExternalRef": 3432431,
+      "wikidataId": "Q860150",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "Battle of Mons",
+      "type": "EVENT",
+      "typeKid": "LOCATION",
+      "offsetStart": 1457,
+      "offsetEnd": 1471,
+      "confidence_score": 0.6894,
+      "wikipediaExternalRef": 630014,
+      "wikidataId": "Q1417205",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "French 5th Army",
+      "type": "ORGANISATION",
+      "typeKid": "OTHER",
+      "offsetStart": 1498,
+      "offsetEnd": 1513,
+      "confidence_score": 0.6476,
+      "wikipediaExternalRef": 4562039,
+      "wikidataId": "Q2817826",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "German",
+      "type": "NATIONAL",
+      "offsetStart": 1542,
+      "offsetEnd": 1548,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "2nd",
+      "type": "MEASURE",
+      "offsetStart": 1549,
+      "offsetEnd": 1552,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "3rd",
+      "type": "MEASURE",
+      "offsetStart": 1557,
+      "offsetEnd": 1560,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "German",
+      "type": "NATIONAL",
+      "offsetStart": 1595,
+      "offsetEnd": 1601,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Battle of Le Cateau",
+      "type": "EVENT",
+      "typeKid": "PERIOD",
+      "offsetStart": 1693,
+      "offsetEnd": 1712,
+      "confidence_score": 0.9532,
+      "wikipediaExternalRef": 2410017,
+      "wikidataId": "Q2003949",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "Siege of Maubeuge",
+      "type": "EVENT",
+      "typeKid": "EVENT",
+      "offsetStart": 1718,
+      "offsetEnd": 1735,
+      "confidence_score": 0.8156,
+      "wikipediaExternalRef": 2654397,
+      "wikidataId": "Q815179",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "Battle of St. Quentin",
+      "typeKid": "PERIOD",
+      "offsetStart": 1744,
+      "offsetEnd": 1765,
+      "confidence_score": 0.6062,
+      "wikipediaExternalRef": 708042,
+      "wikidataId": "Q2066129",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "German army",
+      "typeKid": "SPORT_TEAM",
+      "offsetStart": 1783,
+      "offsetEnd": 1794,
+      "confidence_score": 0.4008,
+      "wikipediaExternalRef": 21376046,
+      "wikidataId": "Q128781",
+      "domains": [
+        "Military",
+        "Administration"
+      ]
+    },
+    {
+      "rawName": "70",
+      "type": "MEASURE",
+      "offsetStart": 1807,
+      "offsetEnd": 1809,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "43",
+      "type": "MEASURE",
+      "offsetStart": 1814,
+      "offsetEnd": 1816,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Paris",
+      "type": "LOCATION",
+      "typeKid": "LOCATION",
+      "offsetStart": 1824,
+      "offsetEnd": 1829,
+      "confidence_score": 0.6139,
+      "wikipediaExternalRef": 22989,
+      "wikidataId": "Q90",
+      "domains": [
+        "Administration",
+        "Sociology"
+      ]
+    },
+    {
+      "rawName": "First Battle of the Marne",
+      "type": "EVENT",
+      "typeKid": "EVENT",
+      "offsetStart": 1842,
+      "offsetEnd": 1867,
+      "confidence_score": 0.6991,
+      "wikipediaExternalRef": 171325,
+      "wikidataId": "Q190712",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "6",
+      "type": "MEASURE",
+      "offsetStart": 1869,
+      "offsetEnd": 1870,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "12 September",
+      "type": "PERIOD",
+      "typeKid": "PERIOD",
+      "offsetStart": 1871,
+      "offsetEnd": 1883,
+      "confidence_score": 0.4349,
+      "wikipediaExternalRef": 28021,
+      "wikidataId": "Q2849",
+      "domains": [
+        "Physics"
+      ]
+    },
+    {
+      "rawName": "French",
+      "type": "NATIONAL",
+      "offsetStart": 1886,
+      "offsetEnd": 1892,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "British",
+      "type": "NATIONAL",
+      "offsetStart": 1897,
+      "offsetEnd": 1904,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "German",
+      "type": "NATIONAL",
+      "offsetStart": 1933,
+      "offsetEnd": 1939,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "1st",
+      "type": "MEASURE",
+      "offsetStart": 1995,
+      "offsetEnd": 1998,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "2nd",
+      "type": "MEASURE",
+      "offsetStart": 2003,
+      "offsetEnd": 2006,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "German",
+      "type": "NATIONAL",
+      "offsetStart": 2026,
+      "offsetEnd": 2032,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "France",
+      "type": "LOCATION",
+      "typeKid": "LOCATION",
+      "offsetStart": 2046,
+      "offsetEnd": 2052,
+      "confidence_score": 0.6188,
+      "wikipediaExternalRef": 5843419,
+      "wikidataId": "Q142",
+      "domains": [
+        "Administration"
+      ]
+    },
+    {
+      "rawName": "German army",
+      "typeKid": "SPORT_TEAM",
+      "offsetStart": 2058,
+      "offsetEnd": 2069,
+      "confidence_score": 0.4008,
+      "wikipediaExternalRef": 21376046,
+      "wikidataId": "Q128781",
+      "domains": [
+        "Military",
+        "Administration"
+      ]
+    },
+    {
+      "rawName": "Aisne River",
+      "type": "LOCATION",
+      "typeKid": "LOCATION",
+      "offsetStart": 2093,
+      "offsetEnd": 2104,
+      "confidence_score": 0.8989,
+      "wikipediaExternalRef": 1284745,
+      "wikidataId": "Q41962",
+      "domains": [
+        "Nautical",
+        "Transport"
+      ]
+    },
+    {
+      "rawName": "German",
+      "type": "NATIONAL",
+      "offsetStart": 2235,
+      "offsetEnd": 2241,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "Race for the Sea",
+      "type": "EVENT",
+      "typeKid": "EVENT",
+      "offsetStart": 2307,
+      "offsetEnd": 2323,
+      "confidence_score": 0.6597,
+      "wikipediaExternalRef": 839722,
+      "wikidataId": "Q250747",
+      "domains": [
+        "Military"
+      ]
+    },
+    {
+      "rawName": "North Sea",
+      "type": "LOCATION",
+      "typeKid": "LOCATION",
+      "offsetStart": 2376,
+      "offsetEnd": 2385,
+      "confidence_score": 0.8069,
+      "wikipediaExternalRef": 21179,
+      "wikidataId": "Q1693",
+      "domains": [
+        "Geology",
+        "Oceanography"
+      ]
+    },
+    {
+      "rawName": "Swiss",
+      "type": "NATIONAL",
+      "typeKid": "LOCATION",
+      "offsetStart": 2393,
+      "offsetEnd": 2398,
+      "confidence_score": 0.3928,
+      "wikipediaExternalRef": 26748,
+      "wikidataId": "Q39",
+      "domains": [
+        "Administration",
+        "Geology",
+        "Oceanography",
+        "Earth"
+      ]
+    },
+    {
+      "rawName": "German",
+      "type": "NATIONAL",
+      "offsetStart": 2423,
+      "offsetEnd": 2429,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "64%",
+      "type": "MEASURE",
+      "offsetStart": 2454,
+      "offsetEnd": 2457,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "France",
+      "type": "LOCATION",
+      "typeKid": "LOCATION",
+      "offsetStart": 2461,
+      "offsetEnd": 2467,
+      "confidence_score": 0.6188,
+      "wikipediaExternalRef": 5843419,
+      "wikidataId": "Q142",
+      "domains": [
+        "Administration"
+      ]
+    },
+    {
+      "rawName": "pig-iron production",
+      "typeKid": "OTHER",
+      "offsetStart": 2470,
+      "offsetEnd": 2489,
+      "confidence_score": 0.5769,
+      "wikipediaExternalRef": 53694,
+      "wikidataId": "Q901785",
+      "domains": [
+        "Engineering"
+      ]
+    },
+    {
+      "rawName": "24%",
+      "type": "MEASURE",
+      "offsetStart": 2491,
+      "offsetEnd": 2494,
+      "confidence_score": 0
+    },
+    {
+      "rawName": "French",
+      "type": "NATIONAL",
+      "offsetStart": 2571,
+      "offsetEnd": 2577,
+      "confidence_score": 0
     }
   ]
 }
