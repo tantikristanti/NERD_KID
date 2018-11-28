@@ -2,6 +2,7 @@ package org.nerd.kid.service;
 
 public class NerdEntity {
     private String rawName =  null;
+    private String normalisedRawName = null;
     private String typeNEGrobidNER = null;
     private String typeNENerdKid = null;
     private int offsetStart = -1;
@@ -20,6 +21,15 @@ public class NerdEntity {
     public void setRawName(String rawName) {
         this.rawName = rawName;
     }
+
+    public String getNormalisedRawName() {
+        return normalisedRawName;
+    }
+
+    public void setNormalisedRawName(String normalisedRawName) {
+        this.normalisedRawName = normalisedRawName;
+    }
+
 
     public String getTypeNEGrobidNER() {
         return typeNEGrobidNER;

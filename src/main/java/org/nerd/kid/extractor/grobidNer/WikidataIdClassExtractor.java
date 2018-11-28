@@ -60,6 +60,13 @@ public class WikidataIdClassExtractor {
                         nerdEntity.setRawName("");
                     }
 
+                    // get normalizedName
+                    if (jsonObjectRow.get("normalisedRawName") != null) {
+                        nerdEntity.setNormalisedRawName(jsonObjectRow.get("normalisedRawName").toString());
+                    } else {
+                        nerdEntity.setNormalisedRawName("");
+                    }
+
                     // get typeNEEntityFishing --> nerGrobidType
                     if (jsonObjectRow.get("type") != null) {
                         nerdEntity.setTypeNEGrobidNER(jsonObjectRow.get("type").toString());
