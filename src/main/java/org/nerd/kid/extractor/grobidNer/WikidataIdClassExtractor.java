@@ -60,11 +60,25 @@ public class WikidataIdClassExtractor {
                         nerdEntity.setRawName("");
                     }
 
-                    // get typeNEEntityFishing
-                    if (jsonObjectRow.get("type") != null) {
-                        nerdEntity.setTypeNEEntityFishing(jsonObjectRow.get("type").toString());
+                    // get normalizedName
+                    if (jsonObjectRow.get("normalisedRawName") != null) {
+                        nerdEntity.setNormalisedRawName(jsonObjectRow.get("normalisedRawName").toString());
                     } else {
-                        nerdEntity.setTypeNEEntityFishing("");
+                        nerdEntity.setNormalisedRawName("");
+                    }
+
+                    // get typeNEEntityFishing --> nerGrobidType
+                    if (jsonObjectRow.get("type") != null) {
+                        nerdEntity.setTypeNEGrobidNER(jsonObjectRow.get("type").toString());
+                    } else {
+                        nerdEntity.setTypeNEGrobidNER("");
+                    }
+
+                    // get nerKid_type
+                    if (jsonObjectRow.get("typeKid") != null) {
+                        nerdEntity.setTypeNENerdKid(jsonObjectRow.get("typeKid").toString());
+                    } else {
+                        nerdEntity.setTypeNENerdKid(null);
                     }
 
                     // get offsetStart
@@ -93,6 +107,13 @@ public class WikidataIdClassExtractor {
                         nerdEntity.setSelectionScore(Double.parseDouble(jsonObjectRow.get("nerd_selection_score").toString()));
                     } else {
                         nerdEntity.setSelectionScore(0.0);
+                    }
+
+                    // get confidence_score_score which currently is actually
+                    if (jsonObjectRow.get("confidence_score") != null) {
+                        nerdEntity.setConfidenceScore(Double.parseDouble(jsonObjectRow.get("confidence_score").toString()));
+                    } else {
+                        nerdEntity.setConfidenceScore(0.0);
                     }
 
                     // get wikipediaExternalRef
@@ -129,7 +150,28 @@ public class WikidataIdClassExtractor {
             // get the list of Wikidata Ids and Class
             for (NerdEntity entity : resultToSave) {
                 if (entity.getWikidataId() != null) {
-                    String[] data = {entity.getWikidataId(), entity.getTypeNEEntityFishing()};
+                    String[] data = {entity.getWikidataId(), entity.getTypeNEGrobidNER()};
+                    csvWriter.writeNext(data);
+                }
+            }
+            csvWriter.flush();
+            csvWriter.close();
+
+        } catch (IOException e) {
+            LOGGER.info("Some errors encountered when saving to a Csv file in \""+ resultToSave +"\"", e);
+        }
+    }
+
+    public void saveToFileCsvComplete(List<NerdEntity> resultToSave, String outputFile) {
+        // get only the list of Wikidata Ids and Classes from the Json result
+        try {
+            CSVWriter csvWriter = new CSVWriter(new FileWriter(outputFile), ',', CSVWriter.NO_QUOTE_CHARACTER);
+            String[] header = {"rawName,wikipediaExternalRef,wikidataId,confidence_score,nerGrobid_type,nerKid_type"};
+            csvWriter.writeNext(header);
+            // get the list of Wikidata Ids and Class
+            for (NerdEntity entity : resultToSave) {
+                if (entity.getWikidataId() != null) {
+                    String[] data = {entity.getRawName(),Integer.toString(entity.getWikipediaExternalRef()),entity.getWikidataId(),Double.toString(entity.getConfidenceScore()),entity.getTypeNEGrobidNER(),entity.getTypeNENerdKid()};
                     csvWriter.writeNext(data);
                 }
             }
