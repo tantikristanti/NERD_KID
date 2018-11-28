@@ -42,6 +42,7 @@ public class WikidataNERPredictorTest {
         assertThat(wikidataNERPredictor.predict("Q12345").getPredictedClass(), is("PERSON")); //Q12345-Count von Count
         assertThat(wikidataNERPredictor.predict("Q55555").getPredictedClass(), is("CREATION")); //Q55555-19 Part One: Boot Camp
         assertThat(wikidataNERPredictor.predict("Q8454").getPredictedClass(), is("OTHER")); //Q8454-capital punishment
+        assertThat(wikidataNERPredictor.predict("Q12554").getPredictedClass(), is("EVENT")); // Q12554-Middle Ages
     }
 
     @Test
