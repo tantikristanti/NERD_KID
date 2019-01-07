@@ -1,10 +1,12 @@
-# <font color="blue"> NERD_KID </font> :neckbeard:
+# <font color="blue"> nerdKid </font> :neckbeard:
 
-This project focuses on machine learning for classifying items found in Wikidata into 27 classes in Nerd, for instance, Institution, Location, Person.
+This project is inspired by the project of [entity-fishing](https://github.com/kermitt2/entity-fishing) and [grobid-ner](https://github.com/kermitt2/grobid-ner). Entity-fishing is a tool to automate a recognition and disambiguisation task while grobid-ner is a named-entity recogniser based on the [GROBID](https://github.com/kermitt2/grobid) library, a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured TEI-encoded documents with a particular focus on technical and scientific publications.
+ 
+**nerdKid** project focuses on the classification of entities into their types (e.g. Person, Location) with the use of Wikidata as online knowledge base.
 
 
 # Goal
-According to [Wikidata's statistics](https://www.wikidata.org/wiki/Special:Statistics), more than 49 million items can be found in Wikidata. With its rich and open knowledge base, it's interesting to learn how those items can be classified into 27 classes. These classes are based on [Grobid-NER](http://grobid-ner.readthedocs.io/en/latest/class-and-senses/) 's project results.
+According to [Wikidata's statistics](https://www.wikidata.org/wiki/Special:Statistics), more than 53 million items can be found in Wikidata. With its rich and open knowledge base, it's interesting to learn how those items can be classified into 27 classes. These classes are based on [Grobid-NER](http://grobid-ner.readthedocs.io/en/latest/class-and-senses/) 's project results.
 
 The idea of this project is to make computers <font color="red"> understand </font> how grouping millions of items in Wikidata into specific classes based on their data characteristics.
 
@@ -115,7 +117,7 @@ User can only just change the Wikidata Id started with 'Q' and then the number.
 
 For citing this work, please simply refer to the Github project:
 
-```Nerd-Kid (2017-2018) <https://github.com/tantikristanti/NERD_KID>```
+```Nerd-Kid (2017-2019) <https://github.com/tantikristanti/NERD_KID>```
 
 
 ## Contact
