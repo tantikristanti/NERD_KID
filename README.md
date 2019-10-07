@@ -17,7 +17,7 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 # Tools
  
-<img width="550" height="350" alt = "Developing Tools" src="pic/Tools.jpg"/>
+<img width="650" height="350" alt = "Developing Tools" src="pic/Tools.jpg"/>
 
 For the training purpose, 9660 items of Wikidata were chosen. They were sequential items from Q1 to Q10000, but since 340 items from these data collections didn't exist in Wikidata knowledge base (i.e `Q6`), they weren't involved neither in the training nor in the testing process. 
 
