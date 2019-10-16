@@ -4,7 +4,7 @@ This project is inspired by the project of [entity-fishing](https://github.com/k
  
 **nerdKid** project focuses on the classification of entities into their types (e.g. Person, Location), [grobid-ner Classes](https://grobid-ner.readthedocs.io/en/latest/class-and-senses/) with the use of Wikidata as online knowledge base.
 
-<img width="550" height="350" alt = "nerdKid" src="pic/nerdKid.jpg"/>
+![nerdKid](pic/nerdKid.jpg)
 
 # Goal
 According to [Wikidata's statistics](https://www.wikidata.org/wiki/Special:Statistics), more than 60 million items can be found in Wikidata. With its rich and open knowledge base, it's interesting to learn how those items can be classified into 27 classes. These classes are based on [Grobid-NER](http://grobid-ner.readthedocs.io/en/latest/class-and-senses/) 's project results.
@@ -13,11 +13,11 @@ The idea of this project is to make computers <font color="red"> understand </fo
 
 Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki/Q937) in Wikidata which has an identifier 'Q937'. This item actually has a number of properties (e.g. 'instance of-P31', 'sex or gender-P21', etc.) as well as a number of values for each property (e.g. 'human-Q5' as a value of property 'P31', 'male-Q6581097' as a value of property 'P-21'). Based on a trained given model, computers will understand how making some predictions and classifying the Albert Einstein's item into a certain class, Person class, for instance. This project will also consider disambiguity of items. For instance, computers will not classify [Marshall Plan](https://www.wikidata.org/wiki/Q4576) into a Person class, because it's not a name of a person, rather it's an American initiative to aid Western Europe. 
 
-<img width="550" height="350" alt = "Albert Einstein" src="pic/AlbertEinstein.jpg"/>
+![Albert Einstein](pic/AlbertEinstein.jpg)
 
 # Tools
- 
-<img width="750" height="500" alt = "Developing Tools" src="pic/Tools.jpg"/>
+
+![Developing Tools](pic/Tools.jpg)
 
 For the training purpose, 9660 items of Wikidata were chosen. They were sequential items from Q1 to Q10000, but since 340 items from these data collections didn't exist in Wikidata knowledge base (i.e `Q6`), they weren't involved neither in the training nor in the testing process. 
 
@@ -110,7 +110,7 @@ For testing purposes, Nerd-Kid is available here [Nerd-Kid](http://nerd.huma-num
 
 User can only just change the Wikidata Id started with 'Q' and then the number.
 
-<img width="550" height="150" alt = "Prediction Result" src="pic/ResultPredictionWeb.jpg"/>
+![Prediction Result](pic/ResultPredictionWeb.jpg)
 
 - The result will be Wikidata Id, the properties, and the result of predicted class.
 
