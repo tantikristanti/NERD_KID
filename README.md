@@ -26,7 +26,7 @@ The accuracy obtained from the current model is 92,091%. Furthermore, the FMeasu
 
 <img width="350" height="550" alt = "Developing Tools" src="pic/EvaluationNerdKid.jpg"/>
 
-Since the examples were taken randomly, a number of class types do not have enough examples. This is the reason a number of classes have 0 for their FMeasure.
+Since the examples were taken randomly, a number of class types did not have enough examples. This is the reason a number of classes have 0 for their FMeasure.
 
 # Installation-Build-Run
 **1. Installation**
