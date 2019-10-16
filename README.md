@@ -1,4 +1,4 @@
-# <font color="blue"> nerdKid </font> :neckbeard:
+# <font color="blue"> nerdKid </font> :clown_face:
 
 This project is inspired by the project of [entity-fishing](https://github.com/kermitt2/entity-fishing) and [grobid-ner](https://github.com/kermitt2/grobid-ner). Entity-fishing is a tool to automate a recognition and disambiguisation task while grobid-ner is a named-entity recogniser based on the [GROBID](https://github.com/kermitt2/grobid) library, a machine learning library for extracting, parsing and re-structuring raw documents such as PDF into structured TEI-encoded documents with a particular focus on technical and scientific publications.
  
