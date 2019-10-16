@@ -24,7 +24,7 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 For the training purpose, 9922 items of Wikidata were chosen. From these examples, 80% were used for the training purpose and the rest for the evaluation. 
 The accuracy obtained from the current model is 92,091%. Furthermore, the FMeasure result for each class type can be seen as follows:
 
-<img width="650" height="350" alt = "Developing Tools" src="pic/EvaluationNerdKid.jpg"/>
+<img width="350" height="550" alt = "Developing Tools" src="pic/EvaluationNerdKid.jpg"/>
 
 Since the examples were taken randomly, a number of class types do not have enough examples. This is the reason a number of classes have 0 for their FMeasure.
 
