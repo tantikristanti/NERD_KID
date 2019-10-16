@@ -19,7 +19,14 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 ![Developing Tools](pic/Tools.jpg)
 
-For the training purpose, 9660 items of Wikidata were chosen. They were sequential items from Q1 to Q10000, but since 340 items from these data collections didn't exist in Wikidata knowledge base (i.e `Q6`), they weren't involved neither in the training nor in the testing process. 
+# Training and Evaluation
+
+For the training purpose, 9922 items of Wikidata were chosen. From these examples, 80% were used for the training purpose and the rest for the evaluation. 
+The accuracy obtained from the current model is 92,091%. Furthermore, the FMeasure result for each class type can be seen as follows:
+
+<img width="650" height="350" alt = "Developing Tools" src="pic/EvaluationNerdKid.jpg"/>
+
+Since the examples were taken randomly, a number of class types do not have enough examples. This is the reason a number of classes have 0 for their FMeasure.
 
 # Installation-Build-Run
 **1. Installation**
