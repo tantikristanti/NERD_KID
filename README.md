@@ -165,8 +165,8 @@ To prevent some errors due to the overlapping of Maven dependencies like for exa
 
 - And ignore other slf4j dependency (or simply mark them as comments)
 
-3.Add nerdKid library (nerd-kid-project) under `lib/org/nerd/kid`. 
-    This library is built after the deployment of the nerdKid application ($ mvn clean install) and is saved under .m2/repository/org/nerd/kid/`
+3.Add **nerdKid** library (nerd-kid-project) under `lib/org/nerd/kid`. 
+    This library is built as the deployment result and is saved under `.m2/repository/org/nerd/kid/`
 
 4.Call the prediction service :
 
@@ -176,14 +176,14 @@ There are several ways to collect the statements:
 -	Collect from localhost `http://localhost:8090/service/kb/concept`
 -	Collect from LMDB data of *entity-fishing* (data/db/db-kb), [entity-fishing-documentation](https://nerd.readthedocs.io/en/latest/build.html#install-build-and-run) 
 
-In this case, new classes to implement an interface class called `WikidataFetcherWrapper`  in **nerdKid**  need to be build and the `WikidataElement getElement(String wikiId)` method need to be adapted as needed.
+In this case, new classes as implementation of an interface called `WikidataFetcherWrapper` in **nerdKid**  need to be created and the `WikidataElement getElement(String wikiId)` method needs to be adapted as needed.
 
-a.	Example of using **nerdKid** service by default :`
+a.	Example of using **nerdKid** service by default :
 
 ```
 WikidataFetcherWrapper wrapper = new NerdKBFetcherWrapper();
 WikidataNERPredictor wikidataNERPredictor = new WikidataNERPredictor(wrapper);
-System.out.println(wikidataNERPredictor1.predict("Q1077").getPredictedClass());
+System.out.println(wikidataNERPredictor.predict("Q1077").getPredictedClass());
 ```
 
 b.	Example of using **nerdKid** service by running *entity-fishing* on localhost (default port on 8090) :
@@ -193,7 +193,7 @@ To use this way, *entity-fishing* needs to be run `$ mvn clean jetty:run`, see [
 ```
 WikidataFetcherWrapper wrapper = new NerdKBLocalFetcherWrapper();
 WikidataNERPredictor wikidataNERPredictor = new WikidataNERPredictor(wrapper);
-System.out.println(wikidataNERPredictor1.predict("Q1077").getPredictedClass());
+System.out.println(wikidataNERPredictor.predict("Q1077").getPredictedClass());
 ```
 
 ## Reference
