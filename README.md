@@ -19,15 +19,6 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 ![Developing Tools](pic/Tools.jpg)
 
-# Training and Evaluation
-
-For the training purpose, 9922 items of Wikidata were chosen. From these examples, 80% were used for the training purpose and the rest for the evaluation. 
-The accuracy obtained from the current model is 92,091%. Furthermore, the FMeasure result for each class type can be seen as follows:
-
-<img width="350" height="550" alt = "Developing Tools" src="pic/EvaluationNerdKid.jpg"/>
-
-Since the examples were taken randomly, a number of class types did not have enough examples. This is the reason a number of classes have 0 for their FMeasure.
-
 # Installation-Build-Run
 **1. Installation**
 
@@ -43,8 +34,17 @@ Since the examples were taken randomly, a number of class types did not have eno
 
 ```$ mvn clean install```
 
-<!--
-**3. Build a training Arff file**
+# Training and Evaluation
+
+For the training purpose, 9922 items of Wikidata were chosen. From these examples, 80% were used for the training purpose and the rest for the evaluation. 
+The accuracy obtained from the current model is 92,091%. Furthermore, the FMeasure result for each class type can be seen as follows:
+
+<img width="350" height="550" alt = "Developing Tools" src="pic/EvaluationNerdKid.jpg"/>
+
+Since the examples were taken randomly, a number of class types did not have enough examples. This is the reason a number of classes have 0 for their FMeasure.
+
+<!-- # Create New Training Data
+**1. Build a training Arff file**
 - In order to build a new training data, this service can be used:
 
 ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.arff.TrainerGenerator"```
@@ -55,7 +55,7 @@ Since the examples were taken randomly, a number of class types did not have eno
 - The result of Arff file can be seen in ![Training](result/arff/Training.arff) 
 - It is also possible to check first whether the data and features of wikidata Ids are correct/complete by checking the Csv file result located in ![Result From Arff Generator](result/csv/ResultFromArffGenerator.csv)  
   
-**4. Build, train, and evaluate the model**
+**2. Build, train, and evaluate the model**
 
 *Model training using Random Forest classification [SMILE](https://github.com/haifengl/smile/)*
 
@@ -63,7 +63,6 @@ Since the examples were taken randomly, a number of class types did not have eno
 
 - The evaluation result can be seen in ![Result_Trained_Model](result/txt/Result_Trained_Model.txt) 
 - The model itself can be found in Xml and Zip format which are located in the temporary file `/tmp` and they can be copied to ![Resources](src/main/resources) directory
--->
 
 **3. Prepare new data to be predicted**
 
@@ -100,8 +99,9 @@ In order to do so, there are some possibilities of:
 
    These 2 tasks can be done by this service:
     ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.service.NerdClient"```
+-->
 
-**4. Get the prediction results**
+# Get the prediction results
 
 To predict each Wikidata Id prepared in ![New Elements](data/csv/NewElements.csv), this service can be called:
 
@@ -110,8 +110,7 @@ To predict each Wikidata Id prepared in ![New Elements](data/csv/NewElements.csv
 
 - The result can be seen in ![Result Predicted Class](result/csv/ResultPredictedClass.csv)
 
-
-**5. Demo version**
+# Demo version
 
 For testing purposes, Nerd-Kid is available here [Nerd-Kid](http://nerd.huma-num.fr/kid/service/ner?id=Q1) 
 
@@ -120,6 +119,80 @@ User can only just change the Wikidata Id started with 'Q' and then the number.
 ![Prediction Result](pic/ResultPredictionWeb.jpg)
 
 - The result will be Wikidata Id, the properties, and the result of predicted class.
+
+# Use **nerdKid** Service in Other Projects
+**nerdKid** prepares ways to be used in other projects:
+1.Make sure **nerdKid** is built `$ mvn clean install`
+2.Add the dependency to **nerdKid** in the pom file of other projects :
+
+```
+<dependency>
+<groupId>org.nerd.kid</groupId>
+<artifactId>nerd-kid-project</artifactId>
+<version>1.0-SNAPSHOT</version>
+    <exclusions>
+        <exclusion>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+        </exclusion>
+        <exclusion>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+```
+
+To prevent some errors due to the overlapping of Maven dependencies like for example *slf4j*, do some steps explained here [slf4j](http://www.slf4j.org/faq.html) :
+- Declare the exclusion of commons-logging in the provided scope
+
+```
+<dependency>
+    <groupId>commons-logging</groupId>
+    <artifactId>commons-logging</artifactId>
+    <version>1.1.1</version>
+    <scope>provided</scope>
+</dependency>
+
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>jcl-over-slf4j</artifactId>
+    <version>2.0.0-alpha1</version>
+</dependency>
+```
+
+- And ignore other slf4j dependency (or simply mark them as comments)
+
+3.Add nerdKid library (nerd-kid-project) under `lib/org/nerd/kid`. 
+    This library is built after the deployment of the nerdKid application ($ mvn clean install) and is saved under .m2/repository/org/nerd/kid/`
+
+4.Call the prediction service :
+
+For predicting NER type, **nerdKid** needs to collect the statements for each Wikidata element. These statements are collected from *entity-fishing* service. 
+There are several ways to collect the statements:
+-	Collect from [entity-fishing](http://nerd.huma-num.fr/nerd/service/kb/concept) 
+-	Collect from localhost `http://localhost:8090/service/kb/concept`
+-	Collect from LMDB data of *entity-fishing* (data/db/db-kb), [entity-fishing-documentation](https://nerd.readthedocs.io/en/latest/build.html#install-build-and-run) 
+
+In this case, new classes to implement an interface class called `WikidataFetcherWrapper`  in **nerdKid**  need to be build and the `WikidataElement getElement(String wikiId)` method need to be adapted as needed.
+
+a.	Example of using **nerdKid** service by default :`
+
+```
+WikidataFetcherWrapper wrapper = new NerdKBFetcherWrapper();
+WikidataNERPredictor wikidataNERPredictor = new WikidataNERPredictor(wrapper);
+System.out.println(wikidataNERPredictor1.predict("Q1077").getPredictedClass());
+```
+
+b.	Example of using **nerdKid** service by running *entity-fishing* on localhost (default port on 8090) :
+
+To use this way, *entity-fishing* needs to be run `$ mvn clean jetty:run`, see [entity-fishing-documentation](https://nerd.readthedocs.io/en/latest/build.html#install-build-and-run)
+  
+```
+WikidataFetcherWrapper wrapper = new NerdKBLocalFetcherWrapper();
+WikidataNERPredictor wikidataNERPredictor = new WikidataNERPredictor(wrapper);
+System.out.println(wikidataNERPredictor1.predict("Q1077").getPredictedClass());
+```
 
 ## Reference
 
