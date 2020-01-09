@@ -122,7 +122,9 @@ User can only just change the Wikidata Id started with 'Q' and then the number.
 
 # Use **nerdKid** Service in Other Projects
 **nerdKid** prepares ways to be used in other projects:
+
 1.Make sure **nerdKid** is built `$ mvn clean install`
+
 2.Add the dependency to **nerdKid** in the pom file of other projects :
 
 ```
