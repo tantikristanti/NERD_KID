@@ -80,6 +80,7 @@ public class WikidataNERPredictorTest {
     }
 
     @Test
+    @Ignore("Wait a new model")
     public void predictWikidataElement1() {
         wikidataElement.setId("Q1011"); // Cape Verde (Class: LOCATION)
         propertiesNoValue = Arrays.asList("P1566", "P30", "P36");
@@ -106,6 +107,7 @@ public class WikidataNERPredictorTest {
 
     // test if a list containing properties without any values is null
     @Test
+    @Ignore("Wait a new model")
     public void predictWikidataElement3() {
         wikidataElement.setId("Q76"); // Barack Obama (Class: PERSON)
         properties.put("P21", Arrays.asList("Q6581097"));
