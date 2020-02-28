@@ -39,9 +39,7 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 For the training purpose, 9922 items of Wikidata were chosen. From these examples, 80% were used for the training purpose and the rest for the evaluation. 
 The accuracy obtained from the current model is 92,091%. Furthermore, the FMeasure result for each class type can be seen as follows:
 
-<img width="350" height="550" alt = "Developing Tools" src="pic/EvaluationNerdKid.jpg"/>
-
-Since the examples were taken randomly, a number of class types did not have enough examples. This is the reason a number of classes have 0 for their FMeasure.
+<img width="350" height="550" alt = "Developing Tools" src="pic/EvaluationNerdKid.jpg"/> 
 
 <!-- # Create New Training Data
 **1. Build a training Arff file**
@@ -59,7 +57,7 @@ Since the examples were taken randomly, a number of class types did not have eno
 
 *Model training using Random Forest classification [SMILE](https://github.com/haifengl/smile/)*
 
-```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.model.ModelBuilder"```
+```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.model.ModelBuilder" -Dexec.cleanupDaemonThreads=false```
 
 - The evaluation result can be seen in ![Result_Trained_Model](result/txt/Result_Trained_Model.txt) 
 - The model itself can be found in Xml and Zip format which are located in the temporary file `/tmp` and they can be copied to ![Resources](src/main/resources) directory
