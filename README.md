@@ -76,6 +76,9 @@ In order to do so, there are some possibilities of:
     Q1408,
     ```
     
+    To generate the random Wikidata Ids:  
+    ```$ mvn exec:java -Dexec.mainClass="org.nerd.kid.model.WikidataIdRandomizer" -Dexec.cleanupDaemonThreads=false```
+    
    b. If some texts are available, using Nerd and Grobid-Ner service to get Wikidata Ids and their Classes 
      
    *New data can be collected by extracting the text with the text disambiguation service of [Entity-Fishing](http://nerd.readthedocs.io/en/latest/restAPI.html)*

@@ -54,6 +54,8 @@ public class WikidataNERPredictorTest {
         assertThat(wikidataNERPredictor1.predict("Q55555").getPredictedClass(), is("CREATION")); //Q55555-19 Part One: Boot Camp
         assertThat(wikidataNERPredictor1.predict("Q8454").getPredictedClass(), is("OTHER")); //Q8454-capital punishment
         assertThat(wikidataNERPredictor1.predict("Q12554").getPredictedClass(), is("EVENT")); // Q12554-Middle Ages
+        assertThat(wikidataNERPredictor1.predict("Q1744").getPredictedClass(), is("PERSON")); // Q1744-Madonna
+        assertThat(wikidataNERPredictor1.predict("Q152099").getPredictedClass(), is("PERSON")); // Q152099-Constantine I of Greece
     }
 
     @Test

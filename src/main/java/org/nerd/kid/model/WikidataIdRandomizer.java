@@ -1,6 +1,8 @@
 package org.nerd.kid.model;
 
 import au.com.bytecode.opencsv.CSVWriter;
+import org.nerd.kid.extractor.wikidata.NerdKBFetcherWrapper;
+import org.nerd.kid.extractor.wikidata.WikidataFetcherWrapper;
 import org.nerd.kid.service.NerdKidPaths;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,17 +18,17 @@ public class WikidataIdRandomizer {
         Random random = new Random();
         List<Integer> intSet = new ArrayList<>();
         while (intSet.size() < 100) {
-            intSet.add(random.nextInt(35000000) + 1); //currently the number of Wikidata Id items is 51202683
+            intSet.add(random.nextInt(35030909) + 1); //currently the number of Wikidata Id items is 35030909
         }
         return intSet;
     }
 
-    public void writeToCsv(List<Integer> listInput) throws IOException{
+    public void writeToCsv(List<Integer> listInput) throws IOException {
         String fileOutput = NerdKidPaths.DATA_CSV + "/NewElements.csv";
         CSVWriter csvWriter = null;
         List<String> wikiIds = new ArrayList<String>();
         String[] header = {"WikidataID,Class"};
-        try{
+        try {
             csvWriter = new CSVWriter(new FileWriter(fileOutput), '\n', CSVWriter.NO_QUOTE_CHARACTER);
             csvWriter.writeNext(header);
             if (listInput != null) {
@@ -38,9 +40,9 @@ public class WikidataIdRandomizer {
                 }
                 csvWriter.writeNext(wikiIds.toArray(new String[wikiIds.size()]));
             }
-        }catch (Exception e){
-            LOGGER.info("Some errors encountered when saving the result into a Csv file in \""+ fileOutput + "\"", e);
-        }finally {
+        } catch (Exception e) {
+            LOGGER.info("Some errors encountered when saving the result into a Csv file in \"" + fileOutput + "\"", e);
+        } finally {
             csvWriter.flush();
             csvWriter.close();
         }
