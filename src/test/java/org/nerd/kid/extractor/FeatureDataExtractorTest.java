@@ -88,6 +88,6 @@ public class FeatureDataExtractorTest {
         assertThat(result[51], is(1.0));
         assertThat(result[72], is(1.0));
         assertThat(result[107], is(1.0));
-        assertThat(result[162], is(1.0));
+        assertThat(result[163], is(1.0));
     }
 }

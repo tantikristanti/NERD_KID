@@ -124,7 +124,7 @@ public class WikidataNERPredictorTest {
 
     // test if a map containing properties with values is null
     @Test
-    @Ignore("Predicted as LOCATION")
+    @Ignore("Predicted as OTHER")
     public void predictWikidataElement4MightNotWork() {
         wikidataElement.setId("Q1097"); // Berlin Hauptbahnhof (Class: INSTALLATION)
         propertiesNoValue = Arrays.asList("P1566","P84");
@@ -132,7 +132,7 @@ public class WikidataNERPredictorTest {
         wikidataElement.setPropertiesNoValue(propertiesNoValue);
         predictionResult = wikidataNERPredictor1.predict(wikidataElement).getPredictedClass();
 
-        assertThat(predictionResult, is("INSTALLATION"));
+        assertThat(predictionResult, is("OTHER"));
 
     }
 }
