@@ -36,10 +36,10 @@ Let's take an example of an item [Albert Einstein](https://www.wikidata.org/wiki
 
 # Training and Evaluation
 
-For the training purpose, 9922 items of Wikidata were chosen. From these examples, 80% were used for the training purpose and the rest for the evaluation. 
-The accuracy obtained from the current model is 92,091%. Furthermore, the FMeasure result for each class type can be seen as follows:
+For the training purpose, more than 10,000 Wikidata entities were chosen randomly and annotated manually.  
+As the evaluation results, we have good F-measures for the PERSON, PERIOD, and LOCATION class labels. The evaluation results for each class type can be seen as follows:
 
-<img width="350" height="550" alt = "Developing Tools" src="pic/EvaluationNerdKid.jpg"/> 
+<img width="300" height="550" alt = "Developing Tools" src="pic/EvaluationNerdKid.jpg"/> 
 
 <!-- # Create New Training Data
 **1. Build a training Arff file**
