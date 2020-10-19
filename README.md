@@ -7,7 +7,7 @@ This project is inspired by the project of [entity-fishing](https://github.com/k
 ![nerdKid](pic/nerdKid.jpg)
 
 # Goal
-According to [Wikidata's statistics](https://www.wikidata.org/wiki/Special:Statistics), more than 60 million items can be found in Wikidata. With its rich and open knowledge base, it's interesting to learn how those items can be classified into 27 classes. These classes are based on [Grobid-NER](http://grobid-ner.readthedocs.io/en/latest/class-and-senses/) 's project results.
+According to [Wikidata's statistics](https://www.wikidata.org/wiki/Special:Statistics), more than 90 million items can be found in Wikidata. With its rich and open knowledge base, it's interesting to learn how those items can be classified into 27 classes. These classes are based on [Grobid-NER](http://grobid-ner.readthedocs.io/en/latest/class-and-senses/) 's project results.
 
 The idea of this project is to make computers <font color="red"> understand </font> how grouping millions of items in Wikidata into specific classes based on their data characteristics.
 
