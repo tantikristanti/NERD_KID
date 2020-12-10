@@ -231,9 +231,9 @@
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
-            <version>1.4.11</version>
+            <version> 1.4.14-jdk7</version>
         </dependency>
-
+        
         <dependency>
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
