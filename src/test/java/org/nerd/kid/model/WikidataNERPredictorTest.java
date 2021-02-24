@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import java.util.*;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 public class WikidataNERPredictorTest {
@@ -48,24 +49,24 @@ public class WikidataNERPredictorTest {
     @Ignore("This test needs to make sure the entity-fishing service on huma-num server is activated")
     // predict the NER of Wikdiata element based on the statements collected from entity-fishing API Service
     public void predictWikidataId1() {
-        assertThat(wikidataNERPredictor1.predict("Q1077").getPredictedClass(), is("CREATION")); //Q1077-Star Trek: The Original Series
-        assertThat(wikidataNERPredictor1.predict("Q490").getPredictedClass(), is("LOCATION")); //Q490-Milan
-        assertThat(wikidataNERPredictor1.predict("Q12345").getPredictedClass(), is("PERSON")); //Q12345-Count von Count
-        assertThat(wikidataNERPredictor1.predict("Q55555").getPredictedClass(), is("CREATION")); //Q55555-19 Part One: Boot Camp
-        assertThat(wikidataNERPredictor1.predict("Q8454").getPredictedClass(), is("OTHER")); //Q8454-capital punishment
-        assertThat(wikidataNERPredictor1.predict("Q12554").getPredictedClass(), is("EVENT")); // Q12554-Middle Ages
+        assertEquals(wikidataNERPredictor1.predict("Q1077").getPredictedClass(), is("CREATION")); //Q1077-Star Trek: The Original Series
+        assertEquals(wikidataNERPredictor1.predict("Q490").getPredictedClass(), is("LOCATION")); //Q490-Milan
+        assertEquals(wikidataNERPredictor1.predict("Q12345").getPredictedClass(), is("PERSON")); //Q12345-Count von Count
+        assertEquals(wikidataNERPredictor1.predict("Q55555").getPredictedClass(), is("CREATION")); //Q55555-19 Part One: Boot Camp
+        assertEquals(wikidataNERPredictor1.predict("Q8454").getPredictedClass(), is("OTHER")); //Q8454-capital punishment
+        assertEquals(wikidataNERPredictor1.predict("Q12554").getPredictedClass(), is("EVENT")); // Q12554-Middle Ages
     }
 
     @Test
     @Ignore("This test needs to make sure the entity-fishing service on localhost on port 8090 is activated")
     // predict the NER of Wikdiata element based on the statements collected from entity-fishing API localhost service
     public void predictWikidataId2() {
-        assertThat(wikidataNERPredictor2.predict("Q1077").getPredictedClass(), is("CREATION")); //Q1077-Star Trek: The Original Series
-        assertThat(wikidataNERPredictor2.predict("Q490").getPredictedClass(), is("LOCATION")); //Q490-Milan
-        assertThat(wikidataNERPredictor2.predict("Q12345").getPredictedClass(), is("PERSON")); //Q12345-Count von Count
-        assertThat(wikidataNERPredictor2.predict("Q55555").getPredictedClass(), is("CREATION")); //Q55555-19 Part One: Boot Camp
-        assertThat(wikidataNERPredictor2.predict("Q8454").getPredictedClass(), is("OTHER")); //Q8454-capital punishment
-        assertThat(wikidataNERPredictor2.predict("Q12554").getPredictedClass(), is("EVENT")); // Q12554-Middle Ages
+        assertEquals(wikidataNERPredictor2.predict("Q1077").getPredictedClass(), is("CREATION")); //Q1077-Star Trek: The Original Series
+        assertEquals(wikidataNERPredictor2.predict("Q490").getPredictedClass(), is("LOCATION")); //Q490-Milan
+        assertEquals(wikidataNERPredictor2.predict("Q12345").getPredictedClass(), is("PERSON")); //Q12345-Count von Count
+        assertEquals(wikidataNERPredictor2.predict("Q55555").getPredictedClass(), is("CREATION")); //Q55555-19 Part One: Boot Camp
+        assertEquals(wikidataNERPredictor2.predict("Q8454").getPredictedClass(), is("OTHER")); //Q8454-capital punishment
+        assertEquals(wikidataNERPredictor2.predict("Q12554").getPredictedClass(), is("EVENT")); // Q12554-Middle Ages
     }
 
     @Test
@@ -73,7 +74,7 @@ public class WikidataNERPredictorTest {
     public void predictWikidataIdNull() {
         String wikidataIdNull = "Q26023384";
         try {
-            assertThat(wikidataNERPredictor1.predict(wikidataIdNull).getPredictedClass(), is(IsNull.nullValue())); //Q26023384-This entity does not exist
+            assertEquals(wikidataNERPredictor1.predict(wikidataIdNull).getPredictedClass(), is(IsNull.nullValue())); //Q26023384-This entity does not exist
         }catch (RuntimeException e){
             LOGGER.info("\"" + wikidataIdNull + "\" might be does not exist in Wikidata knowledge base", e);
         }
@@ -88,7 +89,7 @@ public class WikidataNERPredictorTest {
         wikidataElement.setPropertiesNoValue(propertiesNoValue);
         predictionResult = wikidataNERPredictor1.predict(wikidataElement).getPredictedClass();
 
-        assertThat(predictionResult, is("LOCATION"));
+        assertEquals(predictionResult, "LOCATION");
     }
 
     @Test
@@ -101,7 +102,7 @@ public class WikidataNERPredictorTest {
         wikidataElement.setPropertiesNoValue(propertiesNoValue);
         predictionResult = wikidataNERPredictor1.predict(wikidataElement).getPredictedClass();
 
-        assertThat(predictionResult, is("ORGANISATION"));
+        assertEquals(predictionResult, is("ORGANISATION"));
     }
 
     // test if a list containing properties without any values is null
@@ -113,8 +114,8 @@ public class WikidataNERPredictorTest {
         wikidataElement.setProperties(properties);
         wikidataElement.setPropertiesNoValue(propertiesNoValue);
         predictionResult = wikidataNERPredictor1.predict(wikidataElement).getPredictedClass();
-
-        assertThat(predictionResult, is("PERSON"));
+        System.out.println(predictionResult);
+        assertEquals(predictionResult, "PERSON");
 
     }
 
@@ -128,7 +129,7 @@ public class WikidataNERPredictorTest {
         wikidataElement.setPropertiesNoValue(propertiesNoValue);
         predictionResult = wikidataNERPredictor1.predict(wikidataElement).getPredictedClass();
 
-        assertThat(predictionResult, is("INSTALLATION"));
+        assertEquals(predictionResult, is("INSTALLATION"));
 
     }
 }
